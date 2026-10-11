@@ -14,7 +14,7 @@
        python3 scripts/shidian.py apply --work /tmp/sd
 
 支持的 --check（与 check_structure.py 同名）：
-  kana_bopomofo / bare_pua / ascii_residue   乱码：原字必在 GB2312 之外（本数据集的规律）
+  kana_bopomofo / bare_pua                   乱码：原字必在 GB2312 之外（本数据集的规律）
   missing_char                               □ 缺字：更严格，需 ≥2 种古籍；原书同缺则不补
   shi_line_length / ci_pattern               字数异常句：比对原样与「多/少一字」的他本
 
@@ -40,11 +40,10 @@ ROOT = cs.ROOT
 S2T, T2S = OpenCC('s2t'), OpenCC('t2s')
 HAN = re.compile(r'[㐀-鿿\U00020000-\U0003ffff]')
 PUNCT = set('，。、；：？！“”‘’「」『』《》（）·・ 　,.;:?!…')
-TRAD_DIRS = {'全唐诗', '御定全唐詩', '四书五经', '论语', '蒙学'}   # 繁体数据
+TRAD_DIRS = {'全唐诗', '四书五经', '论语', '蒙学'}   # 繁体数据
 BOXLIKE = set('口囗丶〇')            # 原书缺字方框常被 OCR 成这些字
-TOKEN_CHECKS = {'kana_bopomofo', 'bare_pua', 'ascii_residue', 'missing_char'}
+TOKEN_CHECKS = {'kana_bopomofo', 'bare_pua', 'missing_char'}
 LINE_CHECKS = {'shi_line_length', 'ci_pattern'}
-YD_CODE = re.compile(r'(?<![A-Za-z0-9_\[])([A-Za-z][A-Za-z0-9]{0,3}|[0-9][A-Za-z][A-Za-z0-9]{0,2})(?![A-Za-z0-9_\]])')
 
 
 # ---------------------------------------------------------------- 通用
@@ -136,13 +135,6 @@ def token_spans(check, rel, s):
         for m in cs.PUA.finditer(s):
             if not any(a <= m.start() < b for a, b in holders):
                 yield m.start(), m.end(), 1
-    elif check == 'ascii_residue':
-        if not rel.startswith('御定全唐詩'):
-            return                          # 编码残渣仅见于御定全唐詩；其他目录多为卷号、校注标记
-        for m in YD_CODE.finditer(s):
-            a, b = s[m.start() - 1:m.start()], s[m.end():m.end() + 1]
-            if HAN.match(a or ' ') or HAN.match(b or ' '):
-                yield m.start(), m.end(), 2 if len(m.group()) == 4 else 1
     elif check == 'missing_char':
         for m in re.finditer(r'□+', s):
             if m.end() - m.start() <= 4:

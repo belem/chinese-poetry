@@ -170,7 +170,6 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | Tool | Purpose |
 |------|---------|
 | `scripts/check_structure.py` | Scan the whole dataset: garbles (Cyrillic/Greek, kana/bopomofo, box-drawing, U+FFFD, bare PUA, ASCII residue), `□` gaps, line-length and 词牌 anomalies. Report only. |
-| `scripts/twin_fix.py` | Collate 御定全唐詩 against 全唐诗/poet.tang.* and restore ASCII residue codes via `scripts/yuding_codes.tsv`. |
 | `scripts/collate.py` | Whole-corpus, sentence-by-sentence collation against 识典古籍, run in small daily batches by the scheduled workflow `.github/workflows/collate-songci.yml`; humans review its `review.tsv` artifact. 宋词 is in progress — see `docs/宋词对勘.md`. |
 | `scripts/twin_collate.py` | Collate anthologies (花间集, 南唐, 唐诗三百首, 千家诗, 水墨唐诗) against the same poems in 全唐诗/宋词; one-char differences judged on 识典古籍, reviewed in `review.tsv`, closed items kept in `docs/小合集互校.applied.json`. Read its docstring for review lessons before deciding. |
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
@@ -193,7 +192,7 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 - **`□` gaps** are mostly lacunae in the base text. Filling one from another edition needs ≥2 independent books; if a book shows a box-like OCR char (`口 囗 丶 〇`) at the same spot, the source has the same gap — do not fill.
 - **Compare in simplified form** (`t2s` on both sides) so variants like 峯/峰 do not hide matches, but **write back with the dataset's own glyphs**: change only the inserted/deleted character, and use the form the dataset already uses (e.g. 搊 not 𫼝, 䕷 not 𧃲, 殢 not 𣨼).
 - **Line edits next to garbage are not line edits**: `noisy` status means the sentence touches a residue/garble — replace that token instead of inserting a character.
-- `missing_char` and `ascii_residue` are slow (thousands of queries); expect ~4 s per query, run overnight, and reruns resume where they stopped.
+- `missing_char` is slow (thousands of queries); expect ~4 s per query, run overnight, and reruns resume where they stopped.
 
 ---
 

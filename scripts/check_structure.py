@@ -45,7 +45,7 @@ HALF_PUNCT = re.compile(r'(?<=[\u4e00-\u9fff])[,;:!]|[,;:!](?=[\u4e00-\u9fff])')
 KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31bf]')  # 假名、注音乱码（不含标题分隔符・）
 PUA = re.compile(r'[-]')
 CI_DIRS = {'宋词', '五代诗词'}
-SHI_DIRS = {'全唐诗', '御定全唐詩', '水墨唐诗', '曹操诗集', '纳兰性德'}  # 元曲有衬字，不做字数检查
+SHI_DIRS = {'全唐诗', '水墨唐诗', '曹操诗集', '纳兰性德'}  # 元曲有衬字，不做字数检查
 
 
 # 这些检查项一旦增加即视为退化（CI 失败）；缺字、字数异常等多为底本原貌，仅作提示
@@ -134,48 +134,7 @@ def check_shi(rel, idx, it, lines, report):
     for i, s in enumerate(sents):
         if abs(len(s) - main) == 1 and not LEGIT_ODD.search(s):
             report('shi_line_length', rel, idx, it, s,
-                   detail=f'{main}言诗中出现 {len(s)} 字句',
-                   ctx={'main': main, 'prev': sents[i - 1] if i else None,
-                        'next': sents[i + 1] if i + 1 < len(sents) else None})
-
-
-def one_edit(short, long_):
-    """long_ 删去一个字后等于 short。"""
-    return len(long_) == len(short) + 1 and any(
-        long_[:k] + long_[k + 1:] == short for k in range(len(long_)))
-
-
-# 全唐诗 与 御定全唐詩 是同一部书的两个独立来源，可互相对勘
-TWIN_SOURCES = {'qts': lambda rel: rel.startswith(os.path.join('全唐诗', 'poet.tang.')),
-                'yd': lambda rel: rel.startswith('御定全唐詩' + os.sep)}
-
-
-def source_of(rel):
-    return next((k for k, f in TWIN_SOURCES.items() if f(rel)), None)
-
-
-def cross_check(findings, neighbor):
-    """为字数异常句在另一来源中找对应句：找到「多/少一字」的版本即给出修正候选。"""
-    for f in findings:
-        if f['check'] != 'shi_line_length' or not source_of(f['file']):
-            continue
-        other = 'yd' if source_of(f['file']) == 'qts' else 'qts'
-        ctx, s = f.pop('ctx'), f['text']
-        cands = set()
-        if ctx['prev']:
-            cands |= neighbor[other]['after'].get(ctx['prev'], set())
-        if ctx['next']:
-            cands |= neighbor[other]['before'].get(ctx['next'], set())
-        if s in cands:
-            f['cross'] = 'same'          # 两个来源一致，多半是底本原貌
-        else:
-            fix = [c for c in cands if len(c) == ctx['main'] and
-                   (one_edit(s, c) or one_edit(c, s))]
-            if fix:
-                f['cross'] = 'candidate'
-                f['suggest'] = fix[0]
-    for f in findings:
-        f.pop('ctx', None)
+                   detail=f'{main}言诗中出现 {len(s)} 字句')
 
 
 def ci_tune(it):
@@ -241,13 +200,10 @@ def main():
 
     findings = []
 
-    def report(kind, rel, idx, it, text, token=None, detail=None, ctx=None):
+    def report(kind, rel, idx, it, text, token=None, detail=None):
         findings.append({'check': kind, 'file': rel, 'index': idx, 'poem': label(it),
-                         'text': text, 'token': token, 'detail': detail, 'ctx': ctx})
+                         'text': text, 'token': token, 'detail': detail})
 
-    # 句子邻接索引：source -> {'after': 前句 -> 后句集合, 'before': 后句 -> 前句集合}
-    neighbor = {k: {'after': collections.defaultdict(set), 'before': collections.defaultdict(set)}
-                for k in TWIN_SOURCES}
     ci_poems = []
     for rel in iter_files():
         top = rel.split(os.sep)[0]
@@ -256,20 +212,13 @@ def main():
         except (json.JSONDecodeError, UnicodeDecodeError) as e:
             report('bad_json', rel, -1, {}, str(e))
             continue
-        src = source_of(rel)
         for idx, it, lines in poems:
             check_chars(rel, idx, it, lines, report)
-            if src:
-                sents = sentences(lines)
-                for a, b in zip(sents, sents[1:]):
-                    neighbor[src]['after'][a].add(b)
-                    neighbor[src]['before'][b].add(a)
             if top in CI_DIRS and it.get('rhythmic'):
                 ci_poems.append((rel, idx, it, lines))
             elif top in SHI_DIRS:
                 check_shi(rel, idx, it, lines, report)
     check_ci(ci_poems, report)
-    cross_check(findings, neighbor)
 
     if args.out:
         with open(args.out, 'w', encoding='utf-8') as fp:
@@ -284,19 +233,11 @@ def main():
             continue
         files = len({f['file'] for f in items})
         print(f'\n== {kind}: {len(items)} 处，涉及 {files} 个文件')
-        if kind == 'shi_line_length':
-            c = collections.Counter(f.get('cross', 'unmatched') for f in items)
-            print(f"   对勘：有修正候选 {c['candidate']}，另一来源相同 {c['same']}，未匹配 {c['unmatched']}")
-            items = sorted(items, key=lambda f: f.get('cross') != 'candidate')
         if kind == 'ascii_residue':
             top = collections.Counter(f['token'] for f in items).most_common(15)
             print('   高频残渣:', '  '.join(f'{t}×{n}' for t, n in top))
         for f in items[:args.show]:
             extra = f" | {f['detail']}" if f['detail'] else ''
-            if f.get('cross') == 'candidate':
-                extra += f" | 对勘候选：{f['suggest']}"
-            elif f.get('cross') == 'same':
-                extra += ' | 另一来源相同'
             print(f"   {f['file']}#{f['index']} {f['poem']} {f['text']}{extra}")
 
     counts = {k: len(v) for k, v in sorted(by_kind.items())}
