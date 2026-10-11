@@ -3,12 +3,12 @@
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
     "total_files": 1589,
-    "reviewed": 1589,
-    "clean": 404,
-    "fixed": 771,
+    "reviewed": 1590,
+    "clean": 398,
+    "fixed": 777,
     "needs_review": 102,
     "out_of_scope": 313,
-    "in_scope_files": 1276
+    "in_scope_files": 1277
   },
   "reviewed": {
     "御定全唐詩/json/768.json": {
@@ -1856,7 +1856,7 @@
       "fixes": []
     },
     "蒙学/tangshisanbaishou.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -1879,6 +1879,26 @@
           "original": "半人家，北斗闌干南鬥斜。\",\n   ",
           "corrected": "半人家，北斗闌干南斗斜。\",\n   ",
           "note": "Simplified→traditional conversion error: 南鬥 → 南斗 (context-checked; e.g. 斗 dipper/constellation, 髮 hair, 谷 valley, 后 sovereign/earth deity, 范/松 names & pine)"
+        },
+        {
+          "original": "殘霄猶得夢依稀",
+          "corrected": "殘宵猶得夢依稀",
+          "note": "Twin collation with 全唐诗/poet.tang.29000.json#566 (殘宵猶得夢依稀); 识典古籍: 「宵」 in 4 books (唐詩類苑；才調集；李義山詩解), dataset reading 「霄」 in 0"
+        },
+        {
+          "original": "千里共如何",
+          "corrected": "千里其如何",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#740 (千里其如何); 识典古籍: 「其」 in 6 books (唐詩品彙；唐詩所；唐賢三昧集), dataset reading 「共」 in 0"
+        },
+        {
+          "original": "自雲良家女",
+          "corrected": "自雲良家子",
+          "note": "Twin collation with 全唐诗/poet.tang.10000.json#668 (自云良家子); 识典古籍: 「子」 in 7 books (唐雅；杜工部詩説；杜甫集), dataset reading 「女」 in 0"
+        },
+        {
+          "original": "雨淋日灸野火燎",
+          "corrected": "雨淋日炙野火燎",
+          "note": "Twin collation with 全唐诗/poet.tang.18000.json#41 (雨淋日炙野火燎); 识典古籍: 「炙」 in 4 books (東萊集注類編觀瀾文甲集；淵鑑類函；韓愈集), dataset reading 「灸」 in 0"
         }
       ]
     },
@@ -1907,7 +1927,7 @@
       "fixes": []
     },
     "蒙学/qianjiashi.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -1920,11 +1940,111 @@
           "original": "     \"劍留南鬥近，書寄北風遙。",
           "corrected": "     \"劍留南斗近，書寄北風遙。",
           "note": "Simplified→traditional conversion error: 南鬥 → 南斗 (context-checked; e.g. 斗 dipper/constellation, 髮 hair, 谷 valley, 后 sovereign/earth deity, 范/松 names & pine)"
+        },
+        {
+          "original": "雙雙嗚玉珂",
+          "corrected": "雙雙鳴玉珂",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#691 (雙雙鳴玉珂); 识典古籍: 「鳴」 in 4 books (唐儲光羲詩集；文壇列俎；萬首唐人絶句), dataset reading 「嗚」 in 0"
+        },
+        {
+          "original": "離愁似個長",
+          "corrected": "緣愁似個長",
+          "note": "Twin collation with 全唐诗/poet.tang.8000.json#182 (緣愁似個長); 识典古籍: 「緣」 in 6 books (分類補注李太白詩；唐詩類苑；增修詩話總龜), dataset reading 「離」 in 0"
+        },
+        {
+          "original": "雲標金闕回",
+          "corrected": "雲標金闕迥",
+          "note": "Twin collation with 全唐诗/poet.tang.3000.json#757 (雲標金闕迥); 识典古籍: 「迥」 in 2 books (前唐十二家詩；石倉歷代詩選), dataset reading 「回」 in 0"
+        },
+        {
+          "original": "明月懸高樹",
+          "corrected": "明月隱高樹",
+          "note": "Twin collation with 全唐诗/poet.tang.4000.json#454 (明月隱高樹); 识典古籍: 「隱」 in 6 books (古詩鏡；唐詩品彙；唐音), dataset reading 「懸」 in 0"
+        },
+        {
+          "original": "因風想玉坷",
+          "corrected": "因風想玉珂",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#81 (因風想玉珂); 识典古籍: 「珂」 in 4 books (古今圖書集成·歲功典；古今圖書集成·考工典；杜工部詩集注解), dataset reading 「坷」 in 0"
+        },
+        {
+          "original": "欲投何處宿",
+          "corrected": "欲投人處宿",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#17 (欲投人處宿); 识典古籍: 「人」 in 6 books (唐賢三昧集；王右丞集箋注；王摩詰文集), dataset reading 「何」 in 0"
+        },
+        {
+          "original": "坐覺煙塵少",
+          "corrected": "坐覺煙塵掃",
+          "note": "Twin collation with 全唐诗/poet.tang.3000.json#779 (坐覺煙塵掃); 识典古籍: 「掃」 in 8 books (前唐十二家詩；古今圖書集成·戎政典；唐詩品彙), dataset reading 「少」 in 0"
+        },
+        {
+          "original": "老去限空聞",
+          "corrected": "老去恨空聞",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#267 (老去恨空聞); 识典古籍: 「恨」 in 6 books (九家集注杜詩；杜工部詩説；杜工部集), dataset reading 「限」 in 0"
+        },
+        {
+          "original": "乾坤日月浮",
+          "corrected": "乾坤日夜浮",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#919 (乾坤日夜浮); 识典古籍: 「夜」 in 3 books (分門集注杜工部詩；古今事文類聚；庵重訂李于鱗唐詩選), dataset reading 「月」 in 0"
+        },
+        {
+          "original": "行矣順風波",
+          "corrected": "行矣慎風波",
+          "note": "Twin collation with 全唐诗/poet.tang.10000.json#485 (行矣慎風波); 识典古籍: 「慎」 in 4 books (唐詩所；詩歸；高常侍集), dataset reading 「順」 in 0"
+        },
+        {
+          "original": "江深走白沙",
+          "corrected": "江聲走白沙",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#506 (江聲走白沙); 识典古籍: 「聲」 in 5 books (分門集注杜工部詩；又玄集；杜工部集), dataset reading 「深」 in 0"
+        },
+        {
+          "original": "絲絲夭棘出莓牆",
+          "corrected": "絲絲天棘出莓牆",
+          "note": "Twin collation with 全唐诗/poet.song.233000.json#985 (絲絲天棘出莓牆); 识典古籍: 「天」 in 2 books (樹藝篇；黎氏家集), dataset reading 「夭」 in 0"
+        },
+        {
+          "original": "草木知春不久歸",
+          "corrected": "草樹知春不久歸",
+          "note": "Twin collation with 全唐诗/poet.tang.18000.json#191 (草樹知春不久歸); 识典古籍: 「樹」 in 4 books (東雅堂昌黎集注；萬首唐人絶句；韓愈集), dataset reading 「木」 in 0"
+        },
+        {
+          "original": "千條弱柳垂青鎖",
+          "corrected": "千條弱柳垂青瑣",
+          "note": "Twin collation with 全唐诗/poet.tang.12000.json#48 (千條弱柳垂青瑣); 识典古籍: 「瑣」 in 6 books (古今圖書集成·歲功典；古今圖書集成·禮儀典；唐詩紀事), dataset reading 「鎖」 in 0"
+        },
+        {
+          "original": "花皮潤沾紅杏雨",
+          "corrected": "花板潤沾紅杏雨",
+          "note": "Twin collation with 全唐诗/poet.song.76000.json#169 (花板潤霑紅杏雨); 识典古籍: 「板」 in 6 books (分門纂類唐宋時贤千家詩選；古今事文類聚；宋元詩會), dataset reading 「皮」 in 0"
+        },
+        {
+          "original": "落落疏廉邀月影",
+          "corrected": "落落疏簾邀月影",
+          "note": "Twin collation with 全唐诗/poet.song.65000.json#184 (落落疏簾邀月影); 识典古籍: 「簾」 in 6 books (古今圖書集成·歲功典；張右史文集；柯山集), dataset reading 「廉」 in 0"
+        },
+        {
+          "original": "山中習靜合朝槿",
+          "corrected": "山中習靜觀朝槿",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#117 (山中習靜觀朝槿); 识典古籍: 「觀」 in 9 books (三體唐詩；前唐十二家詩；十二家唐詩), dataset reading 「合」 in 0"
+        },
+        {
+          "original": "歸閒我欲頻來此",
+          "corrected": "官閒我欲頻來此",
+          "note": "Twin collation with 全唐诗/poet.song.128000.json#126 (官閑我欲頻來此); 识典古籍: 「官」 in 4 books (宋藝圃集；御選宋金元明四朝詩；放翁詩選), dataset reading 「歸」 in 0"
+        },
+        {
+          "original": "月坡堤上四徘徊",
+          "corrected": "月陂堤上四徘徊",
+          "note": "Twin collation with 全唐诗/poet.song.40000.json#58 (月陂堤上四徘徊); 识典古籍: 「陂」 in 5 books (伊川擊壤集；兩宋名賢小集；宋四子抄釋), dataset reading 「坡」 in 0"
+        },
+        {
+          "original": "雲物淒涼拂署流",
+          "corrected": "雲物淒涼拂曙流",
+          "note": "Twin collation with 全唐诗/poet.tang.30000.json#317 (雲物淒涼拂曙流); 识典古籍: 「曙」 in 3 books (唐百家詩選；唐詩紀事；唐詩鼓吹), dataset reading 「署」 in 0"
         }
       ]
     },
     "水墨唐诗/shuimotangshi.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -1932,6 +2052,66 @@
           "original": "[formatting] dup_punct 11; whitespace 2",
           "corrected": "[formatting] normalized",
           "note": "Mechanical normalization: duplicated end punctuation (？。→？, ！。→！, 。。, ，，, 、、), half-width ,;:! next to CJK → full-width, leading/trailing whitespace trimmed; 元曲: 黄?无疆 → 黄耇无疆, crawled HTTP-header paragraph removed"
+        },
+        {
+          "original": "云开远见洛阳城",
+          "corrected": "云开远见汉阳城",
+          "note": "Twin collation with 全唐诗/poet.tang.14000.json#987 (雲開遠見漢陽城); 识典古籍: 「漢」 in 3 books (唐音；才調集；衆妙集), dataset reading 「洛」 in 0"
+        },
+        {
+          "original": "犹见孤帆一日程",
+          "corrected": "犹是孤帆一日程",
+          "note": "Twin collation with 全唐诗/poet.tang.14000.json#987 (猶是孤帆一日程); 识典古籍: 「是」 in 2 books (唐詩鼓吹；才調集), dataset reading 「见」 in 0"
+        },
+        {
+          "original": "落日清江里",
+          "corrected": "落日晴江里",
+          "note": "Twin collation with 全唐诗/poet.tang.13000.json#336 (落日晴江裏); 识典古籍: 「晴」 in 4 books (古今圖書集成·閨媛典；唐詩歸；御定全唐詩錄), dataset reading 「清」 in 0"
+        },
+        {
+          "original": "今夜未知何处宿",
+          "corrected": "今夜不知何处宿",
+          "note": "Twin collation with 全唐诗/poet.tang.9000.json#948 (今夜不知何處宿); 识典古籍: 「不」 in 7 books (前唐十二家詩；古今詩删；唐詩品彙), dataset reading 「未」 in 0"
+        },
+        {
+          "original": "杳杳种声晚",
+          "corrected": "杳杳钟声晚",
+          "note": "Twin collation with 全唐诗/poet.tang.7000.json#28 (杳杳鐘聲晚); 识典古籍: 「鐘」 in 6 books (劉隨州詩集；劉隨州集；唐人百家詩), dataset reading 「种」 in 0"
+        },
+        {
+          "original": "桂树何团团",
+          "corrected": "桂树作团团",
+          "note": "Twin collation with 全唐诗/poet.tang.1000.json#659 (桂樹作團團); 识典古籍: 「作」 in 6 books (分類補注李太白詩；分類補注李太白詩文；唐翰林李白詩類編), dataset reading 「何」 in 0"
+        },
+        {
+          "original": "返影入深林",
+          "corrected": "返景入深林",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#127 (返景入深林); 识典古籍: 「景」 in 5 books (唐人萬首絶句選；唐詩紀事；唐賢三昧集), dataset reading 「影」 in 0"
+        },
+        {
+          "original": "处处共芦草",
+          "corrected": "处处黄芦草",
+          "note": "Twin collation with 全唐诗/poet.tang.6000.json#717 (處處黃蘆草); 识典古籍: 「黃」 in 7 books (古今圖書集成·草木典；唐百家詩選；國秀集), dataset reading 「共」 in 0"
+        },
+        {
+          "original": "黑云压城城欲催",
+          "corrected": "黑云压城城欲摧",
+          "note": "Twin collation with 全唐诗/poet.tang.20000.json#822 (黑雲壓城城欲摧); 识典古籍: 「摧」 in 7 books (丹鉛總錄；古今圖書集成·文學典；唐詩紀事), dataset reading 「催」 in 0"
+        },
+        {
+          "original": "远目寒山石径斜",
+          "corrected": "远上寒山石径斜",
+          "note": "Twin collation with 全唐诗/poet.tang.28000.json#559 (遠上寒山石徑斜); 识典古籍: 「上」 in 4 books (三體唐詩；全芳備祖集；杜牧集), dataset reading 「目」 in 0"
+        },
+        {
+          "original": "残萤西玉露",
+          "corrected": "残萤栖玉露",
+          "note": "Twin collation with 全唐诗/poet.tang.28000.json#766 (殘螢委玉露); 识典古籍: 「委」 in 4 books (丁卯集；古今圖書集成·歲功典；唐詩類苑), dataset reading 「西」 in 0"
+        },
+        {
+          "original": "清明有味是无能",
+          "corrected": "清时有味是无能",
+          "note": "Twin collation with 全唐诗/poet.tang.28000.json#331 (清時有味是無能); 识典古籍: 「時」 in 3 books (杜牧集；演繁露；萬首唐人絶句), dataset reading 「明」 in 0"
         }
       ]
     },
@@ -4867,7 +5047,7 @@
       ]
     },
     "御定全唐詩/json/391.json": {
-      "date": "2026-10-03",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -4880,6 +5060,11 @@
           "original": "守宮。象口吹香毾bG暖，",
           "corrected": "守宮。象口吹香毾㲪暖，",
           "note": "Crawl residue \"bG\" → 㲪; 识典古籍 (/zh/): 《唐詩品彙》唐詩品彙卷三十五“拘幽操” reads 「口吹香毾㲪暖啼蛄吊」 (10 hit(s))"
+        },
+        {
+          "original": "大漠山如雪",
+          "corrected": "大漠沙如雪",
+          "note": "李賀《馬詩》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
         }
       ]
     },
@@ -7452,7 +7637,7 @@
       ]
     },
     "御定全唐詩/json/528.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -7460,6 +7645,11 @@
           "original": "清鏡曉看發",
           "corrected": "清鏡曉看髮",
           "note": "Conversion error 發 → 髮: twin source 全唐诗 (全唐诗/poet.tang.28000.json) reads 「清鏡曉看髪」; one-to-many simplified→traditional mapping (发/髮, 平/準, 征/徵, 干/乾, 札/劄)"
+        },
+        {
+          "original": "早雁拂銀河",
+          "corrected": "早雁拂金河",
+          "note": "許渾《早秋》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
         }
       ]
     },
@@ -12212,44 +12402,131 @@
       "fixes": []
     },
     "五代诗词/huajianji/huajianji-1-juan.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
           "original": "塞外草先衰江，南雁到迟。",
           "corrected": "塞外草先衰，江南雁到迟。",
           "note": "Misplaced comma: '江' belongs with second clause '江南雁到迟'; 温庭筠《玉蝴蝶》; standard text confirmed from classical poem knowledge"
+        },
+        {
+          "original": "花落月明残",
+          "corrected": "花露月明残",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#218 (花露月明殘); 识典古籍: 「露」 in 4 books (御定全唐詩；御選歷代詩餘；花草稡編), dataset reading 「落」 in 0"
+        },
+        {
+          "original": "雨暗夜合玲珑日",
+          "corrected": "雨晴夜合玲珑日",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#219 (雨晴夜合玲瓏日); 识典古籍: 「晴」 in 2 books (古今圖書集成·閨媛典；詞苑英華), dataset reading 「暗」 in 0"
+        },
+        {
+          "original": "如我意",
+          "corrected": "知我意",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#226 (知我意); 识典古籍: 「知」 in 4 books (南唐二主詞；古今圖書集成·閨媛典；御選歷代詩餘), dataset reading 「如」 in 0"
+        },
+        {
+          "original": "眉黛薄",
+          "corrected": "眉翠薄",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#229 (眉翠薄); 识典古籍: 「翠」 in 4 books (增修箋注妙選草堂詩餘；尊前集；花間集), dataset reading 「黛」 in 0"
+        },
+        {
+          "original": "远映征帆近拂提",
+          "corrected": "远映征帆近拂堤",
+          "note": "Twin collation with 全唐诗/poet.tang.2000.json#144 (遠映征帆近拂堤); 识典古籍: 「堤」 in 4 books (宋洪魏公進萬首唐人絶句；文體明辯附錄；花草稡編), dataset reading 「提」 in 0"
+        },
+        {
+          "original": "河上望丛柯",
+          "corrected": "河上望丛祠",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#230 (河上望叢祠); 识典古籍: 「祠」 in 3 books (御定全唐詩；花間集；詞綜), dataset reading 「柯」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-2-juan.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "天际云鸟引晴远",
+          "corrected": "天际云鸟引情远",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#235 (天際雲鳥引情遠); 识典古籍: 「情」 in 3 books (御選歷代詩餘；花草稡編；花間集), dataset reading 「晴」 in 0"
+        },
+        {
+          "original": "菡萏香莲十顷陂",
+          "corrected": "菡萏香连十顷陂",
+          "note": "Twin collation with 全唐诗/poet.tang.42000.json#584 (菡萏香連十頃陂); 识典古籍: 「連」 in 2 books (花草稡編；詩話補遺), dataset reading 「莲」 in 0"
+        },
+        {
+          "original": "绿树藏莺莺玉啼",
+          "corrected": "绿树藏莺莺正啼",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#283 (綠樹藏鶯鶯正啼); 识典古籍: 「正」 in 2 books (古今圖書集成·閨媛典；花間集), dataset reading 「玉」 in 0"
+        },
+        {
+          "original": "云路香尘莫扫",
+          "corrected": "去路香尘莫扫",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#300 (去路香塵莫掃); 识典古籍: 「去」 in 3 books (憑山閣增輯留青新集；花草稡編；花間集), dataset reading 「云」 in 0"
+        }
+      ]
     },
     "五代诗词/huajianji/huajianji-3-juan.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
           "original": "马骄泥软绵连乾",
           "corrected": "马骄泥软锦连乾",
           "note": "needs_review: 薛昭蕴《喜迁莺·清明节》。Note explains '锦连乾--马的饰物' but poem text has '绵连乾'; 绵/锦 mismatch between annotation and poem text. If note is correct, '绵' may be a typo for '锦'. | 2026-10-06 resolved: 薛昭蕴《喜迁莺》: 「锦连乾」（马饰），本条注释亦作「锦连乾」 (Tier 1)"
+        },
+        {
+          "original": "露桃花里小腰肢",
+          "corrected": "露桃宫里小腰肢",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#264 (露桃宮裏小腰肢); 识典古籍: 「宮」 in 5 books (古今圖書集成·閨媛典；御選歷代詩餘；花草稡編), dataset reading 「花」 in 0"
+        },
+        {
+          "original": "昏思陈事暗消魂",
+          "corrected": "卧思陈事暗消魂",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#314 (臥思陳事暗消魂); 识典古籍: 「臥」 in 2 books (花草稡編；花間集), dataset reading 「昏」 in 0"
+        },
+        {
+          "original": "去往岛经三",
+          "corrected": "去住岛经三",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#414 (去住島經三); 识典古籍: 「住」 in 3 books (御選歷代詩餘；花間集；詞海評林), dataset reading 「往」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-4-juan.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "靠天天不闻",
+          "corrected": "告天天不闻",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#336 (告天天不聞); 识典古籍: 「告」 in 2 books (花間集；詩餘圖譜), dataset reading 「靠」 in 0"
+        },
+        {
+          "original": "暗街春色香车立",
+          "corrected": "晴街春色香车立",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#329 (晴街春色香車立); 识典古籍: 「晴」 in 3 books (御選歷代詩餘；花間集；詩餘廣選), dataset reading 「暗」 in 0"
+        },
+        {
+          "original": "红泪滴窗金线缕",
+          "corrected": "红泪滴穿金线缕",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#342 (紅淚滴穿金線縷); 识典古籍: 「穿」 in 5 books (古今圖書集成·閨媛典；御定全唐詩；御定詞譜), dataset reading 「窗」 in 0"
+        },
+        {
+          "original": "钿笼金销睡鸳鸯",
+          "corrected": "钿笼金锁睡鸳鸯",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#768 (鈿籠金鎖睡鴛鴦); 识典古籍: 「鎖」 in 5 books (古今别腸詞選；唐宋諸賢絶妙詞選；花草稡編), dataset reading 「销」 in 0"
+        }
+      ]
     },
     "五代诗词/huajianji/huajianji-5-juan.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
@@ -12261,11 +12538,91 @@
           "original": "咋夜雨霏霏",
           "corrected": "昨夜雨霏霏",
           "note": "needs_review: 毛文锡《醉花间·休相问》。'咋夜' is non-standard; classical form would be '昨夜'. '咋' and '昨' look similar and this may be a typo/OCR error. Authoritative source needed to confirm. | 2026-10-06 resolved: 毛文锡《醉花间》: 「昨夜雨霏霏」 (Tier 1)"
+        },
+        {
+          "original": "飘酒庭中",
+          "corrected": "飘洒庭中",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#372 (飄灑庭中); 识典古籍: 「灑」 in 4 books (御選歷代詩餘；花草稡編；花間集), dataset reading 「酒」 in 0"
+        },
+        {
+          "original": "金炉换夕照",
+          "corrected": "金炉换夕薰",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#357 (金爐換夕薰); 识典古籍: 「薰」 in 4 books (文體明辯；新定九宮大成南北宮詞譜；新定九宮大成南北詞宮譜), dataset reading 「照」 in 0"
+        },
+        {
+          "original": "鞭胧春色满皇州",
+          "corrected": "朦胧春色满皇州",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#362 (朦朧春色滿皇州); 识典古籍: 「朦」 in 3 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「鞭」 in 0"
+        },
+        {
+          "original": "栽培得她近皇宫",
+          "corrected": "栽培得地近皇宫",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#363 (栽培得地近皇宮); 识典古籍: 「地」 in 4 books ([御選]歷代詩餘；御定全唐詩；花間集), dataset reading 「她」 in 0"
+        },
+        {
+          "original": "楷杷洲上紫檀开",
+          "corrected": "枇杷洲上紫檀开",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#356 (枇杷洲上紫檀開); 识典古籍: 「枇」 in 2 books (御定全唐詩；花間集), dataset reading 「楷」 in 0"
+        },
+        {
+          "original": "玉兔银蟾争夺护",
+          "corrected": "玉兔银蟾争守护",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#367 (玉兔銀蟾爭守護); 识典古籍: 「守」 in 3 books (嘯餘譜；花間集；風前月下填詞), dataset reading 「夺」 in 0"
+        },
+        {
+          "original": "滴滴铜壶塞漏咽",
+          "corrected": "滴滴铜壶寒漏咽",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#353 (滴滴銅壺寒漏咽); 识典古籍: 「寒」 in 7 books (九宮大成南北詞宮譜；御定全唐詩；文體明辯), dataset reading 「塞」 in 0"
+        },
+        {
+          "original": "族神仙伴",
+          "corrected": "簇神仙伴",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#354 (簇神仙伴); 识典古籍: 「簇」 in 3 books (增正詩餘圖譜；花間集；詞苑英華九種), dataset reading 「族」 in 0"
+        },
+        {
+          "original": "何事乘龙入忽降",
+          "corrected": "何事乘龙人忽降",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#406 (何事乘龍人忽降); 识典古籍: 「人」 in 5 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「入」 in 0"
+        },
+        {
+          "original": "空劳牵手",
+          "corrected": "空劳纤手",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#409 (空勞纖手); 识典古籍: 「纖」 in 4 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「牵」 in 0"
+        },
+        {
+          "original": "桔林霜重更红鲜",
+          "corrected": "橘林霜重更红鲜",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#410 (橘林霜重更紅鮮); 识典古籍: 「橘」 in 3 books (御定全唐詩；花間集；詞海評林), dataset reading 「桔」 in 0"
+        },
+        {
+          "original": "去年春",
+          "corrected": "去年书",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#402 (去年書); 识典古籍: 「書」 in 3 books (古今圖書集成·閨媛典；御定全唐詩；花間集), dataset reading 「春」 in 0"
+        },
+        {
+          "original": "解梦还稀",
+          "corrected": "醉梦还稀",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#401 (醉夢還稀); 识典古籍: 「醉」 in 5 books (御定全唐詩；御選歷代詩餘；新定九宮大成南北詞宮譜), dataset reading 「解」 in 0"
+        },
+        {
+          "original": "梦断禁城神鼓",
+          "corrected": "梦断禁城钟鼓",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#403 (夢斷禁城鐘鼓); 识典古籍: 「鐘」 in 6 books (十名家詞集；唐宋諸賢絶妙詞選；御選歷代詩餘), dataset reading 「神」 in 0"
+        },
+        {
+          "original": "斜掩瑶枕髻鬟偏",
+          "corrected": "斜欹瑶枕髻鬟偏",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#643 (斜欹瑤枕髻鬟偏); 识典古籍: 「欹」 in 6 books (古今詞統；唐宋諸賢絶妙詞選；花間集), dataset reading 「掩」 in 0"
+        },
+        {
+          "original": "独坐含颦吹风竹",
+          "corrected": "独坐含颦吹凤竹",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#644 (獨坐含嚬吹鳳竹); 识典古籍: 「鳳」 in 5 books (唐宋八家詞；御選歷代詩餘；花間集), dataset reading 「风」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-6-juan.json": {
-      "date": "2026-10-04",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -12273,23 +12630,113 @@
           "original": "时时微雨洗劫风光",
           "corrected": "时时微雨洗风光",
           "note": "Ci pattern anomaly (小重山, 常体 sentence length 7): extra char removed; 7 books on 识典古籍 support it (e.g. 《古今圖書集成·宮闈典》, 《唐宋諸賢絶妙詞選》, 《嘯餘譜》), 0 support the dataset's version"
+        },
+        {
+          "original": "桃榔叶暗蓼花红",
+          "corrected": "桄榔叶暗蓼花红",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#652 (桄榔葉暗蓼花紅); 识典古籍: 「桄」 in 5 books (御選歷代詩餘；花間集；詞律), dataset reading 「桃」 in 0"
+        },
+        {
+          "original": "晓花擎露妨啼妆",
+          "corrected": "晓花擎露妒啼妆",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#396 (曉花擎露妒啼妝); 识典古籍: 「妒」 in 4 books (嘯餘譜；御定全唐詩；花草稡編), dataset reading 「妨」 in 0"
+        },
+        {
+          "original": "红日水",
+          "corrected": "红日永",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#396 (紅日永); 识典古籍: 「永」 in 6 books (唐宋諸賢絶妙詞選；嘯餘譜；增修箋注妙選群英草堂詩餘前集), dataset reading 「水」 in 0"
+        },
+        {
+          "original": "轻裾花早晓烟迷",
+          "corrected": "轻裾花草晓烟迷",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#392 (輕裾花草曉煙迷); 识典古籍: 「草」 in 6 books ([御選]歷代詩餘；嘯餘譜；御選歷代詩餘), dataset reading 「早」 in 0"
+        },
+        {
+          "original": "软碧瑶烟似送人",
+          "corrected": "软碧摇烟似送人",
+          "note": "Twin collation with 全唐诗/poet.tang.42000.json#514 (軟碧搖煙似送人); 识典古籍: 「搖」 in 4 books (古今詞統；唐絶增奇 唐絶搜奇；花間集), dataset reading 「瑶」 in 0"
+        },
+        {
+          "original": "雀桥初就咽银河",
+          "corrected": "鹊桥初就咽银河",
+          "note": "Twin collation with 全唐诗/poet.tang.41000.json#310 (鵲橋初就咽銀河); 识典古籍: 「鵲」 in 4 books (全唐詩目；御定全唐詩；樂府詩集), dataset reading 「雀」 in 0"
+        },
+        {
+          "original": "帘看金泥凤",
+          "corrected": "帘卷金泥凤",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#475 (簾卷金泥鳳); 识典古籍: 「卷」 in 7 books (嘯餘譜；御定全唐詩；御選歷代詩餘), dataset reading 「看」 in 0"
+        },
+        {
+          "original": "醮坛风急杏花香",
+          "corrected": "醮坛风急杏枝香",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#480 (醮壇風急杏枝香); 识典古籍: 「枝」 in 5 books (御定詞譜；御選歷代詩餘；花間集), dataset reading 「花」 in 0"
+        },
+        {
+          "original": "菱花掩却翠鬓欹",
+          "corrected": "菱花掩却翠鬟欹",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#468 (菱花掩却翠鬟欹); 识典古籍: 「鬟」 in 3 books (花間集；詞綜；詩餘廣選), dataset reading 「鬓」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-7-juan.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
           "original": "漠漠秋云淡，红耦香侵槛",
           "corrected": "漠漠秋云淡，红藕香侵槛",
           "note": "needs_review: 顾敻《醉公子·漠漠秋云淡》。'红耦' likely should be '红藕' (red lotus) — 耦 (pair/plowing) makes no semantic sense with 香 (fragrance) and 槛 (railing near water); '红藕香' is a well-attested poetic phrase. Authoritative source needed to confirm. | 2026-10-06 resolved: 顾敻《醉公子》: 「红藕香侵槛」 (Tier 1)"
+        },
+        {
+          "original": "良宵空使攀魂惊",
+          "corrected": "良宵空使梦魂惊",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#463 (良宵空使夢魂驚); 识典古籍: 「夢」 in 5 books (古今圖書集成·閨媛典；御定全唐詩；花草稡編), dataset reading 「攀」 in 0"
+        },
+        {
+          "original": "恨灯背帐梦方酣",
+          "corrected": "银灯背帐梦方酣",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#454 (銀燈背帳夢方酣); 识典古籍: 「銀」 in 5 books ([御選]歷代詩餘；古今圖書集成·閨媛典；御選歷代詩餘), dataset reading 「恨」 in 0"
+        },
+        {
+          "original": "风箫歇",
+          "corrected": "凤箫歇",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#444 (鳳簫歇); 识典古籍: 「鳳」 in 4 books (嘯餘譜；御選歷代詩餘；花間集), dataset reading 「风」 in 0"
+        },
+        {
+          "original": "画意深处麝烟微",
+          "corrected": "画堂深处麝烟微",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#482 (畫堂深處麝煙微); 识典古籍: 「堂」 in 3 books (御選歷代詩餘；花菴詞選；花間集), dataset reading 「意」 in 0"
+        },
+        {
+          "original": "蓼岸风多枯柚香",
+          "corrected": "蓼岸风多橘柚香",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#673 (蓼岸風多橘柚香); 识典古籍: 「橘」 in 3 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「枯」 in 0"
+        },
+        {
+          "original": "缓风迟日洗头天",
+          "corrected": "暖风迟日洗头天",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#678 (暖風遲日洗頭天); 识典古籍: 「暖」 in 3 books (花間集；詞苑英華；詩余廣選), dataset reading 「缓」 in 0"
+        },
+        {
+          "original": "得人怜处且先疏",
+          "corrected": "得人怜处且生疏",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#681 (得人憐處且生疎); 识典古籍: 「生」 in 4 books (御定全唐詩；清綺軒詞選；花間集), dataset reading 「先」 in 0"
+        },
+        {
+          "original": "烟际江",
+          "corrected": "烟际红",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#692 (煙際紅); 识典古籍: 「紅」 in 3 books (御定詞譜；河南通志；花間集), dataset reading 「江」 in 0"
+        },
+        {
+          "original": "官娥相与传",
+          "corrected": "宫娥相与传",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#693 (宮娥相與傳); 识典古籍: 「宮」 in 3 books (御定全唐詩；御定詞譜；花間集), dataset reading 「官」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-8-juan.json": {
-      "date": "2026-10-04",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -12297,26 +12744,132 @@
           "original": "云袅翠翘",
           "corrected": "云鬟袅翠翘",
           "note": "Ci pattern anomaly (菩萨蛮, 常体 sentence length 5): missing char restored; 2 books on 识典古籍 support it (e.g. 《唐宋諸賢絶妙詞選》, 《花間集》), 0 support the dataset's version"
+        },
+        {
+          "original": "钩垂一画帘",
+          "corrected": "钩垂一面帘",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#696 (鉤垂一面簾); 识典古籍: 「面」 in 6 books ([御選]歷代詩餘；御定全唐詩；御選歷代詩餘), dataset reading 「画」 in 0"
+        },
+        {
+          "original": "小庭花落无人归",
+          "corrected": "小庭花落无人扫",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#698 (小庭花落無人掃); 识典古籍: 「掃」 in 3 books (御選歷代詩餘；花間集；詞海評林), dataset reading 「归」 in 0"
+        },
+        {
+          "original": "簪见神仙伴侣",
+          "corrected": "瞥见神仙伴侣",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#730 (瞥見神仙伴侶); 识典古籍: 「瞥」 in 5 books (古今圖書集成·閨媛典；御定全唐詩；花草稡編), dataset reading 「簪」 in 0"
+        },
+        {
+          "original": "粉翘两悠飏",
+          "corrected": "粉翅两悠飏",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#735 (粉翅兩悠颺); 识典古籍: 「翅」 in 5 books (御定全唐詩；御定詞譜；文體明辯), dataset reading 「翘」 in 0"
+        },
+        {
+          "original": "鸳鸯对时飞起",
+          "corrected": "鸳鸯对对飞起",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#741 (鴛鴦對對飛起); 识典古籍: 「對」 in 3 books (御選歷代詩餘；花間集；詞鵠初編), dataset reading 「时」 in 0"
+        },
+        {
+          "original": "江兰绿蕙愁死",
+          "corrected": "红兰绿蕙愁死",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#742 (紅蘭綠蕙愁死); 识典古籍: 「紅」 in 4 books (御選歷代詩餘；花草稡編；花間集), dataset reading 「江」 in 0"
+        },
+        {
+          "original": "泊飘汀",
+          "corrected": "泊枫汀",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#744 (泊楓汀); 识典古籍: 「楓」 in 3 books (御選歷代詩餘；花間集；詞海評林), dataset reading 「飘」 in 0"
+        },
+        {
+          "original": "黄鹊叫",
+          "corrected": "黄鹄叫",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#744 (黃鵠叫); 识典古籍: 「鵠」 in 5 books (御選歷代詩餘；花草稡編；花間集), dataset reading 「鹊」 in 0"
+        },
+        {
+          "original": "邀入解佩珰",
+          "corrected": "邀人解佩珰",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#499 (邀人解佩璫); 识典古籍: 「人」 in 2 books (御定全唐詩；御選歷代詩餘), dataset reading 「入」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-9-juan.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
           "original": "姣绡雾縠笼香雪",
           "corrected": "鲛绡雾縠笼香雪",
           "note": "needs_review: 魏承班《渔歌子·柳如眉》。Poem text reads '姣绡' but note 1 explicitly glosses '蛟绡--鲛绡：即鲛绡，相传为鲛人所织的绡', indicating intended character is 蛟 (or 鲛). '姣' (beautiful) vs '蛟/鲛' (mythological sea creature) is a known look-alike substitution. Authoritative source needed to confirm. | 2026-10-06 resolved: 魏承班《渔歌子》: 「鲛绡雾縠笼香雪」，本条注释亦释「鲛绡」 (Tier 1)"
+        },
+        {
+          "original": "柳妖桃艳不胜春",
+          "corrected": "柳夭桃艳不胜春",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#662 (柳夭桃豔不勝春); 识典古籍: 「夭」 in 2 books (御定全唐詩；詞海評林), dataset reading 「妖」 in 0"
+        },
+        {
+          "original": "袅宵不得与君同",
+          "corrected": "良宵不得与君同",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#662 (良宵不得與君同); 识典古籍: 「良」 in 3 books (御選歷代詩餘；花間集；蜀十五家詞), dataset reading 「袅」 in 0"
+        },
+        {
+          "original": "小庭花露泣浓香",
+          "corrected": "小庭花露泣浓春",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#665 (小庭花露泣濃春); 识典古籍: 「春」 in 4 books (唐宋諸賢絶妙詞選；御定全唐詩；花草稡編), dataset reading 「香」 in 0"
+        },
+        {
+          "original": "残红落地碎香钿",
+          "corrected": "残红满地碎香钿",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#536 (殘紅滿地碎香鈿); 识典古籍: 「滿」 in 4 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「落」 in 0"
+        },
+        {
+          "original": "远山愁黛眉",
+          "corrected": "远山愁黛碧",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#552 (遠山愁黛碧); 识典古籍: 「碧」 in 4 books (古今圖書集成·閨媛典；御選歷代詩餘；花草稡編), dataset reading 「眉」 in 0"
         }
       ]
     },
     "五代诗词/huajianji/huajianji-x-juan.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "笑招金靥",
+          "corrected": "笑拈金靥",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#544 (笑拈金靨); 识典古籍: 「拈」 in 5 books (御定全唐詩；花間集；詞律), dataset reading 「招」 in 0"
+        },
+        {
+          "original": "闲卧绣纬",
+          "corrected": "闲卧绣帏",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#534 (閑臥繡幃); 识典古籍: 「幃」 in 3 books (花間集；詞律；詞海評林), dataset reading 「纬」 in 0"
+        },
+        {
+          "original": "行客待湘天欲暮",
+          "corrected": "行客待潮天欲暮",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#568 (行客待潮天欲暮); 识典古籍: 「潮」 in 4 books (御定全唐詩；御選歷代詩餘；花間集), dataset reading 「湘」 in 0"
+        },
+        {
+          "original": "药盈岸",
+          "corrected": "花盈岸",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#569 (花盈岸); 识典古籍: 「花」 in 5 books (古今圖書集成·閨媛典；御選歷代詩餘；花間集), dataset reading 「药」 in 0"
+        },
+        {
+          "original": "斜桐花下越台前",
+          "corrected": "刺桐花下越台前",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#570 (刺桐花下越臺前); 识典古籍: 「刺」 in 3 books (花間集；詞綜；詩餘廣選), dataset reading 「斜」 in 0"
+        },
+        {
+          "original": "捻得宝筝凋",
+          "corrected": "捻得宝筝调",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#595 (捻得寶箏調); 识典古籍: 「調」 in 5 books (續詞選；花草稡編；花間集), dataset reading 「凋」 in 0"
+        },
+        {
+          "original": "檐声幽",
+          "corrected": "橹声幽",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#603 (櫓聲幽); 识典古籍: 「櫓」 in 2 books (花草稡編；花間集), dataset reading 「檐」 in 0"
+        }
+      ]
     },
     "五代诗词/nantang/intro.json": {
       "date": "2026-06-26",
@@ -12325,14 +12878,64 @@
       "fixes": []
     },
     "五代诗词/nantang/poetrys.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
         {
           "original": "红锦地依随步皱。",
           "corrected": "红锦地衣随步皱。",
           "note": "Sound-alike typo: 依 (yī, to rely on) → 衣 (yī, fabric/clothing); confirmed by the poem's own note which glosses '红锦地衣--红色锦缎制成的地毯'; 李煜《浣溪沙·红日已高三丈透》"
+        },
+        {
+          "original": "触目柔肠断",
+          "corrected": "触目愁肠断",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#82 (觸目愁腸斷); 识典古籍: 「愁」 in 8 books (唐宋諸賢絶妙詞選；尊前集；御選歷代詩餘), dataset reading 「柔」 in 0"
+        },
+        {
+          "original": "庭前春逐红英尽",
+          "corrected": "亭前春逐红英尽",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#77 (亭前春逐紅英盡); 识典古籍: 「亭」 in 4 books (南唐二主詞；清綺軒詞選；類編箋釋續選草堂詩餘), dataset reading 「庭」 in 0"
+        },
+        {
+          "original": "绿窗冷静芳英断",
+          "corrected": "绿窗冷静芳音断",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#77 (綠窗冷靜芳音斷); 识典古籍: 「音」 in 6 books (尊前集；御定全唐詩；御選歷代詩餘), dataset reading 「英」 in 0"
+        },
+        {
+          "original": "早觉伤春暮",
+          "corrected": "渐觉伤春暮",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#95 (漸覺傷春暮); 识典古籍: 「漸」 in 4 books (唐宋諸賢絶妙詞選；歐陽文忠公全集；歐陽文忠公文集), dataset reading 「早」 in 0"
+        },
+        {
+          "original": "雨相和",
+          "corrected": "雨如和",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#73 (雨如和); 识典古籍: 「如」 in 9 books (南唐二主詞；御定全唐詩；御選歷代詩餘), dataset reading 「相」 in 0"
+        },
+        {
+          "original": "留连光景惜春颜",
+          "corrected": "留连光景惜朱颜",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#84 (留連光景惜朱顏); 识典古籍: 「朱」 in 5 books (六一詞；增修箋注妙選草堂詩餘；樂府雅詞), dataset reading 「春」 in 0"
+        },
+        {
+          "original": "一任珠帘闲不卷",
+          "corrected": "一桁珠帘闲不卷",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#89 (一桁珠簾閑不卷); 识典古籍: 「桁」 in 5 books (南唐二主詞；御定全唐詩；御選歷代詩餘), dataset reading 「任」 in 0"
+        },
+        {
+          "original": "琼窗梦断双蛾皱",
+          "corrected": "琼窗春断双蛾皱",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#76 (瓊窗春斷雙蛾皺); 识典古籍: 「春」 in 6 books (十名家詞集；嘯餘譜；增修箋注妙選群英草堂詩餘前集), dataset reading 「梦」 in 0"
+        },
+        {
+          "original": "归时休放烛光红",
+          "corrected": "归时休放烛花红",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#90 (歸時休放燭花紅); 识典古籍: 「花」 in 4 books (御定全唐詩；御定詞譜；御選歷代詩餘), dataset reading 「光」 in 0"
+        },
+        {
+          "original": "待月池馆空逝水",
+          "corrected": "待月池台空逝水",
+          "note": "Twin collation with 全唐诗/poet.tang.49000.json#75 (待月池臺空逝水); 识典古籍: 「臺」 in 4 books ([御選]歷代詩餘；御選歷代詩餘；花草稡編), dataset reading 「馆」 in 0"
         }
       ]
     },
@@ -15281,7 +15884,7 @@
       ]
     },
     "全唐诗/poet.tang.11000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -15459,11 +16062,26 @@
           "original": "回首共悲歡",
           "corrected": "回首共悲歎",
           "note": "Twin collation: 歡 → 歎; the other source (御定全唐詩) and 2 books on 识典古籍 read 歎 (e.g. 《杜工部集》杜工部集卷第五十“逸詩拾遺”, 《杜甫集》分門集注杜工部詩卷第十二“述懷上”), none support 歡"
+        },
+        {
+          "original": "盤餐市遠無兼味",
+          "corrected": "盤飧市遠無兼味",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (盘飧市远无兼味); 识典古籍: 「飧」 in 3 books (後村先生大全集；杜工部詩説；杜工部集), dataset reading 「餐」 in 0"
+        },
+        {
+          "original": "寄書長不避",
+          "corrected": "寄書長不達",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (寄書長不達); 识典古籍: 「達」 in 3 books (杜甫集；瀛奎律隨；補注杜詩), dataset reading 「避」 in 0"
+        },
+        {
+          "original": "詞客衰時且未還",
+          "corrected": "詞客哀時且未還",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (詞客哀時且未還); 识典古籍: 「哀」 in 7 books (唐詩品彙；唐詩所；唐詩類苑), dataset reading 「衰」 in 0"
         }
       ]
     },
     "全唐诗/poet.tang.12000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -15681,6 +16299,11 @@
           "original": "[lacuna marker] 囗 ×20",
           "corrected": "[lacuna marker] □",
           "note": "Lacuna marker 囗 (U+56D7, a radical not used in running text) unified to □ (U+25A1) as elsewhere in the dataset; component notation like <囗贵> left untouched"
+        },
+        {
+          "original": "霄漢長懷捧日新",
+          "corrected": "霄漢長懷捧日心",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (霄漢長懷捧日心); 识典古籍: 「心」 in 3 books (唐詩三百首注釋；唐詩紀事；唐詩選), dataset reading 「新」 in 0"
         }
       ]
     },
@@ -16049,7 +16672,7 @@
       ]
     },
     "全唐诗/poet.tang.10000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -16497,6 +17120,16 @@
           "original": "[notes] inline variant notes 8, block notes 0 in paragraphs",
           "corrected": "[notes] moved to the notes field",
           "note": "Editorial notes separated from the text: 「一作…」/「某本作…」 variant notes moved with up to 4 preceding characters as anchor; whole-line notes (sources, collation remarks) moved verbatim. Manuscript corrections X（Y）/[X]（Y）, 联句 speaker tags and lacuna markers left in place."
+        },
+        {
+          "original": "一舞劒氣動四方",
+          "corrected": "一舞劒器動四方",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (一舞劍器動四方); 识典古籍: 「器」 in 8 books (分門集注杜工部詩；李杜詩選；杜工部集), dataset reading 「氣」 in 0"
+        },
+        {
+          "original": "腰下實玦青珊瑚",
+          "corrected": "腰下寶玦青珊瑚",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (腰下寶玦青珊瑚); 识典古籍: 「寶」 in 8 books (唐詩三百首注疏；杜工部集；杜甫集), dataset reading 「實」 in 0"
         }
       ]
     },
@@ -16574,7 +17207,7 @@
       ]
     },
     "全唐诗/poet.tang.15000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -16717,6 +17350,11 @@
           "original": "[lacuna marker] 囗 ×4",
           "corrected": "[lacuna marker] □",
           "note": "Lacuna marker 囗 (U+56D7, a radical not used in running text) unified to □ (U+25A1) as elsewhere in the dataset; component notation like <囗贵> left untouched"
+        },
+        {
+          "original": "回家衣食無厚薄",
+          "corrected": "田家衣食無厚薄",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (田家衣食无厚薄); 识典古籍: 「田」 in 7 books (唐世精華；唐百家詩選；唐詩正聲), dataset reading 「回」 in 0"
         }
       ]
     },
@@ -17471,7 +18109,7 @@
       ]
     },
     "全唐诗/poet.tang.20000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -17559,6 +18197,11 @@
           "original": "宮入正靨黃",
           "corrected": "宮人正靨黃",
           "note": "Twin collation: 入 → 人; the other source (御定全唐詩) and 6 books on 识典古籍 read 人 (e.g. 《唐李長吉詩集》卷一, 《李賀歌詩編》歌詩編第一“同沈駙馬賦得御溝水”), none support 入"
+        },
+        {
+          "original": "大漠山如雪",
+          "corrected": "大漠沙如雪",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (大漠沙如雪); 识典古籍: 「沙」 in 4 books (唐詩類苑；宋洪魏公進萬首唐人絶句；昌谷集), dataset reading 「山」 in 0"
         }
       ]
     },
@@ -20544,7 +21187,7 @@
       ]
     },
     "全唐诗/poet.tang.49000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -20572,11 +21215,16 @@
           "original": "畫成小簡寄情人",
           "corrected": "書成小簡寄情人",
           "note": "Twin collation: 畫 → 書; the other source (御定全唐詩) and 2 books on 识典古籍 read 書 (e.g. 《尊前集》卷下, 《尊前集》尊前集卷下“毛文錫”), none support 畫"
+        },
+        {
+          "original": "想思空有夢相尋",
+          "corrected": "相思空有夢相尋",
+          "note": "Twin collation with 五代诗词/huajianji/huajianji-5-juan.json (相思空有梦相寻); 识典古籍: 「相」 in 3 books (御定駢字類編；花間集；詞綜), dataset reading 「想」 in 0"
         }
       ]
     },
     "全唐诗/poet.tang.5000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -20659,6 +21307,16 @@
           "original": "備知輕濟道",
           "corrected": "備知經濟道",
           "note": "Twin collation: 輕 → 經; the other source (御定全唐詩) and 7 books on 识典古籍 read 經 (e.g. 《十二家唐詩》王摩詰集卷上, 《唐王右丞詩劉須溪校本》卷五), none support 輕"
+        },
+        {
+          "original": "步行奪得胡馬射",
+          "corrected": "步行奪得胡馬騎",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (步行奪得胡馬騎); 识典古籍: 「騎」 in 3 books (唐詩所；王維集；苑詩類選), dataset reading 「射」 in 0"
+        },
+        {
+          "original": "世事磋跎成白首",
+          "corrected": "世事蹉跎成白首",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (世事蹉跎成白首); 识典古籍: 「蹉」 in 8 books (十二家唐詩；唐樂府；唐王右丞詩集注説), dataset reading 「磋」 in 0"
         }
       ]
     },
@@ -21079,7 +21737,7 @@
       ]
     },
     "全唐诗/poet.tang.8000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -21237,11 +21895,16 @@
           "original": "[notes] inline variant notes 3, block notes 0 in paragraphs",
           "corrected": "[notes] moved to the notes field",
           "note": "Editorial notes separated from the text: 「一作…」/「某本作…」 variant notes moved with up to 4 preceding characters as anchor; whole-line notes (sources, collation remarks) moved verbatim. Manuscript corrections X（Y）/[X]（Y）, 联句 speaker tags and lacuna markers left in place."
+        },
+        {
+          "original": "仍連故鄉水",
+          "corrected": "仍憐故鄉水",
+          "note": "Twin collation with 蒙学/tangshisanbaishou.json (仍憐故鄉水); 识典古籍: 「憐」 in 4 books (唐詩品彙；文體明辯；李太白文集), dataset reading 「連」 in 0"
         }
       ]
     },
     "全唐诗/poet.tang.28000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -21349,6 +22012,16 @@
           "original": "戌樓春帶雪",
           "corrected": "戍樓春帶雪",
           "note": "Twin collation: 戌 → 戍; the other source (御定全唐詩) and 4 books on 识典古籍 read 戍 (e.g. 《唐人百家詩》樊川集卷六, 《唐詩類苑》唐詩類苑卷第二十七“地部”), none support 戌"
+        },
+        {
+          "original": "千里鶯啼綠映江",
+          "corrected": "千里鶯啼綠映紅",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (千里莺啼绿映红); 识典古籍: 「红」 in 3 books (箋注唐賢三體詩法；箋注唐賢絶句三體詩法；絶句辯體), dataset reading 「江」 in 0"
+        },
+        {
+          "original": "早鴈拂銀河",
+          "corrected": "早鴈拂金河",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (早雁拂金河); 识典古籍: 「金」 in 3 books (古今圖書集成·歲功典；唐詩品彙；唐詩類苑), dataset reading 「銀」 in 0"
         }
       ]
     },
@@ -21504,7 +22177,7 @@
       ]
     },
     "全唐诗/poet.tang.9000.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -21672,14 +22345,75 @@
           "original": "猶自未對侯",
           "corrected": "猶自未封侯",
           "note": "Twin collation: 對 → 封; the other source (御定全唐詩) and 5 books on 识典古籍 read 封 (e.g. 《古今圖書集成·邊裔典》欽定古今圖書集成方輿彙編邊裔典第二千六百六十三卷“北方諸國總部藝文三詩”, 《唐詩類苑》卷四十一), none support 對"
+        },
+        {
+          "original": "忽然一夜春風來",
+          "corrected": "忽如一夜春風來",
+          "note": "Twin collation with 水墨唐诗/shuimotangshi.json (忽如一夜春风来); 识典古籍: 「如」 in 3 books (岑參集；情采編；淵鑑類函), dataset reading 「然」 in 0"
         }
       ]
     },
     "全唐诗/唐诗三百首.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "名蜀教坊第一部",
+          "corrected": "名屬教坊第一部",
+          "note": "Twin collation with 全唐诗/poet.tang.22000.json#506 (名屬教坊第一部); 识典古籍: 「屬」 in 4 books (古今圖書集成·樂律典；情采編；詩雋類函), dataset reading 「蜀」 in 0"
+        },
+        {
+          "original": "孤燭異鄉春",
+          "corrected": "孤燭異鄉人",
+          "note": "Twin collation with 全唐诗/poet.tang.37000.json#945 (孤燭異鄉人); 识典古籍: 「人」 in 3 books (古今圖書集成·歲功典；孟浩然詩集；重選唐音大成), dataset reading 「春」 in 0"
+        },
+        {
+          "original": "投詩贈汩羅",
+          "corrected": "投詩贈汨羅",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#154 (投詩贈汨羅); 识典古籍: 「汨」 in 4 books (杜工部五言詩選直解；歷朝詩約選；詩歸), dataset reading 「汩」 in 0"
+        },
+        {
+          "original": "世事磋跎成白首",
+          "corrected": "世事蹉跎成白首",
+          "note": "Twin collation with 全唐诗/poet.tang.5000.json#922 (世事蹉跎成白首); 识典古籍: 「蹉」 in 8 books (十二家唐詩；唐樂府；唐王右丞詩集注説), dataset reading 「磋」 in 0"
+        },
+        {
+          "original": "寄書長不避",
+          "corrected": "寄書長不達",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#131 (寄書長不達); 识典古籍: 「達」 in 3 books (杜甫集；瀛奎律隨；補注杜詩), dataset reading 「避」 in 0"
+        },
+        {
+          "original": "盤餐市遠無兼味",
+          "corrected": "盤飧市遠無兼味",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#214 (盤飧市遠無兼味); 识典古籍: 「飧」 in 3 books (後村先生大全集；杜工部詩説；杜工部集), dataset reading 「餐」 in 0"
+        },
+        {
+          "original": "詞客衰時且未還",
+          "corrected": "詞客哀時且未還",
+          "note": "Twin collation with 全唐诗/poet.tang.11000.json#631 (詞客哀時且未還); 识典古籍: 「哀」 in 7 books (唐詩品彙；唐詩所；唐詩類苑), dataset reading 「衰」 in 0"
+        },
+        {
+          "original": "腰下實玦青珊瑚",
+          "corrected": "腰下寶玦青珊瑚",
+          "note": "Twin collation with 全唐诗/poet.tang.10000.json#616 (腰下寶玦青珊瑚); 识典古籍: 「寶」 in 8 books (唐詩三百首注疏；杜工部集；杜甫集), dataset reading 「實」 in 0"
+        },
+        {
+          "original": "霄漢長懷捧日新",
+          "corrected": "霄漢長懷捧日心",
+          "note": "Twin collation with 全唐诗/poet.tang.12000.json#437 (霄漢長懷捧日心); 识典古籍: 「心」 in 3 books (唐詩三百首注釋；唐詩紀事；唐詩選), dataset reading 「新」 in 0"
+        },
+        {
+          "original": "忽然一夜春風來",
+          "corrected": "忽如一夜春風來",
+          "note": "Twin collation with 全唐诗/poet.tang.9000.json#660 (忽如一夜春風來); 识典古籍: 「如」 in 3 books (岑參集；情采編；淵鑑類函), dataset reading 「然」 in 0"
+        },
+        {
+          "original": "仍連故鄉水",
+          "corrected": "仍憐故鄉水",
+          "note": "Twin collation with 全唐诗/poet.tang.8000.json#424 (仍憐故鄉水); 识典古籍: 「憐」 in 4 books (唐詩品彙；文體明辯；李太白文集), dataset reading 「連」 in 0"
+        }
+      ]
     },
     "全唐诗/唐诗补录.json": {
       "date": "2026-06-26",
@@ -125702,10 +126436,16 @@
       "fixes": []
     },
     "御定全唐詩/json/174.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "仍連故鄉水",
+          "corrected": "仍憐故鄉水",
+          "note": "李白《渡荊門送別》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
+        }
+      ]
     },
     "御定全唐詩/json/175.json": {
       "date": "2026-10-06",
@@ -126074,10 +126814,16 @@
       ]
     },
     "御定全唐詩/json/199.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean",
-      "fixes": []
+      "date": "2026-10-07",
+      "reviewer": "claude-opus-5-5",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "忽然一夜春風來",
+          "corrected": "忽如一夜春風來",
+          "note": "岑參《白雪歌送武判官歸京》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
+        }
+      ]
     },
     "御定全唐詩/json/200.json": {
       "date": "2026-10-06",
@@ -126436,7 +127182,7 @@
       ]
     },
     "御定全唐詩/json/222.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -126454,6 +127200,11 @@
           "original": "明主正郁陶。憶昔範增碎玉鬥，\"\n  ",
           "corrected": "明主正郁陶。憶昔范增碎玉鬥，\"\n  ",
           "note": "Simplified→traditional conversion error: 範增 → 范增 (context-checked; e.g. 斗 dipper/constellation, 髮 hair, 谷 valley, 后 sovereign/earth deity, 范/松 names & pine)"
+        },
+        {
+          "original": "一舞劍氣動四方",
+          "corrected": "一舞劍器動四方",
+          "note": "杜甫《觀公孫大娘弟子舞劍器行》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
         }
       ]
     },
@@ -126522,7 +127273,7 @@
       ]
     },
     "御定全唐詩/json/225.json": {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -126530,6 +127281,11 @@
           "original": "胡羯漫倡狂",
           "corrected": "胡羯漫猖狂",
           "note": "Twin collation: 倡 → 猖; the other source (全唐诗) and 8 books on 识典古籍 read 猖 (e.g. 《分門集注杜工部詩》卷十八, 《刻杜少陵先生詩分類集注》刻杜少陵先生詩分類集注卷之九), none support 倡"
+        },
+        {
+          "original": "寄書長不避",
+          "corrected": "寄書長不達",
+          "note": "杜甫《月夜憶舍弟》: same error as 全唐诗, corrected there by twin collation with 唐诗三百首/千家诗/水墨唐诗 and 识典古籍 (see 全唐诗 entry); synced to 御定全唐詩"
         }
       ]
     },
