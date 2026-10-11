@@ -30,7 +30,7 @@
 
 ## 本 Fork 的数据修正
 
-本仓库 fork 自 [chinese-poetry/chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)。原数据爬取自网络，存在大量乱码、缺字与重复。本 fork 以古籍检索为证据做了系统性修正，**JSON 结构与字段保持不变**，可直接替换使用；每一处改动都记录在 [`fix_progress.json`](fix_progress.json) 中（原文、改后、依据出处）。
+本仓库 fork 自 [chinese-poetry/chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)。原数据爬取自网络，存在大量乱码、缺字与重复。本 fork 以古籍检索为证据做了系统性修正，并去掉了唐诗部分的重复数据（见下文「对使用者的影响」）；JSON 字段格式不变，只在部分唐诗记录上新增了 `prologue`；每一处改动都记录在 [`fix_progress.json`](fix_progress.json) 中（原文、改后、依据出处）。
 
 ### 主要修改
 
@@ -59,6 +59,10 @@
 ### 对使用者的影响
 
 - [`loader/datas.json`](loader/datas.json) **不再导入 `御定全唐詩/`**：它与 `全唐诗/` 中的唐诗是同一部《全唐诗》的两份数据，同时导入会造成约 1.9 万首重复。数据文件仍保留，供对勘使用。
+- **唐诗选本并入全唐诗，去掉重复**（逐首记录见 [`docs/唐诗去重.tsv`](docs/唐诗去重.tsv)）：
+  - 删除 `全唐诗/唐诗三百首.json`：它是从 `poet.tang.*` 抽出的副本，且有 3 首署名有误（如金昌绪《春怨》记作宋僧释明辩）。366 首都已在 `poet.tang.*` 中找到，标签并入原记录，按 `tags` 中的「唐诗三百首」筛选即可。
+  - `水墨唐诗/` 中能在全唐诗找到的 172 首，在 `poet.tang.*` 原记录上加标签「水墨唐诗」并带上赏析 `prologue`。文件只留下全唐诗未收或改写较多的 4 首（如杜牧《清明》）。
+  - `poet.tang.*` 删除 548 首同时收在 `五代诗词/huajianji/`（花间集）或 `五代诗词/nantang/`（南唐二主词）中的同一作者的同一首词，以带词牌结构的选本为准。作者不同的属于归属异说，两边都保留，如《应天长》李璟／李煜。
 - 仍有约 130 个文件含待复核项（主要是底本原有的 `□` 缺字，以及古籍中也无法确认的乱码），详见 `fix_progress.json` 中 `corrected` 为 `null` 的条目。`全唐诗/error/` 是上游标出的问题数据，不在发布范围内，标记为 `out_of_scope`。
 
 ### 工具与参与
@@ -66,6 +70,7 @@
 - [`scripts/check_structure.py`](scripts/check_structure.py)：全库质检（乱码、缺字、诗句与词牌字数异常），只报告不修改。
 - [`scripts/twin_fix.py`](scripts/twin_fix.py)：全唐诗 ↔ 御定全唐詩 对勘还原残渣。
 - [`scripts/twin_collate.py`](scripts/twin_collate.py)：选本（花间集、唐诗三百首、千家诗等）↔ 全唐诗 / 宋词 互校，一字之差以识典古籍判定，人工审核后写回；已审条目记在 [`docs/小合集互校.applied.json`](docs/小合集互校.applied.json)。
+- [`scripts/merge_anthologies.py`](scripts/merge_anthologies.py)：把唐诗选本并入全唐诗、删除重复（默认预演，`--apply` 写回）。
 - [`scripts/shidian.py`](scripts/shidian.py)：以识典古籍批量检索为证据，生成审核表，人工确认后写回。
 - [`scripts/collate.py`](scripts/collate.py)：整部合集逐句与古籍对勘，由 GitHub Actions 每天定时分批运行。宋词对勘正在进行中，进度与参与方式见 [`docs/宋词对勘.md`](docs/宋词对勘.md)。
 - 参与修正请阅读 [`AGENTS.md`](AGENTS.md)（适用于人工与 AI 贡献者）。

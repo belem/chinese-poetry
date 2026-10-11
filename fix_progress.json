@@ -3,12 +3,12 @@
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
     "total_files": 1589,
-    "reviewed": 1590,
+    "reviewed": 1589,
     "clean": 398,
-    "fixed": 777,
+    "fixed": 776,
     "needs_review": 102,
     "out_of_scope": 313,
-    "in_scope_files": 1277
+    "in_scope_files": 1276
   },
   "reviewed": {
     "御定全唐詩/json/768.json": {
@@ -12793,7 +12793,7 @@
       ]
     },
     "五代诗词/huajianji/huajianji-9-juan.json": {
-      "date": "2026-10-07",
+      "date": "2026-10-11",
       "reviewer": "claude-opus-5-5",
       "status": "fixed",
       "fixes": [
@@ -12826,6 +12826,11 @@
           "original": "远山愁黛眉",
           "corrected": "远山愁黛碧",
           "note": "Twin collation with 全唐诗/poet.tang.49000.json#552 (遠山愁黛碧); 识典古籍: 「碧」 in 4 books (古今圖書集成·閨媛典；御選歷代詩餘；花草稡編), dataset reading 「眉」 in 0"
+        },
+        {
+          "original": "author: 尹鹗 六首（6 首）",
+          "corrected": "author: 尹鹗",
+          "note": "作者字段混入组诗计数「六首」，与全唐诗 尹鶚 对齐"
         }
       ]
     },
@@ -22350,68 +22355,6 @@
           "original": "忽然一夜春風來",
           "corrected": "忽如一夜春風來",
           "note": "Twin collation with 水墨唐诗/shuimotangshi.json (忽如一夜春风来); 识典古籍: 「如」 in 3 books (岑參集；情采編；淵鑑類函), dataset reading 「然」 in 0"
-        }
-      ]
-    },
-    "全唐诗/唐诗三百首.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "名蜀教坊第一部",
-          "corrected": "名屬教坊第一部",
-          "note": "Twin collation with 全唐诗/poet.tang.22000.json#506 (名屬教坊第一部); 识典古籍: 「屬」 in 4 books (古今圖書集成·樂律典；情采編；詩雋類函), dataset reading 「蜀」 in 0"
-        },
-        {
-          "original": "孤燭異鄉春",
-          "corrected": "孤燭異鄉人",
-          "note": "Twin collation with 全唐诗/poet.tang.37000.json#945 (孤燭異鄉人); 识典古籍: 「人」 in 3 books (古今圖書集成·歲功典；孟浩然詩集；重選唐音大成), dataset reading 「春」 in 0"
-        },
-        {
-          "original": "投詩贈汩羅",
-          "corrected": "投詩贈汨羅",
-          "note": "Twin collation with 全唐诗/poet.tang.11000.json#154 (投詩贈汨羅); 识典古籍: 「汨」 in 4 books (杜工部五言詩選直解；歷朝詩約選；詩歸), dataset reading 「汩」 in 0"
-        },
-        {
-          "original": "世事磋跎成白首",
-          "corrected": "世事蹉跎成白首",
-          "note": "Twin collation with 全唐诗/poet.tang.5000.json#922 (世事蹉跎成白首); 识典古籍: 「蹉」 in 8 books (十二家唐詩；唐樂府；唐王右丞詩集注説), dataset reading 「磋」 in 0"
-        },
-        {
-          "original": "寄書長不避",
-          "corrected": "寄書長不達",
-          "note": "Twin collation with 全唐诗/poet.tang.11000.json#131 (寄書長不達); 识典古籍: 「達」 in 3 books (杜甫集；瀛奎律隨；補注杜詩), dataset reading 「避」 in 0"
-        },
-        {
-          "original": "盤餐市遠無兼味",
-          "corrected": "盤飧市遠無兼味",
-          "note": "Twin collation with 全唐诗/poet.tang.11000.json#214 (盤飧市遠無兼味); 识典古籍: 「飧」 in 3 books (後村先生大全集；杜工部詩説；杜工部集), dataset reading 「餐」 in 0"
-        },
-        {
-          "original": "詞客衰時且未還",
-          "corrected": "詞客哀時且未還",
-          "note": "Twin collation with 全唐诗/poet.tang.11000.json#631 (詞客哀時且未還); 识典古籍: 「哀」 in 7 books (唐詩品彙；唐詩所；唐詩類苑), dataset reading 「衰」 in 0"
-        },
-        {
-          "original": "腰下實玦青珊瑚",
-          "corrected": "腰下寶玦青珊瑚",
-          "note": "Twin collation with 全唐诗/poet.tang.10000.json#616 (腰下寶玦青珊瑚); 识典古籍: 「寶」 in 8 books (唐詩三百首注疏；杜工部集；杜甫集), dataset reading 「實」 in 0"
-        },
-        {
-          "original": "霄漢長懷捧日新",
-          "corrected": "霄漢長懷捧日心",
-          "note": "Twin collation with 全唐诗/poet.tang.12000.json#437 (霄漢長懷捧日心); 识典古籍: 「心」 in 3 books (唐詩三百首注釋；唐詩紀事；唐詩選), dataset reading 「新」 in 0"
-        },
-        {
-          "original": "忽然一夜春風來",
-          "corrected": "忽如一夜春風來",
-          "note": "Twin collation with 全唐诗/poet.tang.9000.json#660 (忽如一夜春風來); 识典古籍: 「如」 in 3 books (岑參集；情采編；淵鑑類函), dataset reading 「然」 in 0"
-        },
-        {
-          "original": "仍連故鄉水",
-          "corrected": "仍憐故鄉水",
-          "note": "Twin collation with 全唐诗/poet.tang.8000.json#424 (仍憐故鄉水); 识典古籍: 「憐」 in 4 books (唐詩品彙；文體明辯；李太白文集), dataset reading 「連」 in 0"
         }
       ]
     },
