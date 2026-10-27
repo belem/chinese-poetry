@@ -29,7 +29,7 @@
         },
         "songshi": {
             "name": "全宋诗",
-            "id": 23,
+            "id": 26,
             "path": "宋代/诗/全宋诗/",
             "excludes": ["README.md", "error", "authors.song.json"],
             "tag": "paragraphs",
