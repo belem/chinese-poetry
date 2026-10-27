@@ -97,6 +97,55 @@
             "path": "课外经典/",
             "excludes": [],
             "tag": "paragraphs"
+        },
+        "yuefu-jis": {
+            "name": "乐府诗集",
+            "id": 14,
+            "path": "乐府诗集/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "gushi-yuan": {
+            "name": "古诗源",
+            "id": 15,
+            "path": "古诗源/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "tangshi-sanbai": {
+            "name": "唐诗三百首",
+            "id": 16,
+            "path": "唐诗三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "yuanqu-sanbai": {
+            "name": "元曲三百首",
+            "id": 17,
+            "path": "元曲三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "wenxuan": {
+            "name": "昭明文选",
+            "id": 18,
+            "path": "昭明文选/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "jinyuanxiandai": {
+            "name": "近现代诗",
+            "id": 21,
+            "path": "近现代诗/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "songci300": {
+            "name": "宋词三百首",
+            "id": 22,
+            "path": "宋词三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
         }
     }
 }
