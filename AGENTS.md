@@ -16,9 +16,9 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 ```
 先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源/汉魏六朝诗.json,诗文总集/{乐府诗集,昭明文选}}
-唐代/诗/全唐诗/（含 poet.song.* 即《全宋诗》）
+唐代/诗/全唐诗/（poet.tang.*）　宋代/诗/全宋诗/（poet.song.*）
 唐五代/词/五代诗词/{huajianji,nantang}
-宋代/宋词/
+宋代/{诗/全宋诗/,诗/古诗源·宋诗.json,宋词/}
 元代/元曲/  明代/诗/古诗源·明诗.json
 清代/诗/{古诗源·清诗.json,纳兰诗/}  清代/词/纳兰词/
 ```
@@ -43,7 +43,7 @@ import os, json, re
 
 ROOT = os.path.dirname(os.path.abspath('fix_progress.json'))
 SKIP = {'author', 'rank', 'settings', '表面结构字', 'error', 'fix_progress'}
-SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.claude', '.github', '.cnb', 'reference'}  # 唐代/诗/全唐诗/error is out of scope
+SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.claude', '.github', '.cnb', 'reference'}  # 宋代/诗/全宋诗/error is out of scope
 CYRILLIC_GREEK = re.compile(r'[Ѐ-ӿͰ-Ͽ]')
 
 # Build full file list (alphabetical)
@@ -249,7 +249,7 @@ Status values:
 - `clean` — no issues found, or every issue found was corrected (the `fixes` list may be empty)
 - `fixed` — same as `clean` for a file that had corrections; the entries you list are what the commit fixed
 - `needs_review` — corrections are still outstanding and worth tracking: either the file has not been collated line by line (batch records like `_新增选本`, `_目录重构：按朝代分层`), or a specific known defect is open. Rare-character lacunae (`□`, bare PUA) that no evidence can settle are **not** tracked here — `scripts/check_structure.py` reports them live
-- `out_of_scope` — not part of the published dataset (currently all of `唐代/诗/全唐诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
+- `out_of_scope` — not part of the published dataset (currently all of `宋代/诗/全宋诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
 
 Do not accumulate per-character repair history in this file: entries for completed fixes are deleted once the character is fixed in the dataset. Keep only what is still actionable.
 
