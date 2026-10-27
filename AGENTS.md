@@ -15,12 +15,16 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 数据按朝代分层，朝代下面是「一部书一个目录」或「诗 / 词 / 文」体裁目录，选本不并进总集：
 
 ```
-先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源,诗文总集/{乐府诗集,昭明文选}}
+先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源/汉魏六朝诗.json,诗文总集/{乐府诗集,昭明文选}}
 唐代/诗/全唐诗/（poet.tang.*）　宋代/诗/全宋诗/（poet.song.*）
 唐五代/词/五代诗词/{huajianji,nantang}
-宋代/{诗/全宋诗/,诗/古诗源·宋诗.json,词/宋词/,词/古诗源·宋词.json}
-元代/元曲/  清代/词/古诗源·清词.json  明代/（暂空）
+宋代/{诗/全宋诗/,诗/古诗源·宋诗.json,宋词/}
+元代/元曲/  明代/诗/古诗源·明诗.json
+清代/诗/{古诗源·清诗.json,纳兰诗/}  清代/词/纳兰词/
 ```
+
+一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
+只保留 `诗经/shijing.json`、`楚辞/chuci.json` 的全文版本。
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
 - `loader/datas.json` 是数据读取入口，dataset 的 key 不变，只改 `path`；新增目录要在那里注册。
@@ -224,7 +228,7 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 ```json
 {
   "reviewed": {
-    "宋代/词/宋词/ci.song.13000.json": {
+    "宋代/宋词/ci.song.13000.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "clean"

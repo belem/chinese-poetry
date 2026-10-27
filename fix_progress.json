@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋代/诗/全宋诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 516,
-    "reviewed": 700,
+    "total_files": 512,
+    "reviewed": 701,
     "clean": 483,
-    "fixed": 9,
+    "fixed": 10,
     "needs_review": 4,
     "out_of_scope": 204,
-    "in_scope_files": 516
+    "in_scope_files": 512
   },
   "reviewed": {
     "先秦汉魏晋南北朝/诗经/shijing.json": {
@@ -71,16 +71,6 @@
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "水墨唐诗/shuimotangshi.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
-    },
-    "纳兰性德/纳兰性德诗集.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
-    },
     "蒙学/baijiaxing.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
@@ -118,7 +108,7 @@
         }
       ]
     },
-    "宋代/词/宋词/ci.song.13000.json": {
+    "宋代/宋词/ci.song.13000.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "clean"
@@ -1446,12 +1436,14 @@
     "唐代/诗/全唐诗/poet.tang.0.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "clean",
+      "note": "水墨唐诗 并回时补录杜甫《绝句三首》「二十一人同入蜀」一首"
     },
     "唐代/诗/全唐诗/poet.tang.1000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "clean",
+      "note": "水墨唐诗 并回时补录賀知章《曉發》、杜牧《清明》两首"
     },
     "唐代/诗/全唐诗/poet.tang.11000.json": {
       "date": "2026-10-07",
@@ -3651,67 +3643,67 @@
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.0.json": {
+    "宋代/宋词/ci.song.0.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.1000.json": {
+    "宋代/宋词/ci.song.1000.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.10000.json": {
+    "宋代/宋词/ci.song.10000.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.11000.json": {
+    "宋代/宋词/ci.song.11000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.12000.json": {
+    "宋代/宋词/ci.song.12000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.14000.json": {
+    "宋代/宋词/ci.song.14000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.15000.json": {
+    "宋代/宋词/ci.song.15000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.16000.json": {
+    "宋代/宋词/ci.song.16000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.17000.json": {
+    "宋代/宋词/ci.song.17000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.18000.json": {
+    "宋代/宋词/ci.song.18000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.19000.json": {
+    "宋代/宋词/ci.song.19000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.2000.json": {
+    "宋代/宋词/ci.song.2000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.20000.json": {
+    "宋代/宋词/ci.song.20000.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "fixed",
@@ -3728,52 +3720,52 @@
         }
       ]
     },
-    "宋代/词/宋词/ci.song.2019y.json": {
+    "宋代/宋词/ci.song.2019y.json": {
       "date": "2026-06-26",
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.21000.json": {
+    "宋代/宋词/ci.song.21000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.3000.json": {
+    "宋代/宋词/ci.song.3000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.4000.json": {
+    "宋代/宋词/ci.song.4000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.5000.json": {
+    "宋代/宋词/ci.song.5000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.6000.json": {
+    "宋代/宋词/ci.song.6000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.7000.json": {
+    "宋代/宋词/ci.song.7000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.8000.json": {
+    "宋代/宋词/ci.song.8000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.9000.json": {
+    "宋代/宋词/ci.song.9000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/宋词三百首.json": {
+    "宋代/宋词/宋词三百首.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
@@ -3783,7 +3775,7 @@
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/author.song.json": {
+    "宋代/宋词/author.song.json": {
       "status": "clean",
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
@@ -3814,7 +3806,145 @@
           "original": null,
           "corrected": null,
           "note": "元曲三百首（8 个文件 / 29 首）已并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv；这 29 首仍未与古籍逐字对勘。"
+        },
+        {
+          "original": null,
+          "corrected": null,
+          "note": "逐文件记录拆分：《古诗源》一批（六朝诗、元明清诗、宋诗、清词、汉魏诗、先秦诗）在后续重构中已并入/改名/删除，其结论见 `_目录重构：按朝代分层`、`_已删除的文件：结构重构` 与 `先秦汉魏晋南北朝/古诗源/`、`明代/诗/古诗源·明诗.json`、`清代/诗/古诗源·清诗.json`、`先秦汉魏晋南北朝/古诗源/汉魏六朝诗.json` 各条；避免同一个文件在两处重复计数。"
         }
+      ],
+      "batch_files": [
+        "anthologies/songci300.json",
+        "anthologies/tangshi300.json",
+        "dynasties/dynasties.json",
+        "先秦汉魏晋南北朝/诗文总集/乐府诗集/乐府诗集.json",
+        "先秦汉魏晋南北朝/诗文总集/乐府诗集/卷一汉魏乐府.json",
+        "先秦汉魏晋南北朝/诗文总集/乐府诗集/卷二南朝乐府.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/七.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/上书.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/书.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/令.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/册.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/史论.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/史述赞.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/吊文.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/启.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/哀.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/墓志.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/奏记.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/对问.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/序.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/弹事.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/教.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/文.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/昭明文选.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/檄.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/碑文.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/祭文.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/符命.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/笺.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/箴.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/行状.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/表.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/论·论一.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/论·论三.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/论·论二.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/论·论四.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/设论.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诏.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诔.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·乐府上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·乐府下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·公䜩.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·军戎.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·劝励.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·反招隐.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·咏史.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·咏怀.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·哀伤.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·招隐.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·杂拟上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·杂拟下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·杂歌.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·杂诗上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·杂诗下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·游仙.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·游览.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·献诗.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·百一.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·祖饯.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·行旅上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·行旅下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·赠答一.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·赠答三.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·赠答二.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·赠答四.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·述德.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/诗·郊庙.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·京都上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·京都下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·京都中.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·哀伤.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·宫殿.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·志上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·志下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·志中.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·情.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·江海.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·游览.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·物色.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·畋猎.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·畋猎·补遗.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·纪行上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·纪行下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·耕藉.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·论文.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·郊祀.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·音乐上.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·音乐下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·鸟兽.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赋·鸟兽下.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/赞.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/连珠·论五.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/铭.json",
+        "先秦汉魏晋南北朝/诗文总集/昭明文选/颂.json",
+        "历代/ci.0.json",
+        "历代/ci.1.json",
+        "历代/fu.0.json",
+        "历代/other.0.json",
+        "历代/poet.0.json",
+        "历代/poet.1.json",
+        "历代/wen.0.json",
+        "历代/wen.1.json",
+        "历代/wen.2.json",
+        "古文观止/卷一周文.json",
+        "古文观止/卷七六朝唐文.json",
+        "古文观止/卷三周文.json",
+        "古文观止/卷九唐宋文.json",
+        "古文观止/卷二周文.json",
+        "古文观止/卷五汉文.json",
+        "古文观止/卷八唐文.json",
+        "古文观止/卷六汉文.json",
+        "古文观止/卷十一宋文.json",
+        "古文观止/卷十二明文.json",
+        "古文观止/卷十宋文.json",
+        "古文观止/卷四秦文.json",
+        "古文观止/古文观止.json",
+        "唐代/诗/全唐诗/poet.tang.58000.json",
+        "唐诗三百首/唐诗三百首.json",
+        "宋代/宋词/ci.song.22000.json",
+        "宋代/诗/全宋诗/poet.song.255000.json",
+        "宋词三百首/宋词三百首.json",
+        "课外经典/人物故事.json",
+        "课外经典/寓言故事.json",
+        "课外经典/山水游记.json",
+        "课外经典/志人逸事.json",
+        "课外经典/治学勤读.json",
+        "课外经典/神话传说.json",
+        "课外经典/蒙学经典.json",
+        "课外经典/诸子论道.json",
+        "近现代诗/元明清詩.json",
+        "近现代诗/近现代诗.json"
       ]
     },
     "_补录haitang语料": {
@@ -3843,42 +3973,6 @@
           "original": null,
           "corrected": null,
           "note": "目录按朝代重排：先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源,诗文总集/{乐府诗集,昭明文选}}、唐代/诗/全唐诗、唐五代/词/五代诗词、宋代/{诗,词/{宋词,古诗源·宋词}}、元代/元曲、清代/词、明代（暂空）。只搬路径、改 loader 与 scripts 中的引用；数据本身未逐字复核。"
-        }
-      ]
-    },
-    "先秦汉魏晋南北朝/古诗源/六朝诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "山中雜詩（吳均）／僵臥孤村不自哀…鐵馬冰河入夢來",
-          "corrected": "山際見來煙，竹中窺落日。鳥向簷上飛，雲從窗裡出。",
-          "note": "原正文实为陸游《十一月四日風雨大作》，非吳均《山中雜詩》；作者与正文错位。依《藝文類聚》卷三十六所收吳均《山中雜詩》三首之首改回"
-        }
-      ]
-    },
-    "宋代/诗/古诗源·宋诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "讀《岳陽樓記》（王十朋）／辛苦遭逢起一經…",
-          "corrected": "删除该条",
-          "note": "标题是王十朋的读后题记，正文却是文天祥《過零丁洋》，且该诗已收在 唐代/诗/全唐诗/poet.song.239000.json；整条错位且重复，删"
-        }
-      ]
-    },
-    "先秦汉魏晋南北朝/古诗源/元明清诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "菩薩蠻・大柏地（許淑慧）",
-          "corrected": "移入 清代/词/古诗源·清词.json",
-          "note": "词误入诗卷，且作者为近人；按体裁移出（该条本身是伪托，待定是否删，见 Issue #19）"
         }
       ]
     },
@@ -3961,6 +4055,83 @@
           ]
         }
       }
+    },
+    "明代/诗/古诗源·明诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "元明清诗.json 里明代 6 首",
+          "corrected": "拆分到 明代/诗/古诗源·明诗.json",
+          "note": "于謙、楊基、祝允明、楊繼盛、錢福、袁中道 皆明人；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "清代/诗/古诗源·清诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "元明清诗.json 里清代 8 首",
+          "corrected": "拆分到 清代/诗/古诗源·清诗.json",
+          "note": "鄭燮、史可法、鄭成功、畢沅、趙翼、林則徐、龔自珍 皆清人；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "先秦汉魏晋南北朝/古诗源/汉魏六朝诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "汉魏诗.json 2 首 + 六朝诗.json 10 首",
+          "corrected": "合并为 汉魏六朝诗.json 12 首",
+          "note": "两卷都是唐以前且不见于《全唐诗》《全宋诗》《全宋词》《诗经》《楚辞》，合为一卷；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "先秦汉魏晋南北朝/古诗源/": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "先秦诗.json 8 首",
+          "corrected": "整卷删除（7 首《诗经》+ 屈原《橘颂》）",
+          "note": "《詩經・周南・芣苢》《邶風・凱風》《小雅・采薇》《小雅・鹿鳴》《陳風・月出》《鄭風・山有扶蘇》《齊風・猗嗟》只摘诗句，全文见 先秦汉魏晋南北朝/诗经/shijing.json（《采薇》在那只存末章 8 句，《鹿鳴》只存首章 4 句）；《橘頌》只存前半，缺「愿歲並謝…置以為像兮」六句，全文见 楚辞/chuci.json。按「一件作品只留一份正文」删摘句"
+        },
+        {
+          "original": "宋代/诗/古诗源·宋诗.json 6 首、宋代/词/古诗源·宋词.json 2 首、清代/词/古诗源·清词.json 1 首",
+          "corrected": "全部删除",
+          "note": "6 首宋诗与《全宋诗》正文逐字相同（司馬光《客中初夏》= poet.song.30000《居洛初夏作》，僅「隨風/因風」一字异文），2 首陆游词与《全宋词》ci.song.9000 相同；《菩薩蠻・大柏地》署許淑慧，实为毛泽东 1929 年词，系伪托且与「大柏地」地名错配，无古籍可据，删。清词目录因此清空"
+        }
+      ]
+    },
+    "清代/词/纳兰词/纳兰词.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "clean",
+      "fixes": [
+        {
+          "original": "纳兰性德/纳兰性德诗集.json（含 219 首词）",
+          "corrected": "清代/词/纳兰词/纳兰词.json",
+          "note": "别集按朝代与体裁拆分：219 首词另立文件，按词牌·首句排序；正文一字未改，字段沿用 para。原记录 2026-10-06 由 claude-opus-5-5 判 clean，随文件带过来"
+        }
+      ]
+    },
+    "清代/诗/纳兰诗/纳兰诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "clean",
+      "fixes": [
+        {
+          "original": "纳兰性德/纳兰性德诗集.json（含 39 首诗）",
+          "corrected": "清代/诗/纳兰诗/纳兰诗.json",
+          "note": "39 首诗另立文件；`拟古·高云媚春日`《南海子·分弓列戟四门开》等 12 首原来的「·」是七绝首句小题不是词牌，题名只去掉首尾空格；正文一字未改。另 1 首题名为空，上游底本即无题"
+        }
+      ]
     }
   }
 }

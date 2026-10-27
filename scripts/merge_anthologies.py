@@ -139,10 +139,10 @@ def main():
             note = '' if m[2] else f'选本署名 {p.get("author")} 有误'
             log.append(('唐诗三百首.json', desc(p), T.recs[m[0]][0], desc(q), f'{m[1]:.2f}', '合并 tags', note))
 
-    # 2. 水墨唐诗 → tag + prologue
+    # 2. 水墨唐诗 → tag + prologue（目录已在后续批次删掉，重跑时跳过）
     rel = '水墨唐诗/shuimotangshi.json'
     keep = []
-    for p in load(rel):
+    for p in (load(rel) if os.path.exists(os.path.join(ROOT, rel)) else []):
         m = T.lookup(rel, p)
         if not m:
             keep.append(p)
@@ -187,7 +187,8 @@ def main():
         drop[T.recs[k][0]].add(T.recs[k][1])
     for f in T.files:
         save(f, [p for i, p in enumerate(T.data[f]) if i not in drop[f]])
-    save('水墨唐诗/shuimotangshi.json', keep)
+    if keep:
+        save('水墨唐诗/shuimotangshi.json', keep)
     if os.path.exists(os.path.join(ROOT, '唐代/诗/全唐诗/唐诗三百首.json')):
         os.remove(os.path.join(ROOT, '唐代/诗/全唐诗/唐诗三百首.json'))
     with open(os.path.join(ROOT, 'docs/唐诗去重.tsv'), 'w', encoding='utf-8') as fp:
