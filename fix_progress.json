@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 513,
+    "total_files": 512,
     "reviewed": 703,
     "clean": 484,
     "fixed": 11,
     "needs_review": 4,
     "out_of_scope": 204,
-    "in_scope_files": 513
+    "in_scope_files": 512
   },
   "reviewed": {
     "先秦汉魏晋南北朝/诗经/shijing.json": {
@@ -71,8 +71,8 @@
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "水墨唐诗/shuimotangshi.json": {
-      "date": "2026-10-07",
+    "纳兰性德/纳兰性德诗集.json": {
+      "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
@@ -1441,12 +1441,14 @@
     "唐代/诗/全唐诗/poet.tang.0.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "clean",
+      "note": "水墨唐诗 并回时补录杜甫《绝句三首》「二十一人同入蜀」一首"
     },
     "唐代/诗/全唐诗/poet.tang.1000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "clean",
+      "note": "水墨唐诗 并回时补录賀知章《曉發》、杜牧《清明》两首"
     },
     "唐代/诗/全唐诗/poet.tang.11000.json": {
       "date": "2026-10-07",

@@ -59,12 +59,6 @@
             "path": "先秦汉魏晋南北朝/楚辞/chuci.json",
             "tag": "content"
         },
-        "shuimotangshi": {
-            "name": "水墨唐诗",
-            "id": 10,
-            "path": "水墨唐诗/shuimotangshi.json",
-            "tag": "paragraphs"
-        },
         "nalanxingde": {
             "name": "纳兰性德",
             "id": 11,
