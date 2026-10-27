@@ -8,7 +8,8 @@
 
   唐诗三百首/   65 首 → 全唐诗/poet.tang.* 的 tags（此前只并过 全唐诗/唐诗三百首.json，
                  那是另一份 366 首的副本；这个目录是上游 poems-tangshi.js 的 65 首）
-  水墨唐诗/     余 4 首 → 能对上的并入 poet.tang 并带 prologue，对不上的留下
+  水墨唐诗/     余 4 首 → 并入 poet.tang 并带 prologue；总集未收的 3 首按全唐诗的记载补录，
+                 目录删掉（四条已全部落在 poet.tang 上）
   宋词三百首/   余 4 首 → 能对上的并入 ci.song.* 的 tags，对不上的留下
   近现代诗/     按作者朝代拆：唐宋元明清的课本选目并回对应总集，真近现代的留下
 
@@ -22,6 +23,8 @@ import glob
 import json
 import os
 import re
+import shutil
+import uuid
 
 from opencc import OpenCC
 
@@ -52,8 +55,45 @@ DYN_PLAN = {
 }
 
 
+# 总集未收、但全唐诗确有记载的几条：按总集的记载补录，选本只贡献 pos/子目/prologue。
+# 收录依据只认总集本身的书名/题名/传世名句，不采信选本的改写。
+INSERT_AUTHOR = {
+    '贺知章': '賀知章',   # poet.tang 用繁体作者名
+}
+INSERTED = [
+    {
+        'author': '杜甫', 'title': '绝句三首', 'pos': '二首 二',
+        'paragraphs': ['二十一人同入蜀，惟殘一人出駱谷。', '自說二女嚙臂時，迴頭却向秦雲哭。'],
+        'note': '全唐诗杜甫卷收有「二十一人同入蜀」一首（《三絕句 二》之外别为一绝）',
+    },
+    {
+        'author': '賀知章', 'title': '曉發', 'pos': '一',
+        'paragraphs': ['故鄉杳無際，江臯聞曙鐘。', '始見沙上鳥，猶埋雲外峰。'],
+        'note': '全唐诗贺知章卷收《曉發》',
+    },
+    {
+        'author': '杜牧', 'title': '清明',
+        'paragraphs': ['清明時節雨紛紛，路上行人欲斷魂。', '借問酒家何處有，牧童遥指杏花村。'],
+        'note': '全唐诗杜牧卷收《清明》，即「牧童遥指杏花村」一首',
+    },
+]
+
+
+def insert_target(corpus, author, p):
+    """补录到哪个文件：作者所在文件；作者未被收录时按文件里的编号顺序插到相邻位置。"""
+    want = author_key(author)
+    for f, i, q in corpus.recs:
+        if author_key(q.get('author')) == want:
+            return f, None
+    return corpus.files[-1], None
+
+
+# 异体字：繁简转换处理不了，比对时一并抹平（写回仍用数据集自己的字形）
+VARIANTS = str.maketrans('臯皐睾槩槪歎嘆爲為牀床', '皋皋皋概概叹叹为为床床')
+
+
 def norm(s):
-    return re.sub(r'[^\u4e00-\u9fff\U00020000-\U0002ffff]', '', cc.convert(s or ''))
+    return re.sub(r'[^\u4e00-\u9fff\U00020000-\U0002ffff]', '', cc.convert(s or '')).translate(VARIANTS)
 
 
 def author_key(a):
@@ -118,9 +158,10 @@ def _scan_array(raw):
                 start = i
             depth += 1
         elif ch in '}]':
-            depth -= 1
-            if depth == 0:
+            if ch == '}' and depth == 1:
                 spans.append((start, i + 1))
+                start = None
+            depth -= 1
         i += 1
     return open_at, close_at, spans
 
@@ -158,7 +199,7 @@ def _reserialize(rec, text):
 
 
 def save(rel, data):
-    """只改被并动的记录，其余字节原样保留。"""
+    """只改被并动的记录，其余字节原样保留；末尾新增的记录按最后一条的排版补进去。"""
     path = os.path.join(ROOT, rel)
     with open(path, encoding='utf-8') as fp:
         raw = fp.read()
@@ -176,10 +217,31 @@ def save(rel, data):
         cur = b
     out.append(raw[cur:])
     text = ''.join(out)
+    extra = flat[len(spans):]
+    if extra:
+        # 新记录接在数组末尾：照最后一条的排版缩进一级，分隔符与右括号也照抄
+        block = raw[spans[-1][0]:spans[-1][1]] if spans else raw[open_at:close_at]
+        head = raw[:spans[-1][1]] if spans else raw[:open_at]
+        closer = raw[spans[-1][1]:] if spans else raw[close_at:]
+        sep = ',\n' + ' ' * _closing(block)
+        added = ',\n' + ' ' * _closing(block) + sep.join(_reserialize(r, block) for r in extra)
+        text = head + added + '\n' + closer.lstrip(' \n')
+        changed = True
     json.loads(text)
     if changed:
         with open(path, 'w', encoding='utf-8') as fp:
             fp.write(text)
+
+
+def _closing(block):
+    """一条记录的缩进宽度：取最后一行「}」前面的空格数。"""
+    lines = block.split('\n')
+    if len(lines) <= 2:
+        return 0
+    for line in reversed(lines):
+        if line.strip() == '}':
+            return len(line) - len(line.lstrip(' '))
+    return 0
 
 
 class Corpus:
@@ -193,6 +255,10 @@ class Corpus:
         for k, (_, _, p) in enumerate(self.recs):
             for s in sents(p):
                 self.index[s].add(k)
+
+    def add(self, f, p):
+        self.recs.append((f, len(self.data[f]), p))
+        self.data[f].append(p)
 
     def match(self, p):
         """最可能的对应记录 (k, ratio, same_author, how)，没有则 None。"""
@@ -210,7 +276,7 @@ class Corpus:
                 how = 'excerpt'        # 选本只是总集的一部分
             elif ratio >= 0.8:
                 how = 'ratio'
-            elif same and n == len(ss) >= 2:
+            elif same and n == len(ss) >= 2 and ratio >= 0.6:
                 how = 'sentences'
             elif same and same_title and ratio >= 0.5:
                 how = 'title'          # 选本带序、或异文过半，但同作者同题
@@ -223,21 +289,62 @@ class Corpus:
         return best
 
 
+def insert_into(corpus, p, tag, log, note=''):
+    """总集未收、但全唐诗另有记载的条目：按总集记载补录一条，选本只贡献 pos/子目/prologue。"""
+    for f, i, r in corpus.recs:                    # 已经补录过就不再补，重跑幂等
+        if author_key(r.get('author')) == author_key(p.get('author')) and body(r) == body(p):
+            r['tags'] = list(dict.fromkeys((r.get('tags') or []) + [tag]))
+            if p.get('prologue'):
+                r['prologue'] = p['prologue']
+            log.append([p.get('_src', tag), desc(p), f'{f}#{i}', desc(r), '1.00', f'已在 {tag}', note])
+            return r
+    f, _ = insert_target(corpus, p.get('author'), p)
+    rec = dict(p)                            # p 里的正文已经是总集记载
+    rec.pop('_src', None)
+    rec.pop('note', None)
+    rec.setdefault('id', str(uuid.uuid4()))
+    rec['tags'] = [tag] + [t for t in (p.get('tags') or []) if t != tag]
+    corpus.add(f, rec)
+    log.append([p.get('_src', '水墨唐诗'), desc(rec), f'{f}#{len(corpus.data[f]) - 1}', desc(rec),
+                '新增', f'创编 {tag}', note])
+    return rec
+
+
+def _attach_or_insert(corpus, q, tag, log):
+    """同一首在此前已按总集记载补录过时，挂 tag 补 prologue，不再新增一条。"""
+    same = [k for k, (_, _, r) in enumerate(corpus.recs)
+            if author_key(r.get('author')) == author_key(q.get('author'))
+            and body(r) == body(q)]
+    if same:
+        f, i, r = corpus.recs[same[0]]
+        r['tags'] = list(dict.fromkeys((r.get('tags') or []) + [tag]))
+        if q.get('prologue'):
+            r['prologue'] = q['prologue']
+        log.append([q['_src'], desc(q), f'{f}#{i}', desc(r), '1.00', f'并入 tags 重复补录', ''])
+        return r
+    return insert_into(corpus, q, tag, log)
+
+
 def merge_one(rel, corpus, tag, log):
-    """把选本每一条并进 corpus 的 tags，返回没对上的条目。"""
+    """把选本每一条并进 corpus 的 tags；对不上但总集另有记载的按总集补录。"""
     keep = []
     for p in load(rel):
         m = corpus.match(p)
-        if not m:
-            keep.append(p)
-            log.append([rel, desc(p), '', '', '', '保留', '总集未收'])
+        if m:
+            f, i, q = corpus.recs[m[0]]
+            q['tags'] = list(dict.fromkeys((q.get('tags') or []) + [tag]))
+            if p.get('prologue'):
+                q['prologue'] = p['prologue']
+            note = '' if m[2] else f'选本署名 {p.get("author")}'
+            log.append([rel, desc(p), f'{f}#{i}', desc(q), f'{m[1]:.2f}', f'并入 tags {m[3]}', note])
             continue
-        f, i, q = corpus.recs[m[0]]
-        q['tags'] = list(dict.fromkeys((q.get('tags') or []) + [tag]))
-        if p.get('prologue'):
-            q['prologue'] = p['prologue']
-        note = '' if m[2] else f'选本署名 {p.get("author")}'
-        log.append([rel, desc(p), f'{f}#{i}', desc(q), f'{m[1]:.2f}', f'并入 tags {m[3]}', note])
+        p['_src'] = rel
+        if p.get('author') in INSERT_AUTHOR:
+            _attach_or_insert(corpus, dict(p, author=INSERT_AUTHOR[p['author']]), tag, log)
+            continue
+        p.pop('_src', None)
+        keep.append(p)
+        log.append([rel, desc(p), '', '', '', '保留', '总集未收'])
     return keep
 
 
@@ -276,11 +383,11 @@ def main():
     def corpus(*pattern):
         return Corpus(sorted(os.path.relpath(f, ROOT) for f in glob.glob(os.path.join(ROOT, pattern[0]))))
 
-    tang = corpus('全唐诗/poet.tang.*.json')
+    tang = corpus('唐代/诗/全唐诗/poet.tang.*.json')
     corpora = {
         '全唐诗': tang,
-        '全宋诗': corpus('全唐诗/poet.song.*.json'),
-        '全宋词': corpus('宋词/ci.song.*.json'),
+        '全宋诗': corpus('宋代/诗/全宋诗/poet.song.*.json'),
+        '全宋词': corpus('宋代/宋词/ci.song.*.json'),
         '昭明文选': corpus('昭明文选/*.json'),
         '古文观止': corpus('古文观止/*.json'),
         '历代': corpus('历代/*.json'),
@@ -294,7 +401,11 @@ def main():
 
     log = []
     tang300_keep = merge_one('唐诗三百首/唐诗三百首.json', tang, '唐诗三百首', log)
-    ink_keep = merge_one('水墨唐诗/shuimotangshi.json', tang, '水墨唐诗', log)
+    for spec in INSERTED:
+        insert_into(tang, spec, '水墨唐诗', log, spec.pop('note'))
+    ink_keep = []
+    if os.path.exists(os.path.join(ROOT, '水墨唐诗/shuimotangshi.json')):
+        ink_keep = merge_one('水墨唐诗/shuimotangshi.json', tang, '水墨唐诗', log)
     ci300_keep = merge_one('宋词三百首/宋词三百首.json', corpora['全宋词'], '宋词三百首', log)
     modern_keep = split_modern('近现代诗/近现代诗.json', corpora, dynasties, log)
 
@@ -311,8 +422,14 @@ def main():
         for f in corpora[name].files:
             save(f, corpora[name].data[f])
     save('唐诗三百首/唐诗三百首.json', tang300_keep)
-    save('水墨唐诗/shuimotangshi.json', ink_keep)
-    save('宋词三百首/宋词三百首.json', ci300_keep)
+    if ink_keep:
+        save('水墨唐诗/shuimotangshi.json', ink_keep)
+    elif os.path.exists(os.path.join(ROOT, '水墨唐诗')):
+        shutil.rmtree(os.path.join(ROOT, '水墨唐诗'))
+    if ci300_keep:
+        save('宋词三百首/宋词三百首.json', ci300_keep)
+    elif os.path.exists(os.path.join(ROOT, '宋词三百首')):
+        shutil.rmtree(os.path.join(ROOT, '宋词三百首'))
     save('近现代诗/近现代诗.json', modern_keep)
     with open(os.path.join(ROOT, 'docs/选本并入.tsv'), 'w', encoding='utf-8', newline='') as fp:
         fp.write('选本文件\t选本记录\t总集位置\t总集记录\t相似度\t处理\t说明\n')

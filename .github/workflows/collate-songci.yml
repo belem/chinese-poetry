@@ -52,7 +52,7 @@ jobs:
 
       # 每次按当前数据重新生成检索计划：已写回的修正会反映到句子里，检索结果按检索词复用
       - name: Plan
-        run: python3 scripts/collate.py plan --dir 宋代/词/宋词 --work "$W"
+        run: python3 scripts/collate.py plan --dir 宋代/宋词 --work "$W"
 
       - name: Search 识典古籍
         run: node scripts/shidian/search.mjs "$W/queries.json" "$W/results.jsonl" --limit "${{ inputs.limit || '1200' }}"

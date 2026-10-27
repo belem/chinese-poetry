@@ -3,9 +3,9 @@
 
 路由规则（按源数据 dynasty + kind_cn）：
 
-  宋 + 诗   → 唐代/诗/全唐诗/poet.song.*.json      （本库《全宋诗》就放在这里）
-  宋 + 词   → 宋代/词/宋词/ci.song.*.json
-  唐五代 + 诗/词 → 唐代/诗/全唐诗/poet.tang.*.json / 宋代/词/宋词/（五代词归 唐五代/词/五代诗词/）
+  宋 + 诗   → 宋代/诗/全宋诗/poet.song.*.json
+  宋 + 词   → 宋代/宋词/ci.song.*.json
+  唐五代 + 诗/词 → 唐代/诗/全唐诗/poet.tang.*.json / 宋代/宋词/（五代词归 唐五代/词/五代诗词/）
   元 + 曲   → 元代/元曲/yuanqu.json
   其余（周秦汉晋南北朝隋唐文、历代诗、历代赋）→ 历代/<体裁>.json
 
@@ -272,10 +272,10 @@ class Library:
 
 # (朝代, 体裁) → 分片文件前缀。None 表示整文件不分片。
 FIXED_TARGET = {
-    ('宋', '诗'): '唐代/诗/全唐诗/poet.song',
+    ('宋', '诗'): '宋代/诗/全宋诗/poet.song',
     ('唐', '诗'): '唐代/诗/全唐诗/poet.tang',
-    ('宋', '词'): '宋代/词/宋词/ci.song',
-    ('五代十国', '词'): '宋代/词/宋词/ci.song',
+    ('宋', '词'): '宋代/宋词/ci.song',
+    ('五代十国', '词'): '宋代/宋词/ci.song',
 }
 SINGLE_FILE = {
     ('元', '曲'): '元代/元曲/yuanqu.json',
@@ -314,7 +314,7 @@ def build_targets(lib, plan):
         if not sharded:
             out.append((target, items))
             continue
-        # 同一前缀（如 唐代/诗/全唐诗/poet.tang）的片名连续编号；同目录的 poet.song 各算各的
+        # 同一前缀（如 唐代/诗/全唐诗/poet.tang）的片名连续编号；各书名各算各的
         rx = re.compile(re.escape(target) + r'\.(\d+)\.json$')
         used = [int(m.group(1)) for f in lib.files for m in [rx.match(f)] if m]
         # 库中片名都是 1000 的整数倍，最后一片的序号即现有条数的整千下界
