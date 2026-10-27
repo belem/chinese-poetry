@@ -5,6 +5,10 @@ $:
   env:
     SYNC_BRANCH: develop
     GITHUB_SLUG: belem/chinese-poetry
+    # 密钥仓库里的凭据文件（Web 端维护，禁止本地克隆/推送）
+    SECRETS_SLUG: npu-gpu-cpu/poem-source-secrets
+    SECRETS_REF: main
+    SECRETS_FILE: pair.yml
   # 同步只是几次 git 操作，给最小规格就够
   runner:
     cpus: 1
@@ -13,6 +17,8 @@ develop:
   # 本仓库有新提交 → 直接推到 GitHub 的 develop
   push:
     - name: cnb-to-github
+      imports:
+        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
       stages:
         - name: 推送到 GitHub
           script: bash .cnb/sync/sync.sh push
@@ -20,6 +26,8 @@ develop:
   # 反向兜底：GitHub 侧的提交每 6 小时合回来一次
   "crontab: 0 0,6,12,18 * * *":
     - name: github-to-cnb
+      imports:
+        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
       stages:
         - name: 从 GitHub 拉取
           script: bash .cnb/sync/sync.sh pull
@@ -27,6 +35,8 @@ develop:
   # 需要立刻对齐时手动跑：MODE=push / pull / both
   api_trigger:
     - name: manual-sync
+      imports:
+        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
       stages:
         - name: 双向同步
           script: bash .cnb/sync/sync.sh "${MODE:-both}"

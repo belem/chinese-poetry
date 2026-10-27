@@ -62,8 +62,14 @@
 
 ### 凭据
 
-CNB 仓库设置里添加环境变量 `GITHUB_PAT`（或 `GITHUB_TOKEN`，`sync.sh` 两者都认；不公开），对 `belem/chinese-poetry` 有 **Contents: Read and write** 权限。
-未配置时同步会跳过，并在流水线日志里打印 `[sync] 没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步`。
+GitHub PAT 存在密钥仓库 [npu-gpu-cpu/poem-source-secrets](https://cnb.cool/npu-gpu-cpu/poem-source-secrets) 的 `pair.yml` 里，由 `.cnb.yml` 各任务用 `imports` 引用后注入为环境变量。
+
+- 字段名 `GITHUB_TOKEN` 或 `GITHUB_PAT` 都行，`sync.sh` 两者都认。
+- PAT 需对 `belem/chinese-poetry` 有 **Contents: Read and write**。
+- 密钥仓库禁止本地 clone / 推送，只能 Web 端改；引用放行条件由密钥仓库文件里的 `allow_slugs` 等字段控制，见 [文件引用](https://docs.cnb.cool/zh/build/file-reference.md)。
+- 密钥仓库路径与文件名在 `.cnb.yml` 顶层环境变量 `SECRETS_SLUG` / `SECRETS_REF` / `SECRETS_FILE` 里改一处即可。
+
+未注入时同步会跳过，日志打印 `[sync] 没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步` 和排查提示；注入成功只打印凭据长度，绝不打印值。
 
 ### 手动触发
 

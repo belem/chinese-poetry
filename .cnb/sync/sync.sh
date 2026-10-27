@@ -29,9 +29,12 @@ gh_url() {
 
 require_pat() {
   if [ -z "$PAT" ]; then
-    log "没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步（凭据配置见 README）"
+    log "没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步"
+    log "预期来源：密钥仓库 ${SECRETS_SLUG:-?}#${SECRETS_FILE:-?} 经 .cnb.yml 的 imports 注入（见 README「凭据」）"
+    log "检查点：密钥仓库文件里需有 GITHUB_TOKEN（或 GITHUB_PAT）字段，且允许本仓库开发者在 ${SECRETS_REF:-main} 上引用"
     exit 0
   fi
+  log "凭据已就绪（长度 ${#PAT}，值不打印）"
 }
 
 gh_head() {
