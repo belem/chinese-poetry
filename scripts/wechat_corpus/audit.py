@@ -134,7 +134,8 @@ def main():
                 if cands:
                     verdict, hit = 'exact', cands[0]
                 elif len(n) >= 12:
-                    cands = by_pre.get(n[:12], [])
+                    pre = n[:12]
+                    cands = by_pre.get(pre, [])
                     if scope:
                         cands = [c for c in cands if c['file'].startswith(scope)]
                     if cands:

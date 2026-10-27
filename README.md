@@ -47,43 +47,41 @@
 
 ## 新增语料：与 poem-wechat-mini-program 对齐
 
-[npu-gpu-cpu/poem-wechat-mini-program](https://cnb.cool/npu-gpu-cpu/poem-wechat-mini-program) 的 `scripts/corpus/data` 里有 30 个集子，其中 11 部带正文、共 2360 条。逐条与本库比对（`scripts/wechat_corpus/audit.py`，结果见 [`docs/wechat_corpus_audit.tsv`](docs/wechat_corpus_audit.tsv)）后，只补**上游独有、本库没有**的作品：
+[npu-gpu-cpu/poem-wechat-mini-program](https://cnb.cool/npu-gpu-cpu/poem-wechat-mini-program) 的 `scripts/corpus/data` 里有 30 个集子，其中 11 部带正文、共 2360 条。逐条与本库比对（`scripts/wechat_corpus/audit.py`，结论见 [`docs/wechat_corpus_audit.tsv`](docs/wechat_corpus_audit.tsv)）：
 
 | 判定 | 条数 | 处理 |
 | --- | --- | --- |
 | 正文与本库已有作品逐字相同 | 1346 | 不重复收 |
-| 同一首但本库是异文（前 12 字同、后文有出入） | 448 | 不重复收，属文献异文，见对勘章节 |
+| 同一作品但本库是异文（前 12 字同、后文有出入） | 448 | 不重复收，交给对勘 |
 | 作者在库、标题对不上 | 388 | 不算重复，按新作品收 |
 | 上游有、本库确实没有 | 76 | 收 |
-
-（「异文」与「作者在库」两行不是重复：前者是同一首的两个传本，按本库一贯口径并存、交给对勘；后者只是同一作者的另一首诗。真正判断不了的只有「正文全同」那一类，全部剔除。）
 
 补入的 7 部按仓库规则各自成目录：
 
 | 目录 | 来源（上游文件） | 条数 | 说明 |
 | --- | --- | --- | --- |
 | `乐府诗集/` | poems-yuefu.js | 31 | 按上游分卷：卷一 汉魏乐府、卷二 南朝乐府、卷三 唐代乐府、卷四 唐五代乐府、卷五 乐府歌辞 |
-| `古诗源/` | poems-gushi.js | 47 | 按上游分卷：先秦诗、汉魏诗、六朝诗、宋诗、元明清诗、清词 |
-| `唐诗三百首/` | poems-tangshi.js | 67 | 单文件 |
+| `古诗源/` | poems-gushi.js | 44 | 按上游分卷：先秦诗、汉魏诗、六朝诗、宋诗、元明清诗、清词 |
+| `唐诗三百首/` | poems-tangshi.js | 65 | 单文件 |
 | `元曲三百首/` | poems-yuanqu.js | 29 | 按宫调分卷：小令·越调、中吕、双调、南吕、正宫、黄钟，套数·中吕、般涉调 |
 | `文选/` | poems-zhaoming.js | 436 | 按《文选》体类分卷（赋、诗、骚、七、诏、表、书……），共 89 个文件 |
-| `古文观止/` | poems-guwen.js | 229 | 按卷分卷，卷一至卷十二 |
-| `课外经典/` | poems-classic.js | 242 | 按上游分组：蒙学经典、寓言故事、神话传说、人物故事、志人逸事、治学勤读、诸子论道、山水游记 |
+| `古文观止/` | poems-guwen.js | 227 | 按卷分卷，卷一至卷十二 |
+| `课外经典/` | poems-classic.js | 228 | 按上游分组：蒙学经典、寓言故事、神话传说、人物故事、志人逸事、治学勤读、诸子论道、山水游记 |
 
 导入规则（脚本见 [`scripts/wechat_corpus/`](scripts/wechat_corpus/)）：
 
-- **繁体、每行一句**，字段与原库一致（`author` / `paragraphs` / `title`；从别处并进来的题名另记在 `sources`）。上游简体正文用 OpenCC `s2twp` 转换，只转换字形，不改字。
-- **同一作品只留一份正文**。去重不按标题，按正文：繁体转简、去标点后逐字比较（不足 8 字的不判）。题名是各家编法（上游「感遇·其一」＝全唐诗「感遇十二首 四」），靠标题对不齐。
-  - 新目录**内部**重复的（《垓下歌》在乐府诗集和古诗源各收一次、《心術》在古文观止卷十排了两遍），后出现的那条删掉。
-  - 与**库中原有**条目重复的，新条目删掉，把它的题名挂到原条目的 `sources` 上——「这首也见于《乐府诗集》卷三」这层信息留住，正文仍只有一份。
-  - 这样剔掉 89 条，逐条记在 [`docs/wechat_corpus_dedupe.tsv`](docs/wechat_corpus_dedupe.tsv)。
+- **繁体、每行一句**，字段与原库一致（`author` / `paragraphs` / `title`，从别处并进来的题名另记 `sources`）。上游简体正文用 OpenCC `s2twp` 转换，只转换字形，不改字。
+- **一件作品只留一份正文。** 去重不按标题按正文：繁体转简、去标点后逐字比较，不足 8 字的不判（短句重名太多）。标题靠不住——上游「感遇·其一」其实是全唐诗「感遇十二首 **四**」，按题名对会漏掉 48 条。
+  - 与**库中原有**条目重复的，新条目不收，把它的题名挂到原条目的 `sources` 上：「这首也见于《乐府诗集》卷三」这层信息留住，正文仍只有一份。
+  - 新目录**内部**重复的（《垓下歌》乐府诗集、古诗源各收一次；古文观止把《心術》排了两遍），同一部里后出现的那条删掉；跨部重复的两条都删，题名挂回原条目。
+  - 这样剔掉 110 条，逐条记在 [`docs/wechat_corpus_dedupe.tsv`](docs/wechat_corpus_dedupe.tsv)。
 - **不并入 `全唐诗/`、`宋词/`**：本库的唐诗去重、选本互校都建立在那批文件之上（见上文「对使用者的影响」），选本另立目录可以保住这些口径，也不必重跑一遍去重。
 - 上游的译文、出处、学段、难度、节选等展示字段**不入库**——本库只有正文。
 - 上游正文里 `~~` 标记底本缺字，统一转成本库惯用的 `□`。
-- **正文对不齐的一律两存**，不替文献做主。张养浩《山坡羊·潼关怀古》上游作「望西都，意踌躇」、本库《元曲》作「意踌蹰」，是异文；同调的《骊山怀古》等八首本库合编在一条《中吕·山坡羊》里、各曲之间不空行，是编法之别。这些都不合并。
+- **正文对不齐的一律两存**，不替文献做主：张养浩《山坡羊·潼关怀古》上游作「望西都，意踌躇」，本库《元曲》作「意踌蹰」；同一调的《骊山怀古》等八首在本库合编在一条《中吕·山坡羊》里、各曲之间不空行——那是编法之别。这些都不合并。
 - 跨库并条只做「整条正文逐字相同」这一种。`文选/` 完全不跨库并——它一条可以裹几篇（`兩都賦二首`），逐句对得全不等于整条就是那一篇。
 
-新增文件**尚未逐字对勘**，所以没有登记进 `fix_progress.json` —— 那儿的 `clean` 是「查过、没问题」的意思，不能拿来当「还没查」的记号。它们仍算待复核。
+新增文件**没有登记进 `fix_progress.json`**：那里 `clean` 的意思是「查过、没问题」，不能拿来当「还没查」的记号。它们确实只做了简转繁、分卷与去重，尚未逐字对勘，仍算待复核。
 
 重新生成：
 
@@ -92,9 +90,9 @@ node scripts/wechat_corpus/extract.js <poem-wechat 的 data 目录> > /tmp/wecha
 python3 scripts/wechat_corpus/import.py --corpus /tmp/wechat_corpus.json --dry-run   # 先看清单
 python3 scripts/wechat_corpus/import.py --corpus /tmp/wechat_corpus.json
 
-# 去重与重复审计（都可重跑）
-python3 scripts/wechat_corpus/dedupe.py --apply          # 剔重复、挂 sources
-python3 scripts/wechat_corpus/audit.py --upstream <data 目录> --repo .
+# 去重与重复审计，都可重跑
+python3 scripts/wechat_corpus/dedupe.py          # 报数；加 --apply 才写盘
+python3 scripts/wechat_corpus/audit.py --upstream <poem-wechat 的 data 目录> --repo .
 ```
 
 ---
