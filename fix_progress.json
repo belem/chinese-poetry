@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
-    "total_files": 510,
-    "reviewed": 691,
+    "total_files": 830,
+    "reviewed": 692,
     "clean": 157,
     "fixed": 160,
-    "needs_review": 61,
+    "needs_review": 62,
     "out_of_scope": 313,
-    "in_scope_files": 504
+    "in_scope_files": 517
   },
   "reviewed": {
     "诗经/shijing.json": {
@@ -112564,6 +112564,23 @@
           "original": null,
           "corrected": null,
           "note": "元曲三百首（`元曲三百首/` 8 个文件 / 29 首）已按 `scripts/merge_yuanqu.py` 并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv：27 首《全元散曲》未收，按「宫调・曲牌・题」补进 `元曲/yuanqu.json`（正文只转字形，不改字）；徐再思《水仙子・夜雨》与库中「双调・水仙子夜雨」同一份正文，题名挂到该条 sources；睢景臣《般涉调・哨遍・高祖还乡》在库中按曲牌拆成多条、正文对不上（覆盖率 0.17），选本那八段不收，留给逐字对勘。这 29 首仍未与古籍逐字对勘，不计入 clean。"
+        }
+      ]
+    },
+    "_补录haitang语料": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": "[batch] reference/mit_licence_haitang → 13 个目标文件，收录 7791 条",
+          "corrected": null,
+          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitang收录.tsv。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
+        },
+        {
+          "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
+          "corrected": null,
+          "note": "作者小传与朝代概述原本没有全库通用索引（全唐诗/authors.* 与 宋词/author.song.json 各管一个总集、字段不同），另建两目录，语料与介绍分开。未逐条核对原文。"
         }
       ]
     }

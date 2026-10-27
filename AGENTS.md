@@ -175,6 +175,7 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
 | `scripts/shidian.py` + `scripts/shidian/search.mjs` | Evidence pipeline: `build` → search 识典古籍 → `analyze` → review `review.tsv` → `apply`. |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
+| `scripts/haitang/import.py` | Import `reference/mit_licence_haitang` (11407 records) into the corpus: glyph conversion, garble→`□`, body-based dedup, shard routing, `authors/` + `dynasties/`. Idempotent; dry-run by default. Per-record decisions in `docs/haitang收录.tsv`. |
 
 ```bash
 pip install opencc-python-reimplemented

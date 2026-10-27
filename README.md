@@ -107,6 +107,60 @@ python3 scripts/wechat_corpus/audit.py --upstream <poem-wechat 的 data 目录> 
 
 ---
 
+## 新增语料：haitang 语料库（MIT 授权）
+
+`reference/mit_licence_haitang/` 的 11407 条正文（诗 3290、词 4741、文 2971、曲 378、赋 27），
+以及 2402 位作者小传、18 个朝代概述。源数据是数字出版转码，`works_3.json` 缺外层方括号（按 JSON 流解析）。
+
+逐条按正文判重后收录 **7791** 条，判重 3616 条：
+
+| 去向 | 条数 | 说明 |
+| --- | --- | --- |
+| `历代/`（新） | 6891 | 文 2894、诗 1248、词 1422、赋 27。周秦汉晋南北朝隋唐文与历代诗、历代赋本库原来没有，按体裁分文件 |
+| `全唐诗/poet.tang.58000.json` | 600 | 唐诗 |
+| `全唐诗/poet.song.255000.json` | 255 | 宋诗。本库《全宋诗》就放在 `poet.song.*`，不另开 `全宋诗/` |
+| `宋词/ci.song.22000.json` | 997 | 宋词（含唐五代词） |
+| `元曲/yuanqu.json` | 332 | 追加，原有 11084 条一字未动 |
+
+作者、朝代另建目录（语料与介绍分开）：
+
+| 目录 | 内容 |
+| --- | --- |
+| [`authors/`](authors/) | 2402 位作者小传，按（朝代, 姓名）索引 |
+| [`dynasties/`](dynasties/) | 18 个朝代概述，公元前用负数 |
+
+本库原有三份作者表（`全唐诗/authors.tang.json`、`authors.song.json`、`宋词/author.song.json`）
+各管一个总集、字段还互不相同，跨目录查不着人；这份索引补上这一层，不与原表合并。
+
+导入规则（[`scripts/haitang/`](scripts/haitang/)）：
+
+- **按正文判重，不按标题。** 繁简统一（OpenCC `t2s`）后去标点空白逐字比较；不足 8 字的短句（「席不正，不坐」）
+  光凭正文会撞车，改用「作者 + 正文」联合键。同作者同题、正文相似度 ≥ 0.9 的视为同一作品的异文，只把题名挂到
+  原条目的 `sources`，不重收；低于 0.9 的是同题下的不同篇目（苏轼多首《洞仙歌》），照收。
+  逐条判定见 [`docs/haitang收录.tsv`](docs/haitang收录.tsv)（11407 行，记录每条的去向或被判重到哪一条）。
+- **乱码一律换 `□`，不猜字。** 私用区造字、西里尔/希腊字母、日文假名、制表符号、爬取残留的 ASCII 一律转成本库表示
+  底本缺字的 `□`；`──` 转中文破折号。只对上下文 100% 确定的少量做定点还原（脚本 `FIXED_TEXT` 表）。
+  源里用半角 `?` 记未识读的字（如「阖闾弟夫？」指夫概），只在「单字 + ? + 句号」这个上下文才判为缺字，
+  避免把真疑问句误改。
+- **标点规整**：半角 `,;:!` 转全角，重复标点（`、、` `。。` `！。`）合并。
+- **幂等**：重跑收录 0 条（`python3 scripts/haitang/import.py` 可反复验证）。
+- **既有文件只追加**，不重排。`元曲/yuanqu.json` 的 diff 只有末尾 332 行新增。
+- 整批在 `fix_progress.json` 里登记为一条（`reviewed["_补录haitang语料"]`，状态 `needs_review`）：
+  只做了字形转换、清洗、判重与分片，**尚未逐字对勘**，不记 `clean`。
+
+重新生成：
+
+```bash
+python3 scripts/haitang/import.py                          # 预演，看清单与去向
+python3 scripts/haitang/import.py --apply --authors --dynasties
+python3 scripts/check_structure.py --baseline scripts/check_baseline.json
+```
+
+`reference/mit_licence_haitang/` 确认后可删——脚本重跑才需要它，删了不影响已写入的数据。
+另：`scripts/check_structure.py` 的 `SKIP_DIRS` 已排除 `reference/`，否则源数据会被当发布语料扫出上千处乱码。
+
+---
+
 ## 与 GitHub 的同步
 
 本仓库是 [belem/chinese-poetry](https://github.com/belem/chinese-poetry) 的镜像：内容与上游 **逐字节一致**，只额外多出 `.cnb.yml` 和 `.cnb/` 两个同步配置。
