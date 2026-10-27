@@ -12,25 +12,42 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 ### Directory layout
 
-数据按朝代分层，朝代下面是「一部书一个目录」或「诗 / 词 / 文」体裁目录，选本不并进总集：
+顶层只有 **14 个朝代目录**，与 `dynasties/dynasties.json` 的 `name` 一一对应：
 
 ```
-先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源/汉魏六朝诗.json,诗文总集/{乐府诗集,昭明文选}}
-唐代/诗/全唐诗/（poet.tang.*）　宋代/诗/全宋诗/（poet.song.*）
-唐五代/词/五代诗词/{huajianji,nantang}
-宋代/宋词/（ci.song.*）
-元代/元曲/yuanqu.json（元人诗词曲的唯一总集）
-明代/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json}
-清代/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/{ci.qing.json,纳兰词/}}
-历代/（周—清各代补录、经史子集篇目）  近现代诗/{现代诗.json,当代诗词.json}
+先秦 汉 三国 晋 南北朝 隋 唐 五代十国 宋 元 明 清 近现 当
 ```
+
+朝代下面按「一部书一个目录」或「诗 / 词 / 文」体裁目录排，选本不并进总集：
+
+```
+先秦/{诗经,楚辞,诗文总集/{乐府诗集,昭明文选},古文观止,四书五经,论语,蒙学,课外经典}
+汉/{曹操诗集,古诗源/汉魏六朝诗.json,诗/poet.han.json,词/ci.han.json}
+三国/ 晋/ 南北朝/ 隋/	（同上，各 诗/poet.*.json、词/ci.*.json）
+唐/{诗/全唐诗/（poet.tang.*）,唐诗三百首,词/ci.tang.json}
+五代十国/{词/五代诗词/{huajianji,nantang},诗/poet.wudai.json}
+宋/{诗/全宋诗/（poet.song.*）,宋词/（ci.song.*）,宋词三百首,诗/poet.song.json,词/ci.song.json,诗/古诗源·宋诗.json}
+元/{元曲/yuanqu.json（元人诗词曲的唯一总集）,诗/poet.yuan.json}
+明/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json,幽梦影/}
+清/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/{ci.qing.json,纳兰词/}}
+近现/现代诗.json　当/{poet.dang.json,ci.dang.json}
+```
+
+`诗/poet.*`、`词/ci.*` 是 `历代/` 拆出来的补录，**`poet.*` 里诗与文混放**（体裁只决定进 `诗/` 还是 `词/` 目录）。
+
+- **哪个朝代归哪个目录**：作者朝代（`authors/authors.json` 的 `dynasty`）说话。春秋战国、秦、商、上古 → `先秦`；
+  辽、金 → `宋`；1912—1949 年出生的作者 → `近现`；1949 年以后 → `当`。`晋` 不再细分东西晋，`南北朝` 不分南北。
+- 跨代的诗歌总集归它取材的主要时段：《乐府诗集》《昭明文选》（汉魏六朝为主）→ `先秦/诗文总集/`；
+  《古诗源》先秦部分已并回《诗经》《楚辞》，其余 12 首在 `汉/古诗源/`。
+- `先秦/古文观止`、`先秦/四书五经`、`先秦/论语`、`先秦/蒙学`、`先秦/课外经典`、`明/幽梦影` 是按「作者所处时代占多数」
+  就近收的，本身跨代；它们的归属写在这份文件与 README 里，不靠目录名判断。
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
 只保留 `诗经/shijing.json`、`楚辞/chuci.json` 的全文版本。
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
 - `loader/datas.json` 是数据读取入口，dataset 的 key 不变，只改 `path`；新增目录要在那里注册。
-- `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名。
+- `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名；`poet.*` 里混着文，句长类检查会报噪音。
 
 ---
 
@@ -45,7 +62,7 @@ import os, json, re
 
 ROOT = os.path.dirname(os.path.abspath('fix_progress.json'))
 SKIP = {'author', 'rank', 'settings', '表面结构字', 'error', 'fix_progress'}
-SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.claude', '.github', '.cnb', 'reference'}  # 宋代/诗/全宋诗/error is out of scope
+SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'authors', 'dynasties', 'anthologies', 'scripts', 'docs', '.git', '.claude', '.github', '.cnb', 'reference'}  # 宋/诗/全宋诗/error is out of scope
 CYRILLIC_GREEK = re.compile(r'[Ѐ-ӿͰ-Ͽ]')
 
 # Build full file list (alphabetical)
@@ -198,6 +215,7 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/twin_collate.py` | Collate anthologies (花间集, 南唐, 唐诗三百首, 千家诗, 水墨唐诗) against the same poems in 全唐诗/宋词; one-char differences judged on 识典古籍, reviewed in `review.tsv`, closed items kept in `docs/小合集互校.applied.json`. Read its docstring for review lessons before deciding. |
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
 | `scripts/shidian.py` + `scripts/shidian/search.mjs` | Evidence pipeline: `build` → search 识典古籍 → `analyze` → review `review.tsv` → `apply`. |
+| `scripts/split_dynasty.py` | Split `历代/` into the per-dynasty directories by author dynasty and genre (dry-run by default; `--apply` writes and emits `docs/历代拆分.tsv`). Already applied — `历代/` no longer exists |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
 
 ```bash
@@ -230,12 +248,12 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 ```json
 {
   "reviewed": {
-    "宋代/宋词/ci.song.13000.json": {
+    "宋/宋词/ci.song.13000.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "clean"
     },
-    "元代/元曲/yuanqu.json": {
+    "元/元曲/yuanqu.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "fixed",
@@ -251,7 +269,7 @@ Status values:
 - `clean` — no issues found, or every issue found was corrected (the `fixes` list may be empty)
 - `fixed` — same as `clean` for a file that had corrections; the entries you list are what the commit fixed
 - `needs_review` — corrections are still outstanding and worth tracking: either the file has not been collated line by line (batch records like `_新增选本`, `_目录重构：按朝代分层`), or a specific known defect is open. Rare-character lacunae (`□`, bare PUA) that no evidence can settle are **not** tracked here — `scripts/check_structure.py` reports them live
-- `out_of_scope` — not part of the published dataset (currently all of `宋代/诗/全宋诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
+- `out_of_scope` — not part of the published dataset (currently all of `宋/诗/全宋诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
 
 Do not accumulate per-character repair history in this file: entries for completed fixes are deleted once the character is fixed in the dataset. Keep only what is still actionable.
 
