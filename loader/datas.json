@@ -127,9 +127,9 @@
             "tag": "paragraphs"
         },
         "wenxuan": {
-            "name": "文选",
+            "name": "昭明文选",
             "id": 18,
-            "path": "文选/",
+            "path": "昭明文选/",
             "excludes": [],
             "tag": "paragraphs"
         },

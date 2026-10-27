@@ -45,7 +45,7 @@ const inner=i=>[1,2,3,4,5,6,7,8,9,10,11,12].flatMap(n=>win['POEMS_'+n]||[]);
 const books={'课内':inner(),'古文':win.POEMS_CLASSIC,'乐府集':win.POEMS_YUEFU,
   '节日节气':win.POEMS_SEASONAL_SEASON,'唐诗':win.POEMS_TANGSHI,'古诗非唐':win.POEMS_GUSHI,
   '宋词三百首':win.POEMS_SONGCI,'元曲':win.POEMS_YUANQU,'古文观止':win.POEMS_GUWEN,
-  '近现代':win.POEMS_JINXIANDAI,'文选':win.POEMS_ZHAOMING};
+  '近现代':win.POEMS_JINXIANDAI,'昭明文选':win.POEMS_ZHAOMING};
 const out={};
 for(const [k,v] of Object.entries(books))
   out[k]=(v||[]).map(p=>({id:p.id,title:p.title,author:p.author,text:txt(p)}));
