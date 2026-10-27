@@ -248,4 +248,4 @@ After the batch, summarize:
 - Any `needs_review` items with the suspect text and your reasoning
 - Overall progress: X in-scope files still `needs_review` (see `stats.in_scope_files` in `fix_progress.json`)
 
-**Do not commit.** The maintainer will review and commit manually.
+**Submit a PR.** Commit your changes on a new branch and open a pull request against `develop`; the maintainer reviews and merges it.
