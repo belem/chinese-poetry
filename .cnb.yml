@@ -1,14 +1,18 @@
 # poem-source ⇄ belem/chinese-poetry 同步
 # 两端只维护 develop：直接 commit，不走 PR。
 
+# 密钥仓库里的凭据文件（Web 端维护，禁止本地克隆/推送）。
+# 必须写在顶层：.cnb.yml 里的 ${VAR} 在解析期（读配置时）就展开，
+# 只在任务 env 里定义的变量此时还不存在，会被展开成空串
+# → prepare 失败（Invalid file resource）或注入不到凭据。
+SECRETS_SLUG: npu-gpu-cpu/poem-source-secrets
+SECRETS_REF: main
+SECRETS_FILE: pair.yml
+
 $:
   env:
     SYNC_BRANCH: develop
     GITHUB_SLUG: belem/chinese-poetry
-    # 密钥仓库里的凭据文件（Web 端维护，禁止本地克隆/推送）
-    SECRETS_SLUG: npu-gpu-cpu/poem-source-secrets
-    SECRETS_REF: main
-    SECRETS_FILE: pair.yml
   # 同步只是几次 git 操作，给最小规格就够
   runner:
     cpus: 1
@@ -18,7 +22,7 @@ develop:
   push:
     - name: cnb-to-github
       imports:
-        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
+        - https://cnb.cool/npu-gpu-cpu/poem-source-secrets/-/blob/main/pair.yml
       stages:
         - name: 推送到 GitHub
           script: bash .cnb/sync/sync.sh push
@@ -27,7 +31,7 @@ develop:
   "crontab: 0 0,6,12,18 * * *":
     - name: github-to-cnb
       imports:
-        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
+        - https://cnb.cool/npu-gpu-cpu/poem-source-secrets/-/blob/main/pair.yml
       stages:
         - name: 从 GitHub 拉取
           script: bash .cnb/sync/sync.sh pull
@@ -36,7 +40,7 @@ develop:
   api_trigger:
     - name: manual-sync
       imports:
-        - https://cnb.cool/${SECRETS_SLUG}/-/blob/${SECRETS_REF}/${SECRETS_FILE}
+        - https://cnb.cool/npu-gpu-cpu/poem-source-secrets/-/blob/main/pair.yml
       stages:
         - name: 双向同步
           script: bash .cnb/sync/sync.sh "${MODE:-both}"
