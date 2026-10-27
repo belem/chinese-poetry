@@ -19,7 +19,8 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 唐代/诗/全唐诗/（含 poet.song.* 即《全宋诗》）
 唐五代/词/五代诗词/{huajianji,nantang}
 宋代/词/宋词/
-元代/元曲/  明代/诗/古诗源·明诗.json  清代/诗/古诗源·清诗.json
+元代/元曲/  明代/诗/古诗源·明诗.json
+清代/诗/{古诗源·清诗.json,纳兰诗/}  清代/词/纳兰词/
 ```
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
