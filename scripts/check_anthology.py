@@ -35,7 +35,7 @@ ANTH_DIR = os.path.join(ROOT, 'anthologies')
 # 选本 → 该选本的诗藏在哪些目录里
 ANTH_SOURCES = {
     'tangshi300': ['唐代/诗/全唐诗'],
-    'songci300': ['宋代/词/宋词'],
+    'songci300': ['宋代/宋词'],
 }
 # 选本的收诗只可能落在这些文件名前缀里；全唐诗目录下的 poet.song.* 是宋诗，不能算
 PREFIX = {'tangshi300': 'poet.tang.', 'songci300': 'ci.song.'}

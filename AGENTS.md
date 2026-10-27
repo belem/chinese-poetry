@@ -18,8 +18,8 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源,诗文总集/{乐府诗集,昭明文选}}
 唐代/诗/全唐诗/（含 poet.song.* 即《全宋诗》）
 唐五代/词/五代诗词/{huajianji,nantang}
-宋代/{诗/古诗源·宋诗.json,词/宋词/,词/古诗源·宋词.json}
-元代/元曲/  清代/词/古诗源·清词.json  明代/（暂空）
+宋代/宋词/
+元代/元曲/  明代/诗/古诗源·明诗.json  清代/诗/古诗源·清诗.json
 ```
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
@@ -224,7 +224,7 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 ```json
 {
   "reviewed": {
-    "宋代/词/宋词/ci.song.13000.json": {
+    "宋代/宋词/ci.song.13000.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "clean"

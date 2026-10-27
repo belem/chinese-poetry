@@ -35,7 +35,7 @@ BOOKS = {
     'poems-guwen.js': ('古文观止', True),
     'poems-classic.js': ('课外经典', True),
 }
-TEXT_DIRS = ('唐代/诗/全唐诗', '宋代/词/宋词', '元代/元曲')
+TEXT_DIRS = ('唐代/诗/全唐诗', '宋代/宋词', '元代/元曲')
 
 
 def norm_title(t):
