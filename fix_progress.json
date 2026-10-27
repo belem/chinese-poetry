@@ -5,8 +5,8 @@
     "total_files": 375,
     "reviewed": 689,
     "clean": 157,
-    "fixed": 159,
-    "needs_review": 60,
+    "fixed": 160,
+    "needs_review": 59,
     "out_of_scope": 313,
     "in_scope_files": 376
   },
@@ -1043,7 +1043,7 @@
     "宋词/ci.song.13000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
-      "status": "needs_review",
+      "status": "fixed",
       "fixes": [
         {
           "original": "只守伯禽法，с野万云烟",
@@ -1692,6 +1692,11 @@
           "original": "變化終□測，神仙未易論。",
           "corrected": "變化終難測，神仙未易論。",
           "note": "Lacuna □ filled from other editions (base text has a gap here): 3 independent books on 识典古籍 agree, e.g. 《增定廬山志》卷十一; 《增定廬山志》卷十三"
+        },
+        {
+          "original": "宿雨一番蔬甲拆，春山幾處茗旗香。 / ff。",
+          "corrected": "宿雨一番蔬甲拆，春山幾處茗旗香。",
+          "note": "删除爬取残渣行「ff。」（无内容，非诗句）"
         }
       ]
     },
@@ -1967,6 +1972,11 @@
           "original": "拂拭坐空巖，□□□□琰。",
           "corrected": null,
           "note": "needs_review: lacuna □ — candidate 「摩挲觀翠」 supported by only 1 book on 识典古籍 (《蜀中廣記》卷二十五); not filled"
+        },
+        {
+          "original": "信脚到太古。 / 《誠齋集》卷一一四《詩話》ff。",
+          "corrected": "信脚到太古。",
+          "note": "删除爬取残渣行「《誠齋集》卷一一四《詩話》ff。」（出处串混入正文，末带 ff 残渣）"
         }
       ]
     },
@@ -2355,6 +2365,11 @@
           "original": "[lacuna marker] 囗 ×1",
           "corrected": "[lacuna marker] □",
           "note": "Lacuna marker 囗 (U+56D7, a radical not used in running text) unified to □ (U+25A1) as elsewhere in the dataset; component notation like <囗贵> left untouched"
+        },
+        {
+          "original": "幾處爐爣炭，何人坐有[H。 / 70x]氊。",
+          "corrected": "幾處爐熏炭，何人坐有氈。",
+          "note": "OCR 残渣跨行（\"[H。\" + \"70x]氊。\"）→ 合并回一句（石介《大寒早行》）；《徂徠集》卷四、《徂徠石先生全集》卷四均作「幾處爐熏炭，何人坐有氈」"
         }
       ]
     },
@@ -3291,6 +3306,11 @@
           "original": "胡不見廬山三峽水",
           "corrected": "胡不見廬山三峽水",
           "note": "Line-length anomaly checked: irregular line is attested as-is in 3 books on 识典古籍 (《新編方輿勝覽》, 《都官集》, 《青山集》); no change"
+        },
+        {
+          "original": "避秦荒徑在，招屈古祠空。 / f。",
+          "corrected": "避秦荒徑在，招屈古祠空。",
+          "note": "删除爬取残渣行「f。」（无内容，非诗句），陶弼《句 其一六》"
         }
       ]
     },
@@ -3369,6 +3389,11 @@
           "original": "更深河漢淡，砧□出籬落。",
           "corrected": null,
           "note": "needs_review: lacuna □ — candidate 「杵」 supported by only 1 book on 识典古籍 (《廬山集》廬山集卷一“五言古詩”); not filled"
+        },
+        {
+          "original": "秦邸獄成杯酒裏，烏臺禍起一詩間。 / 《癸辛雜識》續集卷上ff。",
+          "corrected": "秦邸獄成杯酒裏，烏臺禍起一詩間。",
+          "note": "删除爬取残渣行「《癸辛雜識》續集卷上ff。」（出处串混入正文，末带 ff 残渣），诗句本身未改"
         }
       ]
     },
@@ -4465,6 +4490,11 @@
           "original": "棄捐碩果□不食，正音鏗鏘不",
           "corrected": "棄捐碩果人不食，正音鏗鏘不",
           "note": "needs_review: lacuna □ — candidate 「人」 supported by only 1 book on 识典古籍 (《東萊詩集》東萊詩集卷十宋吕本中撰“離行在即事三首”); not filled | 2026-10-07 resolved: [missing_char] □ → 人; 识典古籍 2 books (e.g. 《東萊先生詩集》卷十, 《東萊詩集》東萊詩集卷十宋吕本中撰“離行在即事三首”) — extended search (short contexts + title), authorized access"
+        },
+        {
+          "original": "千尺絲輪0直下垂，一波才動萬波隨。",
+          "corrected": "千尺絲綸直下垂，一波才動萬波隨。",
+          "note": "ASCII 残渣 0 混入 → 删；輪→綸。《五燈會元》卷五、《詩人玉屑》卷二十、《石倉歷代詩選》卷一一一、《雜毒海》卷八等 6 部古籍均作「千尺絲綸直下垂」"
         }
       ]
     },
@@ -10851,6 +10881,11 @@
           "original": "騎人蓬萊清淺中",
           "corrected": "騎入蓬萊清淺中",
           "note": "Twin collation: 人 → 入; the other source (御定全唐詩) and 5 books on 识典古籍 read 入 (e.g. 《全唐詩》第九函第十册卷十三, 《唐甫里先生文集》唐甫里先生文集卷之十二“七言絶句詩”), none support 人"
+        },
+        {
+          "original": "空持一竿餌，有意鯨魚。",
+          "corrected": "空持一竿餌，有意獻鯨魚。",
+          "note": "私用区字符 U+E85A → 獻；《唐詩類苑》卷九十五、清康熙揚州詩局本《全唐詩》第九函第十册均作「有意獻鯨魚」（陆龟蒙《奉和襲美酬前進士崔潞盛製見寄因贈至一百四十言》）"
         }
       ]
     },
@@ -110918,6 +110953,11 @@
           "original": "路隔秋江",
           "corrected": "路隔秋江",
           "note": "Ci pattern anomaly checked (南乡子): sentence attested as-is in 6 books on 识典古籍 (《六一詞》, 《御選歷代詩餘》, 《詞壇豔逸品》) — 又一体 / original wording; no change"
+        },
+        {
+          "original": "解刷扮，能ㄋ嗽，表里都峭。",
+          "corrected": "解刷扮，能㑟嗽，表里都峭。",
+          "note": "注音符号 ㄋ → 㑟（柳永《传花枝》）；《花草稡編》卷二十作「能㑟嗽」，《彊村叢書》本樂章集作「𠴇」"
         }
       ]
     },
@@ -111017,6 +111057,16 @@
           "original": "�稍�著意斟量过",
           "corrected": null,
           "note": "needs_review: GBK byte-shift garble (2 chars, partial bytes C9D4); no source found"
+        },
+        {
+          "original": "阕匣岬茫万语千言。",
+          "corrected": null,
+          "note": "U+FFFD 乱码，疑为「闃寂無聞，萬語千言」（沈瀛《行香子》）；《宋明十六家詞》《南詞十三種》竹齋詞本此句残缺，识典古籍未检得完句，不猜测"
+        },
+        {
+          "original": "稍著意斟量过，天下事、无穷尽。",
+          "corrected": null,
+          "note": "句首 U+FFFD 加缺字（赵长卿《水龍吟·自遣》）；毛晉《宋名家詞》本惜香乐府作「㬠曾著意斟量過」，四库本作「幾曾著意斟量過」，异文且首字生僻，待人工定夺"
         }
       ]
     },
@@ -111910,6 +111960,11 @@
           "original": "rhythmic: 大",
           "corrected": "rhythmic: 大酺",
           "note": "Tune name: lost rare character restored (大酺 / 双鸂鶒, matched by text and 和作)"
+        },
+        {
+          "original": "鸡犬静，涧篱怼",
+          "corrected": "鸡犬静，涧篱闭。",
+          "note": "U+FFFD 替换字符 → 闭（韩淲《贺新郎》）；《彊村叢書》本澗泉詩餘作「雞犬靜，澗籬閉」"
         }
       ]
     },
