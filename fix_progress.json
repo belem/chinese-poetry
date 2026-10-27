@@ -3,10 +3,10 @@
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
     "total_files": 510,
-    "reviewed": 696,
+    "reviewed": 691,
     "clean": 157,
     "fixed": 160,
-    "needs_review": 66,
+    "needs_review": 61,
     "out_of_scope": 313,
     "in_scope_files": 504
   },
@@ -112533,6 +112533,18 @@
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
     },
+    "_补入poem-wechat": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "本轮补入的 6 个文件（`近现代诗/近现代诗.json`、`近现代诗/元明清詩.json`、`宋词三百首/宋词三百首.json`、`昭明文选/` 的 90 卷（原 `文选/`，含 `昭明文选.json`）、`古文观止/` 的 12 卷（含 `古文觀止.json`）、`乐府诗集/` 的 5 卷（含 `樂府詩集.json`））尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、按体裁就近分卷与正文去重，不构成「查过、没问题」——原记 `clean` 已撤回。完成逐字对勘后拆成逐文件记录再改 clean/fixed。"
+        }
+      ]
+    },
     "_新增选本": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
@@ -112541,79 +112553,7 @@
         {
           "original": null,
           "corrected": null,
-          "note": "这批新增选本（`乐府诗集/`、`古诗源/`、`唐诗三百首/`、`元曲三百首/`、`昭明文选/`（原 `文选/`）、`古文观止/`、`课外经典/` 共 129 个文件，连同后来补入的 `近现代诗/`、`宋词三百首/` 共 135 个文件）尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、分卷与正文去重，不构成「查过、没问题」。已跑的机械检查：西里尔/希腊字母、假名/注音、制表符、U+FFFD 均为 0；check_structure.py 只报 2 处 `□`（底本本就缺字），见 docs/wechat_corpus_audit.tsv。逐字对勘（与底本互校、一字之差以识典古籍判定）完成后再改为 clean/fixed。"
-        }
-      ]
-    },
-    "近现代诗/元明清詩.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
-        }
-      ]
-    },
-    "近现代诗/近现代诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
-        }
-      ]
-    },
-    "宋词三百首/宋词三百首.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
-        }
-      ]
-    },
-    "古文观止/古文观止.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
-        }
-      ]
-    },
-    "乐府诗集/乐府诗集.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
-        }
-      ]
-    },
-    "昭明文选/昭明文选.json": {
-      "date": "2026-10-27",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "与 _新增选本 同批导入（poem-wechat 语料里本库确实没有的 65 首），只做过简转繁与正文去重，尚未逐字对勘，故不记 clean；机械检查（西里尔/希腊字母、假名/注音、制表符、U+FFFD）为 0。"
+          "note": "新增的 7 部选本（`乐府诗集/`、`古诗源/`、`唐诗三百首/`、`元曲三百首/`、`昭明文选/`、`古文观止/`、`课外经典/`，共 129 个文件 / 1060 条）尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、分卷与正文去重，不构成「查过、没问题」。已跑的机械检查：西里尔/希腊字母、假名/注音、制表符、U+FFFD 均为 0；check_structure.py 只报 2 处 `□`（底本本就缺字），见 docs/wechat_corpus_audit.tsv。逐字对勘（与底本互校、一字之差以识典古籍判定）完成后再改为 clean/fixed。"
         }
       ]
     }
