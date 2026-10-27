@@ -42,3 +42,37 @@
 - [`scripts/shidian.py`](scripts/shidian.py)：以识典古籍批量检索为证据，生成审核表，人工确认后写回。
 - [`scripts/collate.py`](scripts/collate.py)：整部合集逐句与古籍对勘，由 GitHub Actions 每天定时分批运行。宋词对勘正在进行中，进度与参与方式见 [`docs/宋词对勘.md`](docs/宋词对勘.md)。
 - 参与修正请阅读 [`AGENTS.md`](AGENTS.md)（适用于人工与 AI 贡献者）。
+
+---
+
+## 与 GitHub 的同步
+
+本仓库是 [belem/chinese-poetry](https://github.com/belem/chinese-poetry) 的镜像：内容与上游 **逐字节一致**，只额外多出 `.cnb.yml` 和 `.cnb/` 两个同步配置。
+
+两端都在 `develop` 分支上直接 commit，不走 PR。
+
+| 方向 | 触发 | 动作 |
+| --- | --- | --- |
+| CNB → GitHub | `develop` 推送 | 直接 push 到 GitHub `develop` |
+| GitHub → CNB | 每 6 小时 / 手动 | fast-forward 拉取 `develop` |
+
+- `main` 不参与自动同步；上游默认分支是 `fix-typo`，本仓库固定用 `develop`。
+- 只做 fast-forward。两侧分别推进导致分叉时任务失败，人工合并，绝不强推。
+- 上游的 `.github/workflows` 原样保留，但在 CNB 镜像里不会运行；要跑对勘等定时任务请用 GitHub 侧。
+
+### 凭据
+
+CNB 仓库设置里添加环境变量 `GITHUB_PAT`（不公开），对 `belem/chinese-poetry` 有 **Contents: Read and write** 权限。
+未配置时同步会跳过，并在流水线日志里提示。
+
+### 手动触发
+
+流水线 `poem-source-sync` 支持手动运行：
+
+- `mode=push`：CNB → GitHub
+- `mode=pull`：GitHub → CNB
+- `mode=both`：先拉后推
+
+### 合并冲突提示
+
+同一个 commit 若在两边都产生（比如 GitHub 侧的定时脚本改了文件、CNB 侧同时手动编辑），会形成分叉。此时先在本机把两侧 merge 成一个，再推 `develop`。

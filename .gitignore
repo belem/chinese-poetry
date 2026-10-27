@@ -4,3 +4,6 @@ __pycache__
 .pytest_cache
 # scripts/shidian 依赖
 node_modules/
+
+# 同步任务临时产物
+.poetry-sync/
