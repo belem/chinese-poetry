@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 516,
-    "reviewed": 692,
+    "total_files": 512,
+    "reviewed": 702,
     "clean": 483,
-    "fixed": 2,
-    "needs_review": 3,
-    "out_of_scope": 204,
-    "in_scope_files": 516
+    "fixed": 11,
+    "needs_review": 4,
+    "out_of_scope": 313,
+    "in_scope_files": 512
   },
   "reviewed": {
     "先秦汉魏晋南北朝/诗经/shijing.json": {
@@ -3846,54 +3846,6 @@
         }
       ]
     },
-    "先秦汉魏晋南北朝/古诗源/六朝诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "山中雜詩（吳均）／僵臥孤村不自哀…鐵馬冰河入夢來",
-          "corrected": "山際見來煙，竹中窺落日。鳥向簷上飛，雲從窗裡出。",
-          "note": "原正文实为陸游《十一月四日風雨大作》，非吳均《山中雜詩》；作者与正文错位。依《藝文類聚》卷三十六所收吳均《山中雜詩》三首之首改回"
-        }
-      ]
-    },
-    "宋代/诗/古诗源·宋诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "讀《岳陽樓記》（王十朋）／辛苦遭逢起一經…",
-          "corrected": "删除该条",
-          "note": "标题是王十朋的读后题记，正文却是文天祥《過零丁洋》，且该诗已收在 唐代/诗/全唐诗/poet.song.239000.json；整条错位且重复，删"
-        }
-      ]
-    },
-    "先秦汉魏晋南北朝/古诗源/元明清诗.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "菩薩蠻・大柏地（許淑慧）",
-          "corrected": "移入 清代/词/古诗源·清词.json",
-          "note": "词误入诗卷，且作者为近人；按体裁移出（该条本身是伪托，待定是否删，见 Issue #19）"
-        }
-      ]
-    },
-    "先秦汉魏晋南北朝/古诗源/清词.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "文件已拆分：诗入 元明清诗.json，词移入 清代/词/古诗源·清词.json"
-        }
-      ]
-    },
     "先秦汉魏晋南北朝/诗文总集/乐府诗集/卷三唐代乐府.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
@@ -3951,6 +3903,59 @@
           "original": "離騷經（屈平）",
           "corrected": "删除该条",
           "note": "与 先秦汉魏晋南北朝/楚辞/chuci.json 的《离骚》同篇，重复；本文件保留《文選》所收的屈宋骚类选篇"
+        }
+      ]
+    },
+    "明代/诗/古诗源·明诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "元明清诗.json 里明代 6 首",
+          "corrected": "拆分到 明代/诗/古诗源·明诗.json",
+          "note": "于謙、楊基、祝允明、楊繼盛、錢福、袁中道 皆明人；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "清代/诗/古诗源·清诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "元明清诗.json 里清代 8 首",
+          "corrected": "拆分到 清代/诗/古诗源·清诗.json",
+          "note": "鄭燮、史可法、鄭成功、畢沅、趙翼、林則徐、龔自珍 皆清人；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "先秦汉魏晋南北朝/古诗源/汉魏六朝诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "汉魏诗.json 2 首 + 六朝诗.json 10 首",
+          "corrected": "合并为 汉魏六朝诗.json 12 首",
+          "note": "两卷都是唐以前且不见于《全唐诗》《全宋诗》《全宋词》《诗经》《楚辞》，合为一卷；正文未改，记录加 sources: [\"古诗源\"]"
+        }
+      ]
+    },
+    "先秦汉魏晋南北朝/古诗源/": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "先秦诗.json 8 首",
+          "corrected": "整卷删除（7 首《诗经》+ 屈原《橘颂》）",
+          "note": "《詩經・周南・芣苢》《邶風・凱風》《小雅・采薇》《小雅・鹿鳴》《陳風・月出》《鄭風・山有扶蘇》《齊風・猗嗟》只摘诗句，全文见 先秦汉魏晋南北朝/诗经/shijing.json（《采薇》在那只存末章 8 句，《鹿鳴》只存首章 4 句）；《橘頌》只存前半，缺「愿歲並謝…置以為像兮」六句，全文见 楚辞/chuci.json。按「一件作品只留一份正文」删摘句"
+        },
+        {
+          "original": "宋代/诗/古诗源·宋诗.json 6 首、宋代/词/古诗源·宋词.json 2 首、清代/词/古诗源·清词.json 1 首",
+          "corrected": "全部删除",
+          "note": "6 首宋诗与《全宋诗》正文逐字相同（司馬光《客中初夏》= poet.song.30000《居洛初夏作》，僅「隨風/因風」一字异文），2 首陆游词与《全宋词》ci.song.9000 相同；《菩薩蠻・大柏地》署許淑慧，实为毛泽东 1929 年词，系伪托且与「大柏地」地名错配，无古籍可据，删。清词目录因此清空"
         }
       ]
     }
