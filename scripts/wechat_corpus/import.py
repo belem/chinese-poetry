@@ -4,7 +4,7 @@
 规则（与库中既有数据一致）：
   * 繁体、竖排改横排的一行一句；每条只留 作者 / 段落 / 标题 三个字段，
     全用繁体。简体正文用 opencc s2twp 转换，只转字不改字。
-  * 选本（乐府、古诗、唐诗三百首、元散曲、文选、古文观止、课外经典）另建目录，
+  * 选本（乐府、古诗、唐诗三百首、元散曲、昭明文选、古文观止、课外经典）另建目录，
     一律用 book.title 的繁体原名作文件名；不并入 全唐诗/宋词，避免与现行去重口径打架。
     与库中已有作品重复的，只记不写，清单进 docs/wechat_corpus.tsv。
   * 上游的译文、出处、学段、难度等展示字段不落库。
@@ -31,7 +31,7 @@ BOOKS = {
     'poems-gushi.js': ('古诗源', True),
     'poems-tangshi.js': ('唐诗三百首', False),
     'poems-yuanqu.js': ('元曲三百首', True),
-    'poems-zhaoming.js': ('文选', True),
+    'poems-zhaoming.js': ('昭明文选', True),
     'poems-guwen.js': ('古文观止', True),
     'poems-classic.js': ('课外经典', True),
 }
@@ -114,8 +114,8 @@ def build(corpus, idx, log):
                 volume = it.get('gradeGroup') or it.get('group') or ''
             if src == 'poems-zhaoming.js' and '·' not in volume:
                 # 上游这类条目卷名只写了文体；「赋」「其他」两类与上面重名，
-                # 一律加「文选」前缀，避免两卷写进同一个文件
-                volume = ('文选' if volume == '赋' else '') + (volume or '其他')
+                # 一律加「昭明文选」前缀，避免两卷写进同一个文件
+                volume = ('昭明文选' if volume == '赋' else '') + (volume or '其他')
             volumes.setdefault(volume, []).append(rec)
         if volumes:
             books[book] = volumes
