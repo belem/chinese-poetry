@@ -3,10 +3,10 @@
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
     "total_files": 817,
-    "reviewed": 690,
+    "reviewed": 691,
     "clean": 157,
     "fixed": 160,
-    "needs_review": 60,
+    "needs_review": 61,
     "out_of_scope": 313,
     "in_scope_files": 504
   },
@@ -112532,6 +112532,18 @@
       ],
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
+    },
+    "_补入poem-wechat": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "本轮补入的 6 个文件（`近现代诗/近现代诗.json`、`近现代诗/元明清詩.json`、`宋词三百首/宋词三百首.json`、`文选/` 的 89 卷（含 `文选.json`）、`古文观止/` 的 12 卷（含 `古文觀止.json`）、`乐府诗集/` 的 5 卷（含 `樂府詩集.json`））尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、按体裁就近分卷与正文去重，不构成「查过、没问题」——原记 `clean` 已撤回。完成逐字对勘后拆成逐文件记录再改 clean/fixed。"
+        }
+      ]
     },
     "_新增选本": {
       "date": "2026-10-27",
