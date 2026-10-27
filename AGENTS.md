@@ -175,7 +175,6 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
 | `scripts/shidian.py` + `scripts/shidian/search.mjs` | Evidence pipeline: `build` → search 识典古籍 → `analyze` → review `review.tsv` → `apply`. |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
-| `scripts/haitang/import.py` | Import `reference/mit_licence_haitang` (11407 records) into the corpus: glyph conversion, garble→`□`, body-based dedup, shard routing, `authors/` + `dynasties/`. Idempotent; dry-run by default. Per-record decisions in `docs/haitang收录.tsv`. |
 
 ```bash
 pip install opencc-python-reimplemented
@@ -202,7 +201,7 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 
 1. **Edit the file**: change only the erroneous characters, nothing else.
 
-2. **Update `fix_progress.json`** — add each reviewed file to the `reviewed` object:
+2. **Update `fix_progress.json`** — add each reviewed file to the `reviewed` object. Keep it to the review record only; the fix log itself is not kept (the git commit is the record, and `scripts/check_structure.py` re-checks the whole dataset any time):
 
 ```json
 {
@@ -210,19 +209,14 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
     "宋词/ci.song.13000.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
-      "status": "clean",
-      "fixes": []
+      "status": "clean"
     },
     "元曲/yuanqu.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "fixed",
       "fixes": [
-        {
-          "original": "Θ瓜邵平",
-          "corrected": "种瓜邵平",
-          "note": "Greek Θ → 种; verified at https://www.gushiwen.cn/..."
-        }
+        { "original": "Θ瓜邵平", "corrected": "种瓜邵平", "note": "Greek Θ → 种; verified on 识典古籍" }
       ]
     }
   }
@@ -230,10 +224,12 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 ```
 
 Status values:
-- `clean` — no issues found
-- `fixed` — issues found and corrected
-- `needs_review` — suspicious but not corrected; include details in `fixes` with `corrected: null`
+- `clean` — no issues found, or every issue found was corrected (the `fixes` list may be empty)
+- `fixed` — same as `clean` for a file that had corrections; the entries you list are what the commit fixed
+- `needs_review` — corrections are still outstanding and worth tracking: either the file has not been collated line by line (batch records like `_新增选本`), or a specific known defect is open. Rare-character lacunae (`□`, bare PUA) that no evidence can settle are **not** tracked here — `scripts/check_structure.py` reports them live
 - `out_of_scope` — not part of the published dataset (currently all of `全唐诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
+
+Do not accumulate per-character repair history in this file: entries for completed fixes are deleted once the character is fixed in the dataset. Keep only what is still actionable.
 
 Also update the top-level `stats` counters (`reviewed`, `clean`, `fixed`, `needs_review`, `out_of_scope`, `in_scope_files`). The batch tools recompute them from file statuses automatically.
 
@@ -243,10 +239,10 @@ Also update the top-level `stats` counters (`reviewed`, `clean`, `fixed`, `needs
 
 ### Step 5 — Report
 
-After the batch, summarize:
+After the batch, summarize in the PR / issue comment:
 - Files processed and their status
-- Total characters fixed
-- Any `needs_review` items with the suspect text and your reasoning
-- Overall progress: X in-scope files still `needs_review` (see `stats.in_scope_files` in `fix_progress.json`)
+- What was fixed, with the evidence for anything non-obvious
+- Any `needs_review` items still open and why
+- `python3 scripts/check_structure.py` counts before / after, so regressions stay visible
 
 **Submit a PR.** Commit your changes on a new branch and open a pull request against `develop`; the maintainer reviews and merges it.
