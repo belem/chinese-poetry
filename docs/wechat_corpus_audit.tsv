@@ -1,0 +1,2361 @@
+集子	上游题	上游作者	判定	本库文件	本库题	本库作者
+课内	咏鹅	骆宾王	exact	全唐诗/poet.tang.4000.json	詠鵝	駱賓王
+课内	江南	汉乐府	new			
+课内	画	佚名	author			
+课内	悯农（其二）	李绅	exact	全唐诗/poet.tang.25000.json	古風二首 二	李紳
+课内	古朗月行（节选）	李白	prefix	全唐诗/poet.tang.1000.json	雜曲歌辭 朗月行	李白
+课内	风	李峤	exact	全唐诗/poet.tang.3000.json	風	李嶠
+课内	春晓	孟浩然	exact	全唐诗/poet.tang.7000.json	春曉	孟浩然
+课内	赠汪伦	李白	exact	全唐诗/poet.tang.8000.json	贈汪倫	李白
+课内	静夜思	李白	author			
+课内	寻隐者不遇	贾岛	exact	全唐诗/poet.tang.25000.json	訪羊尊師	孫革
+课内	池上	白居易	exact	全唐诗/poet.tang.24000.json	池上二絕 二	白居易
+课内	小池	杨万里	exact	全唐诗/poet.song.139000.json	小池	楊萬里
+课内	画鸡	唐寅	new			
+课内	梅花	王安石	exact	全唐诗/poet.song.32000.json	梅花	王安石
+课内	小儿垂钓	胡令能	author			
+课内	登鹳雀楼	王之涣	exact	全唐诗/poet.tang.10000.json	登樓	朱斌
+课内	望庐山瀑布	李白	exact	全唐诗/poet.tang.8000.json	望廬山瀑布水二首 二	李白
+课内	江雪	柳宗元	author			
+课内	夜宿山寺	李白	exact	全唐诗/poet.song.6000.json	登樓	楊億
+课内	敕勒歌	北朝民歌	exact	乐府诗集/卷二南朝乐府.json	敕勒歌	佚名
+课内	村居	高鼎	new			
+课内	咏柳	贺知章	exact	全唐诗/poet.tang.5000.json	詠柳	賀知章
+课内	赋得古原草送别	白居易	exact	全唐诗/poet.tang.22000.json	賦得古原草送別	白居易
+课内	晓出净慈寺送林子方	杨万里	exact	全唐诗/poet.song.141000.json	曉出浄慈送林子方二首  其二	楊萬里
+课内	绝句	杜甫	exact	全唐诗/poet.tang.11000.json	絕句二首 一	杜甫
+课内	悯农（其一）	李绅	author			
+课内	舟夜书所见	查慎行	new			
+课内	所见	袁枚	new			
+课内	山行	杜牧	exact	全唐诗/poet.tang.28000.json	山行	杜牧
+课内	赠刘景文	苏轼	prefix	全唐诗/poet.song.216000.json	頌古三十六首  其二	釋惟一
+课内	夜书所见	叶绍翁	exact	全唐诗/poet.song.192000.json	夜書所見	葉紹翁
+课内	望天门山	李白	prefix	全唐诗/poet.tang.8000.json	望天門山	李白
+课内	饮湖上初晴后雨	苏轼	prefix	全唐诗/poet.song.44000.json	飲湖上初晴後雨二首  其二	蘇軾
+课内	望洞庭	刘禹锡	exact	全唐诗/poet.tang.19000.json	望洞庭	劉禹錫
+课内	早发白帝城	李白	prefix	全唐诗/poet.tang.8000.json	早發白帝城	李白
+课内	采莲曲	王昌龄	exact	全唐诗/poet.tang.1000.json	相和歌辭 采蓮曲三首 二	王昌齡
+课内	惠崇春江晚景	苏轼	exact	全唐诗/poet.song.45000.json	惠崇春江晚景二首  其一	蘇軾
+课内	三衢道中	曾几	exact	全唐诗/poet.song.95000.json	三衢道中	曾幾
+课内	忆江南	白居易	exact	全唐诗/poet.tang.49000.json	憶江南 一	白居易
+课内	元日	王安石	author			
+课内	清明	杜牧	exact	水墨唐诗/shuimotangshi.json	清明	杜牧
+课内	九月九日忆山东兄弟	王维	exact	全唐诗/poet.tang.6000.json	九月九日憶山東兄弟	王維
+课内	滁州西涧	韦应物	exact	全唐诗/poet.tang.9000.json	滁州西澗	韋應物
+课内	大林寺桃花	白居易	exact	全唐诗/poet.tang.22000.json	大林寺桃花	白居易
+课内	暮江吟	白居易	exact	全唐诗/poet.tang.23000.json	暮江吟	白居易
+课内	题西林壁	苏轼	author			
+课内	雪梅	卢钺	author			
+课内	出塞	王昌龄	exact	全唐诗/poet.tang.0.json	橫吹曲辭 出塞 一	王昌齡
+课内	凉州词	王翰	exact	全唐诗/poet.tang.7000.json	涼州詞二首 一	王翰
+课内	夏日绝句	李清照	author			
+课内	别董大	高适	author			
+课内	宿新市徐公店	杨万里	author			
+课内	四时田园杂兴（其二十五）	范成大	prefix	全唐诗/poet.song.138000.json	四時田園雜興六十首 夏日田園雜興十二絕 其一	范成大
+课内	清平乐·村居	辛弃疾	author			
+课内	卜算子·咏梅	毛泽东	new			
+课内	蜂	罗隐	exact	全唐诗/poet.tang.36000.json	蜂	羅隱
+课内	独坐敬亭山	李白	exact	全唐诗/poet.tang.8000.json	獨坐敬亭山	李白
+课内	墨梅	王冕	new			
+课内	汉江临泛	王维	exact	全唐诗/poet.tang.6000.json	漢江臨汎	王維
+课内	鹿柴	王维	exact	全唐诗/poet.tang.6000.json	輞川集 鹿柴	王維
+课内	嫦娥	李商隐	exact	唐诗三百首/唐诗三百首.json	嫦娥	李商隱
+课内	竹枝词	刘禹锡	exact	全唐诗/poet.tang.19000.json	竹枝詞二首 一	劉禹錫
+课内	芙蓉楼送辛渐	王昌龄	exact	唐诗三百首/唐诗三百首.json	芙蓉樓送辛漸	王昌齡
+课内	塞下曲（其三）	卢纶	exact	全唐诗/poet.tang.12000.json	和張僕射塞下曲	錢起
+课内	塞下曲（其四）	卢纶	exact	全唐诗/poet.tang.14000.json	和張僕射塞下曲 四	盧綸
+课内	黄鹤楼送孟浩然之广陵	李白	exact	唐诗三百首/唐诗三百首.json	送孟浩然之廣陵	李白
+课内	秋夜将晓出篱门迎凉有感	陆游	exact	全唐诗/poet.song.130000.json	秋夜将曉出籬門迎涼有感二首  其二	陸游
+课内	蝉	虞世南	author			
+课内	乞巧	林杰	exact	全唐诗/poet.tang.25000.json	乞巧	林傑
+课内	示儿	陆游	exact	全唐诗/poet.song.136000.json	示兒	陸游
+课内	题临安邸	林升	prefix	全唐诗/poet.song.170000.json	題臨安邸	林升
+课内	己亥杂诗	龚自珍	author			
+课内	山居秋暝	王维	exact	全唐诗/poet.tang.6000.json	山居秋暝	王維
+课内	枫桥夜泊	张继	author			
+课内	长相思	纳兰性德	new			
+课内	四时田园杂兴（其三十一）	范成大	exact	全唐诗/poet.song.138000.json	四時田園雜興六十首 夏日田園雜興十二絕 其七	范成大
+课内	稚子弄冰	杨万里	author			
+课内	村晚	雷震	author			
+课内	游子吟	孟郊	exact	全唐诗/poet.tang.1000.json	雜曲歌辭 遊子吟	孟郊
+课内	鸟鸣涧	王维	exact	全唐诗/poet.tang.6000.json	皇甫嶽雲溪雜題五首 鳥鳴澗	王維
+课内	从军行	王昌龄	exact	全唐诗/poet.tang.6000.json	從軍行七首 四	王昌齡
+课内	闻官军收河南河北	杜甫	author			
+课内	渔歌子	张志和	exact	全唐诗/poet.tang.49000.json	漁父 一	張志和
+课内	观书有感（其一）	朱熹	exact	全唐诗/poet.song.147000.json	觀書有感二首  其一	朱熹
+课内	观书有感（其二）	朱熹	author			
+课内	长歌行	汉乐府	new			
+课内	赴戍登程口占示家人	林则徐	author			
+课内	送元二使安西	王维	author			
+课内	寒菊	郑思肖	prefix	全唐诗/poet.song.241000.json	題畫菊	鄭思肖
+课内	乡村四月	翁卷	exact	全唐诗/poet.song.138000.json	村居即景	范成大
+课内	宿建德江	孟浩然	exact	全唐诗/poet.tang.7000.json	宿建德江	孟浩然
+课内	六月二十七日望湖楼醉书	苏轼	exact	全唐诗/poet.song.44000.json	六月二十七日望湖樓醉書五絕  其一	蘇軾
+课内	西江月·夜行黄沙道中	辛弃疾	exact	宋词/ci.song.11000.json	西江月	辛弃疾
+课内	浪淘沙（其一）	刘禹锡	exact	全唐诗/poet.tang.19000.json	浪淘沙九首 一	劉禹錫
+课内	江南春	杜牧	exact	全唐诗/poet.tang.28000.json	江南春絕句	杜牧
+课内	书湖阴先生壁	王安石	author			
+课内	回乡偶书	贺知章	exact	唐诗三百首/唐诗三百首.json	回鄉偶書・其一	賀知章
+课内	寒食	韩翃	exact	全唐诗/poet.tang.12000.json	寒食	韓翃
+课内	迢迢牵牛星	佚名	exact	乐府诗集/卷一汉魏乐府.json	迢迢牽牛星	佚名
+课内	十五夜望月	王建	prefix	全唐诗/poet.tang.16000.json	十五夜望月寄杜郎中	王建
+课内	游园不值	叶绍翁	exact	古诗源/宋诗.json	遊園不值	葉紹翁
+课内	卜算子·送鲍浩然之浙东	王观	prefix	宋词/ci.song.1000.json	卜算子	王观
+课内	浣溪沙·游蕲水清泉寺	苏轼	author			
+课内	清平乐·春归何处	黄庭坚	exact	宋词/ci.song.2000.json	清平乐	黄庭坚
+课内	竹石	郑燮	author			
+课内	石灰吟	于谦	author			
+课内	过故人庄	孟浩然	prefix	全唐诗/poet.tang.7000.json	過故人莊	孟浩然
+课内	七律·长征	毛泽东	new			
+课内	春日	朱熹	exact	全唐诗/poet.song.147000.json	春日	朱熹
+课内	天净沙·秋思	马致远	exact	元曲/yuanqu.json	越调・天净沙秋思	马致远
+课内	过零丁洋	文天祥	exact	古诗源/宋诗.json	讀《岳陽樓記》	王十朋
+课内	马诗	李贺	exact	全唐诗/poet.tang.20000.json	馬詩二十三首 五	李賀
+课内	采薇（节选）	佚名	prefix	古诗源/先秦诗.json	詩經・小雅・采薇	佚名
+课内	春夜喜雨	杜甫	exact	全唐诗/poet.tang.11000.json	春夜喜雨	杜甫
+课内	江畔独步寻花（其五）	杜甫	author			
+课内	江畔独步寻花（其六）	杜甫	exact	全唐诗/poet.tang.11000.json	江畔獨步尋花七絕句 六	杜甫
+课内	早春呈水部张十八员外	韩愈	exact	全唐诗/poet.tang.18000.json	早春呈水部張十八員外二首 一	韓愈
+课内	江上渔者	范仲淹	exact	全唐诗/poet.song.8000.json	江上漁者	范仲淹
+课内	泊船瓜洲	王安石	author			
+课内	观沧海	曹操	exact	曹操诗集/caocao.json	观沧海	
+课内	闻王昌龄左迁龙标遥有此寄	李白	prefix	全唐诗/poet.tang.8000.json	聞王昌齡左遷龍標遙有此寄	李白
+课内	次北固山下	王湾	exact	全唐诗/poet.tang.5000.json	次北固山下	王灣
+课内	峨眉山月歌	李白	exact	全唐诗/poet.tang.8000.json	峨眉山月歌	李白
+课内	江南逢李龟年	杜甫	author			
+课内	行军九日思长安故园	岑参	exact	全唐诗/poet.tang.9000.json	行軍九日思長安故園	岑參
+课内	夜上受降城闻笛	李益	author			
+课内	秋词（其一）	刘禹锡	exact	全唐诗/poet.tang.19000.json	秋詞二首 一	劉禹錫
+课内	夜雨寄北	李商隐	exact	全唐诗/poet.tang.29000.json	夜雨寄北	李商隱
+课内	十一月四日风雨大作（其二）	陆游	exact	古诗源/六朝诗.json	山中雜詩	吳均
+课内	潼关	谭嗣同	new			
+课内	木兰诗	佚名	exact	乐府诗集/卷二南朝乐府.json	木蘭詩	佚名
+课内	竹里馆	王维	exact	全唐诗/poet.tang.6000.json	輞川集 竹里館	王維
+课内	春夜洛城闻笛	李白	exact	全唐诗/poet.tang.8000.json	春夜洛城聞笛	李白
+课内	逢入京使	岑参	exact	全唐诗/poet.tang.9000.json	逢入京使	岑參
+课内	晚春	韩愈	author			
+课内	登幽州台歌	陈子昂	exact	全唐诗/poet.tang.4000.json	登幽州臺歌	陳子昂
+课内	望岳	杜甫	prefix	全唐诗/poet.tang.10000.json	望嶽	杜甫
+课内	登飞来峰	王安石	exact	全唐诗/poet.song.33000.json	登飛來峰	王安石
+课内	游山西村	陆游	exact	全唐诗/poet.song.127000.json	遊山西村	陸游
+课内	己亥杂诗（其五）	龚自珍	exact	古诗源/元明清诗.json	己亥雜詩・其五	龔自珍
+课内	陋室铭	刘禹锡	exact	古文观止/卷七六朝唐文.json	陋室銘	劉禹錫
+课内	爱莲说	周敦颐	author			
+课内	三峡	郦道元	new			
+课内	答谢中书书	陶弘景	exact	课外经典/治学勤读.json	答謝中書書	陶弘景
+课内	记承天寺夜游	苏轼	author			
+课内	与朱元思书	吴均	author			
+课内	野望	王绩	author			
+课内	黄鹤楼	崔颢	author			
+课内	使至塞上	王维	prefix	全唐诗/poet.tang.6000.json	使至塞上	王維
+课内	渡荆门送别	李白	exact	全唐诗/poet.tang.8000.json	渡荆門送別	李白
+课内	钱塘湖春行	白居易	exact	全唐诗/poet.tang.23000.json	錢唐湖春行	白居易
+课内	庭中有奇树	佚名	author			
+课内	龟虽寿	曹操	exact	曹操诗集/caocao.json	龟虽寿	
+课内	赠从弟（其二）	刘桢	new			
+课内	梁甫行	曹植	author			
+课内	桃花源记	陶渊明	prefix	古文观止/卷六汉文.json	桃花源記	陶淵明
+课内	小石潭记	柳宗元	author			
+课内	核舟记	魏学洢	new			
+课内	关雎	佚名	author			
+课内	蒹葭	佚名	author			
+课内	式微	佚名	author			
+课内	子衿	佚名	author			
+课内	送杜少府之任蜀州	王勃	exact	唐诗三百首/唐诗三百首.json	送杜少府之任蜀州	王勃
+课内	望洞庭湖赠张丞相	孟浩然	exact	唐诗三百首/唐诗三百首.json	臨洞庭上張丞相	孟浩然
+课内	石壕吏	杜甫	author			
+课内	茅屋为秋风所破歌	杜甫	exact	乐府诗集/卷五乐府歌辞.json	茅屋為秋風所破歌	杜甫
+课内	卖炭翁	白居易	exact	唐诗三百首/唐诗三百首.json	賣炭翁	白居易
+课内	题破山寺后禅院	常建	prefix	唐诗三百首/唐诗三百首.json	破山寺後禪院	常建
+课内	送友人	李白	author			
+课内	卜算子·黄州定慧院寓居作	苏轼	author			
+课内	卜算子·咏梅	陆游	exact	宋词/ci.song.9000.json	卜算子	陆游
+课内	沁园春·雪	毛泽东	new			
+课内	我爱这土地	艾青	new			
+课内	乡愁	余光中	new			
+课内	岳阳楼记	范仲淹	prefix	古文观止/卷九唐宋文.json	岳陽樓記	范仲淹
+课内	醉翁亭记	欧阳修	exact	古文观止/卷十宋文.json	醉翁亭記	歐陽修
+课内	湖心亭看雪	张岱	exact	古文观止/卷十二明文.json	湖心亭看雪	張岱
+课内	行路难（其一）	李白	exact	唐诗三百首/唐诗三百首.json	行路難・其一	李白
+课内	酬乐天扬州初逢席上见赠	刘禹锡	prefix	全唐诗/poet.tang.19000.json	酬樂天揚州初逢席上見贈	劉禹錫
+课内	水调歌头·明月几时有	苏轼	author			
+课内	月夜忆舍弟	杜甫	author			
+课内	长沙过贾谊宅	刘长卿	exact	全唐诗/poet.tang.7000.json	長沙過賈誼宅	劉長卿
+课内	左迁至蓝关示侄孙湘	韩愈	exact	唐诗三百首/唐诗三百首.json	左遷至藍關示侄孫湘	韓愈
+课内	商山早行	温庭筠	exact	全唐诗/poet.tang.32000.json	商山早行	溫庭筠
+课内	咸阳城东楼	许浑	prefix	全唐诗/poet.tang.28000.json	咸陽城東樓	許渾
+课内	无题	李商隐	exact	全唐诗/poet.tang.29000.json	無題	李商隱
+课内	行香子	秦观	author			
+课内	丑奴儿·书博山道中壁	辛弃疾	exact	宋词/ci.song.11000.json	丑奴儿・采桑子	辛弃疾
+课内	渔家傲·秋思	范仲淹	exact	宋词/ci.song.0.json	渔家傲	范仲淹
+课内	江城子·密州出猎	苏轼	exact	宋词/ci.song.1000.json	江神子・江城子	苏轼
+课内	破阵子·为陈同甫赋壮词以寄之	辛弃疾	exact	宋词/ci.song.11000.json	破阵子	辛弃疾
+课内	满江红·小住京华	秋瑾	new			
+课内	定风波·莫听穿林打叶声	苏轼	author			
+课内	临江仙·夜登小阁忆洛中旧游	陈与义	prefix	宋词/ci.song.7000.json	临江仙	陈与义
+课内	太常引·建康中秋夜为吕叔潜赋	辛弃疾	exact	宋词/ci.song.11000.json	太常引	辛弃疾
+课内	浣溪沙·身向云山那畔行	纳兰性德	new			
+课内	南安军	文天祥	exact	古诗源/元明清诗.json	天平山中	楊基
+课内	别云间	夏完淳	new			
+课内	山坡羊·骊山怀古	张养浩	exact	元曲三百首/小令·中吕.json	山坡羊・驪山懷古	張養浩
+课内	朝天子·咏喇叭	王磐	exact	元曲三百首/小令·中吕.json	朝天子・詠喇叭	王磐
+课内	沁园春·长沙	毛泽东	new			
+课内	短歌行	曹操	exact	曹操诗集/caocao.json	短歌行 其一	
+课内	归园田居（其一）	陶渊明	prefix	古诗源/六朝诗.json	歸園田居・其一	陶淵明
+课内	梦游天姥吟留别	李白	prefix	全唐诗/poet.tang.8000.json	夢遊天姥吟留別	李白
+课内	登高	杜甫	author			
+课内	琵琶行并序	白居易	prefix	唐诗三百首/唐诗三百首.json	琵琶行・並序	白居易
+课内	念奴娇·赤壁怀古	苏轼	prefix	宋词/ci.song.1000.json	念奴娇	苏轼
+课内	永遇乐·京口北固亭怀古	辛弃疾	exact	宋词/ci.song.3000.json	永遇乐	辛弃疾
+课内	声声慢·寻寻觅觅	李清照	prefix	宋词/ci.song.6000.json	声声慢	李清照
+课内	劝学	荀子	new			
+课内	师说	韩愈	prefix	古文观止/卷八唐文.json	師說	韓愈
+课内	赤壁赋	苏轼	exact	古文观止/卷十一宋文.json	前赤壁賦	蘇軾
+课内	涉江采芙蓉	佚名	exact	乐府诗集/卷一汉魏乐府.json	涉江採芙蓉	佚名
+课内	静女	佚名	author			
+课内	鹊桥仙·纤云弄巧	秦观	prefix	宋词/ci.song.3000.json	鹊桥仙	秦观
+课内	虞美人·春花秋月何时了	李煜	exact	五代诗词/nantang/poetrys.json	虞美人·春花秋月何时了	李煜
+课内	望海潮·东南形胜	柳永	exact	宋词/ci.song.0.json	望海潮	柳永
+课内	桂枝香·金陵怀古	王安石	prefix	宋词/ci.song.1000.json	桂枝香	王安石
+课内	阿房宫赋	杜牧	prefix	古文观止/卷七六朝唐文.json	阿房宮賦	杜牧
+课内	谏太宗十思疏	魏征	exact	古文观止/卷七六朝唐文.json	諫太宗十思疏	魏徵
+课内	登岳阳楼	杜甫	exact	全唐诗/poet.tang.11000.json	登岳陽樓	杜甫
+课内	游园（皂罗袍）	汤显祖	new			
+课内	书愤	陆游	exact	全唐诗/poet.song.129000.json	書憤	陸游
+课内	临安春雨初霁	陆游	exact	全唐诗/poet.song.129000.json	臨安春雨初霽	陸游
+课内	论语十二章	孔子及弟子	author			
+课内	大学之道	礼记	prefix	四书五经/daxue.json		
+课内	老子四章	老子	new			
+课内	无衣	佚名	author			
+课内	春江花月夜	张若虚	prefix	全唐诗/poet.tang.1000.json	相和歌辭 春江花月夜	張若虛
+课内	将进酒	李白	prefix	全唐诗/poet.tang.0.json	鼓吹曲辭 將進酒	李白
+课内	江城子·乙卯正月二十日夜记梦	苏轼	prefix	宋词/ci.song.1000.json	江神子・江城子	苏轼
+课内	屈原列传	司马迁	exact	古文观止/卷五汉文.json	屈原列傳	司馬遷
+课内	过秦论	贾谊	exact	文选/论·论一.json	過秦論	賈長沙
+课内	燕歌行并序	高适	exact	唐诗三百首/唐诗三百首.json	燕歌行・並序	高適
+课内	李凭箜篌引	李贺	author			
+课内	锦瑟	李商隐	exact	全唐诗/poet.tang.29000.json	錦瑟	李商隱
+课内	蜀道难	李白	prefix	全唐诗/poet.tang.1000.json	相和歌辭 蜀道難	李白
+课内	陈情表	李密	prefix	古文观止/卷六汉文.json	陳情表	李密
+课内	归去来兮辞	陶渊明	exact	古文观止/卷六汉文.json	歸去來兮辭	陶淵明
+课内	种树郭橐驼传	柳宗元	prefix	古文观止/卷九唐宋文.json	種樹郭橐駝傳	柳宗元
+课内	扬州慢·淮左名都	姜夔	exact	宋词/ci.song.12000.json	扬州慢	姜夔
+课内	客至	杜甫	prefix	全唐诗/poet.tang.11000.json	客至	杜甫
+课内	离骚（节选）	屈原	prefix	文选/骚.json	離騷經	屈平
+课内	氓	佚名	author			
+课内	滕王阁序	王勃	exact	古文观止/卷七六朝唐文.json	滕王閣序	王勃
+课内	六国论	苏洵	prefix	古文观止/卷十宋文.json	六國論	蘇洵
+课内	子路曾皙冉有公西华侍坐	论语	exact	课外经典/诸子论道.json	子路、曾皙、冉有、公西華侍坐	孔子及其弟子
+课内	逍遥游（节选）	庄子	prefix	课外经典/诸子论道.json	逍遙遊（節選）	莊子
+课内	菩萨蛮·书江西造口壁	辛弃疾	prefix	宋词/ci.song.11000.json	菩萨蛮	辛弃疾
+课内	青玉案·元夕	辛弃疾	exact	宋词/ci.song.11000.json	青玉案	辛弃疾
+课内	贺新郎·国脉微如缕	刘克庄	author			
+古文	三字经	王应麟	exact	课外经典/蒙学经典.json	三字經	王應麟
+古文	弟子规	李毓秀	exact	课外经典/蒙学经典.json	弟子規	李毓秀
+古文	司马光	脱脱等	exact	课外经典/人物故事.json	司馬光	脫脫等
+古文	守株待兔	韩非	exact	课外经典/寓言故事.json	守株待兔	韓非
+古文	精卫填海	佚名	exact	课外经典/神话传说.json	精衛填海	佚名
+古文	王戎不取道旁李	刘义庆	exact	课外经典/人物故事.json	王戎不取道旁李	劉義慶
+古文	囊萤夜读	房玄龄等	exact	课外经典/治学勤读.json	囊螢夜讀	房玄齡等
+古文	铁杵成针	祝穆	exact	课外经典/治学勤读.json	鐵杵成針	祝穆
+古文	少年中国说（节选）	梁启超	exact	课外经典/治学勤读.json	少年中國說（節選）	梁啟超
+古文	古人谈读书	孔子及弟子、朱熹	exact	课外经典/治学勤读.json	古人談讀書	孔子及弟子、朱熹
+古文	自相矛盾	韩非	exact	课外经典/寓言故事.json	自相矛盾	韓非
+古文	杨氏之子	刘义庆	exact	课外经典/志人逸事.json	楊氏之子	劉義慶
+古文	伯牙鼓琴	吕不韦等	exact	课外经典/人物故事.json	伯牙鼓琴	呂不韋等
+古文	书戴嵩画牛	苏轼	exact	课外经典/治学勤读.json	書戴嵩畫牛	蘇軾
+古文	学弈	孟子	exact	课外经典/治学勤读.json	學弈	孟子
+古文	两小儿辩日	列御寇	exact	课外经典/寓言故事.json	兩小兒辯日	列禦寇
+古文	盘古开天地	徐整	exact	课外经典/神话传说.json	盤古開天地	徐整
+古文	女娲造人	应劭	exact	课外经典/神话传说.json	女媧造人	應劭
+古文	夸父逐日	佚名	exact	课外经典/神话传说.json	夸父逐日	佚名
+古文	后羿射日	刘安等	exact	课外经典/神话传说.json	后羿射日	劉安等
+古文	鲧禹治水	佚名	exact	课外经典/神话传说.json	鯀禹治水	佚名
+古文	共工怒触不周山	列御寇	exact	课外经典/神话传说.json	共工怒觸不周山	列禦寇
+古文	曹冲称象	陈寿	exact	课外经典/人物故事.json	曹衝稱象	陳壽
+古文	掩耳盗铃	吕不韦等	exact	课外经典/寓言故事.json	掩耳盜鈴	呂不韋等
+古文	画蛇添足	刘向编	exact	课外经典/寓言故事.json	畫蛇添足	劉向編
+古文	刻舟求剑	吕不韦等	exact	课外经典/寓言故事.json	刻舟求劍	呂不韋等
+古文	郑人买履	韩非	exact	课外经典/寓言故事.json	鄭人買履	韓非
+古文	叶公好龙	刘向	exact	课外经典/寓言故事.json	葉公好龍	劉向
+古文	东施效颦	庄子	exact	课外经典/寓言故事.json	東施效顰	莊子
+古文	楚王好细腰	墨子	exact	课外经典/寓言故事.json	楚王好細腰	墨子
+古文	吾腰千钱	柳宗元	exact	课外经典/寓言故事.json	吾腰千錢	柳宗元
+古文	揠苗助长	孟子	exact	课外经典/寓言故事.json	揠苗助長	孟子
+古文	滥竽充数	韩非	exact	课外经典/寓言故事.json	濫竽充數	韓非
+古文	买椟还珠	韩非	exact	课外经典/寓言故事.json	買櫝還珠	韓非
+古文	画龙点睛	张彦远	exact	课外经典/人物故事.json	畫龍點睛	張彥遠
+古文	智子疑邻	韩非	exact	课外经典/寓言故事.json	智子疑鄰	韓非
+古文	鹬蚌相争	刘向编	exact	课外经典/寓言故事.json	鷸蚌相爭	劉向編
+古文	老马识途	韩非	exact	课外经典/寓言故事.json	老馬識途	韓非
+古文	狐假虎威	刘向编	exact	课外经典/寓言故事.json	狐假虎威	劉向編
+古文	螳螂捕蝉	刘向	exact	课外经典/寓言故事.json	螳螂捕蟬	劉向
+古文	庄子与惠子游于濠梁	庄子	exact	课外经典/诸子论道.json	莊子與惠子游於濠梁	莊子
+古文	子路负米	郭居敬	prefix	课外经典/人物故事.json	子路負米	郭居敬
+古文	孟母三迁	刘向	exact	课外经典/人物故事.json	孟母三遷	劉向
+古文	列子学射	列御寇	exact	课外经典/治学勤读.json	列子學射	列禦寇
+古文	薛谭学讴	列御寇	exact	课外经典/治学勤读.json	薛譚學謳	列禦寇
+古文	望梅止渴	刘义庆	exact	课外经典/志人逸事.json	望梅止渴	劉義慶
+古文	关羽刮骨疗毒	陈寿	exact	课外经典/人物故事.json	關羽刮骨療毒	陳壽
+古文	卧薪尝胆	司马迁	exact	课外经典/人物故事.json	臥薪嚐膽	司馬遷
+古文	商鞅立信	司马迁	exact	课外经典/人物故事.json	商鞅立信	司馬遷
+古文	周公吐哺	司马迁	exact	课外经典/人物故事.json	周公吐哺	司馬遷
+古文	李广射虎	司马迁	exact	课外经典/人物故事.json	李廣射虎	司馬遷
+古文	叔敖埋蛇	刘向	exact	课外经典/人物故事.json	叔敖埋蛇	劉向
+古文	孔融让梨	范晔	exact	课外经典/人物故事.json	孔融讓梨	范曄
+古文	管宁割席	刘义庆	exact	课外经典/志人逸事.json	管寧割席	劉義慶
+古文	程门立雪	脱脱等	exact	课外经典/治学勤读.json	程門立雪	脫脫等
+古文	勤读	陈寿	prefix	课外经典/治学勤读.json	勤讀	陳壽
+古文	凿壁借光	葛洪	exact	课外经典/治学勤读.json	鑿壁借光	葛洪
+古文	王充求学	范晔	exact	课外经典/治学勤读.json	王充求學	范曄
+古文	观潮（节选）	周密	author			
+古文	答谢中书书	陶弘景	exact	课外经典/治学勤读.json	答謝中書書	陶弘景
+古文	菊	佚名	author			
+古文	莲	佚名	author			
+古文	钻木取火	王嘉	exact	课外经典/神话传说.json	鑽木取火	王嘉
+古文	吾日三省吾身	孔子及弟子	exact	课外经典/诸子论道.json	吾日三省吾身	孔子及弟子
+古文	仁者爱人	孟子	exact	课外经典/诸子论道.json	仁者愛人	孟子
+古文	穷达	孟子	author			
+古文	富贵不能淫	孟子	exact	课外经典/诸子论道.json	富貴不能淫	孟子
+古文	生于忧患，死于安乐	孟子	exact	课外经典/诸子论道.json	生於憂患，死於安樂	孟子
+古文	大学之道	曾子	exact	课外经典/诸子论道.json	大學之道	曾子
+古文	好学近乎知	子思	exact	课外经典/诸子论道.json	好學近乎知	子思
+古文	学问思辨行	子思	exact	课外经典/诸子论道.json	學問思辨行	子思
+古文	虽有嘉肴	戴圣编	exact	课外经典/诸子论道.json	雖有嘉餚	戴聖編
+古文	齐宣王好射	吕不韦等	exact	课外经典/诸子论道.json	齊宣王好射	呂不韋等
+古文	祁黄羊去私	吕不韦等	exact	课外经典/诸子论道.json	祁黃羊去私	呂不韋等
+古文	三人成虎	韩非	exact	课外经典/诸子论道.json	三人成虎	韓非
+古文	邯郸学步	庄子	exact	课外经典/寓言故事.json	邯鄲學步	莊子
+古文	朝三暮四	列御寇	exact	课外经典/寓言故事.json	朝三暮四	列禦寇
+古文	日攘一鸡	孟子	exact	课外经典/寓言故事.json	日攘一雞	孟子
+古文	齐人攫金	列御寇	exact	课外经典/寓言故事.json	齊人攫金	列禦寇
+古文	执竿入城	邯郸淳	exact	课外经典/寓言故事.json	執竿入城	邯鄲淳
+古文	约不可失	刘向编	exact	课外经典/寓言故事.json	約不可失	劉向編
+古文	嗟来之食	戴圣编	exact	课外经典/寓言故事.json	嗟來之食	戴聖編
+古文	鸿鹄之志	司马迁	exact	课外经典/人物故事.json	鴻鵠之志	司馬遷
+古文	田忌赛马	司马迁	exact	课外经典/人物故事.json	田忌賽馬	司馬遷
+古文	多多益善	司马迁	exact	课外经典/人物故事.json	多多益善	司馬遷
+古文	季札挂剑	司马迁	exact	课外经典/人物故事.json	季札掛劍	司馬遷
+古文	一鸣惊人	司马迁	exact	课外经典/人物故事.json	一鳴驚人	司馬遷
+古文	荀巨伯探友	刘义庆	exact	课外经典/志人逸事.json	荀巨伯探友	劉義慶
+古文	陶母责子	刘义庆	exact	课外经典/人物故事.json	陶母責子	劉義慶
+古文	华王优劣	刘义庆	exact	课外经典/志人逸事.json	華王優劣	劉義慶
+古文	咏雪	刘义庆	author			
+古文	身无长物	刘义庆	exact	课外经典/志人逸事.json	身無長物	劉義慶
+古文	陈太丘与友期行	刘义庆	exact	课外经典/志人逸事.json	陳太丘與友期行	劉義慶
+古文	子罕辞玉	左丘明	exact	课外经典/诸子论道.json	子罕辭玉	左丘明
+古文	许衡心主	宋濂等	exact	课外经典/人物故事.json	許衡心主	宋濂等
+古文	曾子杀彘	韩非	exact	课外经典/诸子论道.json	曾子殺彘	韓非
+古文	鲁人徙越	韩非	exact	课外经典/诸子论道.json	魯人徙越	韓非
+古文	欲速则不达	韩非	exact	课外经典/诸子论道.json	欲速則不達	韓非
+古文	鲁相嗜鱼	韩非	exact	课外经典/诸子论道.json	魯相嗜魚	韓非
+古文	诫子书	诸葛亮	exact	课外经典/诸子论道.json	誡子書	諸葛亮
+古文	千字文	周兴嗣	exact	课外经典/蒙学经典.json	千字文	周興嗣
+古文	百家姓	佚名	exact	课外经典/蒙学经典.json	百家姓	佚名
+古文	苛政猛于虎	戴圣	exact	课外经典/诸子论道.json	苛政猛於虎	戴聖
+古文	伤仲永	王安石	prefix	课外经典/人物故事.json	傷仲永	王安石
+古文	卖油翁	欧阳修	exact	课外经典/人物故事.json	賣油翁	歐陽修
+古文	黠鼠赋	苏轼	exact	课外经典/寓言故事.json	黠鼠賦	蘇軾
+古文	狼	蒲松龄	exact	课外经典/寓言故事.json	黠狼	蒲松齡
+古文	周处	刘义庆	exact	课外经典/人物故事.json	周處	劉義慶
+古文	河中石兽	纪昀	exact	课外经典/治学勤读.json	河中石獸	紀昀
+古文	送东阳马生序	宋濂	exact	课外经典/治学勤读.json	送東陽馬生序	宋濂
+古文	论语选段	孔子及弟子	exact	课外经典/诸子论道.json	論語選段	孔子及弟子
+古文	庄子钓于濮水	庄子	exact	课外经典/寓言故事.json	神龜	莊周
+古文	橘逾淮为枳	晏婴	exact	课外经典/诸子论道.json	橘逾淮為枳	晏嬰
+古文	劝学	荀子	new			
+古文	师说	韩愈	exact	古文观止/卷八唐文.json	師說	韓愈
+古文	六国论	苏洵	exact	古文观止/卷十宋文.json	六國論	蘇洵
+古文	游褒禅山记	王安石	exact	古文观止/卷十一宋文.json	遊褒禪山記	王安石
+古文	伶官传序	欧阳修	exact	古文观止/卷十宋文.json	五代史伶官傳序	歐陽修
+古文	石钟山记	苏轼	exact	课外经典/山水游记.json	石鐘山記	蘇軾
+古文	鸿门宴	司马迁	author			
+古文	廉颇蔺相如列传	司马迁	exact	课外经典/人物故事.json	廉頗藺相如列傳	司馬遷
+古文	逍遥游（节选）	庄子	prefix	课外经典/诸子论道.json	逍遙遊（節選）	莊子
+古文	齐桓晋文之事	孟子	exact	古文观止/卷一周文.json	齊桓晉文之事	孟子
+古文	子路、曾皙、冉有、公西华侍坐	孔子及其弟子	no_text			
+古文	寡人之于国也	孟子	exact	课外经典/诸子论道.json	寡人之於國也	孟子
+古文	季氏将伐颛臾	孔子及其弟子	exact	课外经典/诸子论道.json	季氏將伐顓臾	孔子及其弟子
+古文	登泰山记	姚鼐	exact	课外经典/山水游记.json	登泰山記	姚鼐
+古文	上枢密韩太尉书	苏辙	exact	古文观止/卷十一宋文.json	上樞密韓太尉書	蘇轍
+古文	庖丁解牛	庄子	exact	课外经典/诸子论道.json	庖丁解牛	莊子
+古文	乐以天下，忧以天下	孟子	exact	课外经典/诸子论道.json	樂以天下，憂以天下	孟子
+古文	孙叔敖纳言	刘向	exact	课外经典/人物故事.json	孫叔敖納言	劉向
+古文	枭逢鸠	刘向	exact	课外经典/寓言故事.json	梟逢鳩	劉向
+古文	师旷论学	刘向	exact	课外经典/治学勤读.json	師曠論學	劉向
+古文	项羽之死	司马迁	exact	课外经典/人物故事.json	項羽之死	司馬遷
+古文	陈蕃愿扫除天下	范晔	exact	课外经典/人物故事.json	陳蕃願掃除天下	范曄
+古文	吴许两少年	王晫	exact	课外经典/志人逸事.json	吳許兩少年	王晫
+古文	狱中杂记（节选）	方苞	exact	课外经典/山水游记.json	獄中雜記（節選）	方苞
+古文	哀江南赋序（节选）	庾信	exact	课外经典/山水游记.json	哀江南賦序（節選）	庾信
+古文	大铁椎传	魏禧	exact	古文观止/卷十二明文.json	大鐵椎傳	魏禧
+古文	游兰溪	苏轼	exact	课外经典/山水游记.json	遊蘭溪	蘇軾
+古文	苦斋记	刘基	exact	课外经典/山水游记.json	苦齋記	劉基
+古文	病梅馆记	龚自珍	exact	课外经典/山水游记.json	病梅館記	龔自珍
+古文	虎丘记（节选）	袁宏道	exact	课外经典/山水游记.json	虎丘記（節選）	袁宏道
+古文	香茗赋（节选）	杜育	exact	课外经典/蒙学经典.json	香茗賦（節選）	杜育
+古文	诗品序（节选）	钟嵘	exact	课外经典/诸子论道.json	詩品序（節選）	鍾嶸
+古文	焚书（节选）	李贽	prefix	课外经典/诸子论道.json	焚書（節選）	李贄
+古文	沧浪诗话·诗辨（节选）	严羽	exact	课外经典/诸子论道.json	滄浪詩話・詩辨（節選）	嚴羽
+古文	杨震暮夜却金	范晔	exact	课外经典/人物故事.json	楊震暮夜卻金	范曄
+古文	义犬救主	李昉等	exact	课外经典/人物故事.json	義犬救主	李昉等
+古文	五柳先生传	陶渊明	exact	古文观止/卷六汉文.json	五柳先生傳	陶淵明
+古文	晚游六桥待月记	袁宏道	exact	课外经典/山水游记.json	晚遊六橋待月記	袁宏道
+古文	子罕弗受玉	左丘明	no_text			
+古文	论志向	孔子及其弟子	exact	课外经典/诸子论道.json	論志向	孔子及其弟子
+古文	塞翁失马	刘安等	exact	课外经典/寓言故事.json	塞翁失馬	劉安等
+古文	孙叔敖遇狐丘丈人	列御寇	exact	课外经典/寓言故事.json	孫叔敖遇狐丘丈人	列禦寇
+古文	荆人袭宋	吕不韦等	exact	课外经典/寓言故事.json	荊人襲宋	呂不韋等
+古文	黄香事亲	范晔	exact	课外经典/人物故事.json	黃香事親	范曄
+古文	王泰让枣	李延寿	exact	课外经典/人物故事.json	王泰讓棗	李延壽
+古文	孔融推梨	范晔	exact	课外经典/人物故事.json	孔融推梨	范曄
+古文	陆绩怀橘	陈寿	exact	课外经典/人物故事.json	陸績懷橘	陳壽
+古文	承宫拾薪求学	范晔	exact	课外经典/治学勤读.json	承宮拾薪求學	范曄
+古文	王冕僧寺夜读	张廷玉等	exact	课外经典/治学勤读.json	王冕僧寺夜讀	張廷玉等
+古文	邴原泣学	李贽	exact	课外经典/治学勤读.json	邴原泣學	李贄
+古文	羔羊救母	李昉等	exact	课外经典/人物故事.json	羔羊救母	李昉等
+古文	欧阳询观古碑	张怀瓘	exact	课外经典/治学勤读.json	歐陽詢觀古碑	張懷瓘
+古文	高凤笃学	范晔	exact	课外经典/治学勤读.json	高鳳篤學	范曄
+古文	欧阳修少孤	脱脱等	exact	课外经典/人物故事.json	歐陽修少孤	脫脫等
+古文	张溥抄书	张廷玉等	exact	课外经典/治学勤读.json	張溥抄書	張廷玉等
+古文	铁杵磨成针	祝穆	exact	课外经典/治学勤读.json	鐵杵磨成針	祝穆
+古文	叶廷珪与《海录》	魏庆之	exact	课外经典/治学勤读.json	葉廷珪與《海錄》	魏慶之
+古文	隋侯救蛇得珠	刘安等	exact	课外经典/神话传说.json	隋侯救蛇得珠	劉安等
+古文	天雨谷	干宝	exact	课外经典/神话传说.json	天雨谷	幹寶
+古文	宋令文有神力	张鷟	exact	课外经典/志人逸事.json	宋令文有神力	張鷟
+古文	杨修啖酪	刘义庆	exact	课外经典/志人逸事.json	楊修啖酪	劉義慶
+古文	蜜蜂救飞虫	李昉等	author			
+古文	管宁大度	刘义庆	exact	课外经典/志人逸事.json	管寧大度	劉義慶
+古文	匡衡凿壁借光	刘歆	exact	课外经典/治学勤读.json	鑿壁借光	葛洪
+古文	割席分坐	刘义庆	exact	课外经典/志人逸事.json	管寧割席	劉義慶
+古文	王戎早慧	刘义庆	exact	课外经典/人物故事.json	王戎不取道旁李	劉義慶
+古文	画龙点睛	张彦远	exact	课外经典/人物故事.json	畫龍點睛	張彥遠
+古文	谷原谏父	刘基	exact	课外经典/人物故事.json	谷原諫父	劉基
+古文	任末嗜学	王嘉	exact	课外经典/治学勤读.json	任末嗜學	王嘉
+古文	拔苗助长	孟轲	exact	课外经典/寓言故事.json	拔苗助長	孟軻
+古文	杀驼破瓮	求那毗地译	exact	课外经典/寓言故事.json	殺駝破甕	求那毗地譯
+古文	鹦鹉灭火	刘义庆	exact	课外经典/寓言故事.json	鸚鵡滅火	劉義慶
+古文	青蛙鼓腹	韩非	exact	课外经典/寓言故事.json	青蛙鼓腹	韓非
+古文	「的卢」救刘备	陈寿	exact	课外经典/志人逸事.json	「的盧」救劉備	陳壽
+古文	群啄鱼	蒲松龄	exact	课外经典/寓言故事.json	群啄魚	蒲松齡
+古文	只许州官放火	陆游	exact	课外经典/志人逸事.json	只許州官放火	陸游
+古文	孟母断织	刘向	exact	课外经典/治学勤读.json	孟母斷織	劉向
+古文	犬护幼女	张潮	exact	课外经典/人物故事.json	犬護幼女	張潮
+古文	冯相新靴	冯梦龙	exact	课外经典/志人逸事.json	馮相新靴	馮夢龍
+古文	越人溺鼠	宋濂	exact	课外经典/寓言故事.json	越人溺鼠	宋濂
+古文	李子内脐中	韩非	exact	课外经典/寓言故事.json	李子內臍中	韓非
+古文	不识自家	冯梦龙	exact	课外经典/志人逸事.json	不識自家	馮夢龍
+古文	钱若赓断鹅	焦竑	exact	课外经典/志人逸事.json	錢若賡斷鵝	焦竑
+古文	林逋养鹤	沈括	exact	课外经典/志人逸事.json	林逋養鶴	沈括
+古文	王粲默记	陈寿	exact	课外经典/志人逸事.json	王粲默記	陳壽
+古文	芒山盗临刑	张潮	exact	课外经典/人物故事.json	芒山盜臨刑	張潮
+古文	牧竖拾金分心	列御寇	exact	课外经典/寓言故事.json	牧豎拾金分心	列禦寇
+古文	掩耳盗钟	吕不韦等	no_text			
+古文	乘风破浪	沈约	exact	课外经典/志人逸事.json	乘風破浪	沈約
+古文	盗牛者强辩	刘义庆	exact	课外经典/志人逸事.json	盜牛者強辯	劉義慶
+古文	引婴儿投江	吕不韦等	exact	课外经典/寓言故事.json	引嬰兒投江	呂不韋等
+古文	锯竿入城	邯郸淳	exact	课外经典/寓言故事.json	執竿入城	邯鄲淳
+古文	王羲之书六角扇	房玄龄等	exact	课外经典/人物故事.json	王羲之書六角扇	房玄齡等
+古文	焦饭活命	刘义庆	exact	课外经典/人物故事.json	焦飯活命	劉義慶
+古文	墨子责耕柱子	墨翟及弟子	exact	课外经典/志人逸事.json	墨子責耕柱子	墨翟及弟子
+古文	黠猱	蒲松龄	exact	课外经典/寓言故事.json	黠猱	蒲松齡
+古文	黠狐	蒲松龄	prefix	课外经典/寓言故事.json	黠狐	蒲松齡
+古文	任目而恶镜	冯梦龙	exact	课外经典/寓言故事.json	任目而惡鏡	馮夢龍
+古文	农夫耕田	江盈科	exact	课外经典/寓言故事.json	農夫耕田	江盈科
+古文	半饼自饱	求那毗地译	exact	课外经典/寓言故事.json	半餅自飽	求那毗地譯
+古文	卢仁爱鹤	列御寇	exact	课外经典/寓言故事.json	盧仁愛鶴	列禦寇
+古文	韩信钻裤档	司马迁	exact	课外经典/人物故事.json	韓信鑽褲檔	司馬遷
+古文	阿柴折箭喻理	魏收	exact	课外经典/人物故事.json	阿柴折箭喻理	魏收
+古文	玄石嗜酒	干宝	exact	课外经典/寓言故事.json	玄石嗜酒	幹寶
+古文	迂公修屋	张夷令	exact	课外经典/寓言故事.json	迂公修屋	張夷令
+古文	李存审诚子	薛居正等	exact	课外经典/人物故事.json	李存審誠子	薛居正等
+古文	恨鼠焚屋	江盈科	exact	课外经典/寓言故事.json	恨鼠焚屋	江盈科
+古文	魏文侯期猎	刘向编	exact	课外经典/寓言故事.json	約不可失	劉向編
+古文	响遏行云	列御寇	exact	课外经典/治学勤读.json	薛譚學謳	列禦寇
+古文	黠狼	蒲松龄	exact	课外经典/寓言故事.json	黠狼	蒲松齡
+古文	神龟	庄周	exact	课外经典/寓言故事.json	神龜	莊周
+古文	偷鸡者辩解	孟子	exact	课外经典/寓言故事.json	日攘一雞	孟子
+古文	拷打羊皮破案	李延寿	exact	课外经典/志人逸事.json	拷打羊皮破案	李延壽
+古文	稚犬衔虎尾	蒲松龄	exact	课外经典/寓言故事.json	稚犬銜虎尾	蒲松齡
+古文	陶侃不伤农	房玄龄等	exact	课外经典/人物故事.json	陶侃不傷農	房玄齡等
+古文	黄仙裳助友	王晫	exact	课外经典/人物故事.json	黃仙裳助友	王晫
+古文	樊重种树	范晔	exact	课外经典/人物故事.json	樊重種樹	范曄
+古文	鹿亦有知	张潮	exact	课外经典/山水游记.json	鹿亦有知	張潮
+古文	鸡鸣感恩	张潮	exact	课外经典/寓言故事.json	雞鳴感恩	張潮
+古文	伊犁凿井	纪昀	exact	课外经典/寓言故事.json	伊犁鑿井	紀昀
+古文	郑武公欲伐胡	韩非	exact	课外经典/人物故事.json	鄭武公欲伐胡	韓非
+古文	姜从树生	江盈科	exact	课外经典/寓言故事.json	姜從樹生	江盈科
+古文	农夫和名画	江盈科	exact	课外经典/寓言故事.json	農夫和名畫	江盈科
+古文	虎画	江盈科	exact	课外经典/人物故事.json	虎畫	江盈科
+古文	医人治驼	江盈科	exact	课外经典/志人逸事.json	醫人治駝	江盈科
+古文	外科医生	江盈科	prefix	课外经典/志人逸事.json	外科醫生	江盈科
+古文	仆人诉苦	冯梦龙	exact	课外经典/志人逸事.json	僕人訴苦	馮夢龍
+古文	一字师	陶岳	no_text			
+古文	笼中鹦鹉	李昌龄	exact	课外经典/寓言故事.json	籠中鸚鵡	李昌齡
+古文	人之初	王应麟	exact	课外经典/蒙学经典.json	人之初	王應麟
+古文	冠必正	李毓秀	exact	课外经典/蒙学经典.json	冠必正	李毓秀
+古文	北人食菱	江盈科	exact	课外经典/志人逸事.json	北人食菱	江盈科
+古文	孔子论学	孔子及弟子	exact	课外经典/诸子论道.json	孔子論學	孔子及弟子
+古文	铁杵成针	祝穆	exact	课外经典/治学勤读.json	鐵杵成針	祝穆
+古文	郑人买履	韩非	exact	课外经典/寓言故事.json	鄭人買履	韓非
+古文	鹬蚌相争	刘向编	exact	课外经典/寓言故事.json	鷸蚌相爭	劉向編
+古文	滥竽充数	韩非	exact	课外经典/寓言故事.json	濫竽充數	韓非
+古文	刻舟求剑	吕不韦等	exact	课外经典/寓言故事.json	刻舟求劍	呂不韋等
+古文	邯郸学步	庄周	exact	课外经典/寓言故事.json	邯鄲學步	莊子
+古文	长竿入城	邯郸淳	no_text			
+古文	揠苗助长	孟轲	exact	课外经典/寓言故事.json	拔苗助長	孟軻
+古文	王戎不取道旁李（一）	刘义庆	exact	课外经典/人物故事.json	王戎不取道旁李	劉義慶
+古文	杨氏之子（一）	刘义庆	exact	课外经典/志人逸事.json	楊氏之子	劉義慶
+古文	学弈（一）	孟轲	exact	课外经典/治学勤读.json	學弈	孟子
+古文	司马光（一）	脱脱等	exact	课外经典/人物故事.json	司馬光	脫脫等
+古文	囊萤夜读（一）	房玄龄等	exact	课外经典/治学勤读.json	囊螢夜讀	房玄齡等
+古文	书戴嵩画牛（一）	苏轼	exact	课外经典/治学勤读.json	書戴嵩畫牛	蘇軾
+古文	铁杵成针（一）	祝穆	exact	课外经典/治学勤读.json	鐵杵成針	祝穆
+古文	共工怒触不周山（一）	刘安等	exact	课外经典/神话传说.json	共工怒觸不周山	列禦寇
+古文	塞翁失马（一）	刘安等	exact	课外经典/寓言故事.json	塞翁失馬	劉安等
+古文	北人食菱（一）	江盈科	exact	课外经典/志人逸事.json	北人食菱	江盈科
+古文	郑人买履（一）	韩非	exact	课外经典/寓言故事.json	鄭人買履	韓非
+古文	鹬蚌相争（一）	刘向编	exact	课外经典/寓言故事.json	鷸蚌相爭	劉向編
+古文	滥竽充数（一）	韩非	exact	课外经典/寓言故事.json	濫竽充數	韓非
+古文	刻舟求剑（一）	吕不韦等	exact	课外经典/寓言故事.json	刻舟求劍	呂不韋等
+古文	邯郸学步（一）	庄周	exact	课外经典/寓言故事.json	邯鄲學步	莊子
+古文	长竿入城（一）	邯郸淳	no_text			
+古文	揠苗助长（一）	孟轲	exact	课外经典/寓言故事.json	拔苗助長	孟軻
+古文	掩耳盗钟（一）	吕不韦等	exact	课外经典/寓言故事.json	掩耳盜鈴	呂不韋等
+古文	牛郎织女	冯应京	exact	课外经典/神话传说.json	牛郎織女	馮應京
+古文	郑板桥教子	郑燮	exact	古文观止/卷十二明文.json	濰縣署中與舍弟墨第二書	鄭燮
+古文	冠必正	李毓秀	exact	课外经典/蒙学经典.json	冠必正	李毓秀
+古文	训学斋规	朱熹	exact	课外经典/治学勤读.json	訓學齋規	朱熹
+古文	司马光	脱脱等	exact	课外经典/人物故事.json	司馬光	脫脫等
+古文	守株待兔	韩非	exact	课外经典/寓言故事.json	守株待兔	韓非
+古文	买椟还珠	韩非	exact	课外经典/寓言故事.json	買櫝還珠	韓非
+古文	画蛇添足	刘向编	no_text			
+古文	程门立雪	脱脱等	exact	课外经典/人物故事.json	程門立雪	脫脫等
+古文	心术	苏洵	no_text			
+古文	郑板桥教子（古文观止本）	郑燮	no_text			
+古文	答司马谏议书	王安石	exact	课外经典/诸子论道.json	答司馬諫議書	王安石
+乐府集	大风歌	刘邦	exact	乐府诗集/卷一汉魏乐府.json	大風歌	劉邦
+乐府集	垓下歌	项羽	no_text			
+乐府集	长歌行	佚名	no_text			
+乐府集	江南	佚名	no_text			
+乐府集	陌上桑	佚名	author			
+乐府集	上邪	佚名	exact	乐府诗集/卷一汉魏乐府.json	上邪	佚名
+乐府集	十五从军征	佚名	exact	乐府诗集/卷一汉魏乐府.json	十五從軍徵	佚名
+乐府集	饮马长城窟行	佚名	author			
+乐府集	冉冉孤生竹	佚名	exact	乐府诗集/卷一汉魏乐府.json	冉冉孤生竹	佚名
+乐府集	涉江采芙蓉	佚名	no_text			
+乐府集	短歌行	曹操	no_text			
+乐府集	观沧海	曹操	no_text			
+乐府集	龟虽寿	曹操	no_text			
+乐府集	燕歌行	曹丕	new			
+乐府集	白马篇	曹植	author			
+乐府集	七哀诗	曹植	exact	乐府诗集/卷一汉魏乐府.json	七哀詩	曹植
+乐府集	木兰诗	佚名	no_text			
+乐府集	敕勒歌	佚名	no_text			
+乐府集	西洲曲	佚名	exact	乐府诗集/卷二南朝乐府.json	西洲曲	佚名
+乐府集	子夜歌·其一	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜歌・其一	佚名
+乐府集	子夜四时歌·春歌	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜四時歌・春歌	佚名
+乐府集	子夜四时歌·夏歌	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜四時歌・夏歌	佚名
+乐府集	子夜四时歌·秋歌	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜四時歌・秋歌	佚名
+乐府集	子夜四时歌·冬歌	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜四時歌・冬歌	佚名
+乐府集	读曲歌	佚名	exact	乐府诗集/卷二南朝乐府.json	讀曲歌	佚名
+乐府集	华山畿	佚名	exact	乐府诗集/卷二南朝乐府.json	華山畿	佚名
+乐府集	莫愁乐	佚名	author			
+乐府集	凉州词	王之涣	author			
+乐府集	凉州词	王翰	no_text			
+乐府集	出塞	王昌龄	no_text			
+乐府集	从军行·其四	王昌龄	no_text			
+乐府集	关山月	李白	no_text			
+乐府集	长干行	李白	no_text			
+乐府集	子夜吴歌·秋歌	李白	no_text			
+乐府集	蜀道难	李白	no_text			
+乐府集	将进酒	李白	no_text			
+乐府集	行路难	李白	no_text			
+乐府集	长相思	李白	no_text			
+乐府集	塞下曲	李白	author			
+乐府集	春江花月夜	张若虚	author			
+乐府集	琵琶行	白居易	author			
+乐府集	渔翁	柳宗元	no_text			
+乐府集	田家行	王建	author			
+乐府集	野老歌	张籍	author			
+乐府集	节妇吟	张籍	author			
+乐府集	江南曲	李益	no_text			
+乐府集	囝	顾况	exact	乐府诗集/卷四唐五代乐府.json	囝	顧況
+乐府集	游子吟	孟郊	no_text			
+乐府集	杜陵叟	白居易	exact	乐府诗集/卷四唐五代乐府.json	杜陵叟	白居易
+乐府集	长恨歌	白居易	author			
+乐府集	忆江南	白居易	no_text			
+乐府集	竹枝词	刘禹锡	no_text			
+乐府集	乌衣巷	刘禹锡	no_text			
+乐府集	秋词	刘禹锡	no_text			
+乐府集	菩萨蛮	温庭筠	author			
+乐府集	梦江南	温庭筠	author			
+乐府集	虞美人	李煜	no_text			
+乐府集	相见欢	李煜	no_text			
+乐府集	胡笳十八拍·其一	蔡琰	exact	乐府诗集/卷五乐府歌辞.json	胡笳十八拍・其一	蔡琰
+乐府集	怨歌行	曹植	author			
+乐府集	代出自蓟北门行	鲍照	exact	乐府诗集/卷五乐府歌辞.json	代出自薊北門行	鮑照
+乐府集	玉阶怨	李白	no_text			
+乐府集	静夜思	李白	no_text			
+乐府集	秋浦歌	李白	no_text			
+乐府集	峨眉山月歌	李白	no_text			
+乐府集	望庐山瀑布	李白	no_text			
+乐府集	赠汪伦	李白	no_text			
+乐府集	黄鹤楼送孟浩然之广陵	李白	no_text			
+乐府集	早发白帝城	李白	no_text			
+乐府集	独坐敬亭山	李白	no_text			
+乐府集	望天门山	李白	no_text			
+乐府集	月下独酌	李白	no_text			
+乐府集	把酒问月	李白	author			
+乐府集	春思	李白	no_text			
+乐府集	清平调	李白	author			
+乐府集	金缕衣	杜秋娘	new			
+乐府集	春望	杜甫	no_text			
+乐府集	石壕吏	杜甫	no_text			
+乐府集	茅屋为秋风所破歌	杜甫	no_text			
+乐府集	闻官军收河南河北	杜甫	no_text			
+乐府集	绝句	杜甫	no_text			
+乐府集	江畔独步寻花	杜甫	no_text			
+乐府集	江南逢李龟年	杜甫	no_text			
+乐府集	秋风辞	刘彻	author			
+乐府集	白头吟	卓文君	new			
+乐府集	战城南	佚名	author			
+乐府集	悲歌	佚名	author			
+乐府集	西北有高楼	佚名	author			
+乐府集	美女篇	曹植	author			
+乐府集	咏怀·其一	阮籍	exact	乐府诗集/卷一汉魏乐府.json	詠懷・其一	阮籍
+乐府集	长干曲	佚名	author			
+乐府集	乌夜啼	佚名	author			
+乐府集	乌栖曲	李白	author			
+乐府集	丁都护歌	李白	author			
+乐府集	拟行路难	鲍照	exact	乐府诗集/卷五乐府歌辞.json	擬行路難	鮑照
+乐府集	题都城南庄	崔护	no_text			
+乐府集	八阵图	杜甫	no_text			
+乐府集	折杨柳歌辞	佚名	exact	乐府诗集/卷二南朝乐府.json	折楊柳歌辭	佚名
+乐府集	陇头歌辞	佚名	exact	乐府诗集/卷二南朝乐府.json	隴頭歌辭	佚名
+乐府集	子夜歌·其二	佚名	exact	乐府诗集/卷二南朝乐府.json	子夜歌・其二	佚名
+乐府集	孔雀东南飞	佚名	prefix	乐府诗集/卷一汉魏乐府.json	孔雀東南飛	佚名
+乐府集	有所思	佚名	author			
+乐府集	迢迢牵牛星	佚名	exact	乐府诗集/卷一汉魏乐府.json	迢迢牽牛星	佚名
+节日节气	咏二十四气诗·夏至五月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 夏至五月中	元稹
+节日节气	咏二十四气诗·春分二月中	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 春分二月中	元稹
+节日节气	咏廿四气诗·冬至十一月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 冬至十一月中	元稹
+节日节气	咏廿四气诗·处暑七月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 處暑七月中	元稹
+节日节气	咏廿四气诗·大寒十二月中	元稹	author			
+节日节气	咏廿四气诗·大暑六月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 大暑六月中	元稹
+节日节气	咏廿四气诗·大雪十一月节	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 大雪十一月節	元稹
+节日节气	咏廿四气诗·寒露九月节	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 寒露九月節	元稹
+节日节气	咏廿四气诗·小寒十二月节	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 小寒十二月節	元稹
+节日节气	咏廿四气诗·小暑六月节	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 小暑六月節	元稹
+节日节气	咏廿四气诗·小满四月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 小滿四月中	元稹
+节日节气	咏廿四气诗·小雪十月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 小雪十月中	元稹
+节日节气	咏廿四气诗·惊蛰二月节	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 驚蟄二月節	元稹
+节日节气	咏廿四气诗·清明三月节	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 清明三月節	元稹
+节日节气	咏廿四气诗·白露八月节	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 白露八月節	元稹
+节日节气	咏廿四气诗·秋分八月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 秋分八月中	元稹
+节日节气	咏廿四气诗·立冬十月节	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 立冬十月節	元稹
+节日节气	咏廿四气诗·立夏四月节	元稹	author			
+节日节气	咏廿四气诗·立秋七月节	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 立秋七月節	元稹
+节日节气	咏廿四气诗·芒种五月节	元稹	author			
+节日节气	咏廿四气诗·谷雨三月中	元稹	exact	全唐诗/poet.tang.53000.json	詠廿四氣詩 穀雨春光曉	元稹
+节日节气	咏廿四气诗·雨水正月中	元稹	prefix	全唐诗/poet.tang.53000.json	詠廿四氣詩 雨水正月中	元稹
+节日节气	咏廿四气诗·霜降九月中	元稹	author			
+节日节气	八月十五夜桃源玩月	刘禹锡	prefix	全唐诗/poet.tang.18000.json	八月十五日夜桃源翫月	劉禹錫
+节日节气	九月九日登玄武山	卢照邻	exact	全唐诗/poet.tang.2000.json	九月九日登玄武山	盧照鄰
+节日节气	元日述怀	卢照邻	exact	全唐诗/poet.tang.2000.json	元日述懷	盧照鄰
+节日节气	十五夜观灯	卢照邻	exact	全唐诗/poet.tang.2000.json	十五夜觀燈	盧照鄰
+节日节气	田家元日	孟浩然	exact	全唐诗/poet.tang.7000.json	田家元日	孟浩然
+节日节气	上元夜六首·其一	崔液	exact	全唐诗/poet.tang.3000.json	上元夜六首 一	崔液
+节日节气	正月十五夜灯	张祜	author			
+节日节气	端午	文秀	exact	全唐诗/poet.tang.45000.json	端午	文秀
+节日节气	七夕	权德舆	author			
+节日节气	九日	李商隐	prefix	全唐诗/poet.tang.29000.json	九日	李商隱
+节日节气	辛未七夕	李商隐	author			
+节日节气	守岁侍宴应制	杜审言	exact	全唐诗/poet.tang.3000.json	守歲侍宴應制	杜審言
+节日节气	小至	杜甫	exact	全唐诗/poet.tang.11000.json	小至	杜甫
+节日节气	至后	杜甫	author			
+节日节气	端午日	殷尧藩	prefix	全唐诗/poet.tang.26000.json	端午日	殷堯藩
+节日节气	十五夜望月	王建	prefix	全唐诗/poet.tang.16000.json	十五夜望月寄杜郎中	王建
+节日节气	岁晚	白居易	exact	全唐诗/poet.tang.22000.json	歲晚	白居易
+节日节气	清明夜	白居易	exact	全唐诗/poet.tang.23000.json	清明夜	白居易
+节日节气	邯郸冬至夜思家	白居易	prefix	全唐诗/poet.tang.22000.json	邯鄲冬至夜思家	白居易
+节日节气	销暑	白居易	exact	全唐诗/poet.tang.23000.json	銷暑	白居易
+节日节气	天竺寺八月十五日夜桂子	皮日休	exact	全唐诗/poet.tang.34000.json	天竺寺八月十五日夜桂子	皮日休
+节日节气	七夕	祖咏	exact	全唐诗/poet.tang.6000.json	七夕	祖詠
+节日节气	正月十五夜	苏味道	exact	全唐诗/poet.tang.3000.json	正月十五夜	蘇味道
+节日节气	义雀行和朱评事	贾岛	author			
+节日节气	夏至避暑北池	韦应物	exact	全唐诗/poet.tang.9000.json	夏至避暑北池	韋應物
+节日节气	寒食寄京师诸弟	韦应物	exact	全唐诗/poet.tang.9000.json	寒食寄京師諸弟	韋應物
+节日节气	观田家	韦应物	prefix	全唐诗/poet.tang.9000.json	觀田家	韋應物
+节日节气	除夜作	高适	prefix	全唐诗/poet.tang.10000.json	除夜作	高適
+节日节气	立冬即事二首·其一	仇远	exact	全唐诗/poet.song.246000.json	立冬即事二首  其一	仇遠
+节日节气	立秋	刘翰	author			
+节日节气	苏堤清明即事	吴惟信	prefix	全唐诗/poet.song.204000.json	蘇堤清明即事	吳惟信
+节日节气	木兰花·乙卯吴兴寒食	张先	exact	宋词/ci.song.0.json	木兰花・玉楼春	张先
+节日节气	春分日	徐铉	prefix	全唐诗/poet.song.0.json	春分日	徐鉉
+节日节气	中秋月	晏殊	author			
+节日节气	破阵子·春景	晏殊	exact	宋词/ci.song.0.json	破阵子	晏殊
+节日节气	十二月六日大雪	曾几	author			
+节日节气	大暑	曾几	prefix	全唐诗/poet.song.94000.json	大暑	曾幾
+节日节气	冬至	朱淑真	author			
+节日节气	新春	朱淑真	author			
+节日节气	醉花阴·薄雾浓云愁永昼	李清照	author			
+节日节气	踏莎行·雨霁风光	欧阳修	prefix	宋词/ci.song.0.json	踏莎行	欧阳修
+节日节气	生查子·元夕	欧阳修/朱淑真	new			
+节日节气	八月十九日试院梦冲卿	王安石	author			
+节日节气	中秋登楼望月	米芾	author			
+节日节气	减字木兰花·己卯儋耳春词	苏轼	prefix	宋词/ci.song.1000.json	减字木兰花	苏轼
+节日节气	守岁	苏轼	prefix	全唐诗/poet.song.44000.json	歲晚相與饋問爲饋歲酒食相邀呼問別歲至除夜達旦不眠爲守歲蜀之風俗如是余官於岐下歲暮思歸而不可得故爲此三詩以寄子由 守歲	蘇軾
+节日节气	喜晴	范成大	author			
+节日节气	夏至	范成大	exact	全唐诗/poet.song.138000.json	夏至二首  其二	范成大
+节日节气	立秋二绝	范成大	exact	全唐诗/poet.song.138000.json	立秋二絕  其一	范成大
+节日节气	大寒出江陵西门	陆游	exact	全唐诗/poet.song.127000.json	大寒出江陵西門	陸游
+节日节气	小雪	陆游	author			
+节日节气	时雨	陆游	exact	全唐诗/poet.song.131000.json	時雨	陸游
+节日节气	秋分後顿凄冷有感	陆游	exact	全唐诗/poet.song.135000.json	秋分後頓凄冷有感	陸游
+节日节气	立夏	陆游	exact	全唐诗/poet.song.134000.json	立夏	陸游
+节日节气	清明日对酒	高翥	prefix	全唐诗/poet.song.186000.json	清明日對酒	高翥
+节日节气	清明	黄庭坚	author			
+节日节气	迢迢牵牛星	佚名	exact	乐府诗集/卷一汉魏乐府.json	迢迢牽牛星	佚名
+节日节气	为顾彦先赠妇诗二首·其一	陆机	prefix	文选/诗·赠答二.json	為顧彥先贈婦二首	陸士衡
+节日节气	养生论	嵇康	prefix	文选/论·论三.json	養生論	嵇叔夜
+节日节气	处暑后风雨	仇远	exact	全唐诗/poet.song.245000.json	處暑後風雨	仇遠
+唐诗	感遇·其一	张九龄	exact	全唐诗/poet.tang.2000.json	感遇十二首 四	張九齡
+唐诗	感遇·其二	张九龄	exact	全唐诗/poet.tang.2000.json	感遇十二首 一	張九齡
+唐诗	下终南山过斛斯山人宿置酒	李白	exact	全唐诗/poet.tang.8000.json	下終南山過斛斯山人宿置酒	李白
+唐诗	月下独酌	李白	prefix	全唐诗/poet.tang.8000.json	月下獨酌四首 一	李白
+唐诗	春思	李白	exact	全唐诗/poet.tang.8000.json	春思	李白
+唐诗	望岳	杜甫	prefix	全唐诗/poet.tang.10000.json	望嶽	杜甫
+唐诗	赠卫八处士	杜甫	prefix	全唐诗/poet.tang.10000.json	贈衛八處士	杜甫
+唐诗	佳人	杜甫	prefix	全唐诗/poet.tang.10000.json	佳人	杜甫
+唐诗	梦李白·其一	杜甫	prefix	全唐诗/poet.tang.10000.json	夢李白二首 一	杜甫
+唐诗	梦李白·其二	杜甫	prefix	全唐诗/poet.tang.10000.json	夢李白二首 二	杜甫
+唐诗	送綦毋潜落第还乡	王维	prefix	全唐诗/poet.tang.5000.json	送綦毋潛落第還鄉	王維
+唐诗	送别	王维	exact	全唐诗/poet.tang.5000.json	送別	王維
+唐诗	青溪	王维	author			
+唐诗	渭川田家	王维	prefix	全唐诗/poet.tang.5000.json	渭川田家	王維
+唐诗	西施咏	王维	author			
+唐诗	秋登兰山寄张五	孟浩然	prefix	全唐诗/poet.tang.7000.json	秋登蘭山寄張五	孟浩然
+唐诗	夏日南亭怀辛大	孟浩然	exact	全唐诗/poet.tang.7000.json	夏日南亭懷辛大	孟浩然
+唐诗	宿业师山房期丁大不至	孟浩然	prefix	全唐诗/poet.tang.7000.json	宿業師山房期丁大不至	孟浩然
+唐诗	同从弟南斋玩月忆山阴崔少府	王昌龄	prefix	全唐诗/poet.tang.6000.json	同從弟銷南齋玩月憶山陰崔少府	王昌齡
+唐诗	寻西山隐者不遇	丘为	prefix	全唐诗/poet.tang.6000.json	尋西山隱者不遇	丘爲
+唐诗	春泛若耶溪	綦毋潜	exact	全唐诗/poet.tang.6000.json	春泛若耶溪	綦毋潛
+唐诗	宿王昌龄隐居	常建	exact	全唐诗/poet.tang.6000.json	宿王昌齡隱居	常建
+唐诗	与高适薛据登慈恩寺浮图	岑参	exact	全唐诗/poet.tang.9000.json	與高適薛據慈恩寺浮圖	岑參
+唐诗	贼退示官吏·并序	元结	author			
+唐诗	郡斋雨中与诸文士燕集	韦应物	prefix	全唐诗/poet.tang.8000.json	郡齋雨中與諸文士燕集	韋應物
+唐诗	初发扬子寄元大校书	韦应物	exact	全唐诗/poet.tang.8000.json	初發揚子寄元大校書	韋應物
+唐诗	寄全椒山中道士	韦应物	exact	全唐诗/poet.tang.9000.json	寄全椒山中道士	韋應物
+唐诗	长安遇冯著	韦应物	exact	全唐诗/poet.tang.9000.json	長安遇馮著	韋應物
+唐诗	夕次盱眙县	韦应物	prefix	全唐诗/poet.tang.9000.json	夕次盱眙縣	韋應物
+唐诗	东郊	韦应物	prefix	全唐诗/poet.tang.9000.json	東郊	韋應物
+唐诗	送杨氏女	韦应物	author			
+唐诗	晨诣超师院读禅经	柳宗元	exact	全唐诗/poet.tang.18000.json	晨詣超師院讀禪經	柳宗元
+唐诗	溪居	柳宗元	exact	全唐诗/poet.tang.18000.json	溪居	柳宗元
+唐诗	登幽州台歌	陈子昂	exact	全唐诗/poet.tang.4000.json	登幽州臺歌	陳子昂
+唐诗	琴歌	李颀	prefix	全唐诗/poet.tang.6000.json	琴歌	李頎
+唐诗	古意	李颀	prefix	全唐诗/poet.tang.6000.json	古意	李頎
+唐诗	送陈章甫	李颀	prefix	全唐诗/poet.tang.6000.json	送陳章甫	李頎
+唐诗	听安万善吹觱篥歌	李颀	exact	全唐诗/poet.tang.6000.json	聽安萬善吹觱篥歌	李頎
+唐诗	夜归鹿门山歌	孟浩然	prefix	全唐诗/poet.tang.7000.json	夜歸鹿門山歌	孟浩然
+唐诗	庐山谣寄卢侍御虚舟	李白	prefix	全唐诗/poet.tang.8000.json	廬山謠寄盧侍御虛舟	李白
+唐诗	梦游天姥吟留别	李白	no_text			
+唐诗	金陵酒肆留别	李白	exact	全唐诗/poet.tang.8000.json	金陵酒肆留別	李白
+唐诗	宣州谢朓楼饯别校书叔云	李白	prefix	全唐诗/poet.tang.8000.json	宣州謝朓樓餞別校書叔雲	李白
+唐诗	走马川行奉送封大夫出师西征	岑参	exact	全唐诗/poet.tang.9000.json	走馬川行奉送出師西征	岑參
+唐诗	轮台歌奉送封大夫出师西征	岑参	prefix	全唐诗/poet.tang.9000.json	輪臺歌奉送封大夫出師西征	岑參
+唐诗	白雪歌送武判官归京	岑参	prefix	全唐诗/poet.tang.9000.json	白雪歌送武判官歸京	岑參
+唐诗	韦讽录事宅观曹将军画马图	杜甫	prefix	全唐诗/poet.tang.10000.json	韋諷錄事宅觀曹將軍畫馬圖	杜甫
+唐诗	丹青引赠曹将军霸	杜甫	prefix	全唐诗/poet.tang.10000.json	丹青引贈曹將軍霸	杜甫
+唐诗	寄韩谏议注	杜甫	prefix	全唐诗/poet.tang.10000.json	寄韓諫議	杜甫
+唐诗	古柏行	杜甫	exact	全唐诗/poet.tang.10000.json	古柏行	杜甫
+唐诗	观公孙大娘弟子舞剑器行·并序	杜甫	author			
+唐诗	石鱼湖上醉歌·并序	元结	author			
+唐诗	山石	韩愈	prefix	全唐诗/poet.tang.17000.json	山石	韓愈
+唐诗	八月十五夜赠张功曹	韩愈	prefix	全唐诗/poet.tang.17000.json	八月十五夜贈張功曹	韓愈
+唐诗	谒衡岳庙遂宿岳寺题门楼	韩愈	prefix	全唐诗/poet.tang.17000.json	謁衡嶽廟遂宿嶽寺題門樓	韓愈
+唐诗	石鼓歌	韩愈	prefix	全唐诗/poet.tang.18000.json	石鼓歌	韓愈
+唐诗	渔翁	柳宗元	exact	全唐诗/poet.tang.18000.json	漁翁	柳宗元
+唐诗	长恨歌	白居易	prefix	全唐诗/poet.tang.22000.json	長恨歌	白居易
+唐诗	琵琶行·并序	白居易	no_text			
+唐诗	韩碑	李商隐	prefix	全唐诗/poet.tang.29000.json	韓碑	李商隱
+唐诗	塞上曲	王昌龄	prefix	全唐诗/poet.tang.6000.json	塞下曲四首 一	王昌齡
+唐诗	塞下曲	王昌龄	exact	全唐诗/poet.tang.6000.json	塞下曲四首 二	王昌齡
+唐诗	关山月	李白	exact	全唐诗/poet.tang.0.json	橫吹曲辭 關山月	李白
+唐诗	子夜吴歌·秋歌	李白	exact	全唐诗/poet.tang.1000.json	相和歌辭 子夜四時歌四首 秋歌	李白
+唐诗	长干行	李白	prefix	全唐诗/poet.tang.1000.json	雜曲歌辭 長干行二首 一	李白
+唐诗	烈女操	孟郊	prefix	全唐诗/poet.tang.1000.json	琴曲歌辭 列女操	孟郊
+唐诗	游子吟	孟郊	exact	全唐诗/poet.tang.1000.json	雜曲歌辭 遊子吟	孟郊
+唐诗	燕歌	张籍	author			
+唐诗	老将行	王维	prefix	全唐诗/poet.tang.5000.json	老將行	王維
+唐诗	桃源行	王维	prefix	全唐诗/poet.tang.5000.json	桃源行	王維
+唐诗	洛阳女儿行	王维	author			
+唐诗	前出塞九首·其二	杜甫	exact	全唐诗/poet.tang.10000.json	前出塞九首 六	杜甫
+唐诗	秋浦歌十七首·其十五	李白	exact	全唐诗/poet.tang.8000.json	秋浦歌十七首 十五	李白
+唐诗	燕歌行·并序	高适	no_text			
+唐诗	古从军行	李颀	prefix	全唐诗/poet.tang.6000.json	古從軍行	李頎
+唐诗	蜀道难	李白	no_text			
+唐诗	长相思·其一	李白	exact	全唐诗/poet.tang.8000.json	長相思	李白
+唐诗	长相思·其二	李白	author			
+唐诗	行路难·其一	李白	prefix	全唐诗/poet.tang.8000.json	行路難三首 一	李白
+唐诗	将进酒	李白	prefix	全唐诗/poet.tang.0.json	鼓吹曲辭 將進酒	李白
+唐诗	兵车行	杜甫	prefix	全唐诗/poet.tang.10000.json	兵車行	杜甫
+唐诗	丽人行	杜甫	prefix	全唐诗/poet.tang.1000.json	雜曲歌辭 麗人行	杜甫
+唐诗	哀江头	杜甫	prefix	全唐诗/poet.tang.10000.json	哀江頭	杜甫
+唐诗	哀王孙	杜甫	prefix	全唐诗/poet.tang.10000.json	哀王孫	杜甫
+唐诗	独不见	沈佺期	prefix	全唐诗/poet.tang.5000.json	古意呈補闕喬知之	沈佺期
+唐诗	渔阳鼙鼓行	韦应物	prefix	全唐诗/poet.tang.1000.json	相和歌辭 燕歌行	高適
+唐诗	长安道	崔颢	prefix	全唐诗/poet.tang.1000.json	橫吹曲辭 長安道	崔顥
+唐诗	渭城曲	王维	author			
+唐诗	秋夜曲	王维	exact	全唐诗/poet.tang.1000.json	雜曲歌辭 秋夜曲	王涯
+唐诗	出塞	王昌龄	exact	全唐诗/poet.tang.0.json	橫吹曲辭 出塞 一	王昌齡
+唐诗	采莲曲	王昌龄	exact	全唐诗/poet.tang.1000.json	相和歌辭 采蓮曲三首 二	王昌齡
+唐诗	塞上曲	戎昱	prefix	全唐诗/poet.tang.14000.json	塞上曲	戎昱
+唐诗	江南曲	李益	exact	全唐诗/poet.tang.1000.json	相和歌辭 江南曲	李益
+唐诗	长干行二首	崔颢	prefix	全唐诗/poet.tang.6000.json	長干曲四首 一	崔顥
+唐诗	玉阶怨	李白	exact	全唐诗/poet.tang.8000.json	玉階怨	李白
+唐诗	塞下曲四首	卢纶	prefix	全唐诗/poet.tang.14000.json	和張僕射塞下曲 一	盧綸
+唐诗	从军行七首·其四	王昌龄	exact	全唐诗/poet.tang.6000.json	從軍行七首 四	王昌齡
+唐诗	经鲁祭孔子而叹之	唐玄宗	prefix	全唐诗/poet.tang.0.json	經鄒魯祭孔子而歎之	明皇帝
+唐诗	望月怀远	张九龄	exact	全唐诗/poet.tang.3000.json	望月懷遠	張九齡
+唐诗	送杜少府之任蜀州	王勃	prefix	全唐诗/poet.tang.3000.json	杜少府之任蜀州	王勃
+唐诗	在狱咏蝉·并序	骆宾王	author			
+唐诗	和晋陵陆丞早春游望	杜审言	exact	全唐诗/poet.tang.3000.json	和晉陵陸丞早春遊望	杜審言
+唐诗	杂诗	沈佺期	exact	全唐诗/poet.tang.5000.json	雜詩三首 三	沈佺期
+唐诗	题大庾岭北驿	宋之问	exact	全唐诗/poet.tang.3000.json	題大庾嶺北驛	宋之問
+唐诗	次北固山下	王湾	exact	全唐诗/poet.tang.5000.json	次北固山下	王灣
+唐诗	破山寺后禅院	常建	author			
+唐诗	寄左省杜拾遗	岑参	exact	全唐诗/poet.tang.9000.json	寄左省杜拾遺	岑參
+唐诗	赠孟浩然	李白	exact	全唐诗/poet.tang.8000.json	贈孟浩然	李白
+唐诗	渡荆门送别	李白	exact	全唐诗/poet.tang.8000.json	渡荆門送別	李白
+唐诗	送友人	李白	author			
+唐诗	听蜀僧濬弹琴	李白	author			
+唐诗	夜泊牛渚怀古	李白	exact	全唐诗/poet.tang.8000.json	夜泊牛渚懷古	李白
+唐诗	月夜	杜甫	exact	全唐诗/poet.tang.11000.json	月夜	杜甫
+唐诗	春望	杜甫	exact	全唐诗/poet.tang.11000.json	春望	杜甫
+唐诗	春宿左省	杜甫	exact	全唐诗/poet.tang.11000.json	春宿左省	杜甫
+唐诗	至德二载甫自京金光门出问道归凤翔乾元初从左拾遗移华州掾与亲故别因出此门有悲往事	杜甫	exact	全唐诗/poet.tang.11000.json	至德二載甫自京金光門出問道歸鳳翔乾元初從左拾遺移華州掾與親故別因出此門有悲往事	杜甫
+唐诗	月夜忆舍弟	杜甫	author			
+唐诗	天末怀李白	杜甫	exact	全唐诗/poet.tang.11000.json	天末憶李白	杜甫
+唐诗	奉济驿重送严公四韵	杜甫	prefix	全唐诗/poet.tang.11000.json	奉濟驛重送嚴公四韻	杜甫
+唐诗	别房太尉墓	杜甫	prefix	全唐诗/poet.tang.11000.json	別房太尉墓	杜甫
+唐诗	旅夜书怀	杜甫	prefix	全唐诗/poet.tang.11000.json	旅夜書懷	杜甫
+唐诗	登岳阳楼	杜甫	exact	全唐诗/poet.tang.11000.json	登岳陽樓	杜甫
+唐诗	辋川闲居赠裴秀才迪	王维	exact	全唐诗/poet.tang.5000.json	輞川閑居贈裴秀才迪	王維
+唐诗	山居秋暝	王维	exact	全唐诗/poet.tang.6000.json	山居秋暝	王維
+唐诗	归嵩山作	王维	exact	全唐诗/poet.tang.6000.json	歸嵩山作	王維
+唐诗	终南山	王维	exact	全唐诗/poet.tang.6000.json	終南山	王維
+唐诗	酬张少府	王维	author			
+唐诗	过香积寺	王维	prefix	全唐诗/poet.tang.6000.json	過香積寺	王維
+唐诗	送梓州高参军还京	王维	exact	全唐诗/poet.tang.5000.json	送梓州李使君	王維
+唐诗	终南别业	王维	exact	全唐诗/poet.tang.6000.json	終南別業	王維
+唐诗	临洞庭上张丞相	孟浩然	prefix	全唐诗/poet.tang.7000.json	望洞庭湖贈張丞相	孟浩然
+唐诗	与诸子登岘山	孟浩然	prefix	全唐诗/poet.tang.7000.json	與諸子登峴山	孟浩然
+唐诗	宴梅道士山房	孟浩然	author			
+唐诗	岁暮归南山	孟浩然	prefix	全唐诗/poet.tang.7000.json	歲暮歸南山	孟浩然
+唐诗	过故人庄	孟浩然	prefix	全唐诗/poet.tang.7000.json	過故人莊	孟浩然
+唐诗	秦中寄远上人	孟浩然	prefix	全唐诗/poet.tang.7000.json	秦中感秋寄遠上人	孟浩然
+唐诗	宿桐庐江寄广陵旧游	孟浩然	author			
+唐诗	留别王维	孟浩然	prefix	全唐诗/poet.tang.7000.json	留別王侍御維	孟浩然
+唐诗	早寒江上有怀	孟浩然	prefix	全唐诗/poet.tang.7000.json	早寒江上有懷	孟浩然
+唐诗	秋日登吴公台上寺远眺	刘长卿	prefix	全唐诗/poet.tang.7000.json	秋日登吳公臺上寺遠眺寺即陳將吳明徹戰場	劉長卿
+唐诗	送李中丞归汉阳别业	刘长卿	prefix	全唐诗/poet.tang.7000.json	送李中丞之襄州	劉長卿
+唐诗	饯别王十一南游	刘长卿	exact	全唐诗/poet.tang.7000.json	餞別王十一南遊	劉長卿
+唐诗	寻南溪常道士	刘长卿	author			
+唐诗	新年作	刘长卿	prefix	全唐诗/poet.tang.7000.json	新年作	劉長卿
+唐诗	送僧归日本	钱起	prefix	全唐诗/poet.tang.12000.json	送僧歸日本	錢起
+唐诗	谷口书斋寄杨补阙	钱起	prefix	全唐诗/poet.tang.12000.json	谷口書齋寄楊補闕	錢起
+唐诗	淮上喜会梁州故人	韦应物	prefix	全唐诗/poet.tang.8000.json	淮上喜會梁川故人	韋應物
+唐诗	赋得暮雨送李胄	韦应物	exact	全唐诗/poet.tang.9000.json	賦得暮雨送李胄	韋應物
+唐诗	酬程延秋夜即事见赠	韩翃	prefix	全唐诗/poet.tang.12000.json	酬程延秋夜即事見贈	韓翃
+唐诗	阙题	刘眘虚	exact	全唐诗/poet.tang.13000.json	闕題	劉眘虛
+唐诗	江乡故人偶集客舍	戴叔伦	exact	全唐诗/poet.tang.14000.json	客夜與故人偶集	戴叔倫
+唐诗	送李端	卢纶	prefix	全唐诗/poet.tang.13000.json	送李端	嚴維
+唐诗	喜见外弟又言别	李益	exact	全唐诗/poet.tang.15000.json	喜見外弟又言別	李益
+唐诗	云阳馆与韩绅宿别	司空曙	prefix	全唐诗/poet.tang.15000.json	雲陽館與韓紳宿別	司空曙
+唐诗	喜外弟卢纶见宿	司空曙	prefix	全唐诗/poet.tang.15000.json	喜外弟盧綸見宿	司空曙
+唐诗	贼平后送人北归	司空曙	exact	全唐诗/poet.tang.15000.json	賊平後送人北歸	司空曙
+唐诗	蜀先主庙	刘禹锡	exact	全唐诗/poet.tang.18000.json	蜀先主廟	劉禹錫
+唐诗	没蕃故人	张籍	author			
+唐诗	草	白居易	exact	全唐诗/poet.tang.22000.json	賦得古原草送別	白居易
+唐诗	旅宿	杜牧	prefix	全唐诗/poet.tang.28000.json	旅宿	杜牧
+唐诗	秋日赴阙题潼关驿楼	许浑	prefix	全唐诗/poet.tang.28000.json	秋日赴闕題潼關驛樓	許渾
+唐诗	早秋	许浑	prefix	全唐诗/poet.tang.28000.json	早秋三首 一	許渾
+唐诗	蝉	李商隐	prefix	全唐诗/poet.tang.29000.json	蟬	李商隱
+唐诗	风雨	李商隐	exact	全唐诗/poet.tang.29000.json	風雨	李商隱
+唐诗	落花	李商隐	prefix	全唐诗/poet.tang.29000.json	落花	李商隱
+唐诗	凉思	李商隐	exact	全唐诗/poet.tang.29000.json	涼思	李商隱
+唐诗	北青萝	李商隐	exact	全唐诗/poet.tang.29000.json	北青蘿	李商隱
+唐诗	送人东游	温庭筠	prefix	全唐诗/poet.tang.32000.json	送人東遊	溫庭筠
+唐诗	灞上秋居	马戴	author			
+唐诗	楚江怀古	马戴	author			
+唐诗	书边事	张乔	prefix	全唐诗/poet.tang.35000.json	書邊事	張喬
+唐诗	除夜有怀	崔涂	prefix	全唐诗/poet.tang.7000.json	歲除夜有懷	孟浩然
+唐诗	孤雁	崔涂	author			
+唐诗	春宫怨	杜荀鹤	exact	全唐诗/poet.tang.37000.json	春宮怨	周朴
+唐诗	章台夜思	韦庄	author			
+唐诗	黄鹤楼	崔颢	author			
+唐诗	行经华阴	崔颢	author			
+唐诗	望蓟门	祖咏	author			
+唐诗	九日登望仙台呈刘明府	崔曙	exact	全唐诗/poet.tang.7000.json	九日登望仙臺呈劉明府容	崔曙
+唐诗	送魏万之京	李颀	prefix	全唐诗/poet.tang.6000.json	送魏萬之京	李頎
+唐诗	登金陵凤凰台	李白	exact	全唐诗/poet.tang.8000.json	登金陵鳳凰臺	李白
+唐诗	送李少府贬峡中王少府贬长沙	高适	author			
+唐诗	奉和圣制从蓬莱向兴庆阁道中留春雨中春望之作应制	王维	author			
+唐诗	和贾至舍人早朝大明宫之作	王维	author			
+唐诗	积雨辋川庄作	王维	exact	全唐诗/poet.tang.6000.json	積雨輞川莊作	王維
+唐诗	赠郭给事	王维	author			
+唐诗	和贾至舍人早朝大明宫之作	岑参	prefix	全唐诗/poet.tang.9000.json	奉和中書舍人賈至早朝大明宮	岑參
+唐诗	奉和中书舍人贾至早朝大明宫	贾至	author			
+唐诗	蜀相	杜甫	prefix	全唐诗/poet.tang.11000.json	蜀相	杜甫
+唐诗	客至	杜甫	prefix	全唐诗/poet.tang.11000.json	客至	杜甫
+唐诗	野望	杜甫	author			
+唐诗	闻官军收河南河北	杜甫	author			
+唐诗	登高	杜甫	author			
+唐诗	登楼	杜甫	exact	全唐诗/poet.tang.11000.json	登樓	杜甫
+唐诗	宿府	杜甫	exact	全唐诗/poet.tang.11000.json	宿府	杜甫
+唐诗	阁夜	杜甫	prefix	全唐诗/poet.tang.11000.json	閣夜	杜甫
+唐诗	咏怀古迹·其一	杜甫	exact	全唐诗/poet.tang.11000.json	詠懷古跡五首 一	杜甫
+唐诗	咏怀古迹·其二	杜甫	exact	全唐诗/poet.tang.11000.json	詠懷古跡五首 二	杜甫
+唐诗	咏怀古迹·其三	杜甫	prefix	全唐诗/poet.tang.11000.json	詠懷古跡五首 三	杜甫
+唐诗	咏怀古迹·其四	杜甫	prefix	全唐诗/poet.tang.11000.json	詠懷古跡五首 四	杜甫
+唐诗	咏怀古迹·其五	杜甫	prefix	全唐诗/poet.tang.11000.json	詠懷古跡五首 五	杜甫
+唐诗	江州重别薛六柳八二员外	刘长卿	prefix	全唐诗/poet.tang.7000.json	江州重別薛六柳八二員外	劉長卿
+唐诗	长沙过贾谊宅	刘长卿	exact	全唐诗/poet.tang.7000.json	長沙過賈誼宅	劉長卿
+唐诗	自夏口至鹦鹉洲夕望岳阳寄源中丞	刘长卿	exact	全唐诗/poet.tang.7000.json	自夏口至鸚鵡洲夕望岳陽寄源中丞	劉長卿
+唐诗	赠阙下裴舍人	钱起	author			
+唐诗	寄李儋元锡	韦应物	author			
+唐诗	同题仙游观	韩翃	author			
+唐诗	春思	皇甫冉	prefix	全唐诗/poet.tang.13000.json	春思	皇甫冉
+唐诗	晚次鄂州	卢纶	prefix	全唐诗/poet.tang.14000.json	晚次鄂州	盧綸
+唐诗	登柳州城楼寄漳汀封连四州刺史	柳宗元	prefix	全唐诗/poet.tang.18000.json	登柳州城樓寄漳汀封連四州	柳宗元
+唐诗	西塞山怀古	刘禹锡	author			
+唐诗	遣悲怀·其一	元稹	author			
+唐诗	遣悲怀·其二	元稹	author			
+唐诗	遣悲怀·其三	元稹	prefix	全唐诗/poet.tang.21000.json	遣悲懷三首 三	元稹
+唐诗	自河南经乱关内阻饥兄弟离散各在一处因望月有感聊书所怀寄上浮梁大兄於潜七兄乌江十五兄兼示符离及下邽弟妹	白居易	author			
+唐诗	锦瑟	李商隐	exact	全唐诗/poet.tang.29000.json	錦瑟	李商隱
+唐诗	无题	李商隐	prefix	全唐诗/poet.tang.29000.json	無題二首 一	李商隱
+唐诗	隋宫	李商隐	exact	全唐诗/poet.tang.29000.json	隋宮	李商隱
+唐诗	无题·其一	李商隐	exact	全唐诗/poet.tang.29000.json	無題四首 一	李商隱
+唐诗	无题·其二	李商隐	prefix	全唐诗/poet.tang.29000.json	無題四首 二	李商隱
+唐诗	筹笔驿	李商隐	prefix	全唐诗/poet.tang.29000.json	籌筆驛	李商隱
+唐诗	春雨	李商隐	exact	全唐诗/poet.tang.29000.json	春雨	李商隱
+唐诗	利州南渡	温庭筠	prefix	全唐诗/poet.tang.32000.json	利州南渡	溫庭筠
+唐诗	苏武庙	温庭筠	prefix	全唐诗/poet.tang.32000.json	蘇武廟	溫庭筠
+唐诗	鹿柴	王维	exact	全唐诗/poet.tang.6000.json	輞川集 鹿柴	王維
+唐诗	竹里馆	王维	exact	全唐诗/poet.tang.6000.json	輞川集 竹里館	王維
+唐诗	送别	王维	exact	全唐诗/poet.tang.6000.json	送別	王維
+唐诗	相思	王维	author			
+唐诗	杂诗	王维	prefix	全唐诗/poet.tang.6000.json	雜詩三首 二	王維
+唐诗	送崔九	裴迪	exact	全唐诗/poet.tang.6000.json	崔九欲往南山馬上口號與別	裴迪
+唐诗	终南望余雪	祖咏	exact	全唐诗/poet.tang.6000.json	終南望餘雪	祖詠
+唐诗	宿建德江	孟浩然	exact	全唐诗/poet.tang.7000.json	宿建德江	孟浩然
+唐诗	春晓	孟浩然	exact	全唐诗/poet.tang.7000.json	春曉	孟浩然
+唐诗	夜思	李白	author			
+唐诗	怨情	李白	exact	全唐诗/poet.tang.8000.json	怨情	李白
+唐诗	八阵图	杜甫	author			
+唐诗	登鹳雀楼	王之涣	exact	全唐诗/poet.tang.10000.json	登樓	朱斌
+唐诗	送灵澈	刘长卿	prefix	全唐诗/poet.tang.7000.json	送靈澈上人	劉長卿
+唐诗	听弹琴	刘长卿	author			
+唐诗	送上人	刘长卿	exact	全唐诗/poet.tang.7000.json	送方外上人	劉長卿
+唐诗	秋夜寄邱员外	韦应物	author			
+唐诗	听筝	李端	exact	全唐诗/poet.tang.15000.json	聽箏	李端
+唐诗	新嫁娘	王建	exact	全唐诗/poet.tang.16000.json	新嫁娘詞三首 三	王建
+唐诗	玉台体	权德舆	exact	全唐诗/poet.tang.17000.json	玉臺體十二首 十一	權德輿
+唐诗	江雪	柳宗元	author			
+唐诗	行宫	元稹	exact	全唐诗/poet.tang.16000.json	故行宮	王建
+唐诗	问刘十九	白居易	author			
+唐诗	何满子	张祜	prefix	全唐诗/poet.tang.27000.json	宮詞二首 一	張祜
+唐诗	登乐游原	李商隐	exact	全唐诗/poet.tang.29000.json	樂遊原	李商隱
+唐诗	寻隐者不遇	贾岛	exact	全唐诗/poet.tang.25000.json	訪羊尊師	孫革
+唐诗	渡汉江	李频	author			
+唐诗	春怨	金昌绪	exact	全唐诗/poet.tang.42000.json	春怨	金昌緒
+唐诗	哥舒歌	西鄙人	exact	全唐诗/poet.tang.43000.json	哥舒歌	西鄙人
+唐诗	于易水送人	骆宾王	author			
+唐诗	遗爱寺	白居易	author			
+唐诗	逢雪宿芙蓉山主人	刘长卿	exact	全唐诗/poet.tang.7000.json	逢雪宿芙蓉山主人	劉長卿
+唐诗	回乡偶书·其一	贺知章	author			
+唐诗	回乡偶书·其二	贺知章	prefix	全唐诗/poet.tang.5000.json	回鄉偶書二首 二	賀知章
+唐诗	桃花溪	张旭	prefix	全唐诗/poet.tang.5000.json	桃花谿	張旭
+唐诗	九月九日忆山东兄弟	王维	exact	全唐诗/poet.tang.6000.json	九月九日憶山東兄弟	王維
+唐诗	芙蓉楼送辛渐	王昌龄	author			
+唐诗	闺怨	王昌龄	author			
+唐诗	春宫曲	王昌龄	exact	全唐诗/poet.tang.6000.json	春宮曲	王昌齡
+唐诗	凉州词	王翰	exact	全唐诗/poet.tang.7000.json	涼州詞二首 一	王翰
+唐诗	送孟浩然之广陵	李白	prefix	全唐诗/poet.tang.8000.json	黃鶴樓送孟浩然之廣陵	李白
+唐诗	早发白帝城	李白	prefix	全唐诗/poet.tang.8000.json	早發白帝城	李白
+唐诗	逢入京使	岑参	exact	全唐诗/poet.tang.9000.json	逢入京使	岑參
+唐诗	江南逢李龟年	杜甫	author			
+唐诗	滁州西涧	韦应物	exact	全唐诗/poet.tang.9000.json	滁州西澗	韋應物
+唐诗	枫桥夜泊	张继	author			
+唐诗	寒食	韩翃	exact	全唐诗/poet.tang.12000.json	寒食	韓翃
+唐诗	月夜	刘方平	exact	全唐诗/poet.tang.13000.json	夜月	劉方平
+唐诗	春怨	刘方平	exact	全唐诗/poet.tang.13000.json	春怨	劉方平
+唐诗	征人怨	柳中庸	prefix	全唐诗/poet.tang.13000.json	征怨	柳中庸
+唐诗	宫词	顾况	prefix	全唐诗/poet.tang.13000.json	宮詞五首 二	顧況
+唐诗	夜上受降城闻笛	李益	author			
+唐诗	乌衣巷	刘禹锡	exact	全唐诗/poet.tang.19000.json	金陵五題 烏衣巷	劉禹錫
+唐诗	春词	刘禹锡	author			
+唐诗	后宫词	白居易	exact	全唐诗/poet.tang.23000.json	後宮詞	白居易
+唐诗	赠内人	张祜	author			
+唐诗	集灵台·其一	张祜	exact	全唐诗/poet.tang.27000.json	集靈臺二首 一	張祜
+唐诗	集灵台·其二	张祜	prefix	全唐诗/poet.tang.27000.json	集靈臺二首 二	張祜
+唐诗	题金陵渡	张祜	exact	全唐诗/poet.tang.27000.json	題金陵渡	張祜
+唐诗	宫中词	朱庆馀	exact	全唐诗/poet.tang.27000.json	宮詞	朱慶餘
+唐诗	近试上张水部	朱庆馀	prefix	全唐诗/poet.tang.28000.json	近試上張籍水部	朱慶餘
+唐诗	将赴吴兴登乐游原	杜牧	exact	全唐诗/poet.tang.28000.json	將赴吳興登樂遊原一絕	杜牧
+唐诗	赤壁	杜牧	author			
+唐诗	泊秦淮	杜牧	exact	全唐诗/poet.tang.28000.json	泊秦淮	杜牧
+唐诗	寄扬州韩绰判官	杜牧	prefix	全唐诗/poet.tang.28000.json	寄揚州韓綽判官	杜牧
+唐诗	遣怀	杜牧	author			
+唐诗	秋夕	杜牧	author			
+唐诗	金谷园	杜牧	prefix	全唐诗/poet.tang.28000.json	金谷園	杜牧
+唐诗	赠别·其一	杜牧	author			
+唐诗	赠别·其二	杜牧	author			
+唐诗	瑶瑟怨	温庭筠	exact	全唐诗/poet.tang.32000.json	瑤瑟怨	溫庭筠
+唐诗	马嵬坡	郑畋	author			
+唐诗	已凉	韩偓	author			
+唐诗	台城	韦庄	exact	全唐诗/poet.tang.39000.json	臺城	韋莊
+唐诗	寄人	张泌	exact	全唐诗/poet.tang.41000.json	寄人 一	張泌
+唐诗	杂诗	无名氏	prefix	全唐诗/poet.tang.43000.json	雜詩 十三	無名氏
+唐诗	夜雨寄北	李商隐	exact	全唐诗/poet.tang.29000.json	夜雨寄北	李商隱
+唐诗	寄令狐郎中	李商隐	exact	全唐诗/poet.tang.29000.json	寄令狐郎中	李商隱
+唐诗	为有	李商隐	prefix	全唐诗/poet.tang.29000.json	爲有	李商隱
+唐诗	隋宫	李商隐	exact	全唐诗/poet.tang.29000.json	隋宮	李商隱
+唐诗	瑶池	李商隐	exact	全唐诗/poet.tang.29000.json	瑤池	李商隱
+唐诗	嫦娥	李商隐	prefix	全唐诗/poet.tang.29000.json	常娥	李商隱
+唐诗	贾生	李商隐	exact	全唐诗/poet.tang.29000.json	賈生	李商隱
+唐诗	百忧集行	杜甫	prefix	全唐诗/poet.tang.10000.json	百憂集行	杜甫
+唐诗	菊花	元稹	exact	全唐诗/poet.tang.21000.json	菊花	元稹
+唐诗	题都城南庄	崔护	prefix	全唐诗/poet.tang.19000.json	題都城南莊	崔護
+唐诗	赠花卿	杜甫	exact	全唐诗/poet.tang.1000.json	雜曲歌辭 水調 入破第二	不詳
+唐诗	闻雁	韦应物	author			
+唐诗	竹枝词	刘禹锡	exact	全唐诗/poet.tang.19000.json	竹枝詞二首 一	劉禹錫
+唐诗	忆江南·其一	白居易	exact	全唐诗/poet.tang.49000.json	憶江南 一	白居易
+唐诗	渔歌子·西塞山前白鹭飞	张志和	exact	全唐诗/poet.tang.49000.json	漁父 一	張志和
+唐诗	从军行	杨炯	exact	全唐诗/poet.tang.3000.json	從軍行	楊炯
+唐诗	出塞二首·其二	王昌龄	exact	全唐诗/poet.tang.8000.json	軍行	李白
+唐诗	长信秋词·其三	王昌龄	author			
+唐诗	西宫春怨	王昌龄	exact	全唐诗/poet.tang.6000.json	西宮春怨	王昌齡
+唐诗	春雪	东方虬	exact	全唐诗/poet.tang.5000.json	春雪	東方虬
+唐诗	劳劳亭	李白	exact	全唐诗/poet.tang.8000.json	勞勞亭	李白
+唐诗	登太白峰	李白	prefix	全唐诗/poet.tang.8000.json	登太白峰	李白
+唐诗	夜下征虏亭	李白	exact	全唐诗/poet.tang.8000.json	夜下征虜亭	李白
+唐诗	越中览古	李白	author			
+唐诗	送柴侍御	王昌龄	prefix	全唐诗/poet.tang.6000.json	送柴侍御	王昌齡
+唐诗	江汉	杜甫	prefix	全唐诗/poet.tang.11000.json	江漢	杜甫
+唐诗	浪淘沙·其八	刘禹锡	exact	全唐诗/poet.tang.19000.json	浪淘沙九首 八	劉禹錫
+唐诗	紫薇花	杜牧	exact	全唐诗/poet.tang.28000.json	紫薇花	杜牧
+唐诗	宿骆氏亭寄怀崔雍崔衮	李商隐	exact	全唐诗/poet.tang.29000.json	宿駱氏亭寄懷崔雍衮	李商隱
+唐诗	金铜仙人辞汉歌	李贺	exact	全唐诗/poet.tang.20000.json	金銅仙人辭漢歌	李賀
+唐诗	一七令·茶	元稹	prefix	全唐诗/poet.tang.21000.json	一字至七字詩 茶	元稹
+唐诗	端午	李隆基	exact	全唐诗/poet.tang.0.json	端午	明皇帝
+唐诗	暮过山村	贾岛	exact	全唐诗/poet.tang.31000.json	暮過山村	賈島
+唐诗	秋思	张籍	author			
+唐诗	早梅	张谓	prefix	全唐诗/poet.tang.14000.json	早梅	戎昱
+唐诗	题宣州开元寺水阁	杜牧	exact	全唐诗/poet.tang.28000.json	題宣州開元寺水閣閣下宛溪夾溪居人	杜牧
+唐诗	咸阳值雨	温庭筠	exact	全唐诗/poet.tang.32000.json	咸陽值雨	溫庭筠
+唐诗	少年行四首·其一	王维	exact	全唐诗/poet.tang.1000.json	雜曲歌辭 少年行四首 一	王維
+唐诗	赠少年	温庭筠	exact	全唐诗/poet.tang.32000.json	贈少年	溫庭筠
+唐诗	房兵曹胡马	杜甫	exact	全唐诗/poet.tang.10000.json	房兵曹胡馬詩	杜甫
+唐诗	画鹰	杜甫	author			
+唐诗	中夜起望西园值月上	柳宗元	prefix	全唐诗/poet.tang.18000.json	中夜起望西園值月上	柳宗元
+唐诗	山中	王勃	exact	全唐诗/poet.tang.3000.json	山中	王勃
+唐诗	秋夜喜遇王处士	王绩	author			
+唐诗	丹阳送韦参军	严维	exact	全唐诗/poet.tang.13000.json	丹陽送韋參軍	嚴維
+唐诗	与浩初上人同看山寄京华亲故	柳宗元	author			
+唐诗	鹧鸪	郑谷	prefix	全唐诗/poet.tang.37000.json	鷓鴣	鄭谷
+唐诗	小松	杜荀鹤	exact	全唐诗/poet.tang.39000.json	小松	杜荀鶴
+唐诗	宿翠微寺	马戴	author			
+唐诗	赠卖松人	于武陵	exact	全唐诗/poet.tang.33000.json	贈賣松人	于武陵
+唐诗	贫女	秦韬玉	prefix	全唐诗/poet.tang.37000.json	貧女	秦韜玉
+唐诗	金乡送韦八之西京	李白	exact	全唐诗/poet.tang.8000.json	金鄉送韋八之西京	李白
+唐诗	长安秋望	杜牧	exact	全唐诗/poet.tang.28000.json	長安秋望	杜牧
+唐诗	长安月夜	白居易	author			
+唐诗	宿云门寺阁	孙逖	prefix	全唐诗/poet.tang.5000.json	宿雲門寺閣	孫逖
+唐诗	金陵图	韦庄	exact	全唐诗/poet.tang.39000.json	金陵圖	韋莊
+唐诗	淮上与友人别	郑谷	exact	全唐诗/poet.tang.37000.json	淮上與友人別	鄭谷
+唐诗	题扬州禅智寺	杜牧	exact	全唐诗/poet.tang.28000.json	題揚州禪智寺	杜牧
+唐诗	暮春归故山草堂	钱起	exact	全唐诗/poet.tang.12000.json	暮春歸故山草堂	錢起
+唐诗	己亥岁	曹松	exact	全唐诗/poet.tang.40000.json	己亥歲二首 一	曹松
+唐诗	赠去婢	崔郊	exact	全唐诗/poet.tang.27000.json	贈去婢	崔郊
+唐诗	近试上张籍水部	朱庆馀	no_text			
+唐诗	贫交行	杜甫	author			
+唐诗	秋夜宴王郎中宅赋得露中菊	朱湾	prefix	全唐诗/poet.tang.16000.json	秋夜宴王郎中宅賦得露中菊	朱灣
+唐诗	代悲白头翁	刘希夷	prefix	全唐诗/poet.tang.1000.json	相和歌辭 白頭吟	劉希夷
+唐诗	淮上即事寄广陵亲故	韦应物	exact	全唐诗/poet.tang.8000.json	淮上即事寄廣陵親故	韋應物
+唐诗	广陵诗	权德舆	prefix	全唐诗/poet.tang.17000.json	廣陵詩	權德輿
+唐诗	忆扬州	徐凝	author			
+唐诗	夜看扬州市	王建	exact	全唐诗/poet.tang.16000.json	夜看揚州市	王建
+唐诗	纵游淮南	张祜	exact	全唐诗/poet.tang.27000.json	縱遊淮南	張祜
+唐诗	隋堤怀古	张祜	author			
+唐诗	过扬州	韦庄	exact	全唐诗/poet.tang.39000.json	過揚州	韋莊
+唐诗	宿扬州	李绅	exact	全唐诗/poet.tang.25000.json	宿揚州	李紳
+唐诗	扬州三首·其一	杜牧	prefix	全唐诗/poet.tang.28000.json	揚州三首 一	杜牧
+唐诗	扬州三首·其三	杜牧	prefix	全唐诗/poet.tang.28000.json	揚州三首 三	杜牧
+唐诗	春日又送潘述之扬州	皎然	author			
+唐诗	题乌江亭	杜牧	exact	全唐诗/poet.tang.28000.json	題烏江亭	杜牧
+唐诗	闲居初夏午睡起·其一	杨万里	author			
+唐诗	陇西行四首·其二	陈陶	exact	全唐诗/poet.tang.41000.json	隴西行四首 二	陳陶
+唐诗	南园十三首·其五	李贺	exact	全唐诗/poet.tang.20000.json	南園十三首 五	李賀
+唐诗	蜂	罗隐	exact	全唐诗/poet.tang.36000.json	蜂	羅隱
+唐诗	山行	杜牧	exact	全唐诗/poet.tang.28000.json	山行	杜牧
+唐诗	寄外征衣	陈玉兰	exact	全唐诗/poet.tang.43000.json	寄夫	陳玉蘭
+唐诗	新沙	陆龟蒙	author			
+唐诗	山中问答	李白	author			
+唐诗	绝句四首·其三	杜甫	exact	全唐诗/poet.tang.11000.json	絕句四首 三	杜甫
+唐诗	新嫁娘词	王建	no_text			
+唐诗	题菊花	黄巢	author			
+唐诗	不第后赋菊	黄巢	exact	全唐诗/poet.tang.41000.json	不第後賦菊	黃巢
+唐诗	剑客	贾岛	prefix	全唐诗/poet.tang.31000.json	劍客	賈島
+唐诗	过华清宫绝句·其一	杜牧	exact	全唐诗/poet.tang.28000.json	過華清宮絕句三首 一	杜牧
+唐诗	军城早秋	严武	prefix	全唐诗/poet.tang.13000.json	軍城早秋	嚴武
+唐诗	乐游原	李商隐	no_text			
+唐诗	闻王昌龄左迁龙标遥有此寄	李白	prefix	全唐诗/poet.tang.8000.json	聞王昌齡左遷龍標遙有此寄	李白
+唐诗	行军九日思长安故园	岑参	exact	全唐诗/poet.tang.9000.json	行軍九日思長安故園	岑參
+唐诗	春夜洛城闻笛	李白	exact	全唐诗/poet.tang.8000.json	春夜洛城聞笛	李白
+唐诗	晚春	韩愈	author			
+唐诗	使至塞上	王维	prefix	全唐诗/poet.tang.6000.json	使至塞上	王維
+唐诗	钱塘湖春行	白居易	exact	全唐诗/poet.tang.23000.json	錢唐湖春行	白居易
+唐诗	卖炭翁	白居易	prefix	全唐诗/poet.tang.22000.json	新樂府 賣炭翁 苦官市也	白居易
+唐诗	题破山寺后禅院	常建	author			
+唐诗	酬乐天扬州初逢席上见赠	刘禹锡	prefix	全唐诗/poet.tang.19000.json	酬樂天揚州初逢席上見贈	劉禹錫
+唐诗	左迁至蓝关示侄孙湘	韩愈	prefix	全唐诗/poet.tang.18000.json	左遷至藍關示姪孫湘	韓愈
+唐诗	商山早行	温庭筠	exact	全唐诗/poet.tang.32000.json	商山早行	溫庭筠
+唐诗	咸阳城东楼	许浑	prefix	全唐诗/poet.tang.28000.json	咸陽城東樓	許渾
+唐诗	雁门太守行	李贺	exact	全唐诗/poet.tang.20000.json	雁門太守行	李賀
+唐诗	咏风	王勃	prefix	全唐诗/poet.tang.3000.json	詠風	王勃
+唐诗	野望	王绩	no_text			
+唐诗	渡汉江	宋之问	exact	全唐诗/poet.tang.3000.json	渡漢江	宋之問
+唐诗	赐萧瑀	李世民	exact	全唐诗/poet.tang.0.json	賜蕭瑀	太宗皇帝
+唐诗	山中送别	王维	no_text			
+唐诗	秋登万山寄张五	孟浩然	no_text			
+唐诗	夜雪	白居易	exact	全唐诗/poet.tang.22000.json	夜雪	白居易
+唐诗	村夜	白居易	prefix	全唐诗/poet.tang.22000.json	村夜	白居易
+唐诗	戏问花门酒家翁	岑参	prefix	全唐诗/poet.tang.9000.json	戲問花門酒家翁	岑參
+唐诗	山亭夏日	高骈	prefix	全唐诗/poet.tang.33000.json	山亭夏日	高駢
+唐诗	江楼感旧	赵嘏	exact	全唐诗/poet.tang.30000.json	江樓舊感	趙嘏
+唐诗	农家	颜仁郁	author			
+唐诗	韩冬郎即席为诗相送	李商隐	exact	全唐诗/poet.tang.29000.json	韓冬郎即席爲詩相送一座盡驚他日余方追吟連宵侍坐裴回久之句有老成之風因成二絕寄酬兼呈畏之員外 一	李商隱
+唐诗	赋新月	缪氏子	exact	全唐诗/poet.tang.43000.json	賦新月	繆氏子
+唐诗	题李凝幽居	贾岛	exact	全唐诗/poet.tang.31000.json	題李凝幽居	賈島
+唐诗	社日	王驾	author			
+唐诗	雨过山村	王建	prefix	全唐诗/poet.tang.16000.json	雨過山村	王建
+唐诗	采莲曲	刘方平	author			
+唐诗	绝句漫兴九首·其五	杜甫	prefix	全唐诗/poet.tang.11000.json	絕句漫興九首 五	杜甫
+唐诗	过华清宫绝句三首·其一	杜牧	no_text			
+唐诗	竹枝词·山桃红花满上头	刘禹锡	exact	全唐诗/poet.tang.19000.json	竹枝詞九首 二	劉禹錫
+唐诗	南园十三首·其五	李贺	no_text			
+唐诗	劝学	颜真卿	author			
+唐诗	江村即事	司空曙	exact	全唐诗/poet.tang.15000.json	江村即事	司空曙
+古诗非唐	诗经·周南·芣苢	佚名	author			
+古诗非唐	诗经·邶风·凯风	佚名	author			
+古诗非唐	诗经·小雅·采薇	佚名	author			
+古诗非唐	诗经·小雅·鹿鸣	佚名	author			
+古诗非唐	橘颂	屈原	author			
+古诗非唐	咏怀·其三十九	阮籍	author			
+古诗非唐	饮酒·其五	陶渊明	author			
+古诗非唐	读山海经·其十	陶渊明	author			
+古诗非唐	读山海经·其一	陶渊明	author			
+古诗非唐	杂诗·其一	陶渊明	author			
+古诗非唐	客中初夏	司马光	prefix	全唐诗/poet.song.30000.json	居洛初夏作	司馬光
+古诗非唐	夏意	苏舜钦	author			
+古诗非唐	冬夜读书示子聿	陆游	exact	全唐诗/poet.song.132000.json	冬夜讀書示子聿八首  其三	陸游
+古诗非唐	夏夜追凉	杨万里	exact	全唐诗/poet.song.139000.json	夏夜追凉	楊萬里
+古诗非唐	花影	谢枋得	prefix	全唐诗/poet.song.230000.json	花影	謝枋得
+古诗非唐	题竹石牧牛	黄庭坚	prefix	全唐诗/poet.song.56000.json	題竹石牧牛	黄庭堅
+古诗非唐	暑旱苦热	王令	author			
+古诗非唐	绝句	释志南	exact	全唐诗/poet.song.149000.json	詩一首	釋志南
+古诗非唐	山中雪后	郑燮	author			
+古诗非唐	偶成	朱熹	author			
+古诗非唐	登快阁	黄庭坚	exact	全唐诗/poet.song.56000.json	登快閣	黄庭堅
+古诗非唐	诗经·陈风·月出	佚名	author			
+古诗非唐	诗经·郑风·山有扶苏	佚名	author			
+古诗非唐	诗经·齐风·猗嗟	佚名	author			
+古诗非唐	春残	翁宏	author			
+古诗非唐	题龙阳县青草湖	唐温如	author			
+古诗非唐	约客	赵师秀	exact	全唐诗/poet.song.184000.json	約客	趙師秀
+古诗非唐	观书	于谦	author			
+古诗非唐	马嵬	袁枚	new			
+古诗非唐	山行即事	王质	prefix	全唐诗/poet.song.155000.json	山行即事二首  其二	王質
+古诗非唐	夜泉	袁中道	author			
+古诗非唐	扬州法曹梅花盛开	何逊	author			
+古诗非唐	江都宫乐歌	杨广	author			
+古诗非唐	维扬怀古	曾棨	new			
+古诗非唐	广陵	谈迁	new			
+古诗非唐	扬州·其一	郑燮	author			
+古诗非唐	赠范晔诗	陆凯	author			
+古诗非唐	书愤	陆游	no_text			
+古诗非唐	临安春雨初霁	陆游	no_text			
+古诗非唐	关山月	陆游	prefix	全唐诗/poet.song.128000.json	關山月	陸游
+古诗非唐	病起书怀	陆游	author			
+古诗非唐	秋波媚·七月十六日晚登高兴亭望长安南山	陆游	author			
+古诗非唐	谢池春·壮岁从戎	陆游	author			
+古诗非唐	鹊桥仙·华灯纵博	陆游	author			
+古诗非唐	鹊桥仙·一竿风月	陆游	author			
+古诗非唐	渔家傲·寄仲高	陆游	author			
+古诗非唐	七步诗	曹植	author			
+古诗非唐	闲居初夏午睡起二首·其一	杨万里	exact	全唐诗/poet.song.139000.json	閑居初夏午睡起二絕句  其一	楊萬里
+古诗非唐	闲居初夏午睡起二首·其二	杨万里	prefix	全唐诗/poet.song.139000.json	閑居初夏午睡起二絕句  其二	楊萬里
+古诗非唐	海棠	苏轼	exact	全唐诗/poet.song.45000.json	海棠	蘇軾
+古诗非唐	乡思	李觏	exact	全唐诗/poet.song.20000.json	鄉思	李覯
+古诗非唐	病牛	李纲	author			
+古诗非唐	野望	翁卷	exact	全唐诗/poet.song.170000.json	野望	翁卷
+古诗非唐	苔	袁枚	new			
+古诗非唐	敕勒歌	佚名	author			
+古诗非唐	游园不值	叶绍翁	author			
+古诗非唐	绝句	李清照	author			
+古诗非唐	春日	朱熹	exact	全唐诗/poet.song.147000.json	春日	朱熹
+古诗非唐	元日	王安石	author			
+古诗非唐	泊船瓜洲	王安石	author			
+古诗非唐	竹石	郑燮	author			
+古诗非唐	墨梅	王冕	new			
+古诗非唐	江上渔者	范仲淹	exact	全唐诗/poet.song.8000.json	江上漁者	范仲淹
+古诗非唐	燕子矶口占	史可法	author			
+古诗非唐	除夜太原寒甚	于谦	author			
+古诗非唐	陶者	梅尧臣	author			
+古诗非唐	山中杂诗	吴均	no_text			
+古诗非唐	画眉鸟	欧阳修	no_text			
+古诗非唐	蚕妇吟	谢枋得	no_text			
+古诗非唐	蚕妇	张俞	no_text			
+古诗非唐	论诗	赵翼	no_text			
+古诗非唐	读《岳阳楼记》	王十朋	no_text			
+古诗非唐	天平山中	杨基	no_text			
+古诗非唐	十一月四日风雨大作·其二	陆游	prefix	全唐诗/poet.song.130000.json	十一月四日風雨大作二首  其二	陸游
+古诗非唐	潼关	谭嗣同	new			
+古诗非唐	登飞来峰	王安石	exact	全唐诗/poet.song.33000.json	登飛來峰	王安石
+古诗非唐	游山西村	陆游	exact	全唐诗/poet.song.127000.json	遊山西村	陸游
+古诗非唐	己亥杂诗·其五	龚自珍	author			
+古诗非唐	过零丁洋	文天祥	author			
+古诗非唐	南安军	文天祥	prefix	全唐诗/poet.song.239000.json	南安軍	文天祥
+古诗非唐	归园田居·其一	陶渊明	no_text			
+古诗非唐	咏柳	曾巩	exact	全唐诗/poet.song.26000.json	咏柳	曾鞏
+古诗非唐	春日偶成	程颢	author			
+古诗非唐	送春	王令	author			
+古诗非唐	鄂州南楼书事四首·其一	黄庭坚	exact	全唐诗/poet.song.56000.json	鄂州南樓書事四首  其一	黄庭堅
+古诗非唐	舟过安仁	杨万里	exact	全唐诗/poet.song.142000.json	舟過安仁五首  其三	楊萬里
+古诗非唐	寒夜	杜耒	exact	全唐诗/poet.song.183000.json	寒夜	杜耒
+古诗非唐	山雨	偰逊	new			
+古诗非唐	马上作	戚继光	new			
+古诗非唐	出师讨满夷自瓜州至金陵	郑成功	author			
+古诗非唐	北风行	刘基	author			
+古诗非唐	首夏山中行吟	祝允明	author			
+古诗非唐	绝句	文徵明	new			
+古诗非唐	就义诗	杨继盛	author			
+古诗非唐	锦云川	毕沅	author			
+古诗非唐	对酒	秋瑾	new			
+古诗非唐	明日歌	钱福	author			
+古诗非唐	垓下歌	项羽	author			
+古诗非唐	短歌行	曹操	no_text			
+古诗非唐	归园田居·其三	陶渊明	author			
+古诗非唐	菩萨蛮·大柏地	许淑慧	author			
+古诗非唐	绝句四首·其四	陈师道	exact	全唐诗/poet.song.62000.json	絕句四首  其四	陳師道
+古诗非唐	题青泥市壁	岳飞	author			
+古诗非唐	论诗五绝·其二	赵翼	no_text			
+古诗非唐	塞外杂咏	林则徐	author			
+古诗非唐	题花山寺壁	苏舜钦	author			
+古诗非唐	自菩提步月归广化寺	欧阳修	prefix	全唐诗/poet.song.17000.json	遊龍門分題十五首 自菩提步月歸廣化寺	歐陽修
+古诗非唐	江上	王安石	exact	全唐诗/poet.song.32000.json	江上	王安石
+古诗非唐	秋日湖上	徐元杰	author			
+古诗非唐	赠刘景文	苏轼	no_text			
+宋词三百首	宴山亭·北行见杏花	赵佶	author			
+宋词三百首	木兰花	钱惟演	prefix	宋词/ci.song.0.json	木兰花・玉楼春	钱惟演
+宋词三百首	苏幕遮	范仲淹	exact	宋词/ci.song.0.json	苏幕遮	范仲淹
+宋词三百首	御街行	范仲淹	author			
+宋词三百首	渔家傲	范仲淹	exact	宋词/ci.song.0.json	渔家傲	范仲淹
+宋词三百首	千秋岁	张先	prefix	宋词/ci.song.0.json	千秋岁	张先
+宋词三百首	菩萨蛮	张先	exact	宋词/ci.song.1000.json	菩萨蛮	晏几道
+宋词三百首	醉垂鞭	张先	exact	宋词/ci.song.0.json	醉垂鞭	张先
+宋词三百首	一丛花	张先	prefix	宋词/ci.song.0.json	一丛花令・一丛花	张先
+宋词三百首	天仙子	张先	exact	宋词/ci.song.0.json	天仙子	张先
+宋词三百首	青门引	张先	exact	宋词/ci.song.0.json	青门引・青门饮	张先
+宋词三百首	生查子	张先	exact	宋词/ci.song.0.json	生查子	欧阳修
+宋词三百首	浣溪沙·一曲新词酒一杯	晏殊	exact	宋词/ci.song.0.json	浣溪沙	晏殊
+宋词三百首	浣溪沙·一向年光有限身	晏殊	prefix	宋词/ci.song.0.json	浣溪沙	晏殊
+宋词三百首	清平乐·红笺小字	晏殊	exact	宋词/ci.song.0.json	清平乐	晏殊
+宋词三百首	清平乐·金风细细	晏殊	prefix	宋词/ci.song.0.json	清平乐	晏殊
+宋词三百首	木兰花·燕鸿过后莺归去	晏殊	exact	宋词/ci.song.0.json	木兰花・玉楼春	晏殊
+宋词三百首	木兰花·绿杨芳草长亭路	晏殊	prefix	宋词/ci.song.0.json	玉楼春	晏殊
+宋词三百首	木兰花·池塘水绿风微暖	晏殊	exact	宋词/ci.song.0.json	木兰花・玉楼春	晏殊
+宋词三百首	踏莎行·碧海无波	晏殊	exact	宋词/ci.song.0.json	踏莎行	晏殊
+宋词三百首	踏莎行·小径红稀	晏殊	exact	宋词/ci.song.0.json	踏莎行	晏殊
+宋词三百首	蝶恋花	晏殊	exact	宋词/ci.song.0.json	鹊踏枝・蝶恋花	晏殊
+宋词三百首	凤箫吟	韩缜	prefix	宋词/ci.song.1000.json	凤箫吟・芳草	韩缜
+宋词三百首	木兰花	宋祁	exact	宋词/ci.song.0.json	玉楼春	宋祁
+宋词三百首	采桑子	欧阳修	exact	宋词/ci.song.0.json	采桑子	欧阳修
+宋词三百首	诉衷情	欧阳修	exact	宋词/ci.song.0.json	诉衷情	欧阳修
+宋词三百首	踏莎行	欧阳修	author			
+宋词三百首	蝶恋花·庭院深深深几许？杨柳堆烟	欧阳修	author			
+宋词三百首	蝶恋花·谁道闲情抛弃久？每到春来	欧阳修	author			
+宋词三百首	蝶恋花·帘幕风轻双语燕	欧阳修	prefix	宋词/ci.song.0.json	蝶恋花	晏殊
+宋词三百首	木兰花	欧阳修	exact	宋词/ci.song.0.json	玉楼春	欧阳修
+宋词三百首	浪淘沙	欧阳修	exact	宋词/ci.song.0.json	浪淘沙	欧阳修
+宋词三百首	青玉案	欧阳修	exact	宋词/ci.song.20000.json	青玉案	无名氏
+宋词三百首	曲玉管	柳永	prefix	宋词/ci.song.0.json	曲玉管	柳永
+宋词三百首	雨霖铃	柳永	prefix	宋词/ci.song.0.json	雨霖铃	柳永
+宋词三百首	蝶恋花	柳永	exact	宋词/ci.song.0.json	凤栖梧・蝶恋花	柳永
+宋词三百首	采莲令	柳永	exact	宋词/ci.song.0.json	采莲令	柳永
+宋词三百首	浪淘沙慢	柳永	exact	宋词/ci.song.0.json	浪淘沙	柳永
+宋词三百首	定风波	柳永	exact	宋词/ci.song.0.json	定风波	柳永
+宋词三百首	少年游	柳永	author			
+宋词三百首	戚氏	柳永	prefix	宋词/ci.song.0.json	戚氏	柳永
+宋词三百首	夜半乐	柳永	prefix	宋词/ci.song.0.json	夜半乐	柳永
+宋词三百首	玉蝴蝶	柳永	exact	宋词/ci.song.0.json	玉蝴蝶	柳永
+宋词三百首	八声甘州	柳永	prefix	宋词/ci.song.0.json	八声甘州	柳永
+宋词三百首	迷神引	柳永	prefix	宋词/ci.song.0.json	迷神引	柳永
+宋词三百首	竹马子	柳永	exact	宋词/ci.song.0.json	竹马子・竹马儿	柳永
+宋词三百首	桂枝香	王安石	prefix	宋词/ci.song.1000.json	桂枝香	王安石
+宋词三百首	千秋岁引	王安石	prefix	宋词/ci.song.1000.json	千秋岁引	王安石
+宋词三百首	清平乐	王安国	exact	宋词/ci.song.1000.json	清平乐	王安石
+宋词三百首	临江仙	晏几道	exact	宋词/ci.song.1000.json	临江仙	晏几道
+宋词三百首	蝶恋花·醉别西楼醒不记	晏几道	exact	宋词/ci.song.1000.json	蝶恋花	晏几道
+宋词三百首	蝶恋花·梦入江南烟水路	晏几道	prefix	宋词/ci.song.1000.json	蝶恋花	晏几道
+宋词三百首	鹧鸪天	晏几道	author			
+宋词三百首	生查子	晏几道	exact	宋词/ci.song.1000.json	生查子	晏几道
+宋词三百首	木兰花·秋千院落重帘暮	晏几道	prefix	宋词/ci.song.1000.json	木兰花・玉楼春	晏几道
+宋词三百首	木兰花·小颦若解愁春暮	晏几道	prefix	宋词/ci.song.1000.json	木兰花・玉楼春	晏几道
+宋词三百首	清平乐	晏几道	exact	宋词/ci.song.1000.json	清平乐	晏几道
+宋词三百首	阮郎归·天边金掌露成霜	晏几道	prefix	宋词/ci.song.1000.json	阮郎归	晏几道
+宋词三百首	阮郎归·旧香残粉似当初	晏几道	exact	宋词/ci.song.1000.json	阮郎归	晏几道
+宋词三百首	六幺令	晏几道	prefix	宋词/ci.song.1000.json	六么令	晏几道
+宋词三百首	御街行	晏几道	exact	宋词/ci.song.1000.json	御街行	晏几道
+宋词三百首	虞美人	晏几道	prefix	宋词/ci.song.1000.json	虞美人	晏几道
+宋词三百首	留春令	晏几道	prefix	宋词/ci.song.1000.json	留春令	晏几道
+宋词三百首	思远人	晏几道	exact	宋词/ci.song.1000.json	思远人	晏几道
+宋词三百首	水调歌头	苏轼	exact	宋词/ci.song.1000.json	水调歌头	苏轼
+宋词三百首	水龙吟·次韵章质夫杨花词	苏轼	exact	宋词/ci.song.1000.json	水龙吟	苏轼
+宋词三百首	念奴娇·赤壁怀古	苏轼	prefix	宋词/ci.song.1000.json	念奴娇	苏轼
+宋词三百首	永遇乐	苏轼	exact	宋词/ci.song.1000.json	永遇乐	苏轼
+宋词三百首	洞仙歌	苏轼	prefix	宋词/ci.song.1000.json	洞仙歌	苏轼
+宋词三百首	卜算子·黄州定惠院寓居作	苏轼	author			
+宋词三百首	青玉案	苏轼	exact	宋词/ci.song.1000.json	青玉案	苏轼
+宋词三百首	临江仙	苏轼	prefix	宋词/ci.song.1000.json	临江仙	苏轼
+宋词三百首	定风波	苏轼	exact	宋词/宋词三百首.json	定风波	苏轼
+宋词三百首	贺新郎	苏轼	prefix	宋词/ci.song.1000.json	贺新郎	苏轼
+宋词三百首	江城子·乙卯正月二十日夜记梦	苏轼	prefix	宋词/ci.song.1000.json	江神子・江城子	苏轼
+宋词三百首	木兰花	苏轼	author			
+宋词三百首	浣溪沙	苏轼	exact	宋词/ci.song.1000.json	浣溪沙	苏轼
+宋词三百首	鹧鸪天	黄庭坚	prefix	宋词/ci.song.2000.json	鹧鸪天	黄庭坚
+宋词三百首	定风波	黄庭坚	exact	宋词/ci.song.2000.json	定风波	黄庭坚
+宋词三百首	清平乐	黄庭坚	exact	宋词/ci.song.2000.json	清平乐	黄庭坚
+宋词三百首	阮郎归	黄庭坚	author			
+宋词三百首	绿头鸭	晁元礼	prefix	宋词/ci.song.3000.json	绿头鸭・多丽	晁端礼
+宋词三百首	蝶恋花	赵令畤	prefix	宋词/ci.song.1000.json	蝶恋花	晏几道
+宋词三百首	踏莎行	秦观	exact	宋词/ci.song.3000.json	踏莎行	秦观
+宋词三百首	望海潮	秦观	exact	宋词/ci.song.3000.json	望海潮	秦观
+宋词三百首	八六子	秦观	exact	宋词/ci.song.3000.json	八六子	秦观
+宋词三百首	满庭芳·山抹微云	秦观	prefix	宋词/ci.song.1000.json	满庭芳	琴操
+宋词三百首	满庭芳·碧水惊秋	秦观	exact	宋词/ci.song.3000.json	满庭芳	秦观
+宋词三百首	减字木兰花	秦观	prefix	宋词/ci.song.3000.json	减字木兰花	秦观
+宋词三百首	浣溪沙	秦观	exact	宋词/ci.song.3000.json	浣溪沙	秦观
+宋词三百首	阮郎归	秦观	author			
+宋词三百首	鹧鸪天	秦观	exact	宋词/ci.song.20000.json	鹧鸪天	无名氏
+宋词三百首	江城子	秦观	prefix	宋词/ci.song.3000.json	江城子	秦观
+宋词三百首	临江仙	晁补之	exact	宋词/ci.song.4000.json	临江仙	晁补之
+宋词三百首	水龙吟	晁补之	prefix	宋词/ci.song.4000.json	水龙吟	晁补之
+宋词三百首	忆少年·别历下	晁补之	exact	宋词/ci.song.4000.json	忆少年	晁补之
+宋词三百首	洞仙歌·泗州中秋作	晁补之	prefix	宋词/ci.song.4000.json	洞仙歌	晁补之
+宋词三百首	临江仙	晁冲之	prefix	宋词/ci.song.4000.json	临江仙	晁冲之
+宋词三百首	惜分飞	毛滂	prefix	宋词/ci.song.4000.json	惜分飞	毛滂
+宋词三百首	菩萨蛮	陈克	exact	宋词/ci.song.5000.json	菩萨蛮	陈克
+宋词三百首	谒金门	李元膺	author			
+宋词三百首	苏幕遮	时彦	prefix	宋词/ci.song.3000.json	青门饮	时彦
+宋词三百首	卜算子	李之仪	exact	宋词/ci.song.1000.json	卜算子	李之仪
+宋词三百首	兰陵王	周邦彦	prefix	宋词/ci.song.4000.json	兰陵王	周邦彦
+宋词三百首	瑞龙吟	周邦彦	prefix	宋词/ci.song.4000.json	瑞龙吟	周邦彦
+宋词三百首	风流子	周邦彦	prefix	宋词/ci.song.4000.json	风流子	周邦彦
+宋词三百首	渡江云	周邦彦	prefix	宋词/ci.song.4000.json	渡江云	周邦彦
+宋词三百首	应天长	周邦彦	prefix	宋词/ci.song.4000.json	应天长	周邦彦
+宋词三百首	还京乐	周邦彦	exact	宋词/ci.song.4000.json	还京乐	周邦彦
+宋词三百首	解连环	周邦彦	prefix	宋词/ci.song.4000.json	解连环	周邦彦
+宋词三百首	夜游宫	周邦彦	author			
+宋词三百首	菩萨蛮	周邦彦	exact	宋词/ci.song.4000.json	菩萨蛮	周邦彦
+宋词三百首	虞美人	周邦彦	exact	宋词/ci.song.4000.json	虞美人	周邦彦
+宋词三百首	点绛唇	周邦彦	exact	宋词/ci.song.4000.json	点绛唇	周邦彦
+宋词三百首	齐天乐	周邦彦	exact	宋词/ci.song.4000.json	齐天乐	周邦彦
+宋词三百首	琐窗寒	周邦彦	exact	宋词/ci.song.4000.json	锁窗寒・琐寒窗	周邦彦
+宋词三百首	过秦楼	周邦彦	prefix	宋词/ci.song.4000.json	过秦楼	周邦彦
+宋词三百首	花犯	周邦彦	prefix	宋词/ci.song.4000.json	花犯	周邦彦
+宋词三百首	大酺	周邦彦	prefix	宋词/ci.song.4000.json	大酺	周邦彦
+宋词三百首	解语花·上元	周邦彦	author			
+宋词三百首	蝶恋花	周邦彦	author			
+宋词三百首	西河·金陵怀古	周邦彦	prefix	宋词/ci.song.4000.json	西河	周邦彦
+宋词三百首	瑞鹤仙	周邦彦	prefix	宋词/ci.song.4000.json	瑞鹤仙	周邦彦
+宋词三百首	浪淘沙慢	周邦彦	author			
+宋词三百首	拜星月慢	周邦彦	prefix	宋词/ci.song.4000.json	拜星月・拜星月慢	周邦彦
+宋词三百首	尉迟杯	周邦彦	prefix	宋词/ci.song.4000.json	尉迟杯	周邦彦
+宋词三百首	捣练子	贺铸	exact	宋词/ci.song.3000.json	杵声齐・捣练子	贺铸
+宋词三百首	青玉案	贺铸	prefix	宋词/ci.song.3000.json	横塘路・青玉案	贺铸
+宋词三百首	感皇恩	贺铸	author			
+宋词三百首	薄幸	贺铸	author			
+宋词三百首	浣溪沙	贺铸	prefix	宋词/ci.song.2000.json	减字浣溪沙・浣溪沙	贺铸
+宋词三百首	石州慢	贺铸	author			
+宋词三百首	蝶恋花·改徐冠卿词	贺铸	exact	宋词/ci.song.2000.json	蝶恋花	贺铸
+宋词三百首	天门谣	贺铸	exact	宋词/ci.song.2000.json	天门谣	贺铸
+宋词三百首	天香	贺铸	author			
+宋词三百首	望湘人	贺铸	prefix	宋词/ci.song.2000.json	望湘人	贺铸
+宋词三百首	绿头鸭	贺铸	prefix	宋词/ci.song.4000.json	绿头鸭・多丽	贺铸
+宋词三百首	石州慢	张元幹	prefix	宋词/ci.song.7000.json	石州慢	张元干
+宋词三百首	兰陵王	张元幹	author			
+宋词三百首	贺新郎	张元幹	exact	宋词/ci.song.7000.json	贺新郎	张元干
+宋词三百首	虞美人	叶梦得	prefix	宋词/ci.song.5000.json	虞美人	叶梦得
+宋词三百首	点绛唇·新月娟娟	汪藻	exact	宋词/ci.song.5000.json	点绛唇	汪藻
+宋词三百首	喜迁莺	刘一止	prefix	宋词/ci.song.5000.json	喜迁莺	刘一止
+宋词三百首	高阳台	韩疁	exact	宋词/ci.song.14000.json	高阳台	韩
+宋词三百首	汉宫春	李邴	exact	宋词/ci.song.2000.json	汉宫春	李邴
+宋词三百首	临江仙	陈与义	prefix	宋词/ci.song.7000.json	临江仙	陈与义
+宋词三百首	苏武慢	蔡伸	exact	宋词/ci.song.6000.json	苏武慢	蔡伸
+宋词三百首	柳梢青	蔡伸	exact	宋词/ci.song.6000.json	柳梢青	蔡伸
+宋词三百首	鹧鸪天	周紫芝	exact	宋词/ci.song.5000.json	鹧鸪天	周紫芝
+宋词三百首	踏莎行	周紫芝	exact	宋词/ci.song.5000.json	踏莎行	周紫芝
+宋词三百首	帝台春	李甲	prefix	宋词/ci.song.3000.json	帝台春	李甲
+宋词三百首	忆王孙	李重元	exact	宋词/ci.song.7000.json	忆王孙	李重元
+宋词三百首	三台·清明应制	万俟咏	prefix	宋词/ci.song.5000.json	三台	万俟咏
+宋词三百首	二郎神	徐伸	author			
+宋词三百首	江神子慢	田为	prefix	宋词/ci.song.5000.json	江神子慢・江城子慢	田为
+宋词三百首	蓦山溪	曹组	prefix	宋词/ci.song.5000.json	蓦山溪	曹组
+宋词三百首	贺新郎	李玉	author			
+宋词三百首	烛影摇红	廖世美	exact	宋词/ci.song.6000.json	烛影摇红	廖世美
+宋词三百首	薄幸	吕滨老	exact	宋词/ci.song.7000.json	薄幸	吕渭老
+宋词三百首	透碧宵	查荎	new			
+宋词三百首	南浦	鲁逸仲	prefix	宋词/ci.song.4000.json	南浦	孔夷
+宋词三百首	小重山	岳飞	exact	宋词/ci.song.7000.json	小重山	岳飞
+宋词三百首	烛影摇红	张抡	exact	宋词/ci.song.8000.json	烛影摇红	张抡
+宋词三百首	水龙吟	程垓	prefix	宋词/ci.song.11000.json	水龙吟	程垓
+宋词三百首	六州歌头	张孝祥	author			
+宋词三百首	念奴娇·过洞庭	张孝祥	prefix	宋词/ci.song.10000.json	念奴娇	张孝祥
+宋词三百首	好事近	韩元吉	exact	宋词/ci.song.8000.json	好事近	韩元吉
+宋词三百首	瑞鹤仙	袁去华	prefix	宋词/ci.song.9000.json	瑞鹤仙	袁去华
+宋词三百首	剑器近	袁去华	prefix	宋词/ci.song.9000.json	剑器近	袁去华
+宋词三百首	安公子	袁去华	author			
+宋词三百首	瑞鹤仙	陆淞	prefix	宋词/ci.song.2000.json	瑞鹤仙	陆淞
+宋词三百首	卜算子·咏梅	陆游	exact	宋词/ci.song.9000.json	卜算子	陆游
+宋词三百首	钗头凤	陆游	exact	宋词/ci.song.9000.json	钗头凤・撷芳词	陆游
+宋词三百首	水龙吟·闹花深处	陈亮	prefix	宋词/ci.song.12000.json	水龙吟	陈亮
+宋词三百首	眼儿媚	范成大	exact	宋词/ci.song.10000.json	眼儿媚	范成大
+宋词三百首	霜天晓角·晚晴风歇	范成大	author			
+宋词三百首	贺新郎	辛弃疾	exact	宋词/ci.song.11000.json	贺新郎	辛弃疾
+宋词三百首	念奴娇·书东流村壁	辛弃疾	author			
+宋词三百首	汉宫春·立春	辛弃疾	prefix	宋词/ci.song.11000.json	汉宫春	辛弃疾
+宋词三百首	贺新郎·赋琵琶	辛弃疾	prefix	宋词/ci.song.11000.json	贺新郎	辛弃疾
+宋词三百首	水龙吟·登建康赏心亭	辛弃疾	prefix	宋词/ci.song.11000.json	水龙吟	辛弃疾
+宋词三百首	永遇乐·京口北固亭怀古	辛弃疾	exact	宋词/ci.song.3000.json	永遇乐	辛弃疾
+宋词三百首	摸鱼儿	辛弃疾	prefix	宋词/ci.song.11000.json	摸鱼儿	辛弃疾
+宋词三百首	点绛唇·丁未冬过吴松作	姜夔	prefix	宋词/ci.song.12000.json	点绛唇	姜夔
+宋词三百首	鹧鸪天·元夕有所梦	姜夔	prefix	宋词/ci.song.12000.json	鹧鸪天	姜夔
+宋词三百首	踏莎行	姜夔	exact	宋词/ci.song.12000.json	踏莎行	姜夔
+宋词三百首	齐天乐	姜夔	exact	宋词/ci.song.12000.json	齐天乐	姜夔
+宋词三百首	琵琶仙	姜夔	exact	宋词/ci.song.12000.json	琵琶仙・自度曲	姜夔
+宋词三百首	八归	姜夔	author			
+宋词三百首	念奴娇	姜夔	prefix	宋词/ci.song.12000.json	念奴娇	姜夔
+宋词三百首	扬州慢	姜夔	exact	宋词/ci.song.12000.json	扬州慢	姜夔
+宋词三百首	长亭怨慢	姜夔	prefix	宋词/ci.song.12000.json	长亭怨慢	姜夔
+宋词三百首	淡黄柳	姜夔	author			
+宋词三百首	暗香	姜夔	exact	宋词/ci.song.12000.json	暗香	姜夔
+宋词三百首	疏影	姜夔	exact	宋词/ci.song.12000.json	疏影	姜夔
+宋词三百首	翠楼吟	姜夔	author			
+宋词三百首	小重山	章良能	prefix	宋词/ci.song.6000.json	小重山	章良能
+宋词三百首	唐多令	刘过	author			
+宋词三百首	木兰花	严仁	author			
+宋词三百首	风入松	俞国宝	author			
+宋词三百首	满庭芳·促织	张镃	prefix	宋词/ci.song.6000.json	满庭芳	张鎡
+宋词三百首	绮罗香·咏春雨	史达祖	prefix	宋词/ci.song.13000.json	绮罗香	史达祖
+宋词三百首	双双燕·咏燕	史达祖	prefix	宋词/ci.song.13000.json	双双燕	史达祖
+宋词三百首	东风第一枝·咏春雪	史达祖	prefix	宋词/ci.song.13000.json	东风第一枝	史达祖
+宋词三百首	喜迁莺	史达祖	prefix	宋词/ci.song.13000.json	喜迁莺	史达祖
+宋词三百首	三姝媚	史达祖	exact	宋词/ci.song.13000.json	三姝媚	史达祖
+宋词三百首	秋霁	史达祖	prefix	宋词/ci.song.13000.json	秋霁	史达祖
+宋词三百首	夜合花	史达祖	prefix	宋词/ci.song.13000.json	夜合花	史达祖
+宋词三百首	玉蝴蝶	史达祖	exact	宋词/ci.song.13000.json	玉胡蝶・玉蝴蝶	史达祖
+宋词三百首	贺新郎	刘克庄	exact	宋词/ci.song.14000.json	贺新郎	刘克庄
+宋词三百首	木兰花·戏林推	刘克庄	prefix	宋词/ci.song.14000.json	玉楼春	刘克庄
+宋词三百首	渡江云	吴文英	author			
+宋词三百首	八声甘州·灵岩陪庾幕诸公游	吴文英	prefix	宋词/ci.song.16000.json	八声甘州	吴文英
+宋词三百首	霜叶飞	吴文英	prefix	宋词/ci.song.15000.json	霜叶飞	吴文英
+宋词三百首	宴清都	吴文英	prefix	宋词/ci.song.15000.json	宴清都	吴文英
+宋词三百首	齐天乐	吴文英	exact	宋词/ci.song.15000.json	齐天乐	吴文英
+宋词三百首	花犯	吴文英	prefix	宋词/ci.song.6000.json	花犯	吴文英
+宋词三百首	浣溪沙	吴文英	exact	宋词/ci.song.6000.json	浣溪沙	吴文英
+宋词三百首	点绛唇	吴文英	exact	宋词/ci.song.6000.json	点绛唇	吴文英
+宋词三百首	祝英台近	吴文英	author			
+宋词三百首	风入松	吴文英	exact	宋词/ci.song.15000.json	风入松	吴文英
+宋词三百首	莺啼序	吴文英	author			
+宋词三百首	惜黄花慢	吴文英	prefix	宋词/ci.song.15000.json	惜黄花慢	吴文英
+宋词三百首	高阳台·落梅	吴文英	exact	宋词/ci.song.16000.json	高阳台	吴文英
+宋词三百首	三姝媚·过都城旧居有感	吴文英	author			
+宋词三百首	八声甘州	吴文英	prefix	宋词/ci.song.16000.json	八声甘州	吴文英
+宋词三百首	踏莎行	吴文英	exact	宋词/ci.song.16000.json	蹋莎行・踏莎行	吴文英
+宋词三百首	瑞鹤仙	吴文英	prefix	宋词/ci.song.15000.json	瑞鹤仙	吴文英
+宋词三百首	鹧鸪天	吴文英	author			
+宋词三百首	夜游宫	吴文英	exact	宋词/ci.song.16000.json	夜游宫	吴文英
+宋词三百首	湘春夜月	黄孝迈	prefix	宋词/ci.song.15000.json	湘春夜月	黄孝迈
+宋词三百首	大有·九日	潘希白	prefix	宋词/ci.song.17000.json	大有	潘希白
+宋词三百首	兰陵王·丙子送春	刘辰翁	prefix	宋词/ci.song.17000.json	兰陵王	刘辰翁
+宋词三百首	高阳台·送陈君衡被召	周密	exact	宋词/ci.song.17000.json	高阳台	周密
+宋词三百首	瑶华	周密	prefix	宋词/ci.song.17000.json	瑶花慢	周密
+宋词三百首	玉京秋	周密	prefix	宋词/ci.song.17000.json	玉京秋	周密
+宋词三百首	曲游春	周密	author			
+宋词三百首	花犯	周密	prefix	宋词/ci.song.17000.json	绣鸾凤花犯・花犯	周密
+宋词三百首	瑞鹤仙	蒋捷	author			
+宋词三百首	天香	王沂孙	prefix	宋词/ci.song.18000.json	天香	王沂孙
+宋词三百首	眉妩·新月	王沂孙	author			
+宋词三百首	齐天乐·蝉	王沂孙	author			
+宋词三百首	长亭怨慢	王沂孙	prefix	宋词/ci.song.18000.json	长亭怨・长亭怨慢	王沂孙
+宋词三百首	高阳台	张炎	exact	宋词/ci.song.14000.json	高阳台	张炎
+宋词三百首	八声甘州	张炎	exact	宋词/ci.song.18000.json	甘州・八声甘州	张炎
+宋词三百首	解连环	张炎	exact	宋词/ci.song.18000.json	解连环	张炎
+宋词三百首	疏影	张炎	exact	宋词/ci.song.3000.json	绿意・疏影	张炎
+宋词三百首	声声慢	李清照	prefix	宋词/ci.song.6000.json	声声慢	李清照
+宋词三百首	念奴娇	李清照	author			
+宋词三百首	永遇乐	李清照	prefix	宋词/ci.song.6000.json	永遇乐	李清照
+宋词三百首	一剪梅	李清照	prefix	宋词/ci.song.6000.json	一剪梅・一翦梅	李清照
+宋词三百首	醉花阴	李清照	prefix	宋词/ci.song.6000.json	醉花阴	李清照
+宋词三百首	凤凰台上忆吹箫	李清照	author			
+宋词三百首	武陵春·风住尘香花已尽	李清照	exact	宋词/ci.song.6000.json	武陵春	李清照
+宋词三百首	点绛唇	林逋	author			
+宋词三百首	长相思	林逋	author			
+宋词三百首	苏幕遮	梅尧臣	exact	宋词/ci.song.0.json	苏幕遮	梅尧臣
+宋词三百首	蝶恋花	李冠	prefix	宋词/ci.song.0.json	蝶恋花	李冠
+宋词三百首	清平乐	刘弇	author			
+宋词三百首	江城子	张舜民	prefix	宋词/ci.song.1000.json	江神子・江城子	张舜民
+宋词三百首	鹊桥仙	李之仪	prefix	宋词/ci.song.1000.json	鹊桥仙	李之仪
+宋词三百首	点绛唇	叶梦得	exact	宋词/ci.song.5000.json	点绛唇	叶梦得
+宋词三百首	点绛唇·高柳蝉嘶	汪藻	exact	宋词/ci.song.5000.json	点绛唇	汪藻
+宋词三百首	南柯子	田为	exact	宋词/ci.song.5000.json	南柯子・南歌子	田为
+宋词三百首	醉落魄	李清照	author			
+宋词三百首	菩萨蛮	李清照	prefix	宋词/ci.song.6000.json	菩萨蛮	李清照
+宋词三百首	忆秦娥	李清照	exact	宋词/ci.song.6000.json	忆秦娥	李清照
+宋词三百首	孤雁儿	李清照	prefix	宋词/ci.song.6000.json	孤雁儿・御街行	李清照
+宋词三百首	武陵春·小院无人	李清照	author			
+宋词三百首	眼儿媚	朱淑真	exact	宋词/ci.song.8000.json	眼儿媚	朱淑真
+宋词三百首	蝶恋花	朱淑真	prefix	宋词/ci.song.8000.json	蝶恋花	朱淑真
+宋词三百首	蝶恋花	范成大	exact	宋词/ci.song.10000.json	蝶恋花	范成大
+宋词三百首	忆秦娥	范成大	exact	宋词/ci.song.10000.json	秦楼月・忆秦娥	范成大
+宋词三百首	霜天晓角·脉脉花疏	范成大	author			
+宋词三百首	瑞鹤仙	辛弃疾	prefix	宋词/ci.song.3000.json	瑞鹤仙	辛弃疾
+宋词三百首	汉宫春	辛弃疾	exact	宋词/ci.song.3000.json	汉宫春	辛弃疾
+宋词三百首	鹧鸪天	姜夔	prefix	宋词/ci.song.12000.json	鹧鸪天	姜夔
+宋词三百首	忆王孙	陆游	exact	宋词/ci.song.9000.json	豆叶黄・忆王孙	陆游
+宋词三百首	夜游宫	陆游	exact	宋词/ci.song.9000.json	夜游宫	陆游
+宋词三百首	鹊桥仙	陆游	no_text			
+宋词三百首	水龙吟·春归翠陌	陈亮	author			
+宋词三百首	绮罗香	张磐	prefix	宋词/ci.song.17000.json	绮罗香	张磐
+宋词三百首	天香·咏龙涎香	王沂孙	prefix	宋词/ci.song.18000.json	天香	王沂孙
+宋词三百首	如梦令·常记溪亭日暮	李清照	author			
+宋词三百首	西江月·夜行黄沙道中	辛弃疾	exact	宋词/ci.song.11000.json	西江月	辛弃疾
+宋词三百首	浣溪沙·簌簌衣巾落枣花	苏轼	prefix	宋词/ci.song.1000.json	浣溪沙	苏轼
+宋词三百首	满江红·写怀	岳飞	author			
+宋词三百首	渔家傲·天接云涛连晓雾	李清照	prefix	宋词/ci.song.6000.json	渔家傲	李清照
+宋词三百首	相见欢·无言独上西楼	李煜	author			
+宋词三百首	浪淘沙令·帘外雨潺潺	李煜	author			
+宋词三百首	乌夜啼·林花谢了春红	李煜	author			
+宋词三百首	菩萨蛮·人人尽说江南好	韦庄	author			
+宋词三百首	谒金门·风乍起	冯延巳	author			
+宋词三百首	浣溪沙·谁念西风独自凉	纳兰性德	new			
+宋词三百首	长相思·山一程	纳兰性德	no_text			
+宋词三百首	木兰花令·拟古决绝词	纳兰性德	new			
+宋词三百首	摸鱼儿·雁丘词	元好问	author			
+宋词三百首	六丑·蔷薇谢后作	周邦彦	author			
+宋词三百首	苏幕遮	周邦彦	author			
+宋词三百首	鹧鸪天·重过阊门万事非	贺铸	prefix	宋词/ci.song.3000.json	半死桐・鹧鸪天	贺铸
+宋词三百首	破阵子·燕子来时新社	晏几道	exact	宋词/ci.song.0.json	破阵子	晏殊
+宋词三百首	眼儿媚·杨柳丝丝弄轻柔	王雱	exact	宋词/ci.song.20000.json	眼儿媚	无名氏
+宋词三百首	鹧鸪天·林断山明竹隐墙	苏轼	exact	宋词/ci.song.1000.json	鹧鸪天	苏轼
+宋词三百首	浣溪沙·端午	苏轼	exact	宋词/ci.song.1000.json	浣溪沙	苏轼
+宋词三百首	一剪梅·舟过吴江	蒋捷	prefix	宋词/ci.song.18000.json	一翦梅	蒋捷
+宋词三百首	西江月·阻风山峰下	张孝祥	prefix	宋词/ci.song.10000.json	西江月	张孝祥
+宋词三百首	卜算子·答施	乐婉	prefix	宋词/ci.song.7000.json	卜算子	乐婉
+宋词三百首	金缕曲·赠梁汾	纳兰性德	new			
+宋词三百首	蝶恋花·辛苦最怜天上月	纳兰性德	new			
+宋词三百首	乌夜啼·昨夜风兼雨	李煜	author			
+宋词三百首	菩萨蛮·咏梅	朱淑真	author			
+宋词三百首	望海潮·广陵怀古	秦观	prefix	宋词/ci.song.3000.json	望海潮	秦观
+宋词三百首	水调歌头·舟次扬州和人韵	辛弃疾	exact	宋词/ci.song.11000.json	水调歌头	辛弃疾
+宋词三百首	朝中措·送刘仲原甫出守维扬	欧阳修	prefix	宋词/ci.song.0.json	朝中措	欧阳修
+宋词三百首	青房并蒂莲·维扬怀古	周邦彦	exact	宋词/ci.song.4000.json	青房并蒂莲	周邦彦
+宋词三百首	洞仙歌·江都恨	夏完淳	new			
+宋词三百首	如梦令·昨夜雨疏风骤	李清照	exact	宋词/ci.song.6000.json	如梦令	李清照
+宋词三百首	怨王孙·春暮	李清照	exact	宋词/ci.song.6000.json	怨王孙・忆王孙	李清照
+宋词三百首	减字木兰花·卖花担上	李清照	exact	宋词/ci.song.6000.json	减字木兰花	李清照
+宋词三百首	望江南·超然台作	苏轼	exact	宋词/ci.song.1000.json	望江南・忆江南	苏轼
+宋词三百首	行香子·过七里濑	苏轼	author			
+宋词三百首	满庭芳·蜗角虚名	苏轼	author			
+宋词三百首	西江月·世事一场大梦	苏轼	exact	宋词/ci.song.1000.json	西江月	苏轼
+宋词三百首	阮郎归·初夏	苏轼	prefix	宋词/ci.song.1000.json	阮郎归	苏轼
+宋词三百首	点绛唇·蹴罢秋千	李清照	exact	宋词/ci.song.20000.json	点绛唇	无名氏
+宋词三百首	鹧鸪天·桂花	李清照	exact	宋词/ci.song.6000.json	鹧鸪天	李清照
+宋词三百首	添字丑奴儿·窗前谁种芭蕉树	李清照	prefix	宋词/ci.song.6000.json	添字丑奴儿・采桑子	李清照
+宋词三百首	清平乐·年年雪里	李清照	exact	宋词/ci.song.6000.json	清平乐	李清照
+宋词三百首	摊破浣溪沙·病起萧萧两鬓华	李清照	exact	宋词/ci.song.6000.json	摊破浣溪沙・山花子	李清照
+宋词三百首	诉衷情·当年万里觅封侯	陆游	exact	宋词/ci.song.9000.json	诉衷情	陆游
+元曲	天净沙·秋思	马致远	exact	元曲/yuanqu.json	越调・天净沙秋思	马致远
+元曲	山坡羊·潼关怀古	张养浩	author			
+元曲	山坡羊·骊山怀古	张养浩	author			
+元曲	天净沙·秋	白朴	author			
+元曲	天净沙·春	白朴	author			
+元曲	天净沙·冬	白朴	author			
+元曲	寿阳曲·江天暮雪	马致远	author			
+元曲	寿阳曲·远浦帆归	马致远	author			
+元曲	四块玉·别情	关汉卿	exact	元曲/yuanqu.json	南吕・四块玉别情	关汉卿
+元曲	醉太平·讥贪小利者	佚名	author			
+元曲	朝天子·咏喇叭	王磐	author			
+元曲	天净沙·即事	乔吉	author			
+元曲	满庭芳·渔父词	乔吉	author			
+元曲	十二月过尧民歌·别情	王实甫	prefix	元曲/yuanqu.json	中吕・十二月过尧民歌别情	王德信
+元曲	阳春曲·知几	白朴	author			
+元曲	水仙子·夜雨	徐再思	prefix	元曲/yuanqu.json	双调・水仙子夜雨	徐再思
+元曲	水仙子·寻梅	乔吉	author			
+元曲	殿前欢·客中	张可久	author			
+元曲	折桂令·九日	张可久	author			
+元曲	清江引·秋怀	张可久	author			
+元曲	清江引·立春	贯云石	author			
+元曲	天净沙·春情	徐再思	author			
+元曲	天净沙·江上	张可久	author			
+元曲	水仙子·咏雪	乔吉	author			
+元曲	水仙子·咏江南	张养浩	author			
+元曲	人月圆·山中书事	张可久	author			
+元曲	小桃红·寄鉴湖诸友	张可久	author			
+元曲	庆东原·京口夜泊	汤式	author			
+元曲	金字经·春晚	张可久	author			
+元曲	普天乐·秋江忆别	赵善庆	author			
+元曲	般涉调·哨遍·高祖还乡	睢景臣	author			
+古文观止	郑伯克段于鄢	左丘明	prefix	古文观止/卷一周文.json	鄭伯克段於鄢	左丘明
+古文观止	周郑交质	左丘明	exact	古文观止/卷一周文.json	周鄭交質	左丘明
+古文观止	石碏谏宠州吁	左丘明	exact	古文观止/卷一周文.json	石碏諫寵州籲	左丘明
+古文观止	臧僖伯谏观鱼	左丘明	exact	古文观止/卷一周文.json	臧僖伯諫觀魚	左丘明
+古文观止	郑庄公戒饬守臣	左丘明	exact	古文观止/卷一周文.json	鄭莊公戒飭守臣	左丘明
+古文观止	臧哀伯谏纳郜鼎	左丘明	prefix	古文观止/卷一周文.json	臧哀伯諫納郜鼎	左丘明
+古文观止	季梁谏追楚师	左丘明	exact	古文观止/卷一周文.json	季梁諫追楚師	左丘明
+古文观止	曹刿论战	左丘明	exact	古文观止/卷一周文.json	曹劌論戰	左丘明
+古文观止	齐桓公伐楚盟屈完	左丘明	prefix	古文观止/卷一周文.json	齊桓公伐楚盟屈完	左丘明
+古文观止	宫之奇谏假道	左丘明	exact	古文观止/卷一周文.json	宮之奇諫假道	左丘明
+古文观止	齐桓下拜受胙	左丘明	exact	古文观止/卷一周文.json	齊桓下拜受胙	左丘明
+古文观止	阴饴甥对秦伯	左丘明	exact	古文观止/卷一周文.json	陰飴甥對秦伯	左丘明
+古文观止	子鱼论战	左丘明	exact	古文观止/卷一周文.json	子魚論戰	左丘明
+古文观止	寺人披见文公	左丘明	exact	古文观止/卷一周文.json	寺人披見文公	左丘明
+古文观止	介之推不言禄	左丘明	exact	古文观止/卷一周文.json	介之推不言祿	左丘明
+古文观止	展喜犒师	左丘明	exact	古文观止/卷一周文.json	展喜犒師	左丘明
+古文观止	烛之武退秦师	左丘明	exact	古文观止/卷一周文.json	燭之武退秦師	左丘明
+古文观止	蹇叔哭师	左丘明	exact	古文观止/卷一周文.json	蹇叔哭師	左丘明
+古文观止	齐桓晋文之事	孟子	no_text			
+古文观止	郑子家告赵宣子	左丘明	exact	古文观止/卷二周文.json	鄭子家告趙宣子	左丘明
+古文观止	王孙满对楚子	左丘明	exact	古文观止/卷二周文.json	王孫滿對楚子	左丘明
+古文观止	齐国佐不辱命	左丘明	prefix	古文观止/卷二周文.json	齊國佐不辱命	左丘明
+古文观止	楚归晋知罃	左丘明	exact	古文观止/卷二周文.json	楚歸晉知罃	左丘明
+古文观止	吕相绝秦	左丘明	prefix	古文观止/卷二周文.json	呂相絕秦	左丘明
+古文观止	驹支不屈于晋	左丘明	exact	古文观止/卷二周文.json	駒支不屈於晉	左丘明
+古文观止	祁奚请免叔向	左丘明	exact	古文观止/卷二周文.json	祁奚請免叔向	左丘明
+古文观止	子产告范宣子轻币	左丘明	exact	古文观止/卷二周文.json	子產告範宣子輕幣	左丘明
+古文观止	晏子不死君难	左丘明	prefix	古文观止/卷二周文.json	晏子不死君難	左丘明
+古文观止	季札观周乐	左丘明	exact	古文观止/卷二周文.json	季札觀周樂	左丘明
+古文观止	子产坏晋馆垣	左丘明	exact	古文观止/卷二周文.json	子產壞晉館垣	左丘明
+古文观止	子产论尹何为邑	左丘明	exact	古文观止/卷二周文.json	子產論尹何為邑	左丘明
+古文观止	子产却楚逆女以兵	左丘明	exact	古文观止/卷二周文.json	子產卻楚逆女以兵	左丘明
+古文观止	子革对灵王	左丘明	exact	古文观止/卷二周文.json	子革對靈王	左丘明
+古文观止	子产论政宽猛	左丘明	exact	古文观止/卷二周文.json	子產論政寬猛	左丘明
+古文观止	吴许越成	左丘明	exact	古文观止/卷二周文.json	吳許越成	左丘明
+古文观止	祭公谏征犬戎	左丘明	exact	古文观止/卷三周文.json	祭公諫徵犬戎	左丘明
+古文观止	召公谏厉王弭谤	左丘明	exact	古文观止/卷三周文.json	召公諫厲王弭謗	左丘明
+古文观止	襄王不许请隧	左丘明	exact	古文观止/卷三周文.json	襄王不許請隧	左丘明
+古文观止	单子知陈必亡	左丘明	exact	古文观止/卷三周文.json	單子知陳必亡	左丘明
+古文观止	展禽论祀爰居	左丘明	exact	古文观止/卷三周文.json	展禽論祀爰居	左丘明
+古文观止	里革断罟匡君	左丘明	exact	古文观止/卷三周文.json	裡革斷罟匡君	左丘明
+古文观止	敬姜论劳逸	左丘明	exact	古文观止/卷三周文.json	敬姜論勞逸	左丘明
+古文观止	叔向贺贫	左丘明	exact	古文观止/卷三周文.json	叔向賀貧	左丘明
+古文观止	王孙圉论楚宝	左丘明	exact	古文观止/卷三周文.json	王孫圉論楚寶	左丘明
+古文观止	诸稽郢行成于吴	左丘明	exact	古文观止/卷三周文.json	諸稽郢行成於吳	左丘明
+古文观止	申胥谏许越成	左丘明	exact	古文观止/卷三周文.json	申胥諫許越成	左丘明
+古文观止	春王正月	公羊高	exact	古文观止/卷三周文.json	春王正月	公羊高
+古文观止	宋人及楚人平	公羊高	exact	古文观止/卷三周文.json	宋人及楚人平	公羊高
+古文观止	吴子使札来聘	公羊高	exact	古文观止/卷三周文.json	吳子使札來聘	公羊高
+古文观止	虞师晋师灭夏阳	谷梁赤	exact	古文观止/卷三周文.json	虞師晉師滅夏陽	穀梁赤
+古文观止	晋献公杀世子申生	佚名	exact	古文观止/卷三周文.json	晉獻公殺世子申生	佚名
+古文观止	曾子易箦	佚名	exact	古文观止/卷三周文.json	曾子易簀	佚名
+古文观止	有子之言似夫子	佚名	exact	古文观止/卷三周文.json	有子之言似夫子	佚名
+古文观止	公子重耳对秦客	佚名	prefix	古文观止/卷三周文.json	公子重耳對秦客	佚名
+古文观止	杜蒉扬觯	佚名	exact	古文观止/卷三周文.json	杜蕢揚觶	佚名
+古文观止	晋献文子成室	佚名	exact	古文观止/卷三周文.json	晉獻文子成室	佚名
+古文观止	苏秦以连横说秦	佚名	exact	古文观止/卷四秦文.json	蘇秦以連橫說秦	佚名
+古文观止	司马错论伐蜀	佚名	exact	古文观止/卷四秦文.json	司馬錯論伐蜀	佚名
+古文观止	范雎说秦王	佚名	exact	古文观止/卷四秦文.json	范雎說秦王	佚名
+古文观止	邹忌讽齐王纳谏	佚名	exact	古文观止/卷四秦文.json	鄒忌諷齊王納諫	佚名
+古文观止	颜斶说齐王	佚名	exact	古文观止/卷四秦文.json	顏斶說齊王	佚名
+古文观止	冯谖客孟尝君	佚名	exact	古文观止/卷四秦文.json	馮諼客孟嘗君	佚名
+古文观止	赵威后问齐使	佚名	exact	古文观止/卷四秦文.json	趙威後問齊使	佚名
+古文观止	庄辛论幸臣	佚名	exact	古文观止/卷四秦文.json	莊辛論倖臣	佚名
+古文观止	触龙说赵太后	佚名	exact	古文观止/卷四秦文.json	觸龍說趙太后	佚名
+古文观止	鲁仲连义不帝秦	佚名	exact	古文观止/卷四秦文.json	魯仲連義不帝秦	佚名
+古文观止	鲁共公择言	佚名	exact	古文观止/卷四秦文.json	魯共公擇言	佚名
+古文观止	唐雎不辱使命	佚名	exact	古文观止/卷四秦文.json	唐雎不辱使命	佚名
+古文观止	乐毅报燕王书	乐毅	exact	古文观止/卷四秦文.json	樂毅報燕王書	樂毅
+古文观止	谏逐客书	李斯	exact	古文观止/卷四秦文.json	諫逐客書	李斯
+古文观止	卜居	屈原	author			
+古文观止	宋玉对楚王问	宋玉	exact	古文观止/卷四秦文.json	宋玉對楚王問	宋玉
+古文观止	五帝本纪赞	司马迁	exact	古文观止/卷五汉文.json	五帝本紀贊	司馬遷
+古文观止	项羽本纪赞	司马迁	exact	古文观止/卷五汉文.json	項羽本紀贊	司馬遷
+古文观止	秦楚之际月表	司马迁	exact	古文观止/卷五汉文.json	秦楚之際月表	司馬遷
+古文观止	高祖功臣侯者年表	司马迁	exact	古文观止/卷五汉文.json	高祖功臣侯者年表	司馬遷
+古文观止	孔子世家赞	司马迁	exact	古文观止/卷五汉文.json	孔子世家贊	司馬遷
+古文观止	外戚世家序	司马迁	exact	古文观止/卷五汉文.json	外戚世家序	司馬遷
+古文观止	伯夷列传	司马迁	exact	古文观止/卷五汉文.json	伯夷列傳	司馬遷
+古文观止	管晏列传	司马迁	exact	古文观止/卷五汉文.json	管晏列傳	司馬遷
+古文观止	屈原列传	司马迁	no_text			
+古文观止	酷吏列传序	司马迁	exact	古文观止/卷五汉文.json	酷吏列傳序	司馬遷
+古文观止	游侠列传序	司马迁	exact	古文观止/卷五汉文.json	遊俠列傳序	司馬遷
+古文观止	滑稽列传	司马迁	exact	古文观止/卷五汉文.json	滑稽列傳	司馬遷
+古文观止	货殖列传序	司马迁	exact	古文观止/卷五汉文.json	貨殖列傳序	司馬遷
+古文观止	太史公自序	司马迁	prefix	古文观止/卷五汉文.json	太史公自序	司馬遷
+古文观止	报任安书	司马迁	exact	古文观止/卷五汉文.json	報任安書	司馬遷
+古文观止	过秦论（上）	贾谊	exact	古文观止/卷五汉文.json	過秦論（上）	賈誼
+古文观止	过秦论上	贾谊	exact	古文观止/卷五汉文.json	過秦論（上）	賈誼
+古文观止	治安策	贾谊	exact	古文观止/卷五汉文.json	治安策	賈誼
+古文观止	治安策一	贾谊	exact	古文观止/卷五汉文.json	治安策	賈誼
+古文观止	论贵粟疏	晁错	prefix	古文观止/卷六汉文.json	論貴粟疏	晁錯
+古文观止	狱中上梁王书	邹阳	exact	古文观止/卷六汉文.json	獄中上樑王書	鄒陽
+古文观止	司马相如上书谏猎	司马相如	exact	古文观止/卷六汉文.json	司馬相如上書諫獵	司馬相如
+古文观止	上书谏猎	司马相如	exact	古文观止/卷六汉文.json	司馬相如上書諫獵	司馬相如
+古文观止	答苏武书	李陵	exact	古文观止/卷六汉文.json	答蘇武書	李陵
+古文观止	前出师表	诸葛亮	exact	古文观止/卷六汉文.json	前出師表	諸葛亮
+古文观止	后出师表	诸葛亮	exact	古文观止/卷六汉文.json	後出師表	諸葛亮
+古文观止	陈情表	李密	no_text			
+古文观止	兰亭集序	王羲之	exact	古文观止/卷六汉文.json	蘭亭集序	王羲之
+古文观止	归去来兮辞	陶渊明	no_text			
+古文观止	桃花源记	陶渊明	prefix	古文观止/卷六汉文.json	桃花源記	陶淵明
+古文观止	五柳先生传	陶渊明	no_text			
+古文观止	北山移文	孔稚珪	exact	古文观止/卷六汉文.json	北山移文	孔稚珪
+古文观止	谏太宗十思疏	魏征	no_text			
+古文观止	代李敬业讨武曌檄	骆宾王	exact	古文观止/卷七六朝唐文.json	代李敬業討武曌檄	駱賓王
+古文观止	滕王阁序	王勃	no_text			
+古文观止	与韩荆州书	李白	prefix	古文观止/卷七六朝唐文.json	與韓荊州書	李白
+古文观止	春夜宴桃李园序	李白	exact	古文观止/卷七六朝唐文.json	春夜宴桃李園序	李白
+古文观止	春夜宴从弟桃花园序	李白	exact	古文观止/卷七六朝唐文.json	春夜宴桃李園序	李白
+古文观止	吊古战场文	李华	exact	古文观止/卷七六朝唐文.json	弔古戰場文	李華
+古文观止	陋室铭	刘禹锡	exact	古文观止/卷七六朝唐文.json	陋室銘	劉禹錫
+古文观止	阿房宫赋	杜牧	no_text			
+古文观止	送孟东野序	韩愈	exact	古文观止/卷八唐文.json	送孟東野序	韓愈
+古文观止	原道	韩愈	exact	古文观止/卷八唐文.json	原道	韓愈
+古文观止	原毁	韩愈	exact	古文观止/卷八唐文.json	原毀	韓愈
+古文观止	获麟解	韩愈	exact	古文观止/卷八唐文.json	獲麟解	韓愈
+古文观止	杂说一·龙说	韩愈	exact	古文观止/卷八唐文.json	雜說一・龍說	韓愈
+古文观止	杂说四·马说	韩愈	exact	古文观止/卷八唐文.json	雜說四・馬說	韓愈
+古文观止	祭十二郎文	韩愈	exact	古文观止/卷八唐文.json	祭十二郎文	韓愈
+古文观止	柳子厚墓志铭	韩愈	prefix	古文观止/卷八唐文.json	柳子厚墓誌銘	韓愈
+古文观止	捕蛇者说	柳宗元	exact	古文观止/卷八唐文.json	捕蛇者說	柳宗元
+古文观止	愚溪诗序	柳宗元	exact	古文观止/卷八唐文.json	愚溪詩序	柳宗元
+古文观止	钴鉧潭西小丘记	柳宗元	exact	古文观止/卷八唐文.json	鈷鉧潭西小丘記	柳宗元
+古文观止	小石城山记	柳宗元	exact	古文观止/卷八唐文.json	小石城山記	柳宗元
+古文观止	待漏院记	王禹偁	exact	古文观止/卷八唐文.json	待漏院記	王禹偁
+古文观止	黄冈竹楼记	王禹偁	exact	古文观止/卷八唐文.json	黃岡竹樓記	王禹偁
+古文观止	书洛阳名园记后	李格非	exact	古文观止/卷九唐宋文.json	書洛陽名園記後	李格非
+古文观止	严先生祠堂记	范仲淹	exact	古文观止/卷九唐宋文.json	嚴先生祠堂記	范仲淹
+古文观止	岳阳楼记	范仲淹	exact	古文观止/卷九唐宋文.json	岳陽樓記	范仲淹
+古文观止	谏院题名记	司马光	exact	古文观止/卷九唐宋文.json	諫院題名記	司馬光
+古文观止	义田记	钱公辅	prefix	古文观止/卷九唐宋文.json	義田記	錢公輔
+古文观止	袁州州学记	李觏	exact	古文观止/卷九唐宋文.json	袁州州學記	李覯
+古文观止	朋党论	欧阳修	exact	古文观止/卷九唐宋文.json	朋黨論	歐陽修
+古文观止	纵囚论	欧阳修	exact	古文观止/卷九唐宋文.json	縱囚論	歐陽修
+古文观止	释秘演诗集序	欧阳修	exact	古文观止/卷九唐宋文.json	釋秘演詩集序	歐陽修
+古文观止	梅圣俞诗集序	欧阳修	exact	古文观止/卷十宋文.json	梅聖俞詩集序	歐陽修
+古文观止	送杨寘序	欧阳修	exact	古文观止/卷十宋文.json	送楊寘序	歐陽修
+古文观止	五代史伶官传序	欧阳修	no_text			
+古文观止	五代史宦者传论	欧阳修	exact	古文观止/卷十宋文.json	五代史宦者傳論	歐陽修
+古文观止	相州昼锦堂记	欧阳修	exact	古文观止/卷十宋文.json	相州晝錦堂記	歐陽修
+古文观止	丰乐亭记	欧阳修	exact	古文观止/卷十宋文.json	豐樂亭記	歐陽修
+古文观止	醉翁亭记	欧阳修	no_text			
+古文观止	秋声赋	欧阳修	exact	古文观止/卷十宋文.json	秋聲賦	歐陽修
+古文观止	祭石曼卿文	欧阳修	exact	古文观止/卷十宋文.json	祭石曼卿文	歐陽修
+古文观止	泷冈阡表	欧阳修	exact	古文观止/卷十宋文.json	瀧岡阡表	歐陽修
+古文观止	留侯论	苏轼	exact	古文观止/卷十一宋文.json	留侯論	蘇軾
+古文观止	晁错论	苏轼	exact	古文观止/卷十一宋文.json	晁錯論	蘇軾
+古文观止	上梅直讲书	苏轼	exact	古文观止/卷十一宋文.json	上梅直講書	蘇軾
+古文观止	喜雨亭记	苏轼	exact	古文观止/卷十一宋文.json	喜雨亭記	蘇軾
+古文观止	凌虚台记	苏轼	prefix	古文观止/卷十一宋文.json	凌虛臺記	蘇軾
+古文观止	超然台记	苏轼	exact	古文观止/卷十一宋文.json	超然臺記	蘇軾
+古文观止	放鹤亭记	苏轼	exact	古文观止/卷十一宋文.json	放鶴亭記	蘇軾
+古文观止	石钟山记	苏轼	exact	古文观止/卷十一宋文.json	石鐘山記	蘇軾
+古文观止	前赤壁赋	苏轼	no_text			
+古文观止	后赤壁赋	苏轼	exact	古文观止/卷十一宋文.json	後赤壁賦	蘇軾
+古文观止	潮州韩文公庙碑	苏轼	exact	古文观止/卷十一宋文.json	潮州韓文公廟碑	蘇軾
+古文观止	送天台陈庭学序	宋濂	exact	古文观止/卷十二明文.json	送天台陳庭學序	宋濂
+古文观止	阅江楼记	宋濂	prefix	古文观止/卷十二明文.json	閱江樓記	宋濂
+古文观止	司马季主论卜	刘基	exact	古文观止/卷十二明文.json	司馬季主論卜	劉基
+古文观止	卖柑者言	刘基	exact	古文观止/卷十二明文.json	賣柑者言	劉基
+古文观止	深虑论	方孝孺	exact	古文观止/卷十二明文.json	深慮論	方孝孺
+古文观止	豫让论	方孝孺	exact	古文观止/卷十二明文.json	豫讓論	方孝孺
+古文观止	亲政篇	王鏊	exact	古文观止/卷十二明文.json	親政篇	王鏊
+古文观止	尊经阁记	王守仁	prefix	古文观止/卷十二明文.json	尊經閣記	王守仁
+古文观止	象祠记	王守仁	exact	古文观止/卷十二明文.json	象祠記	王守仁
+古文观止	瘗旅文	王守仁	exact	古文观止/卷十二明文.json	瘞旅文	王守仁
+古文观止	报刘一丈书	宗臣	exact	古文观止/卷十二明文.json	報劉一丈書	宗臣
+古文观止	吴山图记	归有光	exact	古文观止/卷十二明文.json	吳山圖記	歸有光
+古文观止	沧浪亭记	归有光	exact	古文观止/卷十二明文.json	滄浪亭記	歸有光
+古文观止	青霞先生文集序	茅坤	exact	古文观止/卷十二明文.json	青霞先生文集序	茅坤
+古文观止	召公谏厉王止谤	国语	exact	古文观止/卷三周文.json	召公諫厲王止謗	國語
+古文观止	唐雎说信陵君	战国策	exact	古文观止/卷四秦文.json	唐雎說信陵君	戰國策
+古文观止	高帝求贤诏	刘邦	prefix	古文观止/卷六汉文.json	高帝求賢詔	劉邦
+古文观止	文帝议佐百姓诏	刘恒	exact	古文观止/卷六汉文.json	文帝議佐百姓詔	劉恆
+古文观止	景帝令二千石修职诏	刘启	exact	古文观止/卷六汉文.json	景帝令二千石修職詔	劉啟
+古文观止	武帝求茂才异等诏	刘彻	exact	古文观止/卷六汉文.json	武帝求茂才異等詔	劉徹
+古文观止	进学解	韩愈	prefix	古文观止/卷八唐文.json	進學解	韓愈
+古文观止	圬者王承福传	韩愈	prefix	古文观止/卷八唐文.json	圬者王承福傳	韓愈
+古文观止	讳辩	韩愈	exact	古文观止/卷八唐文.json	諱辯	韓愈
+古文观止	争臣论	韩愈	exact	古文观止/卷八唐文.json	爭臣論	韓愈
+古文观止	后十九日复上宰相书	韩愈	exact	古文观止/卷八唐文.json	後十九日覆上宰相書	韓愈
+古文观止	后廿九日复上宰相书	韩愈	prefix	古文观止/卷八唐文.json	後廿九日覆上宰相書	韓愈
+古文观止	与于襄阳书	韩愈	exact	古文观止/卷八唐文.json	與於襄陽書	韓愈
+古文观止	与陈给事书	韩愈	exact	古文观止/卷八唐文.json	與陳給事書	韓愈
+古文观止	应科目时与人书	韩愈	exact	古文观止/卷八唐文.json	應科目時與人書	韓愈
+古文观止	送李愿归盘谷序	韩愈	exact	古文观止/卷八唐文.json	送李願歸盤谷序	韓愈
+古文观止	送董邵南序	韩愈	exact	古文观止/卷八唐文.json	送董邵南序	韓愈
+古文观止	送杨少尹序	韩愈	exact	古文观止/卷八唐文.json	送楊少尹序	韓愈
+古文观止	送石处士序	韩愈	exact	古文观止/卷八唐文.json	送石處士序	韓愈
+古文观止	送温处士赴河阳军序	韩愈	exact	古文观止/卷八唐文.json	送溫處士赴河陽軍序	韓愈
+古文观止	驳复仇议	柳宗元	exact	古文观止/卷九唐宋文.json	駁復仇議	柳宗元
+古文观止	桐叶封弟辨	柳宗元	exact	古文观止/卷九唐宋文.json	桐葉封弟辨	柳宗元
+古文观止	箕子碑	柳宗元	exact	古文观止/卷九唐宋文.json	箕子碑	柳宗元
+古文观止	种树郭橐驼传	柳宗元	exact	古文观止/卷九唐宋文.json	種樹郭橐駝傳	柳宗元
+古文观止	梓人传	柳宗元	exact	古文观止/卷九唐宋文.json	梓人傳	柳宗元
+古文观止	永州韦使君新堂记	柳宗元	prefix	古文观止/卷九唐宋文.json	永州韋使君新堂記	柳宗元
+古文观止	管仲论	苏洵	exact	古文观止/卷十宋文.json	管仲論	蘇洵
+古文观止	辨奸论	苏洵	exact	古文观止/卷十宋文.json	辨姦論	蘇洵
+古文观止	心术	苏洵	no_text			
+古文观止	张益州画像记	苏洵	exact	古文观止/卷十宋文.json	張益州畫像記	蘇洵
+古文观止	刑赏忠厚之至论	苏轼	exact	古文观止/卷十宋文.json	刑賞忠厚之至論	蘇軾
+古文观止	范增论	苏轼	exact	古文观止/卷十宋文.json	范增論	蘇軾
+古文观止	贾谊论	苏轼	exact	古文观止/卷十宋文.json	賈誼論	蘇軾
+古文观止	乞校正陆贽奏议进御札子	苏轼	exact	古文观止/卷十一宋文.json	乞校正陸贄奏議進御札子	蘇軾
+古文观止	三槐堂铭	苏轼	exact	古文观止/卷十一宋文.json	三槐堂銘	蘇軾
+古文观止	方山子传	苏轼	exact	古文观止/卷十一宋文.json	方山子傳	蘇軾
+古文观止	黄州快哉亭记	苏辙	exact	古文观止/卷十一宋文.json	黃州快哉亭記	蘇轍
+古文观止	寄欧阳舍人书	曾巩	exact	古文观止/卷十一宋文.json	寄歐陽舍人書	曾鞏
+古文观止	赠黎安二生序	曾巩	exact	古文观止/卷十一宋文.json	贈黎安二生序	曾鞏
+古文观止	读孟尝君传	王安石	exact	古文观止/卷十一宋文.json	讀孟嘗君傳	王安石
+古文观止	同学一首别子固	王安石	exact	古文观止/卷十一宋文.json	同學一首別子固	王安石
+古文观止	泰州海陵县主簿许君墓志铭	王安石	prefix	古文观止/卷十一宋文.json	泰州海陵縣主簿許君墓誌銘	王安石
+古文观止	徐文长传	袁宏道	exact	古文观止/卷十二明文.json	徐文長傳	袁宏道
+古文观止	五人墓碑记	张溥	exact	古文观止/卷十二明文.json	五人墓碑記	張溥
+古文观止	浣花溪记	钟惺	exact	古文观止/卷十二明文.json	浣花溪記	鍾惺
+古文观止	游黄山记	徐宏祖	prefix	古文观止/卷十二明文.json	遊黃山記	徐宏祖
+古文观止	湖心亭看雪	张岱	no_text			
+古文观止	柳敬亭传	黄宗羲	exact	古文观止/卷十二明文.json	柳敬亭傳	黃宗羲
+古文观止	原君	黄宗羲	exact	古文观止/卷十二明文.json	原君	黃宗羲
+古文观止	复庵记	顾炎武	exact	古文观止/卷十二明文.json	復庵記	顧炎武
+古文观止	江天一传	汪琬	exact	古文观止/卷十二明文.json	江天一傳	汪琬
+古文观止	吾庐记	魏禧	exact	古文观止/卷十二明文.json	吾廬記	魏禧
+古文观止	梅花岭记	全祖望	exact	古文观止/卷十二明文.json	梅花嶺記	全祖望
+古文观止	芋老人传	周容	prefix	古文观止/卷十二明文.json	芋老人傳	周容
+古文观止	口技	林嗣环	exact	古文观止/卷十二明文.json	口技	林嗣環
+古文观止	师说	韩愈	exact	古文观止/卷八唐文.json	師說	韓愈
+古文观止	六国论	苏洵	exact	古文观止/卷十宋文.json	六國論	蘇洵
+古文观止	游褒禅山记	王安石	exact	古文观止/卷十一宋文.json	遊褒禪山記	王安石
+古文观止	上枢密韩太尉书	苏辙	exact	古文观止/卷十一宋文.json	上樞密韓太尉書	蘇轍
+古文观止	大铁椎传	魏禧	exact	古文观止/卷十二明文.json	大鐵椎傳	魏禧
+古文观止	心术	苏洵	no_text			
+古文观止	潍县署中与舍弟墨第二书	郑燮	no_text			
+古文观止	潍县署中与舍弟墨第二书	郑燮	no_text			
+近现代	沁园春·长沙	毛泽东	new			
+近现代	西江月·井冈山	毛泽东	new			
+近现代	清平乐·会昌	毛泽东	new			
+近现代	忆秦娥·娄山关	毛泽东	new			
+近现代	七律·长征	毛泽东	new			
+近现代	清平乐·六盘山	毛泽东	new			
+近现代	沁园春·雪	毛泽东	new			
+近现代	七律·人民解放军占领南京	毛泽东	new			
+近现代	浪淘沙·北戴河	毛泽东	new			
+近现代	水调歌头·游泳	毛泽东	new			
+近现代	卜算子·咏梅	毛泽东	new			
+近现代	青松	陈毅	author			
+近现代	蝶恋花·答李淑一	毛泽东	new			
+近现代	梅岭三章	陈毅	author			
+近现代	就义诗	夏明翰	new			
+近现代	狱中诗	恽代英	new			
+近现代	狱中题壁	谭嗣同	new			
+近现代	自题小像	鲁迅	new			
+近现代	自嘲	鲁迅	new			
+近现代	大江歌罢掉头东	周恩来	new			
+近现代	口占一绝	李大钊	new			
+近现代	望大陆	于右任	new			
+近现代	七绝·游七星岩	朱德	new			
+近现代	远望	叶剑英	new			
+文选	两都赋二首	班孟坚	exact	文选/赋·京都上.json	兩都賦二首	班孟堅
+文选	西京赋	张平子	prefix	文选/赋·京都上.json	西京賦	張平子
+文选	东京赋	张平子	prefix	文选/赋·京都中.json	東京賦	張平子
+文选	南都赋	张平子	prefix	文选/赋·京都中.json	南都賦	張平子
+文选	三都赋序	左太冲	exact	文选/赋·京都中.json	三都賦序	左太沖
+文选	蜀都赋	左太冲	prefix	文选/赋·京都中.json	蜀都賦	左太沖
+文选	吴都赋	左太冲	prefix	文选/赋·京都下.json	吳都賦	左太沖
+文选	魏都赋	左太冲	prefix	文选/赋·京都下.json	魏都賦	左太沖
+文选	甘泉赋	杨子云	exact	文选/赋·郊祀.json	甘泉賦	楊子云
+文选	藉田赋	潘安仁	exact	文选/赋·耕藉.json	藉田賦	潘安仁
+文选	子虚赋	潘安仁	exact	文选/赋·畋猎.json	子虛賦	潘安仁
+文选	上林赋	司马长卿	prefix	文选/文选赋.json	上林賦	司馬長卿
+文选	羽猎赋	杨子云	exact	文选/文选赋.json	羽獵賦	楊子云
+文选	长杨赋	杨子云	prefix	文选/赋·畋猎.json	長楊賦	楊子云
+文选	射雉赋	潘安仁	prefix	文选/赋·畋猎.json	射雉賦	潘安仁
+文选	北征赋	班叔皮	exact	文选/赋·纪行上.json	北征賦	班叔皮
+文选	东征赋	曹大家	exact	文选/赋·纪行上.json	東征賦	曹大家
+文选	西征赋	潘安仁	prefix	文选/赋·纪行下.json	西征賦	潘安仁
+文选	登楼赋	王仲宣	exact	文选/赋·游览.json	登樓賦	王仲宣
+文选	游天台山赋	孙兴公	prefix	文选/赋·游览.json	遊天台山賦	孫興公
+文选	芜城赋	鲍明远	exact	文选/赋·游览.json	蕪城賦	鮑明遠
+文选	鲁灵光殿赋	王文考	prefix	文选/赋·宫殿.json	魯靈光殿賦	王文考
+文选	景福殿赋	何平叔	exact	文选/赋·宫殿.json	景福殿賦	何平叔
+文选	海赋	木玄虚	exact	文选/赋·江海.json	海賦	木玄虛
+文选	江赋	郭景纯	exact	文选/赋·江海.json	江賦	郭景純
+文选	风赋	宋玉	exact	文选/赋·物色.json	風賦	宋玉
+文选	秋兴赋	潘安仁	exact	文选/赋·物色.json	秋興賦	潘安仁
+文选	雪赋	谢惠连	prefix	文选/赋·物色.json	雪賦	謝惠連
+文选	月赋	谢希逸	exact	文选/赋·物色.json	月賦	謝希逸
+文选	𫛳鸟赋	贾长沙	prefix	文选/赋·鸟兽.json	鵩鳥賦	賈長沙
+文选	鹦鹂赋	祢正平	exact	文选/赋·鸟兽.json	鸚鸝賦	禰正平
+文选	鹪鹩赋	张茂先	exact	文选/赋·鸟兽.json	鷦鷯賦	張茂先
+文选	赭白马赋	颜延年	exact	文选/赋·鸟兽下.json	赭白馬賦	顏延年
+文选	舞鹤赋	鲍明远	exact	文选/赋·鸟兽下.json	舞鶴賦	鮑明遠
+文选	幽通赋	班孟坚	prefix	文选/赋·志上.json	幽通賦	班孟堅
+文选	思玄赋	张平子	prefix	文选/赋·志中.json	思玄賦	張平子
+文选	归田赋	张平子	exact	文选/赋·志中.json	歸田賦	張平子
+文选	闲居赋	潘安仁	exact	文选/赋·志下.json	閒居賦	潘安仁
+文选	长门赋	司马长卿	exact	文选/赋·哀伤.json	長門賦	司馬長卿
+文选	思旧赋	向子期	exact	文选/赋·哀伤.json	思舊賦	向子期
+文选	叹逝赋	陆士衡	prefix	文选/赋·哀伤.json	嘆逝賦	陸士衡
+文选	怀旧赋	潘安仁	exact	文选/赋·哀伤.json	懷舊賦	潘安仁
+文选	寡妇赋	潘安仁	exact	文选/赋·哀伤.json	寡婦賦	潘安仁
+文选	恨赋	江文通	exact	文选/赋·哀伤.json	恨賦	江文通
+文选	别赋	江文通	exact	文选/赋·哀伤.json	別賦	江文通
+文选	文赋	陆士衡	exact	文选/赋·论文.json	文賦	陸士衡
+文选	洞箫赋	王子渊	prefix	文选/赋·音乐上.json	洞簫賦	王子淵
+文选	舞赋	傅武仲	prefix	文选/赋·音乐上.json	舞賦	傅武仲
+文选	长笛赋	马季长	exact	文选/赋·音乐下.json	長笛賦	馬季長
+文选	琴赋	嵇叔夜	exact	文选/赋·音乐下.json	琴賦	嵇叔夜
+文选	笙赋	潘安仁	exact	文选/赋·音乐下.json	笙賦	潘安仁
+文选	啸赋	成公子安	exact	文选/赋·音乐下.json	嘯賦	成公子安
+文选	高唐赋	宋玉	exact	文选/赋·情.json	高唐賦	宋玉
+文选	神女赋	宋玉	exact	文选/赋·情.json	神女賦	宋玉
+文选	登徒子好色赋	宋玉	exact	文选/赋·情.json	登徒子好色賦	宋玉
+文选	洛神赋	曹子建	prefix	文选/赋·情.json	洛神賦	曹子建
+文选	补亡诗六首	束广微	exact	文选/诗·补亡.json	補亡詩六首	束廣微
+文选	述祖德诗二首	谢灵运	exact	文选/诗·述德.json	述祖德詩二首	謝靈運
+文选	讽谏	韦孟	exact	文选/诗·劝励.json	諷諫	韋孟
+文选	励志	张茂先	author			
+文选	上责躬应诏诗表	曹子建	exact	文选/诗·献诗.json	上責躬應詔詩表	曹子建
+文选	责躬诗	曹子建	author			
+文选	应诏诗	曹子建	prefix	文选/诗·献诗.json	應詔詩	曹子建
+文选	关中诗	潘安仁	exact	文选/诗·献诗.json	關中詩	潘安仁
+文选	公䜩诗	曹子建	author			
+文选	公䜩诗	王仲宣	author			
+文选	公䜩诗	刘公干	author			
+文选	侍五官中郎将建章台集诗	应德琏	exact	文选/诗·公䜩.json	侍五官中郎將建章臺集詩	應德璉
+文选	皇太子䜩玄圃宣猷堂有令赋诗	陆士衡	prefix	文选/诗·公䜩.json	皇太子讌玄圃宣猷堂有令賦詩	陸士衡
+文选	大将军䜩会被命作诗	陆士龙	exact	文选/诗·公䜩.json	大將軍讌會被命作詩	陸士龍
+文选	晋武帝华林园集诗	应吉甫	exact	文选/诗·公䜩.json	晉武帝華林園集詩	應吉甫
+文选	九日从宋公戏马台集送孔令诗	谢宣远	exact	文选/诗·公䜩.json	九日從宋公戲馬臺集送孔令詩	謝宣遠
+文选	乐游应诏诗	范蔚宗	exact	文选/诗·公䜩.json	樂遊應詔詩	範蔚宗
+文选	九日从宋公戏马台集送孔令诗	谢灵运	exact	文选/诗·公䜩.json	九日從宋公戲馬臺集送孔令詩	謝靈運
+文选	应诏䜩曲水作诗	颜延年	exact	文选/诗·公䜩.json	應詔讌曲水作詩	顏延年
+文选	皇太子释奠会作诗	颜延年	exact	文选/诗·公䜩.json	皇太子釋奠會作詩	顏延年
+文选	侍䜩乐游苑送张徐州应诏诗	丘希范	exact	文选/诗·公䜩.json	侍讌樂遊苑送張徐州應詔詩	丘希範
+文选	应诏乐游苑饯吕僧珍诗	沈休文	exact	文选/诗·公䜩.json	應詔樂遊苑餞呂僧珍詩	沈休文
+文选	送应氏诗二首	曹子建	prefix	文选/诗·祖饯.json	送應氏詩二首	曹子建
+文选	征西官属送于陟阳候作诗	孙子荆	exact	文选/诗·祖饯.json	徵西官屬送於陟陽候作詩	孫子荊
+文选	金谷集作诗	潘安仁	exact	文选/诗·祖饯.json	金谷集作詩	潘安仁
+文选	王抚军庾西阳集别作	谢宣远	exact	文选/诗·祖饯.json	王撫軍庾西陽集別作	謝宣遠
+文选	邻里相送方山诗	谢灵运	exact	文选/诗·祖饯.json	鄰里相送方山詩	謝靈運
+文选	新亭渚别范零陵诗	谢玄晖	exact	文选/诗·祖饯.json	新亭渚別範零陵詩	謝玄暉
+文选	别范安成诗	沈休文	exact	文选/诗·祖饯.json	別範安成詩	沈休文
+文选	咏史诗	王仲宣	exact	文选/诗·咏史.json	詠史詩	王仲宣
+文选	三良诗	曹子建	exact	文选/诗·咏史.json	三良詩	曹子建
+文选	咏史八首	左太冲	exact	文选/诗·咏史.json	詠史八首	左太沖
+文选	咏史	张景阳	author			
+文选	览古	卢子谅	author			
+文选	张子房诗	谢宣远	exact	文选/诗·咏史.json	張子房詩	謝宣遠
+文选	秋胡诗	颜延年	author			
+文选	五君咏五首	颜延年	exact	文选/诗·咏史.json	五君詠五首	顏延年
+文选	咏史	鲍明远	author			
+文选	咏霍将军北伐	虞子阳	exact	文选/诗·咏史.json	詠霍將軍北伐	虞子陽
+文选	百一诗	应休琏	exact	文选/诗·百一.json	百一詩	應休璉
+文选	游仙诗	何敬祖	exact	文选/诗·游仙.json	遊仙詩	何敬祖
+文选	游仙诗七首	郭景纯	prefix	文选/诗·游仙.json	遊仙詩七首	郭景純
+文选	招隐诗二首	左太冲	exact	文选/诗·招隐.json	招隱詩二首	左太沖
+文选	招隐诗	陆士衡	exact	文选/诗·招隐.json	招隱詩	陸士衡
+文选	反招隐诗	王康琚	exact	文选/诗·反招隐.json	反招隱詩	王康琚
+文选	芙蓉池作	魏文帝	exact	文选/诗·游览.json	芙蓉池作	魏文帝
+文选	南州桓公九井作	殷仲文	exact	文选/诗·游览.json	南州桓公九井作	殷仲文
+文选	游西池	谢叔源	exact	文选/诗·游览.json	遊西池	謝叔源
+文选	泛湖归出楼中玩月	谢惠连	exact	文选/诗·游览.json	泛湖歸出樓中玩月	謝惠連
+文选	从游京口北固应诏	谢灵运	prefix	文选/诗·游览.json	從遊京口北固應詔	謝靈運
+文选	晚出西射堂	谢灵运	exact	文选/诗·游览.json	晚出西射堂	謝靈運
+文选	登池上楼	谢灵运	exact	文选/诗·游览.json	登池上樓	謝靈運
+文选	游南亭	谢灵运	exact	文选/诗·游览.json	遊南亭	謝靈運
+文选	游赤石进帆海	谢灵运	exact	文选/诗·游览.json	遊赤石進帆海	謝靈運
+文选	石壁精舍还湖中作	谢灵运	exact	文选/诗·游览.json	石壁精舍還湖中作	謝靈運
+文选	登石门最高顶	谢灵运	exact	文选/诗·游览.json	登石門最高頂	謝靈運
+文选	于南山往北山经湖中瞻眺	谢灵运	exact	文选/诗·游览.json	於南山往北山經湖中瞻眺	謝靈運
+文选	从斤竹涧越岭溪行	谢灵运	exact	文选/诗·游览.json	從斤竹澗越嶺溪行	謝靈運
+文选	应诏观北湖田收	颜延年	exact	文选/诗·游览.json	應詔觀北湖田收	顏延年
+文选	车驾幸京口侍游蒜山作	颜延年	exact	文选/诗·游览.json	車駕幸京口侍遊蒜山作	顏延年
+文选	车驾幸京口三月三日侍游曲阿后湖作	颜延年	exact	文选/诗·游览.json	車駕幸京口三月三日侍遊曲阿後湖作	顏延年
+文选	行药至城东桥	鲍明远	exact	文选/诗·游览.json	行藥至城東橋	鮑明遠
+文选	游东田	谢玄晖	exact	文选/诗·游览.json	遊東田	謝玄暉
+文选	从冠军建平王登庐山香炉峰	江文通	exact	文选/诗·游览.json	從冠軍建平王登廬山香爐峰	江文通
+文选	钟山诗应西阳王教	沈休文	exact	文选/诗·游览.json	鐘山詩應西陽王教	沈休文
+文选	宿东园	沈休文	prefix	文选/诗·游览.json	宿東園	沈休文
+文选	游沈道士馆	沈休文	exact	文选/诗·游览.json	遊沈道士館	沈休文
+文选	古意酬到长史溉登琅邪城诗	徐敬业	exact	文选/诗·游览.json	古意酬到長史溉登琅邪城詩	徐敬業
+文选	咏怀诗十七首	阮嗣宗	exact	文选/诗·咏怀.json	詠懷詩十七首	阮嗣宗
+文选	秋怀	谢惠连	author			
+文选	临终诗	欧阳坚石	new			
+文选	幽愤诗	嵇叔夜	exact	文选/诗·哀伤.json	幽憤詩	嵇叔夜
+文选	七哀诗	曹子建	exact	文选/诗·哀伤.json	七哀詩	曹子建
+文选	七哀诗二首	王仲宣	exact	文选/诗·哀伤.json	七哀詩二首	王仲宣
+文选	七哀诗二首	张孟阳	exact	文选/诗·哀伤.json	七哀詩二首	張孟陽
+文选	悼亡诗三首	潘安仁	prefix	文选/诗·哀伤.json	悼亡詩三首	潘安仁
+文选	庐陵王墓下作	谢灵运	exact	文选/诗·哀伤.json	廬陵王墓下作	謝靈運
+文选	拜陵庙作	颜延年	exact	文选/诗·哀伤.json	拜陵廟作	顏延年
+文选	同谢咨议铜雀台诗	谢玄晖	exact	文选/诗·哀伤.json	同謝諮議銅雀臺詩	謝玄暉
+文选	出郡传舍哭范仆射	任彦升	exact	文选/诗·哀伤.json	出郡傳舍哭範僕射	任彥升
+文选	赠蔡子笃诗	王仲宣	exact	文选/诗·赠答一.json	贈蔡子篤詩	王仲宣
+文选	赠士孙文始	王仲宣	exact	文选/诗·赠答一.json	贈士孫文始	王仲宣
+文选	赠文叔良	王仲宣	exact	文选/诗·赠答一.json	贈文叔良	王仲宣
+文选	赠五官中郎将四首	刘公干	exact	文选/诗·赠答一.json	贈五官中郎將四首	劉公幹
+文选	赠徐干	刘公干	exact	文选/诗·赠答一.json	贈徐幹	劉公幹
+文选	赠从弟三首	刘公干	exact	文选/诗·赠答一.json	贈從弟三首	劉公幹
+文选	赠徐干	曹子建	exact	文选/诗·赠答二.json	贈徐幹	曹子建
+文选	赠丁仪	曹子建	exact	文选/诗·赠答二.json	贈丁儀	曹子建
+文选	赠王粲	曹子建	exact	文选/诗·赠答二.json	贈王粲	曹子建
+文选	又赠丁仪王粲	曹子建	exact	文选/诗·赠答二.json	又贈丁儀王粲	曹子建
+文选	赠白马王彪	曹子建	exact	文选/诗·赠答二.json	贈白馬王彪	曹子建
+文选	赠丁翼	曹子建	exact	文选/诗·赠答二.json	贈丁翼	曹子建
+文选	赠秀才入军五首	嵇叔夜	exact	文选/诗·赠答二.json	贈秀才入軍五首	嵇叔夜
+文选	赠山涛	司马绍统	exact	文选/诗·赠答二.json	贈山濤	司馬紹統
+文选	答何劭二首	张茂先	exact	文选/诗·赠答二.json	答何劭二首	張茂先
+文选	赠张华	何敬祖	exact	文选/诗·赠答二.json	贈張華	何敬祖
+文选	赠冯文罴迁斥丘令	陆士衡	exact	文选/诗·赠答二.json	贈馮文羆遷斥丘令	陸士衡
+文选	答贾长渊	陆士衡	exact	文选/诗·赠答二.json	答賈長淵	陸士衡
+文选	于承明作与士龙	陆士衡	exact	文选/诗·赠答二.json	於承明作與士龍	陸士衡
+文选	赠尙书郎顾彦先二首	陆士衡	exact	文选/诗·赠答二.json	贈尙書郎顧彥先二首	陸士衡
+文选	赠交阯太守顾公真	陆士衡	exact	文选/诗·赠答二.json	贈交阯太守顧公真	陸士衡
+文选	赠从兄车骑	陆士衡	exact	文选/诗·赠答二.json	贈從兄車騎	陸士衡
+文选	答张士然	陆士衡	exact	文选/诗·赠答二.json	答張士然	陸士衡
+文选	为顾彦先赠妇二首	陆士衡	exact	文选/诗·赠答二.json	為顧彥先贈婦二首	陸士衡
+文选	赠冯文罴	陆士衡	exact	文选/诗·赠答二.json	贈馮文羆	陸士衡
+文选	赠弟士龙	陆士衡	exact	文选/诗·赠答二.json	贈弟士龍	陸士衡
+文选	为贾谧作赠陆机	潘安仁	exact	文选/诗·赠答二.json	為賈謐作贈陸機	潘安仁
+文选	赠陆机出为吴王郎中令	潘正叔	exact	文选/诗·赠答二.json	贈陸機出為吳王郎中令	潘正叔
+文选	赠河阳	潘正叔	exact	文选/诗·赠答二.json	贈河陽	潘正叔
+文选	赠侍御史王元贶	潘正叔	exact	文选/诗·赠答二.json	贈侍御史王元貺	潘正叔
+文选	赠何劭王济	傅长虞	exact	文选/诗·赠答三.json	贈何劭王濟	傅長虞
+文选	答傅咸	郭泰机	exact	文选/诗·赠答三.json	答傅鹹	郭泰機
+文选	为顾彦先赠妇二首	陆士龙	exact	文选/诗·赠答三.json	為顧彥先贈婦二首	陸士龍
+文选	答兄机	陆士龙	exact	文选/诗·赠答三.json	答兄機	陸士龍
+文选	答张士然	陆士龙	exact	文选/诗·赠答三.json	答張士然	陸士龍
+文选	答卢谌诗并书	刘越石	exact	文选/诗·赠答三.json	答盧諶詩並書	劉越石
+文选	重赠卢谌	刘越石	exact	文选/诗·赠答三.json	重贈盧諶	劉越石
+文选	赠刘琨并书	卢子谅	prefix	文选/诗·赠答三.json	贈劉琨並書	盧子諒
+文选	赠崔温	卢子谅	prefix	文选/诗·赠答三.json	贈崔溫	盧子諒
+文选	答魏子悌	卢子谅	exact	文选/诗·赠答三.json	答魏子悌	盧子諒
+文选	答灵运	谢宣远	exact	文选/诗·赠答三.json	答靈運	謝宣遠
+文选	于安成答灵运	谢宣远	exact	文选/诗·赠答三.json	於安成答靈運	謝宣遠
+文选	西陵遇风献康乐	谢惠连	exact	文选/诗·赠答三.json	西陵遇風獻康樂	謝惠連
+文选	还旧园作见颜范二中书	谢灵运	exact	文选/诗·赠答三.json	還舊園作見顏範二中書	謝靈運
+文选	登临海峤初发彊中作与从弟惠连见羊何共和之	谢灵运	exact	文选/诗·赠答三.json	登臨海嶠初發彊中作與從弟惠連見羊何共和之	謝靈運
+文选	酬从弟惠连	谢灵运	exact	文选/诗·赠答三.json	酬從弟惠連	謝靈運
+文选	赠王太常	颜延年	exact	文选/诗·赠答四.json	贈王太常	顏延年
+文选	夏夜呈从兄散骑车长沙	颜延年	exact	文选/诗·赠答四.json	夏夜呈從兄散騎車長沙	顏延年
+文选	直东宫答郑尙书	颜延年	exact	文选/诗·赠答四.json	直東宮答鄭尙書	顏延年
+文选	和谢监灵运	颜延年	prefix	文选/诗·赠答四.json	和謝監靈運	顏延年
+文选	答颜延年	王僧达	exact	文选/诗·赠答四.json	答顏延年	王僧達
+文选	郡内高斋闲坐答吕法曹	谢玄晖	exact	文选/诗·赠答四.json	郡內高齋閒坐答呂法曹	謝玄暉
+文选	在郡卧病呈沈尙书	谢玄晖	exact	文选/诗·赠答四.json	在郡臥病呈沈尙書	謝玄暉
+文选	暂使下都夜发新林至京邑赠西府同僚	谢玄晖	exact	文选/诗·赠答四.json	暫使下都夜發新林至京邑贈西府同僚	謝玄暉
+文选	詶王晋安	谢玄晖	exact	文选/诗·赠答四.json	詶王晉安	謝玄暉
+文选	奉答内兄希叔	陆韩卿	exact	文选/诗·赠答四.json	奉答內兄希叔	陸韓卿
+文选	赠张徐州稷	范彦龙	exact	文选/诗·赠答四.json	贈張徐州稷	範彥龍
+文选	古意赠王中书	范彦龙	exact	文选/诗·赠答四.json	古意贈王中書	範彥龍
+文选	赠郭桐庐出溪口见候余既未至郭仍进村维舟久之郭生方至	任彦升	exact	文选/诗·赠答四.json	贈郭桐廬出溪口見候餘既未至郭仍進村維舟久之郭生方至	任彥升
+文选	河阳县作二首	潘安仁	exact	文选/诗·行旅上.json	河陽縣作二首	潘安仁
+文选	在怀县作二首	潘安仁	exact	文选/诗·行旅上.json	在懷縣作二首	潘安仁
+文选	迎大驾	潘正叔	exact	文选/诗·行旅上.json	迎大駕	潘正叔
+文选	赴洛二首	陆士衡	exact	文选/诗·行旅上.json	赴洛二首	陸士衡
+文选	赴洛道中作二首	陆士衡	exact	文选/诗·行旅上.json	赴洛道中作二首	陸士衡
+文选	吴王郎中时从梁陈作	陆士衡	exact	文选/诗·行旅上.json	吳王郎中時從梁陳作	陸士衡
+文选	始作镇军参军经曲阿作	陶渊明	exact	文选/诗·行旅上.json	始作鎮軍參軍經曲阿作	陶淵明
+文选	辛丑岁七月赴假还江陵夜行涂口	陶渊明	exact	文选/诗·行旅上.json	辛丑歲七月赴假還江陵夜行塗口	陶淵明
+文选	永初三年七月十六日之郡初发都	谢灵运	exact	文选/诗·行旅上.json	永初三年七月十六日之郡初發都	謝靈運
+文选	过始宁墅	谢灵运	exact	文选/诗·行旅上.json	過始寧墅	謝靈運
+文选	富春渚	谢灵运	exact	文选/诗·行旅上.json	富春渚	謝靈運
+文选	七里濑	谢灵运	author			
+文选	登江中孤屿	谢灵运	exact	文选/诗·行旅上.json	登江中孤嶼	謝靈運
+文选	初去郡	谢灵运	exact	文选/诗·行旅上.json	初去郡	謝靈運
+文选	初发石首城	谢灵运	exact	文选/诗·行旅上.json	初發石首城	謝靈運
+文选	道路忆山中	谢灵运	exact	文选/诗·行旅上.json	道路憶山中	謝靈運
+文选	入彭蠡湖口	谢灵运	exact	文选/诗·行旅上.json	入彭蠡湖口	謝靈運
+文选	入华子岗是麻源第三谷	谢灵运	exact	文选/诗·行旅上.json	入華子崗是麻源第三谷	謝靈運
+文选	北使洛	颜延年	exact	文选/诗·行旅下.json	北使洛	顏延年
+文选	还至梁城作	颜延年	exact	文选/诗·行旅下.json	還至梁城作	顏延年
+文选	始安郡还都与张湘州登巴陵城楼作	颜延年	exact	文选/诗·行旅下.json	始安郡還都與張湘州登巴陵城樓作	顏延年
+文选	还都道中作	鲍明远	exact	文选/诗·行旅下.json	還都道中作	鮑明遠
+文选	之宣城出新林浦向版桥	谢玄晖	exact	文选/诗·行旅下.json	之宣城出新林浦向版橋	謝玄暉
+文选	敬亭山诗	谢玄晖	exact	文选/诗·行旅下.json	敬亭山詩	謝玄暉
+文选	休沐重还道中	谢玄晖	exact	文选/诗·行旅下.json	休沐重還道中	謝玄暉
+文选	晚登三山还望京邑	谢玄晖	exact	文选/诗·行旅下.json	晚登三山還望京邑	謝玄暉
+文选	京路夜发	谢玄晖	exact	文选/诗·行旅下.json	京路夜發	謝玄暉
+文选	望荆山	江文通	exact	文选/诗·行旅下.json	望荊山	江文通
+文选	旦发渔浦潭	丘希范	exact	文选/诗·行旅下.json	旦發漁浦潭	丘希範
+文选	早发定山	沈休文	exact	文选/诗·行旅下.json	早發定山	沈休文
+文选	新安江水至清浅深见底贻京邑游好	沈休文	exact	文选/诗·行旅下.json	新安江水至清淺深見底貽京邑遊好	沈休文
+文选	从军诗五首	王仲宣	exact	文选/诗·军戎.json	從軍詩五首	王仲宣
+文选	宋郊祀歌二首	颜延年	exact	文选/诗·郊庙.json	宋郊祀歌二首	顏延年
+文选	乐府三首	古辞	exact	文选/诗·乐府上.json	樂府三首	古辭
+文选	怨歌行	班婕妤	new			
+文选	乐府二首	魏武帝	prefix	文选/诗·乐府上.json	樂府二首	魏武帝
+文选	乐府二首	魏文帝	exact	文选/诗·乐府上.json	樂府二首	魏文帝
+文选	乐府四首	曹子建	exact	文选/诗·乐府上.json	樂府四首	曹子建
+文选	王明君词	石季伦	exact	文选/诗·乐府上.json	王明君詞	石季倫
+文选	乐府十七首	陆士衡	exact	文选/诗·乐府下.json	樂府十七首	陸士衡
+文选	乐府	谢灵运	author			
+文选	乐府八首	鲍明远	exact	文选/诗·乐府下.json	樂府八首	鮑明遠
+文选	鼓吹曲	谢玄晖	author			
+文选	挽歌诗	缪熙伯	exact	文选/诗·乐府下.json	輓歌詩	繆熙伯
+文选	挽歌诗三首	陆士衡	exact	文选/诗·乐府下.json	輓歌詩三首	陸士衡
+文选	挽歌诗	陶渊明	exact	文选/诗·乐府下.json	輓歌詩	陶淵明
+文选	歌	荆卿	new			
+文选	歌	汉高祖	new			
+文选	扶风歌	刘越石	exact	文选/诗·杂歌.json	扶風歌	劉越石
+文选	中山王孺子妾歌	陆韩卿	exact	文选/诗·杂歌.json	中山王孺子妾歌	陸韓卿
+文选	古诗十九首	佚名	exact	文选/诗·杂诗上.json	古詩十九首	佚名
+文选	与苏武三首	李少卿	exact	文选/诗·杂诗上.json	與蘇武三首	李少卿
+文选	诗四首	苏子卿	exact	文选/诗·杂诗上.json	詩四首	蘇子卿
+文选	四愁诗四首	张平子	exact	文选/诗·杂诗上.json	四愁詩四首	張平子
+文选	杂诗	王仲宣	author			
+文选	杂诗	刘公干	author			
+文选	杂诗二首	魏文帝	exact	文选/诗·杂诗上.json	雜詩二首	魏文帝
+文选	朔风诗	曹子建	exact	文选/诗·杂诗上.json	朔風詩	曹子建
+文选	杂诗六首	曹子建	prefix	文选/诗·杂诗上.json	雜詩六首	曹子建
+文选	情诗	曹子建	exact	文选/诗·杂诗上.json	情詩	曹子建
+文选	杂诗	嵇叔夜	author			
+文选	杂诗	傅休奕	prefix	全唐诗/poet.song.144000.json	賜趙士忠二首  其二	宋孝宗
+文选	杂诗	张茂先	author			
+文选	情诗二首	张茂先	exact	文选/诗·杂诗上.json	情詩二首	張茂先
+文选	园葵诗	陆士衡	exact	文选/诗·杂诗上.json	園葵詩	陸士衡
+文选	思友人诗	曹颜远	prefix	文选/诗·杂诗上.json	思友人詩	曹顏遠
+文选	感旧诗	曹颜远	author			
+文选	杂诗	何敬祖	author			
+文选	杂诗	王正长	new			
+文选	杂诗	枣道彦	new			
+文选	杂诗	左太冲	author			
+文选	杂诗	张季鹰	new			
+文选	杂诗十首	张景阳	exact	文选/诗·杂诗上.json	雜詩十首	張景陽
+文选	时兴	卢子谅	author			
+文选	杂诗二首	陶渊明	exact	文选/诗·杂诗下.json	雜詩二首	陶淵明
+文选	咏贫士诗	陶渊明	exact	文选/诗·杂诗下.json	詠貧士詩	陶淵明
+文选	读山海经诗	陶渊明	exact	文选/诗·杂诗下.json	讀山海經詩	陶淵明
+文选	七月七日夜咏牛女	谢惠连	prefix	文选/诗·杂诗下.json	七月七日夜詠牛女	謝惠連
+文选	捣衣	谢惠连	author			
+文选	南楼中望所迟客	谢灵运	exact	文选/诗·杂诗下.json	南樓中望所遲客	謝靈運
+文选	田南树园激流植援	谢灵运	exact	文选/诗·杂诗下.json	田南樹園激流植援	謝靈運
+文选	斋中读书	谢灵运	author			
+文选	石门新营所住四面高山回溪石濑修竹茂林诗	谢灵运	exact	文选/诗·杂诗下.json	石門新營所住四面高山回溪石瀨修竹茂林詩	謝靈運
+文选	杂诗	王景玄	new			
+文选	数诗	鲍明远	author			
+文选	玩月城西门解中	鲍明远	exact	文选/诗·杂诗下.json	玩月城西門解中	鮑明遠
+文选	始出尙书省	谢玄晖	exact	文选/诗·杂诗下.json	始出尙書省	謝玄暉
+文选	直中书省	谢玄晖	author			
+文选	观朝雨	谢玄晖	exact	文选/诗·杂诗下.json	觀朝雨	謝玄暉
+文选	郡内登望	谢玄晖	exact	文选/诗·杂诗下.json	郡內登望	謝玄暉
+文选	和伏武昌登孙权故城	谢玄晖	prefix	文选/诗·杂诗下.json	和伏武昌登孫權故城	謝玄暉
+文选	和王著作八公山	谢玄晖	prefix	文选/诗·杂诗下.json	和王著作八公山	謝玄暉
+文选	和徐都曹	谢玄晖	exact	文选/诗·杂诗下.json	和徐都曹	謝玄暉
+文选	和王主簿怨情	谢玄晖	exact	文选/诗·杂诗下.json	和王主簿怨情	謝玄暉
+文选	和谢宣城	沈休文	exact	文选/诗·杂诗下.json	和謝宣城	沈休文
+文选	应王中丞思远咏月	沈休文	exact	文选/诗·杂诗下.json	應王中丞思遠詠月	沈休文
+文选	冬节后至丞相第诣世子车中	沈休文	exact	文选/诗·杂诗下.json	冬節後至丞相第詣世子車中	沈休文
+文选	学省愁卧	沈休文	exact	文选/诗·杂诗下.json	學省愁臥	沈休文
+文选	咏湖中鴈	沈休文	exact	文选/诗·杂诗下.json	詠湖中鴈	沈休文
+文选	三月三日率尔成篇	沈休文	exact	文选/诗·杂诗下.json	三月三日率爾成篇	沈休文
+文选	拟古诗十二首	陆士衡	exact	文选/诗·杂拟上.json	擬古詩十二首	陸士衡
+文选	拟四愁诗	张孟阳	exact	文选/诗·杂拟上.json	擬四愁詩	張孟陽
+文选	拟古诗	陶渊明	exact	文选/诗·杂拟上.json	擬古詩	陶淵明
+文选	拟魏太子邺中集诗八首	谢灵运	exact	文选/诗·杂拟上.json	擬魏太子鄴中集詩八首	謝靈運
+文选	效曹子建乐府白马篇	袁阳源	exact	文选/诗·杂拟下.json	效曹子建樂府白馬篇	袁陽源
+文选	效古	袁阳源	author			
+文选	拟古二首	刘休玄	exact	文选/诗·杂拟下.json	擬古二首	劉休玄
+文选	和琅邪王依古	王僧达	exact	文选/诗·杂拟下.json	和琅邪王依古	王僧達
+文选	拟古三首	鲍明远	exact	文选/诗·杂拟下.json	擬古三首	鮑明遠
+文选	学刘公干体	鲍明远	exact	文选/诗·杂拟下.json	學劉公幹體	鮑明遠
+文选	代君子有所思	鲍明远	prefix	文选/诗·杂拟下.json	代君子有所思	鮑明遠
+文选	效古	范彦龙	author			
+文选	杂体诗三十首	江文通	prefix	文选/诗·杂拟下.json	雜體詩三十首	江文通
+文选	离骚经	屈平	prefix	文选/骚.json	離騷經	屈平
+文选	九歌四首	屈平	exact	文选/骚.json	九歌四首	屈平
+文选	九歌二首	屈平	exact	文选/骚.json	九歌二首	屈平
+文选	九章	屈平	exact	文选/骚.json	九章	屈平
+文选	卜居	屈平	author			
+文选	渔父	屈平	author			
+文选	九辩五首	宋玉	exact	文选/骚.json	九辯五首	宋玉
+文选	招魂	宋玉	author			
+文选	招隐士	刘安	exact	文选/骚.json	招隱士	劉安
+文选	七发八首	枚叔	prefix	文选/七.json	七發八首	枚叔
+文选	七启八首	曹子建	exact	文选/七.json	七啟八首	曹子建
+文选	七命八首	张景阳	prefix	文选/七.json	七命八首	張景陽
+文选	诏	汉武帝	exact	文选/诏.json	詔	漢武帝
+文选	贤良诏	汉武帝	exact	文选/诏.json	賢良詔	漢武帝
+文选	册魏公九锡文	潘元茂	prefix	文选/册.json	冊魏公九錫文	潘元茂
+文选	宣德皇后令	任彦升	exact	文选/令.json	宣德皇后令	任彥升
+文选	为宋公修张良庙教	傅季友	exact	文选/教.json	為宋公修張良廟教	傅季友
+文选	为宋公修楚元王墓教	傅季友	exact	文选/教.json	為宋公修楚元王墓教	傅季友
+文选	永明九年策秀才文五首	王元长	exact	文选/文.json	永明九年策秀才文五首	王元長
+文选	永明十一年策秀才文五首	王元长	exact	文选/文.json	永明十一年策秀才文五首	王元長
+文选	天监三年策秀才文三首	任彦升	exact	文选/文.json	天監三年策秀才文三首	任彥升
+文选	荐祢衡表	孔文举	exact	文选/表.json	薦禰衡表	孔文舉
+文选	出师表	诸葛孔明	exact	文选/表.json	出師表	諸葛孔明
+文选	求自试表	曹子建	exact	文选/表.json	求自試表	曹子建
+文选	求通亲亲表	曹子建	exact	文选/表.json	求通親親表	曹子建
+文选	让开府表	羊叔子	exact	文选/表.json	讓開府表	羊叔子
+文选	陈情表	李令伯	prefix	古文观止/卷六汉文.json	陳情表	李密
+文选	谢平原内史表	陆士衡	exact	文选/表.json	謝平原內史表	陸士衡
+文选	劝进表	刘越石	prefix	文选/表.json	勸進表	劉越石
+文选	为吴令谢询求为诸孙置守冢人表	张士然	exact	文选/表.json	為吳令謝詢求為諸孫置守冢人表	張士然
+文选	让中书令表	庾元规	prefix	文选/表.json	讓中書令表	庾元規
+文选	荐谯元彦表	桓元子	exact	文选/表.json	薦譙元彥表	桓元子
+文选	解尙书表	殷仲文	exact	文选/表.json	解尙書表	殷仲文
+文选	为宋公至洛阳谒五陵表	傅季友	exact	文选/表.json	為宋公至洛陽謁五陵表	傅季友
+文选	为宋公求加赠刘前军表	傅季友	exact	文选/表.json	為宋公求加贈劉前軍表	傅季友
+文选	为齐明帝让宣城郡公第一表	任彦升	exact	文选/表.json	為齊明帝讓宣城郡公第一表	任彥升
+文选	为范尙书让吏部封侯第一表	任彦升	exact	文选/表.json	為範尙書讓吏部封侯第一表	任彥升
+文选	为萧扬州作荐士表	任彦升	exact	文选/表.json	為蕭揚州作薦士表	任彥升
+文选	为褚咨议蓁让代兄袭封表	任彦升	exact	文选/表.json	為褚諮議蓁讓代兄襲封表	任彥升
+文选	为范始兴作求立太宰碑表	任彦升	exact	文选/表.json	為範始興作求立太宰碑表	任彥升
+文选	上书秦始皇	李斯	exact	文选/上书.json	上書秦始皇	李斯
+文选	上书吴王	邹阳	exact	文选/上书.json	上書吳王	鄒陽
+文选	于狱上书自明	邹阳	exact	文选/上书.json	於獄上書自明	鄒陽
+文选	上书谏猎	司马长卿	exact	文选/上书.json	上書諫獵	司馬長卿
+文选	上书谏吴王	枚叔	exact	文选/上书.json	上書諫吳王	枚叔
+文选	上书重谏吴王	枚叔	exact	文选/上书.json	上書重諫吳王	枚叔
+文选	诣建平王上书	江文通	exact	文选/上书.json	詣建平王上書	江文通
+文选	奉答敕示七夕诗启	任彦升	exact	文选/启.json	奉答敕示七夕詩啟	任彥升
+文选	为卞彬谢修卞忠贞墓启	任彦升	exact	文选/启.json	為卞彬謝修卞忠貞墓啟	任彥升
+文选	启萧太傅固辞夺礼	任彦升	exact	文选/启.json	啟蕭太傅固辭奪禮	任彥升
+文选	奏弹曹景宗	任彦升	prefix	文选/弹事.json	奏彈曹景宗	任彥升
+文选	奏弹刘整	任彦升	exact	文选/弹事.json	奏彈劉整	任彥升
+文选	奏弹王源	沈休文	exact	文选/弹事.json	奏彈王源	沈休文
+文选	答临淄侯牋	杨德祖	exact	文选/笺.json	答臨淄侯牋	楊德祖
+文选	与魏文帝牋	繁休伯	exact	文选/笺.json	與魏文帝牋	繁休伯
+文选	答东阿王牋	陈孔璋	exact	文选/笺.json	答東阿王牋	陳孔璋
+文选	答魏太子牋	吴季重	exact	文选/笺.json	答魏太子牋	吳季重
+文选	在元城与魏太子牋	吴季重	exact	文选/笺.json	在元城與魏太子牋	吳季重
+文选	为郑冲劝晋王牋	阮嗣宗	exact	文选/笺.json	為鄭衝勸晉王牋	阮嗣宗
+文选	拜中军记室辞隋王牋	谢玄晖	exact	文选/笺.json	拜中軍記室辭隋王牋	謝玄暉
+文选	到大司马记室牋	任彦升	exact	文选/笺.json	到大司馬記室牋	任彥升
+文选	百辟劝进今上牋	任彦升	exact	文选/笺.json	百辟勸進今上牋	任彥升
+文选	诣蒋公	阮嗣宗	exact	文选/奏记.json	詣蔣公	阮嗣宗
+文选	答苏武书	李少卿	exact	文选/书.json	答蘇武書	李少卿
+文选	报任少卿书	司马子长	exact	文选/书.json	報任少卿書	司馬子長
+文选	报孙会宗书	杨子幼	exact	文选/书.json	報孫會宗書	楊子幼
+文选	论盛孝章书	孔文举	exact	文选/书.json	論盛孝章書	孔文舉
+文选	为幽州牧与彭宠书	朱叔元	exact	文选/书.json	為幽州牧與彭寵書	朱叔元
+文选	为曹洪与魏文帝书	陈孔璋	exact	文选/书.json	為曹洪與魏文帝書	陳孔璋
+文选	为曹公作书与孙权	阮元瑜	exact	文选/书.json	為曹公作書與孫權	阮元瑜
+文选	与朝歌令吴质书	魏文帝	exact	文选/书.json	與朝歌令吳質書	魏文帝
+文选	与吴质书	魏文帝	exact	文选/书.json	與吳質書	魏文帝
+文选	与钟大理书	魏文帝	exact	文选/书.json	與鍾大理書	魏文帝
+文选	与杨德祖书	曹子建	exact	文选/书.json	與楊德祖書	曹子建
+文选	与吴季重书	曹子建	exact	文选/书.json	與吳季重書	曹子建
+文选	答东阿王书	吴季重	exact	文选/书.json	答東阿王書	吳季重
+文选	与满公琰书	应休琏	prefix	文选/书.json	與滿公琰書	應休璉
+文选	与侍郎曹长思书	应休琏	exact	文选/书.json	與侍郎曹長思書	應休璉
+文选	与广川长岑文瑜书	应休琏	exact	文选/书.json	與廣川長岑文瑜書	應休璉
+文选	与从弟君苗君胄书	应休琏	exact	文选/书.json	與從弟君苗君胄書	應休璉
+文选	与山巨源绝交书	嵇叔夜	exact	文选/书.json	與山巨源絕交書	嵇叔夜
+文选	为石仲容与孙皓书	孙子荆	exact	文选/书.json	為石仲容與孫皓書	孫子荊
+文选	与嵇茂齐书	赵景真	exact	文选/书.json	與嵇茂齊書	趙景真
+文选	与陈伯之书	丘希范	exact	文选/书.json	與陳伯之書	丘希範
+文选	重答刘秣陵沼书	刘孝标	exact	文选/书.json	重答劉秣陵沼書	劉孝標
+文选	移书让太常博士	刘子骏	exact	文选/书.json	移書讓太常博士	劉子駿
+文选	北山移文	孔德璋	exact	文选/书.json	北山移文	孔德璋
+文选	喻巴蜀檄	司马长卿	exact	文选/檄.json	喻巴蜀檄	司馬長卿
+文选	为袁绍檄豫州	陈孔璋	prefix	文选/檄.json	為袁紹檄豫州	陳孔璋
+文选	檄吴将校部曲文	陈孔璋	exact	文选/檄.json	檄吳將校部曲文	陳孔璋
+文选	檄蜀文	钟士季	prefix	文选/檄.json	檄蜀文	鍾士季
+文选	难蜀父老	司马长卿	prefix	文选/檄.json	難蜀父老	司馬長卿
+文选	对楚王问	宋玉	exact	文选/对问.json	對楚王問	宋玉
+文选	答客难	东方曼倩	author			
+文选	解嘲	杨子云	author			
+文选	答宾戏	班孟坚	exact	文选/设论.json	答賓戲	班孟堅
+文选	秋风辞	汉武帝	author			
+文选	归去来	陶渊明	author			
+文选	毛诗序	卜子夏	exact	文选/序.json	毛詩序	卜子夏
+文选	尙书序	孔安国	exact	文选/序.json	尙書序	孔安國
+文选	春秋左氏传序	杜元凯	exact	文选/序.json	春秋左氏傳序	杜元凱
+文选	三都赋序	皇甫士安	exact	文选/序.json	三都賦序	皇甫士安
+文选	思归引序	石季伦	exact	文选/序.json	思歸引序	石季倫
+文选	豪士赋序	陆士衡	prefix	文选/序.json	豪士賦序	陸士衡
+文选	三月三日曲水诗序	颜延年	exact	文选/序.json	三月三日曲水詩序	顏延年
+文选	三月三日曲水诗序	王元长	prefix	文选/序.json	三月三日曲水詩序	王元長
+文选	王文宪集序	任彦升	prefix	文选/序.json	王文憲集序	任彥升
+文选	圣主得贤臣颂	王子渊	exact	文选/颂.json	聖主得賢臣頌	王子淵
+文选	赵充国颂	杨子云	exact	文选/颂.json	趙充國頌	楊子云
+文选	出师颂	史孝山	exact	文选/颂.json	出師頌	史孝山
+文选	酒德颂	刘伯伦	exact	文选/颂.json	酒德頌	劉伯倫
+文选	汉高祖功臣颂	陆士衡	exact	文选/颂.json	漢高祖功臣頌	陸士衡
+文选	东方朔画赞	夏侯孝若	exact	文选/赞.json	東方朔畫贊	夏侯孝若
+文选	三国名臣序赞	袁彦伯	prefix	文选/赞.json	三國名臣序贊	袁彥伯
+文选	封禅文	司马长卿	exact	文选/符命.json	封禪文	司馬長卿
+文选	剧秦美新	杨子云	exact	文选/符命.json	劇秦美新	楊子云
+文选	典引	班孟坚	exact	文选/符命.json	典引	班孟堅
+文选	公孙弘传赞	班孟坚	exact	文选/史论.json	公孫弘傳贊	班孟堅
+文选	晋纪论晋武帝革命	干令升	exact	文选/史论.json	晉紀論晉武帝革命	幹令升
+文选	晋纪总论	干令升	exact	文选/史论.json	晉紀總論	幹令升
+文选	后汉书皇后纪论	范蔚宗	exact	文选/史论.json	後漢書皇后紀論	範蔚宗
+文选	后汉书二十八将传论	范蔚宗	exact	文选/史论.json	後漢書二十八將傳論	範蔚宗
+文选	宦者传论	范蔚宗	exact	文选/史论.json	宦者傳論	範蔚宗
+文选	逸民传论	范蔚宗	exact	文选/史论.json	逸民傳論	範蔚宗
+文选	宋书谢灵运传论	沈休文	exact	文选/史论.json	宋書謝靈運傳論	沈休文
+文选	恩幸传论	沈休文	exact	文选/史论.json	恩幸傳論	沈休文
+文选	史述赞三首	班孟坚	exact	文选/史述赞.json	史述贊三首	班孟堅
+文选	后汉书光武纪赞	范蔚宗	exact	文选/史述赞.json	後漢書光武紀贊	範蔚宗
+文选	过秦论	贾长沙	no_text			
+文选	非有先生论	东方曼倩	prefix	文选/论·论一.json	非有先生論	東方曼倩
+文选	四子讲德论	王子渊	exact	文选/论·论一.json	四子講德論	王子淵
+文选	王命论	班叔皮	prefix	文选/论·论二.json	王命論	班叔皮
+文选	典论论文	魏文帝	exact	文选/论·论二.json	典論論文	魏文帝
+文选	六代论	曹元首	prefix	文选/论·论二.json	六代論	曹元首
+文选	博弈论	韦弘嗣	exact	文选/论·论二.json	博弈論	韋弘嗣
+文选	养生论	嵇叔夜	prefix	文选/论·论三.json	養生論	嵇叔夜
+文选	运命论	李萧远	exact	文选/论·论三.json	運命論	李蕭遠
+文选	辩亡论上下二首	陆士衡	prefix	文选/论·论三.json	辯亡論上下二首	陸士衡
+文选	辩亡论下	陆士衡	exact	文选/论·论三.json	辯亡論下	陸士衡
+文选	五等论	陆士衡	exact	文选/论·论四.json	五等論	陸士衡
+文选	辩命论	刘孝标	exact	文选/论·论四.json	辯命論	劉孝標
+文选	广绝交论	刘孝标	prefix	文选/连珠·论五.json	廣絕交論	劉孝標
+文选	演连珠五十首	陆士衡	exact	文选/连珠·论五.json	演連珠五十首	陸士衡
+文选	女史箴	张茂先	exact	文选/箴.json	女史箴	張茂先
+文选	封燕然山铭	班孟坚	exact	文选/铭.json	封燕然山銘	班孟堅
+文选	座右铭	崔子玉	new			
+文选	剑阁铭	张孟阳	exact	文选/铭.json	劍閣銘	張孟陽
+文选	石阙铭	陆佐公	exact	文选/铭.json	石闕銘	陸佐公
+文选	新刻漏铭	陆佐公	exact	文选/铭.json	新刻漏銘	陸佐公
+文选	王仲宣诔	曹子建	exact	文选/诔.json	王仲宣誄	曹子建
+文选	杨荆州诔	潘安仁	exact	文选/诔.json	楊荊州誄	潘安仁
+文选	杨仲武诔	潘安仁	exact	文选/诔.json	楊仲武誄	潘安仁
+文选	夏侯常侍诔	潘安仁	exact	文选/诔.json	夏侯常侍誄	潘安仁
+文选	马汧督诔	潘安仁	exact	文选/诔.json	馬汧督誄	潘安仁
+文选	阳给事诔	颜延年	exact	文选/诔.json	陽給事誄	顏延年
+文选	陶征士诔	颜延年	exact	文选/诔.json	陶徵士誄	顏延年
+文选	宋孝武宣贵妃诔	谢希逸	prefix	文选/诔.json	宋孝武宣貴妃誄	謝希逸
+文选	哀永逝文	潘安仁	exact	文选/哀.json	哀永逝文	潘安仁
+文选	宋文皇帝元皇后哀策文	颜延之	exact	文选/哀.json	宋文皇帝元皇后哀策文	顏延之
+文选	齐敬皇后哀策文	谢玄晖	exact	文选/哀.json	齊敬皇后哀策文	謝玄暉
+文选	郭有道碑文	蔡伯喈	exact	文选/碑文.json	郭有道碑文	蔡伯喈
+文选	陈太丘碑文	蔡伯喈	exact	文选/碑文.json	陳太丘碑文	蔡伯喈
+文选	褚渊碑文	王仲宝	exact	文选/碑文.json	褚淵碑文	王仲寶
+文选	头陀寺碑文	王简栖	prefix	文选/碑文.json	頭陀寺碑文	王簡棲
+文选	齐故安陆昭王碑文	沈休文	exact	文选/碑文.json	齊故安陸昭王碑文	沈休文
+文选	刘先生夫人墓志	任彦升	exact	文选/墓志.json	劉先生夫人墓誌	任彥升
+文选	齐竟陵文宣王行状	任彦升	exact	文选/行状.json	齊竟陵文宣王行狀	任彥升
+文选	吊屈原文	贾长沙	exact	文选/吊文.json	吊屈原文	賈長沙
+文选	吊魏武帝文	陆士衡	exact	文选/吊文.json	吊魏武帝文	陸士衡
+文选	祭古冢文	谢惠连	exact	文选/祭文.json	祭古冢文	謝惠連
+文选	祭屈原文	颜延年	exact	文选/祭文.json	祭屈原文	顏延年
+文选	祭颜光禄文	王僧达	exact	文选/祭文.json	祭顏光祿文	王僧達
