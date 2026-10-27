@@ -15,14 +15,14 @@ import argparse, collections, json, os, re, sys, unicodedata
 
 PUNCT = re.compile(r'[\s\W_]+', re.U)
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs',
-             '.git', '.claude', '.github'}
+             '.git', '.claude', '.github', '.cnb', 'reference'}
 # 上游集子 -> 本库同体裁的数据；只在这个范围内判重，跨体裁不算
 SAME_GENRE = {
-    '唐诗': ('全唐诗/poet.tang.',),
-    '古诗非唐': ('全唐诗/poet.song.',),
-    '宋词三百首': ('宋词/',),
-    '元曲': ('元曲/',),
-    '乐府集': ('乐府诗集/',),
+    '唐诗': ('唐代/诗/全唐诗/poet.tang.',),
+    '古诗非唐': ('唐代/诗/全唐诗/poet.song.',),
+    '宋词三百首': ('宋代/词/宋词/',),
+    '元曲': ('元代/元曲/',),
+    '乐府集': ('先秦汉魏晋南北朝/诗文总集/乐府诗集/',),
 }
 
 

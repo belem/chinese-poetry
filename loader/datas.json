@@ -4,26 +4,26 @@
         "wudai-huajianji": {
             "name": "五代-花间集",
             "id": 0,
-            "path": "五代诗词/huajianji/", 
+            "path": "唐五代/词/五代诗词/huajianji/", 
             "excludes": ["README.md"],
             "tag": "paragraphs"
         },
         "wudai-nantang": {
             "name": "五代-南唐",
             "id": 1, 
-            "path": "五代诗词/nantang/poetrys.json",
+            "path": "唐五代/词/五代诗词/nantang/poetrys.json",
             "tag": "paragraphs"
         },
         "yuanqu": {
             "name": "元曲",
             "id": 2,
-            "path": "元曲/yuanqu.json",
+            "path": "元代/元曲/yuanqu.json",
             "tag": "paragraphs"
         },
         "tangsong": {
             "name": "全唐诗全宋诗",
             "id": 3,
-            "path": "全唐诗/",
+            "path": "唐代/诗/全唐诗/",
             "excludes": ["README.md", "表面结构字.json", "error", "authors.song.json", "authors.tang.json"],
             "tag": "paragraphs"
         },
@@ -37,7 +37,7 @@
         "songci": {
             "name": "宋词",
             "id": 5,
-            "path": "宋词/",
+            "path": "宋代/词/宋词/",
             "excludes": ["authors.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
             "tag": "paragraphs"
         },
@@ -50,13 +50,13 @@
         "caocao": {
             "name": "曹操诗集",
             "id": 8,
-            "path": "曹操诗集/caocao.json",
+            "path": "先秦汉魏晋南北朝/曹操诗集/caocao.json",
             "tag": "paragraphs"
         },
         "chuci": {
             "name": "楚辞",
             "id": 9,
-            "path": "楚辞/chuci.json",
+            "path": "先秦汉魏晋南北朝/楚辞/chuci.json",
             "tag": "content"
         },
         "shuimotangshi": {
@@ -81,7 +81,7 @@
         "shijing": {
             "name": "诗经",
             "id": 13,
-            "path": "诗经/shijing.json",
+            "path": "先秦汉魏晋南北朝/诗经/shijing.json",
             "tag": "content"
         },
         "guwen-guanzhi": {
@@ -101,14 +101,14 @@
         "yuefu-jis": {
             "name": "乐府诗集",
             "id": 14,
-            "path": "乐府诗集/",
+            "path": "先秦汉魏晋南北朝/诗文总集/乐府诗集/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "gushi-yuan": {
             "name": "古诗源",
             "id": 15,
-            "path": "古诗源/",
+            "path": "先秦汉魏晋南北朝/古诗源/",
             "excludes": [],
             "tag": "paragraphs"
         },
@@ -122,7 +122,7 @@
         "wenxuan": {
             "name": "昭明文选",
             "id": 17,
-            "path": "昭明文选/",
+            "path": "先秦汉魏晋南北朝/诗文总集/昭明文选/",
             "excludes": [],
             "tag": "paragraphs"
         },

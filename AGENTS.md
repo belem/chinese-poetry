@@ -10,6 +10,24 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 ---
 
+### Directory layout
+
+数据按朝代分层，朝代下面是「一部书一个目录」或「诗 / 词 / 文」体裁目录，选本不并进总集：
+
+```
+先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源,诗文总集/{乐府诗集,昭明文选}}
+唐代/诗/全唐诗/（含 poet.song.* 即《全宋诗》）
+唐五代/词/五代诗词/{huajianji,nantang}
+宋代/{诗/古诗源·宋诗.json,词/宋词/,词/古诗源·宋词.json}
+元代/元曲/  清代/词/古诗源·清词.json  明代/（暂空）
+```
+
+- 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
+- `loader/datas.json` 是数据读取入口，dataset 的 key 不变，只改 `path`；新增目录要在那里注册。
+- `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名。
+
+---
+
 ### Step 1 — Find the next 5 files to review
 
 Files are processed in **priority order**: known-issue files first, then alphabetically by path.
@@ -21,7 +39,7 @@ import os, json, re
 
 ROOT = os.path.dirname(os.path.abspath('fix_progress.json'))
 SKIP = {'author', 'rank', 'settings', '表面结构字', 'error', 'fix_progress'}
-SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.claude', '.github'}  # 全唐诗/error is out of scope
+SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.claude', '.github', '.cnb', 'reference'}  # 唐代/诗/全唐诗/error is out of scope
 CYRILLIC_GREEK = re.compile(r'[Ѐ-ӿͰ-Ͽ]')
 
 # Build full file list (alphabetical)
@@ -206,12 +224,12 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 ```json
 {
   "reviewed": {
-    "宋词/ci.song.13000.json": {
+    "宋代/词/宋词/ci.song.13000.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "clean"
     },
-    "元曲/yuanqu.json": {
+    "元代/元曲/yuanqu.json": {
       "date": "YYYY-MM-DD",
       "reviewer": "<AI model name or GitHub handle>",
       "status": "fixed",
@@ -226,8 +244,8 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 Status values:
 - `clean` — no issues found, or every issue found was corrected (the `fixes` list may be empty)
 - `fixed` — same as `clean` for a file that had corrections; the entries you list are what the commit fixed
-- `needs_review` — corrections are still outstanding and worth tracking: either the file has not been collated line by line (batch records like `_新增选本`), or a specific known defect is open. Rare-character lacunae (`□`, bare PUA) that no evidence can settle are **not** tracked here — `scripts/check_structure.py` reports them live
-- `out_of_scope` — not part of the published dataset (currently all of `全唐诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
+- `needs_review` — corrections are still outstanding and worth tracking: either the file has not been collated line by line (batch records like `_新增选本`, `_目录重构：按朝代分层`), or a specific known defect is open. Rare-character lacunae (`□`, bare PUA) that no evidence can settle are **not** tracked here — `scripts/check_structure.py` reports them live
+- `out_of_scope` — not part of the published dataset (currently all of `唐代/诗/全唐诗/error/`, records the upstream project flagged as defective and `loader/datas.json` excludes); kept for reference, not counted as pending
 
 Do not accumulate per-character repair history in this file: entries for completed fixes are deleted once the character is fixed in the dataset. Keep only what is still actionable.
 

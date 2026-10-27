@@ -28,14 +28,14 @@ PUNCT = re.compile(r'[\s\W_]+', re.U)
 
 # 整部书 → 本库同名目录
 BOOK_DIRS = {
-    '古诗非唐': '古诗源',
+    '古诗非唐': '先秦汉魏晋南北朝/古诗源',
     '唐诗': '唐诗三百首',
     '宋词三百首': '宋词三百首',
     '元曲': '元曲三百首',
-    '文选': '文选',
+    '文选': '先秦汉魏晋南北朝/诗文总集/昭明文选',
     '古文观止': '古文观止',
     '古文': '古文观止',
-    '乐府集': '乐府诗集',
+    '乐府集': '先秦汉魏晋南北朝/诗文总集/乐府诗集',
 }
 # 课本类：横跨朝代体裁，按本库既有的体裁目录就近收
 GENRE_DIRS = {'课内': '近现代诗', '近现代': '近现代诗', '节日节气': '近现代诗',
@@ -76,7 +76,7 @@ def build_index(cc):
             if not f.endswith('.json'):
                 continue
             rel = os.path.relpath(os.path.join(dp, f), ROOT)
-            if rel.startswith('全唐诗/error/') or rel == 'fix_progress.json':
+            if rel.startswith('唐代/诗/全唐诗/error/') or rel == 'fix_progress.json':
                 continue
             try:
                 data = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))
