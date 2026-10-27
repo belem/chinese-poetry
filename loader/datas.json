@@ -83,6 +83,27 @@
             "id": 13,
             "path": "诗经/shijing.json",
             "tag": "content"
+        },
+        "jinyuanxiandai": {
+            "name": "近现代诗",
+            "id": 14,
+            "path": "近现代诗/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "songci300": {
+            "name": "宋词三百首",
+            "id": 15,
+            "path": "宋词三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "guwenguanzhi": {
+            "name": "古文观止",
+            "id": 16,
+            "path": "古文观止/",
+            "excludes": [],
+            "tag": "paragraphs"
         }
     }
 }

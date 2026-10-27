@@ -3,8 +3,8 @@
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
     "total_files": 375,
-    "reviewed": 689,
-    "clean": 157,
+    "reviewed": 695,
+    "clean": 163,
     "fixed": 160,
     "needs_review": 59,
     "out_of_scope": 313,
@@ -112532,6 +112532,42 @@
       ],
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
+    },
+    "近现代诗/近现代诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
+    },
+    "近现代诗/元明清詩.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
+    },
+    "古文观止/古文观止.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
+    },
+    "乐府诗集/乐府诗集.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
+    },
+    "宋词三百首/宋词三百首.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
+    },
+    "文选/文选.json": {
+      "date": "2026-10-27",
+      "reviewer": "CodeBuddy",
+      "status": "clean",
+      "fixes": []
     }
   }
 }
