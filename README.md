@@ -62,8 +62,8 @@
 
 ### 凭据
 
-CNB 仓库设置里添加环境变量 `GITHUB_PAT`（不公开），对 `belem/chinese-poetry` 有 **Contents: Read and write** 权限。
-未配置时同步会跳过，并在流水线日志里提示。
+CNB 仓库设置里添加环境变量 `GITHUB_PAT`（或 `GITHUB_TOKEN`，`sync.sh` 两者都认；不公开），对 `belem/chinese-poetry` 有 **Contents: Read and write** 权限。
+未配置时同步会跳过，并在流水线日志里打印 `[sync] 没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步`。
 
 ### 手动触发
 

@@ -1,3 +1,4 @@
 # 把 GitHub PAT 从密钥仓库注入为 GITHUB_PAT
 # 在 CNB「仓库设置 → 密钥仓库」里配置这个文件，不要写在公开配置文件里
+# 变量名用 GITHUB_PAT 或 GITHUB_TOKEN 都可以（sync.sh 两者都认）
 GITHUB_PAT: <填入 GitHub PAT，勿提交明文>

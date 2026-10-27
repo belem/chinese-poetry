@@ -15,18 +15,21 @@ WORK="${WORK_DIR:-${PWD}/.poetry-sync}"
 
 log() { printf '[sync] %s\n' "$*"; }
 
+# 密钥仓库里可能叫 GITHUB_PAT，也可能叫 GITHUB_TOKEN，两者等价
+PAT="${GITHUB_PAT:-${GITHUB_TOKEN:-}}"
+
 gh_url() {
-  if [ -n "${GITHUB_PAT:-}" ]; then
+  if [ -n "$PAT" ]; then
     # PAT 只出现在本次命令的 URL 中，不落 .git/config、不打日志
-    printf 'https://x-access-token:%s@github.com/%s.git' "$GITHUB_PAT" "$GH_SLUG"
+    printf 'https://x-access-token:%s@github.com/%s.git' "$PAT" "$GH_SLUG"
   else
     printf 'https://github.com/%s.git' "$GH_SLUG"
   fi
 }
 
 require_pat() {
-  if [ -z "${GITHUB_PAT:-}" ]; then
-    log "没有 GITHUB_PAT，跳过与 GitHub 的同步（凭据配置见 README）"
+  if [ -z "$PAT" ]; then
+    log "没有 GITHUB_PAT / GITHUB_TOKEN，跳过与 GitHub 的同步（凭据配置见 README）"
     exit 0
   fi
 }
