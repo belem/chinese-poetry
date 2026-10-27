@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "limit": 8,
+        "name": "选集",
+        "name_tr": "選集",
+        "show_order": 1
+    },
+    {
+        "id": 2,
+        "limit": 12,
+        "name": "主题",
+        "name_tr": "主題",
+        "show_order": 3
+    },
+    {
+        "id": 3,
+        "limit": 16,
+        "name": "写景",
+        "name_tr": "寫景",
+        "show_order": 4
+    },
+    {
+        "id": 4,
+        "limit": 8,
+        "name": "节日",
+        "name_tr": "節日",
+        "show_order": 5
+    },
+    {
+        "id": 5,
+        "limit": 24,
+        "name": "节气",
+        "name_tr": "節氣",
+        "show_order": 7
+    },
+    {
+        "id": 6,
+        "limit": 8,
+        "name": "课本",
+        "name_tr": "課本",
+        "show_order": 12
+    },
+    {
+        "id": 7,
+        "limit": 8,
+        "name": "词牌",
+        "name_tr": "詞牌",
+        "show_order": 8
+    },
+    {
+        "id": 8,
+        "limit": 8,
+        "name": "时令",
+        "name_tr": "時令",
+        "show_order": 10
+    },
+    {
+        "id": 9,
+        "limit": 16,
+        "name": "用典",
+        "name_tr": "用典",
+        "show_order": 16
+    },
+    {
+        "id": 10,
+        "limit": 12,
+        "name": "地理",
+        "name_tr": "地理",
+        "show_order": 13
+    },
+    {
+        "id": 20,
+        "limit": 8,
+        "name": "花卉",
+        "name_tr": "花卉",
+        "show_order": 11
+    },
+    {
+        "id": 25,
+        "limit": 12,
+        "name": "时间",
+        "name_tr": "時間",
+        "show_order": 9
+    },
+    {
+        "id": 26,
+        "limit": 12,
+        "name": "名山",
+        "name_tr": "名山",
+        "show_order": 15
+    },
+    {
+        "id": 27,
+        "limit": 8,
+        "name": "城市",
+        "name_tr": "城市",
+        "show_order": 14
+    },
+    {
+        "id": 28,
+        "limit": 8,
+        "name": "书籍",
+        "name_tr": "書籍",
+        "show_order": 0
+    }
+]
