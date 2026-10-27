@@ -17,7 +17,7 @@
 import argparse, collections, json, os, re, sys, unicodedata
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-NEW_BOOKS = ['乐府诗集', '古诗源', '唐诗三百首', '元曲三百首', '昭明文选', '古文观止', '课外经典']
+NEW_BOOKS = ['乐府诗集', '古诗源', '唐诗三百首', '昭明文选', '古文观止', '课外经典']
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.github', '.cnb'}
 MIN_LEN = 8
 PUNCT = re.compile(r'[\s\W_]+', re.U)
