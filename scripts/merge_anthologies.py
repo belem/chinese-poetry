@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""把唐诗选本并入 全唐诗/poet.tang.*，去掉 chinese-poetry-api 入库时的重复。
+"""把唐诗选本并入 唐代/诗/全唐诗/poet.tang.*，去掉 chinese-poetry-api 入库时的重复。
 
   python3 scripts/merge_anthologies.py            # 预演：只打印匹配报告
   python3 scripts/merge_anthologies.py --apply    # 写回数据，并生成 docs/唐诗去重.tsv
 
 处理方式：
-  全唐诗/唐诗三百首.json   每首对上 poet.tang 记录后，把 tags 合并过去，删除整个文件。
+  唐代/诗/全唐诗/唐诗三百首.json   每首对上 poet.tang 记录后，把 tags 合并过去，删除整个文件。
                            （此文件是从 poet.tang 抽出的副本，个别作者还归错了。）
   水墨唐诗                 对上的记录加 tag「水墨唐诗」并带上 prologue（赏析），从水墨唐诗中删去；
                            对不上的（全唐诗未收的如杜牧《清明》、节选改写等）留在原文件。
@@ -71,7 +71,7 @@ def save(rel, data):
 
 class Tang:
     def __init__(self):
-        self.files = sorted(glob.glob(os.path.join(ROOT, '全唐诗/poet.tang.*.json')),
+        self.files = sorted(glob.glob(os.path.join(ROOT, '唐代/诗/全唐诗/poet.tang.*.json')),
                             key=lambda f: int(f.split('.')[-2]))
         self.files = [os.path.relpath(f, ROOT) for f in self.files]
         self.data = {f: load(f) for f in self.files}
@@ -128,7 +128,7 @@ def main():
     remove = set()                           # 要删的 poet.tang 记录下标
 
     # 1. 唐诗三百首.json → tags
-    rel = '全唐诗/唐诗三百首.json'
+    rel = '唐代/诗/全唐诗/唐诗三百首.json'
     if os.path.exists(os.path.join(ROOT, rel)):
         for p in load(rel):
             m = T.lookup(rel, p)
@@ -156,8 +156,8 @@ def main():
         log.append(('水墨唐诗', desc(p), T.recs[m[0]][0], desc(q), f'{m[1]:.2f}', '并入', (m[3] + ' ' + note).strip()))
 
     # 3. 花间集 / 南唐 → 删 poet.tang 中的重复
-    for rel in sorted(glob.glob(os.path.join(ROOT, '五代诗词/huajianji/*.json'))) + \
-            [os.path.join(ROOT, '五代诗词/nantang/poetrys.json')]:
+    for rel in sorted(glob.glob(os.path.join(ROOT, '唐五代/词/五代诗词/huajianji/*.json'))) + \
+            [os.path.join(ROOT, '唐五代/词/五代诗词/nantang/poetrys.json')]:
         rel = os.path.relpath(rel, ROOT)
         book = '花间集' if 'huajianji' in rel else '南唐'
         for p in load(rel):
@@ -188,8 +188,8 @@ def main():
     for f in T.files:
         save(f, [p for i, p in enumerate(T.data[f]) if i not in drop[f]])
     save('水墨唐诗/shuimotangshi.json', keep)
-    if os.path.exists(os.path.join(ROOT, '全唐诗/唐诗三百首.json')):
-        os.remove(os.path.join(ROOT, '全唐诗/唐诗三百首.json'))
+    if os.path.exists(os.path.join(ROOT, '唐代/诗/全唐诗/唐诗三百首.json')):
+        os.remove(os.path.join(ROOT, '唐代/诗/全唐诗/唐诗三百首.json'))
     with open(os.path.join(ROOT, 'docs/唐诗去重.tsv'), 'w', encoding='utf-8') as fp:
         fp.write('来源\t选本记录\tpoet.tang 文件\tpoet.tang 记录\t相似度\t处理\t说明\n')
         fp.writelines('\t'.join(r) + '\n' for r in log)

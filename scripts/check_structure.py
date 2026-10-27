@@ -45,8 +45,9 @@ DUP_PUNCT = re.compile(r'？。|！。|。。|，，|、、')                 # 
 HALF_PUNCT = re.compile(r'(?<=[\u4e00-\u9fff])[,;:!]|[,;:!](?=[\u4e00-\u9fff])')   # 紧邻汉字的半角标点
 KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31bf]')  # 假名、注音乱码（不含标题分隔符・）
 PUA = re.compile(r'[-]')
-CI_DIRS = {'宋词', '五代诗词'}
-SHI_DIRS = {'全唐诗', '水墨唐诗', '曹操诗集', '纳兰性德'}  # 元曲有衬字，不做字数检查
+# 目录已按朝代分层（先秦汉魏晋南北朝/ 唐代/ 唐五代/ 宋代/ ...），按顶层目录判断体裁不再可行，
+# 改用文件名前缀定体裁：诗 poet.*、词 ci.*。只对这两类做句长/词牌检查。
+SHI_PREFIX, CI_PREFIX = 'poet.', 'ci.'
 
 
 # 这些检查项一旦增加即视为退化（CI 失败）；缺字、字数异常等多为底本原貌，仅作提示
@@ -207,17 +208,17 @@ def main():
 
     ci_poems = []
     for rel in iter_files():
-        top = rel.split(os.sep)[0]
         try:
             poems = list(iter_poems(rel))
         except (json.JSONDecodeError, UnicodeDecodeError) as e:
             report('bad_json', rel, -1, {}, str(e))
             continue
+        name = os.path.basename(rel)
         for idx, it, lines in poems:
             check_chars(rel, idx, it, lines, report)
-            if top in CI_DIRS and it.get('rhythmic'):
+            if name.startswith(CI_PREFIX) and it.get('rhythmic'):
                 ci_poems.append((rel, idx, it, lines))
-            elif top in SHI_DIRS:
+            elif name.startswith(SHI_PREFIX):
                 check_shi(rel, idx, it, lines, report)
     check_ci(ci_poems, report)
 

@@ -40,7 +40,8 @@ ROOT = cs.ROOT
 S2T, T2S = OpenCC('s2t'), OpenCC('t2s')
 HAN = re.compile(r'[㐀-鿿\U00020000-\U0003ffff]')
 PUNCT = set('，。、；：？！“”‘’「」『』《》（）·・ 　,.;:?!…')
-TRAD_DIRS = {'全唐诗', '四书五经', '论语', '蒙学'}   # 繁体数据
+# 繁体数据：目录已按朝代分层，改用路径前缀判断（poet.*/ci.* 及各总集都是繁体）
+TRAD_DIRS = ('唐代/诗/全唐诗', '四书五经', '论语', '蒙学', '先秦汉魏晋南北朝', '唐五代', '宋代', '元代', '清代')
 BOXLIKE = set('口囗丶〇')            # 原书缺字方框常被 OCR 成这些字
 TOKEN_CHECKS = {'kana_bopomofo', 'bare_pua', 'missing_char'}
 LINE_CHECKS = {'shi_line_length', 'ci_pattern'}
@@ -49,7 +50,8 @@ LINE_CHECKS = {'shi_line_length', 'ci_pattern'}
 # ---------------------------------------------------------------- 通用
 
 def is_trad(rel):
-    return rel.split(os.sep)[0] in TRAD_DIRS
+    rel = rel.replace(os.sep, '/')
+    return any(rel == d or rel.startswith(d + '/') for d in TRAD_DIRS)
 
 
 def to_trad(rel, text):

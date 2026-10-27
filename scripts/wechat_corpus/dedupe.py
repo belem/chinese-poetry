@@ -17,7 +17,9 @@
 import argparse, collections, json, os, re, sys, unicodedata
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-NEW_BOOKS = ['乐府诗集', '古诗源', '唐诗三百首', '昭明文选', '古文观止', '课外经典']
+# 选本目录（已按朝代分层，写全路径）
+NEW_BOOKS = ['先秦汉魏晋南北朝/诗文总集/乐府诗集', '先秦汉魏晋南北朝/古诗源', '唐诗三百首',
+             '先秦汉魏晋南北朝/诗文总集/昭明文选', '古文观止', '课外经典']
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.github', '.cnb'}
 MIN_LEN = 8
 PUNCT = re.compile(r'[\s\W_]+', re.U)
@@ -106,7 +108,7 @@ def main():
     for dp, dirs, fnames in os.walk(a.root):
         rel = os.path.relpath(dp, a.root)
         dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS)
-        top = '' if rel == '.' else rel.split(os.sep)[0]
+        top = '' if rel == '.' else rel.replace(os.sep, '/')
         if not top:
             continue
         if top not in NEW_BOOKS:

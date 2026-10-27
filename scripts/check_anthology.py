@@ -6,7 +6,7 @@ tag 是爬取时随手打上去的，没有和底本目次比对过，于是有�
 
   混入   挂着 tag，但底本目次里没有（不属于这个选本）
   漏收   底本目次里有，库里没有任何记录挂着 tag
-  重覆   同一首在库里有多条记录（多为 樂府 / 非樂府 两套标题各收一次，或 全唐诗/error 的残卷）
+  重覆   同一首在库里有多条记录（多为 樂府 / 非樂府 两套标题各收一次，或 唐代/诗/全唐诗/error 的残卷）
 
 判定只做一件机器能做准的事：按首句的规范形（简繁统一 + Unihan 异体归一）检索对应朝代的记录。
 选本是有限的、互不相交的列表，归属判定是 one-to-one 匹配，不是分类 ——
@@ -34,8 +34,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ANTH_DIR = os.path.join(ROOT, 'anthologies')
 # 选本 → 该选本的诗藏在哪些目录里
 ANTH_SOURCES = {
-    'tangshi300': ['全唐诗'],
-    'songci300': ['宋词'],
+    'tangshi300': ['唐代/诗/全唐诗'],
+    'songci300': ['宋代/词/宋词'],
 }
 # 选本的收诗只可能落在这些文件名前缀里；全唐诗目录下的 poet.song.* 是宋诗，不能算
 PREFIX = {'tangshi300': 'poet.tang.', 'songci300': 'ci.song.'}
@@ -48,7 +48,7 @@ def iter_records(dirs, skip_error=True):
         for rel in sorted(os.listdir(os.path.join(ROOT, dirname))):
             if not rel.endswith('.json'):
                 continue
-            if skip_error and dirname == '全唐诗' and rel in ('README.md',):
+            if skip_error and dirname == '唐代/诗/全唐诗' and rel in ('README.md',):
                 continue
             rel = os.path.join(dirname, rel)
             try:
