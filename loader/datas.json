@@ -59,18 +59,20 @@
             "path": "先秦汉魏晋南北朝/楚辞/chuci.json",
             "tag": "content"
         },
-        "shuimotangshi": {
-            "name": "水墨唐诗",
-            "id": 10,
-            "path": "水墨唐诗/shuimotangshi.json",
-            "tag": "paragraphs"
-        },
         "nalanxingde": {
             "name": "纳兰性德",
             "id": 11,
-            "path": "纳兰性德/纳兰性德诗集.json",
+            "path": "清代/词/纳兰词/",
+            "excludes": ["README.md"],
             "tag": "para",
-            "comments": "蒙学文件夹下的非常规格式文件没有包括在这个json中"
+            "comments": "纳兰词，与 nalanxingde-shi 合为原来的「纳兰性德」一部别集"
+        },
+        "nalanxingde-shi": {
+            "name": "纳兰性德·诗",
+            "id": 25,
+            "path": "清代/诗/纳兰诗/",
+            "excludes": ["README.md"],
+            "tag": "para"
         },
         "lunyu": {
             "name": "论语",
@@ -110,6 +112,18 @@
             "id": 15,
             "path": "先秦汉魏晋南北朝/古诗源/",
             "excludes": [],
+            "tag": "paragraphs"
+        },
+        "gushi-yuan-ming": {
+            "name": "古诗源·明诗",
+            "id": 23,
+            "path": "明代/诗/古诗源·明诗.json",
+            "tag": "paragraphs"
+        },
+        "gushi-yuan-qing": {
+            "name": "古诗源·清诗",
+            "id": 24,
+            "path": "清代/诗/古诗源·清诗.json",
             "tag": "paragraphs"
         },
         "tangshi-sanbai": {

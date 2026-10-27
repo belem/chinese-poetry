@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """小合集 ↔ 全唐诗 / 宋词 互校：同一首作品在两处的一字之差，以识典古籍判定哪一方有误。
 
-花间集、南唐二主词、唐诗三百首、千家诗、水墨唐诗等选本中的作品，大多也收在 全唐诗 或 宋词 里。
+花间集、南唐二主词、唐诗三百首、千家诗等选本中的作品，大多也收在 全唐诗 或 宋词 里
+（水墨唐诗 原先也在其列，那份正文已并入 poet.tang 并随目录一起删除，互校只在其并回时做过）。
 两处文字一字之差时，至少一方可能有错；以差异字左右两侧的共同上下文检索识典古籍（检索词不含差异字，
 不偏向任何一方），统计古籍片段中各读法出现在几种书里。
 （merge_anthologies.py 已删去 poet.tang 中与花间集/南唐重复的词，这两部已无全唐诗对照。）
@@ -40,8 +41,7 @@ import collate  # noqa: E402
 import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
-TARGETS = ['唐五代/词/五代诗词/huajianji', '唐五代/词/五代诗词/nantang', '蒙学/tangshisanbaishou.json', '蒙学/qianjiashi.json',
-           '水墨唐诗/shuimotangshi.json']
+TARGETS = ['唐五代/词/五代诗词/huajianji', '唐五代/词/五代诗词/nantang', '蒙学/tangshisanbaishou.json', '蒙学/qianjiashi.json']
 REF_DIRS = ['唐代/诗/全唐诗', '宋代/宋词']
 HANX = r'[㐀-鿿\U00020000-\U0003ffff]'
 ORDER = {'fix_target': 0, 'fix_ref': 1, 'glyph': 2, 'weak': 3, 'variant': 4}
