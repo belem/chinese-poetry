@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 510,
-    "reviewed": 691,
+    "total_files": 517,
+    "reviewed": 692,
     "clean": 483,
     "fixed": 2,
-    "needs_review": 2,
+    "needs_review": 3,
     "out_of_scope": 204,
-    "in_scope_files": 487
+    "in_scope_files": 375
   },
   "reviewed": {
     "诗经/shijing.json": {
@@ -3814,6 +3814,23 @@
           "original": null,
           "corrected": null,
           "note": "元曲三百首（8 个文件 / 29 首）已并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv；这 29 首仍未与古籍逐字对勘。"
+        }
+      ]
+    },
+    "_补录haitang语料": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": "[batch] reference/mit_licence_haitang → 13 个目标文件，收录 7791 条",
+          "corrected": null,
+          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitang收录.tsv。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
+        },
+        {
+          "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
+          "corrected": null,
+          "note": "作者小传与朝代概述原本没有全库通用索引（全唐诗/authors.* 与 宋词/author.song.json 各管一个总集、字段不同），另建两目录，语料与介绍分开。未逐条核对原文。"
         }
       ]
     }
