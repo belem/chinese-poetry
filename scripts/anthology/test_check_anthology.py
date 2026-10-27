@@ -59,6 +59,6 @@ def test_stray_detected():
 def test_song_poems_excluded():
     """《全宋诗》里的记录不能被当成唐诗三百首。"""
     entries = [dict(no=1, first_line='孤鴻海上來池潢不敢顧')]
-    records = [('唐代/诗/全唐诗/poet.song.0.json', 0,
+    records = [('宋代/诗/全宋诗/poet.song.0.json', 0,
                 dict(author='某人', title='x', tags=[], paragraphs=['孤鴻海上來，池潢不敢顧。']))]
     assert ca.match(entries, records, 'poet.tang.')[1] == []

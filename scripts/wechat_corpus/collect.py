@@ -76,7 +76,7 @@ def build_index(cc):
             if not f.endswith('.json'):
                 continue
             rel = os.path.relpath(os.path.join(dp, f), ROOT)
-            if rel.startswith('唐代/诗/全唐诗/error/') or rel == 'fix_progress.json':
+            if rel.startswith('宋代/诗/全宋诗/error/') or rel == 'fix_progress.json':
                 continue
             try:
                 data = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))

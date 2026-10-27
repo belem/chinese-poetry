@@ -21,11 +21,19 @@
             "tag": "paragraphs"
         },
         "tangsong": {
-            "name": "全唐诗全宋诗",
+            "name": "全唐诗",
             "id": 3,
             "path": "唐代/诗/全唐诗/",
-            "excludes": ["README.md", "表面结构字.json", "error", "authors.song.json", "authors.tang.json"],
+            "excludes": ["README.md", "表面结构字.json", "authors.tang.json"],
             "tag": "paragraphs"
+        },
+        "songshi": {
+            "name": "全宋诗",
+            "id": 23,
+            "path": "宋代/诗/全宋诗/",
+            "excludes": ["README.md", "error", "authors.song.json"],
+            "tag": "paragraphs",
+            "comments": "原在 唐代/诗/全唐诗/poet.song.*, 2026-08 拆出独立目录; 文件名与编号沿用上游, 未重新分片."
         },
         "mengzi": {
             "name": "四书五经-孟子", 

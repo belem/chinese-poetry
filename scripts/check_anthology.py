@@ -37,29 +37,36 @@ ANTH_SOURCES = {
     'tangshi300': ['唐代/诗/全唐诗'],
     'songci300': ['宋代/词/宋词'],
 }
-# 选本的收诗只可能落在这些文件名前缀里；全唐诗目录下的 poet.song.* 是宋诗，不能算
+# 选本的收诗只可能落在这些文件名前缀里；《全宋诗》在 宋代/诗/全宋诗/，本就不在检索目录内
 PREFIX = {'tangshi300': 'poet.tang.', 'songci300': 'ci.song.'}
 FLAT = re.compile(r'[，。：；？！、\s]')
 
 
 def iter_records(dirs, skip_error=True):
-    """遍历数据集里的作品记录，产出 (rel, idx, record)。"""
+    """遍历数据集里的作品记录，产出 (rel, idx, record)。
+
+    dirs 是相对仓库根目录的目录名。上游把《全宋诗》与《唐诗三百首》的副本排在同一个目录里，
+    当年是按「一个目录」遍历的；现在目录按朝代分层（唐代/诗/全唐诗、宋代/词/宋词…），
+    这里就按目录递归，只跳过 error/ 子目录。
+    """
     for dirname in dirs:
-        for rel in sorted(os.listdir(os.path.join(ROOT, dirname))):
-            if not rel.endswith('.json'):
-                continue
-            if skip_error and dirname == '唐代/诗/全唐诗' and rel in ('README.md',):
-                continue
-            rel = os.path.join(dirname, rel)
-            try:
-                data = sd.load(rel)
-            except Exception:
-                continue
-            if isinstance(data, dict):
-                data = [data]
-            for idx, rec in enumerate(data):
-                if isinstance(rec, dict) and isinstance(rec.get('paragraphs'), list):
-                    yield rel, idx, rec
+        base = dirname.rstrip('/')
+        for dirpath, subdirs, files in os.walk(os.path.join(ROOT, base)):
+            if skip_error:
+                subdirs[:] = sorted(d for d in subdirs if d != 'error')
+            for fn in sorted(files):
+                if not fn.endswith('.json'):
+                    continue
+                rel = os.path.relpath(os.path.join(dirpath, fn), ROOT)
+                try:
+                    data = sd.load(rel)
+                except Exception:
+                    continue
+                if isinstance(data, dict):
+                    data = [data]
+                for idx, rec in enumerate(data):
+                    if isinstance(rec, dict) and isinstance(rec.get('paragraphs'), list):
+                        yield rel, idx, rec
 
 
 def flat(rec):
