@@ -4,7 +4,7 @@
 为不给识典古籍造成压力，检索分多次、多日完成（每次 --limit 若干条），进度可随时中断与续跑。
 完整说明见 docs/宋词对勘.md。
 
-  python3 scripts/collate.py plan    --dir 宋代/词/宋词 --work ~/.cache/chinese-poetry/songci
+  python3 scripts/collate.py plan    --dir 宋代/宋词 --work ~/.cache/chinese-poetry/songci
   node   scripts/shidian/search.mjs  <work>/queries.json <work>/results.jsonl --limit 1200
   python3 scripts/collate.py analyze --work <work> --applied docs/宋词对勘.applied.json   # 只判定检索已全部完成的作品
   # 审核 <work>/review.tsv 的 decision 列（accept / reject / 自填正确句子）

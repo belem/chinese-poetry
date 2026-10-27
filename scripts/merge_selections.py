@@ -387,7 +387,7 @@ def main():
     corpora = {
         '全唐诗': tang,
         '全宋诗': corpus('唐代/诗/全唐诗/poet.song.*.json'),
-        '全宋词': corpus('宋代/词/宋词/ci.song.*.json'),
+        '全宋词': corpus('宋代/宋词/ci.song.*.json'),
         '昭明文选': corpus('昭明文选/*.json'),
         '古文观止': corpus('古文观止/*.json'),
         '历代': corpus('历代/*.json'),

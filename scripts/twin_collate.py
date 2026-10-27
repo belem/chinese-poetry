@@ -42,7 +42,7 @@ import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
 TARGETS = ['唐五代/词/五代诗词/huajianji', '唐五代/词/五代诗词/nantang', '蒙学/tangshisanbaishou.json', '蒙学/qianjiashi.json']
-REF_DIRS = ['唐代/诗/全唐诗', '宋代/词/宋词']
+REF_DIRS = ['唐代/诗/全唐诗', '宋代/宋词']
 HANX = r'[㐀-鿿\U00020000-\U0003ffff]'
 ORDER = {'fix_target': 0, 'fix_ref': 1, 'glyph': 2, 'weak': 3, 'variant': 4}
 

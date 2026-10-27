@@ -37,7 +37,7 @@
         "songci": {
             "name": "宋词",
             "id": 5,
-            "path": "宋代/词/宋词/",
+            "path": "宋代/宋词/",
             "excludes": ["authors.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
             "tag": "paragraphs"
         },

@@ -113,7 +113,7 @@
         }
       ]
     },
-    "宋代/词/宋词/ci.song.13000.json": {
+    "宋代/宋词/ci.song.13000.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "clean"
@@ -3648,67 +3648,67 @@
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.0.json": {
+    "宋代/宋词/ci.song.0.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.1000.json": {
+    "宋代/宋词/ci.song.1000.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.10000.json": {
+    "宋代/宋词/ci.song.10000.json": {
       "date": "2026-10-04",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.11000.json": {
+    "宋代/宋词/ci.song.11000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.12000.json": {
+    "宋代/宋词/ci.song.12000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.14000.json": {
+    "宋代/宋词/ci.song.14000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.15000.json": {
+    "宋代/宋词/ci.song.15000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.16000.json": {
+    "宋代/宋词/ci.song.16000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.17000.json": {
+    "宋代/宋词/ci.song.17000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.18000.json": {
+    "宋代/宋词/ci.song.18000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.19000.json": {
+    "宋代/宋词/ci.song.19000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.2000.json": {
+    "宋代/宋词/ci.song.2000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.20000.json": {
+    "宋代/宋词/ci.song.20000.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "fixed",
@@ -3725,52 +3725,52 @@
         }
       ]
     },
-    "宋代/词/宋词/ci.song.2019y.json": {
+    "宋代/宋词/ci.song.2019y.json": {
       "date": "2026-06-26",
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.21000.json": {
+    "宋代/宋词/ci.song.21000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.3000.json": {
+    "宋代/宋词/ci.song.3000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.4000.json": {
+    "宋代/宋词/ci.song.4000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.5000.json": {
+    "宋代/宋词/ci.song.5000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.6000.json": {
+    "宋代/宋词/ci.song.6000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.7000.json": {
+    "宋代/宋词/ci.song.7000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.8000.json": {
+    "宋代/宋词/ci.song.8000.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/ci.song.9000.json": {
+    "宋代/宋词/ci.song.9000.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
-    "宋代/词/宋词/宋词三百首.json": {
+    "宋代/宋词/宋词三百首.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
@@ -3780,7 +3780,7 @@
       "reviewer": "claude-sonnet-4-6",
       "status": "clean"
     },
-    "宋代/词/宋词/author.song.json": {
+    "宋代/宋词/author.song.json": {
       "status": "clean",
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
