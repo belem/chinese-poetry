@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for fixing typos and garbled characters (乱码) in chinese-poetry dataset. See .claude/commands/fix-typos.md for the workflow.",
   "stats": {
-    "total_files": 375,
-    "reviewed": 689,
+    "total_files": 817,
+    "reviewed": 690,
     "clean": 157,
     "fixed": 160,
-    "needs_review": 59,
+    "needs_review": 60,
     "out_of_scope": 313,
-    "in_scope_files": 376
+    "in_scope_files": 504
   },
   "reviewed": {
     "诗经/shijing.json": {
@@ -112532,6 +112532,18 @@
       ],
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5"
+    },
+    "_新增选本": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "新增的 7 部选本（`乐府诗集/`、`古诗源/`、`唐诗三百首/`、`元曲三百首/`、`昭明文选/`、`古文观止/`、`课外经典/`，共 129 个文件 / 1060 条）尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、分卷与正文去重，不构成「查过、没问题」。已跑的机械检查：西里尔/希腊字母、假名/注音、制表符、U+FFFD 均为 0；check_structure.py 只报 2 处 `□`（底本本就缺字），见 docs/wechat_corpus_audit.tsv。逐字对勘（与底本互校、一字之差以识典古籍判定）完成后再改为 clean/fixed。"
+        }
+      ]
     }
   }
 }

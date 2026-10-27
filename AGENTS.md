@@ -235,6 +235,8 @@ Status values:
 
 Also update the top-level `stats` counters (`reviewed`, `clean`, `fixed`, `needs_review`, `out_of_scope`, `in_scope_files`). The batch tools recompute them from file statuses automatically.
 
+**Never record a file as `clean` unless you actually read it.** A file that was only converted / split / deduplicated is *not* reviewed. Bulk imports that have not been collated line by line are registered as a single `reviewed["_<批次名>"]` entry with `status: needs_review` and a note saying what was and was not checked (see `_新增选本`, the 7 anthologies imported from poem-wechat); split it into per-file entries only as the collation completes. That keeps `stats.total_files` equal to the number of JSON files actually in the repo.
+
 ---
 
 ### Step 5 — Report

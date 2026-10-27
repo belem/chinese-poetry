@@ -1,16 +1,18 @@
 {
-    "cp_path": "./", 
+    "cp_path": "./",
     "datasets": {
         "wudai-huajianji": {
             "name": "五代-花间集",
             "id": 0,
-            "path": "五代诗词/huajianji/", 
-            "excludes": ["README.md"],
+            "path": "五代诗词/huajianji/",
+            "excludes": [
+                "README.md"
+            ],
             "tag": "paragraphs"
         },
         "wudai-nantang": {
             "name": "五代-南唐",
-            "id": 1, 
+            "id": 1,
             "path": "五代诗词/nantang/poetrys.json",
             "tag": "paragraphs"
         },
@@ -24,11 +26,17 @@
             "name": "全唐诗全宋诗",
             "id": 3,
             "path": "全唐诗/",
-            "excludes": ["README.md", "表面结构字.json", "error", "authors.song.json", "authors.tang.json"],
+            "excludes": [
+                "README.md",
+                "表面结构字.json",
+                "error",
+                "authors.song.json",
+                "authors.tang.json"
+            ],
             "tag": "paragraphs"
         },
         "mengzi": {
-            "name": "四书五经-孟子", 
+            "name": "四书五经-孟子",
             "id": 4,
             "path": "四书五经/mengzi.json",
             "tag": "paragraphs",
@@ -38,7 +46,13 @@
             "name": "宋词",
             "id": 5,
             "path": "宋词/",
-            "excludes": ["authors.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
+            "excludes": [
+                "authors.song.json",
+                "ci.db",
+                "main.py",
+                "README.md",
+                "UpdateCi.py"
+            ],
             "tag": "paragraphs"
         },
         "youmengying": {
@@ -83,6 +97,55 @@
             "id": 13,
             "path": "诗经/shijing.json",
             "tag": "content"
+        },
+        "yuefu-jis": {
+            "name": "乐府诗集",
+            "id": 14,
+            "path": "乐府诗集/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "gushi-yuan": {
+            "name": "古诗源",
+            "id": 15,
+            "path": "古诗源/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "tangshi-sanbai": {
+            "name": "唐诗三百首",
+            "id": 16,
+            "path": "唐诗三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "yuanqu-sanbai": {
+            "name": "元曲三百首",
+            "id": 17,
+            "path": "元曲三百首/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "wenxuan": {
+            "name": "文选",
+            "id": 18,
+            "path": "文选/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "guwen-guanzhi": {
+            "name": "古文观止",
+            "id": 19,
+            "path": "古文观止/",
+            "excludes": [],
+            "tag": "paragraphs"
+        },
+        "kewai-jingdian": {
+            "name": "课外经典",
+            "id": 20,
+            "path": "课外经典/",
+            "excludes": [],
+            "tag": "paragraphs"
         }
     }
 }
