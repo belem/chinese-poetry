@@ -45,6 +45,40 @@
 
 ---
 
+## 新增语料：与 poem-wechat-mini-program 对齐
+
+[npu-gpu-cpu/poem-wechat-mini-program](https://cnb.cool/npu-gpu-cpu/poem-wechat-mini-program) 的 `scripts/corpus/data` 里有 30 个集子。其中与全唐诗 / 宋词 / 元曲重复的（课本诗词、宋词三百首、元曲、二十四节气诗等）本库已有，只是标题编排不同，不做重复导入；**本库原先没有的 7 部**按仓库规则补入，各自成目录：
+
+| 目录 | 来源（上游文件） | 条数 | 说明 |
+| --- | --- | --- | --- |
+| `乐府诗集/` | poems-yuefu.js | 41 | 按上游分卷：卷一 汉魏乐府、卷二 南朝乐府、卷三 唐代乐府、卷四 唐五代乐府、卷五 乐府歌辞 |
+| `古诗源/` | poems-gushi.js | 56 | 按上游分卷：先秦诗、汉魏诗、六朝诗、宋诗、元明清诗、清词 |
+| `唐诗三百首/` | poems-tangshi.js | 115 | 单文件 |
+| `元曲三百首/` | poems-yuanqu.js | 31 | 按宫调分卷：小令·越调、中吕、双调、南吕、正宫、黄钟，套数·中吕、般涉调 |
+| `文选/` | poems-zhaoming.js | 436 | 按《文选》体类分卷（赋、诗、骚、七、诏、表、书……），共 89 个文件 |
+| `古文观止/` | poems-guwen.js | 233 | 按卷分卷，卷一至卷十二 |
+| `课外经典/` | poems-classic.js | 258 | 按上游分组：蒙学经典、寓言故事、神话传说、人物故事、志人逸事、治学勤读、诸子论道、山水游记 |
+
+导入规则（脚本见 [`scripts/wechat_corpus/`](scripts/wechat_corpus/)）：
+
+- **繁体、每行一句**，只保留 `author` / `paragraphs` / `title` 三字段，与原库一致。上游简体正文用 OpenCC `s2twp` 转换，只转换字形，不改字。
+- **与已有作品重复的不重复收录**，共跳过 483 条，逐条记在 [`docs/wechat_corpus.tsv`](docs/wechat_corpus.tsv)。判重按「去括号后的标题」比对全唐诗 / 宋词 / 元曲；标题编排不同（如上游「感遇·其一」对应全唐诗「感遇十二首 一」）时仍视为同一作品。
+- **不并入 `全唐诗/`、`宋词/`**：本库的唐诗去重、选本互校都建立在那批文件之上（见上文「对使用者的影响」），选本另立目录可以保住这些口径，也不必重跑一遍去重。
+- 上游的译文、出处、学段、难度、节选等展示字段**不入库**——本库只有正文。
+- 上游正文里 `~~` 标记底本缺字，统一转成本库惯用的 `□`。
+
+新增文件在 `fix_progress.json` 里记为 `clean`（只做了简转繁与分卷，尚未逐字对勘），所以仍在待复核范围内。
+
+重新生成：
+
+```bash
+node scripts/wechat_corpus/extract.js <poem-wechat 的 data 目录> > /tmp/wechat_corpus.json
+python3 scripts/wechat_corpus/import.py --corpus /tmp/wechat_corpus.json --dry-run   # 先看清单
+python3 scripts/wechat_corpus/import.py --corpus /tmp/wechat_corpus.json
+```
+
+---
+
 ## 与 GitHub 的同步
 
 本仓库是 [belem/chinese-poetry](https://github.com/belem/chinese-poetry) 的镜像：内容与上游 **逐字节一致**，只额外多出 `.cnb.yml` 和 `.cnb/` 两个同步配置。
