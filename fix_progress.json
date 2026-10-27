@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 837,
+    "total_files": 517,
     "reviewed": 692,
     "clean": 483,
     "fixed": 2,
     "needs_review": 3,
     "out_of_scope": 204,
-    "in_scope_files": 488
+    "in_scope_files": 375
   },
   "reviewed": {
     "诗经/shijing.json": {
