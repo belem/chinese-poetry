@@ -1037,6 +1037,11 @@
           "original": "[lacuna marker] 囗 ×7",
           "corrected": "[lacuna marker] □",
           "note": "Lacuna marker 囗 (U+56D7, a radical not used in running text) unified to □ (U+25A1) as elsewhere in the dataset; component notation like <囗贵> left untouched"
+        },
+        {
+          "original": null,
+          "corrected": null,
+          "note": "元曲三百首（`元曲三百首/` 8 个文件 / 29 首）已按 `scripts/merge_yuanqu.py` 并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv：27 首《全元散曲》未收，按「宫调・曲牌・题」补进 `元曲/yuanqu.json`（正文只转字形，不改字）；徐再思《水仙子・夜雨》与库中「双调・水仙子夜雨」同一份正文，题名挂到该条 sources；睢景臣《般涉调・哨遍・高祖还乡》在库中按曲牌拆成多条、正文对不上（覆盖率 0.17），选本那八段不收，留给逐字对勘。这 29 首仍未与古籍逐字对勘，不计入 clean。"
         }
       ]
     },
@@ -112553,7 +112558,12 @@
         {
           "original": null,
           "corrected": null,
-          "note": "新增的 7 部选本（`乐府诗集/`、`古诗源/`、`唐诗三百首/`、`元曲三百首/`、`昭明文选/`、`古文观止/`、`课外经典/`，共 129 个文件 / 1060 条）尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、分卷与正文去重，不构成「查过、没问题」。已跑的机械检查：西里尔/希腊字母、假名/注音、制表符、U+FFFD 均为 0；check_structure.py 只报 2 处 `□`（底本本就缺字），见 docs/wechat_corpus_audit.tsv。逐字对勘（与底本互校、一字之差以识典古籍判定）完成后再改为 clean/fixed。"
+          "note": "新增的选本（`乐府诗集/`、`古诗源/`、`唐诗三百首/`、`昭明文选/`、`古文观止/`、`课外经典/`，共 121 个文件 / 1031 条；`元曲三百首/` 的 8 个文件 / 29 首已并入 `元曲/`，另记）尚未逐字对勘。导入时只做了简转繁（OpenCC s2twp）、分卷与正文去重，不构成「查过、没问题」。已跑的机械检查：西里尔/希腊字母、假名/注音、制表符、U+FFFD 均为 0；check_structure.py 只报 2 处 `□`（底本本就缺字），见 docs/wechat_corpus_audit.tsv。逐字对勘（与底本互校、一字之差以识典古籍判定）完成后再改为 clean/fixed。"
+        },
+        {
+          "original": null,
+          "corrected": null,
+          "note": "元曲三百首（`元曲三百首/` 8 个文件 / 29 首）已按 `scripts/merge_yuanqu.py` 并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv：27 首《全元散曲》未收，按「宫调・曲牌・题」补进 `元曲/yuanqu.json`（正文只转字形，不改字）；徐再思《水仙子・夜雨》与库中「双调・水仙子夜雨」同一份正文，题名挂到该条 sources；睢景臣《般涉调・哨遍・高祖还乡》在库中按曲牌拆成多条、正文对不上（覆盖率 0.17），选本那八段不收，留给逐字对勘。这 29 首仍未与古籍逐字对勘，不计入 clean。"
         }
       ]
     }
