@@ -18,9 +18,11 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 先秦汉魏晋南北朝/{诗经,楚辞,曹操诗集,古诗源/汉魏六朝诗.json,诗文总集/{乐府诗集,昭明文选}}
 唐代/诗/全唐诗/（poet.tang.*）　宋代/诗/全宋诗/（poet.song.*）
 唐五代/词/五代诗词/{huajianji,nantang}
-宋代/{诗/全宋诗/,诗/古诗源·宋诗.json,宋词/}
-元代/元曲/  明代/诗/古诗源·明诗.json
-清代/诗/{古诗源·清诗.json,纳兰诗/}  清代/词/纳兰词/
+宋代/宋词/（ci.song.*）
+元代/元曲/yuanqu.json（元人诗词曲的唯一总集）
+明代/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json}
+清代/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/{ci.qing.json,纳兰词/}}
+历代/（周—清各代补录、经史子集篇目）  近现代诗/{现代诗.json,当代诗词.json}
 ```
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，

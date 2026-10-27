@@ -134,6 +134,34 @@
             "path": "清代/诗/古诗源·清诗.json",
             "tag": "paragraphs"
         },
+        "ming": {
+            "name": "明诗",
+            "id": 7,
+            "path": "明代/诗/poet.ming.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+        },
+        "ming-ci": {
+            "name": "明词",
+            "id": 10,
+            "path": "明代/词/ci.ming.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+        },
+        "qing-shi": {
+            "name": "清诗",
+            "id": 20,
+            "path": "清代/诗/poet.qing.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+        },
+        "qing-ci": {
+            "name": "清词",
+            "id": 27,
+            "path": "清代/词/ci.qing.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+        },
         "tangshi-sanbai": {
             "name": "唐诗三百首",
             "id": 16,
@@ -149,7 +177,7 @@
             "tag": "paragraphs"
         },
         "jinyuanxiandai": {
-            "name": "近现代诗",
+            "name": "近现代诗（现代诗、当代诗词）",
             "id": 21,
             "path": "近现代诗/",
             "excludes": [],
