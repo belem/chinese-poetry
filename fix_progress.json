@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 512,
-    "reviewed": 702,
-    "clean": 483,
+    "total_files": 513,
+    "reviewed": 703,
+    "clean": 484,
     "fixed": 11,
     "needs_review": 4,
-    "out_of_scope": 313,
-    "in_scope_files": 512
+    "out_of_scope": 204,
+    "in_scope_files": 513
   },
   "reviewed": {
     "先秦汉魏晋南北朝/诗经/shijing.json": {
@@ -73,11 +73,6 @@
     },
     "水墨唐诗/shuimotangshi.json": {
       "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
-    },
-    "纳兰性德/纳兰性德诗集.json": {
-      "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
@@ -3956,6 +3951,30 @@
           "original": "宋代/诗/古诗源·宋诗.json 6 首、宋代/词/古诗源·宋词.json 2 首、清代/词/古诗源·清词.json 1 首",
           "corrected": "全部删除",
           "note": "6 首宋诗与《全宋诗》正文逐字相同（司馬光《客中初夏》= poet.song.30000《居洛初夏作》，僅「隨風/因風」一字异文），2 首陆游词与《全宋词》ci.song.9000 相同；《菩薩蠻・大柏地》署許淑慧，实为毛泽东 1929 年词，系伪托且与「大柏地」地名错配，无古籍可据，删。清词目录因此清空"
+        }
+      ]
+    },
+    "清代/词/纳兰词/纳兰词.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "clean",
+      "fixes": [
+        {
+          "original": "纳兰性德/纳兰性德诗集.json（含 219 首词）",
+          "corrected": "清代/词/纳兰词/纳兰词.json",
+          "note": "别集按朝代与体裁拆分：219 首词另立文件，按词牌·首句排序；正文一字未改，字段沿用 para。原记录 2026-10-06 由 claude-opus-5-5 判 clean，随文件带过来"
+        }
+      ]
+    },
+    "清代/诗/纳兰诗/纳兰诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "clean",
+      "fixes": [
+        {
+          "original": "纳兰性德/纳兰性德诗集.json（含 39 首诗）",
+          "corrected": "清代/诗/纳兰诗/纳兰诗.json",
+          "note": "39 首诗另立文件；`拟古·高云媚春日`《南海子·分弓列戟四门开》等 12 首原来的「·」是七绝首句小题不是词牌，题名只去掉首尾空格；正文一字未改。另 1 首题名为空，上游底本即无题"
         }
       ]
     }
