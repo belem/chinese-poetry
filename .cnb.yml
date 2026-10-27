@@ -37,7 +37,9 @@ develop:
           script: bash .cnb/sync/sync.sh pull
 
   # 需要立刻对齐时手动跑：MODE=push / pull / both
-  api_trigger:
+  # 事件名必须是 api_trigger_sync：密钥仓库的 allow_events 是 api_trigger_*，
+  # 裸 api_trigger 不匹配通配符，prepare 阶段会被拒（「事件不符合 allow_events」）。
+  api_trigger_sync:
     - name: manual-sync
       imports:
         - https://cnb.cool/npu-gpu-cpu/poem-source-secrets/-/blob/main/pair.yml

@@ -73,11 +73,17 @@ GitHub PAT 存在密钥仓库 [npu-gpu-cpu/poem-source-secrets](https://cnb.cool
 
 ### 手动触发
 
-流水线 `poem-source-sync` 支持手动运行：
+任务 `manual-sync`（事件 `api_trigger_sync`）支持手动运行，方向由环境变量 `MODE` 决定：
 
-- `mode=push`：CNB → GitHub
-- `mode=pull`：GitHub → CNB
-- `mode=both`：先拉后推
+- `MODE=push`：CNB → GitHub
+- `MODE=pull`：GitHub → CNB
+- `MODE=both`：先拉后推（默认）
+
+```bash
+cnb build start-build --branch develop --event api_trigger_sync --env MODE=push
+```
+
+事件名不能写成裸 `api_trigger`：密钥仓库 `pair.yml` 的 `allow_events` 是 `api_trigger_*`，通配符不匹配自身，裸事件会在 Prepare 阶段被拒。
 
 ### 合并冲突提示
 
