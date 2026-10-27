@@ -23,10 +23,10 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 ```
 先秦/{诗经,楚辞,诗文总集/{乐府诗集,昭明文选},古文观止,四书五经,论语,蒙学,课外经典}
 汉/{曹操诗集,古诗源/汉魏六朝诗.json,诗/poet.han.json,词/ci.han.json}
-三国/ 晋/ 南北朝/ 隋/	（同上，各 诗/poet.*.json、词/ci.*.json）
+三国/ 晋/ 南北朝/ 隋/（同上，各 诗/poet.*.json、词/ci.*.json；隋只 18 首，见 docs/隋拆分.md）
 唐/{诗/全唐诗/（poet.tang.*）,唐诗三百首,词/ci.tang.json}
 五代十国/{词/五代诗词/{huajianji,nantang},诗/poet.wudai.json}
-宋/{诗/全宋诗/（poet.song.*）,宋词/（ci.song.*）,宋词三百首,诗/poet.song.json,词/ci.song.json,诗/古诗源·宋诗.json}
+宋/{诗/全宋诗/（poet.song.*）,宋词/（ci.song.*）,诗/poet.song.json,词/ci.song.json,诗/古诗源·宋诗.json}
 元/{元曲/yuanqu.json（元人诗词曲的唯一总集）,诗/poet.yuan.json}
 明/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json,幽梦影/}
 清/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/{ci.qing.json,纳兰词/}}
@@ -34,6 +34,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 ```
 
 `诗/poet.*`、`词/ci.*` 是 `历代/` 拆出来的补录，**`poet.*` 里诗与文混放**（体裁只决定进 `诗/` 还是 `词/` 目录）。
+选本不占目录：宋词三百首、唐诗三百首、水墨唐诗都并进总集作 `tags`，目录已删。
 
 - **哪个朝代归哪个目录**：作者朝代（`authors/authors.json` 的 `dynasty`）说话。春秋战国、秦、商、上古 → `先秦`；
   辽、金 → `宋`；1912—1949 年出生的作者 → `近现`；1949 年以后 → `当`。`晋` 不再细分东西晋，`南北朝` 不分南北。

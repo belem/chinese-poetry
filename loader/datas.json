@@ -205,13 +205,6 @@
             "tag": "paragraphs",
             "comments": "1912 年以后出生作者的旧体诗词在 当/poet.dang.json、当/ci.dang.json；这里只余自由体的现代诗"
         },
-        "songci300": {
-            "name": "宋/宋词三百首",
-            "id": 22,
-            "path": "宋/宋词三百首/",
-            "excludes": [],
-            "tag": "paragraphs"
-        },
         "tang-ci": {
             "name": "唐词",
             "id": 44,

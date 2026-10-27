@@ -219,8 +219,34 @@ def genre(rec):
 # ---------------------------------------------------------------- 朝代归属
 
 def dynasty_index():
+    """作者 → 朝代。同名多行（作者表里「无名氏」有 9 行，`？年` 出生）按「有确切朝代的优先」收敛，
+    绝不能取最后一行——`dict` 推导式的后写覆盖前写，会让「无名氏」落到任意一个朝代上去，
+    2026-10 就是这样把 457 条先秦两汉的无名氏作品全判给了隋。"""
     with open(os.path.join(ROOT, 'authors/authors.json'), encoding='utf-8') as fp:
-        return {T2S.convert(a['name']): T2S.convert(a['dynasty']) for a in json.load(fp)}
+        rows = json.load(fp)
+    seen = collections.defaultdict(list)
+    for a in rows:
+        seen[T2S.convert(a['name'])].append(T2S.convert(a['dynasty']))
+    return {name: pick_dynasty(ds) for name, ds in seen.items()}
+
+
+def pick_dynasty(ds):
+    """一个作者记了几个朝代时取哪个：不同朝代各自成立（作者归属异说），取最早的；
+    同一作者表里 9 行「无名氏」这种情况是缺数据，不是异说，一律判为「朝代不明」。"""
+    uniq = list(dict.fromkeys(ds))
+    if len(uniq) == 1:
+        return uniq[0]
+    return None
+
+
+def year_of(rec):
+    """从 birth_year / death_year 这类字符串里取年份，取不到就是 None。
+    原先的写法把 `？年`、`?`、`未知年` 都当成数字参与比较，`？？` 落到任何一个区间里都成立。"""
+    for key in ('birth_year', 'death_year'):
+        m = re.search(r'-?\d{1,4}', str(rec.get(key) or ''))
+        if m:
+            return int(m.group())
+    return None
 
 
 def lidai_records():
@@ -270,8 +296,13 @@ def plan():
     moved = collections.defaultdict(list)      # rel -> [rec]
     log = []
     for rel, i, rec in lidai_records():
-        d = dyn.get(T2S.convert(rec.get('author')), '')
-        d = ALIAS.get(d, d)
+        d = dyn.get(T2S.convert(rec.get('author')))
+        if not d:
+            # 作者表里查不到，或同名的几行写着互相矛盾的朝代（「无名氏」有 13 行）：
+            # 退回记录自带的 dynasty 字段，没有就留在原处
+            d = T2S.convert(str(rec.get('dynasty') or ''))
+            if d and d not in PREFIX:
+                d = ALIAS.get(d, d)
         g = genre(rec)
         if d not in PREFIX:
             log.append([rel, str(i), rec.get('author', ''), rec.get('title') or rec.get('rhythmic') or '',

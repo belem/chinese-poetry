@@ -2,13 +2,13 @@
  "version": "1.0",
  "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋/诗/全宋诗/error/. Workflow: AGENTS.md.",
  "stats": {
-  "total_files": 834,
-  "reviewed": 841,
-  "clean": 482,
+  "total_files": 839,
+  "reviewed": 833,
+  "clean": 481,
   "fixed": 10,
-  "needs_review": 145,
+  "needs_review": 138,
   "out_of_scope": 204,
-  "in_scope_files": 834
+  "in_scope_files": 524
  },
  "reviewed": {
   "先秦/诗经/shijing.json": {
@@ -4302,11 +4302,6 @@
     }
    ]
   },
-  "宋/宋词三百首/宋词三百首.json": {
-   "date": "2026-10-06",
-   "reviewer": "claude-opus-5-5",
-   "status": "clean"
-  },
   "三国/诗/poet.sanguo.json": {
    "date": "2026-10-28",
    "reviewer": "codebuddy",
@@ -5045,12 +5040,6 @@
    "status": "needs_review",
    "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
   },
-  "宋/宋词/宋词三百首.json": {
-   "date": "2026-10-28",
-   "reviewer": "codebuddy",
-   "status": "needs_review",
-   "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
-  },
   "宋/词/ci.song.json": {
    "date": "2026-10-28",
    "reviewer": "codebuddy",
@@ -5097,13 +5086,40 @@
    "date": "2026-10-28",
    "reviewer": "codebuddy",
    "status": "needs_review",
-   "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+   "note": "13 首都是无名氏，与全库无重复；词牌与正文对得上，作者与朝代仍待考（《全宋词》可能已收），未逐字对勘"
   },
   "隋/诗/poet.sui.json": {
    "date": "2026-10-28",
    "reviewer": "codebuddy",
-   "status": "needs_review",
-   "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+   "status": "fixed",
+   "note": "原 475 条里 457 条是无名氏，不是隋人：诗经 298（其中 3 首用异体题名）、古诗十九首 17、经史子集 115、乐府民歌 29、网传伪托 7。已按出处归位，只余 18 首隋诗；逐条见 docs/隋拆分.tsv",
+   "fixes": [
+    {
+     "original": "poet.sui.json 收《诗经》298 首（无名氏）",
+     "corrected": "并回 先秦/诗经/shijing.json，正文逐字相同的删、有出入的记入 docs/隋拆分.tsv",
+     "note": "根因：scripts/split_dynasty.py 把作者表的「？年」当数字比较，？落在 581—619 区间"
+    },
+    {
+     "original": "古诗十九首 17、苏武诗 2、陌上桑、上山采蘼芜、十五从军征、采葵莫伤根、同生曲、明下童、娇女诗",
+     "corrected": "迁 汉/诗/poet.han.json",
+     "note": "汉人诗，题名可考"
+    },
+    {
+     "original": "木兰诗、子夜四时歌、折杨柳歌辞等 26 首乐府民歌",
+     "corrected": "迁 南北朝/诗/poet.nanbeichao.json",
+     "note": "据《乐府诗集》所载时代"
+    },
+    {
+     "original": "庄子 23、三十六计 36、山海经 18、晏子春秋 8、黄帝内经 4、礼记 3、管子 3、今文尚书 2、逸周书 1、越人歌、孺子歌",
+     "corrected": "迁 先秦/诗/poet.xianqin.json",
+     "note": "经史子集篇目，按原书归位"
+    },
+    {
+     "original": "一树梨花压海棠、且行且珍惜、一花独放不是春、内乡县衙楹联、立冬、治国犹栽树、精卫填海",
+     "corrected": "删",
+     "note": "网传伪托，无古籍底本；《精卫填海》正文实为《山海经·北山经》一节"
+    }
+   ]
   },
   "当/ci.dang.json": {
    "date": "2026-10-28",

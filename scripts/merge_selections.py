@@ -10,7 +10,7 @@
                  那是另一份 366 首的副本；这个目录是上游 poems-tangshi.js 的 65 首）
   水墨唐诗/     余 4 首 → 并入 poet.tang 并带 prologue；总集未收的 3 首按全唐诗的记载补录，
                  目录删掉（四条已全部落在 poet.tang 上）
-  宋词三百首/   余 4 首 → 能对上的并入 ci.song.* 的 tags，对不上的留下
+  宋词三百首/   280 首全部对上 ci.song.*，加 tags 后目录删除（2026-10）
   近现/     按作者朝代拆：唐宋元明清的课本选目并回对应总集，真近现代的留下
 
 判定同一首沿用 merge_anthologies 的口径，再加两条：选本带序（题名有「並序」）时
@@ -406,7 +406,9 @@ def main():
     ink_keep = []
     if os.path.exists(os.path.join(ROOT, '水墨唐诗/shuimotangshi.json')):
         ink_keep = merge_one('水墨唐诗/shuimotangshi.json', tang, '水墨唐诗', log)
-    ci300_keep = merge_one('宋词三百首/宋词三百首.json', corpora['全宋词'], '宋词三百首', log)
+    # 宋词三百首 目录已整体并入 ci.song.*（280 首全部对上，2026-10），此处保留为重跑时的兜底
+    ci300_keep = merge_one('宋词三百首/宋词三百首.json', corpora['全宋词'], '宋词三百首', log) \
+        if os.path.exists(os.path.join(ROOT, '宋词三百首/宋词三百首.json')) else []
     modern_keep = split_modern('近现/近现.json', corpora, dynasties, log)
 
     c = collections.Counter((r[0], r[5]) for r in log)
