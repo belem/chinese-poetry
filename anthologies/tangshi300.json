@@ -1,0 +1,460 @@
+{
+ "name": "唐诗三百首",
+ "book": {
+  "title": "唐詩三百首注疏",
+  "editor": "蘅塘退士 編、章燮 注",
+  "edition": "上海掃葉山房石印本",
+  "source": "https://www.shidianguji.com/zh/book/XYXTSSBSZS"
+ },
+ "note": "据识典古籍扫描本正文顺序抽取，只收能稳妥切出标题的条目（卷三及其后）；category 照底本编排；first_line 为首句前 10 字，只作匹配锚点，不是正文。",
+ "entries": [
+  {
+   "no": 1,
+   "category": null,
+   "author": null,
+   "title": "白雪歌送武判官歸",
+   "first_line": "北風捲地白草折胡天八",
+   "source": "XYXTSSBSZS/1lpyntevotqme"
+  },
+  {
+   "no": 2,
+   "category": "七言古詩",
+   "author": "白居易",
+   "title": "長恨歌",
+   "first_line": "漢皇重色思傾國御宇多",
+   "source": "XYXTSSBSZS/1mhlf2b18tp2a"
+  },
+  {
+   "no": 3,
+   "category": "七言古詩",
+   "author": null,
+   "title": "琵琶行",
+   "first_line": "潯陽江頭夜送客楓葉荻",
+   "source": "XYXTSSBSZS/1mhlf2b18uqzm"
+  },
+  {
+   "no": 4,
+   "category": "七言古詩",
+   "author": "高適",
+   "title": "樂府燕歌行",
+   "first_line": "漢家煙塵在東北漢將辭",
+   "source": "XYXTSSBSZS/1mhlf2b18vg9u"
+  },
+  {
+   "no": 5,
+   "category": "七言古詩",
+   "author": "李頎",
+   "title": "古從軍行",
+   "first_line": "白日登山望烽火昏黄飲",
+   "source": "XYXTSSBSZS/1mhlf2b18vswy"
+  },
+  {
+   "no": 6,
+   "category": "七言古詩",
+   "author": "王維",
+   "title": "洛陽女兒行",
+   "first_line": "洛陽女兒對門居纔可顔",
+   "source": "XYXTSSBSZS/1mhlf2b18w5k2"
+  },
+  {
+   "no": 7,
+   "category": "七言古詩",
+   "author": null,
+   "title": "老將行",
+   "first_line": "少年十五二十時步行奪",
+   "source": "XYXTSSBSZS/1mhlf2b18wi76"
+  },
+  {
+   "no": 8,
+   "category": "七言古詩",
+   "author": "李白",
+   "title": "蜀道難",
+   "first_line": "噫吁嚱危乎高哉蜀道之",
+   "source": "XYXTSSBSZS/1mhlf2b18x7he"
+  },
+  {
+   "no": 9,
+   "category": "七言古詩",
+   "author": null,
+   "title": "長相思",
+   "first_line": "長相思在長安絡緯秋啼",
+   "source": "XYXTSSBSZS/1mhlf2b18xk4i"
+  },
+  {
+   "no": 10,
+   "category": "七言古詩",
+   "author": null,
+   "title": "其二",
+   "first_line": "日色欲盡花含烟月明如",
+   "source": "XYXTSSBSZS/1mhlf2b18xk4i"
+  },
+  {
+   "no": 11,
+   "category": "七言古詩",
+   "author": null,
+   "title": "行路難",
+   "first_line": "金樽清酒斗十千玉盤珍",
+   "source": "XYXTSSBSZS/1mhlf2b18xwrm"
+  },
+  {
+   "no": 12,
+   "category": "七言古詩",
+   "author": null,
+   "title": "其三",
+   "first_line": "有耳莫洗頴川水有口莫",
+   "source": "XYXTSSBSZS/1mhlf2b18xwrm"
+  },
+  {
+   "no": 13,
+   "category": "七言古詩",
+   "author": null,
+   "title": "將進酒",
+   "first_line": "君不見黄河之水天上來",
+   "source": "XYXTSSBSZS/1mhlf2b18y9eq"
+  },
+  {
+   "no": 14,
+   "category": "七言古詩",
+   "author": "杜甫",
+   "title": "兵車行",
+   "first_line": "車轔轔馬蕭蕭行人弓箭",
+   "source": "XYXTSSBSZS/1mhlf2b18ym1u"
+  },
+  {
+   "no": 15,
+   "category": "七言古詩",
+   "author": null,
+   "title": "麗人行",
+   "first_line": "三月三日天氣新長安水",
+   "source": "XYXTSSBSZS/1mhlf2b18yyoy"
+  },
+  {
+   "no": 16,
+   "category": "七言古詩",
+   "author": null,
+   "title": "哀江頭",
+   "first_line": "少陵野老吞聲哭春日潛",
+   "source": "XYXTSSBSZS/1mhlf2b18zbc2"
+  },
+  {
+   "no": 17,
+   "category": "七言古詩",
+   "author": null,
+   "title": "哀王孫",
+   "first_line": "長安城頭頭白烏夜飛延",
+   "source": "XYXTSSBSZS/1mhlf2b18znz6"
+  },
+  {
+   "no": 18,
+   "category": "五言律詩",
+   "author": "唐玄宗",
+   "title": "經魯祭孔子而嘆之",
+   "first_line": "夫子何爲者栖栖一代中",
+   "source": "XYXTSSBSZS/1mhlf2ga57nl4"
+  },
+  {
+   "no": 19,
+   "category": "五言律詩",
+   "author": "張九齡",
+   "title": "望月懷遠",
+   "first_line": "海上生明月天涯共此時",
+   "source": "XYXTSSBSZS/1mhlf2ga58cvc"
+  },
+  {
+   "no": 20,
+   "category": "五言律詩",
+   "author": "王勃",
+   "title": "杜少府之任蜀川",
+   "first_line": "城闕輔三秦風烟望五津",
+   "source": "XYXTSSBSZS/1mhlf2ga58pig"
+  },
+  {
+   "no": 21,
+   "category": "五言律詩",
+   "author": "駱賓王",
+   "title": "在獄咏蟬",
+   "first_line": "西陸蟬聲唱南冠客思深",
+   "source": "XYXTSSBSZS/1mhlf2ga5925k"
+  },
+  {
+   "no": 22,
+   "category": "五言律詩",
+   "author": "杜審言",
+   "title": "和晉陵陸丞相早春遊望",
+   "first_line": "獨有宦遊人偏驚物候新",
+   "source": "XYXTSSBSZS/1mhlf2ga59eso"
+  },
+  {
+   "no": 23,
+   "category": "五言律詩",
+   "author": "沈佺",
+   "title": "雜詩",
+   "first_line": "期聞道黄龍戍頻年不解",
+   "source": "XYXTSSBSZS/1mhlf2ga59rfs"
+  },
+  {
+   "no": 24,
+   "category": "五言律詩",
+   "author": "宋之問",
+   "title": "題大庾嶺北驛",
+   "first_line": "陽月南飛雁傳聞至此迴",
+   "source": "XYXTSSBSZS/1mhlf2ga5a42w"
+  },
+  {
+   "no": 25,
+   "category": "五言律詩",
+   "author": "王灣",
+   "title": "次北固山下",
+   "first_line": "客路青山下行舟綠水前",
+   "source": "XYXTSSBSZS/1mhlf2ga5agq0"
+  },
+  {
+   "no": 26,
+   "category": "五言律詩",
+   "author": "常建",
+   "title": "破山寺後禪院",
+   "first_line": "清晨入古寺初日照高林",
+   "source": "XYXTSSBSZS/1mhlf2ga5atd4"
+  },
+  {
+   "no": 27,
+   "category": "五言律詩",
+   "author": "岑參",
+   "title": "寄左省杜拾遺",
+   "first_line": "聯步趨丹陛分曹限紫薇",
+   "source": "XYXTSSBSZS/1mhlf2ga5b608"
+  },
+  {
+   "no": 28,
+   "category": "五言律詩",
+   "author": "李白",
+   "title": "贈孟浩然",
+   "first_line": "吾愛孟夫子風流天下聞",
+   "source": "XYXTSSBSZS/1mhlf2ga5binc"
+  },
+  {
+   "no": 29,
+   "category": "五言律詩",
+   "author": null,
+   "title": "渡荆門送别",
+   "first_line": "遠渡荆門外來從楚國遊",
+   "source": "XYXTSSBSZS/1mhlf2ga5bvag"
+  },
+  {
+   "no": 30,
+   "category": "五言律詩",
+   "author": null,
+   "title": "送友人",
+   "first_line": "青山横北郭白水遶東城",
+   "source": "XYXTSSBSZS/1mhlf2ga5c7xk"
+  },
+  {
+   "no": 31,
+   "category": "五言律詩",
+   "author": null,
+   "title": "聽蜀僧濬彈琴",
+   "first_line": "蜀僧抱綠綺西下峨眉峰",
+   "source": "XYXTSSBSZS/1mhlf2ga5ckko"
+  },
+  {
+   "no": 32,
+   "category": "五言律詩",
+   "author": null,
+   "title": "夜泊牛渚懷古",
+   "first_line": "牛渚西江夜青天無片雲",
+   "source": "XYXTSSBSZS/1mhlf2ga5cx7s"
+  },
+  {
+   "no": 33,
+   "category": "五言律詩",
+   "author": "杜甫",
+   "title": "月夜",
+   "first_line": "今夜鄜州月閨中只獨看",
+   "source": "XYXTSSBSZS/1mhlf2ga5d9uw"
+  },
+  {
+   "no": 34,
+   "category": "五言律詩",
+   "author": null,
+   "title": "春望",
+   "first_line": "國破山河在城春草木深",
+   "source": "XYXTSSBSZS/1mhlf2ga5dmi0"
+  },
+  {
+   "no": 35,
+   "category": "五言律詩",
+   "author": null,
+   "title": "春宿左省",
+   "first_line": "花隱掖垣暮啾啾栖鳥過",
+   "source": "XYXTSSBSZS/1mhlf2ga5dz54"
+  },
+  {
+   "no": 36,
+   "category": "五言律詩",
+   "author": null,
+   "title": "月夜憶舍弟",
+   "first_line": "戍鼓斷人行邊秋一雁聲",
+   "source": "XYXTSSBSZS/1mhlf2ga5ebs8"
+  },
+  {
+   "no": 37,
+   "category": "五言律詩",
+   "author": null,
+   "title": "天末懷李白",
+   "first_line": "涼風起天末君子意如何",
+   "source": "XYXTSSBSZS/1mhlf2ga5eofc"
+  },
+  {
+   "no": 38,
+   "category": "五言律詩",
+   "author": null,
+   "title": "奉濟驛重送嚴公四韻",
+   "first_line": "遠送從此别青山空復情",
+   "source": "XYXTSSBSZS/1mhlf2ga5f12g"
+  },
+  {
+   "no": 39,
+   "category": "五言律詩",
+   "author": null,
+   "title": "别房太尉墓",
+   "first_line": "他鄉復行役駐馬别孤墳",
+   "source": "XYXTSSBSZS/1mhlf2ga5fdpk"
+  },
+  {
+   "no": 40,
+   "category": "五言律詩",
+   "author": null,
+   "title": "旅夜書懷",
+   "first_line": "細草微風岸危檣獨夜舟",
+   "source": "XYXTSSBSZS/1mhlf2ga5fqco"
+  },
+  {
+   "no": 41,
+   "category": "五言律詩",
+   "author": null,
+   "title": "登岳陽樓",
+   "first_line": "昔聞洞庭水今上岳陽樓",
+   "source": "XYXTSSBSZS/1mhlf2ga5g2zs"
+  },
+  {
+   "no": 42,
+   "category": "五言律詩",
+   "author": "王維",
+   "title": "輞川閒居贈裴秀才迪",
+   "first_line": "寒山轉蒼翠秋水日潺湲",
+   "source": "XYXTSSBSZS/1mhlf2ga5gfmw"
+  },
+  {
+   "no": 43,
+   "category": "五言律詩",
+   "author": null,
+   "title": "山居秋暝",
+   "first_line": "空山新雨後天氣晚來秋",
+   "source": "XYXTSSBSZS/1mhlf2ga5gsa0"
+  },
+  {
+   "no": 44,
+   "category": "五言律詩",
+   "author": null,
+   "title": "歸嵩山作",
+   "first_line": "清川帶長薄車馬去閒閒",
+   "source": "XYXTSSBSZS/1mhlf2ga5h4x4"
+  },
+  {
+   "no": 45,
+   "category": "五言律詩",
+   "author": null,
+   "title": "終南山",
+   "first_line": "太乙近天都連山到海隅",
+   "source": "XYXTSSBSZS/1mhlf2ga5hhk8"
+  },
+  {
+   "no": 46,
+   "category": "五言律詩",
+   "author": null,
+   "title": "酬張少府",
+   "first_line": "晚年惟好靜萬事不關心",
+   "source": "XYXTSSBSZS/1mhlf2ga5hu7c"
+  },
+  {
+   "no": 47,
+   "category": "五言律詩",
+   "author": null,
+   "title": "過香積寺",
+   "first_line": "不知香積寺數里入雲峰",
+   "source": "XYXTSSBSZS/1mhlf2ga5hu7c"
+  },
+  {
+   "no": 48,
+   "category": "五言律詩",
+   "author": null,
+   "title": "送梓州李使君",
+   "first_line": "萬壑樹參天千山響杜鵑",
+   "source": "XYXTSSBSZS/1mhlf2ga5i6ug"
+  },
+  {
+   "no": 49,
+   "category": "五言律詩",
+   "author": null,
+   "title": "終南别業",
+   "first_line": "中歲頗好道晚家南山陲",
+   "source": "XYXTSSBSZS/1mhlf2ga5iw4o"
+  },
+  {
+   "no": 50,
+   "category": "五言律詩",
+   "author": "孟浩然",
+   "title": "臨洞庭上張丞相",
+   "first_line": "八月湖水平涵虚混太清",
+   "source": "XYXTSSBSZS/1mhlf2ga5j8rs"
+  },
+  {
+   "no": 51,
+   "category": "五言律詩",
+   "author": null,
+   "title": "與諸子登峴山",
+   "first_line": "人事有代謝往來成古今",
+   "source": "XYXTSSBSZS/1mhlf2hg5uyoz"
+  },
+  {
+   "no": 52,
+   "category": "五言律詩",
+   "author": null,
+   "title": "宴梅道士山房",
+   "first_line": "林卧愁春盡搴帷覽物華",
+   "source": "XYXTSSBSZS/1mhlf2hg5vbc3"
+  },
+  {
+   "no": 53,
+   "category": "五言律詩",
+   "author": null,
+   "title": "歲暮歸南山",
+   "first_line": "北闕休上書南山歸敝廬",
+   "source": "XYXTSSBSZS/1mhlf2hg5vnz7"
+  },
+  {
+   "no": 54,
+   "category": "五言律詩",
+   "author": null,
+   "title": "過故人莊",
+   "first_line": "故人具雞黍邀我至田家",
+   "source": "XYXTSSBSZS/1mhlf2hg5w0mb"
+  },
+  {
+   "no": 55,
+   "category": "五言律詩",
+   "author": null,
+   "title": "秦中寄遠上人",
+   "first_line": "一邱常欲卧三徑苦無資",
+   "source": "XYXTSSBSZS/1mhlf2hg5wd9f"
+  },
+  {
+   "no": 56,
+   "category": "五言律詩",
+   "author": null,
+   "title": "宿桐廬江寄廣陵舊遊",
+   "first_line": "山暝聽猿愁滄江急夜流",
+   "source": "XYXTSSBSZS/1mhlf2hg5wpwj"
+  }
+ ]
+}

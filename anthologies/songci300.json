@@ -1,0 +1,2001 @@
+{
+ "name": "宋词三百首",
+ "book": {
+  "title": "宋詞三百首",
+  "editor": "朱祖謀（彊村）編",
+  "edition": "民國十三年朱祖母集解本",
+  "source": "https://www.shidianguji.com/zh/book/7374122395470135333"
+ },
+ "note": "目次按识典古籍本正文顺序抽取；作者只在每组第一首署名，其余顺延。first_line 为首句前 12 字。",
+ "entries": [
+  {
+   "no": 1,
+   "author": "徽宗皇帝",
+   "title": "宴山亭",
+   "first_line": "裁翦冰綃輕疉數重淡著燕脂",
+   "source": "zzm/1kffh2j2cmgbp"
+  },
+  {
+   "no": 2,
+   "author": "錢惟演",
+   "title": "木蘭花",
+   "first_line": "城上風光鶯語亂城下煙波春",
+   "source": "zzm/1kffh2j2cn5lx"
+  },
+  {
+   "no": 3,
+   "author": "范仲淹",
+   "title": "漁家傲",
+   "first_line": "塞下秋來風景異衡陽雁去無",
+   "source": "zzm/1kffh2j2cnuw5"
+  },
+  {
+   "no": 4,
+   "author": "范仲淹",
+   "title": "蘇幕遮",
+   "first_line": "碧雲天黃花地秋色連波波上",
+   "source": "zzm/1kffh2j2cok6d"
+  },
+  {
+   "no": 5,
+   "author": "范仲淹",
+   "title": "御街行",
+   "first_line": "紛紛墜葉飄香砌夜寂靜寒聲",
+   "source": "zzm/1kffh2j2cowth"
+  },
+  {
+   "no": 6,
+   "author": "張先",
+   "title": "千秋歲",
+   "first_line": "數聲鶗鴂又報芳菲歇惜春更",
+   "source": "zzm/1kffh2j2cp9gl"
+  },
+  {
+   "no": 7,
+   "author": "張先",
+   "title": "菩薩蠻",
+   "first_line": "哀箏三弄湘江曲聲聲寫盡湘",
+   "source": "zzm/1kffh2j2cpyqt"
+  },
+  {
+   "no": 8,
+   "author": "張先",
+   "title": "醉垂鞭",
+   "first_line": "雙蝶繡羅裙東池宴初相三朱",
+   "source": "zzm/1kffh2j2cqbdx"
+  },
+  {
+   "no": 9,
+   "author": "張先",
+   "title": "一叢花",
+   "first_line": "傷高懷遠幾時窮無物似情濃",
+   "source": "zzm/1kffh2j2cqo11"
+  },
+  {
+   "no": 10,
+   "author": "張先",
+   "title": "天仙子",
+   "first_line": "水調數聲持酒聽午醉醒來愁",
+   "source": "zzm/1kffh2j2cr0o5"
+  },
+  {
+   "no": 11,
+   "author": "張先",
+   "title": "青門引",
+   "first_line": "乍暖還輕冷風雨晚來方定庭",
+   "source": "zzm/1kffh2j2crdb9"
+  },
+  {
+   "no": 12,
+   "author": "張先",
+   "title": "生查子",
+   "first_line": "含羞整翠鬟得意頻相顧雁柱",
+   "source": "zzm/1kffh2j2crpyd"
+  },
+  {
+   "no": 13,
+   "author": "晏殊",
+   "title": "浣溪沙",
+   "first_line": "一曲新詞酒一杯去年天氣舊",
+   "source": "zzm/1kffh2j2cs2lh"
+  },
+  {
+   "no": 14,
+   "author": "晏殊",
+   "title": "浣溪沙",
+   "first_line": "一向年光有限身等閒離别易",
+   "source": "zzm/1kffh2ja6sa43"
+  },
+  {
+   "no": 15,
+   "author": "晏殊",
+   "title": "清平樂",
+   "first_line": "紅牋小字説盡平生意鴻雁在",
+   "source": "zzm/1kffh2ja6smr7"
+  },
+  {
+   "no": 16,
+   "author": "晏殊",
+   "title": "清平樂",
+   "first_line": "金風細細葉葉梧桐墜綠酒初",
+   "source": "zzm/1kffh2ja6szeb"
+  },
+  {
+   "no": 17,
+   "author": "晏殊",
+   "title": "木蘭花",
+   "first_line": "燕鴻過後鶯歸去細算浮生千",
+   "source": "zzm/1kffh2ja6tc1f"
+  },
+  {
+   "no": 18,
+   "author": "晏殊",
+   "title": "木蘭花",
+   "first_line": "池塘水綠風微暖記得玉真初",
+   "source": "zzm/1kffh2ja6tooj"
+  },
+  {
+   "no": 19,
+   "author": "晏殊",
+   "title": "木蘭花",
+   "first_line": "綠楊芳草長亭路年少抛人容",
+   "source": "zzm/1kffh2ja6u1bn"
+  },
+  {
+   "no": 20,
+   "author": "晏殊",
+   "title": "踏莎行",
+   "first_line": "祖席離歌長亭别宴香塵已隔",
+   "source": "zzm/1kffh2ja6udyr"
+  },
+  {
+   "no": 21,
+   "author": "晏殊",
+   "title": "踏莎行",
+   "first_line": "小徑紅稀芳郊綠徧高臺樹色",
+   "source": "zzm/1kffh2ja6uqlv"
+  },
+  {
+   "no": 22,
+   "author": "晏殊",
+   "title": "踏莎行",
+   "first_line": "碧海無波瑶臺有路思量便合",
+   "source": "zzm/1kffh2ja6v38z"
+  },
+  {
+   "no": 23,
+   "author": "晏殊",
+   "title": "蝶戀花",
+   "first_line": "六曲闌干偎碧樹楊柳風輕展",
+   "source": "zzm/1kffh2ja6vfw3"
+  },
+  {
+   "no": 24,
+   "author": "韓縝",
+   "title": "鳳簫吟",
+   "first_line": "鎖離愁連緜無際來時陌上初",
+   "source": "zzm/1kffh2ja6vsj7"
+  },
+  {
+   "no": 25,
+   "author": "宋祁",
+   "title": "木蘭花",
+   "first_line": "東城漸覺風光好皺穀波紋迎",
+   "source": "zzm/1kffh2ja6whtf"
+  },
+  {
+   "no": 26,
+   "author": "歐陽修",
+   "title": "采桑子",
+   "first_line": "群芳過後西湖好狼藉殘紅飛",
+   "source": "zzm/1kffh2ja6x73n"
+  },
+  {
+   "no": 27,
+   "author": "歐陽修",
+   "title": "訴衷情",
+   "first_line": "清晨簾幕捲輕霜呵手試梅妝",
+   "source": "zzm/1kffh2ja6xwdv"
+  },
+  {
+   "no": 28,
+   "author": "歐陽修",
+   "title": "踏莎行",
+   "first_line": "候館梅殘溪橋柳紐草薰風暖",
+   "source": "zzm/1kffh2ja6y90z"
+  },
+  {
+   "no": 29,
+   "author": "歐陽修",
+   "title": "蝶戀花",
+   "first_line": "誰道閒情抛棄久每到春來惆",
+   "source": "zzm/1kffh2ja6yyb7"
+  },
+  {
+   "no": 30,
+   "author": "歐陽修",
+   "title": "蝶戀花",
+   "first_line": "幾日行雲何處去忘了歸來不",
+   "source": "zzm/1kffh2jae9z5e"
+  },
+  {
+   "no": 31,
+   "author": "歐陽修",
+   "title": "木蘭花",
+   "first_line": "别後不知君遠近觸目淒涼多",
+   "source": "zzm/1kffh2jaeabsi"
+  },
+  {
+   "no": 32,
+   "author": "歐陽修",
+   "title": "臨江仙",
+   "first_line": "柳外輕雷池上雨雨聲滴碎荷",
+   "source": "zzm/1kffh2jaeaofm"
+  },
+  {
+   "no": 33,
+   "author": "歐陽修",
+   "title": "浣溪沙",
+   "first_line": "隄上游人逐畫船拍隄春水四",
+   "source": "zzm/1kffh2jaeb12q"
+  },
+  {
+   "no": 34,
+   "author": "歐陽修",
+   "title": "浪淘沙",
+   "first_line": "把酒祝東風且共從容垂楊紫",
+   "source": "zzm/1kffh2jaebdpu"
+  },
+  {
+   "no": 35,
+   "author": "聶冠卿",
+   "title": "多麗",
+   "first_line": "想人生美景良辰堪惜向其閒",
+   "source": "zzm/1kffh2jaec302"
+  },
+  {
+   "no": 36,
+   "author": "柳永",
+   "title": "曲玉管",
+   "first_line": "隴首雲飛江邊日晚煙波滿昆",
+   "source": "zzm/1kffh2jaecsaa"
+  },
+  {
+   "no": 37,
+   "author": "柳永",
+   "title": "雨霖鈴",
+   "first_line": "寒蟬淒切對長亭晚驟雨初歇",
+   "source": "zzm/1kffh2jaedhki"
+  },
+  {
+   "no": 38,
+   "author": "柳永",
+   "title": "蝶戀花",
+   "first_line": "佇倚危樓風細細望極春愁黯",
+   "source": "zzm/1kffh2jaedu7m"
+  },
+  {
+   "no": 39,
+   "author": "柳永",
+   "title": "采蓮令",
+   "first_line": "月華收雲淡霜天曙西征客此",
+   "source": "zzm/1kffh2jaee6uq"
+  },
+  {
+   "no": 40,
+   "author": "柳永",
+   "title": "浪淘沙慢",
+   "first_line": "夢覺透窗風一線寒燈吹息那",
+   "source": "zzm/1kffh2jaeejhu"
+  },
+  {
+   "no": 41,
+   "author": "柳永",
+   "title": "定風波",
+   "first_line": "自春來慘綠愁紅芳心是事可",
+   "source": "zzm/1kffh2jaeew4y"
+  },
+  {
+   "no": 42,
+   "author": "柳永",
+   "title": "少年游",
+   "first_line": "長安古道馬遲遲高柳亂蟬嘶",
+   "source": "zzm/1kffh2jaef8s2"
+  },
+  {
+   "no": 43,
+   "author": "柳永",
+   "title": "戚氏",
+   "first_line": "晚秋天一霎微雨灑庭軒檻菊",
+   "source": "zzm/1kffh2jaeflf6"
+  },
+  {
+   "no": 44,
+   "author": "柳永",
+   "title": "夜半樂",
+   "first_line": "凍雲黯淡天氣扁舟一葉乘興",
+   "source": "zzm/1kffh2jaefy2a"
+  },
+  {
+   "no": 45,
+   "author": "柳永",
+   "title": "玉胡蝶",
+   "first_line": "望處雨收雲斷憑闌悄悄目送",
+   "source": "zzm/1kffh2jaegape"
+  },
+  {
+   "no": 46,
+   "author": "柳永",
+   "title": "八聲甘州",
+   "first_line": "對瀟瀟暮雨灑江天一番洗清",
+   "source": "zzm/1kffh2jaegnci"
+  },
+  {
+   "no": 47,
+   "author": "柳永",
+   "title": "迷神引",
+   "first_line": "一葉扁舟輕帆捲暫泊楚江南",
+   "source": "zzm/1kffh2jaj9rub"
+  },
+  {
+   "no": 48,
+   "author": "柳永",
+   "title": "竹馬子",
+   "first_line": "登孤壘荒涼危亭曠望靜臨煙",
+   "source": "zzm/1kffh2jaja4hf"
+  },
+  {
+   "no": 49,
+   "author": "王安石",
+   "title": "桂枝香",
+   "first_line": "登臨送目正故國晚秋天氣初",
+   "source": "zzm/1kffh2jajah4j"
+  },
+  {
+   "no": 50,
+   "author": "王安石",
+   "title": "千秋歲引",
+   "first_line": "别館寒砧孤城畫角一派秋聲",
+   "source": "zzm/1kffh2jajb6er"
+  },
+  {
+   "no": 51,
+   "author": "王安國",
+   "title": "清平樂",
+   "first_line": "留春不住費盡鶯兒語滿地殘",
+   "source": "zzm/1kffh2jajbj1v"
+  },
+  {
+   "no": 52,
+   "author": "晏幾道",
+   "title": "臨江仙",
+   "first_line": "夢後樓臺高鎖酒醒簾幕低垂",
+   "source": "zzm/1kffh2jajc8c3"
+  },
+  {
+   "no": 53,
+   "author": "晏幾道",
+   "title": "蝶戀花",
+   "first_line": "夢入江南煙水路行盡江南不",
+   "source": "zzm/1kffh2jajcxmb"
+  },
+  {
+   "no": 54,
+   "author": "晏幾道",
+   "title": "蝶戀花",
+   "first_line": "醉别西樓醒不記春夢秋雲聚",
+   "source": "zzm/1kffh2jajda9f"
+  },
+  {
+   "no": 55,
+   "author": "晏幾道",
+   "title": "鷓鴣天",
+   "first_line": "彩袖殷勤捧玉鍾當年𢬵卻醉",
+   "source": "zzm/1kffh2jajdmwj"
+  },
+  {
+   "no": 56,
+   "author": "晏幾道",
+   "title": "鷓鴣天",
+   "first_line": "醉拍春衫惜舊香天將離恨惱",
+   "source": "zzm/1kffh2jajdzjn"
+  },
+  {
+   "no": 57,
+   "author": "晏幾道",
+   "title": "生查子",
+   "first_line": "金鞍美少年去躍青驄馬牽繫",
+   "source": "zzm/1kffh2jajec6r"
+  },
+  {
+   "no": 58,
+   "author": "晏幾道",
+   "title": "生查子",
+   "first_line": "關山魂夢長塞雁音書少兩鬢",
+   "source": "zzm/1kffh2jajeotv"
+  },
+  {
+   "no": 59,
+   "author": "晏幾道",
+   "title": "木蘭花",
+   "first_line": "東風又作無情計豔粉嬌紅吹",
+   "source": "zzm/1kffh2jajf1gz"
+  },
+  {
+   "no": 60,
+   "author": "晏幾道",
+   "title": "木蘭花",
+   "first_line": "鞦韆院落重簾暮彩筆閒來題",
+   "source": "zzm/1kffh2jajfe43"
+  },
+  {
+   "no": 61,
+   "author": "晏幾道",
+   "title": "清平樂",
+   "first_line": "留人不住醉解蘭舟去一棹碧",
+   "source": "zzm/1kffh2jajfqr7"
+  },
+  {
+   "no": 62,
+   "author": "晏幾道",
+   "title": "阮郎歸",
+   "first_line": "舊香殘粉似當初人情恨不如",
+   "source": "zzm/1kffh2jajg3eb"
+  },
+  {
+   "no": 63,
+   "author": "晏幾道",
+   "title": "阮郎歸",
+   "first_line": "天邊金掌露成霜雲隨雁字長",
+   "source": "zzm/1kffh2jajgg1f"
+  },
+  {
+   "no": 64,
+   "author": "晏幾道",
+   "title": "六幺令",
+   "first_line": "綠陰春盡飛絮繞香閣晚來翠",
+   "source": "zzm/1kffh2jaqrgui"
+  },
+  {
+   "no": 65,
+   "author": "晏幾道",
+   "title": "御街行",
+   "first_line": "街南綠樹春饒絮雪滿游春路",
+   "source": "zzm/1kffh2jaqrthm"
+  },
+  {
+   "no": 66,
+   "author": "晏幾道",
+   "title": "虞美人",
+   "first_line": "曲闌干外天如水昨夜還曾倚",
+   "source": "zzm/1kffh2jaqs64q"
+  },
+  {
+   "no": 67,
+   "author": "晏幾道",
+   "title": "留春令",
+   "first_line": "畫屏天畔夢回依約十洲雲水",
+   "source": "zzm/1kffh2jaqsiru"
+  },
+  {
+   "no": 68,
+   "author": "晏幾道",
+   "title": "思遠人",
+   "first_line": "紅葉黄花秋意晚千里念行客",
+   "source": "zzm/1kffh2jaqsvey"
+  },
+  {
+   "no": 69,
+   "author": "晏幾道",
+   "title": "滿庭芳",
+   "first_line": "南苑吹花西樓題葉故園歡事",
+   "source": "zzm/1kffh2jaqt822"
+  },
+  {
+   "no": 70,
+   "author": "蘇軾",
+   "title": "水調歌頭",
+   "first_line": "明月幾時有把酒問青天不知",
+   "source": "zzm/1kffh2jaqtkp6"
+  },
+  {
+   "no": 71,
+   "author": "蘇軾",
+   "title": "水龍吟",
+   "first_line": "似花還似非花也無人惜從教",
+   "source": "zzm/1kffh2jaqu9ze"
+  },
+  {
+   "no": 72,
+   "author": "蘇軾",
+   "title": "念奴嬌",
+   "first_line": "大江東去浪淘盡千古風流人",
+   "source": "zzm/1kffh2jaqummi"
+  },
+  {
+   "no": 73,
+   "author": "蘇軾",
+   "title": "永遇樂",
+   "first_line": "明月如霜好風如水清景無限",
+   "source": "zzm/1kffh2jaquz9m"
+  },
+  {
+   "no": 74,
+   "author": "蘇軾",
+   "title": "洞仙歌",
+   "first_line": "冰肌玉骨自情涼無汗水殿風",
+   "source": "zzm/1kffh2jaqvbwq"
+  },
+  {
+   "no": 75,
+   "author": "蘇軾",
+   "title": "卜算子",
+   "first_line": "缺月挂疏桐漏斷人初靜誰見",
+   "source": "zzm/1kffh2jaqvoju"
+  },
+  {
+   "no": 76,
+   "author": "蘇軾",
+   "title": "青玉案",
+   "first_line": "三年枕上吳中路遣黃犬隨君",
+   "source": "zzm/1kffh2jaqw16y"
+  },
+  {
+   "no": 77,
+   "author": "蘇軾",
+   "title": "臨江仙",
+   "first_line": "夜飮東坡醒復醉歸來彷佛三",
+   "source": "zzm/1kffh2jaqwdu2"
+  },
+  {
+   "no": 78,
+   "author": "蘇軾",
+   "title": "定風波",
+   "first_line": "莫聽穿林打葉聲何妨吟嘯且",
+   "source": "zzm/1kffh2jaqwqh6"
+  },
+  {
+   "no": 79,
+   "author": "蘇軾",
+   "title": "江城子",
+   "first_line": "十年生死兩茫茫不思量自難",
+   "source": "zzm/1kffh2jaqx34a"
+  },
+  {
+   "no": 80,
+   "author": "蘇軾",
+   "title": "木蘭花",
+   "first_line": "韻霜餘已失長淮闊空聽潺潺",
+   "source": "zzm/1kffh2jaqxfre"
+  },
+  {
+   "no": 81,
+   "author": "蘇軾",
+   "title": "賀新郎",
+   "first_line": "乳燕飛華屠悄無人槐陰轉午",
+   "source": "zzm/1kffh2jaqxsei"
+  },
+  {
+   "no": 82,
+   "author": "黃庭堅",
+   "title": "鷓鴣天",
+   "first_line": "黃菊枝頭生曉寒人生莫放酒",
+   "source": "zzm/1kffh2jaqy51m"
+  },
+  {
+   "no": 83,
+   "author": "黃庭堅",
+   "title": "定風波",
+   "first_line": "萬里黔中一漏天屋居終日似",
+   "source": "zzm/1kffh2javrm6z"
+  },
+  {
+   "no": 84,
+   "author": "秦觀",
+   "title": "望海潮",
+   "first_line": "梅英疏淡冰凘溶洩東風暗換",
+   "source": "zzm/1kffh2javryu3"
+  },
+  {
+   "no": 85,
+   "author": "秦觀",
+   "title": "八六子",
+   "first_line": "倚危亭恨如芳草萋萋剗盡還",
+   "source": "zzm/1kffh2javso4b"
+  },
+  {
+   "no": 86,
+   "author": "秦觀",
+   "title": "滿庭芳",
+   "first_line": "山抹微雨天黏衰草畫角聲斷",
+   "source": "zzm/1kffh2javt0rf"
+  },
+  {
+   "no": 87,
+   "author": "秦觀",
+   "title": "減字木蘭花",
+   "first_line": "天涯舊恨獨自淒涼人不問欲",
+   "source": "zzm/1kffh2javtq1n"
+  },
+  {
+   "no": 88,
+   "author": "秦觀",
+   "title": "踏莎行",
+   "first_line": "霧失樓臺月迷津渡桃源望斷",
+   "source": "zzm/1kffh2javu2or"
+  },
+  {
+   "no": 89,
+   "author": "秦觀",
+   "title": "浣溪沙",
+   "first_line": "漠漠輕寒上小樓曉陰無賴似",
+   "source": "zzm/1kffh2javufbv"
+  },
+  {
+   "no": 90,
+   "author": "秦觀",
+   "title": "阮郎歸",
+   "first_line": "湘天風雨破寒初深沈庭院虚",
+   "source": "zzm/1kffh2javuryz"
+  },
+  {
+   "no": 91,
+   "author": "秦觀",
+   "title": "鷓鴣天",
+   "first_line": "枝上流鶯和唳聞新啼痕閒舊",
+   "source": "zzm/1kffh2javv4m3"
+  },
+  {
+   "no": 92,
+   "author": "晁元禮",
+   "title": "綠頭鴨",
+   "first_line": "晚雲收淡天一片琉璃爛銀盤",
+   "source": "zzm/1kffh2javvh97"
+  },
+  {
+   "no": 93,
+   "author": "趙令畤",
+   "title": "蝶戀花",
+   "first_line": "欲減羅衣寒未去不捲珠簾人",
+   "source": "zzm/1kffh2javw6jf"
+  },
+  {
+   "no": 94,
+   "author": "趙令畤",
+   "title": "蝶戀花",
+   "first_line": "捲絮風頭寒欲盡墜粉飄香日",
+   "source": "zzm/1kffh2javwvtn"
+  },
+  {
+   "no": 95,
+   "author": "趙令畤",
+   "title": "清平樂",
+   "first_line": "春風依舊著意隋隄柳搓得鵝",
+   "source": "zzm/1kffh2javx8gr"
+  },
+  {
+   "no": 96,
+   "author": "張耒",
+   "title": "風流子",
+   "first_line": "亭皋木葉下重陽近又是擣衣",
+   "source": "zzm/1kffh2javxl3v"
+  },
+  {
+   "no": 97,
+   "author": "晁補之",
+   "title": "水龍吟",
+   "first_line": "問春何苦悤悤帶風伴雨如馳",
+   "source": "zzm/1kffh2jb38yl6"
+  },
+  {
+   "no": 98,
+   "author": "晁補之",
+   "title": "鹽角兒",
+   "first_line": "開時似雪謝時似雪花中奇絶",
+   "source": "zzm/1kffh2jb39nve"
+  },
+  {
+   "no": 99,
+   "author": "晁補之",
+   "title": "憶少年",
+   "first_line": "無窮官柳無情畫舸無根行客",
+   "source": "zzm/1kffh2jb3a0ii"
+  },
+  {
+   "no": 100,
+   "author": "晁補之",
+   "title": "洞仙歌",
+   "first_line": "泗州中秋作青煙冪處碧海飛",
+   "source": "zzm/1kffh2jb3ad5m"
+  },
+  {
+   "no": 101,
+   "author": "晁沖之",
+   "title": "臨江仙",
+   "first_line": "憶昔西池池上飮年年多少歡",
+   "source": "zzm/1kffh2jb3apsq"
+  },
+  {
+   "no": 102,
+   "author": "舒亶",
+   "title": "虞美人",
+   "first_line": "芙蓉落盡天涵水日暮滄波起",
+   "source": "zzm/1kffh2jb3bf2y"
+  },
+  {
+   "no": 103,
+   "author": "朱服",
+   "title": "漁家傲",
+   "first_line": "小雨纖纖風細細萬家楊柳青",
+   "source": "zzm/1kffh2jb3c4d6"
+  },
+  {
+   "no": 104,
+   "author": "毛滂",
+   "title": "惜分飛",
+   "first_line": "淚溼闌干花著露愁到眉峰碧",
+   "source": "zzm/1kffh2jb3ctne"
+  },
+  {
+   "no": 105,
+   "author": "陳克",
+   "title": "菩薩蠻",
+   "first_line": "赤闌橋盡香街直籠街細柳嬌",
+   "source": "zzm/1kffh2jb3dixm"
+  },
+  {
+   "no": 106,
+   "author": "陳克",
+   "title": "菩薩蠻",
+   "first_line": "緑蕪牆繞青苔院中庭日淡芭",
+   "source": "zzm/1kffh2jb3e87u"
+  },
+  {
+   "no": 107,
+   "author": "李元膺",
+   "title": "洞仙歌",
+   "first_line": "雪雲散盡放曉晴庭院楊柳於",
+   "source": "zzm/1kffh2jb3ekuy"
+  },
+  {
+   "no": 108,
+   "author": "時彦",
+   "title": "青門飮",
+   "first_line": "胡馬嘶風漢旗翻雪彤雲又吐",
+   "source": "zzm/1kffh2jb3fa56"
+  },
+  {
+   "no": 109,
+   "author": "李之儀",
+   "title": "謝池春",
+   "first_line": "殘寒消盡疏雨過清明後花徑",
+   "source": "zzm/1kffh2jb88rad"
+  },
+  {
+   "no": 110,
+   "author": "李之儀",
+   "title": "卜算子",
+   "first_line": "我住長江頭君住長江尾曰日",
+   "source": "zzm/1kffh2jb89gkl"
+  },
+  {
+   "no": 111,
+   "author": "周邦彦",
+   "title": "瑞龍吟",
+   "first_line": "章臺路還見褪粉梅梢試花桃",
+   "source": "zzm/1kffh2jb89t7p"
+  },
+  {
+   "no": 112,
+   "author": "周邦彦",
+   "title": "風流子",
+   "first_line": "新綠小池塘風簾動醉影舞斜",
+   "source": "zzm/1kffh2jb8aihx"
+  },
+  {
+   "no": 113,
+   "author": "周邦彦",
+   "title": "蘭陵王",
+   "first_line": "柳陰直煙裏絲絲弄碧隋隄上",
+   "source": "zzm/1kffh2jb8av51"
+  },
+  {
+   "no": 114,
+   "author": "周邦彦",
+   "title": "瑣窗寒",
+   "first_line": "喑柳啼鴉單衣佇立小簾朱户",
+   "source": "zzm/1kffh2jb8b7s5"
+  },
+  {
+   "no": 115,
+   "author": "周邦彦",
+   "title": "六醜",
+   "first_line": "正單衣試酒悵客裏光陰虚擲",
+   "source": "zzm/1kffh2jb8bkf9"
+  },
+  {
+   "no": 116,
+   "author": "周邦彦",
+   "title": "夜飛鵲",
+   "first_line": "河橋送人處涼夜何其斜月遠",
+   "source": "zzm/1kffh2jb8bx2d"
+  },
+  {
+   "no": 117,
+   "author": "周邦彦",
+   "title": "滿庭芳",
+   "first_line": "風老鶯雛雨肥梅子午陰嘉樹",
+   "source": "zzm/1kffh2jb8c9ph"
+  },
+  {
+   "no": 118,
+   "author": "周邦彦",
+   "title": "過秦樓",
+   "first_line": "水浴清蟾葉喧涼吹巷陌馬聲",
+   "source": "zzm/1kffh2jb8cmcl"
+  },
+  {
+   "no": 119,
+   "author": "周邦彦",
+   "title": "花犯",
+   "first_line": "粉牆低照眼依然舊風味露痕",
+   "source": "zzm/1kffh2jb8cyzp"
+  },
+  {
+   "no": 120,
+   "author": "周邦彦",
+   "title": "大酺",
+   "first_line": "對宿煙收春禽静飛雨時鳴高",
+   "source": "zzm/1kffh2jb8dbmt"
+  },
+  {
+   "no": 121,
+   "author": "周邦彦",
+   "title": "解語花",
+   "first_line": "風消燄攛露浥烘鑪花市光相",
+   "source": "zzm/1kffh2jb8do9x"
+  },
+  {
+   "no": 122,
+   "author": "周邦彦",
+   "title": "定風波",
+   "first_line": "莫倚能歌斂黛眉此歌能有幾",
+   "source": "zzm/1kffh2jb8e0x1"
+  },
+  {
+   "no": 123,
+   "author": "周邦彦",
+   "title": "蝶戀花",
+   "first_line": "月皎驚烏栖不定更漏將闌轣",
+   "source": "zzm/1kffh2jb8edk5"
+  },
+  {
+   "no": 124,
+   "author": "周邦彦",
+   "title": "解連環",
+   "first_line": "怨懷無託嗟情人斷絶信音遼",
+   "source": "zzm/1kffh2jb8eq79"
+  },
+  {
+   "no": 125,
+   "author": "周邦彦",
+   "title": "拜星月慢",
+   "first_line": "夜色催更清塵收露小曲幽坊",
+   "source": "zzm/1kffh2jb8f2ud"
+  },
+  {
+   "no": 126,
+   "author": "周邦彦",
+   "title": "關河令",
+   "first_line": "秋陰時晴漸向暝變一庭淒冷",
+   "source": "zzm/1kffh2jb8ffhh"
+  },
+  {
+   "no": 127,
+   "author": "周邦彦",
+   "title": "綺寮怨",
+   "first_line": "上馬人扶殘醉曉風吹未醒映",
+   "source": "zzm/1kffh2jbaqnmu"
+  },
+  {
+   "no": 128,
+   "author": "周邦彦",
+   "title": "尉遲杯",
+   "first_line": "隋隄路漸日晚密靄生煙樹陰",
+   "source": "zzm/1kffh2jbar09y"
+  },
+  {
+   "no": 129,
+   "author": "周邦彦",
+   "title": "西河",
+   "first_line": "佳麗地南朝盛事誰記山圍故",
+   "source": "zzm/1kffh2jbarcx2"
+  },
+  {
+   "no": 130,
+   "author": "賀鑄",
+   "title": "更漏子",
+   "first_line": "上東門門外柳贈别每煩纖手",
+   "source": "zzm/1kffh2jbat44m?version=1"
+  },
+  {
+   "no": 131,
+   "author": "賀鑄",
+   "title": "青玉案",
+   "first_line": "淩波不過横塘路但目送芳塵",
+   "source": "zzm/1kffh2jbatteu?version=1"
+  },
+  {
+   "no": 132,
+   "author": "賀鑄",
+   "title": "感皇恩",
+   "first_line": "蘭芷滿汀洲游絲横路羅襪塵",
+   "source": "zzm/1kffh2jbau61y?version=1"
+  },
+  {
+   "no": 133,
+   "author": "賀鑄",
+   "title": "薄倖",
+   "first_line": "淡妝多熊更的的頻回眄睞便",
+   "source": "zzm/1kffh2jbauip2?version=1"
+  },
+  {
+   "no": 134,
+   "author": "賀鑄",
+   "title": "浣溪沙",
+   "first_line": "不信芳春厭老人老人幾度送",
+   "source": "zzm/1kffh2jbauvc6?version=1"
+  },
+  {
+   "no": 135,
+   "author": "賀鑄",
+   "title": "浣溪沙",
+   "first_line": "樓角初消一縷霞淡黃楊柳暗",
+   "source": "zzm/1kffh2jbav7za?version=1"
+  },
+  {
+   "no": 136,
+   "author": "賀鑄",
+   "title": "石州慢",
+   "first_line": "薄雨收寒斜照弄晴春意空闊",
+   "source": "zzm/1kffh2jbavkme?version=1"
+  },
+  {
+   "no": 137,
+   "author": "賀鑄",
+   "title": "蝶戀花",
+   "first_line": "幾許傷春春復暮楊柳清陰偏",
+   "source": "zzm/1kffh2jbavx9i?version=1"
+  },
+  {
+   "no": 138,
+   "author": "賀鑄",
+   "title": "天門謠",
+   "first_line": "牛渚天門險限南北七雄豪占",
+   "source": "zzm/1kffh2jbaw9wm?version=1"
+  },
+  {
+   "no": 139,
+   "author": "賀鑄",
+   "title": "天香",
+   "first_line": "煙絡橫林山沈遠照邐池黃昏",
+   "source": "zzm/1kffh2jbawmjq?version=1"
+  },
+  {
+   "no": 140,
+   "author": "賀鑄",
+   "title": "望湘人",
+   "first_line": "厭鶯聲到枕花氣動簾醉魂愁",
+   "source": "zzm/1kffh2jbawz6u?version=1"
+  },
+  {
+   "no": 141,
+   "author": "賀鑄",
+   "title": "緣頭鴨",
+   "first_line": "玉人家畫樓珠箔臨津託微風",
+   "source": "zzm/1kffh2jbaxbty?version=1"
+  },
+  {
+   "no": 142,
+   "author": "張元幹",
+   "title": "石州慢",
+   "first_line": "寒水依痕春意漸回沙際煙闊",
+   "source": "zzm/1kffh2jbaxoh2?version=1"
+  },
+  {
+   "no": 143,
+   "author": "張元幹",
+   "title": "蘭陵王",
+   "first_line": "捲珠箔朝兩輕陰乍閣闌干外",
+   "source": "zzm/1kffh2jbaydra?version=1"
+  },
+  {
+   "no": 144,
+   "author": "葉夢得",
+   "title": "賀新郎",
+   "first_line": "睡起流鶯語掩蒼答房櫳向晚",
+   "source": "zzm/1kffh2jbayqee?version=1"
+  },
+  {
+   "no": 145,
+   "author": "葉夢得",
+   "title": "虞美人",
+   "first_line": "落花已作風前舞又送黃昏雨",
+   "source": "zzm/1kffh2jbazfom?version=1"
+  },
+  {
+   "no": 146,
+   "author": "汪藻",
+   "title": "點絳脣",
+   "first_line": "新月娟小夜寒江靜山銜斗起",
+   "source": "zzm/1kffh2jbazsbq?version=1"
+  },
+  {
+   "no": 147,
+   "author": "劉一止",
+   "title": "喜遷鶯",
+   "first_line": "曉光催角聽宿鳥未驚鄰雞先",
+   "source": "zzm/1kffh2jbb0hly?version=1"
+  },
+  {
+   "no": 148,
+   "author": "韓疁",
+   "title": "高陽臺",
+   "first_line": "頻聽銀籤重然絳蠟年華衮衮",
+   "source": "zzm/1kffh2jbb16w6?version=1"
+  },
+  {
+   "no": 149,
+   "author": "李邴",
+   "title": "漢宮春",
+   "first_line": "瀟灑江梅向竹梢疏處橫兩三",
+   "source": "zzm/1kffh2jbb1w6e?version=1"
+  },
+  {
+   "no": 150,
+   "author": "陳與義",
+   "title": "臨江仙",
+   "first_line": "高咏楚詞酬午日天涯節序悤",
+   "source": "zzm/1kffh2jbb2lgm?version=1"
+  },
+  {
+   "no": 151,
+   "author": "陳與義",
+   "title": "臨江仙",
+   "first_line": "憶昔午橋橋上飮坐中多是豪",
+   "source": "zzm/1kffh2jbb3aqu?version=1"
+  },
+  {
+   "no": 152,
+   "author": "蔡伸",
+   "title": "蘇武慢",
+   "first_line": "雁落平沙煙籠寒水古壘鳴笳",
+   "source": "zzm/1kffh2jbb3ndy?version=1"
+  },
+  {
+   "no": 153,
+   "author": "蔡伸",
+   "title": "柳梢青",
+   "first_line": "數聲鶗鴂可憐又是春歸時節",
+   "source": "zzm/1kffh2jbb4co6?version=1"
+  },
+  {
+   "no": 154,
+   "author": "周紫芝",
+   "title": "鷓鴣天",
+   "first_line": "一點殘釭欲盡時乍涼秋氣滿",
+   "source": "zzm/1kffh2jbgpkiu?version=1"
+  },
+  {
+   "no": 155,
+   "author": "周紫芝",
+   "title": "踏莎行",
+   "first_line": "情似游絲人如飛絮淚珠閣定",
+   "source": "zzm/1kffh2jbgq9t2?version=1"
+  },
+  {
+   "no": 156,
+   "author": "李甲",
+   "title": "帝臺春",
+   "first_line": "芳草碧色萋萋徧南陌暖絮亂",
+   "source": "zzm/1kffh2jbgqmg6?version=1"
+  },
+  {
+   "no": 157,
+   "author": "李甲",
+   "title": "憶王孫",
+   "first_line": "萋萋芳草憶王孫柳外樓高空",
+   "source": "zzm/1kffh2jbgrbqe?version=1"
+  },
+  {
+   "no": 158,
+   "author": "万俟咏",
+   "title": "三臺",
+   "first_line": "見梨花初帶夜月海棠半含朝",
+   "source": "zzm/1kffh2jbgrodi?version=1"
+  },
+  {
+   "no": 159,
+   "author": "徐伸",
+   "title": "二郎神",
+   "first_line": "悶來彈鵲又攪碎一簾花影漫",
+   "source": "zzm/1kffh2jbgsdnq?version=1"
+  },
+  {
+   "no": 160,
+   "author": "田爲",
+   "title": "江神子慢",
+   "first_line": "玉臺挂秋月鉛素淺梅花傅香",
+   "source": "zzm/1kffh2jbgt2xy?version=1"
+  },
+  {
+   "no": 161,
+   "author": "曹組",
+   "title": "驀山溪",
+   "first_line": "洗妝真熊不作鉛華御竹外三",
+   "source": "zzm/1kffh2jbgts86?version=1"
+  },
+  {
+   "no": 162,
+   "author": "李玉",
+   "title": "賀新郎",
+   "first_line": "篆縷消金鼎醉沈沈庭陰轉午",
+   "source": "zzm/1kffh2jbguhie?version=1"
+  },
+  {
+   "no": 163,
+   "author": "廖世美",
+   "title": "燭影摇紅",
+   "first_line": "靄靄春空畫樓森聳淩雲渚紫",
+   "source": "zzm/1kffh2jbgv6sm?version=1"
+  },
+  {
+   "no": 164,
+   "author": "呂濱",
+   "title": "老薄倖",
+   "first_line": "青樓春晚晝寂寂梳匀又懶怎",
+   "source": "zzm/1kffh2jbgvw2u?version=1"
+  },
+  {
+   "no": 165,
+   "author": "查荎",
+   "title": "透碧霄",
+   "first_line": "檥蘭舟十分端是載離愁練波",
+   "source": "zzm/1kffh2jbkq90b?version=1"
+  },
+  {
+   "no": 166,
+   "author": "魯逸仲",
+   "title": "南浦",
+   "first_line": "風悲畫角聽單于三弄落譙門",
+   "source": "zzm/1kffh2jbkqyaj?version=1"
+  },
+  {
+   "no": 167,
+   "author": "岳飛",
+   "title": "滿江紅",
+   "first_line": "怒髮衝冠憑闌處瀟瀟雨歇擡",
+   "source": "zzm/1kffh2jbkrnkr?version=1"
+  },
+  {
+   "no": 168,
+   "author": "張掄",
+   "title": "燭影摇紅",
+   "first_line": "雙闕中天鳳樓十二春寒淺去",
+   "source": "zzm/1kffh2jbkscuz?version=1"
+  },
+  {
+   "no": 169,
+   "author": "程垓",
+   "title": "水龍吟",
+   "first_line": "夜來風雨悤悤故園定是花無",
+   "source": "zzm/1kffh2jbkt257?version=1"
+  },
+  {
+   "no": 170,
+   "author": "張孝祥",
+   "title": "六州歌頭",
+   "first_line": "長淮望斷關塞莽然平征塵喑",
+   "source": "zzm/1kffh2jbktrff?version=1"
+  },
+  {
+   "no": 171,
+   "author": "韓元吉",
+   "title": "六州歌頭",
+   "first_line": "東風著意先上小桃枝紅粉膩",
+   "source": "zzm/1kffh2jbkugpn?version=1"
+  },
+  {
+   "no": 172,
+   "author": "韓元吉",
+   "title": "好事近",
+   "first_line": "凝碧舊池頭一聽管絲淒切多",
+   "source": "zzm/1kffh2jbkv5zv?version=1"
+  },
+  {
+   "no": 173,
+   "author": "袁去華",
+   "title": "瑞鶴仙",
+   "first_line": "郊原初過雨見數葉零亂風定",
+   "source": "zzm/1kffh2jbkvimz?version=1"
+  },
+  {
+   "no": 174,
+   "author": "袁去華",
+   "title": "劍器近",
+   "first_line": "夜來雨賴倩得東風吹住海棠",
+   "source": "zzm/1kffh2jbkw7x7?version=1"
+  },
+  {
+   "no": 175,
+   "author": "袁去華",
+   "title": "安公子",
+   "first_line": "弱柳干絲縷嫩黃匀徧鴉啼處",
+   "source": "zzm/1kffh2jbkwkkb?version=1"
+  },
+  {
+   "no": 176,
+   "author": "陸淞",
+   "title": "瑞鶴仙",
+   "first_line": "臉霞紅印枕睡覺來冠兒還是",
+   "source": "zzm/1kffh2jbkwx7f?version=1"
+  },
+  {
+   "no": 177,
+   "author": "陸游",
+   "title": "卜算子",
+   "first_line": "驛外斷橋邊寂寞開無主已是",
+   "source": "zzm/1kffh2jbkqlne?version=1"
+  },
+  {
+   "no": 178,
+   "author": "陸游",
+   "title": "漁家傲",
+   "first_line": "東望山陰何處是往來一萬三",
+   "source": "zzm/1kffh2jbkraxm?version=1"
+  },
+  {
+   "no": 179,
+   "author": "陸游",
+   "title": "定風波",
+   "first_line": "敧帽垂鞭送客回小橋流水一",
+   "source": "zzm/1kffh2jbkrnkq?version=1"
+  },
+  {
+   "no": 180,
+   "author": "陳亮",
+   "title": "水龍吟",
+   "first_line": "鬧花深處樓臺畫簾半捲東風",
+   "source": "zzm/1kffh2jbks07u?version=1"
+  },
+  {
+   "no": 181,
+   "author": "范成大",
+   "title": "憶秦娥",
+   "first_line": "樓陰缺闌干影臥東廂月東廂",
+   "source": "zzm/1kffh2jbkspi2?version=1"
+  },
+  {
+   "no": 182,
+   "author": "范成大",
+   "title": "霜天曉角",
+   "first_line": "晚嗜風歇一夜春威折脉脉花",
+   "source": "zzm/1kffh2jbktesa?version=1"
+  },
+  {
+   "no": 183,
+   "author": "范成大",
+   "title": "好事近",
+   "first_line": "日日惜春殘春去更無明巳擬",
+   "source": "zzm/1kffh2jbktrfe?version=1"
+  },
+  {
+   "no": 184,
+   "author": "辛棄疾",
+   "title": "賀新郎",
+   "first_line": "緑樹聽鵜鴂更那堪鷓鴣聲住",
+   "source": "zzm/1kffh2jbku42i?version=1"
+  },
+  {
+   "no": 185,
+   "author": "辛棄疾",
+   "title": "賀新郎",
+   "first_line": "鳳尾龍香撥自開元霓裳曲罷",
+   "source": "zzm/1kffh2jbkutcq?version=1"
+  },
+  {
+   "no": 186,
+   "author": "辛棄疾",
+   "title": "水龍吟",
+   "first_line": "楚天干里清秋水隨天去秋無",
+   "source": "zzm/1kffh2jbkv5zu?version=1"
+  },
+  {
+   "no": 187,
+   "author": "辛棄疾",
+   "title": "摸魚兒",
+   "first_line": "更能消幾番風雨悤悤春又歸",
+   "source": "zzm/1kffh2jbkvimy?version=1"
+  },
+  {
+   "no": 188,
+   "author": "辛棄疾",
+   "title": "永遇樂",
+   "first_line": "千古江山英雄無覓孫仲謀處",
+   "source": "zzm/1kffh2jbkvva2?version=1"
+  },
+  {
+   "no": 189,
+   "author": "辛棄疾",
+   "title": "木蘭花慢",
+   "first_line": "老來情味減對别酒怯流年况",
+   "source": "zzm/1kffh2jbkw7x6?version=1"
+  },
+  {
+   "no": 190,
+   "author": "辛棄疾",
+   "title": "祝英臺近",
+   "first_line": "寶釵分桃葉渡煙柳暗南浦怕",
+   "source": "zzm/1kffh2jbkwkka?version=1"
+  },
+  {
+   "no": 191,
+   "author": "辛棄疾",
+   "title": "青玉案",
+   "first_line": "東風夜放花千樹更吹落星如",
+   "source": "zzm/1kffh2jbkwx7e?version=1"
+  },
+  {
+   "no": 192,
+   "author": "辛棄疾",
+   "title": "鷓鴣天",
+   "first_line": "枕簟溪堂冷欲秋斷雲依水晚",
+   "source": "zzm/1kffh2jbn85c9?version=1"
+  },
+  {
+   "no": 193,
+   "author": "辛棄疾",
+   "title": "菩薩蠻",
+   "first_line": "鬱孤臺下清江水中閒多少行",
+   "source": "zzm/1kffh2jbn8hzd?version=1"
+  },
+  {
+   "no": 194,
+   "author": "姜夔",
+   "title": "點絳脣",
+   "first_line": "雁燕無心太湖西畔隨雲去數",
+   "source": "zzm/1kffh2jbn8umh?version=1"
+  },
+  {
+   "no": 195,
+   "author": "姜夔",
+   "title": "鷓鴣天",
+   "first_line": "肥水東流無盡期當初不合種",
+   "source": "zzm/1kffh2jbn9jwp?version=1"
+  },
+  {
+   "no": 196,
+   "author": "姜夔",
+   "title": "踏莎行",
+   "first_line": "燕燕輕盈鶯鶯嬌軟分明又向",
+   "source": "zzm/1kffh2jbn9wjt?version=1"
+  },
+  {
+   "no": 197,
+   "author": "姜夔",
+   "title": "慶宮春",
+   "first_line": "雙槳蓴波一蓑松雨暮愁漸滿",
+   "source": "zzm/1kffh2jbna96x?version=1"
+  },
+  {
+   "no": 198,
+   "author": "姜夔",
+   "title": "齊天樂",
+   "first_line": "庾郎先自吟愁賦淒淒更聞私",
+   "source": "zzm/1kffh2jbnalu1?version=1"
+  },
+  {
+   "no": 199,
+   "author": "姜夔",
+   "title": "琵琶仙",
+   "first_line": "雙槳來時有人似舊曲桃根桃",
+   "source": "zzm/1kffh2jbnayh5?version=1"
+  },
+  {
+   "no": 200,
+   "author": "姜夔",
+   "title": "念奴嬌",
+   "first_line": "鬧紅一舸記來時嘗與鴛鴦爲",
+   "source": "zzm/1kffh2jbnbb49?version=1"
+  },
+  {
+   "no": 201,
+   "author": "姜夔",
+   "title": "揚州慢",
+   "first_line": "淮左名都竹西佳處解鞍少駐",
+   "source": "zzm/1kffh2jbnbnrd?version=1"
+  },
+  {
+   "no": 202,
+   "author": "姜夔",
+   "title": "長亭怨慢",
+   "first_line": "漸吹盡枝頭香絮是處人家綠",
+   "source": "zzm/1kffh2jbnc0eh?version=1"
+  },
+  {
+   "no": 203,
+   "author": "姜夔",
+   "title": "淡黄柳",
+   "first_line": "空城曉角吹入垂楊陌馬上單",
+   "source": "zzm/1kffh2jbncd1l?version=1"
+  },
+  {
+   "no": 204,
+   "author": "姜夔",
+   "title": "暗香",
+   "first_line": "舊時月色算幾番照我梅邊吹",
+   "source": "zzm/1kffh2jbncpop?version=1"
+  },
+  {
+   "no": 205,
+   "author": "姜夔",
+   "title": "疏影",
+   "first_line": "苔枝綴玉有翠禽小小枝上同",
+   "source": "zzm/1kffh2jbnd2bt?version=1"
+  },
+  {
+   "no": 206,
+   "author": "姜夔",
+   "title": "翠樓吟",
+   "first_line": "月落龍沙塵清虎落今年漢酺",
+   "source": "zzm/1kffh2jbndeyx?version=1"
+  },
+  {
+   "no": 207,
+   "author": "姜夔",
+   "title": "杏花天",
+   "first_line": "緑絲低拂鴛鴦浦想桃葉當時",
+   "source": "zzm/1kffh2jbndrm1?version=1"
+  },
+  {
+   "no": 208,
+   "author": "姜夔",
+   "title": "一萼紅",
+   "first_line": "古城陰有官梅幾許紅萼未宜",
+   "source": "zzm/1kffh2jbne495?version=1"
+  },
+  {
+   "no": 209,
+   "author": "姜夔",
+   "title": "霓裳中序第一",
+   "first_line": "亭皋正望極亂落江蓮歸未得",
+   "source": "zzm/1kffh2jbnegw9?version=1"
+  },
+  {
+   "no": 210,
+   "author": "章良能",
+   "title": "小重山",
+   "first_line": "柳暗花明春事深小闌紅芍藥",
+   "source": "zzm/1kffh2jbnetjd?version=1"
+  },
+  {
+   "no": 211,
+   "author": "劉過",
+   "title": "唐多令",
+   "first_line": "蘆葉滿汀洲寒沙帶淺流二十",
+   "source": "zzm/1kffh2jbpqecy?version=1"
+  },
+  {
+   "no": 212,
+   "author": "嚴仁",
+   "title": "木蘭花",
+   "first_line": "春風只在園西畔薺榮花繁胡",
+   "source": "zzm/1kffh2jbpr3n6?version=1"
+  },
+  {
+   "no": 213,
+   "author": "俞國寶",
+   "title": "風人松",
+   "first_line": "一春長費買花錢日日醉湖邊",
+   "source": "zzm/1kffh2jbprsxe?version=1"
+  },
+  {
+   "no": 214,
+   "author": "張鎡",
+   "title": "滿庭芳",
+   "first_line": "月洗高梧露漙幽草寶釵樓外",
+   "source": "zzm/1kffh2jbpsi7m?version=1"
+  },
+  {
+   "no": 215,
+   "author": "張鎡",
+   "title": "宴山亭",
+   "first_line": "幽夢初回重陰未開曉色催成",
+   "source": "zzm/1kffh2jbpt7hu?version=1"
+  },
+  {
+   "no": 216,
+   "author": "史達祖",
+   "title": "綺羅香",
+   "first_line": "做冷欺花將煙困柳千里偷催",
+   "source": "zzm/1kffh2jbptk4y?version=1"
+  },
+  {
+   "no": 217,
+   "author": "史達祖",
+   "title": "雙雙燕",
+   "first_line": "過春社了度簾幕中閒去年塵",
+   "source": "zzm/1kffh2jbpu9f6?version=1"
+  },
+  {
+   "no": 218,
+   "author": "史達祖",
+   "title": "東風第一枝",
+   "first_line": "巧沁蘭心偷黏草甲東風欲障",
+   "source": "zzm/1kffh2jbpum2a?version=1"
+  },
+  {
+   "no": 219,
+   "author": "史達祖",
+   "title": "喜遷鶯",
+   "first_line": "月波疑滴望玉壺天近了無塵",
+   "source": "zzm/1kffh2jbpuype?version=1"
+  },
+  {
+   "no": 220,
+   "author": "史達祖",
+   "title": "三姝媚",
+   "first_line": "煙光摇縹瓦望晴檐多風柳花",
+   "source": "zzm/1kffh2jbpvbci?version=1"
+  },
+  {
+   "no": 221,
+   "author": "史達祖",
+   "title": "秋霽",
+   "first_line": "江水蒼蒼望倦柳愁荷共感秋",
+   "source": "zzm/1kffh2jbpvnzm?version=1"
+  },
+  {
+   "no": 222,
+   "author": "史達祖",
+   "title": "夜合花",
+   "first_line": "柳鎖鶯魂花翻蝶夢自知愁染",
+   "source": "zzm/1kffh2jbpw0mq?version=1"
+  },
+  {
+   "no": 223,
+   "author": "史達祖",
+   "title": "玉胡蝶",
+   "first_line": "晚雨未摧宮樹可憐閒葉猶抱",
+   "source": "zzm/1kffh2jbpwd9u?version=1"
+  },
+  {
+   "no": 224,
+   "author": "史達祖",
+   "title": "八歸",
+   "first_line": "秋江帶雨寒沙縈水人瞰畫閣",
+   "source": "zzm/1kffh2jbpwpwy?version=1"
+  },
+  {
+   "no": 225,
+   "author": "劉克莊",
+   "title": "生查子",
+   "first_line": "繁燈奪霽華戲鼓侵明發物色",
+   "source": "zzm/1kffh2jbs7y1x?version=1"
+  },
+  {
+   "no": 226,
+   "author": "劉克莊",
+   "title": "賀新郎",
+   "first_line": "深院榴花吐畫簾開練衣紈扇",
+   "source": "zzm/1kffh2jbs8nc5?version=1"
+  },
+  {
+   "no": 227,
+   "author": "劉克莊",
+   "title": "賀新郎",
+   "first_line": "湛湛長空黑更那堪斜風細雨",
+   "source": "zzm/1kffh2jbs8zz9?version=1"
+  },
+  {
+   "no": 228,
+   "author": "劉克莊",
+   "title": "木蘭花",
+   "first_line": "年年躍馬長安市客舍似家家",
+   "source": "zzm/1kffh2jbs9cmd?version=1"
+  },
+  {
+   "no": 229,
+   "author": "盧祖皋",
+   "title": "江城子",
+   "first_line": "畫樓簾幕捲新晴掩銀屏曉寒",
+   "source": "zzm/1kffh2jbs9p9h?version=1"
+  },
+  {
+   "no": 230,
+   "author": "盧祖皋",
+   "title": "宴清都",
+   "first_line": "春訊飛瓊管風日薄度牆啼鳥",
+   "source": "zzm/1kffh2jbsaejp?version=1"
+  },
+  {
+   "no": 231,
+   "author": "潘牥",
+   "title": "南鄉子",
+   "first_line": "生怕倚闌干閣下溪聲閣外山",
+   "source": "zzm/1kffh2jbsar6t?version=1"
+  },
+  {
+   "no": 232,
+   "author": "陸叡",
+   "title": "溼雲黏",
+   "first_line": "雁影望征路愁迷離緒難整千",
+   "source": "zzm/1kffh2jbsbgh1?version=1"
+  },
+  {
+   "no": 233,
+   "author": "蕭泰來",
+   "title": "霜天曉角",
+   "first_line": "千霜萬雪受盡寒磨折賴是生",
+   "source": "zzm/1kffh2jbsc5r9?version=1"
+  },
+  {
+   "no": 234,
+   "author": "吳文英",
+   "title": "霜葉飛",
+   "first_line": "斷煙離緒關心事斜陽紅隱霜",
+   "source": "zzm/1kffh2jbscv1h?version=1"
+  },
+  {
+   "no": 235,
+   "author": "吳文英",
+   "title": "宴清都",
+   "first_line": "繡幄駕鴦柱紅情密膩雲低護",
+   "source": "zzm/1kffh2jbsdkbp?version=1"
+  },
+  {
+   "no": 236,
+   "author": "吳文英",
+   "title": "齊天樂",
+   "first_line": "煙波桃葉西陵路十年斷魂潮",
+   "source": "zzm/1kffh2jbsdwyt?version=1"
+  },
+  {
+   "no": 237,
+   "author": "吳文英",
+   "title": "花犯",
+   "first_line": "小娉婷清鉛素靨蜂黄暗偷暈",
+   "source": "zzm/1kffh2jbse9lx?version=1"
+  },
+  {
+   "no": 238,
+   "author": "吳文英",
+   "title": "浣溪沙",
+   "first_line": "門隔花深夢舊游夕陽無語燕",
+   "source": "zzm/1kffh2jbsem91?version=1"
+  },
+  {
+   "no": 239,
+   "author": "吳文英",
+   "title": "浣溪沙",
+   "first_line": "波面銅花冷不收玉人垂釣理",
+   "source": "zzm/1kffh2jbupudm?version=1"
+  },
+  {
+   "no": 240,
+   "author": "吳文英",
+   "title": "點絳脣",
+   "first_line": "捲盡愁雲素娥臨夜新梳洗暗",
+   "source": "zzm/1kffh2jbuq70q?version=1"
+  },
+  {
+   "no": 241,
+   "author": "吳文英",
+   "title": "祝英臺近",
+   "first_line": "釆幽香巡古苑竹冷翠微路鬥",
+   "source": "zzm/1kffh2jbuqjnu?version=1"
+  },
+  {
+   "no": 242,
+   "author": "吳文英",
+   "title": "祝英臺近",
+   "first_line": "翦紅情裁綠意花信上釵股殘",
+   "source": "zzm/1kffh2jbuqway?version=1"
+  },
+  {
+   "no": 243,
+   "author": "吳文英",
+   "title": "澡蘭香",
+   "first_line": "盤絲繫腕巧篆垂簪玉隱紺紗",
+   "source": "zzm/1kffh2jbur8y2?version=1"
+  },
+  {
+   "no": 244,
+   "author": "吳文英",
+   "title": "風入松",
+   "first_line": "聽風聽雨過清明愁草瘞花銘",
+   "source": "zzm/1kffh2jburll6?version=1"
+  },
+  {
+   "no": 245,
+   "author": "吳文英",
+   "title": "鶯啼序",
+   "first_line": "殘寒正欺病酒掩沈香繡户燕",
+   "source": "zzm/1kffh2jbury8a?version=1"
+  },
+  {
+   "no": 246,
+   "author": "吳文英",
+   "title": "惜黃花",
+   "first_line": "送客吳皋正試霜夜冷楓落長",
+   "source": "zzm/1kffh2jbusave?version=1"
+  },
+  {
+   "no": 247,
+   "author": "吳文英",
+   "title": "高陽臺",
+   "first_line": "宮粉雕痕仙雲墮影無人野水",
+   "source": "zzm/1kffh2jbusnii?version=1"
+  },
+  {
+   "no": 248,
+   "author": "吳文英",
+   "title": "高陽臺",
+   "first_line": "修竹凝狀垂楊駐馬憑闌淺畫",
+   "source": "zzm/1kffh2jbut05m?version=1"
+  },
+  {
+   "no": 249,
+   "author": "吳文英",
+   "title": "三姝媚",
+   "first_line": "湖山經醉慣漬春衫啼痕酒痕",
+   "source": "zzm/1kffh2jbutcsq?version=1"
+  },
+  {
+   "no": 250,
+   "author": "吳文英",
+   "title": "八聲甘州",
+   "first_line": "渺空煙四遠是何年青天墜長",
+   "source": "zzm/1kffh2jbutpfu?version=1"
+  },
+  {
+   "no": 251,
+   "author": "吳文英",
+   "title": "踏莎行",
+   "first_line": "潤玉籠綃檀櫻倚扇繡圈猶帶",
+   "source": "zzm/1kffh2jbuu22y?version=1"
+  },
+  {
+   "no": 252,
+   "author": "吳文英",
+   "title": "瑞鶴仙",
+   "first_line": "晴絲牽緒亂對滄江斜日花飛",
+   "source": "zzm/1kffh2jbuueq2?version=1"
+  },
+  {
+   "no": 253,
+   "author": "吳文英",
+   "title": "鷓鴣天",
+   "first_line": "池上紅衣伴倚闌栖鴉常帶夕",
+   "source": "zzm/1kffh2jbuurd6?version=1"
+  },
+  {
+   "no": 254,
+   "author": "吳文英",
+   "title": "夜游宮",
+   "first_line": "人去西樓雁查敘别夢揚州一",
+   "source": "zzm/1kffh2jbuv40a?version=1"
+  },
+  {
+   "no": 255,
+   "author": "吳文英",
+   "title": "青玉案",
+   "first_line": "新腔一唱雙金十正霜落分柑",
+   "source": "zzm/1kffh2jbuvgne?version=1"
+  },
+  {
+   "no": 256,
+   "author": "吳文英",
+   "title": "賀新郎",
+   "first_line": "喬木生雲氣訪中興英雄陳迹",
+   "source": "zzm/1kffh2jbuvtai?version=1"
+  },
+  {
+   "no": 257,
+   "author": "吳文英",
+   "title": "唐多令",
+   "first_line": "何處合成愁離人心上秋縱芭",
+   "source": "zzm/1kffh2jbuw5xm?version=1"
+  },
+  {
+   "no": 258,
+   "author": "黃孝邁",
+   "title": "湘春夜月",
+   "first_line": "近清明翠禽枝上消魂可惜一",
+   "source": "zzm/1kffh2jbuwikq?version=1"
+  },
+  {
+   "no": 259,
+   "author": "潘希白",
+   "title": "大有",
+   "first_line": "戲馬壹前采花籬下問歲軺還",
+   "source": "zzm/1kffh2jbx83d6?version=1"
+  },
+  {
+   "no": 260,
+   "author": "黃公紹",
+   "title": "青玉案",
+   "first_line": "年年社日停針練怎忍見雙飛",
+   "source": "zzm/1kffh2jbx8sne?version=1"
+  },
+  {
+   "no": 261,
+   "author": "朱嗣發",
+   "title": "摸魚兒",
+   "first_line": "對西風鬢摇煙碧參差前事流",
+   "source": "zzm/1kffh2jbx9hxm?version=1"
+  },
+  {
+   "no": 262,
+   "author": "劉辰翁",
+   "title": "蘭陵王",
+   "first_line": "送春去春去人閒無路鞦韆外",
+   "source": "zzm/1kffh2jbxa77u?version=1"
+  },
+  {
+   "no": 263,
+   "author": "劉辰翁",
+   "title": "寶鼎現",
+   "first_line": "紅妝春騎踏月影竿旗穿市望",
+   "source": "zzm/1kffh2jbxawi2?version=1"
+  },
+  {
+   "no": 264,
+   "author": "劉辰翁",
+   "title": "永遇樂",
+   "first_line": "璧月初晴黛雲遠淡春事誰主",
+   "source": "zzm/1kffh2jbxb956?version=1"
+  },
+  {
+   "no": 265,
+   "author": "劉辰翁",
+   "title": "摸魚兒",
+   "first_line": "怎知他春歸何處相逢且盡尊",
+   "source": "zzm/1kffh2jbxblsa?version=1"
+  },
+  {
+   "no": 266,
+   "author": "周密",
+   "title": "瑶華",
+   "first_line": "朱鈿寶玦天上飛瓊比人閒春",
+   "source": "zzm/1kffh2jbxbyfe?version=1"
+  },
+  {
+   "no": 267,
+   "author": "周密",
+   "title": "玉京秋",
+   "first_line": "煙水闊高林弄殘照晚蜩淒切",
+   "source": "zzm/1kffh2jbxcnpm?version=1"
+  },
+  {
+   "no": 268,
+   "author": "周密",
+   "title": "曲游春",
+   "first_line": "禁苑東風外颺暖絲晴絮春思",
+   "source": "zzm/1kffh2jbxd0cq?version=1"
+  },
+  {
+   "no": 269,
+   "author": "周密",
+   "title": "花犯",
+   "first_line": "楚江湄湘娥再見無言灑清淚",
+   "source": "zzm/1kffh2jbxdczu?version=1"
+  },
+  {
+   "no": 270,
+   "author": "蔣捷",
+   "title": "賀新郎",
+   "first_line": "夢冷黃金屋歎秦箏斜鴻陣裏",
+   "source": "zzm/1kffh2jbxdpmy?version=1"
+  },
+  {
+   "no": 271,
+   "author": "王沂孫",
+   "title": "天香",
+   "first_line": "酬孤嶠蟠煙層濤蜕月驪宮夜",
+   "source": "zzm/1kffh2jbzrqx6?version=1"
+  },
+  {
+   "no": 272,
+   "author": "王沂孫",
+   "title": "眉嫵",
+   "first_line": "漸新痕懸柳淡彩穿花依約破",
+   "source": "zzm/1kffh2jbzsg7e?version=1"
+  },
+  {
+   "no": 273,
+   "author": "王沂孫",
+   "title": "齊天樂",
+   "first_line": "一襟餘恨宮魂斷年年翠陰庭",
+   "source": "zzm/1kffh2jbzssui?version=1"
+  },
+  {
+   "no": 274,
+   "author": "王沂孫",
+   "title": "高陽臺",
+   "first_line": "殘雪庭陰輕寒簾影霏霏玉管",
+   "source": "zzm/1kffh2jbzt5hm?version=1"
+  },
+  {
+   "no": 275,
+   "author": "王沂孫",
+   "title": "法曲獻仙音",
+   "first_line": "層綠峨峨纖瓊皎皎倒壓波痕",
+   "source": "zzm/1kffh2jbzti4q?version=1"
+  },
+  {
+   "no": 276,
+   "author": "彭元遜",
+   "title": "疏影",
+   "first_line": "江空不渡恨蘼蕪杜若零落無",
+   "source": "zzm/1kffh2jbzturu?version=1"
+  },
+  {
+   "no": 277,
+   "author": "彭元遜",
+   "title": "六醜",
+   "first_line": "似東風老大那復有當時風氣",
+   "source": "zzm/1kffh2jbzuk22?version=1"
+  },
+  {
+   "no": 278,
+   "author": "姚雲文",
+   "title": "紫萸香慢",
+   "first_line": "近重陽偏多風雨絶憐此日暄",
+   "source": "zzm/1kffh2jbzuwp6?version=1"
+  },
+  {
+   "no": 279,
+   "author": "僧揮",
+   "title": "金明池",
+   "first_line": "天闊雲高溪横水遠晚日寒生",
+   "source": "zzm/1kffh2jbzvlze?version=1"
+  },
+  {
+   "no": 280,
+   "author": "李清照",
+   "title": "如夢令",
+   "first_line": "昨夜雨疏風驟濃睡不消殘酒",
+   "source": "zzm/1kffh2jbzwb9m?version=1"
+  },
+  {
+   "no": 281,
+   "author": "李清照",
+   "title": "醉花陰",
+   "first_line": "薄霧濃雲愁永晝瑞腦消金獸",
+   "source": "zzm/1kffh2jbzpzq3?version=1"
+  },
+  {
+   "no": 282,
+   "author": "李清照",
+   "title": "聲聲慢",
+   "first_line": "尋尋覓覓冷冷清清",
+   "source": "zzm/1kffh2jbzqcd7?version=1",
+   "note": "抓取正文作「尋尋寬覓…」，宽/𩇕 为识典古籍 OCR 讹字，首句按通行本校正为 尋尋覓覓"
+  },
+  {
+   "no": 283,
+   "author": "李清照",
+   "title": "念奴嬌",
+   "first_line": "蕭條庭院有斜風細雨重門須",
+   "source": "zzm/1kffh2jbzqp0b?version=1"
+  },
+  {
+   "no": 284,
+   "author": "李清照",
+   "title": "永遇樂",
+   "first_line": "落日鎔金暮雲合璧人在何處",
+   "source": "zzm/1kffh2jbzr1nf?version=1"
+  }
+ ]
+}

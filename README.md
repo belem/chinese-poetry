@@ -37,6 +37,7 @@
 ### 工具与参与
 
 - [`scripts/check_structure.py`](scripts/check_structure.py)：全库质检（乱码、缺字、诗句与词牌字数异常），只报告不修改。
+- [`scripts/check_anthology.py`](scripts/check_anthology.py) + [`anthologies/`](anthologies/)：选本目次（目次取自识典古籍扫描本）与本库 tag 逐条对齐，报告混入 / 漏收 / 重覆，结果见 [`docs/选本对齐.tsv`](docs/选本对齐.tsv)，说明见 [`docs/选本对齐.md`](docs/选本对齐.md)。
 - [`scripts/twin_collate.py`](scripts/twin_collate.py)：选本（花间集、唐诗三百首、千家诗等）↔ 全唐诗 / 宋词 互校，一字之差以识典古籍判定，人工审核后写回；已审条目记在 [`docs/小合集互校.applied.json`](docs/小合集互校.applied.json)。
 - [`scripts/merge_anthologies.py`](scripts/merge_anthologies.py)：把唐诗选本并入全唐诗、删除重复（默认预演，`--apply` 写回）。
 - [`scripts/shidian.py`](scripts/shidian.py)：以识典古籍批量检索为证据，生成审核表，人工确认后写回。
