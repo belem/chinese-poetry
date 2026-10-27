@@ -19,7 +19,10 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 唐代/诗/全唐诗/（含 poet.song.* 即《全宋诗》）
 唐五代/词/五代诗词/{huajianji,nantang}
 宋代/{诗/古诗源·宋诗.json,词/宋词/,词/古诗源·宋词.json}
-元代/元曲/  清代/词/古诗源·清词.json  明代/（暂空）
+元代/元曲/yuanqu.json（元人诗词曲的唯一总集）
+明代/{诗/poet.ming.json,词/ci.ming.json}
+清代/{诗/poet.qing.json,词/{ci.qing.json,古诗源·清词.json}}
+历代/（周—清各代补录、经史子集篇目）  近现代诗/{现代诗.json,当代诗词.json}
 ```
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。

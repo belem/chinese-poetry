@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 全唐诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 516,
-    "reviewed": 692,
-    "clean": 483,
-    "fixed": 2,
-    "needs_review": 3,
+    "total_files": 520,
+    "reviewed": 396,
+    "clean": 373,
+    "fixed": 8,
+    "needs_review": 15,
     "out_of_scope": 204,
-    "in_scope_files": 516
+    "in_scope_files": 520
   },
   "reviewed": {
     "先秦汉魏晋南北朝/诗经/shijing.json": {
@@ -3953,6 +3953,102 @@
           "note": "与 先秦汉魏晋南北朝/楚辞/chuci.json 的《离骚》同篇，重复；本文件保留《文選》所收的屈宋骚类选篇"
         }
       ]
+    },
+    "_拆分明清总集：split_dynasty": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "scripts/split_dynasty.py：历代/ 按作者朝代拆出 明代/诗、明代/词、清代/诗、清代/词；元人 251 条追加进 元曲/yuanqu.json（已收的 4 条未搬）；近现代诗/ 里课本选录的明清作品归位，余下拆成 现代诗.json / 当代诗词.json。只核对朝代与体裁归属，正文未逐字对勘"
+    },
+    "历代/ci.0.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/ci.1.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/fu.0.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/other.0.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/poet.0.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/poet.1.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/wen.0.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/wen.1.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "历代/wen.2.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "明代/词/ci.ming.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "明代/诗/poet.ming.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "清代/词/ci.qing.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "清代/诗/poet.qing.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "近现代诗/当代诗词.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
+    },
+    "近现代诗/现代诗.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘"
     }
   }
 }

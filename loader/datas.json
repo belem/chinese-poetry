@@ -127,10 +127,34 @@
             "tag": "paragraphs"
         },
         "jinyuanxiandai": {
-            "name": "近现代诗",
+            "name": "近现代诗（现代诗、当代诗词）",
             "id": 21,
             "path": "近现代诗/",
             "excludes": [],
+            "tag": "paragraphs"
+        },
+        "ming": {
+            "name": "明诗",
+            "id": 23,
+            "path": "明代/诗/poet.ming.json",
+            "tag": "paragraphs"
+        },
+        "ming-ci": {
+            "name": "明词",
+            "id": 26,
+            "path": "明代/词/ci.ming.json",
+            "tag": "paragraphs"
+        },
+        "qing-shi": {
+            "name": "清诗",
+            "id": 24,
+            "path": "清代/诗/poet.qing.json",
+            "tag": "paragraphs"
+        },
+        "qing-ci": {
+            "name": "清词",
+            "id": 25,
+            "path": "清代/词/ci.qing.json",
             "tag": "paragraphs"
         },
         "songci300": {
