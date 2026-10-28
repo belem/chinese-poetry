@@ -123,9 +123,10 @@
         "yuefu-jis": {
             "name": "乐府诗集",
             "id": 14,
-            "path": "先秦/诗文总集/乐府诗集/",
+            "path": "汇编/诗文总集/乐府诗集/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "宋郭茂倩編，收漢魏至唐五代的樂府；跨代總集，2026-10 由 先秦/詩文總集/ 移到 汇编/"
         },
         "gushi-yuan": {
             "name": "古诗源",
@@ -185,9 +186,17 @@
         "wenxuan": {
             "name": "昭明文选",
             "id": 17,
-            "path": "先秦/诗文总集/昭明文选/",
+            "path": "汇编/诗文总集/昭明文选/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "《文選》三十卷，梁昭明太子編，收先秦至梁的詩文，以漢魏六朝為大宗；跨代總集，2026-10 與《樂府詩集》一同由 先秦/詩文總集/ 移到 汇编/"
+        },
+        "qianjiashi": {
+            "name": "千家詩",
+            "id": 28,
+            "path": "宋/诗/千家诗/qianjiashi.json",
+            "tag": "content",
+            "comments": "南宋謝枋得《重定千家詩》與明王相《五言千家詩》的合編本，收唐宋人詩，編定於南宋；原在 先秦/蒙学/qianjiashi.json，2026-10 歸宋"
         },
         "jinyuanxiandai": {
             "name": "现代诗",
