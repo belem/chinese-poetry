@@ -16,6 +16,7 @@
 用法：
   python3 scripts/check_structure.py --baseline scripts/check_baseline.json   # CI：乱码类数量不得增加
   python3 scripts/check_structure.py --write-baseline scripts/check_baseline.json   # 修复后更新基线
+  python3 scripts/check_structure.py --allow-fewer     # 允许检查项数量低于基线（默认不允许）
   python3 scripts/check_structure.py                 # 打印汇总
   python3 scripts/check_structure.py --out r.jsonl   # 同时输出逐条明细（JSON Lines）
   python3 scripts/check_structure.py --only ci_pattern --show 20
@@ -50,7 +51,8 @@ PUA = re.compile(r'[-]')
 SHI_PREFIX, CI_PREFIX = 'poet.', ('ci.',)   # 体裁看文件名前缀：poet.* 是诗，ci.* 是词；目录已按朝代分层，看不了目录名
 
 
-# 这些检查项一旦增加即视为退化（CI 失败）；缺字、字数异常等多为底本原貌，仅作提示
+# 历史口径：这八类是「一增加即退化」。2026-10 起 --baseline 对全部检查项做双向比对
+# （少报与多报都要管），这份名单只留作文档
 STRICT = ('bad_json', 'cyrillic_greek', 'kana_bopomofo', 'box_drawing', 'bare_pua', 'ascii_residue',
           'dup_punct', 'half_width_punct')
 
@@ -201,7 +203,10 @@ def main():
     ap.add_argument('--out', help='逐条明细输出路径（.jsonl）')
     ap.add_argument('--only', help='只显示某类检查')
     ap.add_argument('--show', type=int, default=5, help='每类展示的样例数')
-    ap.add_argument('--baseline', help='与基线比较：STRICT 类检查的数量若增加则以非零状态退出（用于 CI）')
+    ap.add_argument('--baseline', help='与基线比较：各类数量与基线不同即以非零状态退出（用于 CI）；'
+                                      '--allow-fewer 时只对增加报错')
+    ap.add_argument('--allow-fewer', action='store_true',
+                    help='与基线比较时允许数量低于基线（修复后没更新基线也不失败）')
     ap.add_argument('--write-baseline', help='把当前各类数量写为基线')
     args = ap.parse_args()
 
@@ -256,12 +261,20 @@ def main():
     if args.baseline:
         with open(args.baseline, encoding='utf-8') as fp:
             base = json.load(fp)
-        worse = {k: (base.get(k, 0), counts.get(k, 0)) for k in STRICT if counts.get(k, 0) > base.get(k, 0)}
+        worse = {k: (base.get(k, 0), counts.get(k, 0))
+                 for k in set(base) | set(counts) if counts.get(k, 0) > base.get(k, 0)}
         better = {k: (base.get(k, 0), counts.get(k, 0)) for k in base if counts.get(k, 0) < base[k]}
         if better:
-            print('\n已减少（可用 --write-baseline 更新基线）：' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items()))
+            print('\n已减少（请用 --write-baseline 写回基线）：' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items()))
         if worse:
             print('\n::error::以下检查项比基线增加，请修正后再提交：' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in worse.items()))
+            return 1
+        # 基线比实际松，新缺陷就能藏在差额里——2026-10 基线 ci_pattern 336、实际 337，
+        # 一路绿灯，直到有人拿全量比对才发现。所以数量下降也要求同步更新基线。
+        if better and not args.allow_fewer:
+            print('\n::error::检查项数量已低于基线（' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items())
+                  + '）。请用 --write-baseline 更新 scripts/check_baseline.json，'
+                    '否则基线比实际松，新增的同类问题不会让 CI 失败')
             return 1
         print('\n与基线比较：没有新增问题')
     return 0
