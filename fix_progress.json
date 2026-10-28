@@ -5,8 +5,8 @@
     "total_files": 872,
     "reviewed": 873,
     "clean": 347,
-    "fixed": 105,
-    "needs_review": 217,
+    "fixed": 104,
+    "needs_review": 218,
     "out_of_scope": 204,
     "in_scope_files": 669
   },
@@ -327,9 +327,9 @@
       "status": "fixed"
     },
     "先秦/文/zuozhuan.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "fixed"
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
+      "status": "needs_review"
     },
     "先秦/楚辞/chuci.json": {
       "date": "2026-10-06",
