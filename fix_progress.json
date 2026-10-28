@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 872,
-    "reviewed": 873,
+    "total_files": 875,
+    "reviewed": 876,
     "clean": 347,
     "fixed": 105,
-    "needs_review": 217,
+    "needs_review": 220,
     "out_of_scope": 204,
-    "in_scope_files": 669
+    "in_scope_files": 672
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -679,7 +679,7 @@
     "宋/宋词/ci.song.10000.json": {
       "date": "2026-11-01",
       "reviewer": "codebuddy",
-      "status": "fixed"
+      "status": "needs_review"
     },
     "宋/宋词/ci.song.11000.json": {
       "date": "2026-10-07",
@@ -3656,14 +3656,19 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "明/小说/陶庵梦忆/taoanzhmyi.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
     "明/词/ci.ming.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
     "明/诗/poet.ming.json": {
-      "date": "2026-10-30",
-      "reviewer": "CodeBuddy",
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "明/诗/古诗源·明诗.json": {
@@ -3774,7 +3779,7 @@
     "汇编/古文观止/古文观止·补.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "汇编/昭明文选/七.json": {
       "date": "2026-10-28",
@@ -4252,8 +4257,8 @@
       "status": "fixed"
     },
     "汇编/蒙学/wenzimengqiu.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
       "status": "fixed"
     },
     "汇编/蒙学/youxueqionglin.json": {
@@ -4336,6 +4341,16 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "清/小说/浮生六记/fushengliuji.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "清/小说/聊斋志异/liaozhaizhiyi.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
     "清/幽梦影/youmengying.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -4347,8 +4362,8 @@
       "status": "fixed"
     },
     "清/诗/poet.qing.json": {
-      "date": "2026-10-30",
-      "reviewer": "CodeBuddy",
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "清/诗/古诗源·清诗.json": {

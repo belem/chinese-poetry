@@ -597,6 +597,27 @@
             "path": "清/小说/红楼梦/hongloumeng.json",
             "tag": "paragraphs",
             "comments": "清曹雪芹《红楼梦》（《脂硯齋重評石頭記》庚辰本，識典古籍 7428573169323081747）：79 回，正文取章节页 HTML 里的段落（不走 OCR）。庚辰本十七、十八回未分回，作一条"
+        },
+        "liaozhaizhiyi": {
+            "name": "清/聊斋志异",
+            "id": 92,
+            "path": "清/小说/聊斋志异/liaozhaizhiyi.json",
+            "tag": "paragraphs",
+            "comments": "青柯亭本（乾隆三十一年刊，識典古籍 XYXLZZY）；底本一页一篇，篇名取页面小标题，卷号由卷首「聊齋誌異卷之N」推。此本电子本只到卷一卷五卷九卷十共 27 篇，全书未齐，见 docs/名著增补.md"
+        },
+        "fushengliuji": {
+            "name": "清/浮生六记",
+            "id": 93,
+            "path": "清/小说/浮生六记/fushengliuji.json",
+            "tag": "paragraphs",
+            "comments": "中央書局重印本（識典古籍 7526188380070084617）；卷一至卷四完，卷五卷六底本即标「缺」。原 清/诗/poet.qing.json 的三条选篇（卷一节选、卷三、卷四）已删，只留这一份"
+        },
+        "taoanzhmyi": {
+            "name": "明/陶庵梦忆",
+            "id": 94,
+            "path": "明/小说/陶庵梦忆/taoanzhmyi.json",
+            "tag": "paragraphs",
+            "comments": "粤雅堂丛书本（識典古籍 CYYT015），八卷 120 篇。《湖心亭看雪》与 汇编/古文观止/古文观止·补.json 相重，按「一件作品只留一份正文」删了古文观止那份，见 docs/名著增补.md"
         }
     }
 }

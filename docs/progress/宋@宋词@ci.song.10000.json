@@ -10,15 +10,10 @@
       "original": "□稍□著意斟量过",
       "corrected": "几曾著意斟量过",
       "note": "U+FFFD 乱码；《惜香樂府》四庫本作「幾曾著意斟量過」"
-    },
-    {
-      "original": "\"author\": \"富ノ\"",
-      "corrected": "\"author\": \"富㩋\"",
-      "note": "日文片假名ノ（U+30CE）系「㩋」（U+29A4B，扌部，山巧切）ocr 误认。此词即《新编事文类聚翰墨全书》丁集卷二「多丽 寿刘帅」，各家刻本作者题名作「冨脩仲」（冨＝富，脩＝修；一本误作「冨月仲」，月为脩右半之讹）；搜韵收此词，作者作「富㩋」，注「翰墨大全丙集」。见 https://www.sou-yun.cn/QueryPoem.aspx?key=扫蛮氛遂清三楚 、 https://www.shidianguji.com/zh/book/CADAL02058373/chapter/1l5jevxjwh1yr 、 https://www.shidianguji.com/zh/book/NGJ89241199900550817051/chapter/1lnhw3mak7x8p 。正文与搜韵全同，未改（底本「纎濃」，本库与搜韵并作「织浓」，异文存疑）"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；3 处字数异常证据不足，未改，留待复核",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
-  "status": "fixed"
+  "status": "needs_review"
 }
