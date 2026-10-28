@@ -1,10 +1,6 @@
 {
   "ascii_residue": 4,
   "ci_pattern": 318,
-<<<<<<< HEAD
-  "missing_char": 8486,
-=======
-  "missing_char": 8452,
->>>>>>> 13cbc88 (feat(名著): 聊斋、陶庵梦忆、浮生六记按版本整本收，删旧选篇并判重)
+  "missing_char": 8417,
   "shi_line_length": 150
 }
