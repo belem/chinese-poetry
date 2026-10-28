@@ -1,5 +1,17 @@
 {
   "path": "_补录haitangshishe语料",
+  "fixes": [
+    {
+      "original": "[batch] reference/mit_licence_haitangshishe → 13 个目标文件，收录 7791 条",
+      "corrected": null,
+      "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitangshishe收录.tsv。收录时不挂 sources 标记：haitangshishe 是到处收集的语料，不是唐诗三百首那样的权威合集，sources 只留给权威选本/总集（2026-08 已把先前写入的 \"sources\": [\"haitangshishe\"] 从 60 个正文文件全部清除，含 chuci.json 三处 variants[].source）。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
+    },
+    {
+      "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
+      "corrected": null,
+      "note": "作者小传与朝代概述原本没有全库通用索引（全唐诗/authors.* 与 宋词/author.song.json 各管一个总集、字段不同），另建两目录，语料与介绍分开。未逐条核对原文。"
+    }
+  ],
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "needs_review"

@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.195000.json",
+  "fixes": [
+    {
+      "original": "送鄉先生林磻黄石講會",
+      "corrected": "送鄉先生林漁磻黄石講會",
+      "note": "PUA U+E85A → 漁；《臞軒集》卷十四四庫本作「林漁磻」，清抄本作「林獻磻」"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 2 处经古籍证实原样，未改",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "fixed"

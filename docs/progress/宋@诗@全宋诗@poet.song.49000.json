@@ -1,5 +1,18 @@
 {
   "path": "宋/诗/全宋诗/poet.song.49000.json",
+  "fixes": [
+    {
+      "original": "嶇亦隨車",
+      "corrected": "崎嶇亦隨車",
+      "note": "[shi_line_length] 嶇亦隨車 → 崎嶇亦隨車；识典古籍 2 种（如《清江三孔集》）"
+    },
+    {
+      "original": "嶇已巴東",
+      "corrected": "崎嶇已巴東",
+      "note": "[shi_line_length] 嶇已巴東 → 崎嶇已巴東；识典古籍 2 种（如《清江三孔集》）"
+    }
+  ],
+  "note": "底本把「崎」的兼容表意字（U+FA11/U+F9BA）与正字粘连，成一字之讹；识典古籍《清江三孔集》卷四作「崎嶇亦隨車」、卷五作「人事未稱遂，崎嶇已巴東」。2026-11-01 字数异常对勘又改 2 处（见 fixes）",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "fixed"

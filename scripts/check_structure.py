@@ -6,11 +6,12 @@
   ci_pattern       词：与同词牌主流体式相比总字数差 1~2 字，且该字数极少见（疑漏字、衍字）
   ascii_residue    正文中混入的 ASCII 字母/数字（爬取残渣，如 z5、zB）
   cyrillic_greek   西里尔 / 希腊字母乱码
-  kana_bopomofo    日文假名 / 注音符号乱码
+  kana_bopomofo    日文假名 / 注音符号 / 竖排标点（U+FE3D–U+FE44，如 ﹀︽）乱码
   box_drawing      制表符号乱码（┾ ╆ 等）与 U+FFFD 替换符
   dup_punct        重复标点（？。 ！。 。。 ，， 、、）
   half_width_punct 紧邻汉字的半角 , ; : !
   bare_pua         {...} 之外的私用区字符
+  zero_width       零宽空格等不可见字符（抓取残留，正文与标题都查）
   missing_char     □ 缺字
 
 用法：
@@ -44,7 +45,10 @@ CYRILLIC_GREEK = re.compile(r'[Ѐ-ӿͰ-Ͽ]')
 BOX_DRAWING = re.compile(r'[\u2500-\u257f\ufffd]')   # 制表符号乱码与 U+FFFD 替换符（GBK 字节错位）
 DUP_PUNCT = re.compile(r'？。|！。|。。|，，|、、')                 # 已规整过的重复标点
 HALF_PUNCT = re.compile(r'(?<=[\u4e00-\u9fff])[,;:!]|[,;:!](?=[\u4e00-\u9fff])')   # 紧邻汉字的半角标点
-KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31bf]')  # 假名、注音乱码（不含标题分隔符・）
+KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31bf\ufe3d-\ufe44]')  # 假名、注音、竖排标点乱码（不含标题分隔符・）
+# 竖排/兼容形式的标点（U+FE3D ︽、U+FE40 ﹀ 等）出现在正文，是「僝僽」这类横向排版日文字形的乱码，
+# 与 kana_bopomofo 同类：见 宋/宋词/ci.song.*「风﹀雨︽」。
+ZERO_WIDTH = re.compile('[\u200b-\u200f\u2060\ufeff]')  # 零宽空格等不可见字符：多为抓取残留
 PUA = re.compile(r'[-]')
 # 目录已按朝代分层（先秦/ 唐代/ 五代十国/ 宋/ ...），按顶层目录判断体裁不再可行，
 # 改用文件名前缀定体裁：诗 poet.*、词 ci.*。只对这两类做句长/词牌检查。
@@ -54,7 +58,7 @@ SHI_PREFIX, CI_PREFIX = 'poet.', ('ci.',)   # 体裁看文件名前缀：poet.* 
 # 历史口径：这八类是「一增加即退化」。2026-10 起 --baseline 对全部检查项做双向比对
 # （少报与多报都要管），这份名单只留作文档
 STRICT = ('bad_json', 'cyrillic_greek', 'kana_bopomofo', 'box_drawing', 'bare_pua', 'ascii_residue',
-          'dup_punct', 'half_width_punct')
+          'dup_punct', 'half_width_punct', 'zero_width')
 
 
 def iter_files():
@@ -108,7 +112,7 @@ def check_chars(rel, idx, it, lines, report):
         body = FOOTNOTE.sub('', PLACEHOLDER.sub('', line))
         for kind, rx in (('cyrillic_greek', CYRILLIC_GREEK), ('kana_bopomofo', KANA_BOPOMOFO),
                          ('box_drawing', BOX_DRAWING), ('bare_pua', PUA), ('ascii_residue', ASCII_RES),
-                         ('dup_punct', DUP_PUNCT), ('half_width_punct', HALF_PUNCT)):
+                         ('dup_punct', DUP_PUNCT), ('half_width_punct', HALF_PUNCT), ('zero_width', ZERO_WIDTH)):
             for m in rx.finditer(body):
                 report(kind, rel, idx, it, line, token=m.group())
         if '□' in line:
@@ -119,7 +123,7 @@ def check_chars(rel, idx, it, lines, report):
         if isinstance(text, str):
             body = PLACEHOLDER.sub('', text)
             for kind, rx in (('cyrillic_greek', CYRILLIC_GREEK), ('kana_bopomofo', KANA_BOPOMOFO),
-                             ('bare_pua', PUA)):
+                             ('bare_pua', PUA), ('zero_width', ZERO_WIDTH)):
                 for m in rx.finditer(body):
                     report(kind, rel, idx, it, f'[{field}] {text}', token=m.group())
 

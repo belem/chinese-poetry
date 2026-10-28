@@ -1,5 +1,48 @@
 {
   "path": "宋/宋词/ci.song.14000.json",
+  "fixes": [
+    {
+      "original": "づ文王前子",
+      "corrected": "亶文王前子",
+      "note": "[ci_pattern] づ文王前子 → 亶文王前子; 识典古籍 (2 books, e.g. , 竹齋詩餘)"
+    },
+    {
+      "original": "翠荷斜领云堆",
+      "corrected": "翠荷斜嚲领云堆",
+      "note": "[ci_pattern] 翠荷斜领云堆 → 翠荷斜嚲领云堆；《竹齋詩餘》（四庫本）作「翠荷斜嚲領雲堆」"
+    },
+    {
+      "original": "替却燕姬皓齿",
+      "corrected": "替却燕姬皓齿",
+      "note": "[ci_pattern] 原样见于识典古籍 2 部（新編通用啓札截江網），不改"
+    },
+    {
+      "original": "扁舟借我",
+      "corrected": "扁舟借我",
+      "note": "[ci_pattern] 原样见于识典古籍 2 部（宋明十六家詞），不改"
+    },
+    {
+      "original": "三千世界",
+      "corrected": "三千世界",
+      "note": "[ci_pattern] 原样见于识典古籍 4 部（海瓊玉蟾先生文集, 漢魏諸名家集二十一種），不改"
+    },
+    {
+      "original": "做些功行",
+      "corrected": "做些功行",
+      "note": "[ci_pattern] 原样见于识典古籍 3 部（彊村叢書, 新刻瓊琯白先生集），不改"
+    },
+    {
+      "original": "无情江水东流去",
+      "corrected": "无情江水东流去",
+      "note": "[ci_pattern] 原样见于识典古籍 6 部（中興以來絶妙詞選, 御選歷代詩餘），不改"
+    },
+    {
+      "original": "吃尽风﹀雨︽，那见霜凝雪冻",
+      "corrected": "吃尽风僝雨僽，那见霜凝雪冻",
+      "note": "同上乱码；识典古籍《海琼玉蟾先生文集》作「吃尽风僝雨僽，那见霜凝雪冻，饥了又添寒」（《历代神仙通纪》引作「风僝雨愆」，异文）"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 5 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核；□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 5 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"

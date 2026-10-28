@@ -1,5 +1,12 @@
 {
   "path": "汇编/蒙学/baijiaxing.json",
+  "fixes": [
+    {
+      "original": "content",
+      "corrected": "paragraphs",
+      "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+    }
+  ],
   "date": "2026-06-27",
   "reviewer": "claude-sonnet-4-6",
   "status": "fixed"

@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.37000.json",
+  "fixes": [
+    {
+      "original": "餖亦勞止",
+      "corrected": "飣餖亦勞止",
+      "note": "[shi_line_length] 餖亦勞止 → 飣餖亦勞止；识典古籍 2 种（如《節孝集》）"
+    }
+  ],
+  "note": "2026-11-01 按`shidian.py`字数异常对勘改 1 处（见 fixes）",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "fixed"

@@ -1,5 +1,38 @@
 {
   "path": "元/元曲/yuanqu.json",
+  "fixes": [
+    {
+      "original": "十分砒タ",
+      "corrected": "十分忺",
+      "note": "假名乱码；《朝野新聲太平樂府》元刊本「起兒相見十分忺」"
+    },
+    {
+      "original": "儿ㄋ七七",
+      "corrected": "儿啅七七",
+      "note": "注音乱码；《梨園按試樂府新聲》元刊本「緑頭鴨黄鶯兒啅七々」"
+    },
+    {
+      "original": "树梢头ㄋ歌",
+      "corrected": "树梢头□歌",
+      "note": "注音乱码，王大学士套数仅存残篇，无从校定，按约定改方框"
+    },
+    {
+      "original": "一个瓦[A12N][A12N]衮罢合掂，一个泥窝窝ㄏ破合添",
+      "corrected": "一个瓦□□衮罢合掂，一个泥窝窝□破合添",
+      "note": "ASCII/注音残渣，同上无从校定，改方框"
+    },
+    {
+      "original": "将步リ家风习演",
+      "corrected": "将步□家风习演",
+      "note": "假名乱码，王和卿《一枝花·为打球子作》诸本不传，改方框"
+    },
+    {
+      "original": "零宽空格 U+200B ×12（张翥《忆梅》）",
+      "corrected": "删除",
+      "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

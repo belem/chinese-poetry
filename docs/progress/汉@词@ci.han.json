@@ -1,5 +1,6 @@
 {
   "path": "汉/词/ci.han.json",
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"

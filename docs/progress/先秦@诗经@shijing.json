@@ -1,5 +1,12 @@
 {
   "path": "先秦/诗经/shijing.json",
+  "fixes": [
+    {
+      "original": "投我以木李，报之以琼九",
+      "corrected": "投我以木李，报之以琼玖",
+      "note": "形近字：玖→九。haitangshishe 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitangshishe重跑.md）"
+    }
+  ],
   "date": "2026-10-28",
   "reviewer": "CodeBuddy",
   "status": "fixed"

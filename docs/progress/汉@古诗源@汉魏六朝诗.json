@@ -1,5 +1,12 @@
 {
   "path": "汉/古诗源/汉魏六朝诗.json",
+  "fixes": [
+    {
+      "original": "汉魏诗.json 2 首 + 六朝诗.json 10 首",
+      "corrected": "合并为 汉魏六朝诗.json 12 首",
+      "note": "两卷都是唐以前且不见于《全唐诗》《全宋诗》《全宋词》《诗经》《楚辞》，合为一卷；正文未改，记录加 sources: [\"古诗源\"]"
+    }
+  ],
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "fixed"

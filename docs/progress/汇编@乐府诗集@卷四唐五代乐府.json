@@ -1,5 +1,12 @@
 {
   "path": "汇编/乐府诗集/卷四唐五代乐府.json",
+  "fixes": [
+    {
+      "original": "杜陵叟（白居易）",
+      "corrected": "删除",
+      "note": "与 全唐诗 poet.tang.22000.json 的「新樂府 杜陵叟」正文逐字相同，重复"
+    }
+  ],
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "fixed"

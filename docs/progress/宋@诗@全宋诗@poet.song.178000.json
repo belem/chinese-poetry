@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.178000.json",
+  "fixes": [
+    {
+      "original": "破裓僧練裙女",
+      "corrected": "破裓山僧練裙女",
+      "note": "[shi_line_length] 破裓僧練裙女 → 破裓山僧練裙女; 识典古籍 (2 books, e.g. , 寶慶四明志)"
+    }
+  ],
+  "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
   "date": "2026-10-31",
   "reviewer": "codebuddy",
   "status": "fixed"

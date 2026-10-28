@@ -1,5 +1,6 @@
 {
   "path": "宋/诗/全宋诗/poet.song.155000.json",
+  "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

@@ -1,5 +1,13 @@
 {
   "path": "先秦/文/guoyu.json",
+  "fixes": [
+    {
+      "original": "若壅（□ō□）其口",
+      "corrected": "若壅其口",
+      "note": "窜入的注音括注"
+    }
+  ],
+  "note": "由 先秦/诗/poet.xianqin.json 按书名拆出（此前与「诗」混放在一个文件里），2026-10 只做归位与去重，正文未逐字对勘",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

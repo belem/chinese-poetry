@@ -1,5 +1,18 @@
 {
   "path": "先秦/孟子/mengzi.json",
+  "fixes": [
+    {
+      "original": "見且猶1不得亟…1. 猶 : 或作「由」。《孟子正義》作「由」。",
+      "corrected": "見且猶不得亟，而況得而臣之乎？",
+      "note": "正文窜入脚注标号与校语"
+    },
+    {
+      "original": "于橐于囊[□]",
+      "corrected": "于橐于囊于囊",
+      "note": "衍文标记；《诗·大雅·公刘》「于橐于囊，思辑用光」"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

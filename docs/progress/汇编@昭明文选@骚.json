@@ -1,5 +1,12 @@
 {
   "path": "汇编/昭明文选/骚.json",
+  "fixes": [
+    {
+      "original": "離騷經（屈平）",
+      "corrected": "删除该条",
+      "note": "与 先秦/楚辞/chuci.json 的《离骚》同篇，重复；本文件保留《文選》所收的屈宋骚类选篇"
+    }
+  ],
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "fixed"

@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.3000.json",
+  "fixes": [
+    {
+      "original": "照久塵逈",
+      "corrected": "照久塵襟逈",
+      "note": "[shi_line_length] 照久塵逈 → 照久塵襟逈；识典古籍《《小畜集》卷五》"
+    }
+  ],
+  "note": "2026-11-01 按`shidian.py`字数异常对勘改 1 处（见 fixes）",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "fixed"

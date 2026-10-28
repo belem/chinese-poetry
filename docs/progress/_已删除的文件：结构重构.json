@@ -1,5 +1,44 @@
 {
   "path": "_已删除的文件：结构重构",
+  "batch_files": {
+    "汉/古诗源/清词.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "文件已拆分：诗入 元明清诗.json，词移入 清/词/古诗源·清词.json"
+        }
+      ]
+    },
+    "先秦/诗文总集/乐府诗集/卷三唐代乐府.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "卷内唯一一首李白《長幹行》与 全唐诗 poet.tang.* 同一首正文全同，按「一件作品只留一份正文」删除，卷文件随之删除"
+        }
+      ]
+    },
+    "先秦/诗文总集/昭明文选/诗·补亡.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "補亡詩六首（束廣微）",
+          "corrected": "删除文件",
+          "note": "与 先秦/诗经/shijing.json（《詩經》正文）同篇，属重复"
+        }
+      ]
+    }
+  },
+  "scope_note": "结构重构批次：删掉了两个整文件（乐府诗集 卷三唐代乐府、昭明文选 诗·补亡，均与其他记录重复），另有若干文件被拆分改名（古诗源 清词 等），进度键随之成为死键。原状态（clean / fixed / needs_review）与各自的 fixes 收在 batch_files 里备查；文件已不存在，不计入 stats，也不进待查队列。",
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "fixed"

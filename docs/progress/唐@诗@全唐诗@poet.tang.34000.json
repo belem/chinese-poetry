@@ -1,5 +1,13 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.34000.json",
+  "fixes": [
+    {
+      "original": "有意鯨魚",
+      "corrected": "有意漁鯨魚",
+      "note": "PUA U+E85A → 漁；《松陵集》汲古閣本作「漁」，四庫本作「獻」，取漁（承「一竿餌」）"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

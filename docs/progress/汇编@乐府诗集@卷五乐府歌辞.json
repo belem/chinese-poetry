@@ -1,5 +1,12 @@
 {
   "path": "汇编/乐府诗集/卷五乐府歌辞.json",
+  "fixes": [
+    {
+      "original": "月下獨酌（李白）／茅屋為秋風所破歌（杜甫）",
+      "corrected": "删除",
+      "note": "两首与 全唐诗 poet.tang.* 中同一首正文逐字相同，重复"
+    }
+  ],
   "date": "2026-10-27",
   "reviewer": "codebuddy",
   "status": "fixed"

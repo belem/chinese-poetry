@@ -1,6 +1,128 @@
 {
   "path": "近现/现代诗.json",
+  "note": "由 split_dynasty.py 按朝代/体裁分出或归位，正文未逐字对勘",
   "date": "2026-10-27",
   "reviewer": "codebuddy",
-  "status": "needs_review"
+  "status": "needs_review",
+  "_已删除的文件：结构重构": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "fixed",
+    "scope_note": "结构重构批次：删掉了两个整文件（乐府诗集 卷三唐代乐府、昭明文选 诗·补亡，均与其他记录重复），另有若干文件被拆分改名（古诗源 清词 等），进度键随之成为死键。原状态（clean / fixed / needs_review）与各自的 fixes 收在 batch_files 里备查；文件已不存在，不计入 stats，也不进待查队列。",
+    "batch_files": {
+      "汉/古诗源/清词.json": {
+        "date": "2026-10-27",
+        "reviewer": "codebuddy",
+        "status": "fixed",
+        "fixes": [
+          {
+            "original": null,
+            "corrected": null,
+            "note": "文件已拆分：诗入 元明清诗.json，词移入 清/词/古诗源·清词.json"
+          }
+        ]
+      },
+      "先秦/诗文总集/乐府诗集/卷三唐代乐府.json": {
+        "date": "2026-10-27",
+        "reviewer": "codebuddy",
+        "status": "fixed",
+        "fixes": [
+          {
+            "original": null,
+            "corrected": null,
+            "note": "卷内唯一一首李白《長幹行》与 全唐诗 poet.tang.* 同一首正文全同，按「一件作品只留一份正文」删除，卷文件随之删除"
+          }
+        ]
+      },
+      "先秦/诗文总集/昭明文选/诗·补亡.json": {
+        "date": "2026-10-27",
+        "reviewer": "codebuddy",
+        "status": "fixed",
+        "fixes": [
+          {
+            "original": "補亡詩六首（束廣微）",
+            "corrected": "删除文件",
+            "note": "与 先秦/诗经/shijing.json（《詩經》正文）同篇，属重复"
+          }
+        ]
+      }
+    }
+  },
+  "明/诗/古诗源·明诗.json": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "fixed",
+    "fixes": [
+      {
+        "original": "元明清诗.json 里明代 6 首",
+        "corrected": "拆分到 明/诗/古诗源·明诗.json",
+        "note": "于謙、楊基、祝允明、楊繼盛、錢福、袁中道 皆明人；正文未改，记录加 sources: [\"古诗源\"]"
+      }
+    ]
+  },
+  "清/诗/古诗源·清诗.json": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "fixed",
+    "fixes": [
+      {
+        "original": "元明清诗.json 里清代 8 首",
+        "corrected": "拆分到 清/诗/古诗源·清诗.json",
+        "note": "鄭燮、史可法、鄭成功、畢沅、趙翼、林則徐、龔自珍 皆清人；正文未改，记录加 sources: [\"古诗源\"]"
+      }
+    ]
+  },
+  "汉/古诗源/汉魏六朝诗.json": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "fixed",
+    "fixes": [
+      {
+        "original": "汉魏诗.json 2 首 + 六朝诗.json 10 首",
+        "corrected": "合并为 汉魏六朝诗.json 12 首",
+        "note": "两卷都是唐以前且不见于《全唐诗》《全宋诗》《全宋词》《诗经》《楚辞》，合为一卷；正文未改，记录加 sources: [\"古诗源\"]"
+      }
+    ]
+  },
+  "汉/古诗源/": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "fixed",
+    "fixes": [
+      {
+        "original": "先秦诗.json 8 首",
+        "corrected": "整卷删除（7 首《诗经》+ 屈原《橘颂》）",
+        "note": "《詩經・周南・芣苢》《邶風・凱風》《小雅・采薇》《小雅・鹿鳴》《陳風・月出》《鄭風・山有扶蘇》《齊風・猗嗟》只摘诗句，全文见 先秦/诗经/shijing.json（《采薇》在那只存末章 8 句，《鹿鳴》只存首章 4 句）；《橘頌》只存前半，缺「愿歲並謝…置以為像兮」六句，全文见 楚辞/chuci.json。按「一件作品只留一份正文」删摘句"
+      },
+      {
+        "original": "宋代/诗/古诗源·宋诗.json 6 首、宋代/词/古诗源·宋词.json 2 首、清/词/古诗源·清词.json 1 首",
+        "corrected": "全部删除",
+        "note": "6 首宋诗与《全宋诗》正文逐字相同（司馬光《客中初夏》= poet.song.30000《居洛初夏作》，僅「隨風/因風」一字异文），2 首陆游词与《全宋词》ci.song.9000 相同；《菩薩蠻・大柏地》署許淑慧，实为毛泽东 1929 年词，系伪托且与「大柏地」地名错配，无古籍可据，删。清词目录因此清空"
+      }
+    ]
+  },
+  "清/词/纳兰词/纳兰词.json": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "clean",
+    "fixes": [
+      {
+        "original": "纳兰性德/纳兰性德诗集.json（含 219 首词）",
+        "corrected": "清/词/纳兰词/纳兰词.json",
+        "note": "别集按朝代与体裁拆分：219 首词另立文件，按词牌·首句排序；正文一字未改，字段沿用 para。原记录 2026-10-06 由 claude-opus-5-5 判 clean，随文件带过来"
+      }
+    ]
+  },
+  "清/诗/纳兰诗/纳兰诗.json": {
+    "date": "2026-10-27",
+    "reviewer": "codebuddy",
+    "status": "clean",
+    "fixes": [
+      {
+        "original": "纳兰性德/纳兰性德诗集.json（含 39 首诗）",
+        "corrected": "清/诗/纳兰诗/纳兰诗.json",
+        "note": "39 首诗另立文件；`拟古·高云媚春日`《南海子·分弓列戟四门开》等 12 首原来的「·」是七绝首句小题不是词牌，题名只去掉首尾空格；正文一字未改。另 1 首题名为空，上游底本即无题"
+      }
+    ]
+  }
 }

@@ -140,8 +140,8 @@ def merge(rel, entry):
 
 
 def load_one(rel):
-    rec = load().get(rel, {})
-    return dict(rec)
+    """该文件的记录（副本，可直接在上面就地改）。"""
+    return json.loads(json.dumps(load().get(rel, {})))
 
 
 _CACHE = {}

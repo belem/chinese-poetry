@@ -1,5 +1,68 @@
 {
   "path": "宋/宋词/ci.song.20000.json",
+  "fixes": [
+    {
+      "original": "侵晨打□捌朐苹幔□际暮演筹落魄归",
+      "corrected": "侵晨打发齐云会，际暮演筹落魄归",
+      "note": "[ci_pattern] 侵晨打□捌朐苹幔□际暮演筹落魄归 → 侵晨打发齐云会，际暮演筹落魄归; 识典古籍 (2 books, e.g. , 新編事文類聚翰墨全書)"
+    },
+    {
+      "original": "孕雪┭香，春在寒梢尾",
+      "corrected": "孕雪尧蓂，尚缀零星，春在寒梢尾",
+      "note": "[ci_pattern] 孕雪┭香，春在寒梢尾 → 孕雪尧蓂，尚缀零星，春在寒梢尾; 识典古籍 (2 books, e.g. , 新編事文類聚翰墨全書)"
+    },
+    {
+      "original": "绛蜡攒宝炬",
+      "corrected": "绛蜡花攒宝炬",
+      "note": "[ci_pattern] 绛蜡攒宝炬 → 绛蜡花攒宝炬；《新編事文類聚翰墨全書》丙集作「絳蠟花攢寶炬」；《麟原文集》引朱渙《齊天樂》作「重重洞門深窈」"
+    },
+    {
+      "original": "重重洞深窈",
+      "corrected": "重重洞門深窈",
+      "note": "[ci_pattern] 重重洞深窈 → 重重洞門深窈；《麟原文集》麟原前集卷七引朱渙《齊天樂》作「重重洞門深窈」，與下句「翠竹籠烟」句法合"
+    },
+    {
+      "original": "况金瓯姓字",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 马伯升《水调歌头》「况金瓯姓字」：检索未命中，仍待考"
+    },
+    {
+      "original": "珠曹莲区区",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 赵希蓬《水调歌头》「珠曹莲区区」：检索未命中，仍待考"
+    },
+    {
+      "original": "便有此山仙翁",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 刘仲讷《水调歌头》「便有此山仙翁」：检索未命中，仍待考"
+    },
+    {
+      "original": "骑鸾鹤休归去",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 高伯达《鹧鸪天》「骑鸾鹤休归去」：检索未命中，仍待考"
+    },
+    {
+      "original": "任馀庆尚无穷",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 黄人杰《鹧鸪天》「任馀庆尚无穷」：检索未命中，仍待考"
+    },
+    {
+      "original": "王令人梦里说相思",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 无名氏《踏莎行》「王令人梦里说相思」：检索未命中，仍待考"
+    },
+    {
+      "original": "华阳闲日日月",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 叶景山《临江仙》「华阳闲日日月，绿野醉蓬莱」：识典只检到王质「一去丹臺閑日月」，句不同，不能据以改，仍待考"
+    },
+    {
+      "original": "消息南枝大",
+      "corrected": null,
+      "note": "[ci_pattern] needs_review: 无名氏《西江月》「消息南枝大」：检索未命中，仍待考"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 7 处经古籍证实原样，未改；15 处字数异常证据不足，未改，留待复核",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "needs_review"

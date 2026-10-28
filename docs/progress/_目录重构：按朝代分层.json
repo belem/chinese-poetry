@@ -1,5 +1,6 @@
 {
   "path": "_目录重构：按朝代分层",
+  "note": "顶层目录改为 14 个朝代目录（先秦 汉 三国 晋 南北朝 隋 唐 五代十国 宋 元 明 清 近现 当），与 dynasties/dynasties.json 的 name 一一对应。（1）只搬不改正文：旧路径 先秦汉魏晋南北朝/ 唐代/ 唐五代/ 宋代/ 元代/ 明代/ 清代/ 近现代诗/ 与根目录的书名目录（古文观止、四书五经、论语、课外经典、蒙学、幽梦影、唐诗三百首、宋词三百首）按朝代落位。（2）历代/ 拆散（scripts/split_dynasty.py）：按作者朝代拆进各朝代目录，搬 3592 条，逐条见 docs/历代拆分.tsv；177 条作者不在 authors/authors.json 的搬不走，随目录下线（正文留在 git 历史）。（3）近现/当代诗词.json 改名 当/poet.dang.json、当/ci.dang.json（历代/ 里 1912 年以后出生的作者也并入）。（4）authors/authors.json 的 dynasty 值空间改为 14 个朝代名（周秦商上古→先秦，辽金→宋，当代→当）；元/元曲/yuanqu.json 里 11415 条 dynasty 由 yuan 改为 元。（5）拆出来的这批文件只做了搬移与判类，未逐字对勘，需逐文件复核后改为 clean/fixed。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"
