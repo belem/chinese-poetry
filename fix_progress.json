@@ -2,13 +2,13 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋/诗/全宋诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 870,
-    "reviewed": 873,
+    "total_files": 874,
+    "reviewed": 877,
     "clean": 431,
     "fixed": 103,
-    "needs_review": 135,
+    "needs_review": 139,
     "out_of_scope": 204,
-    "in_scope_files": 555
+    "in_scope_files": 559
   },
   "reviewed": {
     "三国/诗/poet.sanguo.json": {
@@ -5684,6 +5684,30 @@
           "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitangshishe收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
         }
       ]
+    },
+    "明/小说/三国演义/sanguoyanyi.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《三國志通俗演義》嘉靖壬午本（識典 CADAL02111749），156 则。正文未逐字对勘；底本卷四~六、十七、二十、二十三整卷压在一页，未逐则切开"
+    },
+    "明/小说/水浒传/shuihuzhuan.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《水浒传》容與堂本（識典 NGJ89241199901879587548），100 回。底本为定长折行 OCR，已按句末标点重分段，但字词讹误仍多（回次行与回目行常糊），正文未逐字对勘"
+    },
+    "明/小说/西游记/xiyouji.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《西游记》世德堂本（識典 NA11023），100 回。李卓吾总批已剔除；正文未逐字对勘"
+    },
+    "清/小说/红楼梦/hongloumeng.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《红楼梦》程甲本（識典 GY025），120 回 + 序、叙、目録 3 条。底本 12 回无小标题，回目按通行本补；正文未逐字对勘"
     }
   }
 }

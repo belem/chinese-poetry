@@ -569,6 +569,34 @@
             "path": "先秦/中庸/zhongyong.json",
             "tag": "paragraphs",
             "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader"
+        },
+        "sanguo-yanyi": {
+            "name": "三国演义",
+            "id": 88,
+            "path": "明/小说/三国演义/sanguoyanyi.json",
+            "tag": "paragraphs",
+            "comments": "明罗贯中《三国志通俗演义》（嘉靖壬午本，識典古籍 CADAL02111749）：156 则，分卷不标回次，按目録顺序编号。底本「卷四~六、十七、二十、二十三」整卷压在一页，未逐则切开，这些记录带 tags"
+        },
+        "shuihu-zhuan": {
+            "name": "水浒传",
+            "id": 89,
+            "path": "明/小说/水浒传/shuihuzhuan.json",
+            "tag": "paragraphs",
+            "comments": "明施耐庵《水浒传》（容與堂本，識典古籍 NGJ89241199901879587548）：100 回。回次以卷序为准（底本回次行有 OCR 误认），卷首评、目録、引首未收"
+        },
+        "xiyou-ji": {
+            "name": "西游记",
+            "id": 90,
+            "path": "明/小说/西游记/xiyouji.json",
+            "tag": "paragraphs",
+            "comments": "明吴承恩《西游记》（世德堂本，識典古籍 NA11023）：100 回。李卓吾总批已剔除"
+        },
+        "honglou-meng": {
+            "name": "红楼梦",
+            "id": 91,
+            "path": "清/小说/红楼梦/hongloumeng.json",
+            "tag": "paragraphs",
+            "comments": "清曹雪芹《红楼梦》（程甲本，識典古籍 GY025）：120 回，序、叙、目録另作 3 条。底本 12 回缺回目，按通行本补"
         }
     }
 }
