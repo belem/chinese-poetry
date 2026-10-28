@@ -1,6 +1,13 @@
 {
   "path": "汇编/课本选目/寓言故事.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "fixes": [
+    {
+      "original": "# 0 守株待兔",
+      "corrected": null,
+      "note": "[kongzi_subset] 删此条，正文与 汇编/课本选目/寓言故事.json#58 重出：选段，长篇已另收"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-28 重复清理：1 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"

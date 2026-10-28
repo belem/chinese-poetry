@@ -1,6 +1,13 @@
 {
   "path": "三国/诗/poet.sanguo.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "fixes": [
+    {
+      "original": "# 4 白马篇",
+      "corrected": null,
+      "note": "[sanguo_dup] 删此条，正文与 三国/诗/poet.sanguo.json#40 重出：简繁两种转录同录一首（1 字之差：异体与缺字），留带 tags 的一条"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-28 重复清理：1 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

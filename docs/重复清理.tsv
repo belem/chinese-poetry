@@ -1,0 +1,39 @@
+类别	文件	下标	题名	保留	说明
+songci_merge	宋/宋词/ci.song.22000.json	424	咏梅月	宋/宋词/ci.song.12000.json#369	新批正文是旧批的前缀（旧批更全）
+songci_merge	宋/宋词/ci.song.22000.json	435	春游	宋/宋词/ci.song.12000.json#172	新批正文是旧批的前缀（旧批更全）
+songci_merge	宋/宋词/ci.song.22000.json	674	其三·送王历阳以右曹赴阙	宋/宋词/ci.song.16000.json#31	新批正文是旧批的前缀（旧批更全）
+songci_merge	宋/宋词/ci.song.22000.json	899	绿阴窗几明如拭	宋/宋词/ci.song.14000.json#239	新批正文是旧批的前缀（旧批更全）
+yuanqu_cover	元/元曲/yuanqu.json	57	黄钟・侍香金童	元/元曲/yuanqu.json#11389	同作者长句已含此句（31 字 vs 255 字）
+yuanqu_cover	元/元曲/yuanqu.json	66	南吕・一枝花赠朱帘秀	元/元曲/yuanqu.json#11160	同作者长句已含此句（53 字 vs 210 字）
+yuanqu_cover_tags	元/元曲/yuanqu.json	118	离亭宴煞・你休起风波剁断渔舟缆，得团圆摔破青铜鉴。冤家行再三，再	元/元曲/yuanqu.json#10759	异作者残句，两条都留，长句挂 tags 一作关汉卿
+yuanqu_cover	元/元曲/yuanqu.json	268	正宫・鹦鹉曲	元/元曲/yuanqu.json#11418	同作者长句已含此句（27 字 vs 54 字）
+yuanqu_cover	元/元曲/yuanqu.json	826	般涉调・耍孩儿庄家不识构阑	元/元曲/yuanqu.json#11279	同作者长句已含此句（66 字 vs 471 字）
+yuanqu_cover	元/元曲/yuanqu.json	6068	南吕・一枝花湖上归	元/元曲/yuanqu.json#11212	同作者长句已含此句（48 字 vs 197 字）
+yuanqu_cover	元/元曲/yuanqu.json	6230	正宫・端正好上高监司	元/元曲/yuanqu.json#11295	同作者长句已含此句（27 字 vs 981 字）
+yuanqu_cover	元/元曲/yuanqu.json	11048	阳春曲・知几	元/元曲/yuanqu.json#11081	同作者长句已含此句（29 字 vs 58 字）
+yuanqu_cover	元/元曲/yuanqu.json	11076	双调·大德歌·春	元/元曲/yuanqu.json#55	同作者长句已含此句（38 字 vs 165 字）
+yuanqu_cover	元/元曲/yuanqu.json	11101	中吕·普天乐·咏世	元/元曲/yuanqu.json#7146	同作者长句已含此句（66 字 vs 427 字）
+yuanqu_cover	元/元曲/yuanqu.json	11106	商调·梧叶儿·客中闻雨	元/元曲/yuanqu.json#1470	同作者长句已含此句（34 字 vs 77 字）
+yuanqu_cover_tags	元/元曲/yuanqu.json	11124	双调·寿阳曲·答卢疏斋	元/元曲/yuanqu.json#8000	异作者残句，两条都留，长句挂 tags 一作朱帘秀
+yuanqu_cover	元/元曲/yuanqu.json	11155	双调·清江引·秋居	元/元曲/yuanqu.json#4894	同作者长句已含此句（29 字 vs 60 字）
+yuanqu_cover	元/元曲/yuanqu.json	11169	中吕·满庭芳	元/元曲/yuanqu.json#4461	同作者长句已含此句（48 字 vs 95 字）
+yuanqu_cover	元/元曲/yuanqu.json	11223	阳春曲·皇亭晚泊	元/元曲/yuanqu.json#9938	同作者长句已含此句（29 字 vs 185 字）
+yuanqu_cover	元/元曲/yuanqu.json	11239	越调·小桃红	元/元曲/yuanqu.json#2134	同作者长句已含此句（42 字 vs 216 字）
+yuanqu_cover	元/元曲/yuanqu.json	11248	黄钟·人月圆·甘露怀古	元/元曲/yuanqu.json#9932	同作者长句已含此句（48 字 vs 98 字）
+yuanqu_cover	元/元曲/yuanqu.json	11256	中吕·红绣鞋·阅世	元/元曲/yuanqu.json#5729	同作者长句已含此句（42 字 vs 86 字）
+yuanqu_cover	元/元曲/yuanqu.json	11304	越调·柳营曲·金陵故址	元/元曲/yuanqu.json#287	同作者长句已含此句（56 字 vs 112 字）
+yuanqu_cover	元/元曲/yuanqu.json	11317	双调·殿前欢	元/元曲/yuanqu.json#6228	同作者长句已含此句（91 字 vs 227 字）
+yuanqu_cover	元/元曲/yuanqu.json	11321	双调·沉醉东风·隐居	元/元曲/yuanqu.json#4537	同作者长句已含此句（45 字 vs 177 字）
+yuanqu_cover	元/元曲/yuanqu.json	11328	中吕·普天乐·春日多雨	元/元曲/yuanqu.json#5342	同作者长句已含此句（71 字 vs 610 字）
+yuanqu_cover	元/元曲/yuanqu.json	11344	中吕·朝天子·秋夜客怀	元/元曲/yuanqu.json#9756	同作者长句已含此句（44 字 vs 90 字）
+yuanqu_cover	元/元曲/yuanqu.json	11458	湘妃怨·和卢疏斋西湖	元/元曲/yuanqu.json#7459	同作者长句已含此句（53 字 vs 207 字）
+yuanqu_cover	元/元曲/yuanqu.json	11494	人月圆·春日次韵	元/元曲/yuanqu.json#5991	同作者长句已含此句（48 字 vs 154 字）
+yuanqu_cover	元/元曲/yuanqu.json	11535	塞鸿秋·浔阳即景	元/元曲/yuanqu.json#9755	同作者长句已含此句（45 字 vs 90 字）
+sanguo_dup	三国/诗/poet.sanguo.json	4	白马篇	三国/诗/poet.sanguo.json#40	简繁两种转录同录一首（1 字之差：异体与缺字），留带 tags 的一条
+kongzi_subset	汇编/课本选目/寓言故事.json	0	守株待兔	汇编/课本选目/寓言故事.json#58	选段，长篇已另收
+kongzi_subset_open	汇编/课本选目/寓言故事.json	11	揠苗助长	汇编/课本选目/寓言故事.json#32	同文异题/异作者，两条都留，待人工判
+kongzi_subset_open	汇编/课本选目/蒙学经典.json	5	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
+guwen_subset	汇编/古文观止/古文观止·补.json	17	杂说一・龙说	汇编/古文观止/卷七六朝唐文.json#17	同篇，分卷本更全
+guwen_subset	汇编/古文观止/古文观止·补.json	25	游褒禅山记	汇编/古文观止/卷十一宋文.json#19	同篇，分卷本更全
+guwen_subset	汇编/古文观止/古文观止·补.json	26	上枢密韩太尉书	汇编/古文观止/卷十一宋文.json#13	同篇，分卷本更全
+qingci_attr	清/词/ci.qing.json	1087	杏花疏雨洒香堤	清/词/ci.qing.json#162	与佟世南同词重出，纳兰词集不载，判为误归

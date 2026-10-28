@@ -3,12 +3,12 @@
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
     "total_files": 872,
-    "reviewed": 877,
+    "reviewed": 873,
     "clean": 347,
     "fixed": 104,
-    "needs_review": 222,
+    "needs_review": 218,
     "out_of_scope": 204,
-    "in_scope_files": 673
+    "in_scope_files": 669
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -679,15 +679,7 @@
     "宋/宋词/ci.song.10000.json": {
       "date": "2026-11-01",
       "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "\"author\": \"富ノ\"",
-          "corrected": "\"author\": \"富㩋\"",
-          "note": "日文片假名ノ（U+30CE）系「㩋」（U+29A4B，扌部，山巧切）ocr 误认。此词即《新编事文类聚翰墨全书》丁集卷二「多丽 寿刘帅」，各家刻本作者题名作「冨脩仲」（冨＝富，脩＝修；一本误作「冨月仲」，月为脩右半之讹）；搜韵收此词，作者作「富㩋」，注「翰墨大全丙集」。见 https://www.sou-yun.cn/QueryPoem.aspx?key=扫蛮氛遂清三楚 、 https://www.shidianguji.com/zh/book/CADAL02058373/chapter/1l5jevxjwh1yr 、 https://www.shidianguji.com/zh/book/NGJ89241199900550817051/chapter/1lnhw3mak7x8p 。正文与搜韵全同，未改（底本「纎濃」，本库与搜韵并作「织浓」，异文存疑）"
-        }
-      ],
-      "note": "□ 与字数异常项仍待考，见 scripts/check_structure.py"
+      "status": "needs_review"
     },
     "宋/宋词/ci.song.11000.json": {
       "date": "2026-10-07",
@@ -755,7 +747,7 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.22000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -3664,21 +3656,6 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
-    "明/小说/三国演义/sanguoyanyi.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
-    },
-    "明/小说/水浒传/shuihuzhuan.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
-    },
-    "明/小说/西游记/xiyouji.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
-    },
     "明/词/ci.ming.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -4275,16 +4252,9 @@
       "status": "fixed"
     },
     "汇编/蒙学/wenzimengqiu.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "市有垣。從冂從ㄋ。ㄋ。古文及。㞢省聲。",
-          "corrected": "市有垣。從冂從𠃌。𠃌。古文及。象物相及也。㞢省聲。",
-          "note": "注音符号ㄋ（U+310B）是「𠃌」（U+200CC，「及」之古文）的 ocr 误认。王筠此条本作「市有垣。从冂从𠃌。𠃌，古文及，象物相及也」；《说文解字句读》卷五下清道光至同治间刻本作「市有垣。从冂从乙。乙古文及，象物相及也」，段注本、汲古阁本《说文》作「从冂从𠃌（了）」，形讹作乙、了，均与注音符号无关。见 https://www.shidianguji.com/search/市有垣从冂"
-        }
-      ]
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed"
     },
     "汇编/蒙学/youxueqionglin.json": {
       "date": "2026-06-27",
@@ -4365,11 +4335,6 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed"
-    },
-    "清/小说/红楼梦/hongloumeng.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
     },
     "清/幽梦影/youmengying.json": {
       "date": "2026-10-28",
