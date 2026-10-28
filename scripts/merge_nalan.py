@@ -63,7 +63,7 @@ def main():
         if rec.get('author') == '纳兰性德':
             by_body.setdefault(norm(''.join(rec.get('paragraphs') or [])), rec)
 
-    # 纳兰词是「词牌·题目」题名、以句为单位的 para，ci.qing 是整段 paragraphs；
+    # 两边都是 paragraphs，题名都是「词牌·题目」；
     # 同一次修订常有一两个字出入（兰/阑、斯/撕、飚/飙），所以正文全同之外再按
     # 「词牌相同 + 相似度 ≥0.9」认同一首，避免同一首被记成两条。
     by_rhythm = {}
@@ -85,7 +85,7 @@ def main():
     merged = 0
     added = 0
     for rec in nalan:
-        body = norm(''.join(rec.get('para') or []))
+        body = norm(''.join(rec.get('paragraphs') or []))
         title = rec['title']
         rhythmic = title.partition('·')[0]
         target = find_target(body, rhythmic)
@@ -99,7 +99,7 @@ def main():
         rhythmic, _, sub = title.partition('·')
         item = {
             'author': '纳兰性德',
-            'paragraphs': rec['para'],
+            'paragraphs': rec['paragraphs'],
             'rhythmic': rhythmic,
             'sources': ['nalan'],
             'tags': [TAG],
@@ -111,7 +111,7 @@ def main():
         added += 1
 
     print(f'纳兰词 {len(nalan)} 首：并入 ci.qing 已有记录 {merged}，新增 {added}')
-    left = [r['title'] for r in nalan if not find_target(norm(''.join(r['para'])), r['title'].partition('·')[0])]
+    left = [r['title'] for r in nalan if not find_target(norm(''.join(r['paragraphs'])), r['title'].partition('·')[0])]
     print(f'  逐条自检：仍未对上的 {len(left)} 条 {"（应为 0）" if left else ""}')
     for t in left[:10]:
         print('   ', t)

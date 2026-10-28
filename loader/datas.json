@@ -90,7 +90,7 @@
             "excludes": [
                 "README.md"
             ],
-            "tag": "para"
+            "tag": "paragraphs"
         },
         "lunyu": {
             "name": "先秦/论语",
