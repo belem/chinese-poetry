@@ -307,7 +307,9 @@
 
 ### 數據格式
 
-[guwenguanzhi.json](./guwenguanzhi.json)
+> 2026-10：《古文觀止》已獨立成書，目錄移到 [`汇编/古文观止/`](../../汇编/古文观止/)，本目錄不再保留副本。
+
+[guwenguanzhi.json](../../汇编/古文观止/古文观止.json)
 
 ```json
 {

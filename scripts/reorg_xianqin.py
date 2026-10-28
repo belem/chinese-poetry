@@ -41,7 +41,7 @@ CANON = {
     '大学': ('先秦/四书五经/daxue.json', 'daxue'),
     '楚辞': ('先秦/楚辞/chuci.json', 'chuci'),
     '诗经': ('先秦/诗经/shijing.json', 'shijing'),
-    '古文观止': ('先秦/古文观止/古文观止.json', 'guwenguanzhi'),
+    '古文观止': ('汇编/古文观止/古文观止.json', 'guwenguanzhi'),
 }
 
 # 题名里不带书名、要另认的篇目 → 所属书

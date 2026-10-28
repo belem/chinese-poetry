@@ -55,7 +55,7 @@ DATASETS = OrderedDict([
     ('jinyuanxiandai', ('近现', '近现/')),
     ('tangshi300', ('唐/唐诗三百首', '唐/唐诗三百首/')),
     ('songci300', ('宋/宋词三百首', '宋/宋词三百首/')),
-    ('guwenguanzhi', ('先秦/古文观止', '先秦/古文观止/')),
+    ('guwenguanzhi', ('汇编/古文观止', '汇编/古文观止/')),
 ])
 
 

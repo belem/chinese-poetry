@@ -105,18 +105,20 @@
             "tag": "content"
         },
         "guwen-guanzhi": {
-            "name": "先秦/古文观止",
+            "name": "古文观止",
             "id": 18,
-            "path": "先秦/古文观止/",
+            "path": "汇编/古文观止/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "清吴楚材、吴调侯编，收周文至明文 222 篇，跨代，故由 先秦/古文观止/ 移到 汇编/。卷文件逐篇取自原母本 先秦/蒙学/guwenguanzhi.json（已随书移入本目录作 古文观止.json）；子本多出评注或正文有出入的 49 篇见 古文观止·补.json"
         },
         "kewai-jingdian": {
-            "name": "先秦/课外经典",
+            "name": "课本选目",
             "id": 19,
-            "path": "先秦/课外经典/",
+            "path": "汇编/课本选目/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "原 先秦/课外经典/：寓言故事、神话传说、山水游记… 是按主题编的课本选目，不是一个集子名也不是一部书（一章《山海经》可以跟一段《宋史》编在同一个文件里），且多为改写／节选，故不并进各书，整体移到 汇编/ 下保留原样"
         },
         "yuefu-jis": {
             "name": "乐府诗集",
