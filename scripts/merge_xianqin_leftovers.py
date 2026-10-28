@@ -84,7 +84,7 @@ def main():
             if norm(''.join(target['content'])) == norm(''.join(rec['paragraphs'])):
                 continue                      # 实际全同，正文只留专书那份
             variants = target.setdefault('variants', [])
-            variants.append({'source': 'haitang', 'content': rec['paragraphs']})
+            variants.append({'content': rec['paragraphs']})
         else:
             chuci.append({
                 'title': rec['title'],

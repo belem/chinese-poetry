@@ -17,8 +17,8 @@
   ── → 中文破折号；\r\n → 单行一句；行首行尾空白清掉；空行去掉
   FIXED 表只收上下文 100% 确定的定点还原，其余一律 □
 
-判重按正文（简繁统一 + 去标点），命中库中已有条目的不重收，只把来源题名挂到
-原条目的 sources 上。
+判重按正文（简繁统一 + 去标点），命中库中已有条目的不重收。来源是到处收集的语料，
+不挂 sources 标记——sources 只留给唐诗三百首这类权威合集。
 
 用法：
   python3 scripts/haitang/import.py                  # 预演，打印清单
@@ -46,7 +46,7 @@ S2T = OpenCC('s2t')
 FREE_KINDS = {'诗', '词', '文', '赋'}
 TARGET_SIZE = 1000          # 与库中 poet.*.json / ci.song.*.json 一致
 
-# 同作者同题时，正文相似度达到此值视为同一作品（异文），只挂 sources 不重收。
+# 同作者同题时，正文相似度达到此值视为同一作品（异文），不重收。
 # 低于此值的是同题下的不同篇目（如苏轼多首《洞仙歌》），照收。
 NEAR_DUP = 0.9
 
@@ -261,13 +261,6 @@ class Library:
             self.index[short_key(record.get('author'), ''.join(record.get('paragraphs') or []))] = (
                 rel, len(self.files[rel]) - 1)
 
-    def attach_source(self, rel, idx, title):
-        it = self.files[rel][idx]
-        src = it.setdefault('sources', [])
-        if title not in src:
-            src.append(title)
-
-
 # ---------------------------------------------------------------- 路由
 
 # (朝代, 体裁) → 分片文件前缀。None 表示整文件不分片。
@@ -383,10 +376,6 @@ def main():
     write_tsv(rows, args.tsv)
     print('逐条判定 → %s（%d 行）' % (args.tsv, len(rows)))
 
-    # 挂 sources
-    for rec, rel, idx in dup:
-        lib.attach_source(rel, idx, norm_title(rec.get('title')))
-
     targets = build_targets(lib, [(p[0], p[1], p[2], p[3]) for p in plan])
     paras_of = {id(p[0]): p[4] for p in plan}
 
@@ -421,7 +410,6 @@ def main():
             if kind == '曲':
                 item = {'dynasty': 'yuan', 'author': rec.get('author') or '',
                         'paragraphs': paras, 'title': title}
-            item['sources'] = ['haitang']
             data.append(item)
             written += 1
         path = os.path.join(ROOT, name)
@@ -429,11 +417,6 @@ def main():
             append_json(path, data[before:])       # 原文本不动，只追加
         else:
             rewrite_json(path, data)               # 新文件
-
-    # 只挂了 sources 的文件也要回写
-    for rel in sorted(lib.touched):
-        if rel in lib.files and not any(n == rel for n, _ in targets):
-            rewrite_json(os.path.join(ROOT, rel), lib.files[rel])
 
     print('\n已写入 %d 条' % written)
 
