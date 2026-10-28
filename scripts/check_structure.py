@@ -125,6 +125,10 @@ def check_chars(rel, idx, it, lines, report):
 
 
 LEGIT_ODD = re.compile(r'^君不[見见]|^嗚呼|^呜呼|兮')    # 歌行常见的合法加字
+# 鼎、铭、颂、赋、表、序、传等本是散文，收在 poet.* 里但不能按齐言诗判句长
+PROSE_TITLE = re.compile(r'銘|铭|頌|颂|贊|赞|賦|赋|表|啟|启|狀|状|書|书|序|記|记|傳|传|說|说|'
+                         r'論|论|議|议|疏|策|碑|偈|誄|诔|祭|禱|祷|告|牒|帖|引|自述|行狀|行状|'
+                         r'墓誌|墓志|神道碑|塔銘|塔铭')
 
 
 def check_shi(rel, idx, it, lines, report):
@@ -133,7 +137,8 @@ def check_shi(rel, idx, it, lines, report):
         return
     lens = collections.Counter(len(s) for s in sents)
     main, n = lens.most_common(1)[0]
-    if main not in (5, 7) or n / len(sents) < 0.9 or ZAYAN_TITLE.search(it.get('title') or ''):
+    title = it.get('title') or ''
+    if main not in (5, 7) or n / len(sents) < 0.9 or ZAYAN_TITLE.search(title) or PROSE_TITLE.search(title):
         return
     for i, s in enumerate(sents):
         if abs(len(s) - main) == 1 and not LEGIT_ODD.search(s):
