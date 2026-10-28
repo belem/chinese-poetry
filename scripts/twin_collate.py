@@ -41,7 +41,7 @@ import collate  # noqa: E402
 import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
-TARGETS = ['五代十国/词/五代诗词/huajianji', '五代十国/词/五代诗词/nantang', '先秦/蒙学/tangshisanbaishou.json', '先秦/蒙学/qianjiashi.json']
+TARGETS = ['五代十国/词/五代诗词/huajianji', '五代十国/词/五代诗词/nantang', '宋/诗/千家诗/qianjiashi.json']
 REF_DIRS = ['唐/诗/全唐诗', '宋/宋词']
 HANX = r'[㐀-鿿\U00020000-\U0003ffff]'
 ORDER = {'fix_target': 0, 'fix_ref': 1, 'glyph': 2, 'weak': 3, 'variant': 4}
