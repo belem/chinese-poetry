@@ -1,0 +1,18 @@
+{
+  "path": "清/诗/纳兰诗/纳兰诗.json",
+  "fixes": [
+    {
+      "original": "纳兰性德/纳兰性德诗集.json（含 39 首诗）",
+      "corrected": "清/诗/纳兰诗/纳兰诗.json",
+      "note": "39 首诗另立文件；`拟古·高云媚春日`《南海子·分弓列戟四门开》等 12 首原来的「·」是七绝首句小题不是词牌，题名只去掉首尾空格；正文一字未改。另 1 首题名为空，上游底本即无题"
+    },
+    {
+      "original": "para",
+      "corrected": "paragraphs",
+      "note": "字段拼错，39 条统一为段落字段的标准名 paragraphs；正文未改。loader/datas.json 的 tag 与 scripts/merge_nalan.py、scripts/check_structure.py 一并改掉"
+    }
+  ],
+  "date": "2026-10-27",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

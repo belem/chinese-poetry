@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.80000.json",
+  "fixes": [
+    {
+      "original": "三百年有宋興",
+      "corrected": "三百年來有宋興",
+      "note": "[shi_line_length] 三百年有宋興 → 三百年來有宋興; 识典古籍 (2 books, e.g. , 宋詩紀事補遺)"
+    }
+  ],
+  "note": "1 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

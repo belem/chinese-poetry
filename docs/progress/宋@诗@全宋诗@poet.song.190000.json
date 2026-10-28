@@ -1,0 +1,13 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.190000.json",
+  "fixes": [
+    {
+      "original": "民相資護關塞",
+      "corrected": "民相資護關塞固",
+      "note": "[shi_line_length] 民相資護關塞 → 民相資護關塞固; 识典古籍 (2 books, e.g. , 鶴山集)"
+    }
+  ],
+  "date": "2026-10-31",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

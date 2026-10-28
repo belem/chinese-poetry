@@ -1,0 +1,7 @@
+{
+  "path": "宋/诗/全宋诗/error/poet.tang.42000.json",
+  "scope_note": "宋/诗/全宋诗/error/ holds records the upstream project itself flagged as defective (no author, no body, placeholder text, unreadable titles). It is excluded from loader/datas.json and from scripts/check_structure.py; entries are kept for reference but not counted as pending.",
+  "date": "2026-06-26",
+  "reviewer": "claude-sonnet-4-6",
+  "status": "out_of_scope"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "先秦/大学/daxue.json",
+  "note": "由 先秦/四书五经/ 按书拆出；单章 dict 改为列表，正文未逐字对勘",
+  "date": "2026-10-28",
+  "reviewer": "claude-opus-5-5",
+  "status": "needs_review"
+}

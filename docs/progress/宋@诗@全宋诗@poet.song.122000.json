@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.122000.json",
+  "fixes": [
+    {
+      "original": "北有高樓",
+      "corrected": "西北有高樓",
+      "note": "[shi_line_length] 北有高樓 → 西北有高樓；识典古籍 2 种（如《盤洲文集》）"
+    }
+  ],
+  "note": "2026-11-01 按`shidian.py`字数异常对勘改 1 处（见 fixes）；1 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

@@ -1,0 +1,13 @@
+{
+  "path": "_补入补充选本",
+  "fixes": [
+    {
+      "original": null,
+      "corrected": null,
+      "note": "本轮补入的 6 个文件（`近现/` 2 个、`宋/宋词三百首/`、`昭明文选/` 90 卷、`汇编/古文观止/` 12 卷、`乐府诗集/` 5 卷）尚未逐字对勘，导入时只做了简转繁、就近分卷与正文去重，不计入 clean。"
+    }
+  ],
+  "date": "2026-10-27",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

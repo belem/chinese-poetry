@@ -1,0 +1,13 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.121000.json",
+  "fixes": [
+    {
+      "original": "言言不及",
+      "corrected": "言言言不及",
+      "note": "[shi_line_length] 言言不及 → 言言言不及; 识典古籍 (2 books, e.g. , 普庵至善弘仁圓通智慧寂感妙應慈濟真覺昭貺惠慶護國宣教大德菩薩語錄)"
+    }
+  ],
+  "date": "2026-10-31",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

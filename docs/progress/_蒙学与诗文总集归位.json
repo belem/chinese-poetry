@@ -1,0 +1,14 @@
+{
+  "path": "_蒙学与诗文总集归位",
+  "fixes": [
+    {
+      "original": "先秦/蒙学/tangshisanbaishou.json",
+      "corrected": "删除（并入 唐/诗/全唐诗/poet.tang.* 作 tags: [\"唐诗三百首\"]）",
+      "note": "320 首全部在《全唐诗》找到同一首：313 首正文相似度 ≥ 0.9，1 首为王昌龄《长信怨》组诗在总集按首分排、逐首挂 tag，6 首选本署名有误（如《秋夜曲》王维 → 王涯）。"
+    }
+  ],
+  "scope_note": "结构批次：先秦/诗文总集/ → 汇编/诗文总集/，先秦/蒙学/ → 汇编/蒙学/，先秦/蒙学/qianjiashi.json → 宋/诗/千家诗/，先秦/蒙学/tangshisanbaishou.json 并入 唐/诗/全唐诗/poet.tang.*（320 首逐首对上，挂 tags，删选本副本，逐条见 docs/唐诗三百首并入.tsv）。只搬路径、只挂 tag，正文未逐字对勘。",
+  "date": "2026-10-29",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

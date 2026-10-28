@@ -1,0 +1,7 @@
+{
+  "path": "先秦/文/songyu.json",
+  "note": "由 先秦/诗/poet.xianqin.json 按书名拆出（此前与「诗」混放在一个文件里），2026-10 只做归位与去重，正文未逐字对勘",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

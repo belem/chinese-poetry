@@ -1,0 +1,19 @@
+{
+  "path": "宋/宋词/ci.song.10000.json",
+  "fixes": [
+    {
+      "original": "阕□匣岬茫□万语千言",
+      "corrected": "一心觉悟，会得万语千言",
+      "note": "U+FFFD 乱码；《南詞十三種·竹齋詞》「…誦楞嚴。一心覺悟，會得萬語千言」"
+    },
+    {
+      "original": "□稍□著意斟量过",
+      "corrected": "几曾著意斟量过",
+      "note": "U+FFFD 乱码；《惜香樂府》四庫本作「幾曾著意斟量過」"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；3 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

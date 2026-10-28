@@ -1,0 +1,7 @@
+{
+  "path": "_拆分明清总集：split_dynasty",
+  "note": "scripts/split_dynasty.py：历代/ 按作者朝代拆出 明/诗、明/词、清/诗、清/词；元人 251 条追加进 元曲/yuanqu.json（已收的 4 条未搬）；近现/ 里课本选录的明清作品归位，余下拆成 现代诗.json / 当代诗词.json。只核对朝代与体裁归属，正文未逐字对勘",
+  "date": "2026-10-27",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}
