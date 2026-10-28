@@ -32,6 +32,7 @@ import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_structure as cs  # noqa: E402
+import progress as pg  # noqa: E402
 import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
@@ -218,8 +219,6 @@ def cmd_analyze(args):
 def cmd_apply(args):
     applied = load_applied(args)
     rows = list(csv.DictReader(open(os.path.join(args.work, 'review.tsv'), encoding='utf-8'), delimiter='\t'))
-    progress_path = os.path.join(ROOT, 'fix_progress.json')
-    progress = json.load(open(progress_path, encoding='utf-8'))
     n = 0
     for row in rows:
         dec = (row['decision'] or '').strip()
@@ -241,17 +240,15 @@ def cmd_apply(args):
         if o not in raw:
             print(f"skip {row['key']}: text changed"); continue
         open(os.path.join(ROOT, rel), 'w', encoding='utf-8').write(raw.replace(o, nw, 1))
-        e = progress['reviewed'].setdefault(rel, dict(status='clean', fixes=[]))
-        e.setdefault('fixes', []).append(dict(original=row['original'], corrected=new, note=(
+        e = pg.merge(rel, dict(fixes=[dict(original=row['original'], corrected=new, note=(
             f"Collation with 识典古籍 ({row['evidence']}); dataset reading attested in none of the retrieved books"
-            + ('' if dec == 'accept' else '; corrected by reviewer'))))
-        e['date'], e['reviewer'] = args.date, args.reviewer
+            + ('' if dec == 'accept' else '; corrected by reviewer')))], date=args.date, reviewer=args.reviewer))
         if e.get('status') == 'clean':
             e['status'] = 'fixed'
+            pg.write_record(rel, pg.ordered(e))
         applied.add(row['key'])
         n += 1
-    sd.recompute_stats(progress)
-    open(progress_path, 'w', encoding='utf-8').write(json.dumps(progress, ensure_ascii=False, indent=2))
+    pg.write_index()                    # 重算 stats，并同步索引里的 date/reviewer/status
     with open(applied_path(args), 'w', encoding='utf-8') as fp:
         json.dump(sorted(applied), fp, ensure_ascii=False, indent=0)
         fp.write('\n')

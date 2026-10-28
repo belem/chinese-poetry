@@ -10,7 +10,7 @@
        python3 scripts/shidian.py analyze --work /tmp/sd
      审核：逐行检查 decision 列。自动判定可修的预填 accept，可改为 reject，
      或直接填写认定的正确文字（替换该位置 / 该句）；verified 表示「原样经古籍证实」。
-  4. apply    按审核表写回数据，并记入 fix_progress.json
+  4. apply    按审核表写回数据，并记入 docs/progress/（见 scripts/progress.py）
        python3 scripts/shidian.py apply --work /tmp/sd
 
 支持的 --check（与 check_structure.py 同名）：
@@ -30,6 +30,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_structure as cs  # noqa: E402
+import progress as pg  # noqa: E402
 
 try:
     from opencc import OpenCC
@@ -384,20 +385,14 @@ def cmd_analyze(args):
 
 # ---------------------------------------------------------------- apply
 
-def recompute_stats(progress):
-    st = progress.setdefault('stats', {})
-    statuses = collections.Counter(e.get('status') for e in progress['reviewed'].values())
-    st['reviewed'] = len(progress['reviewed'])
-    for k in ('clean', 'fixed', 'needs_review', 'out_of_scope'):
-        st[k] = statuses.get(k, 0)
-    st['in_scope_files'] = st['reviewed'] - st['out_of_scope']
+def recompute_stats(progress=None):
+    """统计口径统一在 scripts/progress.py 里，这里只为兼容旧调用保留名字。"""
+    return pg.recompute_stats()
 
 
 def cmd_apply(args):
     items = {it['id']: it for it in json.load(open(os.path.join(args.work, 'items.json'), encoding='utf-8'))}
     rows = list(csv.DictReader(open(os.path.join(args.work, 'review.tsv'), encoding='utf-8'), delimiter='\t'))
-    progress_path = os.path.join(ROOT, 'fix_progress.json')
-    progress = json.load(open(progress_path, encoding='utf-8'))
     edits = collections.defaultdict(list)          # (file, idx, field, k) -> [(start, end, new)]
     records = collections.defaultdict(list)
     for row in rows:
@@ -454,28 +449,16 @@ def cmd_apply(args):
         open(path, 'w', encoding='utf-8').write(raw)
 
     for rel, fx in records.items():
-        e = progress['reviewed'].setdefault(rel, dict(status='clean', fixes=[]))
-        e.setdefault('fixes', [])
-        known = {(x['original'], x['corrected']) for x in e['fixes']}
-        for x in fx:
-            if (x['original'], x['corrected']) in known:
-                continue
-            # 同一位置已有 needs_review 记录：就地更新，而不是另起一条
-            old = next((y for y in e['fixes'] if y['corrected'] is None and y['original'] == x['original']), None)
-            if old is not None and x['corrected'] is not None:
-                old['corrected'] = x['corrected']
-                old['note'] += f" | resolved {args.date}: {x['note']}"
-            elif old is None:
-                e['fixes'].append(x)
-        e['date'], e['reviewer'] = args.date, args.reviewer
-        if any(x['corrected'] is None for x in e['fixes']):
-            e['status'] = 'needs_review'
-        elif any(x['corrected'] != x['original'] for x in e['fixes']):
-            e['status'] = 'fixed'
-    recompute_stats(progress)
-    open(progress_path, 'w', encoding='utf-8').write(json.dumps(progress, ensure_ascii=False, indent=2))
+        # 同一位置已有 needs_review 记录：就地更新，而不是另起一条（由 pg.merge 处理）
+        rec = pg.merge(rel, dict(fixes=fx, date=args.date, reviewer=args.reviewer))
+        if any(x.get('corrected') is None for x in rec.get('fixes', [])):
+            rec['status'] = 'needs_review'
+        elif any(x.get('corrected') != x.get('original') for x in rec.get('fixes', [])):
+            rec['status'] = 'fixed'
+        pg.write_record(rel, pg.ordered(rec))
+    pg.write_index()                    # 重算 stats，并同步索引里的 date/reviewer/status
     n_fix = sum(len(v) for v in edits.values())
-    print(f'applied {n_fix} edits in {len(by_file)} files; recorded {sum(len(v) for v in records.values())} entries in fix_progress.json')
+    print(f'applied {n_fix} edits in {len(by_file)} files; recorded {sum(len(v) for v in records.values())} entries in docs/progress/')
 
 
 def main():
