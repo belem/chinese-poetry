@@ -5,10 +5,15 @@
       "original": null,
       "corrected": null,
       "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv"
+    },
+    {
+      "original": "红楼梦·第二十七回排在第三十回之后",
+      "corrected": "挪回第二十六回与第二十八回之间",
+      "note": "正文无误（首接第 26 回末，末为《葬花吟》），是记录位置错；只挪位置，不改字。见 docs/名著增补.md"
     }
   ],
-  "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
+  "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv",
+  "date": "2026-10-30",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }

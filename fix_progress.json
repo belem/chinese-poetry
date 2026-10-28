@@ -5,8 +5,8 @@
     "total_files": 872,
     "reviewed": 873,
     "clean": 347,
-    "fixed": 104,
-    "needs_review": 218,
+    "fixed": 105,
+    "needs_review": 217,
     "out_of_scope": 204,
     "in_scope_files": 669
   },
@@ -679,7 +679,7 @@
     "宋/宋词/ci.song.10000.json": {
       "date": "2026-11-01",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.11000.json": {
       "date": "2026-10-07",
@@ -3662,8 +3662,8 @@
       "status": "fixed"
     },
     "明/诗/poet.ming.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "明/诗/古诗源·明诗.json": {
@@ -4252,8 +4252,8 @@
       "status": "fixed"
     },
     "汇编/蒙学/wenzimengqiu.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-01",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "汇编/蒙学/youxueqionglin.json": {
@@ -4347,8 +4347,8 @@
       "status": "fixed"
     },
     "清/诗/poet.qing.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "清/诗/古诗源·清诗.json": {

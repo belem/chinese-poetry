@@ -5,9 +5,14 @@
       "original": "content",
       "corrected": "paragraphs",
       "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+    },
+    {
+      "original": "市有垣。從冂從ㄋ。ㄋ。古文及。㞢省聲。",
+      "corrected": "市有垣。從冂從𠃌。𠃌。古文及。象物相及也。㞢省聲。",
+      "note": "注音符号ㄋ（U+310B）是「𠃌」（U+200CC，「及」之古文）的 ocr 误认。王筠此条本作「市有垣。从冂从𠃌。𠃌，古文及，象物相及也」；《说文解字句读》卷五下清道光至同治间刻本作「市有垣。从冂从乙。乙古文及，象物相及也」，段注本、汲古阁本《说文》作「从冂从𠃌（了）」，形讹作乙、了，均与注音符号无关。见 https://www.shidianguji.com/search/市有垣从冂"
     }
   ],
-  "date": "2026-06-27",
-  "reviewer": "claude-sonnet-4-6",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }
