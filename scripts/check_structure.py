@@ -70,7 +70,7 @@ def iter_poems(rel):
     for idx, it in enumerate(items):
         if not isinstance(it, dict):
             continue
-        lines = it.get('paragraphs') or it.get('para') or it.get('content')
+        lines = it.get('paragraphs') or it.get('content')
         if isinstance(lines, str):
             lines = [lines]
         if not isinstance(lines, list) or not all(isinstance(s, str) for s in lines):
