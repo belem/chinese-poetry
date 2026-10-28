@@ -33,6 +33,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 近现/现代诗.json　当/{poet.dang.json,ci.dang.json}
 汇编/{古文观止/（古文观止.json、12 卷、古文观止·补.json）,课本选目/（原 先秦/课外经典/）,
       乐府诗集/,昭明文选/,蒙学/（三字经…增广贤文 10 种）}
+明/小说/{三国演义/,水浒传/,西游记/}　清/小说/红楼梦/
 ```
 
 `诗/poet.*`、`词/ci.*` 是 `历代/` 拆出来的补录，**`poet.*` 里诗与文混放**（体裁只决定进 `诗/` 还是 `词/` 目录）。
@@ -50,6 +51,9 @@ Community task: systematically review all JSON poetry files and fix typos and ga
   《古诗源》先秦部分已并回《诗经》《楚辞》，其余 12 首在 `汉/古诗源/`。
 - `先秦/论语`、`先秦/孟子`、`先秦/大学`、`先秦/中庸`
   是按「作者所处时代占多数」就近收的，本身跨代；它们的归属写在这份文件与 README 里，不靠目录名判断。
+
+章回小说一部书一个目录（`明/小说/`、`清/小说/`，2026-10 从识典古籍按版本整部抓取），
+不另立「名著/」这一层 —— 作者朝代没有争议，道理见 [docs/新增名著.md](docs/新增名著.md)。
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
 只保留 `诗经/shijing.json`、`楚辞/chuci.json` 的全文版本。

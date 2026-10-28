@@ -569,6 +569,34 @@
             "path": "先秦/中庸/zhongyong.json",
             "tag": "paragraphs",
             "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader"
+        },
+        "sanguo-yanyi": {
+            "name": "三国演义",
+            "id": 88,
+            "path": "明/小说/三国演义/sanguoyanyi.json",
+            "tag": "paragraphs",
+            "comments": "明罗贯中《三国志通俗演义》（嘉靖壬午本，識典古籍 CADAL02111749）：120 则，分卷不标回次，按目録顺序编号。正文取章节页 HTML 里的段落（不走 OCR）；卷内各则靠页面小标题切分，无小标题的页并入上一则"
+        },
+        "shuihu-zhuan": {
+            "name": "水浒传",
+            "id": 89,
+            "path": "明/小说/水浒传/shuihuzhuan.json",
+            "tag": "paragraphs",
+            "comments": "明施耐庵《水浒传》（容與堂本，識典古籍 NGJ89241199901879587548）：100 回。这部在识典只有扫描件 OCR，没有可直接用的排印本；回次与回目按容與堂本回目表校正，正文仍是 OCR，尚待对勘"
+        },
+        "xiyou-ji": {
+            "name": "西游记",
+            "id": 90,
+            "path": "明/小说/西游记/xiyouji.json",
+            "tag": "paragraphs",
+            "comments": "明吴承恩《西游记》（世德堂本，識典古籍 NA11023）：100 回。正文取章节页 HTML 里的段落（不走 OCR）；李卓吾总批已剔除"
+        },
+        "honglou-meng": {
+            "name": "红楼梦",
+            "id": 91,
+            "path": "清/小说/红楼梦/hongloumeng.json",
+            "tag": "paragraphs",
+            "comments": "清曹雪芹《红楼梦》（《脂硯齋重評石頭記》庚辰本，識典古籍 7428573169323081747）：79 回，正文取章节页 HTML 里的段落（不走 OCR）。庚辰本十七、十八回未分回，作一条"
         }
     }
 }

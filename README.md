@@ -15,6 +15,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 | 明清诗词、唐五代词、各朝补录 | 3000+ | `明/` `清/` `唐/词/` `五代十国/` 等 |
 | 经史子集与佛道典籍 | 1200+ | `先秦/文/`（35 部） |
 | 选本与总集 | 1500+ | `汇编/`、`汉/古诗源/`、`宋/诗/千家诗/` |
+| 章回小说（四大名著） | 475 | `明/小说/`、`清/小说/` |
 | 作者小传 / 朝代概述 | 2402 位 / 14 条 | `authors/` `dynasties/` |
 
 ## 目录
@@ -28,6 +29,8 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 唐/    诗/全唐诗/（poet.tang.*）  词/ci.tang.json
 宋/    诗/全宋诗/  诗/千家诗/  宋词/（ci.song.*）
 元/    元曲/yuanqu.json  诗/poet.yuan.json
+明/    诗/ 词/  小说/{三国演义,水浒传,西游记}/
+清/    诗/ 词/  小说/红楼梦/
 清/    诗/  词/  幽梦影/
 汇编/  古文观止/ 课本选目/ 乐府诗集/ 昭明文选/ 蒙学/
 ```

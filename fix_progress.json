@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 868,
-    "reviewed": 873,
+    "total_files": 872,
+    "reviewed": 877,
     "clean": 347,
     "fixed": 104,
-    "needs_review": 218,
+    "needs_review": 222,
     "out_of_scope": 204,
-    "in_scope_files": 669
+    "in_scope_files": 673
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -3656,6 +3656,21 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "明/小说/三国演义/sanguoyanyi.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "明/小说/水浒传/shuihuzhuan.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "明/小说/西游记/xiyouji.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
     "明/词/ci.ming.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -4335,6 +4350,11 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed"
+    },
+    "清/小说/红楼梦/hongloumeng.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
     },
     "清/幽梦影/youmengying.json": {
       "date": "2026-10-28",
