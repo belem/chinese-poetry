@@ -16,7 +16,11 @@
                那是《全唐诗》按体类排的 900 卷与按作者排的 2200 人各排一遍的样子，
                《全唐詩》另一份录文也是这个排法。删了就失真，一组都不动。
   归属异说     作者不同，又不是纯体类卷题名（太宗／董思恭《詠弓》、明皇帝／梁鍠《傀儡吟》）。
-               按「一作某」处理：两条都留，在对方 `sources` 里挂一条互见，正文一字不动。
+               按「一作某」处理：两条都留，在对方 `tags` 里挂一条互见，正文一字不动。
+
+互见挂 `tags` 而不是 `sources`：`sources` 是「这条正文还见于哪部书」，与 `tags: ["唐诗三百首"]`
+这种归属标记同义；「一作某人《某题》」是校记，不是来源。2026-10 起全库不再有 `sources` 的
+作者题名互见（`poet.tang.58000.json` 那 1598 条都是本脚本上一版写的，已改挂 `tags`）。
 
 题名不同的同一首（《三臺》与《三臺二首 一》、《清平調》与《清平調詞三首 一》）照删：
 《全唐诗》作者名下那一条，信息是全的。
@@ -197,12 +201,12 @@ def main():
             stats['保留（归属异说）'] += len(gone)
             for x in gone:
                 link = f'{keep[2].get("author")}《{keep[2].get("title")}》'
-                if link not in (x[2].get('sources') or []):
-                    x[2]['sources'] = (x[2].get('sources') or []) + [link]
+                if link not in (x[2].get('tags') or []):
+                    x[2]['tags'] = (x[2].get('tags') or []) + [link]
                 back = f'{x[2].get("author")}《{x[2].get("title")}》'
-                if back not in (keep[2].get('sources') or []):
-                    keep[2]['sources'] = (keep[2].get('sources') or []) + [back]
-                log.append(('保留（归属异说）', desc(keep), desc(x), '两条都留，互挂 sources'))
+                if back not in (keep[2].get('tags') or []):
+                    keep[2]['tags'] = (keep[2].get('tags') or []) + [back]
+                log.append(('保留（归属异说）', desc(keep), desc(x), '两条都留，互挂 tags'))
             continue
 
         kb = body(keep[2])
@@ -230,6 +234,40 @@ def main():
     if not args.apply:
         print('（预演，未写盘；加 --apply 写回）')
         return
+
+    # 互见已改挂 tags：旧版写进 sources 的那 1598 条，重跑时顺手归位
+    moved = 0
+    for rel, recs in data.items():
+        for r in recs:
+            srcs = r.get('sources') or []
+            links = [s for s in srcs if '《' in s]
+            if not links:
+                continue
+            r['sources'] = [s for s in srcs if s not in links]
+            if not r['sources']:
+                del r['sources']
+            tags = r.setdefault('tags', [])
+            for s in links:
+                if s not in tags:
+                    tags.append(s)
+                    moved += 1
+    if moved:
+        print(f'旧版写进 sources 的互见改挂 tags：{moved} 条')
+        # 改挂后 tags 与 sources 撞车的，tags 里那条是多余的（同一条互见写了两遍）
+        dup = 0
+        for recs in data.values():
+            for r in recs:
+                srcs = set(r.get('sources') or [])
+                if not srcs:
+                    continue
+                keep = [t for t in r.get('tags') or [] if t not in srcs]
+                if len(keep) != len(r.get('tags') or []):
+                    dup += len(r.get('tags')) - len(keep)
+                    r['tags'] = keep or None
+                    if r['tags'] is None:
+                        del r['tags']
+        if dup:
+            print(f'  tags 与 sources 重复的 {dup} 条一并去掉')
 
     for rel in files:
         if rel in drop:
