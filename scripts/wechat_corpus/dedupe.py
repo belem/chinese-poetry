@@ -18,8 +18,8 @@ import argparse, collections, json, os, re, sys, unicodedata
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 # 选本目录（已按朝代分层，写全路径）
-NEW_BOOKS = ['汇编/诗文总集/乐府诗集', '汉/古诗源', '唐/唐诗三百首',
-             '汇编/诗文总集/昭明文选', '先秦/古文观止', '先秦/课外经典']
+NEW_BOOKS = ['汇编/乐府诗集', '汉/古诗源', '唐/唐诗三百首',
+             '汇编/昭明文选', '先秦/古文观止', '先秦/课外经典']
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.github', '.cnb'}
 MIN_LEN = 8
 PUNCT = re.compile(r'[\s\W_]+', re.U)

@@ -28,10 +28,10 @@ S2TW = OpenCC('s2twp')
 
 # 上游文件 → (本库目录, 是否按 gradeGroup 分卷)
 BOOKS = {
-    'poems-yuefu.js': ('汇编/诗文总集/乐府诗集', True),
+    'poems-yuefu.js': ('汇编/乐府诗集', True),
     'poems-gushi.js': ('汉/古诗源', True),
     'poems-tangshi.js': ('唐/唐诗三百首', False),
-    'poems-zhaoming.js': ('汇编/诗文总集/昭明文选', True),
+    'poems-zhaoming.js': ('汇编/昭明文选', True),
     'poems-guwen.js': ('先秦/古文观止', True),
     'poems-classic.js': ('先秦/课外经典', True),
 }
@@ -114,8 +114,8 @@ def build(corpus, idx, log):
                 volume = it.get('gradeGroup') or it.get('group') or ''
             if src == 'poems-zhaoming.js' and '·' not in volume:
                 # 上游这类条目卷名只写了文体；「赋」「其他」两类与上面重名，
-                # 一律加「汇编/诗文总集/昭明文选」前缀，避免两卷写进同一个文件
-                volume = ('汇编/诗文总集/昭明文选' if volume == '赋' else '') + (volume or '其他')
+                # 给「赋」加前缀，避免两卷写进同一个文件
+                volume = ('赋上' if volume == '赋' else '') + (volume or '其他')
             volumes.setdefault(volume, []).append(rec)
         if volumes:
             books[book] = volumes
