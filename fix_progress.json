@@ -5,8 +5,8 @@
     "total_files": 875,
     "reviewed": 876,
     "clean": 347,
-    "fixed": 104,
-    "needs_review": 221,
+    "fixed": 106,
+    "needs_review": 219,
     "out_of_scope": 204,
     "in_scope_files": 672
   },
@@ -597,7 +597,7 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.50000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -3397,9 +3397,9 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.55000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.56000.json": {
       "date": "2026-10-05",
@@ -3602,9 +3602,9 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.92000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.93000.json": {
       "date": "2026-11-01",

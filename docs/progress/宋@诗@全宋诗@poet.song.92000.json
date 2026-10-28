@@ -1,7 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.92000.json",
+  "fixes": [
+    {
+      "original": "只伴□簷聲",
+      "corrected": "只伴缺簷聲",
+      "note": "shi_line_length/missing_char 对勘：吕本中《久雨》「芭蕉添客恨，只伴□簷聲」，识典古籍《東萊詩集》卷十（四庫全書本）作「只伴缺檐聲」，清抄本《東萊先生詩集》卷十同缺一字，据四库本补「缺」；另 3 处经古籍证实原样（东莱先生诗集、宋百家诗存）"
+    }
+  ],
   "note": "其中 2 处经古籍证实原样，未改",
-  "date": "2026-11-01",
+  "date": "2026-11-07",
   "reviewer": "codebuddy",
-  "status": "needs_review"
+  "status": "fixed"
 }
