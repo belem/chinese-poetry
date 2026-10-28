@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.120000.json",
+  "fixes": [
+    {
+      "original": "經生持戒不知",
+      "corrected": "經生持戒不知心",
+      "note": "[shi_line_length] 經生持戒不知 → 經生持戒不知心; 识典古籍 (2 books, e.g. , 普庵至善弘仁圓通智慧寂感妙應慈濟真覺昭貺惠慶護國宣教大德菩薩語錄)"
+    }
+  ],
+  "note": "2 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

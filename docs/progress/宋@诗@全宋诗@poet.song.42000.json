@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.42000.json",
+  "fixes": [
+    {
+      "original": "咄嗟胡乎",
+      "corrected": "咄嗟胡爲乎",
+      "note": "[shi_line_length] 咄嗟胡乎 → 咄嗟胡爲乎; 识典古籍 (2 books, e.g. , 青山集)"
+    }
+  ],
+  "note": "2 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

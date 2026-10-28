@@ -1,0 +1,19 @@
+{
+  "path": "清/幽梦影/youmengying.json",
+  "fixes": [
+    {
+      "original": "酴(tu)醾 (mi）",
+      "corrected": "酴醾",
+      "note": "窜入的注音"
+    },
+    {
+      "original": "擪(ye)管",
+      "corrected": "擪管",
+      "note": "窜入的注音"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

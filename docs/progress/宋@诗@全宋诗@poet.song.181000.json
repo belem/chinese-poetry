@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.181000.json",
+  "fixes": [
+    {
+      "original": "困噇眠",
+      "corrected": "困則噇眠",
+      "note": "PUA U+E000 → 則；「飢來噇飯，困則打眠」禅门常语，数据集脱「則」字"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

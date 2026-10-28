@@ -1,0 +1,14 @@
+{
+  "path": "宋/宋词/ci.song.0.json",
+  "fixes": [
+    {
+      "original": "不惯被人抛掷",
+      "corrected": "不惯被人抛掷日",
+      "note": "[ci_pattern] 不惯被人抛掷 → 不惯被人抛掷日；《宋名家詞》本杜安世《壽域詞》作「不慣被人抛擲日」，與上句「玉容瘦與薄妝稱」協"
+    }
+  ],
+  "note": "其中 4 处经古籍证实原样，未改；2 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

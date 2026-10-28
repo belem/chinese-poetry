@@ -1,0 +1,13 @@
+{
+  "path": "先秦/楚辞/chuci.json",
+  "fixes": [
+    {
+      "original": "content",
+      "corrected": "paragraphs",
+      "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+    }
+  ],
+  "date": "2026-10-06",
+  "reviewer": "claude-opus-5-5",
+  "status": "fixed"
+}

@@ -1,0 +1,34 @@
+{
+  "path": "汉/诗/poet.han.json",
+  "fixes": [
+    {
+      "original": "宣公□年",
+      "corrected": "宣公二十一年",
+      "note": "《史记·田敬仲完世家》「宣公二十一年，杀其太子御寇」"
+    },
+    {
+      "original": "□年，三晋灭晋后而分其地",
+      "corrected": "三年，三晋灭晋后而分其地",
+      "note": "同上，齐威王三年"
+    },
+    {
+      "original": "□年，楚围我徐州",
+      "corrected": "十年，楚围我徐州",
+      "note": "同上"
+    },
+    {
+      "original": "□年，秦置东郡",
+      "corrected": "二十三年，秦置东郡",
+      "note": "同上"
+    },
+    {
+      "original": "□年，秦灭楚",
+      "corrected": "四十二年，秦灭楚",
+      "note": "同上"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

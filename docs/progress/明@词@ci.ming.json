@@ -1,0 +1,14 @@
+{
+  "path": "明/词/ci.ming.json",
+  "fixes": [
+    {
+      "original": null,
+      "corrected": null,
+      "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv"
+    }
+  ],
+  "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

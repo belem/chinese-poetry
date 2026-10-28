@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.30000.json",
+  "fixes": [
+    {
+      "original": "神妙止削",
+      "corrected": "神妙止一削",
+      "note": "[shi_line_length] 神妙止削 → 神妙止一削; 识典古籍 (2 books, e.g. , 永樂大典)"
+    }
+  ],
+  "note": "4 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

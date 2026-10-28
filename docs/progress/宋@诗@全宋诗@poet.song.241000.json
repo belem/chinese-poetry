@@ -1,0 +1,7 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.241000.json",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

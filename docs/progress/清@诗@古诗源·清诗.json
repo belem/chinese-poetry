@@ -1,0 +1,13 @@
+{
+  "path": "清/诗/古诗源·清诗.json",
+  "fixes": [
+    {
+      "original": "元明清诗.json 里清代 8 首",
+      "corrected": "拆分到 清/诗/古诗源·清诗.json",
+      "note": "鄭燮、史可法、鄭成功、畢沅、趙翼、林則徐、龔自珍 皆清人；正文未改，记录加 sources: [\"古诗源\"]"
+    }
+  ],
+  "date": "2026-10-27",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

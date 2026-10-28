@@ -1,0 +1,14 @@
+{
+  "path": "汇编/古文观止/卷十一宋文.json",
+  "fixes": [
+    {
+      "original": "縱其所如,或立於陂(bēi)田",
+      "corrected": "縱其所如，或立於陂田",
+      "note": "半角逗号与注音括注"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

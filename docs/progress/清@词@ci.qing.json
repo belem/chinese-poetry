@@ -1,0 +1,19 @@
+{
+  "path": "清/词/ci.qing.json",
+  "fixes": [
+    {
+      "original": null,
+      "corrected": null,
+      "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv"
+    },
+    {
+      "original": "零宽空格 U+200B ×21（黄之隽《桂枝香·美人魂》）",
+      "corrected": "删除",
+      "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
+    }
+  ],
+  "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘。2026-11-01 字数异常对勘：2 处疑似字数异常经识典古籍证实原样，另有 13 处证据不足未改",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

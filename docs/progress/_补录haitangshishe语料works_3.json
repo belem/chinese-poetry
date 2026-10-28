@@ -1,0 +1,13 @@
+{
+  "path": "_补录haitangshishe语料works_3",
+  "fixes": [
+    {
+      "original": "[batch] reference/mit_licence_haitangshishe/works_3.json → 3 个目标文件，收录 5 条",
+      "corrected": null,
+      "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitangshishe收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
+    }
+  ],
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

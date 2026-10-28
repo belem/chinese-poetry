@@ -1,0 +1,14 @@
+{
+  "path": "宋/宋词/ci.song.9000.json",
+  "fixes": [
+    {
+      "original": "算来虚度怜宵",
+      "corrected": "算来虚度可怜宵",
+      "note": "[ci_pattern] 算来虚度怜宵 → 算来虚度可怜宵；《孏窟詞》（四庫本）作「算來虚度可憐宵」"
+    }
+  ],
+  "note": "其中 1 处经古籍证实原样，未改",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

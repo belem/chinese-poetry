@@ -1,0 +1,13 @@
+{
+  "path": "明/诗/古诗源·明诗.json",
+  "fixes": [
+    {
+      "original": "元明清诗.json 里明代 6 首",
+      "corrected": "拆分到 明/诗/古诗源·明诗.json",
+      "note": "于謙、楊基、祝允明、楊繼盛、錢福、袁中道 皆明人；正文未改，记录加 sources: [\"古诗源\"]"
+    }
+  ],
+  "date": "2026-10-27",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

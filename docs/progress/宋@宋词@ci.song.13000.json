@@ -1,0 +1,14 @@
+{
+  "path": "宋/宋词/ci.song.13000.json",
+  "fixes": [
+    {
+      "original": "朝朝只在尘中め",
+      "corrected": "朝朝只在尘中□",
+      "note": "假名乱码，可旻《渔家傲》不见于识典古籍，改方框"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 5 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

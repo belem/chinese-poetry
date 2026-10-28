@@ -22,6 +22,13 @@ import argparse, json, os, re, sys, unicodedata
 from collections import OrderedDict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+
+def _progress():
+    """scripts/progress.py：记录写在一文件一条里，整表重写会撞车。"""
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    import progress
+    return progress
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs',
              '.git', '.claude', '.github', '.cnb'}
 PUNCT = re.compile(r'[\s\W_]+', re.U)
@@ -270,27 +277,19 @@ def main():
             json.dump(recs, fp, ensure_ascii=False, indent=2)
             fp.write('\n')
     register([rel for rel, *_ in plan])
-    print('已登记 loader/datas.json 与 fix_progress.json')
+    print('已登记 loader/datas.json 与 docs/progress/')
     return 0
 
 
 DATE, REVIEWER = '', 'CodeBuddy'
 
 
-def sync_stats(prog):
-    """stats 从各文件状态重算，别手写数字。"""
-    from collections import Counter
-    c = Counter(v['status'] for v in prog['reviewed'].values())
-    prog['stats'].update(reviewed=len(prog['reviewed']), clean=c['clean'],
-                         fixed=c['fixed'], needs_review=c['needs_review'],
-                         out_of_scope=c['out_of_scope'])
-
-
 def register(new_files):
-    """新目录登记进 loader/datas.json，新文件登记进 fix_progress.json。
+    """新目录登记进 loader/datas.json，新文件登记进 docs/progress/。
 
-    两个文件都是手写格式（datas.json 还是 CRLF、行尾带空格），整份 dump 一遍
-    会带出成百行无谓改动，所以都是「插入一段文本」而不是「重写整个文件」。
+    datas.json 是手写格式（CRLF、行尾带空格），整份 dump 一遍会带出成百行
+    无谓改动，所以是「插入一段文本」而不是「重写整个文件」；进度记录一文件一条，
+    直接写即可（scripts/progress.py）。
     """
     dpath = os.path.join(ROOT, 'loader/datas.json')
     raw = open(dpath, encoding='utf-8', newline='').read()
@@ -320,15 +319,11 @@ def register(new_files):
         open(dpath, 'w', encoding='utf-8', newline='').write(raw)
         json.loads(raw)  # 写坏了就当场报错
 
-    ppath = os.path.join(ROOT, 'fix_progress.json')
-    prog = json.load(open(ppath, encoding='utf-8'))
+    pg = _progress()
     for rel in new_files:
-        prog['reviewed'].setdefault(rel, {'date': DATE, 'reviewer': REVIEWER,
-                                          'status': 'clean', 'fixes': []})
-    sync_stats(prog)
-    with open(ppath, 'w', encoding='utf-8') as fp:
-        json.dump(prog, fp, ensure_ascii=False, indent=2)
-        fp.write('\n')
+        if rel not in pg.load():
+            pg.merge(rel, {'date': DATE, 'reviewer': REVIEWER, 'status': 'clean'})
+    pg.write_index()
 
 
 if __name__ == '__main__':
