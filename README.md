@@ -72,7 +72,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 
 | 脚本 | 用途 |
 | --- | --- |
-| `scripts/check_structure.py` | 全库质检：乱码、缺字、句长与词牌异常，只报告不修改 |
+| `scripts/check_structure.py` | 全库质检：乱码、缺字、句长与词牌异常，只报告不修改。PR 只比改动文件，基线由 CI 维护，见 [docs/质检基线.md](docs/质检基线.md) |
 | `scripts/collate.py` | 整部合集逐句与古籍对勘，每日分批运行 |
 | `scripts/twin_collate.py` | 选本 ↔ 总集互校，一字之差以古籍判定 |
 | `scripts/shidian.py` | 识典古籍批量检索取证，生成审核表，确认后写回 |

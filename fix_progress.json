@@ -5,8 +5,8 @@
     "total_files": 887,
     "reviewed": 888,
     "clean": 347,
-    "fixed": 105,
-    "needs_review": 232,
+    "fixed": 107,
+    "needs_review": 230,
     "out_of_scope": 204,
     "in_scope_files": 684
   },
@@ -327,8 +327,8 @@
       "status": "fixed"
     },
     "先秦/文/zuozhuan.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-31",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "先秦/楚辞/chuci.json": {
@@ -597,7 +597,7 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.50000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -3402,9 +3402,9 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.55000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.56000.json": {
       "date": "2026-10-05",
@@ -3607,9 +3607,9 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.92000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-07",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.93000.json": {
       "date": "2026-11-01",
