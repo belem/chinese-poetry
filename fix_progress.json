@@ -3,12 +3,12 @@
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋/诗/全宋诗/error/. Workflow: AGENTS.md.",
   "stats": {
     "total_files": 1547,
-    "reviewed": 872,
-    "clean": 478,
+    "reviewed": 871,
+    "clean": 477,
     "fixed": 11,
     "needs_review": 179,
     "out_of_scope": 204,
-    "in_scope_files": 1231
+    "in_scope_files": 1343
   },
   "reviewed": {
     "先秦/诗经/shijing.json": {
@@ -74,11 +74,6 @@
     "先秦/蒙学/dizigui.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
-    },
-    "先秦/蒙学/guwenguanzhi.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
       "status": "clean"
     },
     "先秦/楚辞/chuci.json": {
@@ -3758,7 +3753,7 @@
         {
           "original": null,
           "corrected": null,
-          "note": "本轮补入的 6 个文件（`近现/` 2 个、`宋/宋词三百首/`、`昭明文选/` 90 卷、`先秦/古文观止/` 12 卷、`乐府诗集/` 5 卷）尚未逐字对勘，导入时只做了简转繁、就近分卷与正文去重，不计入 clean。"
+          "note": "本轮补入的 6 个文件（`近现/` 2 个、`宋/宋词三百首/`、`昭明文选/` 90 卷、`汇编/古文观止/` 12 卷、`乐府诗集/` 5 卷）尚未逐字对勘，导入时只做了简转繁、就近分卷与正文去重，不计入 clean。"
         }
       ]
     },
@@ -3770,7 +3765,7 @@
         {
           "original": null,
           "corrected": null,
-          "note": "新增的选本（`乐府诗集/`、`古诗源/`、`唐/唐诗三百首/`、`昭明文选/`、`先秦/古文观止/`、`先秦/课外经典/`，共 121 个文件 / 1031 条）尚未逐字对勘，导入时只做了简转繁、分卷与正文去重，不计入 clean。逐字对勘完成后再拆成逐文件记录。"
+          "note": "新增的选本（`乐府诗集/`、`古诗源/`、`唐/唐诗三百首/`、`昭明文选/`、`汇编/古文观止/`、`汇编/课本选目/`，共 121 个文件 / 1031 条）尚未逐字对勘，导入时只做了简转繁、分卷与正文去重，不计入 clean。逐字对勘完成后再拆成逐文件记录。"
         },
         {
           "original": null,
@@ -3887,32 +3882,33 @@
         "历代/wen.0.json",
         "历代/wen.1.json",
         "历代/wen.2.json",
-        "先秦/古文观止/卷一周文.json",
-        "先秦/古文观止/卷七六朝唐文.json",
-        "先秦/古文观止/卷三周文.json",
-        "先秦/古文观止/卷九唐宋文.json",
-        "先秦/古文观止/卷二周文.json",
-        "先秦/古文观止/卷五汉文.json",
-        "先秦/古文观止/卷八唐文.json",
-        "先秦/古文观止/卷六汉文.json",
-        "先秦/古文观止/卷十一宋文.json",
-        "先秦/古文观止/卷十二明文.json",
-        "先秦/古文观止/卷十宋文.json",
-        "先秦/古文观止/卷四秦文.json",
-        "先秦/古文观止/先秦/古文观止.json",
+        "汇编/古文观止/卷一周文.json",
+        "汇编/古文观止/卷七六朝唐文.json",
+        "汇编/古文观止/卷三周文.json",
+        "汇编/古文观止/卷九唐宋文.json",
+        "汇编/古文观止/卷二周文.json",
+        "汇编/古文观止/卷五汉文.json",
+        "汇编/古文观止/卷八唐文.json",
+        "汇编/古文观止/卷六汉文.json",
+        "汇编/古文观止/卷十一宋文.json",
+        "汇编/古文观止/卷十二明文.json",
+        "汇编/古文观止/卷十宋文.json",
+        "汇编/古文观止/卷四秦文.json",
+        "汇编/古文观止/古文观止.json",
+        "汇编/古文观止/古文观止·补.json",
         "唐/诗/全唐诗/poet.tang.58000.json",
         "唐/唐诗三百首/唐诗三百首.json",
         "宋/宋词/ci.song.22000.json",
         "宋/诗/全宋诗/poet.song.255000.json",
         "宋/宋词三百首/宋/宋词三百首.json",
-        "先秦/课外经典/人物故事.json",
-        "先秦/课外经典/寓言故事.json",
-        "先秦/课外经典/山水游记.json",
-        "先秦/课外经典/志人逸事.json",
-        "先秦/课外经典/治学勤读.json",
-        "先秦/课外经典/神话传说.json",
-        "先秦/课外经典/蒙学经典.json",
-        "先秦/课外经典/诸子论道.json",
+        "汇编/课本选目/人物故事.json",
+        "汇编/课本选目/寓言故事.json",
+        "汇编/课本选目/山水游记.json",
+        "汇编/课本选目/志人逸事.json",
+        "汇编/课本选目/治学勤读.json",
+        "汇编/课本选目/神话传说.json",
+        "汇编/课本选目/蒙学经典.json",
+        "汇编/课本选目/诸子论道.json",
         "近现/元明清詩.json",
         "近现/近现代诗.json"
       ]
@@ -4288,79 +4284,79 @@
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷一周文.json": {
+    "汇编/古文观止/卷一周文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷七六朝唐文.json": {
+    "汇编/古文观止/卷七六朝唐文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷三周文.json": {
+    "汇编/古文观止/卷三周文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷九唐宋文.json": {
+    "汇编/古文观止/卷九唐宋文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷二周文.json": {
+    "汇编/古文观止/卷二周文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷五汉文.json": {
+    "汇编/古文观止/卷五漢文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷八唐文.json": {
+    "汇编/古文观止/卷八唐文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷六汉文.json": {
+    "汇编/古文观止/卷六漢文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷十一宋文.json": {
+    "汇编/古文观止/卷十一宋文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷十二明文.json": {
+    "汇编/古文观止/卷十二明文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷十宋文.json": {
+    "汇编/古文观止/卷十宋文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/卷四秦文.json": {
+    "汇编/古文观止/卷四戰國文.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/古文观止/古文观止.json": {
+    "汇编/古文观止/古文观止.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
@@ -4912,49 +4908,49 @@
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/人物故事.json": {
+    "汇编/课本选目/人物故事.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/寓言故事.json": {
+    "汇编/课本选目/寓言故事.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/山水游记.json": {
+    "汇编/课本选目/山水游记.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/志人逸事.json": {
+    "汇编/课本选目/志人逸事.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/治学勤读.json": {
+    "汇编/课本选目/治学勤读.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/神话传说.json": {
+    "汇编/课本选目/神话传说.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/蒙学经典.json": {
+    "汇编/课本选目/蒙学经典.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
     },
-    "先秦/课外经典/诸子论道.json": {
+    "汇编/课本选目/诸子论道.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
