@@ -98,6 +98,11 @@
   上一轮把 `content`（楚辞、诗经、幽梦影、蒙学）与拼错的 `para`（纳兰诗 39 条）都并进了 `paragraphs`，
   `loader/datas.json` 的 `tag` 现全是 `paragraphs`，全库不再有第二个正文段落键。
   词、曲的题名走 `rhythmic`（词牌/曲牌），这是上游原有的另一条契约，不是新增简称，两条都在用的记录两条都写。
+- **每条篇目都有 `id`，6 字符**（`0-9a-z`，22 进制），如 `"id": "dhfil4"`。取值由「作者 + 题名 + 正文」哈希得来，
+  与文件和次序无关：搬目录、重排、重新分片都不变号；正文改了就是另一首，换新号。全库 351083 条 id 互不重复，
+  其中 565 条因撞码加长到 7 位。既有的 uuid 一并换成短 id：id 是记录身份，不是内容指纹，换格式不必保留旧值。
+  唐诗三百首里同题同文的三元组重出各持一号（否则同一文件里三个一样的号，定位不了），
+  跨书重出的共用号——那是同一件作品。`scripts/backfill_ids.py` 可重跑，结果不变。
 
 ## 本 Fork 的数据修正
 
@@ -177,6 +182,8 @@
 ### 工具与参与
 
 - [`scripts/check_structure.py`](scripts/check_structure.py)：全库质检（乱码、缺字、诗句与词牌字数异常），只报告不修改。
+- [`scripts/backfill_ids.py`](scripts/backfill_ids.py)：给篇目补 `id`、把旧 uuid 换成 6 字符短 id（默认预演，`--apply` 写回），
+  id 由作者 + 题名 + 正文哈希得出，与文件位置无关，重跑不变号。
 - [`scripts/split_dynasty.py`](scripts/split_dynasty.py)：把 `历代/` 按作者朝代拆进各朝代目录（默认预演，`--apply` 写回），说明见 [`docs/历代拆分.md`](docs/历代拆分.md)。
 - [`scripts/check_anthology.py`](scripts/check_anthology.py) + [`anthologies/`](anthologies/)：选本目次（目次取自识典古籍扫描本）与本库 tag 逐条对齐，报告混入 / 漏收 / 重覆，结果见 [`docs/选本对齐.tsv`](docs/选本对齐.tsv)，说明见 [`docs/选本对齐.md`](docs/选本对齐.md)。
 - [`scripts/twin_collate.py`](scripts/twin_collate.py)：选本（花间集、唐诗三百首、千家诗等）↔ 全唐诗 / 宋词 互校，一字之差以识典古籍判定，人工审核后写回；已审条目记在 [`docs/小合集互校.applied.json`](docs/小合集互校.applied.json)。
