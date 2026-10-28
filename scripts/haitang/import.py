@@ -24,6 +24,13 @@
 判重按正文（简繁统一 + 去标点），命中库中已有条目的不重收。来源是到处收集的语料，
 不挂 sources 标记——sources 只留给唐诗三百首这类权威合集。
 
+已有文件里残留的 `"sources": ["haitang"]`：本脚本曾用它标记补录来源，2026-10 起全部清除
+（用户口径：sources 只留给权威选本/总集，haitang 不是）。中途出过两次回潮——`split_dynasty.py`
+按旧口径拆文件、`dedupe_tang.py` 按旧口径写互见——都已改掉；重跑本脚本不会再把标记写回去，
+`--apply` 之前会扫一遍目标文件报出残留条数：
+
+  python3 scripts/haitang/import.py --check-sources   # 只扫，不改
+
 后续补录：源文件随时可能被上游修好（works_3.json 原是裸对象流，2026-10 补上外层方括号，
 内容不变），这时用 --only 只重跑那一个文件，判定表写进单独的日志，不覆盖首次导入的那份：
 
@@ -427,7 +434,16 @@ def main():
     ap.add_argument('--tsv', default='docs/haitang收录.tsv')
     ap.add_argument('--only', default=None, metavar='works_3',
                     help='只处理一个源文件（如 works_3），默认全部 8 个')
+    ap.add_argument('--check-sources', action='store_true',
+                    help='只扫全库残留的 sources: [haitang]，不改数据')
     args = ap.parse_args()
+
+    if args.check_sources:
+        stale = scan_stale_sources()
+        print('残留 sources: [haitang] 共 %d 条，涉及 %d 个文件' % (sum(stale.values()), len(stale)))
+        for rel, n in sorted(stale.items()):
+            print('  %-46s %d' % (rel, n))
+        return
 
     works = source._load(args.only) if args.only else source.works()
     dyn_idx = dynasty_index()
@@ -519,6 +535,28 @@ def main():
 
     if args.authors or args.dynasties:
         write_indexes(args.authors, args.dynasties)
+
+
+def scan_stale_sources():
+    """全库扫「sources 里含 haitang」的记录，返回 相对路径 → 条数。"""
+    SKIP = {'reference', 'scripts', 'images', '.git', '.github', '.cnb', 'loader'}
+    out = {}
+    for dirpath, dirs, filenames in os.walk(ROOT):
+        dirs[:] = sorted(d for d in dirs if d not in SKIP and not d.startswith('.'))
+        for fn in sorted(filenames):
+            if not fn.endswith('.json'):
+                continue
+            rel = os.path.relpath(os.path.join(dirpath, fn), ROOT)
+            try:
+                items = json.load(open(os.path.join(dirpath, fn), encoding='utf-8'))
+            except Exception:
+                continue
+            if not isinstance(items, list):
+                continue
+            n = sum(1 for it in items if isinstance(it, dict) and 'haitang' in (it.get('sources') or []))
+            if n:
+                out[rel] = n
+    return out
 
 
 def write_indexes(do_authors, do_dynasties):

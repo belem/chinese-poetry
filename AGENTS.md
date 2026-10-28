@@ -56,6 +56,10 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
 - `loader/datas.json` 是数据读取入口，dataset 的 key 不变，只改 `path`；新增目录要在那里注册。
+- `sources` 只记「这条正文还见于哪部书」。**不要写 `"sources": ["haitang"]`** —— haitang 是到处收集的语料，
+  不是权威选本；2026-10 清过一次（漏了 `唐/诗/全唐诗/poet.tang.58000.json`），2026-10-30 已彻底清完，
+  重跑 `scripts/haitang/import.py` 或 `scripts/dedupe_tang.py` 都不会再写回去。
+  自查：`python3 scripts/haitang/import.py --check-sources`；「一作某人《某题》」这类互见挂 `tags`，见 `docs/唐诗内部去重.md`。
 - `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名；`poet.*` 里混着文，句长类检查会报噪音。
 
 ---
