@@ -4,8 +4,8 @@
   "stats": {
     "total_files": 870,
     "reviewed": 873,
-    "clean": 409,
-    "fixed": 125,
+    "clean": 408,
+    "fixed": 126,
     "needs_review": 135,
     "out_of_scope": 204,
     "in_scope_files": 669
@@ -809,7 +809,7 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.12000.json": {
-      "date": "2026-10-31",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -817,6 +817,16 @@
           "original": "满劝长生酒",
           "corrected": "满劝长生春酒",
           "note": "[ci_pattern] 满劝长生酒 → 满劝长生春酒；《新編事文類聚翰墨大全》啓丁集作「滿勸長生春酒」"
+        },
+        {
+          "original": "篱菊有芬芳",
+          "corrected": "篱菊有芬芳",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（宋名家詞），不改"
+        },
+        {
+          "original": "雨﹀人︽。（陈亮《点绛唇》）",
+          "corrected": "雨僝云僽。",
+          "note": "U+FE40/U+FE3D 竖排标点乱码，原字为「僝僽」；识典古籍《龙川词》《花草稡编》卷十七（四库本）作「君知否。雨僝云僽。格调还依旧」，另《宋名家词》复刻胡凤丹本同（同页有异文「雨偈云愁」，仅一字之差）"
         }
       ]
     },
@@ -834,7 +844,7 @@
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
     },
     "宋/宋词/ci.song.14000.json": {
-      "date": "2026-10-31",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -847,6 +857,36 @@
           "original": "翠荷斜领云堆",
           "corrected": "翠荷斜嚲领云堆",
           "note": "[ci_pattern] 翠荷斜领云堆 → 翠荷斜嚲领云堆；《竹齋詩餘》（四庫本）作「翠荷斜嚲領雲堆」"
+        },
+        {
+          "original": "替却燕姬皓齿",
+          "corrected": "替却燕姬皓齿",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（新編通用啓札截江網），不改"
+        },
+        {
+          "original": "扁舟借我",
+          "corrected": "扁舟借我",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（宋明十六家詞），不改"
+        },
+        {
+          "original": "三千世界",
+          "corrected": "三千世界",
+          "note": "[ci_pattern] 原样见于识典古籍 4 部（海瓊玉蟾先生文集, 漢魏諸名家集二十一種），不改"
+        },
+        {
+          "original": "做些功行",
+          "corrected": "做些功行",
+          "note": "[ci_pattern] 原样见于识典古籍 3 部（彊村叢書, 新刻瓊琯白先生集），不改"
+        },
+        {
+          "original": "无情江水东流去",
+          "corrected": "无情江水东流去",
+          "note": "[ci_pattern] 原样见于识典古籍 6 部（中興以來絶妙詞選, 御選歷代詩餘），不改"
+        },
+        {
+          "original": "吃尽风﹀雨︽，那见霜凝雪冻",
+          "corrected": "吃尽风僝雨僽，那见霜凝雪冻",
+          "note": "同上乱码；识典古籍《海琼玉蟾先生文集》作「吃尽风僝雨僽，那见霜凝雪冻，饥了又添寒」（《历代神仙通纪》引作「风僝雨愆」，异文）"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
@@ -986,12 +1026,29 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.6000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "正是伤春时节",
+          "corrected": "正是伤春时节",
+          "note": "[ci_pattern] 原样见于识典古籍 3 部（漱玉詞, 花草稡編），不改"
+        },
+        {
+          "original": "金猊戏掣星桥锁",
+          "corrected": "金猊戏掣星桥锁",
+          "note": "[ci_pattern] 原样见于识典古籍 4 部（中興以來絶妙詞選, 詩人玉屑），不改"
+        },
+        {
+          "original": "﹀︽莺莺并燕燕，凄惶柳柳与梅梅。（张孝祥《浣溪沙》）",
+          "corrected": "僝僽莺莺并燕燕，凄惶柳柳与梅梅。",
+          "note": "同上乱码居句首；识典古籍《于湖居士文集》卷三十三乐府（四部丛刊景宋本）作「唤它滕六把春欺。僝僽莺莺并燕燕，恓惶柳柳与梅梅」（另本作「幪愁」，异文）"
+        }
+      ]
     },
     "宋/宋词/ci.song.7000.json": {
-      "date": "2026-10-31",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -1004,11 +1061,61 @@
           "original": "菊暗枯秋已满",
           "corrected": "菊暗荷枯秋已满",
           "note": "杨无咎《渔家傲》「枯」为「荷」之误；《逃禪詞》《宋元明三十三家詞》皆作「菊暗荷枯秋已滿」，与下句「橙黄橘緑」对"
+        },
+        {
+          "original": "庭前花谢了",
+          "corrected": "庭前花谢了",
+          "note": "[ci_pattern] 原样见于识典古籍 3 部（友古詞, 御定詞譜），不改"
+        },
+        {
+          "original": "身寄南州",
+          "corrected": "身寄南州",
+          "note": "[ci_pattern] 原样见于识典古籍 6 部（[御選]歷代詩餘, 古今圖書集成·歲功典），不改"
+        },
+        {
+          "original": "犹自淹留",
+          "corrected": "犹自淹留",
+          "note": "[ci_pattern] 原样见于识典古籍 5 部（古今圖書集成·歲功典, 宋元明三十三家詞），不改"
+        },
+        {
+          "original": "知有黄州",
+          "corrected": "知有黄州",
+          "note": "[ci_pattern] 原样见于识典古籍 4 部（[御選]歷代詩餘, 御選歷代詩餘），不改"
+        },
+        {
+          "original": "今为谁留",
+          "corrected": "今为谁留",
+          "note": "[ci_pattern] 原样见于识典古籍 4 部（[御選]歷代詩餘, 御選歷代詩餘），不改"
+        },
+        {
+          "original": "罗绮间",
+          "corrected": "罗绮间",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（宋元明三十三家詞），不改"
+        },
+        {
+          "original": "清闲是不死门风",
+          "corrected": "清闲是不死门风",
+          "note": "[ci_pattern] 原样见于识典古籍 3 部（式古堂書畫彙考, 珊瑚綱法書題跋），不改"
+        },
+        {
+          "original": "月边风畔",
+          "corrected": "月边风畔",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（别下齋叢書），不改"
+        },
+        {
+          "original": "行满三千上界",
+          "corrected": "行满三千上界",
+          "note": "[ci_pattern] 原样见于识典古籍 2 部（群談採餘），不改"
+        },
+        {
+          "original": "风﹀雨︽。（杨无咎《琐窗寒》）",
+          "corrected": "风僝雨僽。",
+          "note": "同上乱码；识典古籍《逃禅词》作「况无似今年，一春晴昼。风僝雨僽。直得恁时迤逗」，《御定词谱》卷二十六同（另有作「风潺雨僽」「风潺雨愁」者，异文）"
         }
       ]
     },
     "宋/宋词/ci.song.8000.json": {
-      "date": "2026-10-31",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -1016,6 +1123,16 @@
           "original": "谁与乐和",
           "corrected": "谁与乐天和",
           "note": "[ci_pattern] 谁与乐和 → 谁与乐天和；《彊村叢書》本《蓮社詞》作「誰與樂天和」"
+        },
+        {
+          "original": "千条万叶",
+          "corrected": "千条万叶",
+          "note": "[ci_pattern] 原样见于识典古籍 4 部（百川學海, 百川學海一百種十集），不改"
+        },
+        {
+          "original": "风﹀雨︽，打碎光凝色。（朱淑真《念奴娇·催雪》）",
+          "corrected": "风僝雨僽，打碎光凝色。",
+          "note": "同上乱码，证据同杨无咎《琐窗寒》（「风僝雨僽」为宋词习语，《全宋词》两处并作此）"
         }
       ]
     },
