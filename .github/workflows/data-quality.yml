@@ -12,12 +12,16 @@ on:
       - '**.json'
       - 'scripts/check_structure.py'
       - 'scripts/check_baseline.json'
+      - 'scripts/progress.py'
+      - 'docs/progress/**.json'
       - '.github/workflows/data-quality.yml'
   pull_request:
     paths:
       - '**.json'
       - 'scripts/check_structure.py'
       - 'scripts/check_baseline.json'
+      - 'scripts/progress.py'
+      - 'docs/progress/**.json'
       - '.github/workflows/data-quality.yml'
 
 permissions:
@@ -33,3 +37,8 @@ jobs:
           python-version: '3.x'
       - name: Check data against baseline
         run: python3 scripts/check_structure.py --show 3 --baseline scripts/check_baseline.json
+
+      # fix_progress.json 是 docs/progress/ 的索引，只由 scripts/progress.py index 重算；
+      # 手改索引会与记录正文对不上，这里当场报错。
+      - name: Check progress index
+        run: python3 scripts/progress.py check

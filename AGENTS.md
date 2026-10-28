@@ -6,7 +6,7 @@ Instructions for AI agents contributing to this dataset. Currently one active ta
 
 ## Task: Fix Typos & Garbled Characters (乱码修复)
 
-Community task: systematically review all JSON poetry files and fix typos and garbled characters. Progress is tracked in `fix_progress.json` so contributors (human or AI) can pick up where others left off.
+Community task: systematically review all JSON poetry files and fix typos and garbled characters. Progress is tracked under `docs/progress/` (one record per file) with `fix_progress.json` as its index, so contributors (human or AI) can pick up where others left off.
 
 ---
 
@@ -65,6 +65,10 @@ Community task: systematically review all JSON poetry files and fix typos and ga
   重跑 `scripts/haitangshishe/import.py` 或 `scripts/dedupe_tang.py` 都不会再写回去。
   自查：`python3 scripts/haitangshishe/import.py --check-sources`；「一作某人《某题》」这类互见挂 `tags`，见 `docs/唐诗内部去重.md`。
 - `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名；`poet.*` 里混着文，句长类检查会报噪音。
+- **审查进度一文件一条**：正文在 `docs/progress/<路径>.json`（路径里的 `/` 写作 `@`），
+  `fix_progress.json` 只是索引（`stats` + 逐文件的 `date/reviewer/status`），由
+  `python3 scripts/progress.py index` 重算。别手改索引，`scripts/progress.py check` 会报不一致（CI 里也跑）。
+  拆分的原因是原来那份单文件整表重写，两个人并行审查必然在文件头部撞车；现在改的是不同文件。
 
 ---
 
@@ -92,10 +96,14 @@ for dirpath, dirs, filenames in os.walk(ROOT):
         rel = os.path.relpath(os.path.join(dirpath, f), ROOT)
         all_files.append(rel)
 
-with open(os.path.join(ROOT, 'fix_progress.json'), 'r', encoding='utf-8') as fp:
-    progress = json.load(fp)
+# 审查进度：docs/progress/ 一文件一条（fix_progress.json 只是索引）
+RECORDS = os.path.join(ROOT, 'docs/progress')
+reviewed = set()
+for dirpath, _, filenames in os.walk(RECORDS):
+    for f in filenames:
+        if f.endswith('.json'):
+            reviewed.add(json.load(open(os.path.join(dirpath, f), encoding='utf-8'))['path'])
 
-reviewed = set(progress.get('reviewed', {}).keys())
 pending = [f for f in all_files if f not in reviewed]
 
 # Priority 1: files with confirmed Cyrillic/Greek characters
@@ -260,27 +268,32 @@ Rules built into `analyze` (learned the hard way — keep them if you change it)
 
 1. **Edit the file**: change only the erroneous characters, nothing else.
 
-2. **Update `fix_progress.json`** — add each reviewed file to the `reviewed` object. Keep it to the review record only; the fix log itself is not kept (the git commit is the record, and `scripts/check_structure.py` re-checks the whole dataset any time):
+2. **Record the review** — one record per file, in `docs/progress/`. Never edit `fix_progress.json` by hand; it is an index and is recomputed:
+
+```bash
+python3 scripts/progress.py record '宋/宋词/ci.song.13000.json' \
+    --status clean --reviewer '<AI model name or GitHub handle>' --date YYYY-MM-DD
+
+python3 scripts/progress.py record '元/元曲/yuanqu.json' \
+    --status fixed --reviewer '<name>' --date YYYY-MM-DD \
+    --fix 'Θ瓜邵平=>种瓜邵平' --note 'Greek Θ → 种; verified on 识典古籍'
+```
+
+That writes `docs/progress/元@元曲@yuanqu.json` (path with `/` → `@`) and refreshes the index. A record looks like:
 
 ```json
 {
-  "reviewed": {
-    "宋/宋词/ci.song.13000.json": {
-      "date": "YYYY-MM-DD",
-      "reviewer": "<AI model name or GitHub handle>",
-      "status": "clean"
-    },
-    "元/元曲/yuanqu.json": {
-      "date": "YYYY-MM-DD",
-      "reviewer": "<AI model name or GitHub handle>",
-      "status": "fixed",
-      "fixes": [
-        { "original": "Θ瓜邵平", "corrected": "种瓜邵平", "note": "Greek Θ → 种; verified on 识典古籍" }
-      ]
-    }
-  }
+  "path": "元/元曲/yuanqu.json",
+  "fixes": [
+    { "original": "Θ瓜邵平", "corrected": "种瓜邵平", "note": "Greek Θ → 种; verified on 识典古籍" }
+  ],
+  "date": "YYYY-MM-DD",
+  "reviewer": "<AI model name or GitHub handle>",
+  "status": "fixed"
 }
 ```
+
+The batch tools (`scripts/shidian.py apply`, `collate.py apply`, `twin_collate.py apply`, `mini_corpus/collect.py`) write records through `scripts/progress.py` themselves, so their output needs no extra step.
 
 Status values:
 - `clean` — no issues found, or every issue found was corrected (the `fixes` list may be empty)
@@ -290,9 +303,9 @@ Status values:
 
 Do not accumulate per-character repair history in this file: entries for completed fixes are deleted once the character is fixed in the dataset. Keep only what is still actionable.
 
-Also update the top-level `stats` counters (`reviewed`, `clean`, `fixed`, `needs_review`, `out_of_scope`, `in_scope_files`). The batch tools recompute them from file statuses automatically.
+`stats` counters (`total_files`, `reviewed`, `clean`, `fixed`, `needs_review`, `out_of_scope`, `in_scope_files`) are always recomputed by `scripts/progress.py index` — never typed by hand.
 
-**Never record a file as `clean` unless you actually read it.** A file that was only converted / split / deduplicated is *not* reviewed. Bulk imports that have not been collated line by line are registered as a single `reviewed["_<批次名>"]` entry with `status: needs_review` and a note saying what was and was not checked (see `_新增选本`, the anthologies imported from the supplementary corpus); split it into per-file entries only as the collation completes. That keeps `stats.total_files` equal to the number of JSON files actually in the repo.
+**Never record a file as `clean` unless you actually read it.** A file that was only converted / split / deduplicated is *not* reviewed. Bulk imports that have not been collated line by line are registered as a single `_<批次名>` record (`docs/progress/_<批次名>.json`) with `status: needs_review` and a note saying what was and was not checked (see `_新增选本`, the anthologies imported from the supplementary corpus); split it into per-file entries only as the collation completes. That keeps `stats.total_files` equal to the number of JSON files actually in the repo.
 
 ---
 

@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.163000.json",
+  "fixes": [
+    {
+      "original": "麴氏傾意，鯨魚人動情",
+      "corrected": "麴氏傾意，獻人動情",
+      "note": "PUA U+E85A → 獻；《緣督集》四庫本「麴氏傾意，漁人動情」，明刻本三本作「獻人動情」"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 1 处经古籍证实原样，未改",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

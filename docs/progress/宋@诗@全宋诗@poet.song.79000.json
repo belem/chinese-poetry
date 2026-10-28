@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.79000.json",
+  "fixes": [
+    {
+      "original": "有力誰扛",
+      "corrected": "有力誰能扛",
+      "note": "[shi_line_length] 有力誰扛 → 有力誰能扛; 识典古籍 (2 books, e.g. , 宋詩紀事補遺)"
+    }
+  ],
+  "note": "其中 1 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

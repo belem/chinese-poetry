@@ -38,6 +38,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_structure as cs  # noqa: E402
 import collate  # noqa: E402
+import progress as pg  # noqa: E402
 import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
@@ -209,7 +210,7 @@ def cmd_analyze(args):
 
 # ---------------------------------------------------------------- apply
 
-def edit(progress, rel, path, sent, k, ch, note, reviewer, date):
+def edit(rel, path, sent, k, ch, note, reviewer, date):
     """改正文中的一字；若标题（词牌·首句）含同一句，一并改。"""
     raw = open(os.path.join(ROOT, rel), encoding='utf-8').read()
     node = node_at(json.loads(raw), path)
@@ -227,18 +228,16 @@ def edit(progress, rel, path, sent, k, ch, note, reviewer, date):
             return f'skip {rel}{path}: {o} not unique in file'
         raw = raw.replace(o, n, 1)
     open(os.path.join(ROOT, rel), 'w', encoding='utf-8').write(raw)
-    e = progress['reviewed'].setdefault(rel, dict(status='clean', fixes=[]))
-    e.setdefault('fixes', []).append(dict(original=sent, corrected=new_sent, note=note))
-    e['date'], e['reviewer'] = date, reviewer
+    e = pg.merge(rel, dict(fixes=[dict(original=sent, corrected=new_sent, note=note)],
+                           date=date, reviewer=reviewer))
     if e.get('status') == 'clean':
         e['status'] = 'fixed'
+        pg.write_record(rel, pg.ordered(e))
     return None
 
 
 def cmd_apply(args):
     rows = list(csv.DictReader(open(os.path.join(args.work, 'review.tsv'), encoding='utf-8'), delimiter='\t'))
-    progress_path = os.path.join(ROOT, 'fix_progress.json')
-    progress = json.load(open(progress_path, encoding='utf-8'))
     applied = load_applied(args.applied)
     n = 0
     for r in rows:
@@ -251,12 +250,12 @@ def cmd_apply(args):
             ch = r['char'] or sd.to_dataset_script(r['file'], sd.to_trad(r['ref_file'], r['theirs']))
             note = (f"Twin collation with {r['ref_file']}#{r['ref_idx']} ({r['ref_sent']}); 识典古籍: 「{r['theirs']}」 in "
                     f"{r['theirs_books']} books ({r['theirs_src']}), dataset reading 「{r['mine']}」 in {r['mine_books']}")
-            err = edit(progress, r['file'], json.loads(r['path']), r['sent'], k, ch, note, args.reviewer, args.date)
+            err = edit(r['file'], json.loads(r['path']), r['sent'], k, ch, note, args.reviewer, args.date)
         elif d == 'ref':
             ch = r['char'] or sd.to_dataset_script(r['ref_file'], sd.to_trad(r['file'], r['mine']))
             note = (f"Twin collation with {r['file']} ({r['sent']}); 识典古籍: 「{r['mine']}」 in "
                     f"{r['mine_books']} books ({r['mine_src']}), dataset reading 「{r['theirs']}」 in {r['theirs_books']}")
-            err = edit(progress, r['ref_file'], [int(r['ref_idx'])], r['ref_sent'], k, ch, note, args.reviewer, args.date)
+            err = edit(r['ref_file'], [int(r['ref_idx'])], r['ref_sent'], k, ch, note, args.reviewer, args.date)
         else:
             continue
         if err:
@@ -264,8 +263,7 @@ def cmd_apply(args):
         else:
             applied.add(key)
             n += 1
-    sd.recompute_stats(progress)
-    open(progress_path, 'w', encoding='utf-8').write(json.dumps(progress, ensure_ascii=False, indent=2))
+    pg.write_index()                    # 重算 stats，并同步索引里的 date/reviewer/status
     if args.applied:
         with open(args.applied, 'w', encoding='utf-8') as fp:
             json.dump(sorted(applied), fp, ensure_ascii=False, indent=0)

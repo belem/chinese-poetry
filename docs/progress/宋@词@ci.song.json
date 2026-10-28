@@ -1,0 +1,19 @@
+{
+  "path": "宋/词/ci.song.json",
+  "fixes": [
+    {
+      "original": "黯不分夜昼",
+      "corrected": "黯暗不分夜昼",
+      "note": "[ci_pattern] 黯不分夜昼 → 黯暗不分夜昼；《重陽全真集》卷七作「黯暗不分夜晝」"
+    },
+    {
+      "original": "零宽空格 U+200B ×20（折元礼《望海潮·凯旋舟次》）",
+      "corrected": "删除",
+      "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘；1 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

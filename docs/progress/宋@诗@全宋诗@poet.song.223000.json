@@ -1,0 +1,14 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.223000.json",
+  "fixes": [
+    {
+      "original": "和單君範古意六首 ",
+      "corrected": "和單君範古意六首",
+      "note": "删去题末窜入的 PUA U+E85A；《本堂集》卷二十五"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "date": "2026-10-28",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

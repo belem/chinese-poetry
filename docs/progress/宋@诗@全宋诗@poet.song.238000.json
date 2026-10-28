@@ -1,0 +1,19 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.238000.json",
+  "fixes": [
+    {
+      "original": "捜趣外欲無絃",
+      "corrected": "睡捜趣外欲無絃",
+      "note": "PUA U+E805 → 睡；五律「獨抱琴聲感歲年／睡捜趣外欲無絃」对仗"
+    },
+    {
+      "original": "野人何計瓢空",
+      "corrected": "野人何計簞瓢空",
+      "note": "[shi_line_length] 野人何計瓢空 → 野人何計簞瓢空; 识典古籍 (2 books, e.g. , 宛陵群英集)"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；4 处字数异常证据不足，未改，留待复核",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "needs_review"
+}

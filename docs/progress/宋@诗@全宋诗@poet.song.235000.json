@@ -1,0 +1,13 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.235000.json",
+  "fixes": [
+    {
+      "original": "琤餘韻逐飛鞚",
+      "corrected": "琤肰餘韻逐飛鞚",
+      "note": "[shi_line_length] 琤餘韻逐飛鞚 → 琤肰餘韻逐飛鞚; 识典古籍 (2 books, e.g. , 青溪富山先生遺稿)"
+    }
+  ],
+  "date": "2026-10-31",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}

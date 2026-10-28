@@ -10,7 +10,7 @@
        python3 scripts/shidian.py analyze --work /tmp/sd
      审核：逐行检查 decision 列。自动判定可修的预填 accept，可改为 reject，
      或直接填写认定的正确文字（替换该位置 / 该句）；verified 表示「原样经古籍证实」。
-  4. apply    按审核表写回数据，并记入 fix_progress.json
+  4. apply    按审核表写回数据，并记入 docs/progress/（见 scripts/progress.py）
        python3 scripts/shidian.py apply --work /tmp/sd
 
 支持的 --check（与 check_structure.py 同名）：
@@ -30,6 +30,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_structure as cs  # noqa: E402
+import progress as pg  # noqa: E402
 
 try:
     from opencc import OpenCC
@@ -384,20 +385,21 @@ def cmd_analyze(args):
 
 # ---------------------------------------------------------------- apply
 
-def recompute_stats(progress):
-    st = progress.setdefault('stats', {})
-    statuses = collections.Counter(e.get('status') for e in progress['reviewed'].values())
-    st['reviewed'] = len(progress['reviewed'])
-    for k in ('clean', 'fixed', 'needs_review', 'out_of_scope'):
-        st[k] = statuses.get(k, 0)
-    st['in_scope_files'] = st['reviewed'] - st['out_of_scope']
+def recompute_stats(progress=None):
+    """统计口径统一在 scripts/progress.py 里，这里只为兼容旧调用保留名字。"""
+    return pg.recompute_stats()
 
 
 def cmd_apply(args):
     items = {it['id']: it for it in json.load(open(os.path.join(args.work, 'items.json'), encoding='utf-8'))}
+    # 同一处证据不足会在多批 review 里反复出现（写回一批，下一批又报同一首）：
+    # previous.tsv 是历次结案的 (file, original) → (status, evidence)，用来在原条目上补记，而不是重复堆叠
+    previous = {}
+    if args.previous and os.path.exists(args.previous):
+        for r in csv.DictReader(open(args.previous, encoding='utf-8'), delimiter='\t'):
+            if r.get('reviewed') and r.get('existing'):
+                previous[(r['file'], r['original'])] = (r.get('status') or 'needs_review', r.get('note') or '')
     rows = list(csv.DictReader(open(os.path.join(args.work, 'review.tsv'), encoding='utf-8'), delimiter='\t'))
-    progress_path = os.path.join(ROOT, 'fix_progress.json')
-    progress = json.load(open(progress_path, encoding='utf-8'))
     edits = collections.defaultdict(list)          # (file, idx, field, k) -> [(start, end, new)]
     records = collections.defaultdict(list)
     for row in rows:
@@ -409,12 +411,23 @@ def cmd_apply(args):
                     f"needs_review [{it['check']}]: 识典古籍 evidence insufficient" + (f"; candidates: {row['evidence']}" if row['evidence'] else ''))))
             continue
         if dec == 'verified':
-            records[it['file']].append(dict(original=row['original'], corrected=row['original'], note=(
-                f"[{it['check']}] attested as-is in {len(it.get('as_is_books', []))} books on 识典古籍 "
-                f"({', '.join(it.get('as_is_books', [])[:3])}); no change")))
+            note = (f"[{it['check']}] attested as-is in {len(it.get('as_is_books', []))} books on 识典古籍 "
+                    f"({', '.join(it.get('as_is_books', [])[:3])}); no change")
+            # 之前记过同一处「证据不足」，现在有了证据：就地更新那一条，说明是后来查实的
+            prev = previous.get((it['file'], row['original']))
+            if prev:
+                note += f" | 已查实（{args.date}），改记 clean"
+                records[it['file']].append(dict(original=row['original'], corrected=row['original'], note=note,
+                                                replaces=prev[0]))
+                continue
+            records[it['file']].append(dict(original=row['original'], corrected=row['original'], note=note))
             continue
-        new = it['proposed'] if dec == 'accept' else dec
+        new = (it['proposed'] if dec == 'accept' else dec).strip()
+        if not new:                       # accept 但 analyze 没给出建议（无候选）：当作未决策，不写空串
+            print(f"skip #{it['id']}: nothing proposed"); continue
         if it['check'] in LINE_CHECKS:
+            # 句长/词牌类的编辑范围就是出现差异的那一句（accept 的 apply_edit 结果，或审查人直接填的改写句），
+            # 整句替换；审查人填的是整行（含本行前后文）时已由 analyze 的 apply_edit 对齐，这里不再拼接
             data = load(it['file'])
             paras = data[it['idx']]['paragraphs']
             hits = [(k, p) for k, p in enumerate(paras) if it['s'] in p]
@@ -449,33 +462,32 @@ def cmd_apply(args):
             o, n = json.dumps(old, ensure_ascii=False), json.dumps(new, ensure_ascii=False)
             if o in raw:
                 raw = raw.replace(o, n, 1)          # 按原文替换，不重新序列化，保持文件格式
-            elif n not in raw:
-                print(f'skip {rel}#{idx}: original text not found')
+            else:
+                print(f'skip {rel}#{idx}: original text not found')   # 含「无处可替换」与「替换失败」两种
         open(path, 'w', encoding='utf-8').write(raw)
 
     for rel, fx in records.items():
-        e = progress['reviewed'].setdefault(rel, dict(status='clean', fixes=[]))
-        e.setdefault('fixes', [])
-        known = {(x['original'], x['corrected']) for x in e['fixes']}
+        # --previous 里记过的同一处，本次查实了：在原条目上补记改后的字，而不是另起一条
+        have = pg.load_one(rel).get('fixes') or []
         for x in fx:
-            if (x['original'], x['corrected']) in known:
+            if 'replaces' not in x:
                 continue
-            # 同一位置已有 needs_review 记录：就地更新，而不是另起一条
-            old = next((y for y in e['fixes'] if y['corrected'] is None and y['original'] == x['original']), None)
-            if old is not None and x['corrected'] is not None:
+            old = next((y for y in have if y.get('corrected') is None and y.get('original') == x['original']), None)
+            if old is not None:
                 old['corrected'] = x['corrected']
-                old['note'] += f" | resolved {args.date}: {x['note']}"
-            elif old is None:
-                e['fixes'].append(x)
-        e['date'], e['reviewer'] = args.date, args.reviewer
-        if any(x['corrected'] is None for x in e['fixes']):
-            e['status'] = 'needs_review'
-        elif any(x['corrected'] != x['original'] for x in e['fixes']):
-            e['status'] = 'fixed'
-    recompute_stats(progress)
-    open(progress_path, 'w', encoding='utf-8').write(json.dumps(progress, ensure_ascii=False, indent=2))
+                old['note'] = old.get('note', '') + ' | resolved ' + args.date + ': ' + x['note']
+                fx[fx.index(x)] = dict(old)
+        fx = [x for x in fx if 'replaces' not in x]
+        # 同一位置已有 needs_review 记录：就地更新，而不是另起一条（由 pg.merge 处理）
+        rec = pg.merge(rel, dict(fixes=fx, date=args.date, reviewer=args.reviewer))
+        if any(x.get('corrected') is None for x in rec.get('fixes', [])):
+            rec['status'] = 'needs_review'
+        elif any(x.get('corrected') != x.get('original') for x in rec.get('fixes', [])):
+            rec['status'] = 'fixed'
+        pg.write_record(rel, pg.ordered(rec))
+    pg.write_index()                    # 重算 stats，并同步索引里的 date/reviewer/status
     n_fix = sum(len(v) for v in edits.values())
-    print(f'applied {n_fix} edits in {len(by_file)} files; recorded {sum(len(v) for v in records.values())} entries in fix_progress.json')
+    print(f'applied {n_fix} edits in {len(by_file)} files; recorded {sum(len(v) for v in records.values())} entries in docs/progress/')
 
 
 def main():
@@ -492,6 +504,7 @@ def main():
     p.add_argument('--reviewer', required=True, help='AI model name or GitHub handle')
     p.add_argument('--date', required=True, help='YYYY-MM-DD')
     p.add_argument('--record-pending', action='store_true', help='also record undecided items as needs_review')
+    p.add_argument('--previous', help='previous.tsv：上次结案的 (file, original) → status/evidence，用于在原条目上补记')
     args = ap.parse_args()
     {'build': cmd_build, 'analyze': cmd_analyze, 'apply': cmd_apply}[args.cmd](args)
 

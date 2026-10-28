@@ -1,0 +1,7 @@
+{
+  "path": "宋/诗/全宋诗/poet.song.88000.json",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char。周紫芝《病起節物可驚效柳子厚》「爲生本田」句末之 U+E85A 已删（《太倉稊米集》卷三十八作「爲生本田」）；其中 1 处经古籍证实原样，未改",
+  "date": "2026-11-01",
+  "reviewer": "codebuddy",
+  "status": "fixed"
+}
