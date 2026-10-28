@@ -34,7 +34,7 @@ SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', 
              '.git', '.claude', '.github', '.cnb', 'reference', 'authors', 'dynasties'}
 SKIP_FILES = {'fix_progress.json'}
 # 数据按朝代分层的顶层目录：朝代/体裁/书名/文件名
-DYNASTY_DIRS = {'先秦汉魏晋南北朝', '唐代', '唐五代', '宋代', '元代', '清代'}
+DYNASTY_DIRS = {'先秦', '汉', '三国', '晋', '南北朝', '隋', '唐', '五代十国', '宋', '元', '明', '清', '近现', '当'}
 HANZI = re.compile(r'[^\u4e00-\u9fff]')
 # 这些键里装的不是作品，是作者表 / 目录说明
 NON_WORK_KEYS = {'desc', 'name', 'short_description', 'introduction'}
@@ -97,7 +97,7 @@ def title_of(rec):
 def domain_of(rel):
     """判重的作用域：同一部书内部。文件名不同但同属一部书的，算同一作用域：
 
-    目录已按朝代分层（唐代/诗/全唐诗、宋代/诗/全宋诗、宋代/词/宋词…），顶层目录名不再等于书名，
+    目录已按朝代分层（唐/诗/全唐诗、宋/诗/全宋诗、宋/词/宋词…），顶层目录名不再等于书名，
     按「朝代/体裁/书名」三级取书名；
     haitang 补录的 331 条挂在 元曲/yuanqu.json 尾部，与《全元曲》同文件但不是同一部书，
     按 sources 分流。

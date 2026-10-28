@@ -10,8 +10,8 @@
                  那是另一份 366 首的副本；这个目录是上游 poems-tangshi.js 的 65 首）
   水墨唐诗/     余 4 首 → 并入 poet.tang 并带 prologue；总集未收的 3 首按全唐诗的记载补录，
                  目录删掉（四条已全部落在 poet.tang 上）
-  宋词三百首/   余 4 首 → 能对上的并入 ci.song.* 的 tags，对不上的留下
-  近现代诗/     按作者朝代拆：唐宋元明清的课本选目并回对应总集，真近现代的留下
+  宋词三百首/   280 首全部对上 ci.song.*，加 tags 后目录删除（2026-10）
+  近现/     按作者朝代拆：唐宋元明清的课本选目并回对应总集，真近现代的留下
 
 判定同一首沿用 merge_anthologies 的口径，再加两条：选本带序（题名有「並序」）时
 去掉第一段再比；选本题名是节选时按总集全本记。作者不同的一律两存。
@@ -353,7 +353,7 @@ def desc(p):
 
 
 def split_modern(rel, corpora, dynasties, log):
-    """近现代诗/ 里其实是唐宋元明清的课本选目，并回它所属的总集。"""
+    """近现/ 里其实是唐宋元明清的课本选目，并回它所属的总集。"""
     keep = []
     for p in load(rel):
         order = DYN_PLAN.get(dynasties.get(author_key(p.get('author'))), [])
@@ -383,11 +383,11 @@ def main():
     def corpus(*pattern):
         return Corpus(sorted(os.path.relpath(f, ROOT) for f in glob.glob(os.path.join(ROOT, pattern[0]))))
 
-    tang = corpus('唐代/诗/全唐诗/poet.tang.*.json')
+    tang = corpus('唐/诗/全唐诗/poet.tang.*.json')
     corpora = {
         '全唐诗': tang,
-        '全宋诗': corpus('宋代/诗/全宋诗/poet.song.*.json'),
-        '全宋词': corpus('宋代/宋词/ci.song.*.json'),
+        '全宋诗': corpus('宋/诗/全宋诗/poet.song.*.json'),
+        '全宋词': corpus('宋/宋词/ci.song.*.json'),
         '昭明文选': corpus('昭明文选/*.json'),
         '古文观止': corpus('古文观止/*.json'),
         '历代': corpus('历代/*.json'),
@@ -406,8 +406,10 @@ def main():
     ink_keep = []
     if os.path.exists(os.path.join(ROOT, '水墨唐诗/shuimotangshi.json')):
         ink_keep = merge_one('水墨唐诗/shuimotangshi.json', tang, '水墨唐诗', log)
-    ci300_keep = merge_one('宋词三百首/宋词三百首.json', corpora['全宋词'], '宋词三百首', log)
-    modern_keep = split_modern('近现代诗/近现代诗.json', corpora, dynasties, log)
+    # 宋词三百首 目录已整体并入 ci.song.*（280 首全部对上，2026-10），此处保留为重跑时的兜底
+    ci300_keep = merge_one('宋词三百首/宋词三百首.json', corpora['全宋词'], '宋词三百首', log) \
+        if os.path.exists(os.path.join(ROOT, '宋词三百首/宋词三百首.json')) else []
+    modern_keep = split_modern('近现/近现.json', corpora, dynasties, log)
 
     c = collections.Counter((r[0], r[5]) for r in log)
     for k, n in sorted(c.items()):
@@ -430,7 +432,7 @@ def main():
         save('宋词三百首/宋词三百首.json', ci300_keep)
     elif os.path.exists(os.path.join(ROOT, '宋词三百首')):
         shutil.rmtree(os.path.join(ROOT, '宋词三百首'))
-    save('近现代诗/近现代诗.json', modern_keep)
+    save('近现/近现.json', modern_keep)
     with open(os.path.join(ROOT, 'docs/选本并入.tsv'), 'w', encoding='utf-8', newline='') as fp:
         fp.write('选本文件\t选本记录\t总集位置\t总集记录\t相似度\t处理\t说明\n')
         fp.writelines('\t'.join(r) + '\n' for r in log)

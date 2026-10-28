@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""把 元代/元曲三百首/ 并入 元代/元曲/yuanqu.json，去掉重复正文。
+"""把 元/元曲三百首/ 并入 元/元曲/yuanqu.json，去掉重复正文。
 
   python3 scripts/merge_yuanqu.py            # 预演：只打印匹配报告
   python3 scripts/merge_yuanqu.py --apply    # 写回数据，并生成 docs/元曲去重.tsv
 
 处理方式（与 scripts/merge_anthologies.py 同一口径）：
 
-  * 曲题 + 曲牌对得上 元代/元曲/yuanqu.json 里已有的同一首：
+  * 曲题 + 曲牌对得上 元/元曲/yuanqu.json 里已有的同一首：
       - 正文一字不差 → 不重复收，选本这条删掉。
       - 曲题对得上、正文有出入 → 两存（异文是版本问题，不归这里判），记 variant。
       - 曲题对得上、正文覆盖率 < 0.9（同一组曲在库里并作一条，如寿阳曲八首）
         → 两存会留下重复的同一首，选本这条不收，记 dropped，留给对勘。
-  * 元曲/ 里根本没有的（王磐、汤式等不在《全元散曲》范围内）→ 移进 元代/元曲/，
+  * 元曲/ 里根本没有的（王磐、汤式等不在《全元散曲》范围内）→ 移进 元/元曲/，
     按作者并入相邻位置；题名照库里的写法「宫调・曲牌・题」，正文随库中转成简体
     （只转字形、不改字）。
 
@@ -72,7 +72,7 @@ def dumps(rec):
 
 
 def save(rel, repo, original):
-    """元代/元曲/yuanqu.json 是一行一条的紧凑排布（个别条目展开成多行）。
+    """元/元曲/yuanqu.json 是一行一条的紧凑排布（个别条目展开成多行）。
     只重写落在改动位置上的那几行，其余原样保留，免得整文件 diff。
 
     做法：老条目按原文行块的顺序排好，新收的条目插在「它前面那个老条目」
@@ -124,13 +124,13 @@ def main():
     ap.add_argument('--report', default='docs/元曲去重.tsv')
     a = ap.parse_args()
 
-    repo, raw = load('元代/元曲/yuanqu.json')
+    repo, raw = load('元/元曲/yuanqu.json')
     by_author = collections.defaultdict(list)
     for i, r in enumerate(repo):
         by_author[author_key(r['author'])].append(i)
 
     rows, changed, to_add, delete_files = [], [], [], []
-    for f in sorted(glob.glob(os.path.join(ROOT, '元代/元曲三百首/*.json'))):
+    for f in sorted(glob.glob(os.path.join(ROOT, '元/元曲三百首/*.json'))):
         rel = os.path.relpath(f, ROOT)
         sel = json.load(open(f, encoding='utf-8'))
         keep = []
@@ -146,7 +146,7 @@ def main():
                 if cov > best_cov:
                     best, best_cov = i, cov
             if best is not None:
-                found = (f'元代/元曲/yuanqu.json#{best}', repo[best]['title'])
+                found = (f'元/元曲/yuanqu.json#{best}', repo[best]['title'])
                 same = body == norm(''.join(repo[best]['paragraphs']))
                 if best_cov == 1.0 and same:
                     rows.append((rel, rec['title'], rec['author'], 'merged') + found + ('1.00',))
@@ -183,7 +183,7 @@ def main():
         for new in to_add:
             pos = max([i for i, r in enumerate(repo) if r['author'] == new['author']] or [len(repo)])
             repo.insert(pos + 1, new)
-        save('元代/元曲/yuanqu.json', repo, raw)
+        save('元/元曲/yuanqu.json', repo, raw)
         os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
         with open(os.path.join(ROOT, a.report), 'w', encoding='utf-8') as fp:
             fp.write('选本文件\t选本题\t作者\t判定\t本库条目\t本库题\t正文覆盖率\n')

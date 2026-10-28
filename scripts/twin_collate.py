@@ -12,7 +12,7 @@
   node   scripts/shidian/search.mjs      $W/queries.json $W/results.jsonl
   A=docs/小合集互校.applied.json        # 已写回或否决的条目，之后的审核表不再出现
   python3 scripts/twin_collate.py analyze --work $W --applied $A   # 写出 $W/review.tsv
-  # 审核 review.tsv 的 decision 列：target = 改小合集为对方读法；ref = 改 唐代/诗/全唐诗/宋词 为小合集读法；
+  # 审核 review.tsv 的 decision 列：target = 改小合集为对方读法；ref = 改 唐/诗/全唐诗/宋词 为小合集读法；
   #   reject = 不改且以后不再出现；留空 = 暂不决定。char 列可填写要写入的字，覆盖自动选字。
   python3 scripts/twin_collate.py apply   --work $W --applied $A --reviewer <名字> --date YYYY-MM-DD
 
@@ -41,8 +41,8 @@ import collate  # noqa: E402
 import shidian as sd  # noqa: E402
 
 ROOT = cs.ROOT
-TARGETS = ['唐五代/词/五代诗词/huajianji', '唐五代/词/五代诗词/nantang', '蒙学/tangshisanbaishou.json', '蒙学/qianjiashi.json']
-REF_DIRS = ['唐代/诗/全唐诗', '宋代/宋词']
+TARGETS = ['五代十国/词/五代诗词/huajianji', '五代十国/词/五代诗词/nantang', '先秦/蒙学/tangshisanbaishou.json', '先秦/蒙学/qianjiashi.json']
+REF_DIRS = ['唐/诗/全唐诗', '宋/宋词']
 HANX = r'[㐀-鿿\U00020000-\U0003ffff]'
 ORDER = {'fix_target': 0, 'fix_ref': 1, 'glyph': 2, 'weak': 3, 'variant': 4}
 

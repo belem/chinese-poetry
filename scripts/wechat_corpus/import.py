@@ -7,7 +7,7 @@
   * 选本（乐府、古诗、唐诗三百首、元散曲、昭明文选、古文观止、课外经典）另建目录，
     一律用 book.title 的繁体原名作文件名，按朝代落到对应目录；不并入 全唐诗/宋词，避免与现行去重口径打架。
     与库中已有作品重复的，只记不写，清单进 docs/wechat_corpus.tsv。
-    元曲三百首由 scripts/merge_yuanqu.py 直接并入 元代/元曲/yuanqu.json，不在此列。
+    元曲三百首由 scripts/merge_yuanqu.py 直接并入 元/元曲/yuanqu.json，不在此列。
   * 上游的译文、出处、学段、难度等展示字段不落库。
 
 用法：
@@ -28,14 +28,14 @@ S2TW = OpenCC('s2twp')
 
 # 上游文件 → (本库目录, 是否按 gradeGroup 分卷)
 BOOKS = {
-    'poems-yuefu.js': ('先秦汉魏晋南北朝/诗文总集/乐府诗集', True),
-    'poems-gushi.js': ('先秦汉魏晋南北朝/古诗源', True),
-    'poems-tangshi.js': ('唐诗三百首', False),
-    'poems-zhaoming.js': ('先秦汉魏晋南北朝/诗文总集/昭明文选', True),
-    'poems-guwen.js': ('古文观止', True),
-    'poems-classic.js': ('课外经典', True),
+    'poems-yuefu.js': ('先秦/诗文总集/乐府诗集', True),
+    'poems-gushi.js': ('汉/古诗源', True),
+    'poems-tangshi.js': ('唐/唐诗三百首', False),
+    'poems-zhaoming.js': ('先秦/诗文总集/昭明文选', True),
+    'poems-guwen.js': ('先秦/古文观止', True),
+    'poems-classic.js': ('先秦/课外经典', True),
 }
-TEXT_DIRS = ('唐代/诗/全唐诗', '宋代/诗/全宋诗', '宋代/宋词', '元代/元曲')
+TEXT_DIRS = ('唐/诗/全唐诗', '宋/诗/全宋诗', '宋/宋词', '元/元曲')
 
 
 def norm_title(t):
@@ -114,8 +114,8 @@ def build(corpus, idx, log):
                 volume = it.get('gradeGroup') or it.get('group') or ''
             if src == 'poems-zhaoming.js' and '·' not in volume:
                 # 上游这类条目卷名只写了文体；「赋」「其他」两类与上面重名，
-                # 一律加「先秦汉魏晋南北朝/诗文总集/昭明文选」前缀，避免两卷写进同一个文件
-                volume = ('先秦汉魏晋南北朝/诗文总集/昭明文选' if volume == '赋' else '') + (volume or '其他')
+                # 一律加「先秦/诗文总集/昭明文选」前缀，避免两卷写进同一个文件
+                volume = ('先秦/诗文总集/昭明文选' if volume == '赋' else '') + (volume or '其他')
             volumes.setdefault(volume, []).append(rec)
         if volumes:
             books[book] = volumes

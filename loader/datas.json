@@ -1,194 +1,570 @@
 {
-    "cp_path": "./", 
+    "cp_path": "./",
     "datasets": {
         "wudai-huajianji": {
             "name": "五代-花间集",
             "id": 0,
-            "path": "唐五代/词/五代诗词/huajianji/", 
-            "excludes": ["README.md"],
+            "path": "五代十国/词/五代诗词/huajianji/",
+            "excludes": [
+                "README.md"
+            ],
             "tag": "paragraphs"
         },
         "wudai-nantang": {
             "name": "五代-南唐",
-            "id": 1, 
-            "path": "唐五代/词/五代诗词/nantang/poetrys.json",
+            "id": 1,
+            "path": "五代十国/词/五代诗词/nantang/poetrys.json",
             "tag": "paragraphs"
         },
         "yuanqu": {
             "name": "元曲",
             "id": 2,
-            "path": "元代/元曲/yuanqu.json",
+            "path": "元/元曲/yuanqu.json",
             "tag": "paragraphs"
         },
         "tangsong": {
             "name": "全唐诗",
             "id": 3,
-            "path": "唐代/诗/全唐诗/",
-            "excludes": ["README.md", "表面结构字.json", "authors.tang.json"],
+            "path": "唐/诗/全唐诗/",
+            "excludes": [
+                "README.md",
+                "表面结构字.json",
+                "authors.tang.json"
+            ],
             "tag": "paragraphs"
         },
         "songshi": {
             "name": "全宋诗",
             "id": 26,
-            "path": "宋代/诗/全宋诗/",
-            "excludes": ["README.md", "error", "authors.song.json"],
+            "path": "宋/诗/全宋诗/",
+            "excludes": [
+                "README.md",
+                "error",
+                "authors.song.json"
+            ],
             "tag": "paragraphs",
-            "comments": "原在 唐代/诗/全唐诗/poet.song.*, 2026-08 拆出独立目录; 文件名与编号沿用上游, 未重新分片."
+            "comments": "原在 唐/诗/全唐诗/poet.song.*, 2026-08 拆出独立目录; 文件名与编号沿用上游, 未重新分片."
         },
         "mengzi": {
-            "name": "四书五经-孟子", 
+            "name": "先秦/孟子",
             "id": 4,
-            "path": "四书五经/mengzi.json",
+            "path": "先秦/孟子/mengzi.json",
             "tag": "paragraphs",
-            "comments": "四书五经的其他文件不符合两层结构, 以后再想办法处理吧."
+            "comments": "原 先秦/四书五经/mengzi.json；四书五经/ 目录按书拆开，其余三书见 daxue、zhongyong，论语见 lunyu"
         },
         "songci": {
             "name": "宋词",
             "id": 5,
-            "path": "宋代/宋词/",
-            "excludes": ["authors.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
+            "path": "宋/宋词/",
+            "excludes": [
+                "authors.song.json",
+                "ci.db",
+                "main.py",
+                "README.md",
+                "UpdateCi.py"
+            ],
             "tag": "paragraphs"
         },
         "youmengying": {
-            "name": "幽梦影-张潮文集",
+            "name": "明/幽梦影-张潮文集",
             "id": 6,
-            "path": "幽梦影/youmengying.json",
+            "path": "明/幽梦影/youmengying.json",
             "tag": "content"
         },
         "caocao": {
             "name": "曹操诗集",
             "id": 8,
-            "path": "先秦汉魏晋南北朝/曹操诗集/caocao.json",
+            "path": "汉/曹操诗集/caocao.json",
             "tag": "paragraphs"
         },
         "chuci": {
             "name": "楚辞",
             "id": 9,
-            "path": "先秦汉魏晋南北朝/楚辞/chuci.json",
+            "path": "先秦/楚辞/chuci.json",
             "tag": "content"
-        },
-        "nalanxingde": {
-            "name": "纳兰性德",
-            "id": 11,
-            "path": "清代/词/纳兰词/",
-            "excludes": ["README.md"],
-            "tag": "para",
-            "comments": "纳兰词，与 nalanxingde-shi 合为原来的「纳兰性德」一部别集"
         },
         "nalanxingde-shi": {
             "name": "纳兰性德·诗",
             "id": 25,
-            "path": "清代/诗/纳兰诗/",
-            "excludes": ["README.md"],
+            "path": "清/诗/纳兰诗/",
+            "excludes": [
+                "README.md"
+            ],
             "tag": "para"
         },
         "lunyu": {
-            "name": "论语",
+            "name": "先秦/论语",
             "id": 12,
-            "path": "论语/lunyu.json",
+            "path": "先秦/论语/lunyu.json",
             "tag": "paragraphs"
         },
         "shijing": {
             "name": "诗经",
             "id": 13,
-            "path": "先秦汉魏晋南北朝/诗经/shijing.json",
+            "path": "先秦/诗经/shijing.json",
             "tag": "content"
         },
         "guwen-guanzhi": {
-            "name": "古文观止",
+            "name": "先秦/古文观止",
             "id": 18,
-            "path": "古文观止/",
+            "path": "先秦/古文观止/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "kewai-jingdian": {
-            "name": "课外经典",
+            "name": "先秦/课外经典",
             "id": 19,
-            "path": "课外经典/",
+            "path": "先秦/课外经典/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "yuefu-jis": {
             "name": "乐府诗集",
             "id": 14,
-            "path": "先秦汉魏晋南北朝/诗文总集/乐府诗集/",
+            "path": "先秦/诗文总集/乐府诗集/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "gushi-yuan": {
             "name": "古诗源",
             "id": 15,
-            "path": "先秦汉魏晋南北朝/古诗源/",
+            "path": "汉/古诗源/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "沈德潜《古诗源》里先秦以外、隋及以前仍不见于他书的诗；《诗经》《楚辞》篇目已并入 先秦/诗经、先秦/楚辞"
         },
         "gushi-yuan-ming": {
             "name": "古诗源·明诗",
             "id": 23,
-            "path": "明代/诗/古诗源·明诗.json",
+            "path": "明/诗/古诗源·明诗.json",
             "tag": "paragraphs"
         },
         "gushi-yuan-qing": {
             "name": "古诗源·清诗",
             "id": 24,
-            "path": "清代/诗/古诗源·清诗.json",
+            "path": "清/诗/古诗源·清诗.json",
             "tag": "paragraphs"
         },
         "ming": {
             "name": "明诗",
             "id": 7,
-            "path": "明代/诗/poet.ming.json",
+            "path": "明/诗/poet.ming.json",
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
         },
         "ming-ci": {
             "name": "明词",
             "id": 10,
-            "path": "明代/词/ci.ming.json",
+            "path": "明/词/ci.ming.json",
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
         },
         "qing-shi": {
             "name": "清诗",
             "id": 20,
-            "path": "清代/诗/poet.qing.json",
+            "path": "清/诗/poet.qing.json",
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
         },
         "qing-ci": {
             "name": "清词",
             "id": 27,
-            "path": "清代/词/ci.qing.json",
+            "path": "清/词/ci.qing.json",
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
         },
         "tangshi-sanbai": {
-            "name": "唐诗三百首",
+            "name": "唐/唐诗三百首",
             "id": 16,
-            "path": "唐诗三百首/",
+            "path": "唐/唐诗三百首/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "wenxuan": {
             "name": "昭明文选",
             "id": 17,
-            "path": "先秦汉魏晋南北朝/诗文总集/昭明文选/",
+            "path": "先秦/诗文总集/昭明文选/",
             "excludes": [],
             "tag": "paragraphs"
         },
         "jinyuanxiandai": {
-            "name": "近现代诗（现代诗、当代诗词）",
+            "name": "现代诗",
             "id": 21,
-            "path": "近现代诗/",
+            "path": "近现/",
             "excludes": [],
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "1912 年以后出生作者的旧体诗词在 当/poet.dang.json、当/ci.dang.json；这里只余自由体的现代诗"
         },
-        "songci300": {
-            "name": "宋词三百首",
-            "id": 22,
-            "path": "宋词三百首/",
-            "excludes": [],
-            "tag": "paragraphs"
+        "tang-ci": {
+            "name": "唐词",
+            "id": 44,
+            "path": "唐/词/ci.tang.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "sui-shi": {
+            "name": "隋诗（含文）",
+            "id": 42,
+            "path": "隋/诗/poet.sui.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "sui-ci": {
+            "name": "隋词",
+            "id": 43,
+            "path": "隋/词/ci.sui.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "sanguo-shi": {
+            "name": "三国诗",
+            "id": 37,
+            "path": "三国/诗/poet.sanguo.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "han-shi": {
+            "name": "汉诗（含文）",
+            "id": 35,
+            "path": "汉/诗/poet.han.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "han-ci": {
+            "name": "汉词",
+            "id": 36,
+            "path": "汉/词/ci.han.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "jin-shi": {
+            "name": "晋诗（含文）",
+            "id": 38,
+            "path": "晋/诗/poet.jin.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "jin-ci": {
+            "name": "晋词",
+            "id": 39,
+            "path": "晋/词/ci.jin.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "nanbeichao-shi": {
+            "name": "南北朝诗（含文）",
+            "id": 40,
+            "path": "南北朝/诗/poet.nanbeichao.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "nanbeichao-ci": {
+            "name": "南北朝词",
+            "id": 41,
+            "path": "南北朝/词/ci.nanbeichao.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "wudai-shi": {
+            "name": "五代十国诗",
+            "id": 45,
+            "path": "五代十国/诗/poet.wudai.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "song-shi-bulu": {
+            "name": "宋诗补录",
+            "id": 46,
+            "path": "宋/诗/poet.song.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "song-ci-bulu": {
+            "name": "宋词补录",
+            "id": 47,
+            "path": "宋/词/ci.song.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "yuan-shi": {
+            "name": "元诗（含文）",
+            "id": 48,
+            "path": "元/诗/poet.yuan.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "dang-poet": {
+            "name": "当代旧体诗",
+            "id": 49,
+            "path": "当/poet.dang.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "dang-ci": {
+            "name": "当代旧体词",
+            "id": 50,
+            "path": "当/ci.dang.json",
+            "tag": "paragraphs",
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "wen-zuozhuan": {
+            "name": "左传",
+            "id": 51,
+            "path": "先秦/文/zuozhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guoyu": {
+            "name": "国语",
+            "id": 52,
+            "path": "先秦/文/guoyu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhuangzi": {
+            "name": "庄子",
+            "id": 53,
+            "path": "先秦/文/zhuangzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-xunzi": {
+            "name": "荀子",
+            "id": 54,
+            "path": "先秦/文/xunzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-mozi": {
+            "name": "墨子",
+            "id": 55,
+            "path": "先秦/文/mozi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-hanfeizi": {
+            "name": "韩非子",
+            "id": 56,
+            "path": "先秦/文/hanfeizi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guanzi": {
+            "name": "管子",
+            "id": 57,
+            "path": "先秦/文/guanzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangjunshu": {
+            "name": "商君书",
+            "id": 58,
+            "path": "先秦/文/shangjunshu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-lushichunqiu": {
+            "name": "吕氏春秋",
+            "id": 59,
+            "path": "先秦/文/lushichunqiu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yinwenzi": {
+            "name": "尹文子",
+            "id": 60,
+            "path": "先秦/文/yinwenzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guiguzi": {
+            "name": "鬼谷子",
+            "id": 61,
+            "path": "先秦/文/guiguzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sunzibingfa": {
+            "name": "孙子兵法",
+            "id": 62,
+            "path": "先秦/文/sunzibingfa.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sanshiliuji": {
+            "name": "三十六计",
+            "id": 63,
+            "path": "先秦/文/sanshiliuji.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shanhaijing": {
+            "name": "山海经",
+            "id": 64,
+            "path": "先秦/文/shanhaijing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yanzichunqiu": {
+            "name": "晏子春秋",
+            "id": 65,
+            "path": "先秦/文/yanzichunqiu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhouli": {
+            "name": "周礼",
+            "id": 66,
+            "path": "先秦/文/zhouli.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yizhoushu": {
+            "name": "逸周书",
+            "id": 67,
+            "path": "先秦/文/yizhoushu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangshu": {
+            "name": "今文尚书",
+            "id": 68,
+            "path": "先秦/文/shangshu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-gongyangzhuan": {
+            "name": "公羊传",
+            "id": 69,
+            "path": "先秦/文/gongyangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guliangzhuan": {
+            "name": "穀梁传",
+            "id": 70,
+            "path": "先秦/文/guliangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-chunqiuguliangzhuan": {
+            "name": "春秋穀梁传",
+            "id": 71,
+            "path": "先秦/文/chunqiuguliangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-liji": {
+            "name": "礼记",
+            "id": 72,
+            "path": "先秦/文/liji.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhouyi": {
+            "name": "周易",
+            "id": 73,
+            "path": "先秦/文/zhouyi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-daodejing": {
+            "name": "道德经",
+            "id": 74,
+            "path": "先秦/文/daodejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-huangdineijing": {
+            "name": "黄帝内经",
+            "id": 75,
+            "path": "先秦/文/huangdineijing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sishierzhangjing": {
+            "name": "佛说四十二章经",
+            "id": 76,
+            "path": "先秦/文/sishierzhangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-jingangjing": {
+            "name": "金刚经",
+            "id": 77,
+            "path": "先秦/文/jingangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-fahuajing": {
+            "name": "妙法莲华经",
+            "id": 78,
+            "path": "先秦/文/fahuajing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-dizangjing": {
+            "name": "地藏经",
+            "id": 79,
+            "path": "先秦/文/dizangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yuanjuejing": {
+            "name": "圆觉经",
+            "id": 80,
+            "path": "先秦/文/yuanjuejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-weimojiejing": {
+            "name": "维摩诘经",
+            "id": 81,
+            "path": "先秦/文/weimojiejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-songyu": {
+            "name": "宋玉",
+            "id": 82,
+            "path": "先秦/文/songyu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-qinwen": {
+            "name": "李斯·谏逐客书",
+            "id": 83,
+            "path": "先秦/文/qinwen.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-gushi": {
+            "name": "荆轲·易水歌",
+            "id": 84,
+            "path": "先秦/文/gushi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangtang": {
+            "name": "商汤·盘铭",
+            "id": 85,
+            "path": "先秦/文/shangtang.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "daxue": {
+            "name": "先秦/大学",
+            "id": 86,
+            "path": "先秦/大学/daxue.json",
+            "tag": "paragraphs",
+            "comments": "原 先秦/四书五经/daxue.json，单章 dict 改为列表以适配 loader"
+        },
+        "zhongyong": {
+            "name": "先秦/中庸",
+            "id": 87,
+            "path": "先秦/中庸/zhongyong.json",
+            "tag": "paragraphs",
+            "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader"
         }
     }
 }
