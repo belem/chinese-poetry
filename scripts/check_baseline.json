@@ -1,10 +1,6 @@
 {
-  "ascii_residue": 13,
-  "bare_pua": 12,
-  "box_drawing": 7,
+  "ascii_residue": 4,
   "ci_pattern": 336,
-  "half_width_punct": 30,
-  "kana_bopomofo": 11,
-  "missing_char": 9915,
-  "shi_line_length": 214
+  "missing_char": 8453,
+  "shi_line_length": 224
 }
