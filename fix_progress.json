@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 875,
-    "reviewed": 876,
+    "total_files": 887,
+    "reviewed": 888,
     "clean": 347,
     "fixed": 105,
-    "needs_review": 220,
+    "needs_review": 232,
     "out_of_scope": 204,
-    "in_scope_files": 672
+    "in_scope_files": 684
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -785,6 +785,11 @@
       "date": "2026-11-01",
       "reviewer": "codebuddy",
       "status": "fixed"
+    },
+    "宋/小说/容斋随笔/rongzhaishuibi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "宋/词/ci.song.json": {
       "date": "2026-11-01",
@@ -3656,6 +3661,36 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "明/小说/三言二拍/erkipaianjingqi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "明/小说/三言二拍/jingshitongyan.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "明/小说/三言二拍/yushimingyan.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "明/小说/东周列国志/dongzhoulieguozhi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "明/小说/封神演义/fengshenyanqi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "明/小说/小窗幽记/xiaochuangyouji.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
     "明/小说/陶庵梦忆/taoanzhmyi.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -3675,6 +3710,11 @@
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "fixed"
+    },
+    "晋/小说/搜神记/soushenji.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "晋/词/ci.jin.json": {
       "date": "2026-10-28",
@@ -4341,6 +4381,11 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "清/小说/儒林外史/rulinwaishi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
     "清/小说/浮生六记/fushengliuji.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -4349,6 +4394,21 @@
     "清/小说/聊斋志异/liaozhaizhiyi.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "清/小说/虞初新志/yuchuxinzhi.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "清/小说/镜花缘/jinghuayuan.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "清/小说/阅微草堂笔记/yueweicaotangbiji.json": {
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "needs_review"
     },
     "清/幽梦影/youmengying.json": {
