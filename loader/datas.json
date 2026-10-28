@@ -46,11 +46,11 @@
             "comments": "原在 唐/诗/全唐诗/poet.song.*, 2026-08 拆出独立目录; 文件名与编号沿用上游, 未重新分片."
         },
         "mengzi": {
-            "name": "先秦/四书五经-孟子",
+            "name": "先秦/孟子",
             "id": 4,
-            "path": "先秦/四书五经/mengzi.json",
+            "path": "先秦/孟子/mengzi.json",
             "tag": "paragraphs",
-            "comments": "先秦/四书五经的其他文件不符合两层结构, 以后再想办法处理吧."
+            "comments": "原 先秦/四书五经/mengzi.json；四书五经/ 目录按书拆开，其余三书见 daxue、zhongyong，论语见 lunyu"
         },
         "songci": {
             "name": "宋词",
@@ -82,16 +82,6 @@
             "id": 9,
             "path": "先秦/楚辞/chuci.json",
             "tag": "content"
-        },
-        "nalanxingde": {
-            "name": "纳兰性德",
-            "id": 11,
-            "path": "清/词/纳兰词/",
-            "excludes": [
-                "README.md"
-            ],
-            "tag": "para",
-            "comments": "纳兰词，与 nalanxingde-shi 合为原来的「纳兰性德」一部别集"
         },
         "nalanxingde-shi": {
             "name": "纳兰性德·诗",
@@ -233,13 +223,6 @@
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
         },
-        "xianqin-shi": {
-            "name": "先秦诗（含文）",
-            "id": 34,
-            "path": "先秦/诗/poet.xianqin.json",
-            "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
-        },
         "han-shi": {
             "name": "汉诗（含文）",
             "id": 35,
@@ -323,6 +306,265 @@
             "path": "当/ci.dang.json",
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+        },
+        "wen-zuozhuan": {
+            "name": "左传",
+            "id": 51,
+            "path": "先秦/文/zuozhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guoyu": {
+            "name": "国语",
+            "id": 52,
+            "path": "先秦/文/guoyu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhuangzi": {
+            "name": "庄子",
+            "id": 53,
+            "path": "先秦/文/zhuangzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-xunzi": {
+            "name": "荀子",
+            "id": 54,
+            "path": "先秦/文/xunzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-mozi": {
+            "name": "墨子",
+            "id": 55,
+            "path": "先秦/文/mozi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-hanfeizi": {
+            "name": "韩非子",
+            "id": 56,
+            "path": "先秦/文/hanfeizi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guanzi": {
+            "name": "管子",
+            "id": 57,
+            "path": "先秦/文/guanzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangjunshu": {
+            "name": "商君书",
+            "id": 58,
+            "path": "先秦/文/shangjunshu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-lushichunqiu": {
+            "name": "吕氏春秋",
+            "id": 59,
+            "path": "先秦/文/lushichunqiu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yinwenzi": {
+            "name": "尹文子",
+            "id": 60,
+            "path": "先秦/文/yinwenzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guiguzi": {
+            "name": "鬼谷子",
+            "id": 61,
+            "path": "先秦/文/guiguzi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sunzibingfa": {
+            "name": "孙子兵法",
+            "id": 62,
+            "path": "先秦/文/sunzibingfa.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sanshiliuji": {
+            "name": "三十六计",
+            "id": 63,
+            "path": "先秦/文/sanshiliuji.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shanhaijing": {
+            "name": "山海经",
+            "id": 64,
+            "path": "先秦/文/shanhaijing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yanzichunqiu": {
+            "name": "晏子春秋",
+            "id": 65,
+            "path": "先秦/文/yanzichunqiu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhouli": {
+            "name": "周礼",
+            "id": 66,
+            "path": "先秦/文/zhouli.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yizhoushu": {
+            "name": "逸周书",
+            "id": 67,
+            "path": "先秦/文/yizhoushu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangshu": {
+            "name": "今文尚书",
+            "id": 68,
+            "path": "先秦/文/shangshu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-gongyangzhuan": {
+            "name": "公羊传",
+            "id": 69,
+            "path": "先秦/文/gongyangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-guliangzhuan": {
+            "name": "穀梁传",
+            "id": 70,
+            "path": "先秦/文/guliangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-chunqiuguliangzhuan": {
+            "name": "春秋穀梁传",
+            "id": 71,
+            "path": "先秦/文/chunqiuguliangzhuan.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-liji": {
+            "name": "礼记",
+            "id": 72,
+            "path": "先秦/文/liji.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-zhouyi": {
+            "name": "周易",
+            "id": 73,
+            "path": "先秦/文/zhouyi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-daodejing": {
+            "name": "道德经",
+            "id": 74,
+            "path": "先秦/文/daodejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-huangdineijing": {
+            "name": "黄帝内经",
+            "id": 75,
+            "path": "先秦/文/huangdineijing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-sishierzhangjing": {
+            "name": "佛说四十二章经",
+            "id": 76,
+            "path": "先秦/文/sishierzhangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-jingangjing": {
+            "name": "金刚经",
+            "id": 77,
+            "path": "先秦/文/jingangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-fahuajing": {
+            "name": "妙法莲华经",
+            "id": 78,
+            "path": "先秦/文/fahuajing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-dizangjing": {
+            "name": "地藏经",
+            "id": 79,
+            "path": "先秦/文/dizangjing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-yuanjuejing": {
+            "name": "圆觉经",
+            "id": 80,
+            "path": "先秦/文/yuanjuejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-weimojiejing": {
+            "name": "维摩诘经",
+            "id": 81,
+            "path": "先秦/文/weimojiejing.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-songyu": {
+            "name": "宋玉",
+            "id": 82,
+            "path": "先秦/文/songyu.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-qinwen": {
+            "name": "李斯·谏逐客书",
+            "id": 83,
+            "path": "先秦/文/qinwen.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-gushi": {
+            "name": "荆轲·易水歌",
+            "id": 84,
+            "path": "先秦/文/gushi.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "wen-shangtang": {
+            "name": "商汤·盘铭",
+            "id": 85,
+            "path": "先秦/文/shangtang.json",
+            "tag": "paragraphs",
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+        },
+        "daxue": {
+            "name": "先秦/大学",
+            "id": 86,
+            "path": "先秦/大学/daxue.json",
+            "tag": "paragraphs",
+            "comments": "原 先秦/四书五经/daxue.json，单章 dict 改为列表以适配 loader"
+        },
+        "zhongyong": {
+            "name": "先秦/中庸",
+            "id": 87,
+            "path": "先秦/中庸/zhongyong.json",
+            "tag": "paragraphs",
+            "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader"
         }
     }
 }
