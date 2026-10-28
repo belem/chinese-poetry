@@ -4023,7 +4023,7 @@
       "status": "needs_review",
       "note": "随目录重构与 历代/ 拆分落位，只做了搬移/拆分，未逐字对勘"
     },
-    "明/幽梦影/youmengying.json": {
+    "清/幽梦影/youmengying.json": {
       "date": "2026-10-06",
       "reviewer": "claude-sonnet-4-6",
       "status": "fixed",

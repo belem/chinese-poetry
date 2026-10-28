@@ -28,8 +28,8 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 五代十国/{词/五代诗词/{huajianji,nantang},诗/poet.wudai.json}
 宋/{诗/全宋诗/（poet.song.*）,宋词/（ci.song.*）,诗/poet.song.json,词/ci.song.json,诗/古诗源·宋诗.json,诗/千家诗/}
 元/{元曲/yuanqu.json（元人诗词曲的唯一总集）,诗/poet.yuan.json}
-明/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json,幽梦影/}
-清/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/ci.qing.json（含纳兰词，tags 标记）}
+明/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json}
+清/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/ci.qing.json（含纳兰词，tags 标记）,幽梦影/}
 近现/现代诗.json　当/{poet.dang.json,ci.dang.json}
 汇编/{古文观止/（古文观止.json、12 卷、古文观止·补.json）,课本选目/（原 先秦/课外经典/）,
       乐府诗集/,昭明文选/,蒙学/（三字经…增广贤文 10 种）}
@@ -48,7 +48,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
   蒙学一组书（2026-10 由 `先秦/蒙学/` 移入，成于梁至清，没有一部是先秦的）。
 - 跨代但能指出主时段的选本按主时段落位：《千家诗》唐宋各半、编定于南宋 → `宋/诗/千家诗/`；
   《古诗源》先秦部分已并回《诗经》《楚辞》，其余 12 首在 `汉/古诗源/`。
-- `先秦/论语`、`先秦/孟子`、`先秦/大学`、`先秦/中庸`、`明/幽梦影`
+- `先秦/论语`、`先秦/孟子`、`先秦/大学`、`先秦/中庸`
   是按「作者所处时代占多数」就近收的，本身跨代；它们的归属写在这份文件与 README 里，不靠目录名判断。
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
