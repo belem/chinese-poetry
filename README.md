@@ -315,7 +315,11 @@ python3 scripts/check_structure.py --baseline scripts/check_baseline.json
 GitHub PAT 存在内部密钥仓库的 `pair.yml` 里（路径见 `.cnb.yml` 顶层的 `SECRETS_SLUG` / `SECRETS_FILE`），由各任务用 `imports` 引用后注入为环境变量。
 
 - 字段名 `GITHUB_TOKEN` 或 `GITHUB_PAT` 都行，`sync.sh` 两者都认。
-- PAT 需对 `belem/chinese-poetry` 有 **Contents: Read and write**。
+- PAT（classic）需勾 **`repo`**（Contents 读写）和 **`workflow`**。
+  `workflow` 这一项容易漏，而漏了会连累一整串提交：只要待推历史里**有任何**提交改过 `.github/workflows/`（改一行也算），GitHub 就拒收**整条 push**，报错只有一句
+  `refusing to allow a Personal Access Token to create or update workflow ... without 'workflow' scope`。
+  之后每个新提交都带着这段未推的历史重推，于是永远撞同一堵墙 —— 看起来像「很多 PR/commit 都没同步过去」，实际是同一个 scope 卡住了全部。
+  换完凭据触发一次 push 即可一次性补齐，`sync.sh` 现在会把这句报错翻译成中文排查提示。
 - 密钥仓库禁止本地 clone / 推送，只能 Web 端改；引用放行条件由密钥仓库文件里的 `allow_slugs` 等字段控制（文件引用语法见平台文档）。
 - 密钥仓库路径与文件名在 `.cnb.yml` 顶层环境变量 `SECRETS_SLUG` / `SECRETS_REF` / `SECRETS_FILE` 里改一处即可。
 
