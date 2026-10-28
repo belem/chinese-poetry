@@ -34,9 +34,10 @@
   元曲/yuanqu.json                                  《元曲》是元人诗词曲的唯一总集
   诗/poet.yuan.json                                 历代/ 拆来的元人诗文（诗词曲都进《元曲》）
 明/
-  诗/{poet.ming.json, 古诗源·明诗.json}  词/ci.ming.json  幽梦影/
+  诗/{poet.ming.json, 古诗源·明诗.json}  词/ci.ming.json
 清/
   诗/{poet.qing.json, 古诗源·清诗.json, 纳兰诗/}  词/ci.qing.json（纳兰词 219 首在内，tags 标记）
+  幽梦影/                                         张潮（1650—1707），清人笔记体文集
 近现/现代诗.json                                    自由体的新诗
 当/poet.dang.json  ci.dang.json                     当代旧体诗、旧体词
 汇编/

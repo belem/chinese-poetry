@@ -3,9 +3,9 @@
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋/诗/全宋诗/error/. Workflow: AGENTS.md.",
   "stats": {
     "total_files": 551,
-    "reviewed": 872,
+    "reviewed": 873,
     "clean": 464,
-    "fixed": 24,
+    "fixed": 25,
     "needs_review": 180,
     "out_of_scope": 204,
     "in_scope_files": 661
@@ -4017,7 +4017,7 @@
       "status": "needs_review",
       "note": "随目录重构与 历代/ 拆分落位，只做了搬移/拆分，未逐字对勘"
     },
-    "明/幽梦影/youmengying.json": {
+    "清/幽梦影/youmengying.json": {
       "date": "2026-10-06",
       "reviewer": "claude-sonnet-4-6",
       "status": "fixed",
@@ -5423,6 +5423,18 @@
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "唐/唐诗三百首/ 已并入 唐/诗/全唐诗/poet.tang.* 作 tags，目录删除。选本 65 首先经 PR #43 校勘为 55 首（删 10 条重复副本、改 2 处张冠李戴、补 1 首漏收、修 3 处正文），再按 anthologies/tangshi300.json 目次逐首并入：长干曲四首/塞下曲四首 按正文拆开逐首并，曹植《白馬篇》补录进 三国/诗/poet.sanguo.json，王昌龄《長信秋詞・其三》按全唐诗补录。逐条见 docs/选本并入.tsv。被合并的 416 条总集记录只做了挂 tag，正文未逐字对勘"
+    },
+    "_补录haitang语料works_3": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": "[batch] reference/mit_licence_haitang/works_3.json → 3 个目标文件，收录 5 条",
+          "corrected": null,
+          "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitang收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
+        }
+      ]
     }
   }
 }

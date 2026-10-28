@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """把 reference/mit_licence_haitang（11407 条，MIT 授权）补录进本库。
 
-路由规则（按源数据 dynasty + kind_cn）：
+路由规则（2026-10 目录改成 14 个朝代目录之后；朝代表沿用 split_dynasty.py）：
 
+  元 + 曲   → 元/元曲/yuanqu.json
   宋 + 诗   → 宋/诗/全宋诗/poet.song.*.json
   宋 + 词   → 宋/宋词/ci.song.*.json
-  五代十国 + 诗/词 → 唐/诗/全唐诗/poet.tang.*.json / 宋/宋词/（五代词归 五代十国/词/五代诗词/）
-  元 + 曲   → 元/元曲/yuanqu.json
-  其余（周秦汉晋南北朝隋唐文、历代诗、历代赋）→ 历代/<体裁>.json
+  五代十国 + 词 → 宋/宋词/ci.song.*.json（与 五代十国/词/五代诗词/ 逐字重复的会被判重，落不到这里）
+  其余      → <朝代>/诗/poet.<代号> 或 <朝代>/词/ci.<代号>（单文件书直接是 .json）
+
+  「其余」原先写到 历代/，那个目录 2026-10 已拆散（见 docs/历代拆分.md），现在按作者朝代落位：
+  朝代取 authors/authors.json 的行，查不到再退回源数据的 dynasty；辽/金 归 宋，周/秦/商/上古 归 先秦。
+  体裁按 kind_cn：词进 ci.*；诗、文、赋都进 poet.*（本库 poet.* 本来就是诗文混放）。
 
 作者小传 → authors/authors.json，朝代概述 → dynasties/dynasties.json（独立索引，
 不与正文混放；本库原有 authors.tang/authors.song 各自只管一个总集，字段还不同）。
@@ -20,10 +24,16 @@
 判重按正文（简繁统一 + 去标点），命中库中已有条目的不重收。来源是到处收集的语料，
 不挂 sources 标记——sources 只留给唐诗三百首这类权威合集。
 
+后续补录：源文件随时可能被上游修好（works_3.json 原是裸对象流，2026-10 补上外层方括号，
+内容不变），这时用 --only 只重跑那一个文件，判定表写进单独的日志，不覆盖首次导入的那份：
+
+  python3 scripts/haitang/import.py --only works_3 --tsv docs/haitang收录.works_3.tsv
+
 用法：
   python3 scripts/haitang/import.py                  # 预演，打印清单
   python3 scripts/haitang/import.py --apply           # 写盘
   python3 scripts/haitang/import.py --apply --authors --dynasties
+  python3 scripts/haitang/import.py --only works_3 --tsv docs/haitang收录.works_3.tsv
 """
 import argparse
 import json
@@ -38,6 +48,8 @@ from opencc import OpenCC
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import source  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import backfill_ids  # noqa: E402  补录的记录也要有 id，规则见该文件文档头
 
 ROOT = source.ROOT
 T2S = OpenCC('t2s')
@@ -157,8 +169,25 @@ def write_json(path, data, compact=False):
             fp.write('\n')
 
 
+def indent_of(text):
+    """量出这份文件每条记录的缩进单位（单条记录相对于数组的缩进）。"""
+    lines = text.split('\n')
+    for i, ln in enumerate(lines):
+        if ln.strip() == '{':
+            base = len(ln) - len(ln.lstrip(' '))
+            for nxt in lines[i + 1:]:
+                if nxt.strip() and not nxt.strip().startswith('}'):
+                    return len(nxt) - len(nxt.lstrip(' ')) - base
+            return 2
+    return None
+
+
 def append_json(path, new_items):
-    """在既有文件末尾追加条目，原有文本一字不动（只补分隔逗号与结尾括号）。"""
+    """在既有文件末尾追加条目，原有文本一字不动（只补分隔逗号与结尾括号）。
+
+    新条目按这份文件自己的缩进排（poet.qing.json 是两格、元曲是单行紧凑），
+    这样一条新增只产生几行 diff，不会把整份文件重新排一遍。
+    """
     if not new_items:
         return
     with open(path, encoding='utf-8') as fp:
@@ -169,10 +198,16 @@ def append_json(path, new_items):
     assert body.endswith('}') or body.endswith(','), path
     if body.endswith(','):
         body = body[:-1].rstrip()
-    sep = ',\n'
-    add = sep.join(json.dumps(it, ensure_ascii=False, separators=(',', ':')) for it in new_items)
+    unit = indent_of(text)
+    if unit is None:
+        add = ',\n'.join(json.dumps(it, ensure_ascii=False, separators=(',', ':')) for it in new_items)
+    else:
+        pad = ' ' * unit
+        add = pad + (',\n' + pad).join(
+            json.dumps(it, ensure_ascii=False, indent=unit).replace('\n', '\n' + pad)
+            for it in new_items)
     with open(path, 'w', encoding='utf-8') as fp:
-        fp.write(body + sep + add + '\n]\n')
+        fp.write(body + ',\n' + add + '\n]\n')
 
 
 def rewrite_json(path, data):
@@ -191,6 +226,7 @@ class Library:
         self.title_index = {}   # (作者, 规范化题) → [(relpath, idx)]
         self.files = {}         # relpath → list
         self.touched = set()
+        self.ids = set()        # 库中已有 id，新记录不与它们撞
 
     def scan(self):
         for dirpath, dirs, filenames in os.walk(ROOT):
@@ -215,6 +251,8 @@ class Library:
                 for idx, it in enumerate(data):
                     if not isinstance(it, dict):
                         continue
+                    if it.get('id'):
+                        self.ids.add(it['id'])
                     body = it.get('paragraphs') or it.get('para') or []
                     if isinstance(body, str):
                         body = [body]
@@ -254,6 +292,8 @@ class Library:
         self.files.setdefault(rel, [])
         self.files[rel].append(record)
         self.touched.add(rel)
+        if record.get('id'):
+            self.ids.add(record['id'])
         key = dedup_key(''.join(record.get('paragraphs') or []))
         if len(key) >= 8:
             self.index[key] = (rel, len(self.files[rel]) - 1)
@@ -273,24 +313,76 @@ FIXED_TARGET = {
 SINGLE_FILE = {
     ('元', '曲'): '元/元曲/yuanqu.json',
 }
-# 历代/ 下按体裁分文件，各自从 0 起编
-FREE_PREFIX = {
-    '诗': '历代/poet',
-    '词': '历代/ci',
-    '文': '历代/wen',
-    '赋': '历代/fu',
+YUANQU = SINGLE_FILE[('元', '曲')]
+# 其余朝代按「朝代/体裁/poet.*」落位，代号与 split_dynasty.py 的 PREFIX 一致
+DYNASTY_PREFIX = {
+    '先秦': ('先秦/诗/poet.xianqin', '先秦/词/ci.xianqin'),
+    '汉': ('汉/诗/poet.han', '汉/词/ci.han'),
+    '三国': ('三国/诗/poet.sanguo', '三国/词/ci.sanguo'),
+    '晋': ('晋/诗/poet.jin', '晋/词/ci.jin'),
+    '南北朝': ('南北朝/诗/poet.nanbeichao', '南北朝/词/ci.nanbeichao'),
+    '隋': ('隋/诗/poet.sui', '隋/词/ci.sui'),
+    '唐': ('唐/诗/poet.tang', '唐/词/ci.tang'),
+    '五代十国': ('五代十国/诗/poet.wudai', '五代十国/词/ci.wudai'),
+    '宋': ('宋/诗/poet.song', '宋/词/ci.song'),
+    '元': ('元/诗/poet.yuan', '元/词/ci.yuan'),
+    '明': ('明/诗/poet.ming', '明/词/ci.ming'),
+    '清': ('清/诗/poet.qing', '清/词/ci.qing'),
+    '当': ('当/poet.dang.json', '当/ci.dang.json'),
 }
+# 没有独立目录的朝代，并入它接续的朝代
+DYNASTY_ALIAS = {'辽': '宋', '金': '宋', '周': '先秦', '秦': '先秦', '商': '先秦', '上古': '先秦'}
 
 
-def route(rec):
-    """→ (文件前缀 或 单一文件路径, 体裁, 是否为分片)"""
+def dynasty_index():
+    """作者 → 朝代。与 split_dynasty.py 同口径：同名多行、朝代互相矛盾的判为朝代不明。"""
+    path = os.path.join(ROOT, 'authors', 'authors.json')
+    if not os.path.exists(path):
+        return {}
+    seen = {}
+    for a in load_json(path):
+        seen.setdefault(T2S.convert(a.get('name') or ''), set()).add(T2S.convert(a.get('dynasty') or ''))
+    return {name: (next(iter(ds)) if len(ds) == 1 else None) for name, ds in seen.items()}
+
+
+def route(rec, dyn_idx, lib=None):
+    """→ (文件前缀, 体裁, 是否分片)"""
     dyn, kind = rec.get('dynasty'), rec.get('kind_cn')
-    if (dyn, kind) in SINGLE_FILE:
-        return SINGLE_FILE[(dyn, kind)], kind, False
-    if (dyn, kind) in FIXED_TARGET:
-        return FIXED_TARGET[(dyn, kind)], kind, True
-    # 其余（周秦汉晋南北朝隋唐文、历代诗、历代赋）按体裁进 历代/
-    return FREE_PREFIX.get(kind, '历代/other'), kind, True
+    d = dyn_idx.get(T2S.convert((rec.get('author') or '').strip())) or T2S.convert(str(dyn or ''))
+    d = DYNASTY_ALIAS.get(d, d)
+    if (d, kind) in SINGLE_FILE:
+        return SINGLE_FILE[(d, kind)], kind, False
+    if d == '元' and kind in ('诗', '词', '文', '赋'):
+        # 元人诗词曲只留《元曲》一部总集（docs/目录结构.md）
+        return YUANQU, kind, False
+    if (d, kind) in FIXED_TARGET:
+        return FIXED_TARGET[(d, kind)], kind, True
+    # 有些朝代的书是单文件（当/poet.dang.json），有的是分片（宋/诗/全宋诗/poet.song.*.json）：
+    # 库里已经有 <prefix>.json 这本，就按单文件处理
+    if d not in DYNASTY_PREFIX:
+        raise SystemExit('朝代分不清，无法落位：%s / %s（源 dynasty=%s）' % (rec.get('author'), kind, dyn))
+    # 词进 ci.*，诗/文/赋都进 poet.*
+    prefix = DYNASTY_PREFIX[d][1 if kind == '词' else 0]
+    if prefix.endswith('.json'):
+        return prefix, kind, False
+    if lib is not None and prefix + '.json' in lib.files:
+        return prefix + '.json', kind, False
+    return prefix, kind, True
+
+
+def new_id(record, taken):
+    """按 backfill_ids 的规则（作者+题名+正文+分段哈希，见该文件文档头）给新记录配 id。
+
+    单独走一遍 assign 会重复计算全库 35 万条，这里只算这一条，撞码就换盐加长。
+    """
+    key = backfill_ids.work_key(record)
+    for salt in range(1, 16):
+        size = backfill_ids.ID_LEN + max(0, salt - 1)
+        cand = backfill_ids.base22(
+            backfill_ids.work_hash(key if salt == 1 else '%s|%d' % (key, salt)), size)
+        if cand not in taken:
+            return cand
+    raise SystemExit('给不出不重复的 id：%s' % key[:40])
 
 
 # ---------------------------------------------------------------- 主流程
@@ -323,8 +415,8 @@ def write_tsv(rows, path):
     with open(os.path.join(ROOT, path), 'w', encoding='utf-8') as fp:
         fp.write('判定\t体裁\t朝代\t作者\t题名\t去向\t正文首40字\n')
         for r in rows:
-            fp.write('\t'.join(x.replace('\t', ' ').replace('\n', ' ')
-                              for x in r) + '\n')
+            # 源正文里有 \r\n，判定表一行一条，换行与制表符都压成空格
+            fp.write('\t'.join(re.sub(r'\s+', ' ', x) for x in r) + '\n')
 
 
 def main():
@@ -333,9 +425,12 @@ def main():
     ap.add_argument('--authors', action='store_true', help='同时写 authors/ dynasties/')
     ap.add_argument('--dynasties', action='store_true')
     ap.add_argument('--tsv', default='docs/haitang收录.tsv')
+    ap.add_argument('--only', default=None, metavar='works_3',
+                    help='只处理一个源文件（如 works_3），默认全部 8 个')
     args = ap.parse_args()
 
-    works = source.works()
+    works = source._load(args.only) if args.only else source.works()
+    dyn_idx = dynasty_index()
     lib = Library().scan()
     print('本库已有正文文件 %d 个，判重索引 %d 条' % (len(lib.files), len(lib.index)))
 
@@ -358,7 +453,7 @@ def main():
         if hit is not None:
             dup.append((rec, hit[0], hit[1]))
             continue
-        target, kind, sharded = route(rec)
+        target, kind, sharded = route(rec, dyn_idx, lib)
         plan.append((rec, target, kind, sharded, paras))
 
     print('源 %d 条 → 收 %d，判重 %d，丢弃 %d' % (len(works), len(plan), len(dup), len(dropped)))
@@ -410,6 +505,8 @@ def main():
             if kind == '曲':
                 item = {'dynasty': 'yuan', 'author': rec.get('author') or '',
                         'paragraphs': paras, 'title': title}
+            item['id'] = new_id(item, lib.ids)
+            lib.ids.add(item['id'])
             data.append(item)
             written += 1
         path = os.path.join(ROOT, name)
