@@ -400,7 +400,7 @@
         {
           "original": "投我以木李，报之以琼九",
           "corrected": "投我以木李，报之以琼玖",
-          "note": "形近字：玖→九。haitang 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitang重跑.md）"
+          "note": "形近字：玖→九。haitangshishe 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitangshishe重跑.md）"
         }
       ]
     },
@@ -722,9 +722,9 @@
       "status": "fixed",
       "fixes": [
         {
-          "original": "336 条全带 \"sources\": [\"haitang\"]，其中 331 条正文与库中已有记录重复（判重时被跳过、仍留在同一文件尾巴上）",
-          "corrected": "删 331 条重复副本，文件 336 → 5 条；\"sources\" 里的 haitang 标记全清",
-          "note": "这 336 条是 import.py 判重跳过的 600 条 haitang 补录里的残余，2026-08 那次清理漏了本文件（此前全库只有它一个文件还带该标记）。删前把副本上的信息逐条归位：57 条 tags: [\"唐诗三百首\"] 按正文并回本体，其中 32 条的本体是 58000 自己的记录、随副本一起删，归属改由 docs/唐诗三百首并入.tsv 与底本目次追认；「某人《某题》」互见并回本体的 tags；副本自带 tags 的 28 条按正文找到本体重挂。留下的 5 条库中无二本（除夜有怀、饮马长城窟行、战城南、焚书坑、征妇怨），保留并去掉 sources 标记。核对：poet.tang.* 里 唐诗三百首/水墨唐诗/古诗源/乐府诗集 四种 tag 的条数 524 → 528，逐条比对无丢失。"
+          "original": "336 条全带 \"sources\": [\"haitangshishe\"]，其中 331 条正文与库中已有记录重复（判重时被跳过、仍留在同一文件尾巴上）",
+          "corrected": "删 331 条重复副本，文件 336 → 5 条；\"sources\" 里的 haitangshishe 标记全清",
+          "note": "这 336 条是 import.py 判重跳过的 600 条 haitangshishe 补录里的残余，2026-08 那次清理漏了本文件（此前全库只有它一个文件还带该标记）。删前把副本上的信息逐条归位：57 条 tags: [\"唐诗三百首\"] 按正文并回本体，其中 32 条的本体是 58000 自己的记录、随副本一起删，归属改由 docs/唐诗三百首并入.tsv 与底本目次追认；「某人《某题》」互见并回本体的 tags；副本自带 tags 的 28 条按正文找到本体重挂。留下的 5 条库中无二本（除夜有怀、饮马长城窟行、战城南、焚书坑、征妇怨），保留并去掉 sources 标记。核对：poet.tang.* 里 唐诗三百首/水墨唐诗/古诗源/乐府诗集 四种 tag 的条数 524 → 528，逐条比对无丢失。"
         }
       ],
       "note": "本文件此后只是 5 条库中无二本的补录，正文仍未与古籍逐字对勘，记 fixed 是因为本轮处理的问题（重复副本 + 来源标记）已清；逐字校勘另记"
@@ -4253,7 +4253,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitang语料 那一批，未逐字对勘",
+      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
       "fixes": [
         {
           "original": null,
@@ -4266,7 +4266,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitang语料 那一批，未逐字对勘",
+      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
       "fixes": [
         {
           "original": null,
@@ -5196,7 +5196,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitang语料 那一批，未逐字对勘",
+      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
       "fixes": [
         {
           "original": null,
@@ -5209,7 +5209,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitang语料 那一批，未逐字对勘",
+      "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘",
       "fixes": [
         {
           "original": null,
@@ -5638,7 +5638,7 @@
         }
       ]
     },
-    "_补入poem-wechat": {
+    "_补入补充选本": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "needs_review",
@@ -5650,15 +5650,15 @@
         }
       ]
     },
-    "_补录haitang语料": {
+    "_补录haitangshishe语料": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "fixes": [
         {
-          "original": "[batch] reference/mit_licence_haitang → 13 个目标文件，收录 7791 条",
+          "original": "[batch] reference/mit_licence_haitangshishe → 13 个目标文件，收录 7791 条",
           "corrected": null,
-          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitang收录.tsv。收录时不挂 sources 标记：haitang 是到处收集的语料，不是唐诗三百首那样的权威合集，sources 只留给权威选本/总集（2026-08 已把先前写入的 \"sources\": [\"haitang\"] 从 60 个正文文件全部清除，含 chuci.json 三处 variants[].source）。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
+          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitangshishe收录.tsv。收录时不挂 sources 标记：haitangshishe 是到处收集的语料，不是唐诗三百首那样的权威合集，sources 只留给权威选本/总集（2026-08 已把先前写入的 \"sources\": [\"haitangshishe\"] 从 60 个正文文件全部清除，含 chuci.json 三处 variants[].source）。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
         },
         {
           "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
@@ -5673,15 +5673,15 @@
       "status": "needs_review",
       "note": "唐/唐诗三百首/ 已并入 唐/诗/全唐诗/poet.tang.* 作 tags，目录删除。选本 65 首先经 PR #43 校勘为 55 首（删 10 条重复副本、改 2 处张冠李戴、补 1 首漏收、修 3 处正文），再按 anthologies/tangshi300.json 目次逐首并入：长干曲四首/塞下曲四首 按正文拆开逐首并，曹植《白馬篇》补录进 三国/诗/poet.sanguo.json，王昌龄《長信秋詞・其三》按全唐诗补录。逐条见 docs/选本并入.tsv。被合并的 416 条总集记录只做了挂 tag，正文未逐字对勘"
     },
-    "_补录haitang语料works_3": {
+    "_补录haitangshishe语料works_3": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "fixes": [
         {
-          "original": "[batch] reference/mit_licence_haitang/works_3.json → 3 个目标文件，收录 5 条",
+          "original": "[batch] reference/mit_licence_haitangshishe/works_3.json → 3 个目标文件，收录 5 条",
           "corrected": null,
-          "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitang收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
+          "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitangshishe收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
         }
       ]
     }

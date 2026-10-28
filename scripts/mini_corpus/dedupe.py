@@ -11,8 +11,8 @@
 判重口径：繁体转简、去标点后逐字比较，不足 8 字的不判（短句重名太多）。
 「题同文异」不归这里管——那是异文，交给对勘，两存不并。
 
-    python3 scripts/wechat_corpus/dedupe.py           # 只报数
-    python3 scripts/wechat_corpus/dedupe.py --apply
+    python3 scripts/mini_corpus/dedupe.py           # 只报数
+    python3 scripts/mini_corpus/dedupe.py --apply
 """
 import argparse, collections, json, os, re, sys, unicodedata
 
@@ -71,7 +71,7 @@ def add_source(root, rel, idx, tag):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--root', default=ROOT)
-    ap.add_argument('--report', default='docs/wechat_corpus_dedupe.tsv')
+    ap.add_argument('--report', default='docs/mini_corpus_dedupe.tsv')
     ap.add_argument('--apply', action='store_true')
     a = ap.parse_args()
     try:

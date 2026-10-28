@@ -4,7 +4,7 @@
   python3 scripts/split_dynasty.py            # 预演：打印分类统计
   python3 scripts/split_dynasty.py --apply    # 写回数据，生成 docs/历代拆分.tsv
 
-为什么拆：目录按「朝代 → 一部书」切，`历代/` 是 haitang 补录的一锅烩，周秦汉晋南北朝隋
+为什么拆：目录按「朝代 → 一部书」切，`历代/` 是 海棠诗社语料补录的一锅烩，周秦汉晋南北朝隋
 唐宋元明清当代全混在 9 个文件里，朝代只记在 `authors/authors.json`。想「取唐诗」得先 join
 作者表，这与「一个朝代一个目录」的结构冲突。
 

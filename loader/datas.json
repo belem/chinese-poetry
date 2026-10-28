@@ -153,28 +153,28 @@
             "id": 7,
             "path": "明/诗/poet.ming.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitangshishe, 尚未逐字对勘"
         },
         "ming-ci": {
             "name": "明词",
             "id": 10,
             "path": "明/词/ci.ming.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitangshishe, 尚未逐字对勘"
         },
         "qing-shi": {
             "name": "清诗",
             "id": 20,
             "path": "清/诗/poet.qing.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitangshishe, 尚未逐字对勘"
         },
         "qing-ci": {
             "name": "清词",
             "id": 27,
             "path": "清/词/ci.qing.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitangshishe, 尚未逐字对勘"
         },
         "wenxuan": {
             "name": "昭明文选",
@@ -204,112 +204,112 @@
             "id": 44,
             "path": "唐/词/ci.tang.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "sui-shi": {
             "name": "隋诗（含文）",
             "id": 42,
             "path": "隋/诗/poet.sui.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "sui-ci": {
             "name": "隋词",
             "id": 43,
             "path": "隋/词/ci.sui.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "sanguo-shi": {
             "name": "三国诗",
             "id": 37,
             "path": "三国/诗/poet.sanguo.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "han-shi": {
             "name": "汉诗（含文）",
             "id": 35,
             "path": "汉/诗/poet.han.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "han-ci": {
             "name": "汉词",
             "id": 36,
             "path": "汉/词/ci.han.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "jin-shi": {
             "name": "晋诗（含文）",
             "id": 38,
             "path": "晋/诗/poet.jin.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "jin-ci": {
             "name": "晋词",
             "id": 39,
             "path": "晋/词/ci.jin.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "nanbeichao-shi": {
             "name": "南北朝诗（含文）",
             "id": 40,
             "path": "南北朝/诗/poet.nanbeichao.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "nanbeichao-ci": {
             "name": "南北朝词",
             "id": 41,
             "path": "南北朝/词/ci.nanbeichao.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "wudai-shi": {
             "name": "五代十国诗",
             "id": 45,
             "path": "五代十国/诗/poet.wudai.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "song-shi-bulu": {
             "name": "宋诗补录",
             "id": 46,
             "path": "宋/诗/poet.song.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "song-ci-bulu": {
             "name": "宋词补录",
             "id": 47,
             "path": "宋/词/ci.song.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "yuan-shi": {
             "name": "元诗（含文）",
             "id": 48,
             "path": "元/诗/poet.yuan.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "dang-poet": {
             "name": "当代旧体诗",
             "id": 49,
             "path": "当/poet.dang.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "dang-ci": {
             "name": "当代旧体词",
             "id": 50,
             "path": "当/ci.dang.json",
             "tag": "paragraphs",
-            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitang，尚未逐字对勘"
+            "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
         "wen-zuozhuan": {
             "name": "左传",

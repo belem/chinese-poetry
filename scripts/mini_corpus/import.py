@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""把 poem-wechat-mini-program 的集子正文按 poem-source 的规则落到本库。
+"""把补充语料的集子正文按 poem-source 的规则落到本库。
 
 规则（与库中既有数据一致）：
   * 繁体、竖排改横排的一行一句；每条只留 作者 / 段落 / 标题 三个字段，
     全用繁体。简体正文用 opencc s2twp 转换，只转字不改字。
   * 选本（乐府、古诗、唐诗三百首、元散曲、昭明文选、古文观止、课外经典）另建目录，
     一律用 book.title 的繁体原名作文件名，按朝代落到对应目录；不并入 全唐诗/宋词，避免与现行去重口径打架。
-    与库中已有作品重复的，只记不写，清单进 docs/wechat_corpus.tsv。
+    与库中已有作品重复的，只记不写，清单进 docs/mini_corpus.tsv。
     元曲三百首由 scripts/merge_yuanqu.py 直接并入 元/元曲/yuanqu.json，不在此列。
-  * 上游的译文、出处、学段、难度等展示字段不落库。
+  * 补充语料的译文、出处、学段、难度等展示字段不落库。
 
 用法：
-  python3 scripts/wechat_corpus/import.py --corpus /tmp/wechat_corpus.json [--dry-run]
+  python3 scripts/mini_corpus/import.py --corpus /tmp/mini_corpus.json [--dry-run]
 """
 import argparse
 import json
@@ -26,7 +26,7 @@ from opencc import OpenCC
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 S2TW = OpenCC('s2twp')
 
-# 上游文件 → (本库目录, 是否按 gradeGroup 分卷)
+# 补充语料文件 → (本库目录, 是否按 gradeGroup 分卷)
 BOOKS = {
     'poems-yuefu.js': ('汇编/乐府诗集', True),
     'poems-gushi.js': ('汉/古诗源', True),
@@ -67,7 +67,7 @@ def load_corpus_index():
 
 
 def want(item):
-    """上游条目是否值得落库：去掉标题带「（一）」之类的重出副本与摘句。"""
+    """补充语料条目是否值得落库：去掉标题带「（一）」之类的重出副本与摘句。"""
     title = item.get('title') or ''
     if not title or re.search(r'（[一二三四五六七八九十]+）$', title):
         return False
@@ -76,7 +76,7 @@ def want(item):
 
 
 def to_paragraphs(text):
-    # 「~~」是上游对底本缺字的记法，换成本库惯用的「□」；
+    # 「~~」是补充语料对底本缺字的记法，换成本库惯用的「□」；
     # 简转繁会把引文里的「云」误转成「雲」，这几处按原文改回
     out = []
     for line in text.replace('~~', '□').split('\n'):
@@ -113,7 +113,7 @@ def build(corpus, idx, log):
             if by_volume:
                 volume = it.get('gradeGroup') or it.get('group') or ''
             if src == 'poems-zhaoming.js' and '·' not in volume:
-                # 上游这类条目卷名只写了文体；「赋」「其他」两类与上面重名，
+                # 补充语料这类条目卷名只写了文体；「赋」「其他」两类与上面重名，
                 # 给「赋」加前缀，避免两卷写进同一个文件
                 volume = ('赋上' if volume == '赋' else '') + (volume or '其他')
             volumes.setdefault(volume, []).append(rec)
@@ -153,7 +153,7 @@ def main():
 
     if not args.dry_run and log:
         os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
-        with open(os.path.join(ROOT, 'docs/wechat_corpus.tsv'), 'w', encoding='utf-8') as fp:
+        with open(os.path.join(ROOT, 'docs/mini_corpus.tsv'), 'w', encoding='utf-8') as fp:
             fp.write('集子\t作品\t作者\t朝代\t本库已有\n')
             for row in log:
                 fp.write('\t'.join(row) + '\n')

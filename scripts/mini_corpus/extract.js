@@ -1,4 +1,4 @@
-// 从 poem-wechat-mini-program/scripts/corpus/data 抽出条目正文（含 text-master 引用展开）。
+// 从补充语料的 corpus/data 目录抽出条目正文（含 text-master 引用展开）。
 // 注意：条目可能内联正文，也可能只给 textRef 指向 text-master，两种都要认。
 // 只保留 collect.py 要用的字段：正文、标题、作者（及本名）、朝代、编排组。
 // 用法: node extract.js <data目录> > out.json
@@ -23,7 +23,7 @@ load('text-master.js').TEXT_MASTER.forEach((e) => {
   (e.entries || []).forEach((x) => { master[x] = e; });
 });
 
-// 课内是 12 册课本，一册一个集子，名字与上游文件对齐
+// 课内是 12 册课本，一册一个集子，名字与补充语料文件对齐
 const COLLECTIONS = {
   'poems-1.js': 'POEMS_1', 'poems-2.js': 'POEMS_2', 'poems-3.js': 'POEMS_3',
   'poems-4.js': 'POEMS_4', 'poems-5.js': 'POEMS_5', 'poems-6.js': 'POEMS_6',
