@@ -1,6 +1,23 @@
 {
   "path": "汇编/古文观止/古文观止·补.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "fixes": [
+    {
+      "original": "# 17 杂说一・龙说",
+      "corrected": null,
+      "note": "[guwen_subset] 删此条，正文与 汇编/古文观止/卷七六朝唐文.json#17 重出：同篇，分卷本更全"
+    },
+    {
+      "original": "# 25 游褒禅山记",
+      "corrected": null,
+      "note": "[guwen_subset] 删此条，正文与 汇编/古文观止/卷十一宋文.json#19 重出：同篇，分卷本更全"
+    },
+    {
+      "original": "# 26 上枢密韩太尉书",
+      "corrected": null,
+      "note": "[guwen_subset] 删此条，正文与 汇编/古文观止/卷十一宋文.json#13 重出：同篇，分卷本更全"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-28 重复清理：3 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"

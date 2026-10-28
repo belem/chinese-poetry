@@ -10,9 +10,14 @@
       "original": "零宽空格 U+200B ×21（黄之隽《桂枝香·美人魂》）",
       "corrected": "删除",
       "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
+    },
+    {
+      "original": "# 1087 杏花疏雨洒香堤",
+      "corrected": null,
+      "note": "[qingci_attr] 删此条，正文与 清/词/ci.qing.json#162 重出：与佟世南同词重出，纳兰词集不载，判为误归"
     }
   ],
-  "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘。2026-11-01 字数异常对勘：2 处疑似字数异常经识典古籍证实原样，另有 13 处证据不足未改",
+  "note": "由 split_dynasty.py 从 历代/ 按作者朝代拆出，正文即 _补录haitangshishe语料 那一批，未逐字对勘。2026-11-01 字数异常对勘：2 处疑似字数异常经识典古籍证实原样，另有 13 处证据不足未改 2026-10-28 重复清理：1 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"
