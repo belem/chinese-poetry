@@ -4,9 +4,9 @@
   "stats": {
     "total_files": 551,
     "reviewed": 873,
-    "clean": 464,
+    "clean": 463,
     "fixed": 25,
-    "needs_review": 180,
+    "needs_review": 181,
     "out_of_scope": 204,
     "in_scope_files": 661
   },
@@ -690,9 +690,21 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.0.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "碧云天，黄叶地。",
+          "corrected": "碧云天，黄花地。",
+          "note": "范仲淹《苏幕遮》。「黄叶地」无版本依据，宋本《唐宋诸贤绝妙词选》《范文正公集》均作「黄花地」（识典古籍）"
+        },
+        {
+          "original": "（28 首《宋词三百首》记录整条缺失）",
+          "corrected": "补回",
+          "note": "commit 6fba35e「宋词三百首并入宋词」时把这 28 首当重复删掉，但现库并无同文副本，等于丢了正文。按 6fba35e 父提交原样补回并挂 tags，逐条见 docs/宋词三百首对勘.tsv"
+        }
+      ]
     },
     "宋/宋词/ci.song.1000.json": {
       "date": "2026-10-04",
@@ -785,7 +797,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "《宋词三百首》对勘：10 首补挂「宋词三百首」tag（钱惟演《玉楼春》、范仲淹《御街行》、柳永《雨霖铃》《浪淘沙慢》《玉蝴蝶》、张先《一丛花》、晏殊《浣溪沙》《木兰花》《玉楼春》、欧阳修《玉楼春》）。按首句检索只覆盖到本文件挂上 tag 的这几首，其余正文未逐字对勘"
     },
     "宋/宋词/ci.song.3000.json": {
       "date": "2026-10-07",
