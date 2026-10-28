@@ -69,7 +69,7 @@
             "name": "明/幽梦影-张潮文集",
             "id": 6,
             "path": "明/幽梦影/youmengying.json",
-            "tag": "content"
+            "tag": "paragraphs"
         },
         "caocao": {
             "name": "曹操诗集",
@@ -81,7 +81,7 @@
             "name": "楚辞",
             "id": 9,
             "path": "先秦/楚辞/chuci.json",
-            "tag": "content"
+            "tag": "paragraphs"
         },
         "nalanxingde-shi": {
             "name": "纳兰性德·诗",
@@ -102,7 +102,7 @@
             "name": "诗经",
             "id": 13,
             "path": "先秦/诗经/shijing.json",
-            "tag": "content"
+            "tag": "paragraphs"
         },
         "guwen-guanzhi": {
             "name": "古文观止",

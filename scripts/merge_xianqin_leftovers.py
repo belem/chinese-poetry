@@ -66,10 +66,10 @@ def main():
     for kind, rec, key in plan:
         if kind == 'variant':
             target = by_key[key]
-            same = norm(''.join(target['content'])) == norm(''.join(rec['paragraphs']))
+            same = norm(''.join(target['paragraphs'])) == norm(''.join(rec['paragraphs']))
             print(f'variant {rec["title"]} → chuci《{key[1]}》 正文字数 '
                   f'{sum(len(x) for x in rec["paragraphs"])} / '
-                  f'{sum(len(x) for x in target["content"])}'
+                  f'{sum(len(x) for x in target["paragraphs"])}'
                   f'{"（实为全同，应删）" if same else ""}')
         else:
             print(f'new     {rec["title"]} → chuci.json 新篇目（{rec["author"]}）')
@@ -81,7 +81,7 @@ def main():
     for kind, rec, key in plan:
         if kind == 'variant':
             target = by_key[key]
-            if norm(''.join(target['content'])) == norm(''.join(rec['paragraphs'])):
+            if norm(''.join(target['paragraphs'])) == norm(''.join(rec['paragraphs'])):
                 continue                      # 实际全同，正文只留专书那份
             variants = target.setdefault('variants', [])
             variants.append({'content': rec['paragraphs']})
@@ -90,7 +90,7 @@ def main():
                 'title': rec['title'],
                 'section': '附',
                 'author': rec['author'],
-                'content': rec['paragraphs'],
+                'paragraphs': rec['paragraphs'],
                 'note': '楚辞体先声，古歌辞，非屈原作',
             })
 
