@@ -241,6 +241,7 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
 | `scripts/shidian.py` + `scripts/shidian/search.mjs` | Evidence pipeline: `build` → search 识典古籍 → `analyze` → review `review.tsv` → `apply`. |
 | `scripts/split_dynasty.py` | Split `历代/` into the per-dynasty directories by author dynasty and genre (dry-run by default; `--apply` writes and emits `docs/历代拆分.tsv`). Already applied — `历代/` no longer exists |
+| `scripts/dedupe_duplicates.py` | 按 docs/重复清理.md 的口径自动清掉能定案的重复：宋词两批数据合并、元曲残句、三国简繁两次转录、课本选目与《古文观止·补》的选段。只删能自动定案的，异文与归属异说一律两存 |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
 
 ```bash

@@ -747,7 +747,7 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.22000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -3667,8 +3667,8 @@
       "status": "fixed"
     },
     "明/诗/poet.ming.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "明/诗/古诗源·明诗.json": {
@@ -4362,8 +4362,8 @@
       "status": "fixed"
     },
     "清/诗/poet.qing.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "清/诗/古诗源·清诗.json": {
