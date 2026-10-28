@@ -393,14 +393,14 @@
       "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核"
     },
     "先秦/诗经/shijing.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-28",
+      "reviewer": "CodeBuddy",
       "status": "fixed",
       "fixes": [
         {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+          "original": "投我以木李，报之以琼九",
+          "corrected": "投我以木李，报之以琼玖",
+          "note": "形近字：玖→九。haitang 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitang重跑.md）"
         }
       ]
     },
