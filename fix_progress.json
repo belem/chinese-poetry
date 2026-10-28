@@ -2,15 +2,287 @@
   "version": "1.0",
   "description": "Progress tracker for the typo / garbled-character pass over chinese-poetry. Per-file entries keep only which files were reviewed, when, by whom and the resulting status; the fix log itself is not retained — corrections are reproducible from the git history and are re-checked any time by `python3 scripts/check_structure.py`. Rare-character lacunae (□, bare PUA) that no evidence can settle are reported by that script rather than recorded here. Out-of-scope: 宋/诗/全宋诗/error/. Workflow: AGENTS.md.",
   "stats": {
-    "total_files": 874,
+    "total_files": 556,
     "reviewed": 877,
-    "clean": 431,
-    "fixed": 103,
+    "clean": 409,
+    "fixed": 125,
     "needs_review": 139,
     "out_of_scope": 204,
-    "in_scope_files": 559
+    "in_scope_files": 556
   },
   "reviewed": {
+    "_已删除的文件：结构重构": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "scope_note": "结构重构批次：删掉了两个整文件（乐府诗集 卷三唐代乐府、昭明文选 诗·补亡，均与其他记录重复），另有若干文件被拆分改名（古诗源 清词 等），进度键随之成为死键。原状态（clean / fixed / needs_review）与各自的 fixes 收在 batch_files 里备查；文件已不存在，不计入 stats，也不进待查队列。",
+      "batch_files": {
+        "汉/古诗源/清词.json": {
+          "date": "2026-10-27",
+          "reviewer": "codebuddy",
+          "status": "fixed",
+          "fixes": [
+            {
+              "original": null,
+              "corrected": null,
+              "note": "文件已拆分：诗入 元明清诗.json，词移入 清/词/古诗源·清词.json"
+            }
+          ]
+        },
+        "先秦/诗文总集/乐府诗集/卷三唐代乐府.json": {
+          "date": "2026-10-27",
+          "reviewer": "codebuddy",
+          "status": "fixed",
+          "fixes": [
+            {
+              "original": null,
+              "corrected": null,
+              "note": "卷内唯一一首李白《長幹行》与 全唐诗 poet.tang.* 同一首正文全同，按「一件作品只留一份正文」删除，卷文件随之删除"
+            }
+          ]
+        },
+        "先秦/诗文总集/昭明文选/诗·补亡.json": {
+          "date": "2026-10-27",
+          "reviewer": "codebuddy",
+          "status": "fixed",
+          "fixes": [
+            {
+              "original": "補亡詩六首（束廣微）",
+              "corrected": "删除文件",
+              "note": "与 先秦/诗经/shijing.json（《詩經》正文）同篇，属重复"
+            }
+          ]
+        }
+      }
+    },
+    "_并入选本：唐/唐诗三百首": {
+      "date": "2026-10-29",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "唐/唐诗三百首/ 已并入 唐/诗/全唐诗/poet.tang.* 作 tags，目录删除。选本 65 首先经 PR #43 校勘为 55 首（删 10 条重复副本、改 2 处张冠李戴、补 1 首漏收、修 3 处正文），再按 anthologies/tangshi300.json 目次逐首并入：长干曲四首/塞下曲四首 按正文拆开逐首并，曹植《白馬篇》补录进 三国/诗/poet.sanguo.json，王昌龄《長信秋詞・其三》按全唐诗补录。逐条见 docs/选本并入.tsv。被合并的 416 条总集记录只做了挂 tag，正文未逐字对勘"
+    },
+    "_拆分明清总集：split_dynasty": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "scripts/split_dynasty.py：历代/ 按作者朝代拆出 明/诗、明/词、清/诗、清/词；元人 251 条追加进 元曲/yuanqu.json（已收的 4 条未搬）；近现/ 里课本选录的明清作品归位，余下拆成 现代诗.json / 当代诗词.json。只核对朝代与体裁归属，正文未逐字对勘"
+    },
+    "_新增选本": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "新增的选本（`乐府诗集/`、`古诗源/`、`唐/唐诗三百首/`、`昭明文选/`、`汇编/古文观止/`、`汇编/课本选目/`，共 121 个文件 / 1031 条）尚未逐字对勘，导入时只做了简转繁、分卷与正文去重，不计入 clean。逐字对勘完成后再拆成逐文件记录。"
+        },
+        {
+          "original": null,
+          "corrected": null,
+          "note": "元曲三百首（8 个文件 / 29 首）已并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv；这 29 首仍未与古籍逐字对勘。"
+        },
+        {
+          "original": null,
+          "corrected": null,
+          "note": "逐文件记录拆分：《古诗源》一批（六朝诗、元明清诗、宋诗、清词、汉魏诗、先秦诗）在后续重构中已并入/改名/删除，其结论见 `_目录重构：按朝代分层`、`_已删除的文件：结构重构` 与 `汉/古诗源/`、`明/诗/古诗源·明诗.json`、`清/诗/古诗源·清诗.json`、`汉/古诗源/汉魏六朝诗.json` 各条；避免同一个文件在两处重复计数。"
+        }
+      ],
+      "batch_files": [
+        "anthologies/songci300.json",
+        "anthologies/tangshi300.json",
+        "dynasties/dynasties.json",
+        "先秦/诗文总集/乐府诗集/乐府诗集.json",
+        "先秦/诗文总集/乐府诗集/卷一汉魏乐府.json",
+        "先秦/诗文总集/乐府诗集/卷二南朝乐府.json",
+        "先秦/诗文总集/昭明文选/七.json",
+        "先秦/诗文总集/昭明文选/上书.json",
+        "先秦/诗文总集/昭明文选/书.json",
+        "先秦/诗文总集/昭明文选/令.json",
+        "先秦/诗文总集/昭明文选/册.json",
+        "先秦/诗文总集/昭明文选/史论.json",
+        "先秦/诗文总集/昭明文选/史述赞.json",
+        "先秦/诗文总集/昭明文选/吊文.json",
+        "先秦/诗文总集/昭明文选/启.json",
+        "先秦/诗文总集/昭明文选/哀.json",
+        "先秦/诗文总集/昭明文选/墓志.json",
+        "先秦/诗文总集/昭明文选/奏记.json",
+        "先秦/诗文总集/昭明文选/对问.json",
+        "先秦/诗文总集/昭明文选/序.json",
+        "先秦/诗文总集/昭明文选/弹事.json",
+        "先秦/诗文总集/昭明文选/教.json",
+        "先秦/诗文总集/昭明文选/文.json",
+        "先秦/诗文总集/昭明文选/昭明文选.json",
+        "先秦/诗文总集/昭明文选/檄.json",
+        "先秦/诗文总集/昭明文选/碑文.json",
+        "先秦/诗文总集/昭明文选/祭文.json",
+        "先秦/诗文总集/昭明文选/符命.json",
+        "先秦/诗文总集/昭明文选/笺.json",
+        "先秦/诗文总集/昭明文选/箴.json",
+        "先秦/诗文总集/昭明文选/行状.json",
+        "先秦/诗文总集/昭明文选/表.json",
+        "先秦/诗文总集/昭明文选/论·论一.json",
+        "先秦/诗文总集/昭明文选/论·论三.json",
+        "先秦/诗文总集/昭明文选/论·论二.json",
+        "先秦/诗文总集/昭明文选/论·论四.json",
+        "先秦/诗文总集/昭明文选/设论.json",
+        "先秦/诗文总集/昭明文选/诏.json",
+        "先秦/诗文总集/昭明文选/诔.json",
+        "先秦/诗文总集/昭明文选/诗·乐府上.json",
+        "先秦/诗文总集/昭明文选/诗·乐府下.json",
+        "先秦/诗文总集/昭明文选/诗·公䜩.json",
+        "先秦/诗文总集/昭明文选/诗·军戎.json",
+        "先秦/诗文总集/昭明文选/诗·劝励.json",
+        "先秦/诗文总集/昭明文选/诗·反招隐.json",
+        "先秦/诗文总集/昭明文选/诗·咏史.json",
+        "先秦/诗文总集/昭明文选/诗·咏怀.json",
+        "先秦/诗文总集/昭明文选/诗·哀伤.json",
+        "先秦/诗文总集/昭明文选/诗·招隐.json",
+        "先秦/诗文总集/昭明文选/诗·杂拟上.json",
+        "先秦/诗文总集/昭明文选/诗·杂拟下.json",
+        "先秦/诗文总集/昭明文选/诗·杂歌.json",
+        "先秦/诗文总集/昭明文选/诗·杂诗上.json",
+        "先秦/诗文总集/昭明文选/诗·杂诗下.json",
+        "先秦/诗文总集/昭明文选/诗·游仙.json",
+        "先秦/诗文总集/昭明文选/诗·游览.json",
+        "先秦/诗文总集/昭明文选/诗·献诗.json",
+        "先秦/诗文总集/昭明文选/诗·百一.json",
+        "先秦/诗文总集/昭明文选/诗·祖饯.json",
+        "先秦/诗文总集/昭明文选/诗·行旅上.json",
+        "先秦/诗文总集/昭明文选/诗·行旅下.json",
+        "先秦/诗文总集/昭明文选/诗·赠答一.json",
+        "先秦/诗文总集/昭明文选/诗·赠答三.json",
+        "先秦/诗文总集/昭明文选/诗·赠答二.json",
+        "先秦/诗文总集/昭明文选/诗·赠答四.json",
+        "先秦/诗文总集/昭明文选/诗·述德.json",
+        "先秦/诗文总集/昭明文选/诗·郊庙.json",
+        "先秦/诗文总集/昭明文选/赋·京都上.json",
+        "先秦/诗文总集/昭明文选/赋·京都下.json",
+        "先秦/诗文总集/昭明文选/赋·京都中.json",
+        "先秦/诗文总集/昭明文选/赋·哀伤.json",
+        "先秦/诗文总集/昭明文选/赋·宫殿.json",
+        "先秦/诗文总集/昭明文选/赋·志上.json",
+        "先秦/诗文总集/昭明文选/赋·志下.json",
+        "先秦/诗文总集/昭明文选/赋·志中.json",
+        "先秦/诗文总集/昭明文选/赋·情.json",
+        "先秦/诗文总集/昭明文选/赋·江海.json",
+        "先秦/诗文总集/昭明文选/赋·游览.json",
+        "先秦/诗文总集/昭明文选/赋·物色.json",
+        "先秦/诗文总集/昭明文选/赋·畋猎.json",
+        "先秦/诗文总集/昭明文选/赋·畋猎·补遗.json",
+        "先秦/诗文总集/昭明文选/赋·纪行上.json",
+        "先秦/诗文总集/昭明文选/赋·纪行下.json",
+        "先秦/诗文总集/昭明文选/赋·耕藉.json",
+        "先秦/诗文总集/昭明文选/赋·论文.json",
+        "先秦/诗文总集/昭明文选/赋·郊祀.json",
+        "先秦/诗文总集/昭明文选/赋·音乐上.json",
+        "先秦/诗文总集/昭明文选/赋·音乐下.json",
+        "先秦/诗文总集/昭明文选/赋·鸟兽.json",
+        "先秦/诗文总集/昭明文选/赋·鸟兽下.json",
+        "先秦/诗文总集/昭明文选/赞.json",
+        "先秦/诗文总集/昭明文选/连珠·论五.json",
+        "先秦/诗文总集/昭明文选/铭.json",
+        "先秦/诗文总集/昭明文选/颂.json",
+        "历代/ci.0.json",
+        "历代/ci.1.json",
+        "历代/fu.0.json",
+        "历代/other.0.json",
+        "历代/poet.0.json",
+        "历代/poet.1.json",
+        "历代/wen.0.json",
+        "历代/wen.1.json",
+        "历代/wen.2.json",
+        "汇编/古文观止/卷一周文.json",
+        "汇编/古文观止/卷七六朝唐文.json",
+        "汇编/古文观止/卷三周文.json",
+        "汇编/古文观止/卷九唐宋文.json",
+        "汇编/古文观止/卷二周文.json",
+        "汇编/古文观止/卷五汉文.json",
+        "汇编/古文观止/卷八唐文.json",
+        "汇编/古文观止/卷六汉文.json",
+        "汇编/古文观止/卷十一宋文.json",
+        "汇编/古文观止/卷十二明文.json",
+        "汇编/古文观止/卷十宋文.json",
+        "汇编/古文观止/卷四秦文.json",
+        "汇编/古文观止/古文观止.json",
+        "汇编/古文观止/古文观止·补.json",
+        "唐/诗/全唐诗/poet.tang.58000.json",
+        "唐/唐诗三百首/唐诗三百首.json",
+        "宋/宋词/ci.song.22000.json",
+        "宋/诗/全宋诗/poet.song.255000.json",
+        "宋/宋词三百首/宋/宋词三百首.json",
+        "汇编/课本选目/人物故事.json",
+        "汇编/课本选目/寓言故事.json",
+        "汇编/课本选目/山水游记.json",
+        "汇编/课本选目/志人逸事.json",
+        "汇编/课本选目/治学勤读.json",
+        "汇编/课本选目/神话传说.json",
+        "汇编/课本选目/蒙学经典.json",
+        "汇编/课本选目/诸子论道.json",
+        "近现/元明清詩.json",
+        "近现/近现代诗.json"
+      ]
+    },
+    "_目录重构：按朝代分层": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "顶层目录改为 14 个朝代目录（先秦 汉 三国 晋 南北朝 隋 唐 五代十国 宋 元 明 清 近现 当），与 dynasties/dynasties.json 的 name 一一对应。（1）只搬不改正文：旧路径 先秦汉魏晋南北朝/ 唐代/ 唐五代/ 宋代/ 元代/ 明代/ 清代/ 近现代诗/ 与根目录的书名目录（古文观止、四书五经、论语、课外经典、蒙学、幽梦影、唐诗三百首、宋词三百首）按朝代落位。（2）历代/ 拆散（scripts/split_dynasty.py）：按作者朝代拆进各朝代目录，搬 3592 条，逐条见 docs/历代拆分.tsv；177 条作者不在 authors/authors.json 的搬不走，随目录下线（正文留在 git 历史）。（3）近现/当代诗词.json 改名 当/poet.dang.json、当/ci.dang.json（历代/ 里 1912 年以后出生的作者也并入）。（4）authors/authors.json 的 dynasty 值空间改为 14 个朝代名（周秦商上古→先秦，辽金→宋，当代→当）；元/元曲/yuanqu.json 里 11415 条 dynasty 由 yuan 改为 元。（5）拆出来的这批文件只做了搬移与判类，未逐字对勘，需逐文件复核后改为 clean/fixed。"
+    },
+    "_蒙学与诗文总集归位": {
+      "date": "2026-10-29",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "scope_note": "结构批次：先秦/诗文总集/ → 汇编/诗文总集/，先秦/蒙学/ → 汇编/蒙学/，先秦/蒙学/qianjiashi.json → 宋/诗/千家诗/，先秦/蒙学/tangshisanbaishou.json 并入 唐/诗/全唐诗/poet.tang.*（320 首逐首对上，挂 tags，删选本副本，逐条见 docs/唐诗三百首并入.tsv）。只搬路径、只挂 tag，正文未逐字对勘。",
+      "fixes": [
+        {
+          "original": "先秦/蒙学/tangshisanbaishou.json",
+          "corrected": "删除（并入 唐/诗/全唐诗/poet.tang.* 作 tags: [\"唐诗三百首\"]）",
+          "note": "320 首全部在《全唐诗》找到同一首：313 首正文相似度 ≥ 0.9，1 首为王昌龄《长信怨》组诗在总集按首分排、逐首挂 tag，6 首选本署名有误（如《秋夜曲》王维 → 王涯）。"
+        }
+      ]
+    },
+    "_补入补充选本": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": null,
+          "corrected": null,
+          "note": "本轮补入的 6 个文件（`近现/` 2 个、`宋/宋词三百首/`、`昭明文选/` 90 卷、`汇编/古文观止/` 12 卷、`乐府诗集/` 5 卷）尚未逐字对勘，导入时只做了简转繁、就近分卷与正文去重，不计入 clean。"
+        }
+      ]
+    },
+    "_补录haitangshishe语料": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": "[batch] reference/mit_licence_haitangshishe → 13 个目标文件，收录 7791 条",
+          "corrected": null,
+          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitangshishe收录.tsv。收录时不挂 sources 标记：haitangshishe 是到处收集的语料，不是唐诗三百首那样的权威合集，sources 只留给权威选本/总集（2026-08 已把先前写入的 \"sources\": [\"haitangshishe\"] 从 60 个正文文件全部清除，含 chuci.json 三处 variants[].source）。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
+        },
+        {
+          "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
+          "corrected": null,
+          "note": "作者小传与朝代概述原本没有全库通用索引（全唐诗/authors.* 与 宋词/author.song.json 各管一个总集、字段不同），另建两目录，语料与介绍分开。未逐条核对原文。"
+        }
+      ]
+    },
+    "_补录haitangshishe语料works_3": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "fixes": [
+        {
+          "original": "[batch] reference/mit_licence_haitangshishe/works_3.json → 3 个目标文件，收录 5 条",
+          "corrected": null,
+          "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitangshishe收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
+        }
+      ]
+    },
     "三国/诗/poet.sanguo.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -86,7 +358,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "元/元曲/yuanqu.json": {
       "date": "2026-10-28",
@@ -408,7 +680,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "南北朝/诗/poet.nanbeichao.json": {
       "date": "2026-10-28",
@@ -420,7 +692,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "唐/诗/poet.tang.json": {
       "date": "2026-10-28",
@@ -675,10 +947,17 @@
       "note": "拆散成段的校注「（蒋云/项云/原卷作…）」合回原句并剥出诗句；脚注标号 [一][二] 清除；行内「（X）」单字异文按敦煌整理本体例保留"
     },
     "唐/诗/全唐诗/poet.tang.51000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "拆散成段的校注「（蒋云/项云/原卷作…）」合回原句并剥出诗句；脚注标号 [一][二] 清除；行内「（X）」单字异文按敦煌整理本体例保留"
+      "note": "拆散成段的校注「（蒋云/项云/原卷作…）」合回原句并剥出诗句；脚注标号 [一][二] 清除；行内「（X）」单字异文按敦煌整理本体例保留",
+      "fixes": [
+        {
+          "original": "不肖虛死蓬麻",
+          "corrected": "不肖虛死如蓬麻",
+          "note": "[shi_line_length] 不肖虛死蓬麻 → 不肖虛死如蓬麻; 识典古籍 (6 books, e.g. , 杜工部集)"
+        }
+      ]
     },
     "唐/诗/全唐诗/poet.tang.52000.json": {
       "date": "2026-10-28",
@@ -755,19 +1034,14 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.0.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
         {
-          "original": "碧云天，黄叶地。",
-          "corrected": "碧云天，黄花地。",
-          "note": "范仲淹《苏幕遮》。「黄叶地」无版本依据，宋本《唐宋诸贤绝妙词选》《范文正公集》均作「黄花地」（识典古籍）"
-        },
-        {
-          "original": "（28 首《宋词三百首》记录整条缺失）",
-          "corrected": "补回",
-          "note": "commit 6fba35e「宋词三百首并入宋词」时把这 28 首当重复删掉，但现库并无同文副本，等于丢了正文。按 6fba35e 父提交原样补回并挂 tags，逐条见 docs/宋词三百首对勘.tsv"
+          "original": "不惯被人抛掷",
+          "corrected": "不惯被人抛掷日",
+          "note": "[ci_pattern] 不惯被人抛掷 → 不惯被人抛掷日；《宋名家詞》本杜安世《壽域詞》作「不慣被人抛擲日」，與上句「玉容瘦與薄妝稱」協"
         }
       ]
     },
@@ -800,9 +1074,16 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.12000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "满劝长生酒",
+          "corrected": "满劝长生春酒",
+          "note": "[ci_pattern] 满劝长生酒 → 满劝长生春酒；《新編事文類聚翰墨大全》啓丁集作「滿勸長生春酒」"
+        }
+      ]
     },
     "宋/宋词/ci.song.13000.json": {
       "date": "2026-10-28",
@@ -818,27 +1099,51 @@
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
     },
     "宋/宋词/ci.song.14000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
         {
           "original": "づ文王前子",
           "corrected": "亶文王前子",
-          "note": "日文假名乱码；黄机《木兰花慢》「亶文王前子，自不与、世人同」"
+          "note": "[ci_pattern] づ文王前子 → 亶文王前子; 识典古籍 (2 books, e.g. , 竹齋詩餘)"
+        },
+        {
+          "original": "翠荷斜领云堆",
+          "corrected": "翠荷斜嚲领云堆",
+          "note": "[ci_pattern] 翠荷斜领云堆 → 翠荷斜嚲领云堆；《竹齋詩餘》（四庫本）作「翠荷斜嚲領雲堆」"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
     },
     "宋/宋词/ci.song.15000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "困起半弯眉袖",
+          "corrected": "困起半弯眉印袖",
+          "note": "[ci_pattern] 困起半弯眉袖 → 困起半弯眉印袖；《梅屋詩餘》（汲古閣影鈔本）作「困起半彎眉印袖」"
+        }
+      ]
     },
     "宋/宋词/ci.song.16000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "绮席春风十分",
+          "corrected": "绮席春风自十分",
+          "note": "[ci_pattern] 绮席春风十分 → 绮席春风自十分；《本堂集》卷四十作「綺席春風自十分」；《夢窗稿》乙稿卷二作「春風侍女衣篝畔」"
+        },
+        {
+          "original": "春风侍女篝畔",
+          "corrected": "春风侍女衣篝畔",
+          "note": "[ci_pattern] 春风侍女篝畔 → 春风侍女衣篝畔；《本堂集》卷四十作「綺席春風自十分」；《夢窗稿》乙稿卷二作「春風侍女衣篝畔」"
+        }
+      ]
     },
     "宋/宋词/ci.song.17000.json": {
       "date": "2026-10-06",
@@ -846,10 +1151,17 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.18000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核"
+      "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
+      "fixes": [
+        {
+          "original": "处处筝鸣雨屋",
+          "corrected": "处处筝蓁鸣雨屋",
+          "note": "[ci_pattern] 处处筝鸣雨屋 → 处处筝蓁鸣雨屋；《無絃琴譜》卷二作「處處箏蓁鳴雨屋」"
+        }
+      ]
     },
     "宋/宋词/ci.song.19000.json": {
       "date": "2026-10-28",
@@ -875,19 +1187,29 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.20000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
         {
           "original": "侵晨打□捌朐苹幔□际暮演筹落魄归",
           "corrected": "侵晨打发齐云会，际暮演筹落魄归",
-          "note": "U+FFFD 乱码；识典古籍「侵晨打發齊雲會，際暮演籌落魄歸」"
+          "note": "[ci_pattern] 侵晨打□捌朐苹幔□际暮演筹落魄归 → 侵晨打发齐云会，际暮演筹落魄归; 识典古籍 (2 books, e.g. , 新編事文類聚翰墨全書)"
         },
         {
           "original": "孕雪┭香，春在寒梢尾",
           "corrected": "孕雪尧蓂，尚缀零星，春在寒梢尾",
-          "note": "制表符乱码；识典古籍「律轉黄鍾堯蓂尚零星」"
+          "note": "[ci_pattern] 孕雪┭香，春在寒梢尾 → 孕雪尧蓂，尚缀零星，春在寒梢尾; 识典古籍 (2 books, e.g. , 新編事文類聚翰墨全書)"
+        },
+        {
+          "original": "绛蜡攒宝炬",
+          "corrected": "绛蜡花攒宝炬",
+          "note": "[ci_pattern] 绛蜡攒宝炬 → 绛蜡花攒宝炬；《新編事文類聚翰墨全書》丙集作「絳蠟花攢寶炬」；《麟原文集》引朱渙《齊天樂》作「重重洞門深窈」"
+        },
+        {
+          "original": "重重洞深窈",
+          "corrected": "重重洞門深窈",
+          "note": "[ci_pattern] 重重洞深窈 → 重重洞門深窈；《麟原文集》麟原前集卷七引朱渙《齊天樂》作「重重洞門深窈」，與下句「翠竹籠烟」句法合"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
@@ -929,25 +1251,58 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.7000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "岭外陇头处、不知春",
+          "corrected": "岭外陇头何处、不知春",
+          "note": "杨无咎《南歌子》脱「何」字；《逃禪詞》四庫本作「嶺外隴頭，何處不知春」，與此句六字体合"
+        },
+        {
+          "original": "菊暗枯秋已满",
+          "corrected": "菊暗荷枯秋已满",
+          "note": "杨无咎《渔家傲》「枯」为「荷」之误；《逃禪詞》《宋元明三十三家詞》皆作「菊暗荷枯秋已滿」，与下句「橙黄橘緑」对"
+        }
+      ]
     },
     "宋/宋词/ci.song.8000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "谁与乐和",
+          "corrected": "谁与乐天和",
+          "note": "[ci_pattern] 谁与乐和 → 谁与乐天和；《彊村叢書》本《蓮社詞》作「誰與樂天和」"
+        }
+      ]
     },
     "宋/宋词/ci.song.9000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "算来虚度怜宵",
+          "corrected": "算来虚度可怜宵",
+          "note": "[ci_pattern] 算来虚度怜宵 → 算来虚度可怜宵；《孏窟詞》（四庫本）作「算來虚度可憐宵」"
+        }
+      ]
     },
     "宋/词/ci.song.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "status": "fixed",
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘",
+      "fixes": [
+        {
+          "original": "黯不分夜昼",
+          "corrected": "黯暗不分夜昼",
+          "note": "[ci_pattern] 黯不分夜昼 → 黯暗不分夜昼；《重陽全真集》卷七作「黯暗不分夜晝」"
+        }
+      ]
     },
     "宋/诗/poet.song.json": {
       "date": "2026-10-28",
@@ -2855,9 +3210,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.101000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "秋風鞭馬衫藍",
+          "corrected": "秋風鞭馬衫挼藍",
+          "note": "[shi_line_length] 秋風鞭馬衫藍 → 秋風鞭馬衫挼藍; 识典古籍 (2 books, e.g. , 栟櫚集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.102000.json": {
       "date": "2026-06-26",
@@ -2961,14 +3323,28 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.120000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "經生持戒不知",
+          "corrected": "經生持戒不知心",
+          "note": "[shi_line_length] 經生持戒不知 → 經生持戒不知心; 识典古籍 (2 books, e.g. , 普庵至善弘仁圓通智慧寂感妙應慈濟真覺昭貺惠慶護國宣教大德菩薩語錄)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.121000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "言言不及",
+          "corrected": "言言言不及",
+          "note": "[shi_line_length] 言言不及 → 言言言不及; 识典古籍 (2 books, e.g. , 普庵至善弘仁圓通智慧寂感妙應慈濟真覺昭貺惠慶護國宣教大德菩薩語錄)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.122000.json": {
       "date": "2026-10-05",
@@ -3285,10 +3661,17 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.178000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核"
+      "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
+      "fixes": [
+        {
+          "original": "破裓僧練裙女",
+          "corrected": "破裓山僧練裙女",
+          "note": "[shi_line_length] 破裓僧練裙女 → 破裓山僧練裙女; 识典古籍 (2 books, e.g. , 寶慶四明志)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.179000.json": {
       "date": "2026-10-04",
@@ -3372,9 +3755,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.190000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "民相資護關塞",
+          "corrected": "民相資護關塞固",
+          "note": "[shi_line_length] 民相資護關塞 → 民相資護關塞固; 识典古籍 (2 books, e.g. , 鶴山集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.191000.json": {
       "date": "2026-06-26",
@@ -3430,9 +3820,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.2000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "昭然聖誡",
+          "corrected": "昭然聖賢誡",
+          "note": "[shi_line_length] 昭然聖誡 → 昭然聖賢誡; 识典古籍 (2 books, e.g. , 咸平集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.20000.json": {
       "date": "2026-06-26",
@@ -3505,9 +3902,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.212000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "獨有下松",
+          "corrected": "獨有崖下松",
+          "note": "[shi_line_length] 獨有下松 → 獨有崖下松; 识典古籍 (4 books, e.g. , 江湖後集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.213000.json": {
       "date": "2026-10-06",
@@ -3647,9 +4051,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.235000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "琤餘韻逐飛鞚",
+          "corrected": "琤肰餘韻逐飛鞚",
+          "note": "[shi_line_length] 琤餘韻逐飛鞚 → 琤肰餘韻逐飛鞚; 识典古籍 (2 books, e.g. , 青溪富山先生遺稿)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.236000.json": {
       "date": "2026-10-03",
@@ -3662,7 +4073,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.238000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -3670,6 +4081,11 @@
           "original": "捜趣外欲無絃",
           "corrected": "睡捜趣外欲無絃",
           "note": "PUA U+E805 → 睡；五律「獨抱琴聲感歲年／睡捜趣外欲無絃」对仗"
+        },
+        {
+          "original": "野人何計瓢空",
+          "corrected": "野人何計簞瓢空",
+          "note": "[shi_line_length] 野人何計瓢空 → 野人何計簞瓢空; 识典古籍 (2 books, e.g. , 宛陵群英集)"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
@@ -3768,15 +4184,27 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.254000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "星馳電走見相。",
+          "corrected": "星馳電走見相朝。",
+          "note": "句末脱「朝」字；《涪陵縣續修涪州志》卷三 疆域志三「古蹟」載此詩全文，末句作「星馳電走見相朝」，又見《八瓊室金石補正》卷一百十二、《宋詩紀事補遺》卷九十九（此二本同脱末字）。原書為民國十七年鉛印本，識典古籍全文檢索可直接命中"
+        },
+        {
+          "original": "花開花落如洗",
+          "corrected": "花開花落淚如洗",
+          "note": "趙處澹《長門怨》脱「淚」字；識典古籍《東甌詩續集》等 2 種作「花開花落淚如洗」，與七言句式合"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.255000.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "宋/诗/全宋诗/poet.song.26000.json": {
       "date": "2026-10-04",
@@ -3804,9 +4232,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.30000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "神妙止削",
+          "corrected": "神妙止一削",
+          "note": "[shi_line_length] 神妙止削 → 神妙止一削; 识典古籍 (2 books, e.g. , 永樂大典)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.31000.json": {
       "date": "2026-06-26",
@@ -3869,9 +4304,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.42000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "咄嗟胡乎",
+          "corrected": "咄嗟胡爲乎",
+          "note": "[shi_line_length] 咄嗟胡乎 → 咄嗟胡爲乎; 识典古籍 (2 books, e.g. , 青山集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.43000.json": {
       "date": "2026-06-26",
@@ -3904,9 +4346,26 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.49000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "﨑嶇與天鄰",
+          "corrected": "崎嶇與天鄰",
+          "note": "底本把「崎」的异体字 U+FA11 误录为「﨑」(U+F9BA) 又粘上「崎」，成了「﨑崎」／「﨑」；识典古籍《清江三孔集》卷五、卷七作「崎嶇與天鄰」「崎嶇亦隨車」「人事未稱遂，崎嶇已巴東」"
+        },
+        {
+          "original": "﨑嶇亦隨車",
+          "corrected": "崎嶇亦隨車",
+          "note": "底本把「崎」的异体字 U+FA11 误录为「﨑」(U+F9BA) 又粘上「崎」，成了「﨑崎」／「﨑」；识典古籍《清江三孔集》卷五、卷七作「崎嶇與天鄰」「崎嶇亦隨車」「人事未稱遂，崎嶇已巴東」"
+        },
+        {
+          "original": "﨑嶇已巴東",
+          "corrected": "崎嶇已巴東",
+          "note": "底本把「崎」的异体字 U+FA11 误录为「﨑」(U+F9BA) 又粘上「崎」，成了「﨑崎」／「﨑」；识典古籍《清江三孔集》卷五、卷七作「崎嶇與天鄰」「崎嶇亦隨車」「人事未稱遂，崎嶇已巴東」"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.5000.json": {
       "date": "2026-10-04",
@@ -3990,9 +4449,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.61000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "鋤不敢闕",
+          "corrected": "鋤薙不敢闕",
+          "note": "[shi_line_length] 鋤不敢闕 → 鋤薙不敢闕; 识典古籍 (2 books, e.g. , 潏水集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.62000.json": {
       "date": "2026-06-26",
@@ -4085,9 +4551,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.79000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "有力誰扛",
+          "corrected": "有力誰能扛",
+          "note": "[shi_line_length] 有力誰扛 → 有力誰能扛; 识典古籍 (2 books, e.g. , 宋詩紀事補遺)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.8000.json": {
       "date": "2026-10-03",
@@ -4095,9 +4568,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.80000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "三百年有宋興",
+          "corrected": "三百年來有宋興",
+          "note": "[shi_line_length] 三百年有宋興 → 三百年來有宋興; 识典古籍 (2 books, e.g. , 宋詩紀事補遺)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.81000.json": {
       "date": "2026-06-26",
@@ -4115,9 +4595,16 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.84000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "精神照坐神仙",
+          "corrected": "精神照坐如神仙",
+          "note": "[shi_line_length] 精神照坐神仙 → 精神照坐如神仙; 识典古籍 (2 books, e.g. , 五百家播芳大全文粹)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.85000.json": {
       "date": "2026-10-04",
@@ -4135,7 +4622,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.88000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
       "fixes": [
@@ -4145,7 +4632,7 @@
           "note": "删去句末窜入的 PUA U+E85A；《太倉稊米集》卷三十八"
         }
       ],
-      "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
+      "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char。周紫芝《病起節物可驚效柳子厚》「爲生本田」句末之 U+E85A 已删（《太倉稊米集》卷三十八作「爲生本田」）"
     },
     "宋/诗/全宋诗/poet.song.89000.json": {
       "date": "2026-06-26",
@@ -4183,14 +4670,28 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.95000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "clean",
+      "fixes": [
+        {
+          "original": "華煜煜春揚芳",
+          "corrected": "華煜煜春揚芳",
+          "note": "[shi_line_length] attested as-is in 2 books on 识典古籍 (, 雲溪集); no change"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.96000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-31",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "元從耳門得昧",
+          "corrected": "元從耳門得三昧",
+          "note": "[shi_line_length] 元從耳門得昧 → 元從耳門得三昧; 识典古籍 (2 books, e.g. , 檆溪居士集)"
+        }
+      ]
     },
     "宋/诗/全宋诗/poet.song.97000.json": {
       "date": "2026-06-26",
@@ -4223,7 +4724,7 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构与 历代/ 拆分落位，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构与 历代/ 拆分落位，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "当/poet.dang.json": {
       "date": "2026-10-28",
@@ -4231,23 +4732,23 @@
       "status": "fixed",
       "note": "随目录重构与 历代/ 拆分落位，只做了搬移/拆分，未逐字对勘"
     },
-    "清/幽梦影/youmengying.json": {
+    "明/小说/三国演义/sanguoyanyi.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "酴(tu)醾 (mi）",
-          "corrected": "酴醾",
-          "note": "窜入的注音"
-        },
-        {
-          "original": "擪(ye)管",
-          "corrected": "擪管",
-          "note": "窜入的注音"
-        }
-      ],
-      "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
+      "status": "needs_review",
+      "note": "新抓：《三國志通俗演義》嘉靖壬午本（識典 CADAL02111749），156 则。正文未逐字对勘；底本卷四~六、十七、二十、二十三整卷压在一页，未逐则切开。2026-10-31 与 develop 合并后复检：四部小说已进 scripts/check_structure.py 的扫描范围，乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）为 0，全文仍需逐句对勘另一版本"
+    },
+    "明/小说/水浒传/shuihuzhuan.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《水浒传》容與堂本（識典 NGJ89241199901879587548），100 回。底本为定长折行 OCR，已按句末标点重分段，但字词讹误仍多（回次行与回目行常糊），正文未逐字对勘。2026-10-31 与 develop 合并后复检：四部小说已进 scripts/check_structure.py 的扫描范围，乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）为 0，全文仍需逐句对勘另一版本"
+    },
+    "明/小说/西游记/xiyouji.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《西游记》世德堂本（識典 NA11023），100 回。李卓吾总批已剔除；正文未逐字对勘。2026-10-31 与 develop 合并后复检：四部小说已进 scripts/check_structure.py 的扫描范围，乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）为 0，全文仍需逐句对勘另一版本"
     },
     "明/词/ci.ming.json": {
       "date": "2026-10-28",
@@ -4291,13 +4792,62 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "晋/诗/poet.jin.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-31",
       "reviewer": "codebuddy",
       "status": "fixed",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。张华《游侠篇》「好古师老、彭」之顿号不误：句当作「好古师老彭」，与上句「我则异于是」合成十字，识典古籍《乐府诗集》卷六十七等 5 种皆如此断句",
+      "fixes": [
+        {
+          "original": "我则异于是，好古师老、彭。",
+          "corrected": "我则异于是，好古师老彭。",
+          "note": "底本断句误：当作「好古师老彭」，与上句合成一联十字。识典古籍《乐府诗集》卷六十七（四部丛刊/四库本）、《古诗纪》《古乐苑》等 5 种皆作「我則異於是，好古師老彭」"
+        }
+      ]
+    },
+    "汇编/乐府诗集/乐府诗集.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
+    },
+    "汇编/乐府诗集/卷一汉魏乐府.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
+    },
+    "汇编/乐府诗集/卷二南朝乐府.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
+    },
+    "汇编/乐府诗集/卷五乐府歌辞.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "月下獨酌（李白）／茅屋為秋風所破歌（杜甫）",
+          "corrected": "删除",
+          "note": "两首与 全唐诗 poet.tang.* 中同一首正文逐字相同，重复"
+        }
+      ]
+    },
+    "汇编/乐府诗集/卷四唐五代乐府.json": {
+      "date": "2026-10-27",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "杜陵叟（白居易）",
+          "corrected": "删除",
+          "note": "与 全唐诗 poet.tang.22000.json 的「新樂府 杜陵叟」正文逐字相同，重复"
+        }
+      ]
     },
     "汇编/古文观止/卷一周文.json": {
       "date": "2026-10-28",
@@ -4382,154 +4932,13 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘"
     },
     "汇编/古文观止/古文观止·补.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review",
       "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
-    },
-    "汇编/蒙学/baijiaxing.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/dizigui.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/qianziwen.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/sanzijing-new.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
-    },
-    "汇编/蒙学/sanzijing-traditional.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
-    },
-    "汇编/蒙学/shenglvqimeng.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/wenzimengqiu.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/youxueqionglin.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/zengguangxianwen.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "content",
-          "corrected": "paragraphs",
-          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
-        }
-      ]
-    },
-    "汇编/蒙学/zhuzijiaxun.json": {
-      "date": "2026-06-27",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
-    },
-    "汇编/乐府诗集/乐府诗集.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
-    },
-    "汇编/乐府诗集/卷一汉魏乐府.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
-    },
-    "汇编/乐府诗集/卷二南朝乐府.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘"
-    },
-    "汇编/乐府诗集/卷五乐府歌辞.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "月下獨酌（李白）／茅屋為秋風所破歌（杜甫）",
-          "corrected": "删除",
-          "note": "两首与 全唐诗 poet.tang.* 中同一首正文逐字相同，重复"
-        }
-      ]
-    },
-    "汇编/乐府诗集/卷四唐五代乐府.json": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "fixes": [
-        {
-          "original": "杜陵叟（白居易）",
-          "corrected": "删除",
-          "note": "与 全唐诗 poet.tang.22000.json 的「新樂府 杜陵叟」正文逐字相同，重复"
-        }
-      ]
     },
     "汇编/昭明文选/七.json": {
       "date": "2026-10-28",
@@ -5071,6 +5480,105 @@
         }
       ]
     },
+    "汇编/蒙学/baijiaxing.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/dizigui.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/qianziwen.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/sanzijing-new.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "clean"
+    },
+    "汇编/蒙学/sanzijing-traditional.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "clean"
+    },
+    "汇编/蒙学/shenglvqimeng.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/wenzimengqiu.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/youxueqionglin.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/zengguangxianwen.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
+    },
+    "汇编/蒙学/zhuzijiaxun.json": {
+      "date": "2026-06-27",
+      "reviewer": "claude-sonnet-4-6",
+      "status": "clean"
+    },
     "汇编/课本选目/人物故事.json": {
       "date": "2026-10-28",
       "reviewer": "codebuddy",
@@ -5191,6 +5699,30 @@
           "note": "同上"
         }
       ]
+    },
+    "清/小说/红楼梦/hongloumeng.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "needs_review",
+      "note": "新抓：《红楼梦》程甲本（識典 GY025），120 回 + 序、叙、目録 3 条。底本 12 回无小标题，回目按通行本补；正文未逐字对勘。2026-10-31 与 develop 合并后复检：四部小说已进 scripts/check_structure.py 的扫描范围，乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）为 0，全文仍需逐句对勘另一版本"
+    },
+    "清/幽梦影/youmengying.json": {
+      "date": "2026-10-28",
+      "reviewer": "codebuddy",
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "酴(tu)醾 (mi）",
+          "corrected": "酴醾",
+          "note": "窜入的注音"
+        },
+        {
+          "original": "擪(ye)管",
+          "corrected": "擪管",
+          "note": "窜入的注音"
+        }
+      ],
+      "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
     },
     "清/词/ci.qing.json": {
       "date": "2026-10-28",
@@ -5412,302 +5944,6 @@
           "note": "网传伪托，无古籍底本；《精卫填海》正文实为《山海经·北山经》一节"
         }
       ]
-    },
-    "_已删除的文件：结构重构": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "scope_note": "结构重构批次：删掉了两个整文件（乐府诗集 卷三唐代乐府、昭明文选 诗·补亡，均与其他记录重复），另有若干文件被拆分改名（古诗源 清词 等），进度键随之成为死键。原状态（clean / fixed / needs_review）与各自的 fixes 收在 batch_files 里备查；文件已不存在，不计入 stats，也不进待查队列。",
-      "batch_files": {
-        "汉/古诗源/清词.json": {
-          "date": "2026-10-27",
-          "reviewer": "codebuddy",
-          "status": "fixed",
-          "fixes": [
-            {
-              "original": null,
-              "corrected": null,
-              "note": "文件已拆分：诗入 元明清诗.json，词移入 清/词/古诗源·清词.json"
-            }
-          ]
-        },
-        "先秦/诗文总集/乐府诗集/卷三唐代乐府.json": {
-          "date": "2026-10-27",
-          "reviewer": "codebuddy",
-          "status": "fixed",
-          "fixes": [
-            {
-              "original": null,
-              "corrected": null,
-              "note": "卷内唯一一首李白《長幹行》与 全唐诗 poet.tang.* 同一首正文全同，按「一件作品只留一份正文」删除，卷文件随之删除"
-            }
-          ]
-        },
-        "先秦/诗文总集/昭明文选/诗·补亡.json": {
-          "date": "2026-10-27",
-          "reviewer": "codebuddy",
-          "status": "fixed",
-          "fixes": [
-            {
-              "original": "補亡詩六首（束廣微）",
-              "corrected": "删除文件",
-              "note": "与 先秦/诗经/shijing.json（《詩經》正文）同篇，属重复"
-            }
-          ]
-        }
-      }
-    },
-    "_拆分明清总集：split_dynasty": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "scripts/split_dynasty.py：历代/ 按作者朝代拆出 明/诗、明/词、清/诗、清/词；元人 251 条追加进 元曲/yuanqu.json（已收的 4 条未搬）；近现/ 里课本选录的明清作品归位，余下拆成 现代诗.json / 当代诗词.json。只核对朝代与体裁归属，正文未逐字对勘"
-    },
-    "_新增选本": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "新增的选本（`乐府诗集/`、`古诗源/`、`唐/唐诗三百首/`、`昭明文选/`、`汇编/古文观止/`、`汇编/课本选目/`，共 121 个文件 / 1031 条）尚未逐字对勘，导入时只做了简转繁、分卷与正文去重，不计入 clean。逐字对勘完成后再拆成逐文件记录。"
-        },
-        {
-          "original": null,
-          "corrected": null,
-          "note": "元曲三百首（8 个文件 / 29 首）已并入 `元曲/yuanqu.json`，逐首记在 docs/元曲去重.tsv；这 29 首仍未与古籍逐字对勘。"
-        },
-        {
-          "original": null,
-          "corrected": null,
-          "note": "逐文件记录拆分：《古诗源》一批（六朝诗、元明清诗、宋诗、清词、汉魏诗、先秦诗）在后续重构中已并入/改名/删除，其结论见 `_目录重构：按朝代分层`、`_已删除的文件：结构重构` 与 `汉/古诗源/`、`明/诗/古诗源·明诗.json`、`清/诗/古诗源·清诗.json`、`汉/古诗源/汉魏六朝诗.json` 各条；避免同一个文件在两处重复计数。"
-        }
-      ],
-      "batch_files": [
-        "anthologies/songci300.json",
-        "anthologies/tangshi300.json",
-        "dynasties/dynasties.json",
-        "先秦/诗文总集/乐府诗集/乐府诗集.json",
-        "先秦/诗文总集/乐府诗集/卷一汉魏乐府.json",
-        "先秦/诗文总集/乐府诗集/卷二南朝乐府.json",
-        "先秦/诗文总集/昭明文选/七.json",
-        "先秦/诗文总集/昭明文选/上书.json",
-        "先秦/诗文总集/昭明文选/书.json",
-        "先秦/诗文总集/昭明文选/令.json",
-        "先秦/诗文总集/昭明文选/册.json",
-        "先秦/诗文总集/昭明文选/史论.json",
-        "先秦/诗文总集/昭明文选/史述赞.json",
-        "先秦/诗文总集/昭明文选/吊文.json",
-        "先秦/诗文总集/昭明文选/启.json",
-        "先秦/诗文总集/昭明文选/哀.json",
-        "先秦/诗文总集/昭明文选/墓志.json",
-        "先秦/诗文总集/昭明文选/奏记.json",
-        "先秦/诗文总集/昭明文选/对问.json",
-        "先秦/诗文总集/昭明文选/序.json",
-        "先秦/诗文总集/昭明文选/弹事.json",
-        "先秦/诗文总集/昭明文选/教.json",
-        "先秦/诗文总集/昭明文选/文.json",
-        "先秦/诗文总集/昭明文选/昭明文选.json",
-        "先秦/诗文总集/昭明文选/檄.json",
-        "先秦/诗文总集/昭明文选/碑文.json",
-        "先秦/诗文总集/昭明文选/祭文.json",
-        "先秦/诗文总集/昭明文选/符命.json",
-        "先秦/诗文总集/昭明文选/笺.json",
-        "先秦/诗文总集/昭明文选/箴.json",
-        "先秦/诗文总集/昭明文选/行状.json",
-        "先秦/诗文总集/昭明文选/表.json",
-        "先秦/诗文总集/昭明文选/论·论一.json",
-        "先秦/诗文总集/昭明文选/论·论三.json",
-        "先秦/诗文总集/昭明文选/论·论二.json",
-        "先秦/诗文总集/昭明文选/论·论四.json",
-        "先秦/诗文总集/昭明文选/设论.json",
-        "先秦/诗文总集/昭明文选/诏.json",
-        "先秦/诗文总集/昭明文选/诔.json",
-        "先秦/诗文总集/昭明文选/诗·乐府上.json",
-        "先秦/诗文总集/昭明文选/诗·乐府下.json",
-        "先秦/诗文总集/昭明文选/诗·公䜩.json",
-        "先秦/诗文总集/昭明文选/诗·军戎.json",
-        "先秦/诗文总集/昭明文选/诗·劝励.json",
-        "先秦/诗文总集/昭明文选/诗·反招隐.json",
-        "先秦/诗文总集/昭明文选/诗·咏史.json",
-        "先秦/诗文总集/昭明文选/诗·咏怀.json",
-        "先秦/诗文总集/昭明文选/诗·哀伤.json",
-        "先秦/诗文总集/昭明文选/诗·招隐.json",
-        "先秦/诗文总集/昭明文选/诗·杂拟上.json",
-        "先秦/诗文总集/昭明文选/诗·杂拟下.json",
-        "先秦/诗文总集/昭明文选/诗·杂歌.json",
-        "先秦/诗文总集/昭明文选/诗·杂诗上.json",
-        "先秦/诗文总集/昭明文选/诗·杂诗下.json",
-        "先秦/诗文总集/昭明文选/诗·游仙.json",
-        "先秦/诗文总集/昭明文选/诗·游览.json",
-        "先秦/诗文总集/昭明文选/诗·献诗.json",
-        "先秦/诗文总集/昭明文选/诗·百一.json",
-        "先秦/诗文总集/昭明文选/诗·祖饯.json",
-        "先秦/诗文总集/昭明文选/诗·行旅上.json",
-        "先秦/诗文总集/昭明文选/诗·行旅下.json",
-        "先秦/诗文总集/昭明文选/诗·赠答一.json",
-        "先秦/诗文总集/昭明文选/诗·赠答三.json",
-        "先秦/诗文总集/昭明文选/诗·赠答二.json",
-        "先秦/诗文总集/昭明文选/诗·赠答四.json",
-        "先秦/诗文总集/昭明文选/诗·述德.json",
-        "先秦/诗文总集/昭明文选/诗·郊庙.json",
-        "先秦/诗文总集/昭明文选/赋·京都上.json",
-        "先秦/诗文总集/昭明文选/赋·京都下.json",
-        "先秦/诗文总集/昭明文选/赋·京都中.json",
-        "先秦/诗文总集/昭明文选/赋·哀伤.json",
-        "先秦/诗文总集/昭明文选/赋·宫殿.json",
-        "先秦/诗文总集/昭明文选/赋·志上.json",
-        "先秦/诗文总集/昭明文选/赋·志下.json",
-        "先秦/诗文总集/昭明文选/赋·志中.json",
-        "先秦/诗文总集/昭明文选/赋·情.json",
-        "先秦/诗文总集/昭明文选/赋·江海.json",
-        "先秦/诗文总集/昭明文选/赋·游览.json",
-        "先秦/诗文总集/昭明文选/赋·物色.json",
-        "先秦/诗文总集/昭明文选/赋·畋猎.json",
-        "先秦/诗文总集/昭明文选/赋·畋猎·补遗.json",
-        "先秦/诗文总集/昭明文选/赋·纪行上.json",
-        "先秦/诗文总集/昭明文选/赋·纪行下.json",
-        "先秦/诗文总集/昭明文选/赋·耕藉.json",
-        "先秦/诗文总集/昭明文选/赋·论文.json",
-        "先秦/诗文总集/昭明文选/赋·郊祀.json",
-        "先秦/诗文总集/昭明文选/赋·音乐上.json",
-        "先秦/诗文总集/昭明文选/赋·音乐下.json",
-        "先秦/诗文总集/昭明文选/赋·鸟兽.json",
-        "先秦/诗文总集/昭明文选/赋·鸟兽下.json",
-        "先秦/诗文总集/昭明文选/赞.json",
-        "先秦/诗文总集/昭明文选/连珠·论五.json",
-        "先秦/诗文总集/昭明文选/铭.json",
-        "先秦/诗文总集/昭明文选/颂.json",
-        "历代/ci.0.json",
-        "历代/ci.1.json",
-        "历代/fu.0.json",
-        "历代/other.0.json",
-        "历代/poet.0.json",
-        "历代/poet.1.json",
-        "历代/wen.0.json",
-        "历代/wen.1.json",
-        "历代/wen.2.json",
-        "汇编/古文观止/卷一周文.json",
-        "汇编/古文观止/卷七六朝唐文.json",
-        "汇编/古文观止/卷三周文.json",
-        "汇编/古文观止/卷九唐宋文.json",
-        "汇编/古文观止/卷二周文.json",
-        "汇编/古文观止/卷五汉文.json",
-        "汇编/古文观止/卷八唐文.json",
-        "汇编/古文观止/卷六汉文.json",
-        "汇编/古文观止/卷十一宋文.json",
-        "汇编/古文观止/卷十二明文.json",
-        "汇编/古文观止/卷十宋文.json",
-        "汇编/古文观止/卷四秦文.json",
-        "汇编/古文观止/古文观止.json",
-        "汇编/古文观止/古文观止·补.json",
-        "唐/诗/全唐诗/poet.tang.58000.json",
-        "唐/唐诗三百首/唐诗三百首.json",
-        "宋/宋词/ci.song.22000.json",
-        "宋/诗/全宋诗/poet.song.255000.json",
-        "宋/宋词三百首/宋/宋词三百首.json",
-        "汇编/课本选目/人物故事.json",
-        "汇编/课本选目/寓言故事.json",
-        "汇编/课本选目/山水游记.json",
-        "汇编/课本选目/志人逸事.json",
-        "汇编/课本选目/治学勤读.json",
-        "汇编/课本选目/神话传说.json",
-        "汇编/课本选目/蒙学经典.json",
-        "汇编/课本选目/诸子论道.json",
-        "近现/元明清詩.json",
-        "近现/近现代诗.json"
-      ]
-    },
-    "_目录重构：按朝代分层": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "顶层目录改为 14 个朝代目录（先秦 汉 三国 晋 南北朝 隋 唐 五代十国 宋 元 明 清 近现 当），与 dynasties/dynasties.json 的 name 一一对应。（1）只搬不改正文：旧路径 先秦汉魏晋南北朝/ 唐代/ 唐五代/ 宋代/ 元代/ 明代/ 清代/ 近现代诗/ 与根目录的书名目录（古文观止、四书五经、论语、课外经典、蒙学、幽梦影、唐诗三百首、宋词三百首）按朝代落位。（2）历代/ 拆散（scripts/split_dynasty.py）：按作者朝代拆进各朝代目录，搬 3592 条，逐条见 docs/历代拆分.tsv；177 条作者不在 authors/authors.json 的搬不走，随目录下线（正文留在 git 历史）。（3）近现/当代诗词.json 改名 当/poet.dang.json、当/ci.dang.json（历代/ 里 1912 年以后出生的作者也并入）。（4）authors/authors.json 的 dynasty 值空间改为 14 个朝代名（周秦商上古→先秦，辽金→宋，当代→当）；元/元曲/yuanqu.json 里 11415 条 dynasty 由 yuan 改为 元。（5）拆出来的这批文件只做了搬移与判类，未逐字对勘，需逐文件复核后改为 clean/fixed。"
-    },
-    "_蒙学与诗文总集归位": {
-      "date": "2026-10-29",
-      "reviewer": "codebuddy",
-      "status": "fixed",
-      "scope_note": "结构批次：先秦/诗文总集/ → 汇编/诗文总集/，先秦/蒙学/ → 汇编/蒙学/，先秦/蒙学/qianjiashi.json → 宋/诗/千家诗/，先秦/蒙学/tangshisanbaishou.json 并入 唐/诗/全唐诗/poet.tang.*（320 首逐首对上，挂 tags，删选本副本，逐条见 docs/唐诗三百首并入.tsv）。只搬路径、只挂 tag，正文未逐字对勘。",
-      "fixes": [
-        {
-          "original": "先秦/蒙学/tangshisanbaishou.json",
-          "corrected": "删除（并入 唐/诗/全唐诗/poet.tang.* 作 tags: [\"唐诗三百首\"]）",
-          "note": "320 首全部在《全唐诗》找到同一首：313 首正文相似度 ≥ 0.9，1 首为王昌龄《长信怨》组诗在总集按首分排、逐首挂 tag，6 首选本署名有误（如《秋夜曲》王维 → 王涯）。"
-        }
-      ]
-    },
-    "_补入补充选本": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": null,
-          "corrected": null,
-          "note": "本轮补入的 6 个文件（`近现/` 2 个、`宋/宋词三百首/`、`昭明文选/` 90 卷、`汇编/古文观止/` 12 卷、`乐府诗集/` 5 卷）尚未逐字对勘，导入时只做了简转繁、就近分卷与正文去重，不计入 clean。"
-        }
-      ]
-    },
-    "_补录haitangshishe语料": {
-      "date": "2026-10-27",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": "[batch] reference/mit_licence_haitangshishe → 13 个目标文件，收录 7791 条",
-          "corrected": null,
-          "note": "源 MIT 授权的 11407 条（诗 3290 / 词 4741 / 文 2971 / 曲 378 / 赋 27），逐条按正文判重（繁简统一 + 去标点，短句用作者+正文联合键，同作者同题相似度≥0.9 视为异文），收录 7791、判重 3616。去向：历代/（文 2894、诗 1248、词 1422、赋 27）6891 条余，全唐诗/poet.tang.58000.json 600、poet.song.255000.json 255、宋词/ci.song.22000.json 997、元曲/yuanqu.json 332。逐条判定见 docs/haitangshishe收录.tsv。收录时不挂 sources 标记：haitangshishe 是到处收集的语料，不是唐诗三百首那样的权威合集，sources 只留给权威选本/总集（2026-08 已把先前写入的 \"sources\": [\"haitangshishe\"] 从 60 个正文文件全部清除，含 chuci.json 三处 variants[].source）。只做了字形转换（t2s）、清洗（PUA/西里尔/假名/制表符→□，不猜字）、判重与分片，没有逐字与古籍对勘，故整批记 needs_review，不记 clean。校验：python3 scripts/check_structure.py --baseline 无新增问题；脚本幂等（重跑收录 0 条）。"
-        },
-        {
-          "original": "[new] authors/authors.json 2402 位、dynasties/dynasties.json 18 个",
-          "corrected": null,
-          "note": "作者小传与朝代概述原本没有全库通用索引（全唐诗/authors.* 与 宋词/author.song.json 各管一个总集、字段不同），另建两目录，语料与介绍分开。未逐条核对原文。"
-        }
-      ]
-    },
-    "_并入选本：唐/唐诗三百首": {
-      "date": "2026-10-29",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "唐/唐诗三百首/ 已并入 唐/诗/全唐诗/poet.tang.* 作 tags，目录删除。选本 65 首先经 PR #43 校勘为 55 首（删 10 条重复副本、改 2 处张冠李戴、补 1 首漏收、修 3 处正文），再按 anthologies/tangshi300.json 目次逐首并入：长干曲四首/塞下曲四首 按正文拆开逐首并，曹植《白馬篇》补录进 三国/诗/poet.sanguo.json，王昌龄《長信秋詞・其三》按全唐诗补录。逐条见 docs/选本并入.tsv。被合并的 416 条总集记录只做了挂 tag，正文未逐字对勘"
-    },
-    "_补录haitangshishe语料works_3": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "fixes": [
-        {
-          "original": "[batch] reference/mit_licence_haitangshishe/works_3.json → 3 个目标文件，收录 5 条",
-          "corrected": null,
-          "note": "works_3.json 原先缺外层方括号（裸对象流），source.py 补 [] 解析后 1360 条本已可读，与补括号后的内容逐字节相同；首次补录（11407 条那次）并未漏掉这个文件。本轮是用户修正文件格式后按同一判重口径重跑一遍的复核：逐条按正文判重（繁简统一 + 去标点；短句用作者+正文联合键；同作者同题相似度≥0.9 视为异文），1360 条里判重 1355、收录 5。收录去向：清/诗/poet.qing.json 3（查慎行《舟夜书所见》、袁枚《马嵬》、谭嗣同《潼关》）、宋/诗/全宋诗/poet.song.256000.json 1（司马光《客中初夏》，全宋诗已有《居洛初夏作》异文，作者相同、题名不同，按「作者不同才两存」的反向口径两存并记）、宋/宋词/ci.song.23000.json 1（吴文英《浣溪沙·门隔花深梦旧游》，全库原无）。不挂 sources 标记。逐条判定见 docs/haitangshishe收录.works_3.tsv。校验：python3 scripts/check_structure.py 前后计数一致，无新增问题。"
-        }
-      ]
-    },
-    "明/小说/三国演义/sanguoyanyi.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "新抓：《三國志通俗演義》嘉靖壬午本（識典 CADAL02111749），156 则。正文未逐字对勘；底本卷四~六、十七、二十、二十三整卷压在一页，未逐则切开"
-    },
-    "明/小说/水浒传/shuihuzhuan.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "新抓：《水浒传》容與堂本（識典 NGJ89241199901879587548），100 回。底本为定长折行 OCR，已按句末标点重分段，但字词讹误仍多（回次行与回目行常糊），正文未逐字对勘"
-    },
-    "明/小说/西游记/xiyouji.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "新抓：《西游记》世德堂本（識典 NA11023），100 回。李卓吾总批已剔除；正文未逐字对勘"
-    },
-    "清/小说/红楼梦/hongloumeng.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review",
-      "note": "新抓：《红楼梦》程甲本（識典 GY025），120 回 + 序、叙、目録 3 条。底本 12 回无小标题，回目按通行本补；正文未逐字对勘"
     }
   }
 }
