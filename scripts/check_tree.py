@@ -100,7 +100,7 @@ def domain_of(rel):
     目录已按朝代分层（唐/诗/全唐诗、宋/诗/全宋诗、宋/词/宋词…），顶层目录名不再等于书名，
     按「朝代/体裁/书名」三级取书名；
     补录的 331 条曾挂在 元曲/yuanqu.json 尾部，与《全元曲》同文件但不是同一部书；
-    它曾用 sources: ["haitang"] 分流成另一部书，该标记已清除，现在整文件算一部书。
+    它曾用 sources: ["haitangshishe"] 分流成另一部书，该标记已清除，现在整文件算一部书。
     """
     parts = rel.split('/')
     if parts[0] in DYNASTY_DIRS:

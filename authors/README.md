@@ -33,4 +33,4 @@
 
 ## 来源
 
-`reference/mit_licence_haitang`（MIT 授权），由 `scripts/haitang/import.py` 生成。
+`reference/mit_licence_haitangshishe`（MIT 授权），由 `scripts/haitangshishe/import.py` 生成。

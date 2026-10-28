@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""把上游 poem-wechat 里「本库确实没有」的篇目收进本库。
+"""把补充语料里「本库确实没有」的篇目收进本库。
 
-audit.py 已经按正文判过一轮重，剩下 76 条 new。但那一步回查上游条目用的是
+audit.py 已经按正文判过一轮重，剩下 76 条 new。但那一步回查补充语料条目用的是
 (标题, 作者)，同名作品会串——文选卷上四首《杂诗》都被取成了唐诗三百首里
-沈佺期那一首。这里按上游 id 精确取正文，再对着全库重判一次：
+沈佺期那一首。这里按补充语料 id 精确取正文，再对着全库重判一次：
 
   正文全同 / 前 12 字同 → 已有，不收
   否则                 → 收
@@ -11,12 +11,12 @@ audit.py 已经按正文判过一轮重，剩下 76 条 new。但那一步回查
 落地规则与 import.py 一致（繁体、一行一句、只留 author/paragraphs/title）。
 课本（课内 / 近现代 / 古诗非唐 / 节日节气）是横跨朝代、体裁的选目，不是一部书，
 不另开目录，按体裁并入本库已有的目录；整部书（文选、古文观止、乐府诗集、
-唐诗三百首…）则与上游同名目录对齐。
+唐诗三百首…）则与补充语料同名目录对齐。
 
 用法：
-  node extract.js <上游 data 目录> > /tmp/upstream.json
-  python3 scripts/wechat_corpus/collect.py --upstream /tmp/upstream.json
-  python3 scripts/wechat_corpus/collect.py --upstream /tmp/upstream.json --apply
+  node extract.js <补充语料 data 目录> > /tmp/upstream.json
+  python3 scripts/mini_corpus/collect.py --upstream /tmp/upstream.json
+  python3 scripts/mini_corpus/collect.py --upstream /tmp/upstream.json --apply
 """
 import argparse, json, os, re, sys, unicodedata
 from collections import OrderedDict
@@ -41,7 +41,7 @@ BOOK_DIRS = {
 GENRE_DIRS = {'课内': '近现', '近现代': '近现', '节日节气': '近现',
               '古诗非唐': '近现'}
 
-# audit.tsv 的「集子」列是中文名，上游是 x.js 文件名
+# audit.tsv 的「集子」列是中文名，补充语料是 x.js 文件名
 AUDIT_FILES = {
     '课内': 'poems-1.js',   # 课内是 12 册课本合并的口径，逐册找，见 source_of
     '古文': 'poems-classic.js', '乐府集': 'poems-yuefu.js',
@@ -128,13 +128,13 @@ def chinese(s, conv):
 
 
 def to_paragraphs(text, s2twp):
-    # 「~~」是上游对底本缺字的记法，换成本库惯用的「□」
+    # 「~~」是补充语料对底本缺字的记法，换成本库惯用的「□」
     return [chinese(line.strip(), s2twp)
             for line in (text or '').replace('~~', '□').split('\n') if line.strip()]
 
 
 def volume_of(item):
-    """上游 gradeGroup 折成本库的卷名。
+    """补充语料 gradeGroup 折成本库的卷名。
 
     卷次（「卷一 五言古诗」「诗 · 杂诗上」）与原书卷帙对不上，用不得，
     本库这几个目录一律按一本书一个文件放。
@@ -146,7 +146,7 @@ def volume_of(item):
 
 
 def author_of(item):
-    """上游 author 是「王正长」这类字号；库里有本名就用本名。"""
+    """补充语料 author 是「王正长」这类字号；库里有本名就用本名。"""
     import_set = (item.get('author') or '').strip()
     return (item.get('authorName') or '').strip() or import_set
 
@@ -181,7 +181,7 @@ def main():
     by_id = {it['id']: (book, it) for book, items in up.items() for it in items}
 
     audit = [l.rstrip('\n').split('\t') for l in
-             open(os.path.join(ROOT, 'docs/wechat_corpus_audit.tsv'), encoding='utf-8')][1:]
+             open(os.path.join(ROOT, 'docs/mini_corpus_audit.tsv'), encoding='utf-8')][1:]
     cand = [r for r in audit if r[3] == 'new']
     by_text, by_pre = build_index(cc)
 
@@ -192,11 +192,11 @@ def main():
         hits = [v[1] for v in by_id.values()
                 if v[0] in books and v[1].get('title') == title
                 and (v[1].get('author') or '') == author]
-        if not hits:  # 作者一栏上游可能写「欧阳修/朱淑真」这种，退一步只认标题
+        if not hits:  # 作者一栏补充语料可能写「欧阳修/朱淑真」这种，退一步只认标题
             hits = [v[1] for v in by_id.values()
                     if v[0] in books and v[1].get('title') == title]
         if not hits:
-            dups.append((book, title, author, '上游同名条目定位失败'))
+            dups.append((book, title, author, '补充语料同名条目定位失败'))
             continue
         it = hits[0]
         n = norm(it.get('text') or '', cc)
@@ -217,7 +217,7 @@ def main():
     for book, it in picked:
         target = GENRE_DIRS.get(book) or BOOK_DIRS.get(book)
         if not target:
-            sys.exit(f'上游集子 {book} 还没有目标目录，先在 BOOK_DIRS / GENRE_DIRS 里定下来')
+            sys.exit(f'补充语料集子 {book} 还没有目标目录，先在 BOOK_DIRS / GENRE_DIRS 里定下来')
         books.setdefault(target, OrderedDict()).setdefault(volume_of(it), []).append({
             'author': chinese(author_of(it) or '佚名', s2twp),
             'paragraphs': to_paragraphs(it.get('text'), s2twp),
@@ -258,7 +258,7 @@ def main():
             print(f'{rel:34s} {"+" if old else "新"} {len(kept):3d} 条')
     print(f'\n合计 {total} 条')
 
-    print('逐条来源写入 docs/wechat_corpus_collect.tsv')
+    print('逐条来源写入 docs/mini_corpus_collect.tsv')
 
     if not args.apply:
         print('（预演，加 --apply 写盘）')

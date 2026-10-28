@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""把 reference/mit_licence_haitang（11407 条，MIT 授权）补录进本库。
+"""把 reference/mit_licence_haitangshishe（11407 条，MIT 授权）补录进本库。
 
 路由规则（2026-10 目录改成 14 个朝代目录之后；朝代表沿用 split_dynasty.py）：
 
@@ -21,7 +21,7 @@
   ── → 中文破折号；\r\n → 单行一句；行首行尾空白清掉；空行去掉
   FIXED 表只收上下文 100% 确定的定点还原，其余一律 □
 
-判重按正文（简繁统一 + 异体归一 + 去标点），命中库中已有条目的不重收。四道关（见 docs/haitang重跑.md）：
+判重按正文（简繁统一 + 异体归一 + 去标点），命中库中已有条目的不重收。四道关（见 docs/haitangshishe重跑.md）：
 
   1. 正文完全相同 —— 键取自**清洗后**正文，与写盘同源；拿原始正文建键，
      源里那点拼音夹注、CRLF、半角标点就能让一字不差的条目对不上（2026-10 重跑预演收 1273 条，
@@ -37,18 +37,18 @@
 按旧口径拆文件、`dedupe_tang.py` 按旧口径写互见——都已改掉；重跑本脚本不会再把标记写回去，
 `--apply` 之前会扫一遍目标文件报出残留条数：
 
-  python3 scripts/haitang/import.py --check-sources   # 只扫，不改
+  python3 scripts/haitangshishe/import.py --check-sources   # 只扫，不改
 
 后续补录：源文件随时可能被上游修好（works_3.json 原是裸对象流，2026-10 补上外层方括号，
 内容不变），这时用 --only 只重跑那一个文件，判定表写进单独的日志，不覆盖首次导入的那份：
 
-  python3 scripts/haitang/import.py --only works_3 --tsv docs/haitang收录.works_3.tsv
+  python3 scripts/haitangshishe/import.py --only works_3 --tsv docs/haitangshishe收录.works_3.tsv
 
 用法：
-  python3 scripts/haitang/import.py                  # 预演，打印清单
-  python3 scripts/haitang/import.py --apply           # 写盘
-  python3 scripts/haitang/import.py --apply --authors --dynasties
-  python3 scripts/haitang/import.py --only works_3 --tsv docs/haitang收录.works_3.tsv
+  python3 scripts/haitangshishe/import.py                  # 预演，打印清单
+  python3 scripts/haitangshishe/import.py --apply           # 写盘
+  python3 scripts/haitangshishe/import.py --apply --authors --dynasties
+  python3 scripts/haitangshishe/import.py --only works_3 --tsv docs/haitangshishe收录.works_3.tsv
 """
 import argparse
 import json
@@ -539,7 +539,7 @@ def main():
     ap.add_argument('--apply', action='store_true', help='真正写盘（默认只预演）')
     ap.add_argument('--authors', action='store_true', help='同时写 authors/ dynasties/')
     ap.add_argument('--dynasties', action='store_true')
-    ap.add_argument('--tsv', default='docs/haitang收录.tsv')
+    ap.add_argument('--tsv', default='docs/haitangshishe收录.tsv')
     ap.add_argument('--only', default=None, metavar='works_3',
                     help='只处理一个源文件（如 works_3），默认全部 8 个')
     ap.add_argument('--check-sources', action='store_true',

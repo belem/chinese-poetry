@@ -1,4 +1,4 @@
-"""读取 reference/mit_licence_haitang 的源数据。
+"""读取 reference/mit_licence_haitangshishe 的源数据。
 
 works_3.json 缺外层方括号（裸对象流），不是合法 JSON，需按流解析；
 其余 works_*.json 是正常数组。
@@ -7,7 +7,7 @@ import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SRC = os.path.join(ROOT, 'reference', 'mit_licence_haitang')
+SRC = os.path.join(ROOT, 'reference', 'mit_licence_haitangshishe')
 
 
 def _load(name):
