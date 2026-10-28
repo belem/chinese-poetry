@@ -107,7 +107,19 @@ def snippets(text):
         norm = T2S.convert(raw)
         if len(norm) != len(raw):          # 简转后长度变化则不做位置映射
             norm = raw
-        yield raw, norm, m.group(2), f"《{m.group(2)}》{m.group(3).split('，')[0].strip()}"
+        src = f"《{m.group(2)}》{m.group(3).split('，')[0].strip()}"
+        yield raw, norm, m.group(2), src
+    # 无书名行（正文行本身不含《》）：单独成行，book 留空，同一页只有一个出处时归属同一本书
+    for line in re.split(r'\n\s*\n', body):
+        line = line.strip()
+        if '《' in line or not line or RESULT_MARKER in line:
+            continue
+        raw = ''.join(c for c in line if HAN.match(c))
+        norm = T2S.convert(raw)
+        if len(norm) != len(raw):
+            norm = raw
+        if len(norm) >= 4:
+            yield raw, norm, '', ''
 
 
 # ---------------------------------------------------------------- build
@@ -160,6 +172,11 @@ def build_tokens(check):
                     continue
                 tL, tR = to_trad(rel, L), to_trad(rel, R)
                 queries = list(dict.fromkeys(q for q in (tL[-6:], tR[:6], tL[-4:], tR[:4]) if len(q) >= 4))
+                if check == 'bare_pua':
+                    # 私用区字本身检索不到：用「左文 + 间隔 + 右文」的形式，让原字落在匹配区间里
+                    g = '。' if n >= 3 else ''
+                    queries = list(dict.fromkeys(q for q in (tL[-6:] + g + tR[:6], tL[-5:] + g + tR[:5],
+                                                            tL[-4:] + g + tR[:4]) if len(q) >= 6))
                 if not queries:
                     continue
                 items.append(dict(check=check, file=rel, idx=idx, field=field, k=k, start=a, end=b,
