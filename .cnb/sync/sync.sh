@@ -37,6 +37,31 @@ require_pat() {
   log "凭据已就绪（长度 ${#PAT}，值不打印）"
 }
 
+# 推送被拒时翻译成人话。常见的一种是 PAT 缺 workflow scope：
+# 只要待推提交里改过 .github/workflows/，GitHub 就整条 push 都不收，
+# 报错里只有一句 remote rejected。见 docs/同步.md。
+explain_push_failure() {
+  local err_file="$1"
+  if grep -q "without .workflow. scope" "$err_file"; then
+    log ""
+    log "原因：PAT 缺少 workflow scope，GitHub 拒绝了整个 push。"
+    log "      待推提交里改过 .github/workflows/ 下的文件（改一行也算），"
+    log "      classic PAT 必须勾上 workflow 才能推，repo 只管 Contents 读写。"
+    log "      修法：重新生成 PAT（勾 repo + workflow）→ 更新密钥仓库"
+    log "            ${SECRETS_SLUG:-?}#${SECRETS_FILE:-?} 里的 GITHUB_TOKEN → 重跑本任务。"
+    log "      注意：换完凭据前的每个提交都会带着这个未推送的历史反复撞同一堵墙，"
+    log "            所以一卡就是一串，不是某一次提交的问题。"
+    log ""
+  elif grep -q "non-fast-forward\|\[rejected\]" "$err_file"; then
+    log ""
+    log "原因：GitHub 侧有了本仓库没有的提交，非快进被拒（脚本不强推）。"
+    log "      先跑一次 pull 模式把 GitHub 的提交合回来，再重试 push。"
+    log ""
+  else
+    sed 's/^/  /' "$err_file" >&2
+  fi
+}
+
 gh_head() {
   git ls-remote "$(gh_url)" "refs/heads/${BRANCH}" | cut -f1
 }
@@ -52,7 +77,16 @@ do_push() {
     return 0
   fi
   # 非快进直接报错，避免把 GitHub 侧的人工提交冲掉
-  git push --quiet "$(gh_url)" "HEAD:refs/heads/${BRANCH}"
+  local err_file rc=0
+  err_file=$(mktemp)
+  git push --quiet "$(gh_url)" "HEAD:refs/heads/${BRANCH}" 2>"$err_file" || rc=$?
+  if [ "$rc" -ne 0 ]; then
+    explain_push_failure "$err_file"
+    rm -f "$err_file"
+    log "推送失败"
+    return "$rc"
+  fi
+  rm -f "$err_file"
   log "推送完成 ${head:0:8}"
 }
 
