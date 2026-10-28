@@ -21,8 +21,16 @@
   ── → 中文破折号；\r\n → 单行一句；行首行尾空白清掉；空行去掉
   FIXED 表只收上下文 100% 确定的定点还原，其余一律 □
 
-判重按正文（简繁统一 + 去标点），命中库中已有条目的不重收。来源是到处收集的语料，
-不挂 sources 标记——sources 只留给唐诗三百首这类权威合集。
+判重按正文（简繁统一 + 异体归一 + 去标点），命中库中已有条目的不重收。四道关（见 docs/haitang重跑.md）：
+
+  1. 正文完全相同 —— 键取自**清洗后**正文，与写盘同源；拿原始正文建键，
+     源里那点拼音夹注、CRLF、半角标点就能让一字不差的条目对不上（2026-10 重跑预演收 1273 条，
+     正文相同的占 9742 条）。
+  2. 形近异体同等 —— 库写「盪胷」源写「荡胸」这类，判重时折算，不改写盘正文。
+  3. 同作者同题、正文相似 ≥ NEAR_DUP —— 底本异文（猿/猨、滚滚/衮衮）都落在这里。
+  4. 节含于库章 —— 论语/孟子/中庸库里一条一章、源里一条一节，只能判包含关系。
+
+来源是到处收集的语料，不挂 sources 标记——sources 只留给唐诗三百首这类权威合集。
 
 后续补录：源文件随时可能被上游修好（works_3.json 原是裸对象流，2026-10 补上外层方括号，
 内容不变），这时用 --only 只重跑那一个文件，判定表写进单独的日志，不覆盖首次导入的那份：
@@ -56,6 +64,7 @@ T2S = OpenCC('t2s')
 S2T = OpenCC('s2t')
 
 FREE_KINDS = {'诗', '词', '文', '赋'}
+PREFIX_LEN = 12             # 包含判重时先用正文前这么多字挑候选
 TARGET_SIZE = 1000          # 与库中 poet.*.json / ci.song.*.json 一致
 
 # 同作者同题时，正文相似度达到此值视为同一作品（异文），不重收。
@@ -88,6 +97,12 @@ LONE_Q = re.compile(r'(?<=[\u4e00-\u9fff])[?？](?=[。，；：]|[\u4e00-\u9fff
 DUP_PUNCT = re.compile(r'([，。；：、！？])\1+')
 # 「进来！。」「何？」这类句末连缀，保留最强者
 END_CLASH = re.compile(r'([！？])。')
+# 源是数字出版转码，夹在汉字之间的「全角括号 + 拼音/注音」是编者加的，本库正文不收：
+# 召（shào）滑、酴(tu)醾 (mi）、陂(bēi)田、擘(bāi)——括号后紧跟括号的写法也一并吃掉。
+# 只认括号里全是拉丁字母/数字/声调符号的，汉字夹注（「（史记误为厉公）」）不动。
+# 源里半角 ( 配全角 ）的混搭不少，两侧括号各认各的。
+RUBY = re.compile(r'[（(]\s*[A-Za-z0-9\u00c0-\u024f\u0300-\u036f'
+                  r'āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]+[）)]')
 
 
 # ---------------------------------------------------------------- 清洗
@@ -105,6 +120,8 @@ def clean_text(text):
     text = CYRILLIC_GREEK.sub('□', text)
     text = KANA.sub('□', text)
     text = BOX.sub('□', text)
+    # 注音夹注先删掉，不能落到下面「字母数字 → □」那一档，否则会把注音写成缺字记号
+    text = RUBY.sub('', text)
     text = ASCII_RES.sub(lambda m: '□' if not m.group().isdigit() else '□', text)
     # 半角标点转全角（转码残留），再收拾重复标点
     # 源里用半角 ? 表示「未识读的字」（如「阖闾弟夫？」指夫概），夹在汉字之间时先换缺字记号，
@@ -137,11 +154,59 @@ def ci_parts(title):
     return t, ''
 
 
+# 异体字归一：opencc 的 t2s 表不收这些，但库与 haitang 语料各写了其中一种（《望岳》库作
+# 「盪胷生曾雲」，源作「荡胸生曾云」）。不归一，同一首的两份正文就差一个字，判重和 diff 都得
+# 为这一个字打一架。只收真的单值对应，两边都通行的异体（峯/峰、沈/沉、猿/猨）不在此列——
+# 那类要按底本定，不能替作者选字。
+VARIANT = str.maketrans({
+    '胷': '胸', '胊': '胸',
+})
+
+
 def dedup_key(text):
-    """判重键：繁→简、去标点空白。"""
+    """判重键：繁→简、异体归一、去标点空白。"""
     s = T2S.convert(text)
+    s = s.translate(VARIANT)
     s = ''.join(ch for ch in s if unicodedata.category(ch)[0] in 'LN')
     return s
+
+
+# 这些目录名是体裁/朝代，不是书名
+NOT_A_BOOK = {'先秦', '汉', '三国', '晋', '南北朝', '隋', '唐', '五代十国', '宋', '元', '明',
+              '清', '近现', '当', '汇编', '诗', '词', '文', '全唐诗', '全宋诗', '宋词'}
+
+
+def book_of(record):
+    """一条记录所属的书名。
+
+    题名带「·」的取头一节：「孟子·第一卷·梁惠王上·第七节」→「孟子」。
+    库里的《论语》《孟子》《中庸》按章分条，没有 title 只有 chapter，这时返回 ''，
+    由 book_of_path 从目录名取（先秦/孟子/mengzi.json → 孟子）。
+    """
+    t = norm_title(record.get('title') or '')
+    return t.split('·')[0] if '·' in t else ''
+
+
+def book_of_path(rel):
+    """目录名 → 书名。库里按章分的书都放在中文书名的目录下。"""
+    parts = [p for p in rel.replace(os.sep, '/').split('/') if p]
+    if len(parts) >= 2 and parts[-2] not in NOT_A_BOOK:
+        return parts[-2]
+    return ''
+
+
+# 形近异体：库与源各写了一种，正文因此差一个字。这类不是异文，是本库该统一的字形。
+# 只收「同一个字」的两种写法（猃/𤞤 是《诗经》里同一个「玁狁」），遇到不同字一律不碰。
+LOOKALIKE = str.maketrans({
+    '𤞤': '猃',
+    '玁': '猃',
+    '榖': '谷',
+})
+
+
+def norm_text(text):
+    """判重前把形近异体折回一种写法。**只用于判重，不改写盘正文。**"""
+    return dedup_key(text).translate(LOOKALIKE)
 
 
 def short_key(author, text):
@@ -227,6 +292,9 @@ class Library:
         self.files = {}         # relpath → list
         self.touched = set()
         self.ids = set()        # 库中已有 id，新记录不与它们撞
+        self.book_index = {}    # 书名（「孟子」「论语」）→ [(relpath, idx)]
+        self.prefix_index = {}  # dedup_key 前 PREFIX_LEN 字 → [(relpath, idx)]
+        self.exact_index = {}   # norm_text（形近异体已折） → (relpath, idx)
 
     def scan(self):
         for dirpath, dirs, filenames in os.walk(ROOT):
@@ -259,30 +327,70 @@ class Library:
                     key = dedup_key(''.join(body))
                     if len(key) >= 8:
                         self.index.setdefault(key, (rel, idx))
+                        self.exact_index.setdefault(norm_text(''.join(body)), (rel, idx))
                     elif key:
                         self.index.setdefault(
                             short_key(it.get('author'), ''.join(body)), (rel, idx))
                     t = norm_title(it.get('title') or it.get('rhythmic') or '')
                     if t:
                         self.title_index.setdefault(
-                            ((it.get('author') or '').strip(), t), []).append((rel, idx))
+                            (T2S.convert((it.get('author') or '').strip()), T2S.convert(t)),
+                            []).append((rel, idx))
+                    book = book_of(it) or book_of_path(rel)
+                    if book and len(key) >= 8:
+                        self.book_index.setdefault(book, []).append((rel, idx))
+                        self.prefix_index.setdefault(key[:PREFIX_LEN], []).append((rel, idx))
         return self
 
     def near_dup(self, author, title, key):
-        """同作者同题、正文相似度 ≥ NEAR_DUP → 库中那条 (rel, idx)，否则 None。"""
-        t = norm_title(title)
-        cand = self.title_index.get((author, t)) or self.title_index.get((author, t.split('·')[-1]))
+        """同作者同题、正文相似度 ≥ NEAR_DUP → (rel, idx, 相似度)，否则 None。
+
+        key 必须是 dedup_key(清洗后正文)，与 scan() 建索引、下面比库正文同一口径。
+        拿原始正文的键来比，等于一边简化字一边原文，比例凭空掉一截——
+        2026-10 的整体重跑就是这么把 1273 条几乎重复的条目当成新篇目的。
+        """
+        # 题名/作者都按简体查：库里是「王維・使至塞上」，源里是「王维 / 使至塞上」，
+        # 不归一就等于两边各查各的，同一条永远碰不上面。
+        a = T2S.convert((author or '').strip())
+        t = T2S.convert(norm_title(title))
+        cand = self.title_index.get((a, t)) or self.title_index.get((a, t.split('·')[-1]))
         if not cand:
             return None
+        key = key.translate(LOOKALIKE)
         best = None
         for rel, idx in cand:
-            lq = dedup_key(self.body(rel, idx))
+            lq = norm_text(self.body(rel, idx))
             if not lq:
                 continue
             r = difflib.SequenceMatcher(None, key, lq).ratio()
             if r >= NEAR_DUP and (best is None or r > best[0]):
                 best = (r, rel, idx)
-        return (best[1], best[2]) if best else None
+        return best
+
+    def contains_dup(self, book, key):
+        """同一部书里，库里那条是否整段包住了源这条（节/章切分不同）→ (rel, idx)。
+
+        按章或按段存的书（论语、孟子、中庸），库是一条一章、源是一条一节，
+        正文天然是包含关系而不是相等关系：孟子「梁惠王上·第七节」1313 字，
+        库里从「齐宣王问曰」起的两条合起来 1859 字，相似度只有 0.83，
+        单看题名与相似度都认不出来，只能按「这一节是不是已经在库里」判。
+        """
+        if not (book and key):
+            return None
+        pieces = self.book_index.get(book) or []
+        key = key.translate(LOOKALIKE)
+        parts = [norm_text(self.body(r, i)) for r, i in pieces]
+        # 一、库里那一条就整段包住了源这条
+        for n, lq in enumerate(parts):
+            if len(lq) >= len(key) and key in lq:
+                return pieces[n]
+        # 二、源这条跨了库里两条以上（节跨章）：拼整书再判，报被它盖住开头的那一条
+        if len(parts) > 1 and key in ''.join(parts):
+            head = key[:PREFIX_LEN]
+            for n, lq in enumerate(parts):
+                if lq[:len(head)] and head.startswith(lq[:min(len(head), len(lq))]):
+                    return pieces[n]
+        return None
 
     def body(self, rel, idx):
         it = self.files[rel][idx]
@@ -413,7 +521,7 @@ def build_targets(lib, plan):
 def write_tsv(rows, path):
     os.makedirs(os.path.dirname(os.path.join(ROOT, path)), exist_ok=True)
     with open(os.path.join(ROOT, path), 'w', encoding='utf-8') as fp:
-        fp.write('判定\t体裁\t朝代\t作者\t题名\t去向\t正文首40字\n')
+        fp.write('判定\t体裁\t朝代\t作者\t题名\t去向\t相似度\t正文首40字\n')
         for r in rows:
             # 源正文里有 \r\n，判定表一行一条，换行与制表符都压成空格
             fp.write('\t'.join(re.sub(r'\s+', ' ', x) for x in r) + '\n')
@@ -444,30 +552,40 @@ def main():
         if len(key) < 4:
             dropped.append((rec, 'too_short'))
             continue
+        # 判重键与写盘正文同源：clean_text → to_paragraphs → dedup_key。
+        # 拿未清洗的原文建键，源里那点注音夹注 / CRLF / 半角标点就能让「一字不差」的条目对不上。
         if len(key) >= 8:
-            hit = lib.index.get(key)
+            hit = lib.index.get(key) or lib.exact_index.get(key.translate(LOOKALIKE))
+            ratio = 1.0
             if hit is None:
-                hit = lib.near_dup((rec.get('author') or '').strip(), rec.get('title'), key)
+                near = lib.near_dup((rec.get('author') or '').strip(), rec.get('title'), key)
+                if near:
+                    ratio, hit = near[0], (near[1], near[2])
+            if hit is None:
+                # 按章分的书（论语/孟子/中庸）库里一条一章，源里一条一节，只能判包含
+                hit = lib.contains_dup(book_of(rec), key)
         else:
             hit = lib.index.get(short_key(rec.get('author'), body))
+            ratio = 1.0
         if hit is not None:
-            dup.append((rec, hit[0], hit[1]))
+            dup.append((rec, hit[0], hit[1], ratio))
             continue
         target, kind, sharded = route(rec, dyn_idx, lib)
         plan.append((rec, target, kind, sharded, paras))
 
     print('源 %d 条 → 收 %d，判重 %d，丢弃 %d' % (len(works), len(plan), len(dup), len(dropped)))
 
-    # 逐条判定表：判重的记去向（哪个文件的第几条），收录的记目标文件
+    # 逐条判定表：判重的记去向（哪个文件的第几条）与相似度，收录的记目标文件。
+    # 相似度 1.0 是正文（清洗后、去标点）逐字相同；< 1 的是靠 near_dup 判的异文。
     rows = []
-    for rec, rel, idx in dup:
+    for rec, rel, idx, ratio in dup:
         rows.append(('判重', rec.get('kind_cn') or '', rec.get('dynasty') or '',
                      rec.get('author') or '', norm_title(rec.get('title')),
-                     '%s#%d' % (rel, idx),
+                     '%s#%d' % (rel, idx), '%.3f' % ratio,
                      (rec.get('content') or '')[:40].replace('\n', ' ')))
     for rec, target, kind, sharded, paras in plan:
         rows.append(('收录', kind, rec.get('dynasty') or '', rec.get('author') or '',
-                     norm_title(rec.get('title')), target, ''.join(paras)[:40]))
+                     norm_title(rec.get('title')), target, '', ''.join(paras)[:40]))
     write_tsv(rows, args.tsv)
     print('逐条判定 → %s（%d 行）' % (args.tsv, len(rows)))
 
