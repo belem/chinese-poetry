@@ -87,8 +87,10 @@ def side(chars, n=6):
     return out
 
 
-def one_edit(a, b):
-    return cs.one_edit(a, b) or cs.one_edit(b, a)
+def one_edit(short, long_):
+    """long_ 删去一个字后等于 short。"""
+    return len(long_) == len(short) + 1 and any(
+        long_[:k] + long_[k + 1:] == short for k in range(len(long_)))
 
 
 def load(rel):
@@ -189,15 +191,21 @@ def build_tokens(check):
 def build_lines(check):
     found = []
     if check == 'shi_line_length':
-        def report(kind, rel, idx, it, text, token=None, detail=None, ctx=None):
-            if kind == 'shi_line_length':
-                found.append((rel, idx, it, text, ctx['main'], ctx['prev'] or '', ctx['next'] or ''))
+        def report(kind, rel, idx, it, text, token=None, detail=None):
+            if kind != 'shi_line_length':
+                return
+            m = re.search(r'(?P<main>\d)言诗中出现', detail or '')
+            lines = cs.sentences(list(it.get('paragraphs') or []))
+            i = lines.index(text) if text in lines else -1
+            prev = lines[i - 1] if i > 0 else ''
+            nxt = lines[i + 1] if 0 <= i < len(lines) - 1 else ''
+            found.append((rel, idx, it, text, int(m.group('main')) if m else 0, prev, nxt))
         for rel in cs.iter_files():
-            if rel.split(os.sep)[0] in cs.SHI_DIRS:
+            if os.path.basename(rel).startswith(cs.SHI_PREFIX):
                 for idx, it, lines in cs.iter_poems(rel):
                     cs.check_shi(rel, idx, it, lines, report)
     else:
-        ci = [(rel, idx, it, lines) for rel in cs.iter_files() if rel.split(os.sep)[0] in cs.CI_DIRS
+        ci = [(rel, idx, it, lines) for rel in cs.iter_files() if os.path.basename(rel).startswith(cs.CI_PREFIX)
               for idx, it, lines in cs.iter_poems(rel) if it.get('rhythmic')]
         for a in cs.ci_anomalies(ci):
             for i, main in a['bad'] or []:
@@ -221,6 +229,10 @@ def build_lines(check):
 
 def cmd_build(args):
     os.makedirs(args.work, exist_ok=True)
+    if args.file:
+        only = {f.strip() for f in args.file.split(',')}
+        _iter = cs.iter_files
+        cs.iter_files = lambda: (r for r in _iter() if r in only)
     items = build_tokens(args.check) if args.check in TOKEN_CHECKS else build_lines(args.check)
     for i, it in enumerate(items):
         it['id'] = i
@@ -472,6 +484,7 @@ def main():
     b = sub.add_parser('build')
     b.add_argument('--check', required=True, choices=sorted(TOKEN_CHECKS | LINE_CHECKS))
     b.add_argument('--work', required=True)
+    b.add_argument('--file', help='只处理这些文件（逗号分隔的相对路径），用于人工复核个别条目')
     a = sub.add_parser('analyze')
     a.add_argument('--work', required=True)
     p = sub.add_parser('apply')
