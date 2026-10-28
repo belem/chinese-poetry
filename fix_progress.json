@@ -117,6 +117,11 @@
           "original": "将步リ家风习演",
           "corrected": "将步□家风习演",
           "note": "假名乱码，王和卿《一枝花·为打球子作》诸本不传，改方框"
+        },
+        {
+          "original": "零宽空格 U+200B ×12（张翥《忆梅》）",
+          "corrected": "删除",
+          "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char"
@@ -931,7 +936,14 @@
       "date": "2026-11-01",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "其中 15 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核"
+      "note": "其中 15 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
+      "fixes": [
+        {
+          "original": "休说树犹日如此",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 刘辰翁《金缕曲》「休说树犹日如此」：四条检索词均未命中本词（疑「日」为「已」之误，但仅凭文意，未改）"
+        }
+      ]
     },
     "宋/宋词/ci.song.18000.json": {
       "date": "2026-11-01",
@@ -943,6 +955,16 @@
           "original": "处处筝鸣雨屋",
           "corrected": "处处筝蓁鸣雨屋",
           "note": "[ci_pattern] 处处筝鸣雨屋 → 处处筝蓁鸣雨屋；《無絃琴譜》卷二作「處處箏蓁鳴雨屋」"
+        },
+        {
+          "original": "更有苏州破砚",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 邵桂子《满江红》「更有苏州破砚，兔园旧册」：本批两条检索词（茶盐铁更有苏／州破砚兔园旧）均未命中本词，仍待考"
+        },
+        {
+          "original": "朱颜楼褪酒",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 王易简《水龙吟》「朱颜楼褪酒」：本批检索词未命中（《乐府补题》咏白莲诸作可另查），仍待考"
         }
       ]
     },
@@ -994,6 +1016,46 @@
           "original": "重重洞深窈",
           "corrected": "重重洞門深窈",
           "note": "[ci_pattern] 重重洞深窈 → 重重洞門深窈；《麟原文集》麟原前集卷七引朱渙《齊天樂》作「重重洞門深窈」，與下句「翠竹籠烟」句法合"
+        },
+        {
+          "original": "况金瓯姓字",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 马伯升《水调歌头》「况金瓯姓字」：检索未命中，仍待考"
+        },
+        {
+          "original": "珠曹莲区区",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 赵希蓬《水调歌头》「珠曹莲区区」：检索未命中，仍待考"
+        },
+        {
+          "original": "便有此山仙翁",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 刘仲讷《水调歌头》「便有此山仙翁」：检索未命中，仍待考"
+        },
+        {
+          "original": "骑鸾鹤休归去",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 高伯达《鹧鸪天》「骑鸾鹤休归去」：检索未命中，仍待考"
+        },
+        {
+          "original": "任馀庆尚无穷",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 黄人杰《鹧鸪天》「任馀庆尚无穷」：检索未命中，仍待考"
+        },
+        {
+          "original": "王令人梦里说相思",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 无名氏《踏莎行》「王令人梦里说相思」：检索未命中，仍待考"
+        },
+        {
+          "original": "华阳闲日日月",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 叶景山《临江仙》「华阳闲日日月，绿野醉蓬莱」：识典只检到王质「一去丹臺閑日月」，句不同，不能据以改，仍待考"
+        },
+        {
+          "original": "消息南枝大",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 无名氏《西江月》「消息南枝大」：检索未命中，仍待考"
         }
       ],
       "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 7 处经古籍证实原样，未改；15 处字数异常证据不足，未改，留待复核"
@@ -1007,13 +1069,32 @@
       "date": "2026-11-01",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "3 处字数异常证据不足，未改，留待复核"
+      "note": "3 处字数异常证据不足，未改，留待复核",
+      "fixes": [
+        {
+          "original": "祥景飞光衮绣",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 徐去非《卷珠帘》「祥景飞光衮绣」：《蘆川詞》作「簾祥景飛光袞繡」，多一「簾」字；同书又与本库读法并存（重复正文／折行所致），无法判定，仍待考"
+        }
+      ]
     },
     "宋/宋词/ci.song.22000.json": {
       "date": "2026-11-01",
       "reviewer": "codebuddy",
       "status": "needs_review",
-      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘；本分支另按《宋词三百首》补挂 10 首 tag（钱惟演《玉楼春》、范仲淹《御街行》、柳永《雨霖铃》《浪淘沙慢》《玉蝴蝶》、张先《一丛花》、晏殊《浣溪沙》《木兰花》《玉楼春》、欧阳修《玉楼春》），按首句检索只覆盖到这几首，其余正文未逐字对勘；其中 2 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核"
+      "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘；本分支另按《宋词三百首》补挂 10 首 tag（钱惟演《玉楼春》、范仲淹《御街行》、柳永《雨霖铃》《浪淘沙慢》《玉蝴蝶》、张先《一丛花》、晏殊《浣溪沙》《木兰花》《玉楼春》、欧阳修《玉楼春》），按首句检索只覆盖到这几首，其余正文未逐字对勘；其中 2 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
+      "fixes": [
+        {
+          "original": "奈酒行有尽情无极",
+          "corrected": null,
+          "note": "[ci_pattern] needs_review: 赵鼎《满庭芳》「奈酒行有尽情无极」：单证（宋元十家詞）不足以判，本批未动"
+        },
+        {
+          "original": "零宽空格 U+200B ×68（欧阳修《生查子·元夕》、陆游《沁园春·有感》、吴礼之《高阳台·咏闰元宵》、张炎《水龙吟·白莲》）",
+          "corrected": "删除",
+          "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
+        }
+      ]
     },
     "宋/宋词/ci.song.3000.json": {
       "date": "2026-11-01",
@@ -1170,6 +1251,11 @@
           "original": "黯不分夜昼",
           "corrected": "黯暗不分夜昼",
           "note": "[ci_pattern] 黯不分夜昼 → 黯暗不分夜昼；《重陽全真集》卷七作「黯暗不分夜晝」"
+        },
+        {
+          "original": "零宽空格 U+200B ×20（折元礼《望海潮·凯旋舟次》）",
+          "corrected": "删除",
+          "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
         }
       ]
     },
@@ -4696,6 +4782,11 @@
           "original": null,
           "corrected": null,
           "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv"
+        },
+        {
+          "original": "零宽空格 U+200B ×2（张岱《西湖梦寻·总记》）",
+          "corrected": "删除",
+          "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
         }
       ]
     },
@@ -5633,6 +5724,11 @@
           "original": null,
           "corrected": null,
           "note": "新书：记录从 历代/ 与 近现/元明清詩.json 按朝代归位，正文未改；逐条对照见 docs/历代拆分.tsv"
+        },
+        {
+          "original": "零宽空格 U+200B ×21（黄之隽《桂枝香·美人魂》）",
+          "corrected": "删除",
+          "note": "[zero_width] 抓取残留的不可见字符，夹在句中与标题尾（「忆梅」等标题后跟一个 ZWSP）；只删该字符，正文一字未动。check_structure.py 原先不查 U+200B，本批新增 zero_width 一项"
         }
       ]
     },
