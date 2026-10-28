@@ -176,13 +176,6 @@
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出, 正文来自 haitang, 尚未逐字对勘"
         },
-        "tangshi-sanbai": {
-            "name": "唐/唐诗三百首",
-            "id": 16,
-            "path": "唐/唐诗三百首/",
-            "excludes": [],
-            "tag": "paragraphs"
-        },
         "wenxuan": {
             "name": "昭明文选",
             "id": 17,
