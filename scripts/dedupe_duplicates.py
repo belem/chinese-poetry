@@ -96,10 +96,12 @@ def author(rec):
     return T2S.convert((rec.get('author') or '').strip())
 
 
-def same_poem(a, b, max_ratio=0.03):
-    """篇幅相同、逐字比只有极少数不同 → (True, 不同字数)。"""
-    if len(a) != len(b) or not a:
+def same_poem(a, b, max_ratio=0.03, max_shift=0):
+    """篇幅相同（或相差不超过 max_shift 字）、逐字比只有极少数不同 → (True, 不同字数)。"""
+    if abs(len(a) - len(b)) > max_shift or not a:
         return False, 0
+    if len(a) != len(b):
+        return True, abs(len(a) - len(b))
     diff = sum(1 for x, y in zip(a, b) if x != y)
     return diff <= max(1, int(len(a) * max_ratio)), diff
 
@@ -156,36 +158,59 @@ YUANQU = '元/元曲/yuanqu.json'
 
 
 def yuanqu_cover():
+    """一条正文是另一条正文的前缀 —— 但「前缀」本身不是证据。
+
+    2026-10 那版一见「短句是长句的开头」就删，误删了一大批完整作品：雅词与散曲同用
+    《折桂令》《人月圆》《一枝花》的起句（张可久《折桂令·九日》与姚燧《凭阑人》都从
+    「对青山」起），同题组曲的第一支单列一条（白朴《大德歌·春》之于《大德歌四首》）。
+    现在只有同时满足下面两条才删：
+
+      1. 长句本身不止这一支曲：正文里出现套数标记 `【曲牌】`，或是一条标了「套数」的组曲；
+      2. 短句的题名也是同一支曲的题名（去掉标点后包含短句题名，或相反）。
+
+    异作者一条都不动：同一支曲被元明人选进不同书里署了两个人的名，是归属异说，
+    与《全唐诗》一样两存，不再拿「一作某人」去挂长句。
+    """
     data = load(YUANQU)
     bodies = [body(r) for r in data]
     index = {}
     for i, b in enumerate(bodies):
         if len(b) >= 16:
             index.setdefault(b[:16], []).append(i)
-    drop, patches, evidence = set(), {}, []
+    drop, evidence = set(), []
     for i, b in enumerate(bodies):
         if len(b) < 20:
             continue
         for j in index.get(b[:16], []):
-            if i == j or len(bodies[j]) <= len(b):
-                continue
-            if not bodies[j].startswith(b):
+            if i == j or len(bodies[j]) <= len(b) or not bodies[j].startswith(b):
                 continue
             rec, keep = data[i], data[j]
-            if author(rec) == author(keep):
-                drop.add(i)
-                evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover',
-                                     title=title(rec), note=f'同作者长句已含此句（{n_han(b)} 字 vs {n_han(bodies[j])} 字）'))
-            else:
-                tags = patches.setdefault(j, [])
-                tags.append(f'一作{author(rec)}')
-                evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover_tags',
-                                     title=title(rec), note=f'异作者残句，两条都留，长句挂 tags 一作{author(rec)}'))
-    # 幂等：长句已经挂过同一个「一作」就不再重复挂
-    patches = {j: [t for t in tags if t not in (data[j].get('tags') or [])]
-               for j, tags in patches.items()}
-    patches = {j: tags for j, tags in patches.items() if tags}
-    return data, drop, patches, evidence
+            if author(rec) != author(keep) or not suite(data[j]) or not same_title(rec, keep):
+                evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover_open',
+                                     title=title(rec),
+                                     note=f'前缀重合但不构成重出（长句 {n_han(bodies[j])} 字 / 短句 {n_han(b)} 字，'
+                                          f'{"异作者" if author(rec) != author(keep) else "同作者"}），两条都留'))
+                continue
+            drop.add(i)
+            evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover',
+                                 title=title(rec),
+                                 note=f'同作者套数已含此支（{n_han(b)} 字 vs {n_han(bodies[j])} 字）'))
+    return data, drop, evidence
+
+
+def suite(rec):
+    """套数（一支曲不止首句那一段）：正文里有【曲牌】，或题名标了「套数」。"""
+    text = ''.join(rec.get('paragraphs') or [])
+    return '【' in text or '套数' in title(rec)
+
+
+def same_title(a, b):
+    """两支曲的题名是否同一题：去标点后一个包含另一个，且短的那个够长（≥4 字）。"""
+    ta, tb = title(a).replace('・', '·'), title(b).replace('・', '·')
+    if not ta or not tb:
+        return False
+    short, long_ = sorted((ta, tb), key=len)
+    return len(short) >= 4 and short in long_
 
 
 def n_han(s):
@@ -198,6 +223,12 @@ SANGUO = '三国/诗/poet.sanguo.json'
 
 
 def sanguo_dup():
+    """简繁两次转录同录一首：等长、只差异体字与缺字 → 留正文完整的那条。
+
+    原先按「有没有 tags」取舍，结果留下了带 `唐诗三百首` 标签的繁体本，而它把
+    「借問誰家子」后的问号作缺字（`□`）、全篇句末句读一概没有，正文反而更差。
+    现在按正文质量取：`□` 少、标点齐的优先，tags 只作末位参考。
+    """
     data = load(SANGUO)
     groups = {}
     for i, rec in enumerate(data):
@@ -208,18 +239,22 @@ def sanguo_dup():
     for k, idxs in groups.items():
         if len(idxs) < 2:
             continue
-        idxs = sorted(idxs, key=lambda i: (bool(data[i].get('tags')), -i))  # 留带 tags 的那条
-        keep = idxs[-1]
+        def quality(i):
+            text = ''.join(data[i].get('paragraphs') or [])
+            return (text.count('□'), -sum(c in '，。？！' for c in text), text.count('，'))
+        idxs = sorted(idxs, key=lambda i: (quality(i), not data[i].get('tags'), -i))
+        keep = idxs[0]
         keep_body = fuzzy(''.join(data[keep].get('paragraphs') or []))
-        for i in idxs[:-1]:
+        for i in idxs[1:]:
             # 同一首的两种转录：长度相同、只差个别字（凌／陵、□ 与「，」这类）即算重出
-            same, diff = same_poem(keep_body, fuzzy(''.join(data[i].get('paragraphs') or [])))
+            same, diff = same_poem(keep_body, fuzzy(''.join(data[i].get('paragraphs') or [])), max_shift=2)
             if not same:
                 continue
             drop.add(i)
             evidence.append(dict(path=SANGUO, idx=i, keep=f'{SANGUO}#{keep}', kind='sanguo_dup',
                                  title=title(data[i]),
-                                 note=f'简繁两种转录同录一首（{diff} 字之差：异体与缺字），留带 tags 的一条'))
+                                 note=f'简繁两种转录同录一首（{diff} 字之差：异体与缺字），'
+                                      f'留正文完整、标点齐的一条'))
     return data, drop, evidence
 
 
@@ -309,6 +344,93 @@ def qingci_attr():
     return data, drop, evidence
 
 
+# ---------------------------------------------------------------- songci_diff
+
+def songci_diff(work):
+    """两批录文里等长、只差个别字的那几组：逐处判「哪一份抄错了」。
+
+    宋词的两批（`ci.song.22000.json` 与其余各卷）是同一批词的两个来源，不是「一首词存两处」，
+    所以判据要反过来：拿旧批那一份去识典古籍检索，看古籍里有没有「与旧批等长、只差这一处」
+    的读法 —— 有，两读都是异文；没有，也判不了，因为新批的读法同样可能传世。
+
+    这里只做核对并记账，不改正文：505 组里一处也找不到独立证据（2026-10-28 查过 932 条检索），
+    结论是两存，交给 `宋词全库对勘`。
+    """
+    import collections
+    import difflib
+    import glob
+
+    try:
+        from opencc import OpenCC
+        s2t = OpenCC('s2t')
+    except ImportError:
+        sys.exit('需要 OpenCC：pip install opencc-python-reimplemented')
+    res_path = os.path.join(work, 'results.jsonl')
+    if not os.path.exists(res_path):
+        sys.exit(f'{res_path} 不存在：先用 scripts/shidian/search.mjs 检索')
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import shidian as sd
+
+    res = {}
+    for line in open(res_path, encoding='utf-8'):
+        r = json.loads(line)
+        if sd.RESULT_MARKER in (r.get('text') or '') and not r.get('err'):
+            res[r['q']] = r['text']
+    by_len = collections.defaultdict(list)
+    for text in res.values():
+        for raw, norm, book, src in sd.snippets(text):
+            by_len[len(norm)].append((norm, book, src))
+    print(f'检索 {len(res)} 条，整理出 {sum(map(len, by_len.values()))} 条等长片段', file=sys.stderr)
+
+    rels = [f'宋/宋词/{f}' for f in sorted(os.listdir(os.path.join(ROOT, '宋/宋词')))
+            if re.fullmatch(r'ci\.song\..*\.json', f)]
+    data = {rel: load(rel) for rel in rels}
+    new = data[SONGCI_NEW]
+    index = {}
+    for rel in rels:
+        if rel == SONGCI_NEW:
+            continue
+        for i, rec in enumerate(data[rel]):
+            b = body(rec)
+            if len(b) >= 16:
+                index.setdefault(b[:16], []).append((rel, i))
+
+    rows, stat = [], collections.Counter()
+    for j, rec in enumerate(new):
+        b = body(rec)
+        cands = index.get(b[:16], []) if len(b) >= 16 else []
+        if not cands:
+            continue
+        rel, i = cands[0]
+        old = body(data[rel][i])
+        stat['pairs'] += 1
+        if len(old) != len(b):
+            stat['unequal'] += 1
+            continue
+        stat['equal'] += 1
+        diffs = [k for k in range(len(old)) if old[k] != b[k]]
+        if not diffs:
+            stat['identical'] += 1
+            continue
+        ev = {}
+        for norm, book, src in by_len[len(old)]:
+            d = [k for k in range(len(old)) if old[k] != norm[k]]
+            if len(d) == 1 and d[0] in diffs:
+                ev.setdefault(d[0], collections.Counter())[f'{old[d[0]]}→{norm[d[0]]}'] += 1
+        if ev:
+            stat['with_evidence'] += 1
+        rows.append(dict(new_idx=j, author=author(rec), rhythmic=title(rec),
+                         old=f'{rel}#{i}', diffs=''.join(f'{old[k]}→{b[k]}@' for k in diffs),
+                         evidence='; '.join(f'{old[p]}→{c}' for p, cnt in ev.items() for c in cnt)))
+    with open(os.path.join(ROOT, 'docs/宋词两批异文.tsv'), 'w', encoding='utf-8', newline='') as fp:
+        w = csv.DictWriter(fp, delimiter='\t', lineterminator='\n',
+                           fieldnames=['new_idx', 'author', 'rhythmic', 'old', 'diffs', 'evidence'])
+        w.writeheader()
+        w.writerows(rows)
+    print(json.dumps(dict(stat), ensure_ascii=False))
+    print(f'明细写入 docs/宋词两批异文.tsv（{len(rows)} 行；evidence 空 = 古籍里找不到只差这一处的读法）')
+
+
 # ---------------------------------------------------------------- main
 
 def apply_drop(data, drop):
@@ -322,9 +444,17 @@ def apply_drop(data, drop):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument('action', nargs='?', default='dedupe', choices=['dedupe', 'songci-diff'])
+    ap.add_argument('--work', help='songci-diff：检索工作目录（含 results.jsonl）')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--out', default='docs/重复清理.tsv')
     args = ap.parse_args()
+
+    if args.action == 'songci-diff':
+        if not args.work:
+            ap.error('songci-diff 需要 --work')
+        songci_diff(os.path.expanduser(args.work))
+        return
 
     evidence = []
 
@@ -336,13 +466,8 @@ def main():
         if idxs:
             songci[rel] = [r for i, r in enumerate(recs) if i not in idxs]
 
-    yuan, ydrop, patches, ev = yuanqu_cover()
+    yuan, ydrop, ev = yuanqu_cover()
     evidence += ev
-    for j, tags in patches.items():
-        have = yuan[j].setdefault('tags', [])
-        for t in tags:
-            if t not in have:
-                have.append(t)
     yuan = [r for i, r in enumerate(yuan) if i not in ydrop]
 
     sanguo, sdrop, ev = sanguo_dup()
@@ -369,8 +494,8 @@ def main():
     print('== 重复清理预演')
     for kind, items in sorted(by_kind.items()):
         print(f'   {kind}: {len(items)}')
-    total_drop = sum(len(v) for k, v in by_kind.items() if not k.endswith('open') and k != 'yuanqu_cover_tags')
-    print(f'   共删记录 {total_drop} 条，挂 tags {len(by_kind.get("yuanqu_cover_tags", []))} 条，待人工判 {len(by_kind.get("kongzi_subset_open", []))} 条')
+    total_drop = sum(len(v) for k, v in by_kind.items() if not k.endswith('open'))
+    print(f'   共删记录 {total_drop} 条，待人工判 {sum(len(v) for k, v in by_kind.items() if k.endswith("open"))} 条')
 
     if not args.apply:
         for kind in ('songci_merge', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr'):
@@ -401,11 +526,6 @@ def main():
     fixes_by_file = {}
     for e in evidence:
         if e['kind'].endswith('open'):
-            continue
-        if e['kind'] == 'yuanqu_cover_tags':
-            fixes_by_file.setdefault(e['path'], []).append(dict(
-                original=e['title'][:24], corrected=None,
-                note=f"[yuanqu_cover] 同正文的残句（另见 {e['keep']}），两条都留，长句挂 tags 互指"))
             continue
         fixes_by_file.setdefault(e['path'], []).append(dict(
             original=f"# {e['idx']} {e['title'][:24]}", corrected=None,
