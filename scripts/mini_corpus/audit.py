@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""语料重复审计：拿上游 poem-wechat 的集子逐条查本库是否已有。
+"""语料重复审计：拿补充语料的集子逐条查本库是否已有。
 
 判定分三层，逐层放宽，每层都记进 audit.tsv，方便人工复核：
 
@@ -8,15 +8,15 @@
   author  作者在本库、标题对不上     → 只是同作者，不算重复
 
 用法：
-  python3 scripts/wechat_corpus/audit.py --upstream /path/to/corpus/data \
-      --repo . --out docs/wechat_corpus_audit.tsv
+  python3 scripts/mini_corpus/audit.py --corpus /path/to/corpus/data \
+      --repo . --out docs/mini_corpus_audit.tsv
 """
 import argparse, collections, json, os, re, sys, unicodedata
 
 PUNCT = re.compile(r'[\s\W_]+', re.U)
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs',
              '.git', '.claude', '.github', '.cnb', 'reference'}
-# 上游集子 -> 本库同体裁的数据；只在这个范围内判重，跨体裁不算
+# 集子 -> 本库同体裁的数据；只在这个范围内判重，跨体裁不算
 SAME_GENRE = {
     '唐诗': ('唐/诗/全唐诗/poet.tang.',),
     '古诗非唐': ('宋/诗/全宋诗/poet.song.',),
@@ -32,7 +32,7 @@ def norm(s, cc):
 
 
 def load_upstream(corpus_dir):
-    """在 node 里跑上游的 JS，把 11 部带正文的集子摊平成 json。"""
+    """在 node 里跑补充语料的 JS，把 11 部带正文的集子摊平成 json。"""
     script = r'''
 const fs=require('fs'),path=require('path');
 const D=process.argv[1]; const win={};
@@ -97,7 +97,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--upstream', required=True)
     ap.add_argument('--repo', default='.')
-    ap.add_argument('--out', default='docs/wechat_corpus_audit.tsv')
+    ap.add_argument('--out', default='docs/mini_corpus_audit.tsv')
     a = ap.parse_args()
     try:
         from opencc import OpenCC
@@ -117,7 +117,7 @@ def main():
             by_pre[n[:12]].append(r)
         by_auth[cc.convert(r['author'])].add(cc.convert(r['title']))
 
-    rows = [('集子', '上游题', '上游作者', '判定', '本库文件', '本库题', '本库作者')]
+    rows = [('集子', '选本题', '选本作者', '判定', '本库文件', '本库题', '本库作者')]
     stat = collections.defaultdict(collections.Counter)
     for book, items in up.items():
         scope = SAME_GENRE.get(book)
