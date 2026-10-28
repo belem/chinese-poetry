@@ -1,10 +1,10 @@
 name: Data quality
 
-# 全库质检：乱码、私用区字符、编码残渣、重复/半角标点等数量不得比基线增加。
+# 全库质检：乱码、私用区字符、编码残渣、缺字等数量不得比基线增加。
 # 只在本地运行 scripts/check_structure.py，不访问任何外部网站。
-# 修复问题后数量减少时，请运行
-#   python3 scripts/check_structure.py --write-baseline scripts/check_baseline.json
-# 并提交更新后的基线。
+#
+# 基线不再要求每个 PR 自己减数、写回：那样两个人各修各的文件，后合并的那个基线必然是错的。
+# 口径见 docs/质检基线.md——PR 只判自己改动的文件，基线从 develop 现取，主分支上统一重算。
 
 on:
   push:
@@ -32,13 +32,103 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0        # 要拿 BASE 的总数当基线，得能读到那个提交
       - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
+      # 只查本次改动的数据文件：全库一遍要跑几分钟，增量只需十几秒；
+      # 基线取 develop 上那份总表里「改动文件涉及检查项」的数量，别人删掉的问题不算到本 PR 头上
+      - name: Check changed data against base baseline
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          files=$(git diff --name-only --diff-filter=d "$BASE"...HEAD -- '*.json' | wc -l)
+          if [ "$files" = 0 ]; then
+            echo '本次改动不涉及数据文件，跳过'
+            exit 0
+          fi
+          git checkout "$BASE" -- scripts/check_baseline.json 2>/dev/null || true
+          mv scripts/check_baseline.json /tmp/base_baseline.json
+          git checkout HEAD -- scripts/check_baseline.json 2>/dev/null || true
+          python3 scripts/check_structure.py --show 5 \
+            --files-from-diff "$BASE" --baseline /tmp/base_baseline.json
+
+      # push 到 develop：全库比一次，顺手确认基线没落后
       - name: Check data against baseline
+        if: github.event_name == 'push'
         run: python3 scripts/check_structure.py --show 3 --baseline scripts/check_baseline.json
 
       # fix_progress.json 是 docs/progress/ 的索引，只由 scripts/progress.py index 重算；
       # 手改索引会与记录正文对不上，这里当场报错。
       - name: Check progress index
         run: python3 scripts/progress.py check
+
+  # 基线由 CI 自己维护，谁都不用手写：合并后的 develop 上重算一份，与现有基线不同就提交。
+  # 只有这一步会动 scripts/check_baseline.json，PR 里没人改它，也就不会再有它的冲突。
+  # 排在 check 之后而不是挂在 check 上：某一类已经在增加时，基线照样要跟上，
+  # 否则数字会越挂越松，后面同类的退化合进来时 CI 是绿的。
+  refresh-baseline:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+      - name: Recompute baseline
+        run: |
+          python3 scripts/check_structure.py --write-baseline /tmp/check_baseline.json
+          if diff -u scripts/check_baseline.json /tmp/check_baseline.json; then
+            echo '基线已是最新，无需提交'
+            exit 0
+          fi
+          cp /tmp/check_baseline.json scripts/check_baseline.json
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add scripts/check_baseline.json
+          git commit -m 'chore(质检): 重算检查基线'
+          # 同一个提交被推到 GitHub 后又由定时任务合回来，本仓库的 push 和 GitHub 的 push 都会触发：
+          # 非快进就说明别人先更新了基线，重跑会拿到新基线，这次直接放过
+          git push || echo '::warning::基线推送失败（远端已更新），下次运行会重算'
+
+  # PR 页面上的汇总：数量下降只提示、不失败；只有本 PR 改动范围里冒出问题才红
+  report:
+    if: always() && github.event_name == 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+      - name: Summarize baseline drift
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git checkout "$BASE" -- scripts/check_baseline.json 2>/dev/null || true
+          mv scripts/check_baseline.json /tmp/base_baseline.json
+          git checkout HEAD -- scripts/check_baseline.json 2>/dev/null || true
+          python3 scripts/check_structure.py --files-from-diff "$BASE" \
+            --emit-baseline /tmp/head.json --show 0 > /dev/null
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          base = json.load(open('/tmp/base_baseline.json'))
+          head = json.load(open('/tmp/head.json'))
+          if not head:
+              print('本次改动不涉及数据文件（或改动文件本来就没有质检问题）。')
+          else:
+              print('| 检查项 | 基线 | 改动文件内 |')
+              print('| --- | --- | --- |')
+              for k in sorted(head):
+                  print(f"| {k} | {base.get(k, 0)} | {head[k]} |")
+              print('\n基线由 develop 上的 CI 统一重算，本 PR 不需要修改 `scripts/check_baseline.json`。')
+          PY

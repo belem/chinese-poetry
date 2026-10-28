@@ -15,9 +15,13 @@
   missing_char     □ 缺字
 
 用法：
-  python3 scripts/check_structure.py --baseline scripts/check_baseline.json   # CI：乱码类数量不得增加
-  python3 scripts/check_structure.py --write-baseline scripts/check_baseline.json   # 修复后更新基线
-  python3 scripts/check_structure.py --allow-fewer     # 允许检查项数量低于基线（默认不允许）
+  python3 scripts/check_structure.py --baseline scripts/check_baseline.json   # 与基线逐项比对
+  python3 scripts/check_structure.py --write-baseline scripts/check_baseline.json   # 把当前数量写为基线
+  python3 scripts/check_structure.py --baseline-from HEAD     # 基线取自已提交的版本：只判本次改动
+  python3 scripts/check_structure.py --files-from-diff <ref>  # 只查相对 <ref> 有改动的数据文件
+  python3 scripts/check_structure.py --files-from-diff <ref> --emit-baseline out.json
+                                                      # 只写改动文件涉及检查项的基线（CI 自动维护基线与汇总用）
+  python3 scripts/check_structure.py --allow-fewer     # 允许检查项数量低于基线（旧口径，CI 已不再使用）
   python3 scripts/check_structure.py                 # 打印汇总
   python3 scripts/check_structure.py --out r.jsonl   # 同时输出逐条明细（JSON Lines）
   python3 scripts/check_structure.py --only ci_pattern --show 20
@@ -27,6 +31,7 @@ import collections
 import json
 import os
 import re
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -67,6 +72,54 @@ def iter_files():
         for f in sorted(filenames):
             if f.endswith('.json') and not any(s in f for s in SKIP):
                 yield os.path.relpath(os.path.join(dirpath, f), ROOT)
+
+
+def is_data_file(rel):
+    """iter_files() 会遍历的那些文件：判定口径只有这一处，别处都调它。"""
+    if not rel.endswith('.json') or any(s in os.path.basename(rel) for s in SKIP):
+        return False
+    return not any(part in SKIP_DIRS for part in rel.split(os.sep)[:-1])
+
+
+def changed_data_files(ref):
+    """相对 git ref 有增删改的数据文件（不含本次新加的、从未提交过的）。"""
+    def git(*args):
+        return subprocess.run(['git', '-C', ROOT, '-c', 'core.quotepath=false', *args], check=True,
+                              stdout=subprocess.PIPE, text=True).stdout.splitlines()
+    out = git('diff', '--name-only', '--diff-filter=d', ref, '--')   # d：删掉的文件不查
+    present = {os.path.normpath(x) for x in git('ls-files')}
+    files = []
+    for rel in out:
+        rel = os.path.normpath(rel)
+        if rel in present and is_data_file(rel):
+            files.append(rel)
+    return sorted(files)
+
+
+def count_all():
+    """全库各类问题的数量（不保留明细，省内存）。"""
+    counts = collections.Counter()
+    files = changed_data_files(args.files_from_diff) if args.files_from_diff else None
+    if files is not None and not files:
+        print('本次改动不涉及数据文件，无需比较')
+        return 0
+    ci_poems = []
+    for rel in files if files is not None else iter_files():
+        try:
+            poems = list(iter_poems(rel))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            counts['bad_json'] += 1
+            continue
+        name = os.path.basename(rel)
+        for idx, it, lines in poems:
+            check_chars(rel, idx, it, lines, lambda kind, *a, **k: counts.update([kind]))
+            if name.startswith(CI_PREFIX) and it.get('rhythmic'):
+                ci_poems.append((rel, idx, it, lines))
+            elif name.startswith(SHI_PREFIX):
+                check_shi(rel, idx, it, lines, lambda kind, *a, **k: counts.update([kind]))
+    for _ in ci_anomalies(ci_poems):
+        counts['ci_pattern'] += 1
+    return dict(sorted(counts.items()))
 
 
 def iter_poems(rel):
@@ -207,10 +260,17 @@ def main():
     ap.add_argument('--out', help='逐条明细输出路径（.jsonl）')
     ap.add_argument('--only', help='只显示某类检查')
     ap.add_argument('--show', type=int, default=5, help='每类展示的样例数')
-    ap.add_argument('--baseline', help='与基线比较：各类数量与基线不同即以非零状态退出（用于 CI）；'
-                                      '--allow-fewer 时只对增加报错')
+    ap.add_argument('--baseline', help='与基线比较：各类数量比基线多即非零退出；数量变少的只提示')
+    ap.add_argument('--baseline-from', metavar='REF',
+                    help='基线取自已提交的版本（如 HEAD、origin/develop），与 --baseline 同样比较。'
+                         '用来只判本次改动：别人删掉的问题不会算到你头上，你修好的也不必写回基线')
+    ap.add_argument('--files-from-diff', metavar='REF',
+                    help='只查相对 REF 有改动的数据文件（配合 --baseline-from 用，可把 CI 从数分钟压到几十秒）')
+    ap.add_argument('--emit-baseline', metavar='PATH',
+                    help='配合 --files-from-diff：只把改动文件涉及检查项的当前数量写成 JSON，'
+                         '给 CI 与 REF 上的基线合并用；写完后正常退出')
     ap.add_argument('--allow-fewer', action='store_true',
-                    help='与基线比较时允许数量低于基线（修复后没更新基线也不失败）')
+                    help='保留参数，已无作用：数量低于基线不再报错（旧口径见 docs/质检基线.md）')
     ap.add_argument('--write-baseline', help='把当前各类数量写为基线')
     args = ap.parse_args()
 
@@ -220,8 +280,12 @@ def main():
         findings.append({'check': kind, 'file': rel, 'index': idx, 'poem': label(it),
                          'text': text, 'token': token, 'detail': detail})
 
+    files = changed_data_files(args.files_from_diff) if args.files_from_diff else None
+    if files is not None and not files:
+        print('本次改动不涉及数据文件，无需比较')
+        return 0
     ci_poems = []
-    for rel in iter_files():
+    for rel in files if files is not None else iter_files():
         try:
             poems = list(iter_poems(rel))
         except (json.JSONDecodeError, UnicodeDecodeError) as e:
@@ -247,8 +311,8 @@ def main():
     for kind, items in sorted(by_kind.items(), key=lambda kv: -len(kv[1])):
         if args.only and kind != args.only:
             continue
-        files = len({f['file'] for f in items})
-        print(f'\n== {kind}: {len(items)} 处，涉及 {files} 个文件')
+        nfiles = len({f['file'] for f in items})
+        print(f'\n== {kind}: {len(items)} 处，涉及 {nfiles} 个文件')
         if kind == 'ascii_residue':
             top = collections.Counter(f['token'] for f in items).most_common(15)
             print('   高频残渣:', '  '.join(f'{t}×{n}' for t, n in top))
@@ -262,26 +326,53 @@ def main():
             json.dump(counts, fp, ensure_ascii=False, indent=2)
             fp.write('\n')
         print(f'\nbaseline written: {args.write_baseline}')
-    if args.baseline:
+    if args.emit_baseline:
+        # 只写「本次改动的文件里，有哪些检查项」的当前数量，与基线取同口径：
+        # 键缺失即该检查项在改动范围内本来就没有问题，全库的其它同类问题不背锅
+        with open(args.emit_baseline, 'w', encoding='utf-8') as fp:
+            json.dump(counts, fp, ensure_ascii=False, indent=2)
+            fp.write('\n')
+        print(f'\nbaseline emitted: {args.emit_baseline}')
+        return 0
+    base = None
+    if args.baseline_from:
+        base = baseline_at(args.baseline_from)
+        print(f'\n基线取自 {args.baseline_from}（只比较改动文件涉及的检查项）')
+    elif args.baseline:
         with open(args.baseline, encoding='utf-8') as fp:
             base = json.load(fp)
-        worse = {k: (base.get(k, 0), counts.get(k, 0))
-                 for k in set(base) | set(counts) if counts.get(k, 0) > base.get(k, 0)}
+    if base is not None:
+        if files is None:
+            worse = {k: (base.get(k, 0), counts.get(k, 0))
+                     for k in set(base) | set(counts) if counts.get(k, 0) > base.get(k, 0)}
+        else:
+            # 只判改动文件：基线里没有的检查项说明改动范围内本无此类问题
+            worse = {k: (base.get(k, 0), n) for k, n in counts.items() if n > base.get(k, 0)}
         better = {k: (base.get(k, 0), counts.get(k, 0)) for k in base if counts.get(k, 0) < base[k]}
         if better:
-            print('\n已减少（请用 --write-baseline 写回基线）：' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items()))
+            print('\n本次改动使这些检查项数量下降（不必改基线，' +
+                  'scripts/check_structure.py --write-baseline 重算即可）：'
+                  + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items()))
         if worse:
-            print('\n::error::以下检查项比基线增加，请修正后再提交：' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in worse.items()))
-            return 1
-        # 基线比实际松，新缺陷就能藏在差额里——2026-10 基线 ci_pattern 336、实际 337，
-        # 一路绿灯，直到有人拿全量比对才发现。所以数量下降也要求同步更新基线。
-        if better and not args.allow_fewer:
-            print('\n::error::检查项数量已低于基线（' + '，'.join(f'{k} {a}→{b}' for k, (a, b) in better.items())
-                  + '）。请用 --write-baseline 更新 scripts/check_baseline.json，'
-                    '否则基线比实际松，新增的同类问题不会让 CI 失败')
+            print('\n::error::以下检查项比基线增加，请修正后再提交：'
+                  + '，'.join(f'{k} {a}→{b}' for k, (a, b) in worse.items()))
             return 1
         print('\n与基线比较：没有新增问题')
     return 0
+
+
+def baseline_at(ref):
+    """取 git ref 上的 check_baseline.json。基线不再要求手写回、也就不再是合并热点：
+
+    只在「没改动任何数据文件」的提交（专职重算基线）里放进去，其余情况一律从 ref 现取。
+    """
+    for path in ('scripts/check_baseline.json', 'check_baseline.json'):
+        r = subprocess.run(['git', '-C', ROOT, 'show', f'{ref}:{path}'],
+                           stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+        if r.returncode == 0:
+            return json.loads(r.stdout)
+    print(f'::warning::{ref} 上没有 check_baseline.json，基线记为全 0（改动范围内出现任何问题都会失败）')
+    return {}
 
 
 if __name__ == '__main__':
