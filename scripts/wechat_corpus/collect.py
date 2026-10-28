@@ -86,7 +86,7 @@ def build_index(cc):
                 if not isinstance(rec, dict):
                     continue
                 flat, stack = [], []
-                ps = rec.get('paragraphs') or rec.get('para') or rec.get('content')
+                ps = rec.get('paragraphs')
                 if isinstance(ps, list):
                     stack = list(ps)
                 elif ps:

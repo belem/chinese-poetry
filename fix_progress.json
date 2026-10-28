@@ -4,8 +4,8 @@
   "stats": {
     "total_files": 551,
     "reviewed": 872,
-    "clean": 476,
-    "fixed": 12,
+    "clean": 464,
+    "fixed": 24,
     "needs_review": 180,
     "out_of_scope": 204,
     "in_scope_files": 661
@@ -336,7 +336,14 @@
     "先秦/楚辞/chuci.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "先秦/论语/lunyu.json": {
       "date": "2026-10-06",
@@ -346,7 +353,14 @@
     "先秦/诗经/shijing.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "南北朝/词/ci.nanbeichao.json": {
       "date": "2026-10-28",
@@ -3988,7 +4002,14 @@
     "宋/诗/千家诗/qianjiashi.json": {
       "date": "2026-10-07",
       "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "当/ci.dang.json": {
       "date": "2026-10-28",
@@ -4005,7 +4026,19 @@
     "明/幽梦影/youmengying.json": {
       "date": "2026-10-06",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        },
+        {
+          "original": "(缺 author)",
+          "corrected": "「张潮」",
+          "note": "按书补作者：219 条原来只在目录名里有作者，记录里没有 author，读了取不到；正文未改"
+        }
+      ]
     },
     "明/词/ci.ming.json": {
       "date": "2026-10-27",
@@ -4144,17 +4177,38 @@
     "汇编/蒙学/baijiaxing.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/dizigui.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/qianziwen.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/sanzijing-new.json": {
       "date": "2026-06-27",
@@ -4169,22 +4223,50 @@
     "汇编/蒙学/shenglvqimeng.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/wenzimengqiu.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/youxueqionglin.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/zengguangxianwen.json": {
       "date": "2026-06-27",
       "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "status": "fixed",
+      "fixes": [
+        {
+          "original": "content",
+          "corrected": "paragraphs",
+          "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+        }
+      ]
     },
     "汇编/蒙学/zhuzijiaxun.json": {
       "date": "2026-06-27",
@@ -4908,7 +4990,7 @@
     "清/诗/纳兰诗/纳兰诗.json": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
-      "status": "clean",
+      "status": "fixed",
       "fixes": [
         {
           "original": "纳兰性德/纳兰性德诗集.json（含 39 首诗）",

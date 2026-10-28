@@ -90,11 +90,14 @@
   `宋/宋词/` 是一个 dataset（`songci`），明诗、清诗各一个（`gushi-yuan-ming`、`gushi-yuan-qing`）。
   纳兰性德一部别集按体裁拆成两个：`nalanxingde`（词）、`nalanxingde-shi`（诗），key 与 id 都留着，旧入口取到的仍是词。
 - 目录与文件的移动只改路径，不动正文；`fix_progress.json` 的键同步改成新路径。
-- **字段名取短名，不加长**：正文的段落字段是 `paragraphs`，另有一批按章分段的书用 `content`；
-  题名分 `title`（诗、文、赋）与 `rhythmic`（词、曲的词牌）两条，都在用的记录两条都写。
-  这几个名字已经落在 35 万条记录里，改长一个字符就多几百 KB，所以不再引入更长的同义名
-  （`lines`、`body`、`text` 之类）——要加的是语义，不是字数。`para` 是拼写错误而非简写，已在 39 条上一并改掉，
-  简写本身不留。
+- **字段名照上游契约，不另立简称**：`title` / `author` / `paragraphs` 是上游 chinese-poetry 的公开契约，
+  35 万条记录长在这三个名字上。正文段落一律叫 `paragraphs`——不为了省字母缩成 `p`、`pgs` 一类，
+  也不新增 `lines`、`body`、`text` 这些同义名；缺字段就补真字段（作者补 `author`、题名补 `title`），
+  不另起一个短名字替代。理由是契约只有一份：留一个简称，下游就得多写一次 `or` 兼容，
+  省下的字母（`paragraphs` → `p` 全库约 −3 MB，占比 1.9%）不值这套特判。
+  上一轮把 `content`（楚辞、诗经、幽梦影、蒙学）与拼错的 `para`（纳兰诗 39 条）都并进了 `paragraphs`，
+  `loader/datas.json` 的 `tag` 现全是 `paragraphs`，全库不再有第二个正文段落键。
+  词、曲的题名走 `rhythmic`（词牌/曲牌），这是上游原有的另一条契约，不是新增简称，两条都在用的记录两条都写。
 
 ## 本 Fork 的数据修正
 
