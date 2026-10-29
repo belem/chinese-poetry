@@ -1,0 +1,7 @@
+{
+  "path": "明/小说/三国演义/sanguoyanyi.json",
+  "note": "嘉靖壬午本（CADAL02111749）120 则，HTML 直出。本批只做了结构级质检，正文未逐字对勘。检查项：条数与回次（三国 120 则、水浒 100 回、西游 100 回、红楼 79 回，回次连续无缺无重）、id 唯一、题名格式、`scripts/check_structure.py` 各项（西里尔/希腊、假名注音、PUA、U+FFFD、制表符、ASCII 残留）本文件 0 命中、本文件内部无重复回。ASCII 残留只有 `id` 字段，Python json 的 `\\u` 转义，不是正文。 正文未对勘：底本不分回、只分则，且无小标题的页并入上一则（见 docs/新增名著.md），逐则对勘要另找可比的排印本，本批没做。 check_structure 未报缺字（无 □）。待办：拿一部完整的 240 则排印本核对并则情况。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
+}
