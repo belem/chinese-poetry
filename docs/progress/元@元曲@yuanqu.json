@@ -35,9 +35,134 @@
       "original": "# 11175 贯云石《越调·凭栏人·题情》",
       "corrected": "删除",
       "note": "与 #11086 白朴《双调·得胜乐·夏》重复录入：识典古籍《阳春白雪前集》卷五、《天籁集》（清康熙刻本）两处均作白朴，贯云石名下《朝野新声太平乐府》此题作五首，此二首不在其中"
+    },
+    {
+      "original": "k3f1hk 黄钟・侍香金童",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11388 重出：同一支曲两录，留正文更全的一条（31 字 vs 255 字）"
+    },
+    {
+      "original": "b340lc 南吕・一枝花赠朱帘秀",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11160 重出：同一支曲两录，留正文更全的一条（53 字 vs 210 字）"
+    },
+    {
+      "original": "b35g20 正宫・鹦鹉曲",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11417 重出：同一支曲两录，留正文更全的一条（27 字 vs 54 字）"
+    },
+    {
+      "original": "lkfh55 般涉调・耍孩儿庄家不识构阑",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11278 重出：同一支曲两录，留正文更全的一条（66 字 vs 471 字）"
+    },
+    {
+      "original": "k67e5c 南吕・一枝花湖上归",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11211 重出：同一支曲两录，留正文更全的一条（48 字 vs 197 字）"
+    },
+    {
+      "original": "ghleba 正宫・端正好上高监司",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11294 重出：同一支曲两录，留正文更全的一条（27 字 vs 981 字）"
+    },
+    {
+      "original": "j00eaj 阳春曲・知几",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#11081 重出：同一支曲两录，留正文更全的一条（29 字 vs 58 字）"
+    },
+    {
+      "original": "jlii3a 双调·大德歌·春",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#55 重出：同一支曲两录，留正文更全的一条（38 字 vs 165 字）"
+    },
+    {
+      "original": "kl5k18 中吕·普天乐·咏世",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#7146 重出：同一支曲两录，留正文更全的一条（66 字 vs 427 字）"
+    },
+    {
+      "original": "ibkiag 商调·梧叶儿·客中闻雨",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#1470 重出：同一支曲两录，留正文更全的一条（34 字 vs 77 字）"
+    },
+    {
+      "original": "ikf6d7 双调·寿阳曲·答卢疏斋",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#8000 重出：同一支曲两录，留正文更全的一条（30 字 vs 70 字）"
+    },
+    {
+      "original": "85g3d6 双调·清江引·秋居",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#4894 重出：同一支曲两录，留正文更全的一条（29 字 vs 60 字）"
+    },
+    {
+      "original": "4i4g3a 中吕·满庭芳",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#4461 重出：同一支曲两录，留正文更全的一条（48 字 vs 95 字）"
+    },
+    {
+      "original": "ga0j32 阳春曲·皇亭晚泊",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#9938 重出：同一支曲两录，留正文更全的一条（29 字 vs 185 字）"
+    },
+    {
+      "original": "hg41gh 越调·小桃红",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#2134 重出：同一支曲两录，留正文更全的一条（42 字 vs 216 字）"
+    },
+    {
+      "original": "gdh712 黄钟·人月圆·甘露怀古",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#9932 重出：同一支曲两录，留正文更全的一条（48 字 vs 98 字）"
+    },
+    {
+      "original": "526c3g 中吕·红绣鞋·阅世",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#5729 重出：同一支曲两录，留正文更全的一条（42 字 vs 86 字）"
+    },
+    {
+      "original": "ec403c 越调·柳营曲·金陵故址",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#287 重出：同一支曲两录，留正文更全的一条（56 字 vs 112 字）"
+    },
+    {
+      "original": "fe1dhe 双调·殿前欢",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#6228 重出：同一支曲两录，留正文更全的一条（91 字 vs 227 字）"
+    },
+    {
+      "original": "8i9974 双调·沉醉东风·隐居",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#4537 重出：同一支曲两录，留正文更全的一条（45 字 vs 177 字）"
+    },
+    {
+      "original": "f4ke1g 中吕·普天乐·春日多雨",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#5342 重出：同一支曲两录，留正文更全的一条（71 字 vs 610 字）"
+    },
+    {
+      "original": "671cel 中吕·朝天子·秋夜客怀",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#9756 重出：同一支曲两录，留正文更全的一条（44 字 vs 90 字）"
+    },
+    {
+      "original": "6cb04k 湘妃怨·和卢疏斋西湖",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#7459 重出：同一支曲两录，留正文更全的一条（53 字 vs 207 字）"
+    },
+    {
+      "original": "4a5dda 人月圆·春日次韵",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#5991 重出：同一支曲两录，留正文更全的一条（48 字 vs 154 字）"
+    },
+    {
+      "original": "645jfl 塞鸿秋·浔阳即景",
+      "corrected": "删除",
+      "note": "[yuanqu_cover] 正文与 元/元曲/yuanqu.json#9755 重出：同一支曲两录，留正文更全的一条（45 字 vs 90 字）"
     }
   ],
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char 2026-10-28 重复清理的 24 条「短句是长句开头」撤回：前缀重合不等于重出（雅词与散曲同用《折桂令》《人月圆》的起句、同题组曲第一支单列一条），已全部恢复并改正判据，见 docs/重复清理.tsv。",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char 2026-10-28 重复清理的 24 条「短句是长句开头」撤回：前缀重合不等于重出（雅词与散曲同用《折桂令》《人月圆》的起句、同题组曲第一支单列一条），已全部恢复并改正判据，见 docs/重复清理.tsv。 2026-10-29 重复清理：25 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-29",
   "reviewer": "codebuddy",
   "status": "fixed"
