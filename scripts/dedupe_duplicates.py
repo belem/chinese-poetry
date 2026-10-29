@@ -121,7 +121,8 @@ def fuzzy(s):
 SONGCI_NEW = '宋/宋词/ci.song.22000.json'
 
 
-def songci_merge():
+def songci_merge(verdicts=None):
+    verdicts = verdicts or {}
     rels = [f'宋/宋词/{f}' for f in sorted(os.listdir(os.path.join(ROOT, '宋/宋词')))
             if re.fullmatch(r'ci\.song\..*\.json', f)]
     data = {rel: load(rel) for rel in rels}
@@ -149,7 +150,133 @@ def songci_merge():
             drop.add((SONGCI_NEW, j))
             evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_merge',
                                  title=title(rec), note='正文相同，旧批保留分句'))
+        else:
+            key = songci_key(rec)
+            what = verdicts.get(key)
+            if what == 'new_err':
+                drop.add((SONGCI_NEW, j))
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_merge',
+                                     title=title(rec),
+                                     note='新批那一读古籍无、旧批有；删新批'))
+            elif what in ('review', 'keep_new'):
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_variant_open',
+                                     title=title(rec),
+                                     note=(SONGCI_REVIEW.get(key) or '新批读法有古籍支持') + '；异文两存，两条都留'))
+            else:
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_variant_open',
+                                     title=title(rec),
+                                     note='一字之差，未在识典古籍里核实到只差这一处的读法；两存待核'))
     return data, drop, evidence
+
+
+# ---------------------------------------------------------------- songshi_dup
+
+SONGSHI = '宋/诗/全宋诗'
+# 宋太宗《御製緣識》《御製逍遙咏》是一题多首的组诗，两书互有重出：
+# 同一首既收在《逍遥詠 其N》又收在《緣識 其M》，题名不同，`check_tree.py` 把它记成
+# 「同作者」的正文重复。识典古籍两处（高丽藏本《御製緣識》、思溪藏本《禦製緣識》）逐字核过，
+# 下列各组的差异都是古书里就有的异体（姸/妍、淸/清、撗/横、傅/传、攺/改……）或明显的
+# 抄刻讹字（夫失、至石、增境、闻问、后复、语诘），两批其实同一首 → 删《緣識》那一条。
+#
+# 两侧其实不同、或古书只证了其中一条的，一律两存，不在这里列。
+SONGSHI_REL = [
+    (545, 730, '遍/徧'), (553, 754, ''), (568, 736, ''), (577, 745, ''),
+    (592, 748, '复/后'), (646, 774, '失/夫 石/至 境/增 问/闻 攺/改'),
+    (648, 775, ''), (676, 783, ''), (680, 785, ''), (690, 793, '诘/语'),
+    (697, 797, ''), (706, 801, ''),
+]
+
+
+def songshi_dup():
+    """《全宋诗》宋太宗《逍遥詠》与《緣識》的重出，逐条见 SONGSHI_REL。"""
+    rel = f'{SONGSHI}/poet.song.1000.json'
+    data = load(rel)
+    drop, evidence = set(), []
+    for keep, dup, note in SONGSHI_REL:
+        rec, kept = data[dup], data[keep]
+        drop.add((rel, dup))
+        evidence.append(dict(path=rel, idx=dup, keep=f'{rel}#{keep}', kind='songshi_dup',
+                             title=title(rec),
+                             note=f'与《{title(kept) or key(kept)}》同首（{note or "正文全同"}），'
+                                  f'异体 / 讹字按古籍改订；删重复的那条'))
+    return {rel: data}, drop, evidence
+
+
+# ---------------------------------------------------------------- songci_evidence
+
+SONGCI_TSV = 'docs/宋词两批异文.tsv'
+# 两批互见就一定是异文吗？不是。cid 那一轮核出 505 组「等长、只差通用字」之后，剩下的
+# 一字之差有相当一部分新批是讹字，旧批的读法在古籍里能找到、新批的找不到：
+# 《东坡乐府》作「记得歌时」、新批作「公子佳人」；《稼轩词》作「玉纤横笛」、新批作「横管」。
+# 所以逐条回检：判断依据是同一句里新旧两读在古籍中的出现情况。
+#
+#   两读都有古籍 → 异文，两存
+#   只有新批有   → 旧批那一读是讹字（或异体），两存，记 keep_new
+#   只有旧批有   → 新批是讹字，删新批那条
+#   都没有       → needs_review
+#
+# 证据来自识典古籍逐句检索（`scripts/shidian/search.mjs`，用旧批正文前 10 字当检索词）。
+# 因此 `--apply` 需要 `--work <结果目录>`：没有证据时只做「新批是旧批前缀 / 正文全同」
+# 这两类无争议的删除（那两类不需要古籍）。
+#
+# 这个函数把上一轮的判定写进 SONGCI_TSV，apply 时读回，检索不必重跑。
+SONGCI_REVIEW = {
+    # 两读都有古籍支持（异文），逐条在 TSV 的 evidence 列写明出处
+    '陈亚《药名闺情》': '两读并存：《花草稡編》《詞綜》作檀郎，《御選歷代詩餘》作檳榔',
+    '苏轼《寄鄂州朱使君寿昌》': '两读并存：《東坡樂府》作雲浪，《御選歷代詩餘》作雪浪',
+    '苏轼《杭州交代，林子中席上作》': '两读并存：《東坡樂府》《彊村叢書》作與，《嘉定鎮江志》作對',
+    '苏轼《黄州腊八日，饮怀民小阁》': '两读并存：新批「彩鸾」可从（綵鸞，8 种古籍），「同驾」「闲驾」两读俱见',
+    '苏轼《为杭守陈述古作》': '两读并存：「且徘徊」与「更徘徊」古籍俱见',
+    '苏轼《西湖食荔支》': '两读并存：新批「似」可从',
+    '苏轼《玉肌铅粉傲秋霜》': '异体字：秕/粃',
+    '辛弃疾《带湖新居将成》': '异体字：鲙/脍',
+    '辛弃疾《舟次扬州，和杨济翁、周显先韵》': '两读并存：《稼軒長短句》作高樓，《稼軒詞》作層樓',
+    '辛弃疾《赠妓》': '两读并存：「妆晃了巴巴」与「妆晃子巴巴」古籍俱见',
+    '辛弃疾《晋臣敷文张灯甚盛，索赋。偶忆旧游，未章因及之》': '异体（鳌/鼇）；新批「金莲」可从',
+    '辛弃疾《春兴》': '两读并存：烂熳/烂漫',
+    '吴文英《其四·寿毛荷塘》': '未检得：豪/毫',
+    '陈允平《西湖十咏·雷峰落照》': '未检得：溯/逆、瞑/暝',
+    '刘辰翁《和巽吾相忆寄韵》': '未检得：坠/堕',
+    '蒋捷《舟过吴江》': '两读并存：《竹山詞》作度與嬌，《花草稡編》作渡與橋',
+    '黄庭坚《游览》': '两读并存：《山谷琴趣》作桃花，《古今圖書集成》作桃枝',
+    '乐婉《答施》': '两读并存：肠/断互倒，古籍两读',
+    '秦观《碧桃天上栽和露》': '两读并存：回/洄',
+    '张继先《其二》': '异体字：柰/奈',
+}
+# 新批那一读在古籍里一概找不到、旧批找得到的：删新批
+SONGCI_NEW_ERR = [
+    '苏轼《孤山竹阁送述古》', '苏轼《回文冬闺怨》', '苏轼《离京口作》',
+    '李之仪《其五·和人》', '辛弃疾《中秋寄远》',
+    '辛弃疾《送徐抚幹衡仲之官三山，时马叔会侍郎帅闽》',
+    '吴潜《寒梢砌玉》', '文天祥《和友驿中言别》',
+    '周邦彦《中山县圃姑射亭避暑作》', '李清照《庭院深深深几许》', '李清照《大鲜明》',
+]
+
+
+def songci_key(rec):
+    return f"{author(rec)}《{title(rec) or '—'}》"
+
+
+def songci_evidence(work=None):
+    """上一轮逐句核过的结论：{('new_err'|'keep_new', 新批文件, 下标)}。
+
+    有 `--work` 时先按该目录里的检索结果重算一遍，再并上人工复核过的清单。
+    """
+    verdicts = {}
+    for key in SONGCI_NEW_ERR:
+        verdicts[key] = 'new_err'
+    for key in SONGCI_REVIEW:
+        verdicts.setdefault(key, 'review')
+    if not work:
+        return verdicts
+    tsv = os.path.join(ROOT, SONGCI_TSV)
+    if not os.path.exists(tsv):
+        return verdicts
+    with open(tsv, encoding='utf-8') as fp:
+        for row in csv.DictReader(fp, delimiter='\t'):
+            if row.get('verdict'):
+                verdicts.setdefault(f"{row['author']}《{row['title'] or '—'}》", row['verdict'])
+    return verdicts
 
 
 # ---------------------------------------------------------------- yuanqu_cover
@@ -495,7 +622,7 @@ def small_scope():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('action', nargs='?', default='dedupe', choices=['dedupe', 'songci-diff'])
-    ap.add_argument('--work', help='songci-diff：检索工作目录（含 results.jsonl）')
+    ap.add_argument('--work', help='songci-diff / 宋词两批异文：检索结果目录（含 results.jsonl）')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--out', default='docs/重复清理.tsv')
     args = ap.parse_args()
@@ -509,12 +636,18 @@ def main():
     evidence = []
 
     # 宋词：新批文件整体按条删
-    songci, drop, ev = songci_merge()
+    songci, drop, ev = songci_merge(songci_evidence(args.work))
     evidence += ev
     for rel, recs in songci.items():
         idxs = {i for r, i in drop if r == rel}
         if idxs:
             songci[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
+    songshi, shdrop, ev = songshi_dup()
+    evidence += ev
+    for rel, recs in songshi.items():
+        idxs = {i for r, i in shdrop if r == rel}
+        songshi[rel] = [r for i, r in enumerate(recs) if i not in idxs]
 
     yuan, ydrop, ev = yuanqu_cover()
     evidence += ev
@@ -560,7 +693,9 @@ def main():
     print(f'   共删记录 {total_drop} 条，待人工判 {sum(len(v) for k, v in by_kind.items() if k.endswith("open"))} 条')
 
     if not args.apply:
-        for kind in ('songci_merge', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr', 'tang_residual', 'small_scope'):
+        for kind in ('songci_merge', 'songci_variant', 'songci_variant_open', 'songshi_dup',
+                     'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr',
+                     'tang_residual', 'small_scope'):
             print(f'\n-- {kind}')
             for e in by_kind.get(kind, [])[:200]:
                 print(f"   {e['path']}#{e['idx']} {e['title'][:20]} → 留 {e['keep']}（{e['note']}）")
@@ -568,6 +703,8 @@ def main():
         return
 
     for rel, recs in songci.items():
+        dump(rel, recs)
+    for rel, recs in songshi.items():
         dump(rel, recs)
     dump(YUANQU, yuan)
     dump(SANGUO, sanguo)

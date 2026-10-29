@@ -618,6 +618,90 @@
             "path": "明/小说/陶庵梦忆/taoanzhmyi.json",
             "tag": "paragraphs",
             "comments": "粤雅堂丛书本（識典古籍 CYYT015），八卷 120 篇。《湖心亭看雪》与 汇编/古文观止/古文观止·补.json 相重，按「一件作品只留一份正文」删了古文观止那份，见 docs/名著增补.md"
+        },
+        "rulin-waishi": {
+            "name": "清/儒林外史",
+            "id": 95,
+            "path": "清/小说/儒林外史/rulinwaishi.json",
+            "tag": "paragraphs",
+            "comments": "清吳敬梓撰，五十六回；底本嘉慶八年臥閑草堂刻本（識典古籍 CADAL02111881），回末閒齋老人評語未收"
+        },
+        "jinghuayuan": {
+            "name": "清/镜花缘",
+            "id": 96,
+            "path": "清/小说/镜花缘/jinghuayuan.json",
+            "tag": "paragraphs",
+            "comments": "清李汝珍撰，一百回；底本道光十二年刻本（識典古籍 CADAL02111901）。該電子本卷二第六回以後多頁整頁壓成一頁，缺回 6、12–88，見 docs/名著增補.md"
+        },
+        "yuewei-caotang": {
+            "name": "清/阅微草堂笔记",
+            "id": 97,
+            "path": "清/小说/阅微草堂笔记/yueweicaotangbiji.json",
+            "tag": "paragraphs",
+            "comments": "清紀昀撰，五書二十四卷；底本北平盛氏望益書屋刻本（識典古籍 NGJ892411999012228）。該電子本卷二、三、八等卷整卷壓頁，缺卷 2、3、8、10、12、14、18"
+        },
+        "yuchu-xinzhi": {
+            "name": "清/虞初新志",
+            "id": 98,
+            "path": "清/小说/虞初新志/yuchuxinzhi.json",
+            "tag": "paragraphs",
+            "comments": "清張潮輯，二十卷；底本康熙刻本（識典古籍 NA06809）。按卷收，卷内篇目尚未逐篇切開"
+        },
+        "soushenji": {
+            "name": "晋/搜神记",
+            "id": 99,
+            "path": "晋/小说/搜神记/soushenji.json",
+            "tag": "paragraphs",
+            "comments": "東晉干寶撰，二十卷；底本明崇禎毛氏汲古閣本（識典古籍 HY0002）。卷内逐條志怪，未再分篇"
+        },
+        "fengshen-yanyi": {
+            "name": "明/封神演义",
+            "id": 100,
+            "path": "明/小说/封神演义/fengshenyanqi.json",
+            "tag": "paragraphs",
+            "comments": "明許仲琳撰，一百回；底本康熙四雪草堂刻後印本（識典古籍 HY1546）。該電子本缺回 11–88"
+        },
+        "dongzhou-lieguo": {
+            "name": "明/东周列国志",
+            "id": 101,
+            "path": "明/小说/东周列国志/dongzhoulieguozhi.json",
+            "tag": "paragraphs",
+            "comments": "清蔡元放評本，一百零八回；底本咸豐四年書成山房刻本（識典古籍 NGJ89241199901106719312）。底本按定長折行、回末附評語"
+        },
+        "yushi-mingyan": {
+            "name": "明/喻世明言",
+            "id": 102,
+            "path": "明/小说/三言二拍/yushimingyan.json",
+            "tag": "paragraphs",
+            "comments": "明馮夢龍編，四十卷；底本明刊本（識典古籍 NA11063）。該電子本卷 11、12 整卷壓頁未切"
+        },
+        "jingshi-tongyan": {
+            "name": "明/警世通言",
+            "id": 103,
+            "path": "明/小说/三言二拍/jingshitongyan.json",
+            "tag": "paragraphs",
+            "comments": "明馮夢龍輯，四十卷；底本天啟四年刻本（識典古籍 CADAL02111600）。卷 39 底本頁面錯亂，卷 40 現存兩份（卷 39 與卷 40 各一條）"
+        },
+        "erke-paian": {
+            "name": "明/二刻拍案惊奇",
+            "id": 104,
+            "path": "明/小说/三言二拍/erkipaianjingqi.json",
+            "tag": "paragraphs",
+            "comments": "明凌濛初撰，四十卷；底本崇禎五年尚友堂刻本（識典古籍 CADAL02111669）。該電子本缺卷 7、13–27、29"
+        },
+        "rongzhai-suibi": {
+            "name": "宋/容斋随笔",
+            "id": 105,
+            "path": "宋/小说/容斋随笔/rongzhaishuibi.json",
+            "tag": "paragraphs",
+            "comments": "宋洪邁撰，五集；底本明抄本（識典古籍 NGJ892412000001056165102）。該電子本只有隨筆十一卷與五筆十卷"
+        },
+        "xiaochuang-youji": {
+            "name": "明/小窗幽记",
+            "id": 106,
+            "path": "明/小说/小窗幽记/xiaochuangyouji.json",
+            "tag": "paragraphs",
+            "comments": "明陸紹珩撰（即《醉古堂劍掃》），十二卷；底本日本江戶寫本（識典古籍 NAJDA3080112）。底本目録殘缺，只能按卷成條"
         }
     }
 }

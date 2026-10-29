@@ -1,7 +1,69 @@
 {
   "path": "宋/诗/全宋诗/poet.song.1000.json",
-  "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
-  "date": "2026-10-28",
+  "fixes": [
+    {
+      "original": "# 730 缘识  其一七",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#545 重出：与《逍遥咏  其一○》同首（遍/徧），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 754 缘识  其四一",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#553 重出：与《逍遥咏  其一八》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 736 缘识  其二三",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#568 重出：与《逍遥咏  其一三》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 745 缘识  其三二",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#577 重出：与《逍遥咏  其二》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 748 缘识  其三五",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#592 重出：与《逍遥咏  其一七》同首（复/后），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 774 缘识  其一一",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#646 重出：与《逍遥咏  其一二》同首（失/夫 石/至 境/增 问/闻 攺/改），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 775 缘识  其一二",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#648 重出：与《逍遥咏  其一四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 783 缘识  其二○",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#676 重出：与《逍遥咏  其四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 785 缘识  其二二",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#680 重出：与《逍遥咏  其八》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 793 缘识  其三○",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#690 重出：与《逍遥咏  其一八》同首（诘/语），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 797 缘识  其三四",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#697 重出：与《逍遥咏  其五》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    },
+    {
+      "original": "# 801 缘识  其三八",
+      "corrected": null,
+      "note": "[songshi_dup] 删此条，正文与 宋/诗/全宋诗/poet.song.1000.json#706 重出：与《逍遥咏  其一四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条"
+    }
+  ],
+  "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核 2026-10-29 重复清理：12 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
+  "date": "2026-10-29",
   "reviewer": "codebuddy",
   "status": "fixed"
 }
