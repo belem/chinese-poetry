@@ -1,10 +1,12 @@
 name: Test
 
+# 默认分支是 develop：这里原写 master，push 和 PR 都匹配不上，
+# 单元测试在实际开发分支上从来没跑过（data-quality.yml 也不跑 pytest）。
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
