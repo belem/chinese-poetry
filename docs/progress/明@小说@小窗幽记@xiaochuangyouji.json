@@ -1,7 +1,7 @@
 {
-  "path": "明/小说/小窗幽记/xiaochuangyouji.json",
-  "note": "2026-10 由识典古籍按版本整本抓取入库，只做了机械清洗（重复句读、半角标点、行首游离标点），未逐字对勘",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
-  "status": "needs_review"
+ "path": "明/小说/小窗幽记/xiaochuangyouji.json",
+ "note": "2026-11 清 6 处 ASCII 残渣「1」→ 句读（「寄恨。1北。」→「一北。」、「法帖1鼎焚香」→「法帖，鼎焚香」、「同雲1流」→「同雲，流」、「新資1」→「新資。」、「憂情。1。」→「憂情。」、「顛1。」→「顛。」）；卷内仍有多处底本讹字，未逐句对勘。",
+ "date": "2026-10-29",
+ "reviewer": "CodeBuddy (AI)",
+ "status": "needs_review"
 }

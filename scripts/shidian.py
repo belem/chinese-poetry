@@ -390,6 +390,12 @@ def recompute_stats(progress=None):
     return pg.recompute_stats()
 
 
+def token_from_edit(orig, prop):
+    """orig 含 □，prop 是审查人改写后的同一处上下文：返回替换 □ 的文本（□ 被删则返回空串）。"""
+    a = orig.index('□')
+    return prop[a:len(prop) - (len(orig) - a - 1)]
+
+
 def cmd_apply(args):
     items = {it['id']: it for it in json.load(open(os.path.join(args.work, 'items.json'), encoding='utf-8'))}
     # 同一处证据不足会在多批 review 里反复出现（写回一批，下一批又报同一首）：
@@ -438,11 +444,14 @@ def cmd_apply(args):
             edits[(it['file'], it['idx'], 'paragraphs', k)].append((a, a + len(it['s']), new))
             corrected = new
         else:
+            if new == row['original']:
+                # 审查人填的是该位置的原句（含 □），只用来指明缺的是什么：取与原句之差
+                new = token_from_edit(row['original'], row['proposed'])
             edits[(it['file'], it['idx'], it['field'], it['k'])].append((it['start'], it['end'], new))
             corrected = it['ctx'].replace(it['token'], new, 1)
         src = ', '.join(c['sources'][:2]) if c else ''
         shown = it['s'] if 'token' not in it else ''.join(f'U+{ord(ch):04X}' if cs.PUA.match(ch) else ch for ch in it['token'])
-        note = (f"[{it['check']}] {shown} → {new}; 识典古籍"
+        note = (f"[{it['check']}] {shown} → {new or '（删）'}; 识典古籍"
                 + (f" ({c['books']} books, e.g. {src})" if c else '') + ('' if dec == 'accept' else '; decided by reviewer'))
         records[it['file']].append(dict(original=row['original'], corrected=corrected, note=note))
 
