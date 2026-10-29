@@ -1,5 +1,22 @@
 {
   "path": "宋/诗/全宋诗/poet.song.63000.json",
+  "fixes": [
+    {
+      "original": "703e74 秋夜西崗聯句",
+      "corrected": "author=晁補之/張耒",
+      "note": "[lianju] 《鷄肋集》卷十五（四部叢刊明刊本、四庫本、清抄本、明抄本）皆載全篇，張耒名下同篇逐字相同，是《全宋詩》按作者重出；兩讀一字不差，取晁補之本"
+    },
+    {
+      "original": "ggg35i 凝祥池上聯句",
+      "corrected": "author=晁補之/張耒",
+      "note": "[lianju] 《鷄肋集》卷十五載全篇（四部叢刊本、四庫本），張耒名下同篇逐字相同；兩讀一字不差，取晁補之本"
+    },
+    {
+      "original": "26kikh 直廬聯句",
+      "corrected": "author=晁補之/張耒",
+      "note": "[lianju] 《鷄肋集》卷十四載全篇，張耒名下同篇逐字相同；兩讀一字不差，取晁補之本"
+    }
+  ],
   "date": "2026-06-26",
   "reviewer": "claude-sonnet-4-6",
   "status": "clean"
