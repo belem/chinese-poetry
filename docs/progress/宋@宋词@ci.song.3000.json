@@ -15,10 +15,35 @@
       "original": "旧传恐是",
       "corrected": "旧传恐是",
       "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 宋名家詞, 稼軒長短句); no change"
+    },
+    {
+      "original": "洛滨老人星见，□少室、云雾开祥。",
+      "corrected": "洛滨老人星见，喜少室、云雾开祥",
+      "note": "[missing_char] □ → 喜;《蘆川詞》四庫本、《蘆川歸來集》卷七、《宋名家詞》并作「洛濱老人星見，喜少室、雲物開祥」"
+    },
+    {
+      "original": "轻阴易□。",
+      "corrected": "轻阴易失",
+      "note": "[missing_char] □ → 失;《山中白雲詞》四庫本、《御選歷代詩餘》卷七十七并作「輕陰易失，看飄忽風雲」；康熙曹炳曾刻本此字作「囗」"
+    },
+    {
+      "original": "□□杜郎重到，只虑空",
+      "corrected": "为语杜郎重到，只虑空",
+      "note": "[missing_char] □□ → 为语;《山中白雲詞》四庫本、《御選歷代詩餘》卷五十三并作「爲語杜郎重到」；《彊村叢書》《山中白雲詞》康熙本同缺，据两书补"
+    },
+    {
+      "original": "拚醉□忘归，接䍦更好，",
+      "corrected": "拚醉里忘归，接䍦更好，",
+      "note": "[missing_char] □ → 里;《山中白雲詞》卷七、《御選歷代詩餘》并作「𢬵醉裏忘歸」"
+    },
+    {
+      "original": "粉□舞按迎春遍。",
+      "corrected": "粉容舞按迎春遍",
+      "note": "[missing_char] □ → 容;《御選歷代詩餘》卷二十三、《[御選]歷代詩餘》并作「粉容舞按迎春遍」"
     }
   ],
   "note": "其中 1 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-03",
-  "reviewer": "CodeBuddy",
+  "date": "2026-11-02",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }
