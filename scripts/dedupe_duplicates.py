@@ -169,6 +169,40 @@ def songci_merge(verdicts=None):
     return data, drop, evidence
 
 
+# ---------------------------------------------------------------- songshi_dup
+
+SONGSHI = '宋/诗/全宋诗'
+SONGSHI_TSV = 'docs/全宋诗重复清理.tsv'
+# 宋太宗《御製緣識》《御製逍遙咏》是一题多首的组诗，两书互有重出：
+# 同一首既收在《逍遥詠 其N》又收在《緣識 其M》，题名不同，`check_tree.py` 把它记成
+# 「同作者」的正文重复。识典古籍两处（高丽藏本《御製緣識》、思溪藏本《禦製緣識》）逐字核过，
+# 下列各组的差异都是古书里就有的异体（姸/妍、淸/清、撗/横、傅/传、攺/改……）或明显的
+# 抄刻讹字（夫失、至石、增境、闻问、后复、语诘），两批其实同一首 → 删《緣識》那一条。
+#
+# 两侧其实不同、或古书只证了其中一条的，一律两存，不在这里列。
+SONGSHI_REL = [
+    (545, 730, '遍/徧'), (553, 754, ''), (568, 736, ''), (577, 745, ''),
+    (592, 748, '复/后'), (646, 774, '失/夫 石/至 境/增 问/闻 攺/改'),
+    (648, 775, ''), (676, 783, ''), (680, 785, ''), (690, 793, '诘/语'),
+    (697, 797, ''), (706, 801, ''),
+]
+
+
+def songshi_dup():
+    """《全宋诗》宋太宗《逍遥詠》与《緣識》的重出，逐条见 SONGSHI_REL。"""
+    rel = f'{SONGSHI}/poet.song.1000.json'
+    data = load(rel)
+    drop, evidence = set(), []
+    for keep, dup, note in SONGSHI_REL:
+        rec, kept = data[dup], data[keep]
+        drop.add((rel, dup))
+        evidence.append(dict(path=rel, idx=dup, keep=f'{rel}#{keep}', kind='songshi_dup',
+                             title=title(rec),
+                             note=f'与《{title(kept) or key(kept)}》同首（{note or "正文全同"}），'
+                                  f'异体 / 讹字按古籍改订；删重复的那条'))
+    return {rel: data}, drop, evidence
+
+
 # ---------------------------------------------------------------- songci_evidence
 
 SONGCI_TSV = 'docs/宋词两批异文.tsv'
@@ -560,6 +594,12 @@ def main():
         if idxs:
             songci[rel] = [r for i, r in enumerate(recs) if i not in idxs]
 
+    songshi, shdrop, ev = songshi_dup()
+    evidence += ev
+    for rel, recs in songshi.items():
+        idxs = {i for r, i in shdrop if r == rel}
+        songshi[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
     yuan, ydrop, ev = yuanqu_cover()
     evidence += ev
     yuan = [r for i, r in enumerate(yuan) if i not in ydrop]
@@ -600,6 +640,8 @@ def main():
         return
 
     for rel, recs in songci.items():
+        dump(rel, recs)
+    for rel, recs in songshi.items():
         dump(rel, recs)
     dump(YUANQU, yuan)
     dump(SANGUO, sanguo)
