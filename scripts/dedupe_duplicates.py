@@ -442,6 +442,41 @@ def apply_drop(data, drop):
     return data
 
 
+# ---------------------------------------------------------------- small_scope
+
+# 全库扫下来剩下的几处，逐条核过、能定案：
+SMALL = [
+    # 袁荣法同一首词在 ci.dang.json 里录了两遍（正文、题名、词牌全同）
+    ('当/ci.dang.json', 50, None, '同首重出，删后一条'),
+    # 《战城南》两本录文：后一条多出「徘徊」的异文与一个 □（「君何食□愿为忠臣」），
+    # 前一条「驽马裴回鸣」用的是通行本读法、句读完整，留前一条
+    ('汉/诗/poet.han.json', 89, 26, '同首重出，前一条句读完整、无缺字'),
+    # 《文王世子第八》是《礼记·文王世子》的续篇，前一整篇已收全，删后一条
+    ('汉/诗/poet.han.json', 278, 120, '同一篇的续录，整篇已收全'),
+    # 课本选目「冠必正」录了两条，短的那条是长那条的前半（长条多出「年方少，勿饮酒」以下）
+    ('汇编/课本选目/蒙学经典.json', 6, 7, '选段，长条已收全'),
+    # 《百家姓》在汇编/蒙学 与 课本选目 各一份，正文全同
+    ('汇编/课本选目/蒙学经典.json', 3, None, '与 汇编/蒙学/baijiaxing.json 重出'),
+    # 《古文观止·补》后补的篇与分卷重出（补 = 散篇补录，分卷本正文更全）
+    ('汇编/古文观止/古文观止·补.json', 9, None, '与 卷三周文《召公諫厲王止謗》同篇'),
+    ('汇编/古文观止/古文观止·补.json', 17, None, '与 卷七六朝唐文《雜說·馬說》同篇'),
+    ('汇编/古文观止/古文观止·补.json', 18, None, '与 卷八唐文《送董邵南遊河北序》同篇'),
+    ('汇编/古文观止/古文观止·补.json', 41, None, '与 卷十宋文《五代史宦官傳序》同篇'),
+]
+
+
+def small_scope():
+    out, drop, evidence = {}, set(), []
+    for rel, i, keep, note in SMALL:
+        if rel not in out:
+            out[rel] = load(rel)
+        rec = out[rel][i]
+        drop.add((rel, i))
+        evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{keep}' if keep is not None else '',
+                             kind='small_scope', title=title(rec), note=note))
+    return out, drop, evidence
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('action', nargs='?', default='dedupe', choices=['dedupe', 'songci-diff'])
@@ -484,6 +519,12 @@ def main():
     evidence += ev
     guwen = [r for i, r in enumerate(guwen) if i not in gdrop]
 
+    small, mdrop, ev = small_scope()
+    evidence += ev
+    for rel, recs in small.items():
+        idxs = {i for r, i in mdrop if r == rel}
+        small[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
     qing, qdrop, ev = qingci_attr()
     evidence += ev
     qing = [r for i, r in enumerate(qing) if i not in qdrop]
@@ -498,7 +539,7 @@ def main():
     print(f'   共删记录 {total_drop} 条，待人工判 {sum(len(v) for k, v in by_kind.items() if k.endswith("open"))} 条')
 
     if not args.apply:
-        for kind in ('songci_merge', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr'):
+        for kind in ('songci_merge', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr', 'small_scope'):
             print(f'\n-- {kind}')
             for e in by_kind.get(kind, [])[:200]:
                 print(f"   {e['path']}#{e['idx']} {e['title'][:20]} → 留 {e['keep']}（{e['note']}）")
@@ -512,6 +553,8 @@ def main():
     for rel, recs in kong.items():
         dump(rel, recs)
     dump(GUWEN, guwen)
+    for rel, recs in small.items():
+        dump(rel, recs)
     dump(QINGCI, qing)
 
     with open(os.path.join(ROOT, args.out), 'w', encoding='utf-8', newline='') as fp:
