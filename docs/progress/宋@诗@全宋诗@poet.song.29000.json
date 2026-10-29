@@ -1,6 +1,49 @@
 {
   "path": "宋/诗/全宋诗/poet.song.29000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "6ggi55",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "b2df02",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "c67k71",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "djca6d",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "gi0313",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "gl8d1k",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "kdflf4",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "lijc4e",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    }
+  ],
+  "note": "2026-10-30 与《全唐诗》归属异说 8 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "date": "2026-10-30",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

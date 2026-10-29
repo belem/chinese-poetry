@@ -155,9 +155,29 @@
       "original": "jfd4d6 義玄《》",
       "corrected": "删除",
       "note": "[empty] 正文只有「。」，底本此处只存作者名、诗题与正文皆未录，删空壳"
+    },
+    {
+      "original": "b2clej",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "c027c4",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "hcfec2",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "k61iih",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
     }
   ],
-  "note": "拆散成段的校注「（蒋云/项云/原卷作…）」合回原句并剥出诗句；脚注标号 [一][二] 清除；行内「（X）」单字异文按敦煌整理本体例保留 2026-10-30 删 31 条正文只有「。」的空记录，逐条见 docs/全唐诗空记录.tsv。",
+  "note": "拆散成段的校注「（蒋云/项云/原卷作…）」合回原句并剥出诗句；脚注标号 [一][二] 清除；行内「（X）」单字异文按敦煌整理本体例保留 2026-10-30 与《全唐诗》归属异说 4 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。 2026-10-30 删 31 条正文只有「。」的空记录，逐条见 docs/全唐诗空记录.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "fixed"
