@@ -3722,13 +3722,13 @@
       "status": "needs_review"
     },
     "明/词/ci.ming.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
     "明/诗/poet.ming.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy (AI)",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "明/诗/古诗源·明诗.json": {
