@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.116000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "7kd6gc 白菖蒲聯句",
+      "corrected": "author=宋高宗/釋智嵩",
+      "note": "[lianju] 《永樂大典》卷八百二十二引：宋高宗留題「惟不識泥土，堆根抱玉泉」，令寺僧智嵩聯句云「雖離巖谷伴，也則翠千年」；各本並收全篇，釋智嵩名下同正文一條為拆條重複（欽定本題「菖」、底本題「葛」是異體），删"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

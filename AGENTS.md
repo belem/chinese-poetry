@@ -243,6 +243,7 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/split_dynasty.py` | Split `历代/` into the per-dynasty directories by author dynasty and genre (dry-run by default; `--apply` writes and emits `docs/历代拆分.tsv`). Already applied — `历代/` no longer exists |
 | `scripts/dedupe_duplicates.py` | 按 docs/重复清理.md 的口径自动清掉能定案的重复：宋词两批数据合并、元曲残句、三国简繁两次转录、课本选目与《古文观止·补》的选段。只删能自动定案的，异文与归属异说一律两存 |
 | `scripts/dedupe_songci_attr.py` | 宋词归属异说与别名归并：先按 `ALIAS` 把同一人的两种署名并人，再让作者不同、正文相同的两组两存互挂 `tags`；正文有出入的先按 `SOURCE_FIX` 改讹字。见 `docs/宋词归属异说.md` |
+| `scripts/merge_lianju.py` | 《全宋诗》联句拆条并成一条多人联句：`author` 写「A/B/C」，`title` 取篇题最全的一读，正文一字不动、不写句下署名，`notes` 记缘起。逐组依据在 `GROUPS`，明细写 `docs/联句合并.tsv`。见 `docs/联句合并.md` |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
 
 ```bash

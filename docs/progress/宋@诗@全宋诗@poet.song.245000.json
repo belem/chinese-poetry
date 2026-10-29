@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.245000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "4fdg3a 乙酉端午聯句",
+      "corrected": "author=熊禾",
+      "note": "[lianju] 《勿軒集》卷八作熊禾名下，正文「離騷讀罷意沈沈」與《勿軒集》合；趙善括名下同正文一條（「沉沉」）《應齋雜著》不載，為誤收，删"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

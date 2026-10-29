@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.66000.json",
-  "date": "2026-10-04",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "8fl3a1 湖上聯句",
+      "corrected": "author=崔鶠/鄒浩",
+      "note": "[lianju] 《道鄉集》卷七「湖上聯句：遙岑艤舟見，德符，野思過橋生。至完興盡回蘭棹，子厚歸鞍月正明。世美」，崔鶠（德符）與鄒浩（至完）同賦；鄒浩名下即此詩，删"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }
