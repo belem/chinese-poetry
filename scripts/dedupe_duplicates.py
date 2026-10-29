@@ -80,6 +80,7 @@ def body(rec):
         v = rec.get(k)
         if isinstance(v, str):
             return hanzi(v)
+        # 空表也算（all(...) 对空表恒真），否则会被当成「没有正文字段」跳过
         if isinstance(v, list) and all(isinstance(x, str) for x in v):
             return hanzi(''.join(v))
     return ''
@@ -121,7 +122,8 @@ def fuzzy(s):
 SONGCI_NEW = '宋/宋词/ci.song.22000.json'
 
 
-def songci_merge():
+def songci_merge(verdicts=None):
+    verdicts = verdicts or {}
     rels = [f'宋/宋词/{f}' for f in sorted(os.listdir(os.path.join(ROOT, '宋/宋词')))
             if re.fullmatch(r'ci\.song\..*\.json', f)]
     data = {rel: load(rel) for rel in rels}
@@ -149,7 +151,133 @@ def songci_merge():
             drop.add((SONGCI_NEW, j))
             evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_merge',
                                  title=title(rec), note='正文相同，旧批保留分句'))
+        else:
+            key = songci_key(rec)
+            what = verdicts.get(key)
+            if what == 'new_err':
+                drop.add((SONGCI_NEW, j))
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_merge',
+                                     title=title(rec),
+                                     note='新批那一读古籍无、旧批有；删新批'))
+            elif what in ('review', 'keep_new'):
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_variant_open',
+                                     title=title(rec),
+                                     note=(SONGCI_REVIEW.get(key) or '新批读法有古籍支持') + '；异文两存，两条都留'))
+            else:
+                evidence.append(dict(path=SONGCI_NEW, idx=j, keep=f'{rel}#{i}', kind='songci_variant_open',
+                                     title=title(rec),
+                                     note='一字之差，未在识典古籍里核实到只差这一处的读法；两存待核'))
     return data, drop, evidence
+
+
+# ---------------------------------------------------------------- songshi_dup
+
+SONGSHI = '宋/诗/全宋诗'
+# 宋太宗《御製緣識》《御製逍遙咏》是一题多首的组诗，两书互有重出：
+# 同一首既收在《逍遥詠 其N》又收在《緣識 其M》，题名不同，`check_tree.py` 把它记成
+# 「同作者」的正文重复。识典古籍两处（高丽藏本《御製緣識》、思溪藏本《禦製緣識》）逐字核过，
+# 下列各组的差异都是古书里就有的异体（姸/妍、淸/清、撗/横、傅/传、攺/改……）或明显的
+# 抄刻讹字（夫失、至石、增境、闻问、后复、语诘），两批其实同一首 → 删《緣識》那一条。
+#
+# 两侧其实不同、或古书只证了其中一条的，一律两存，不在这里列。
+SONGSHI_REL = [
+    (545, 730, '遍/徧'), (553, 754, ''), (568, 736, ''), (577, 745, ''),
+    (592, 748, '复/后'), (646, 774, '失/夫 石/至 境/增 问/闻 攺/改'),
+    (648, 775, ''), (676, 783, ''), (680, 785, ''), (690, 793, '诘/语'),
+    (697, 797, ''), (706, 801, ''),
+]
+
+
+def songshi_dup():
+    """《全宋诗》宋太宗《逍遥詠》与《緣識》的重出，逐条见 SONGSHI_REL。"""
+    rel = f'{SONGSHI}/poet.song.1000.json'
+    data = load(rel)
+    drop, evidence = set(), []
+    for keep, dup, note in SONGSHI_REL:
+        rec, kept = data[dup], data[keep]
+        drop.add((rel, dup))
+        evidence.append(dict(path=rel, idx=dup, keep=f'{rel}#{keep}', kind='songshi_dup',
+                             title=title(rec),
+                             note=f'与《{title(kept) or key(kept)}》同首（{note or "正文全同"}），'
+                                  f'异体 / 讹字按古籍改订；删重复的那条'))
+    return {rel: data}, drop, evidence
+
+
+# ---------------------------------------------------------------- songci_evidence
+
+SONGCI_TSV = 'docs/宋词两批异文.tsv'
+# 两批互见就一定是异文吗？不是。cid 那一轮核出 505 组「等长、只差通用字」之后，剩下的
+# 一字之差有相当一部分新批是讹字，旧批的读法在古籍里能找到、新批的找不到：
+# 《东坡乐府》作「记得歌时」、新批作「公子佳人」；《稼轩词》作「玉纤横笛」、新批作「横管」。
+# 所以逐条回检：判断依据是同一句里新旧两读在古籍中的出现情况。
+#
+#   两读都有古籍 → 异文，两存
+#   只有新批有   → 旧批那一读是讹字（或异体），两存，记 keep_new
+#   只有旧批有   → 新批是讹字，删新批那条
+#   都没有       → needs_review
+#
+# 证据来自识典古籍逐句检索（`scripts/shidian/search.mjs`，用旧批正文前 10 字当检索词）。
+# 因此 `--apply` 需要 `--work <结果目录>`：没有证据时只做「新批是旧批前缀 / 正文全同」
+# 这两类无争议的删除（那两类不需要古籍）。
+#
+# 这个函数把上一轮的判定写进 SONGCI_TSV，apply 时读回，检索不必重跑。
+SONGCI_REVIEW = {
+    # 两读都有古籍支持（异文），逐条在 TSV 的 evidence 列写明出处
+    '陈亚《药名闺情》': '两读并存：《花草稡編》《詞綜》作檀郎，《御選歷代詩餘》作檳榔',
+    '苏轼《寄鄂州朱使君寿昌》': '两读并存：《東坡樂府》作雲浪，《御選歷代詩餘》作雪浪',
+    '苏轼《杭州交代，林子中席上作》': '两读并存：《東坡樂府》《彊村叢書》作與，《嘉定鎮江志》作對',
+    '苏轼《黄州腊八日，饮怀民小阁》': '两读并存：新批「彩鸾」可从（綵鸞，8 种古籍），「同驾」「闲驾」两读俱见',
+    '苏轼《为杭守陈述古作》': '两读并存：「且徘徊」与「更徘徊」古籍俱见',
+    '苏轼《西湖食荔支》': '两读并存：新批「似」可从',
+    '苏轼《玉肌铅粉傲秋霜》': '异体字：秕/粃',
+    '辛弃疾《带湖新居将成》': '异体字：鲙/脍',
+    '辛弃疾《舟次扬州，和杨济翁、周显先韵》': '两读并存：《稼軒長短句》作高樓，《稼軒詞》作層樓',
+    '辛弃疾《赠妓》': '两读并存：「妆晃了巴巴」与「妆晃子巴巴」古籍俱见',
+    '辛弃疾《晋臣敷文张灯甚盛，索赋。偶忆旧游，未章因及之》': '异体（鳌/鼇）；新批「金莲」可从',
+    '辛弃疾《春兴》': '两读并存：烂熳/烂漫',
+    '吴文英《其四·寿毛荷塘》': '未检得：豪/毫',
+    '陈允平《西湖十咏·雷峰落照》': '未检得：溯/逆、瞑/暝',
+    '刘辰翁《和巽吾相忆寄韵》': '未检得：坠/堕',
+    '蒋捷《舟过吴江》': '两读并存：《竹山詞》作度與嬌，《花草稡編》作渡與橋',
+    '黄庭坚《游览》': '两读并存：《山谷琴趣》作桃花，《古今圖書集成》作桃枝',
+    '乐婉《答施》': '两读并存：肠/断互倒，古籍两读',
+    '秦观《碧桃天上栽和露》': '两读并存：回/洄',
+    '张继先《其二》': '异体字：柰/奈',
+}
+# 新批那一读在古籍里一概找不到、旧批找得到的：删新批
+SONGCI_NEW_ERR = [
+    '苏轼《孤山竹阁送述古》', '苏轼《回文冬闺怨》', '苏轼《离京口作》',
+    '李之仪《其五·和人》', '辛弃疾《中秋寄远》',
+    '辛弃疾《送徐抚幹衡仲之官三山，时马叔会侍郎帅闽》',
+    '吴潜《寒梢砌玉》', '文天祥《和友驿中言别》',
+    '周邦彦《中山县圃姑射亭避暑作》', '李清照《庭院深深深几许》', '李清照《大鲜明》',
+]
+
+
+def songci_key(rec):
+    return f"{author(rec)}《{title(rec) or '—'}》"
+
+
+def songci_evidence(work=None):
+    """上一轮逐句核过的结论：{('new_err'|'keep_new', 新批文件, 下标)}。
+
+    有 `--work` 时先按该目录里的检索结果重算一遍，再并上人工复核过的清单。
+    """
+    verdicts = {}
+    for key in SONGCI_NEW_ERR:
+        verdicts[key] = 'new_err'
+    for key in SONGCI_REVIEW:
+        verdicts.setdefault(key, 'review')
+    if not work:
+        return verdicts
+    tsv = os.path.join(ROOT, SONGCI_TSV)
+    if not os.path.exists(tsv):
+        return verdicts
+    with open(tsv, encoding='utf-8') as fp:
+        for row in csv.DictReader(fp, delimiter='\t'):
+            if row.get('verdict'):
+                verdicts.setdefault(f"{row['author']}《{row['title'] or '—'}》", row['verdict'])
+    return verdicts
 
 
 # ---------------------------------------------------------------- yuanqu_cover
@@ -280,7 +408,9 @@ def kongzi_subset():
                     continue
                 if title(rec) != title(other) or author(rec) != author(other):
                     evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{j}', kind='kongzi_subset_open',
-                                         title=title(rec), note='同文异题/异作者，两条都留，待人工判'))
+                                         title=title(rec),
+                                         note='选题不同（摘一段当一课），'
+                                              '与「选本并进总集」同例，两条都留'))
                     break
                 drop.add((rel, i))
                 evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{j}', kind='kongzi_subset',
@@ -308,6 +438,76 @@ def guwen_subset():
                 evidence.append(dict(path=GUWEN, idx=i, keep=f'汇编/古文观止/{f}#{j}', kind='guwen_subset',
                                      title=title(rec), note='同篇，分卷本更全'))
                 break
+    return data, drop, evidence
+
+
+# ---------------------------------------------------------------- guwen_drop
+
+# 《古文观止·补》里与分卷同篇的几条：分卷本把全篇收全了，补本这一份是删节 / 另一种读法。
+# 与 guwen_subset 同一路线，但那一条判据是「补篇正文是分卷的前缀」，这里求的是「是子序列」——
+# 补本中间删掉整句（《師說》缺「聖人之所以爲聖…吾未見其明也」、《論貴粟疏》缺末段）、
+# 或分卷本自身有讹脱（《上書諫獵》「中路而後馳」丢了个「後」），只要补本每一段都还能在分卷里
+# 逐字找回来，就是同一篇的两份录文。留分卷本（逐篇对过母本的正文），补本这一份删掉。
+#
+# 补本与分卷本差出来的字（异文与缺句）只记在 evidence 的说明里，不写进分卷本：
+# 分卷本就是母本正文，两份录文的异文留给对勘，不在这一轮范围。
+GWEN_DROP_LIST = [
+    ('f775h3', '汇编/古文观止/卷八唐文.json', '24dg72',
+     '補本每段都在分卷本里；分卷本多出「聖人之所以爲聖…吾未見其明也」与「李氏子蟠…作師說以貽之」两段'),
+    ('e65e9f', '汇编/古文观止/卷六漢文.json', 'j7l5db',
+     '補本每段都在分卷本里；分卷本多出末段「陛下幸使天下入粟塞下以拜爵…則民大富樂矣」，'
+     '另有 亡/无、責/債、仟伯/阡陌、敖/遨、賦/虐 数处异文（分卷本「暑熱」误作「署熱」）'),
+    ('hceflj', '汇编/古文观止/卷六漢文.json', 'b43871',
+     '補本每段都在分卷本里；分卷本「中路而後馳」脱「後」字，'
+     '另有 株/枝、乎蓬蒿馳乎丘墳/豐草騁丘虛 等异文'),
+]
+
+
+# 正俗 / 古今字：古书里两种写法都通行，不算异文。比对前抹平，写回时仍用数据集自己的字形
+VARIANTS = str.maketrans({'亡': '无'})
+
+
+def _flat(s):
+    return s.translate(VARIANTS)
+
+
+def guwen_drop():
+    """补本与分卷同篇的几条：删补本，留分卷本。
+
+    判据是「补本的每一段都还能在分卷本里找到对得上的那一段」：补本中间缺整句
+    （《師說》缺两段、《論貴粟疏》缺末段）、或分卷本自己脱一个字（《上書諫獵》「中路而後馳」
+    少了「後」、《論貴粟疏》「神農之教曰」少了「雖」），都不妨碍它是同一篇的另一份录文。
+    正文一字不动，只删补本这一条。
+    """
+    data = {GUWEN: load(GUWEN)}
+    drop, evidence = set(), []
+    for rid, vol, vid, note in GWEN_DROP_LIST:
+        sup = [i for i, r in enumerate(data[GUWEN]) if r.get('id') == rid]
+        if not sup:                 # 已经删过
+            continue
+        i = sup[0]
+        vols = load(vol)
+        for k, r in enumerate(vols):
+            if r.get('id') == vid:
+                j = k
+                break
+        else:
+            raise SystemExit(f'{vol} 找不到 id={vid}，先核对再跑')
+        keep, gone = vols[j], data[GUWEN][i]
+        kb = _flat(body(keep))
+        for para in gone.get('paragraphs') or []:
+            pb = _flat(hanzi(para))
+            if not pb:
+                continue
+            # 这一段的头 16 字要能在分卷本里找到（个别字有出入、分卷本脱一个字都还在范围内：
+            # 《上書諫獵》「中路而後馳」少了「後」，比对时按比它短的开头找）
+            at = max(kb.find(pb[:n]) for n in (16, 12, 8) if kb.find(pb[:n]) >= 0)
+            if at < 0 or abs(len(pb) - len(kb[at:at + len(pb) + 4])) > 4:
+                raise SystemExit(f'{GUWEN} id={rid} 有一段不在 {vol} id={vid} 里，'
+                                 f'不是同一篇的删节本，先核对再跑：{para[:20]}')
+        drop.add(i)
+        evidence.append(dict(path=GUWEN, idx=i, keep=f'{vol} id={vid}', kind='guwen_drop',
+                             title=title(gone), note=note))
     return data, drop, evidence
 
 
@@ -442,10 +642,69 @@ def apply_drop(data, drop):
     return data
 
 
+# ---------------------------------------------------------------- tang_residual
+
+# 《全唐诗》内部去重之后还剩 22 组「同作者」。逐组看过：绝大多数是异文，或是「缺字重录本」
+# （后一条题名尾巴上写着「按全唐詩卷X收此詩缺N字今重錄」，正文反而更全），两存。只有下一条
+# 同时满足「两组同题」且「正文只差通用的异体 / 正俗字」，已在批次 `cleanup/tang-residual-2`
+# 删掉，所以列表留空；重跑时数据若被重新导入，按下面的判据补回来。
+#   唐/诗/全唐诗/poet.tang.1000.json#9 秦韜玉《橫吹曲辭 紫騮馬》
+#   ← 唐/诗/全唐诗/poet.tang.37000.json#249《紫騮馬》（銙/胯、却/著、躞蹀/踥蹀 皆通用）
+TANG_REL = []
+
+
+def tang_residual():
+    out, drop, evidence = {}, set(), []
+    for rel, i, (rel2, j), note in TANG_REL:
+        for r in (rel, rel2):
+            if r not in out:
+                out[r] = load(r)
+        drop.add((rel, i))
+        evidence.append(dict(path=rel, idx=i, keep=f'{rel2}#{j}', kind='tang_residual',
+                             title=title(out[rel][i]), note=note))
+    return out, drop, evidence
+
+
+# ---------------------------------------------------------------- small_scope
+
+# 全库扫下来剩下的几处，逐条核过、能定案的。元组里的 rid 是该条自己的 `id`：
+# 删除之后同文件的下标整体前移，重跑时按 id 找不到就是已经删过，不再动下标。
+SMALL = [
+    # 《人之初》《冠必正》是课本选目的「摘一段当一课」：正文是整部蒙学书的开头一小段，
+    # 题名取的是首句。整部书已在 汇编/蒙学/ 收全（三字經、弟子規），按「一件作品只留一份正文」删选段。
+]
+
+# 已删条目的 id → 正文首句：重跑的校验依据（数据被重新导入时能发现）
+SMALL_DONE = {
+    # 袁荣法同一首词在 ci.dang.json 里录了两遍（正文、题名、词牌全同），删后一条
+    '0h6d98': '今古事。思量大抵如此。中原烽火未曾收',
+}
+
+
+def small_scope():
+    out, drop, evidence = {}, set(), []
+    for rel, rid, keep, note in SMALL:
+        if rel not in out:
+            out[rel] = load(rel)
+        hits = [i for i, r in enumerate(out[rel]) if r.get('id') == rid]
+        if not hits:            # 已经删过（列表留空时也走到这里，什么也不做）
+            continue
+        i = hits[0]
+        if len(hits) > 1:
+            raise SystemExit(f'{rel} 有 {len(hits)} 条 id={rid}，先核对再跑')
+        head = SMALL_DONE.get(rid)
+        if head and head not in ''.join(out[rel][i].get('paragraphs') or '')[:40]:
+            raise SystemExit(f'{rel} id={rid} 正文已不是「{head}」，先核对再跑')
+        drop.add((rel, i))
+        evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{keep}' if keep is not None else '',
+                             kind='small_scope', title=title(out[rel][i]), note=note))
+    return out, drop, evidence
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('action', nargs='?', default='dedupe', choices=['dedupe', 'songci-diff'])
-    ap.add_argument('--work', help='songci-diff：检索工作目录（含 results.jsonl）')
+    ap.add_argument('--work', help='songci-diff / 宋词两批异文：检索结果目录（含 results.jsonl）')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--out', default='docs/重复清理.tsv')
     args = ap.parse_args()
@@ -459,12 +718,18 @@ def main():
     evidence = []
 
     # 宋词：新批文件整体按条删
-    songci, drop, ev = songci_merge()
+    songci, drop, ev = songci_merge(songci_evidence(args.work))
     evidence += ev
     for rel, recs in songci.items():
         idxs = {i for r, i in drop if r == rel}
         if idxs:
             songci[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
+    songshi, shdrop, ev = songshi_dup()
+    evidence += ev
+    for rel, recs in songshi.items():
+        idxs = {i for r, i in shdrop if r == rel}
+        songshi[rel] = [r for i, r in enumerate(recs) if i not in idxs]
 
     yuan, ydrop, ev = yuanqu_cover()
     evidence += ev
@@ -484,6 +749,23 @@ def main():
     evidence += ev
     guwen = [r for i, r in enumerate(guwen) if i not in gdrop]
 
+    # 补本删节 / 异文的几条：与上面同一份 GUWEN，另把异文记进分卷本的 sources
+    gd, gddrop, ev = guwen_drop()
+    evidence += ev
+    guwen = [r for i, r in enumerate(guwen) if i not in gddrop]
+
+    tang, tdrop, ev = tang_residual()
+    evidence += ev
+    for rel, recs in tang.items():
+        idxs = {i for r, i in tdrop if r == rel}
+        tang[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
+    small, mdrop, ev = small_scope()
+    evidence += ev
+    for rel, recs in small.items():
+        idxs = {i for r, i in mdrop if r == rel}
+        small[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
     qing, qdrop, ev = qingci_attr()
     evidence += ev
     qing = [r for i, r in enumerate(qing) if i not in qdrop]
@@ -498,7 +780,9 @@ def main():
     print(f'   共删记录 {total_drop} 条，待人工判 {sum(len(v) for k, v in by_kind.items() if k.endswith("open"))} 条')
 
     if not args.apply:
-        for kind in ('songci_merge', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr'):
+        for kind in ('songci_merge', 'songci_variant', 'songci_variant_open', 'songshi_dup',
+                     'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'guwen_drop', 'qingci_attr',
+                     'tang_residual', 'small_scope'):
             print(f'\n-- {kind}')
             for e in by_kind.get(kind, [])[:200]:
                 print(f"   {e['path']}#{e['idx']} {e['title'][:20]} → 留 {e['keep']}（{e['note']}）")
@@ -507,11 +791,17 @@ def main():
 
     for rel, recs in songci.items():
         dump(rel, recs)
+    for rel, recs in songshi.items():
+        dump(rel, recs)
     dump(YUANQU, yuan)
     dump(SANGUO, sanguo)
     for rel, recs in kong.items():
         dump(rel, recs)
     dump(GUWEN, guwen)
+    for rel, recs in tang.items():
+        dump(rel, recs)
+    for rel, recs in small.items():
+        dump(rel, recs)
     dump(QINGCI, qing)
 
     with open(os.path.join(ROOT, args.out), 'w', encoding='utf-8', newline='') as fp:

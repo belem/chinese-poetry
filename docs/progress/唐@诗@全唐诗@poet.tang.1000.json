@@ -1,7 +1,14 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.1000.json",
-  "note": "水墨唐诗 并回时补录賀知章《曉發》、杜牧《清明》两首",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "# 9 横吹曲辞 紫骝马",
+      "corrected": null,
+      "note": "[tang_residual] 删此条，正文与 唐/诗/全唐诗/poet.tang.37000.json#249 重出：銙/胯、却/著（着）皆通用，《樂府詩集》两种刻本各作一读；两条同题同作者，留一条"
+    }
+  ],
+  "note": "水墨唐诗 并回时补录賀知章《曉發》、杜牧《清明》两首 2026-10-29 重复清理：1 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
+  "date": "2026-10-29",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

@@ -5,8 +5,8 @@
     "total_files": 887,
     "reviewed": 888,
     "clean": 347,
-    "fixed": 107,
-    "needs_review": 230,
+    "fixed": 108,
+    "needs_review": 229,
     "out_of_scope": 204,
     "in_scope_files": 684
   },
@@ -57,8 +57,8 @@
       "status": "needs_review"
     },
     "三国/诗/poet.sanguo.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-31",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "五代十国/词/五代诗词/huajianji/huajianji-0-preface.json": {
@@ -132,7 +132,7 @@
       "status": "needs_review"
     },
     "元/元曲/yuanqu.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -372,8 +372,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.1000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-29",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.10000.json": {
@@ -747,7 +747,7 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.22000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -2372,7 +2372,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.1000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -3652,7 +3652,7 @@
       "status": "fixed"
     },
     "当/ci.dang.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -3677,9 +3677,9 @@
       "status": "needs_review"
     },
     "明/小说/东周列国志/dongzhoulieguozhi.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-02",
       "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "明/小说/封神演义/fengshenyanqi.json": {
       "date": "2026-10-29",
@@ -3817,7 +3817,7 @@
       "status": "needs_review"
     },
     "汇编/古文观止/古文观止·补.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -4347,7 +4347,7 @@
       "status": "needs_review"
     },
     "汇编/课本选目/蒙学经典.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
