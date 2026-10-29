@@ -19,6 +19,9 @@
 用法：
   python3 scripts/dedupe_huibian_poet.py                      # 预演
   python3 scripts/dedupe_huibian_poet.py --apply --date YYYY-MM-DD --poet 汉
+
+明细按批次分开写（`--out` 默认随 `--poet` 变）：汉写 `docs/汇编与诗去重.tsv`（既有记录引用它），
+其余批次写 `docs/汇编与诗去重.<poet>.tsv` —— 不同文件，几个 PR 并行也不撞车。
 """
 import argparse
 import collections
@@ -47,10 +50,14 @@ POET = {
     '宋': '宋/诗/poet.song.json',
     '清': '清/诗/poet.qing.json',
     '晋': '晋/诗/poet.jin.json',
-    '南北朝': '南北朝/诗/poet.nanbeichao.json',
+    '南北朝': '南北朝/诗/poet.nanbeichuan.json',
     '明': '明/诗/poet.ming.json',
 }
 OUT = 'docs/汇编与诗去重.tsv'
+
+
+def out_path(poet):
+    return OUT if poet == '汉' else OUT[:OUT.rindex('.')] + f'.{poet}.tsv'
 
 
 def han(s):
@@ -130,9 +137,10 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--date', default=date.today().isoformat())
     ap.add_argument('--reviewer', default=REVIEWER)
-    ap.add_argument('--out', default=OUT)
+    ap.add_argument('--out', default=None, help='明细 TSV，默认随 --poet 走，见 out_path()')
     args = ap.parse_args()
 
+    args.out = args.out or out_path(args.poet)
     rel = POET[args.poet]
     poet = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))
     hui = []
