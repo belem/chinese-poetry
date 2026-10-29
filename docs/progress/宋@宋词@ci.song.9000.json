@@ -25,6 +25,16 @@
       "original": "长是醉乡落魄",
       "corrected": "长是醉乡落魄",
       "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 澹軒集); no change"
+    },
+    {
+      "original": "□醉深深院。",
+      "corrected": "沈醉深深院。",
+      "note": "[missing_char] 侯寘《點絳唇》「暫停歌扇，□醉深深院」：《孏窟詞》四库本、汲古閣本并作「沈醉深深院」；石村書屋抄本作「芒」是形讹"
+    },
+    {
+      "original": "□指墙头榴火，倩玉",
+      "corrected": "笑指墙头榴火，倩玉",
+      "note": "[missing_char] □ → 笑; 识典古籍 (1 books, e.g. ); decided by reviewer"
     }
   ],
   "note": "其中 1 处经古籍证实原样，未改",
