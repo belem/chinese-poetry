@@ -5,10 +5,25 @@
       "original": "算来虚度怜宵",
       "corrected": "算来虚度可怜宵",
       "note": "[ci_pattern] 算来虚度怜宵 → 算来虚度可怜宵；《孏窟詞》（四庫本）作「算來虚度可憐宵」"
+    },
+    {
+      "original": "非□谁解愁。",
+      "corrected": "非君谁解愁。",
+      "note": "[missing_char] □ → 君; 识典古籍 (2 books, e.g. , 《典雅詞》孏窟詞)"
+    },
+    {
+      "original": "□就两都新赋，笑一",
+      "corrected": "著就两都新赋，笑一",
+      "note": "[missing_char] □ → 著; 识典古籍 (2 books, e.g. , 《審齋詞》審齋詞“賀新郎”)"
+    },
+    {
+      "original": "要百柁倾□，万花流玉。",
+      "corrected": "要百柁倾珠，万花流玉。",
+      "note": "[missing_char] □ → 珠; 识典古籍 (3 books, e.g. , 《[御選]歷代詩餘》[御選]歷代詩餘卷九十七)"
     }
   ],
   "note": "其中 1 处经古籍证实原样，未改",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
+  "date": "2026-10-29",
+  "reviewer": "CodeBuddy (AI)",
   "status": "fixed"
 }
