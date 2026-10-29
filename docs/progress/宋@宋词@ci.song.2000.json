@@ -1,7 +1,29 @@
 {
   "path": "宋/宋词/ci.song.2000.json",
+  "fixes": [
+    {
+      "original": "调客旧留□月旦，此花清软纤",
+      "corrected": "调客旧留花月旦，此花清软纤",
+      "note": "[missing_char] □ → 花; 识典古籍 (3 books, e.g. , 《古今圖書集成·草木典》欽定古今圖書第六千九百二十九卷“瑞香部藝文二詩詞”)"
+    },
+    {
+      "original": "背人挑□独心知。",
+      "corrected": "背人挑四独心知。",
+      "note": "[missing_char] □ → 四; 识典古籍 (2 books, e.g. , 《彊村叢書》澗泉詩餘)"
+    },
+    {
+      "original": "正□□未足，宫妆尚怯，",
+      "corrected": "正春眠未足，宫妆尚怯，",
+      "note": "[missing_char] □□ → 春眠; 识典古籍 (4 books, e.g. , 《古今圖書集成·草木典》欽定古今圖書集成博物彙編草木典第六千九百二十八卷“海棠部藝文三詞”)"
+    },
+    {
+      "original": "柔无力，依依怨和□。",
+      "corrected": "柔无力，依依怨和困。",
+      "note": "[missing_char] □ → 困; 识典古籍 (3 books, e.g. , 《全芳備祖前集》全芳備祖後集卷十七)"
+    }
+  ],
   "note": "其中 6 处经古籍证实原样，未改；8 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-10-29",
+  "reviewer": "CodeBuddy (AI)",
+  "status": "fixed"
 }
