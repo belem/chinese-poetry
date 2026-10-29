@@ -1,7 +1,7 @@
 {
-  "path": "宋/小说/容斋随笔/rongzhaishuibi.json",
-  "note": "2026-10 由识典古籍按版本整本抓取入库，只做了机械清洗（重复句读、半角标点、行首游离标点），未逐字对勘",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
-  "status": "needs_review"
+ "path": "宋/小说/容斋随笔/rongzhaishuibi.json",
+ "note": "2026-11 卷 6 一处「勝州沸明誕節受賀1火道」→「…受賀。火道。」（识典古籍明抄本该句同存「1」，是底本自身的转写符，按断句改为句读）。全书其余未逐句对勘。",
+ "date": "2026-10-29",
+ "reviewer": "CodeBuddy (AI)",
+ "status": "needs_review"
 }
