@@ -1,4 +1,16 @@
 类别	文件	下标	题名	保留	说明
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	730	缘识  其一七	宋/诗/全宋诗/poet.song.1000.json#545	与《逍遥咏  其一○》同首（遍/徧），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	754	缘识  其四一	宋/诗/全宋诗/poet.song.1000.json#553	与《逍遥咏  其一八》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	736	缘识  其二三	宋/诗/全宋诗/poet.song.1000.json#568	与《逍遥咏  其一三》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	745	缘识  其三二	宋/诗/全宋诗/poet.song.1000.json#577	与《逍遥咏  其二》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	748	缘识  其三五	宋/诗/全宋诗/poet.song.1000.json#592	与《逍遥咏  其一七》同首（复/后），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	774	缘识  其一一	宋/诗/全宋诗/poet.song.1000.json#646	与《逍遥咏  其一二》同首（失/夫 石/至 境/增 问/闻 攺/改），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	775	缘识  其一二	宋/诗/全宋诗/poet.song.1000.json#648	与《逍遥咏  其一四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	783	缘识  其二○	宋/诗/全宋诗/poet.song.1000.json#676	与《逍遥咏  其四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	785	缘识  其二二	宋/诗/全宋诗/poet.song.1000.json#680	与《逍遥咏  其八》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	793	缘识  其三○	宋/诗/全宋诗/poet.song.1000.json#690	与《逍遥咏  其一八》同首（诘/语），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	797	缘识  其三四	宋/诗/全宋诗/poet.song.1000.json#697	与《逍遥咏  其五》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
+songshi_dup	宋/诗/全宋诗/poet.song.1000.json	801	缘识  其三八	宋/诗/全宋诗/poet.song.1000.json#706	与《逍遥咏  其一四》同首（正文全同），异体 / 讹字按古籍改订；删重复的那条
 yuanqu_cover_open	元/元曲/yuanqu.json	57	黄钟・侍香金童	元/元曲/yuanqu.json#11389	前缀重合但不构成重出（长句 255 字 / 短句 31 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	66	南吕・一枝花赠朱帘秀	元/元曲/yuanqu.json#11160	前缀重合但不构成重出（长句 210 字 / 短句 53 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	118	离亭宴煞・你休起风波剁断渔舟缆，得团圆摔破青铜鉴。冤家行再三，再	元/元曲/yuanqu.json#10759	前缀重合但不构成重出（长句 67 字 / 短句 37 字，异作者），两条都留
@@ -25,6 +37,5 @@ yuanqu_cover_open	元/元曲/yuanqu.json	11344	中吕·朝天子·秋夜客怀	�
 yuanqu_cover_open	元/元曲/yuanqu.json	11458	湘妃怨·和卢疏斋西湖	元/元曲/yuanqu.json#7459	前缀重合但不构成重出（长句 207 字 / 短句 53 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	11494	人月圆·春日次韵	元/元曲/yuanqu.json#5991	前缀重合但不构成重出（长句 154 字 / 短句 48 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	11535	塞鸿秋·浔阳即景	元/元曲/yuanqu.json#9755	前缀重合但不构成重出（长句 90 字 / 短句 45 字，同作者），两条都留
-sanguo_dup	三国/诗/poet.sanguo.json	40	白马篇	三国/诗/poet.sanguo.json#4	简繁两种转录同录一首（1 字之差：异体与缺字），留正文完整、标点齐的一条
 kongzi_subset_open	汇编/课本选目/寓言故事.json	10	揠苗助长	汇编/课本选目/寓言故事.json#31	同文异题/异作者，两条都留，待人工判
 kongzi_subset_open	汇编/课本选目/蒙学经典.json	5	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
