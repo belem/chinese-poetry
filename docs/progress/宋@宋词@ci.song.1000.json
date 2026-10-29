@@ -50,10 +50,25 @@
       "original": "雪里，几枝初绽，□冰姿仙格。",
       "corrected": "雪里，几枝初绽，出冰姿仙格。",
       "note": "[missing_char] □ → 出; 识典古籍 (2 books, e.g. , 《梅苑》梅苑卷三“喜遷鶯”); decided by reviewer"
+    },
+    {
+      "original": "□鼎相承。",
+      "corrected": "鐘鼎相承。",
+      "note": "[missing_char] □ → 鐘; 识典古籍 (2 books, e.g. , 《南陽集》南陽集卷三十“太原縣君墓銘并序”); decided by reviewer"
+    },
+    {
+      "original": "丹青□画，无言无笑，看",
+      "corrected": "丹青画，无言无笑，看",
+      "note": "[missing_char] □ → 画; 识典古籍（《東坡詞》四庫本、《宋名家詞》毛氏汲古閣本、《御選歷代詩餘》并作「丹青畫，無言無笑」，句读在「畫」后，非缺字）"
+    },
+    {
+      "original": "□望极平田，徘徊欲",
+      "corrected": "乍望极平田，徘徊欲",
+      "note": "[missing_char] □ → 乍; 识典古籍 (1 books, e.g. ); decided by reviewer"
     }
   ],
   "note": "其中 6 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-03",
-  "reviewer": "CodeBuddy",
+  "date": "2026-11-02",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }
