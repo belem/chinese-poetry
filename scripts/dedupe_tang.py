@@ -78,6 +78,17 @@ ALIAS = {
 
 # (文件, 下标) 判例：同作者但对「保留哪条」有异议时在这里指定保留者
 FORCE = {}
+# 判例：作者不同、按归属异说本该两存，但逐条核过其实是同一首的两个署名，删附出的那条。
+# 键是「要删的那条」（文件, 正文前 16 字），值是（保留的那条、说明）。
+#
+#   宋之問《內題賦得巫山雨》与沈佺期《鼓吹曲辭 巫山高二首 二》正文只差 婉戀/婉孌 一个字。
+#   《全唐诗》把这一首分署两家（宋之問卷、沈佺期卷各一条），而「內題賦得巫山雨」本是
+#   沈佺期诗题下的注记，不是另立一题，所以留沈佺期《巫山高二首 二》，删宋之問这条。
+SAME_POEM = {
+    ('唐/诗/全唐诗/poet.tang.3000.json', '神女向高唐巫山下夕阳裴回作行雨婉'):
+        ('唐/诗/全唐诗/poet.tang.5000.json',
+         '与沈佺期《巫山高二首 二》同首（婉戀/婉孌），《全唐诗》两卷分署，留沈作'),
+}
 # (文件, 下标)：确认不是重复，跳过
 SKIP = set()
 
@@ -197,7 +208,23 @@ def main():
         keep = max(grp, key=lambda x: (info_score(x[2]), -len(x[0]), -x[1]))
         gone = [x for x in grp if x != keep]
 
-        if kind == 'attribution':
+        # 人工判例：归属组里其实同出一首的，删附出的那条
+        forced = False
+        for x in grp:
+            hit = SAME_POEM.get((x[0], body(x[2])[:16]))
+            if not hit:
+                continue
+            keeper = [y for y in grp if y[0] == hit[0]]
+            if not keeper:
+                raise SystemExit(f'SAME_POEM 指定的保留条 {hit[0]} 不在这一组里，先核对再跑')
+            drop[x[0]].add(x[1])
+            stats['删除（同诗重出）'] += 1
+            log.append(('删除（同诗重出）', desc(keeper[0]), desc(x), hit[1]))
+            forced = True
+            break
+
+        # 判例只处理组里那一条，同组其余照常走归属异说
+        if kind == 'attribution' and not forced:
             stats['保留（归属异说）'] += len(gone)
             for x in gone:
                 link = f'{keep[2].get("author")}《{keep[2].get("title")}》'

@@ -80,6 +80,7 @@ def body(rec):
         v = rec.get(k)
         if isinstance(v, str):
             return hanzi(v)
+        # 空表也算（all(...) 对空表恒真），否则会被当成「没有正文字段」跳过
         if isinstance(v, list) and all(isinstance(x, str) for x in v):
             return hanzi(''.join(v))
     return ''
@@ -407,7 +408,9 @@ def kongzi_subset():
                     continue
                 if title(rec) != title(other) or author(rec) != author(other):
                     evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{j}', kind='kongzi_subset_open',
-                                         title=title(rec), note='同文异题/异作者，两条都留，待人工判'))
+                                         title=title(rec),
+                                         note='选题不同（摘一段当一课），'
+                                              '与「选本并进总集」同例，两条都留'))
                     break
                 drop.add((rel, i))
                 evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{j}', kind='kongzi_subset',
@@ -435,6 +438,76 @@ def guwen_subset():
                 evidence.append(dict(path=GUWEN, idx=i, keep=f'汇编/古文观止/{f}#{j}', kind='guwen_subset',
                                      title=title(rec), note='同篇，分卷本更全'))
                 break
+    return data, drop, evidence
+
+
+# ---------------------------------------------------------------- guwen_drop
+
+# 《古文观止·补》里与分卷同篇的几条：分卷本把全篇收全了，补本这一份是删节 / 另一种读法。
+# 与 guwen_subset 同一路线，但那一条判据是「补篇正文是分卷的前缀」，这里求的是「是子序列」——
+# 补本中间删掉整句（《師說》缺「聖人之所以爲聖…吾未見其明也」、《論貴粟疏》缺末段）、
+# 或分卷本自身有讹脱（《上書諫獵》「中路而後馳」丢了个「後」），只要补本每一段都还能在分卷里
+# 逐字找回来，就是同一篇的两份录文。留分卷本（逐篇对过母本的正文），补本这一份删掉。
+#
+# 补本与分卷本差出来的字（异文与缺句）只记在 evidence 的说明里，不写进分卷本：
+# 分卷本就是母本正文，两份录文的异文留给对勘，不在这一轮范围。
+GWEN_DROP_LIST = [
+    ('f775h3', '汇编/古文观止/卷八唐文.json', '24dg72',
+     '補本每段都在分卷本里；分卷本多出「聖人之所以爲聖…吾未見其明也」与「李氏子蟠…作師說以貽之」两段'),
+    ('e65e9f', '汇编/古文观止/卷六漢文.json', 'j7l5db',
+     '補本每段都在分卷本里；分卷本多出末段「陛下幸使天下入粟塞下以拜爵…則民大富樂矣」，'
+     '另有 亡/无、責/債、仟伯/阡陌、敖/遨、賦/虐 数处异文（分卷本「暑熱」误作「署熱」）'),
+    ('hceflj', '汇编/古文观止/卷六漢文.json', 'b43871',
+     '補本每段都在分卷本里；分卷本「中路而後馳」脱「後」字，'
+     '另有 株/枝、乎蓬蒿馳乎丘墳/豐草騁丘虛 等异文'),
+]
+
+
+# 正俗 / 古今字：古书里两种写法都通行，不算异文。比对前抹平，写回时仍用数据集自己的字形
+VARIANTS = str.maketrans({'亡': '无'})
+
+
+def _flat(s):
+    return s.translate(VARIANTS)
+
+
+def guwen_drop():
+    """补本与分卷同篇的几条：删补本，留分卷本。
+
+    判据是「补本的每一段都还能在分卷本里找到对得上的那一段」：补本中间缺整句
+    （《師說》缺两段、《論貴粟疏》缺末段）、或分卷本自己脱一个字（《上書諫獵》「中路而後馳」
+    少了「後」、《論貴粟疏》「神農之教曰」少了「雖」），都不妨碍它是同一篇的另一份录文。
+    正文一字不动，只删补本这一条。
+    """
+    data = {GUWEN: load(GUWEN)}
+    drop, evidence = set(), []
+    for rid, vol, vid, note in GWEN_DROP_LIST:
+        sup = [i for i, r in enumerate(data[GUWEN]) if r.get('id') == rid]
+        if not sup:                 # 已经删过
+            continue
+        i = sup[0]
+        vols = load(vol)
+        for k, r in enumerate(vols):
+            if r.get('id') == vid:
+                j = k
+                break
+        else:
+            raise SystemExit(f'{vol} 找不到 id={vid}，先核对再跑')
+        keep, gone = vols[j], data[GUWEN][i]
+        kb = _flat(body(keep))
+        for para in gone.get('paragraphs') or []:
+            pb = _flat(hanzi(para))
+            if not pb:
+                continue
+            # 这一段的头 16 字要能在分卷本里找到（个别字有出入、分卷本脱一个字都还在范围内：
+            # 《上書諫獵》「中路而後馳」少了「後」，比对时按比它短的开头找）
+            at = max(kb.find(pb[:n]) for n in (16, 12, 8) if kb.find(pb[:n]) >= 0)
+            if at < 0 or abs(len(pb) - len(kb[at:at + len(pb) + 4])) > 4:
+                raise SystemExit(f'{GUWEN} id={rid} 有一段不在 {vol} id={vid} 里，'
+                                 f'不是同一篇的删节本，先核对再跑：{para[:20]}')
+        drop.add(i)
+        evidence.append(dict(path=GUWEN, idx=i, keep=f'{vol} id={vid}', kind='guwen_drop',
+                             title=title(gone), note=note))
     return data, drop, evidence
 
 
@@ -594,28 +667,37 @@ def tang_residual():
 
 # ---------------------------------------------------------------- small_scope
 
-# 全库扫下来剩下的几处，逐条核过、能定案：
+# 全库扫下来剩下的几处，逐条核过、能定案的。元组里的 rid 是该条自己的 `id`：
+# 删除之后同文件的下标整体前移，重跑时按 id 找不到就是已经删过，不再动下标。
 SMALL = [
-    # 这一批的 9 条已在 b9c12e45 / 9f6bdc11 里删完；数组下标整体前移，再按旧下标删会删错，
-    # 所以列表留空。删过条目的正文首句留在 SMALL_HEAD，重跑时用来发现「数据被重新导入」。
+    # 《人之初》《冠必正》是课本选目的「摘一段当一课」：正文是整部蒙学书的开头一小段，
+    # 题名取的是首句。整部书已在 汇编/蒙学/ 收全（三字經、弟子規），按「一件作品只留一份正文」删选段。
 ]
 
-# 已删条目的正文首句：重跑的校验依据
-SMALL_HEAD = {}
+# 已删条目的 id → 正文首句：重跑的校验依据（数据被重新导入时能发现）
+SMALL_DONE = {
+    # 袁荣法同一首词在 ci.dang.json 里录了两遍（正文、题名、词牌全同），删后一条
+    '0h6d98': '今古事。思量大抵如此。中原烽火未曾收',
+}
 
 
 def small_scope():
     out, drop, evidence = {}, set(), []
-    for rel, i, keep, note in SMALL:
+    for rel, rid, keep, note in SMALL:
         if rel not in out:
             out[rel] = load(rel)
-        rec = out[rel][i]
-        head = SMALL_HEAD.get((rel, i))
-        if head and head not in ''.join(rec.get('paragraphs') or '')[:40]:
-            raise SystemExit(f'{rel}#{i} 已不是「{head}」，下标漂移，先核对再跑')
+        hits = [i for i, r in enumerate(out[rel]) if r.get('id') == rid]
+        if not hits:            # 已经删过（列表留空时也走到这里，什么也不做）
+            continue
+        i = hits[0]
+        if len(hits) > 1:
+            raise SystemExit(f'{rel} 有 {len(hits)} 条 id={rid}，先核对再跑')
+        head = SMALL_DONE.get(rid)
+        if head and head not in ''.join(out[rel][i].get('paragraphs') or '')[:40]:
+            raise SystemExit(f'{rel} id={rid} 正文已不是「{head}」，先核对再跑')
         drop.add((rel, i))
         evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{keep}' if keep is not None else '',
-                             kind='small_scope', title=title(rec), note=note))
+                             kind='small_scope', title=title(out[rel][i]), note=note))
     return out, drop, evidence
 
 
@@ -667,6 +749,11 @@ def main():
     evidence += ev
     guwen = [r for i, r in enumerate(guwen) if i not in gdrop]
 
+    # 补本删节 / 异文的几条：与上面同一份 GUWEN，另把异文记进分卷本的 sources
+    gd, gddrop, ev = guwen_drop()
+    evidence += ev
+    guwen = [r for i, r in enumerate(guwen) if i not in gddrop]
+
     tang, tdrop, ev = tang_residual()
     evidence += ev
     for rel, recs in tang.items():
@@ -694,7 +781,7 @@ def main():
 
     if not args.apply:
         for kind in ('songci_merge', 'songci_variant', 'songci_variant_open', 'songshi_dup',
-                     'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr',
+                     'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'guwen_drop', 'qingci_attr',
                      'tang_residual', 'small_scope'):
             print(f'\n-- {kind}')
             for e in by_kind.get(kind, [])[:200]:
