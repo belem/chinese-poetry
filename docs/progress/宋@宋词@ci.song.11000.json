@@ -15,9 +15,14 @@
       "original": "□梁畔，一枝香袅。",
       "corrected": "畫梁畔，一枝香袅。",
       "note": "[missing_char] □ → 畫; 识典古籍 (2 books, e.g. , 《御定詞譜》御定詞譜卷九)"
+    },
+    {
+      "original": "园归去又残红，便□地、飞觞尚得。",
+      "corrected": "园归去又残红，便席地、飞觞尚得。",
+      "note": "[missing_char] □ → 席; 识典古籍 (1 books, e.g. ); decided by reviewer"
     }
   ],
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
+  "date": "2026-11-02",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }
