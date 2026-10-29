@@ -250,8 +250,84 @@
       "original": "问伊可煞□人厚",
       "corrected": "问伊可煞于人厚",
       "note": "缺字→于：周邦彦《青玉案》，《片玉词》（汲古阁本）、《御定词谱》《清真集》并作「问伊可煞于人厚」。"
+    },
+    {
+      "original": "李煜《浪淘沙令》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/nantang/poetrys.json 李煜《浪淘沙·往事只堪哀》 同首（相似度 0.96），留五代专书"
+    },
+    {
+      "original": "李煜《相见欢》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/nantang/poetrys.json 李煜《相见欢·林花谢了春红》 同首（相似度 0.97），留五代专书"
+    },
+    {
+      "original": "李璟《摊破浣溪沙》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/nantang/poetrys.json 李璟《摊破浣溪沙·菡萏香销翠叶残》 同首（相似度 0.94），留五代专书"
+    },
+    {
+      "original": "李煜《望江南二首》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/nantang/poetrys.json 李煜《望江梅·闲梦远》 同首（相似度 0.96），留五代专书"
+    },
+    {
+      "original": "毛文锡《更漏子》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-5-juan.json 毛文锡《更漏子·春夜阑》 同首（相似度 0.93），留五代专书"
+    },
+    {
+      "original": "牛希济《酒泉子》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-5-juan.json 牛希济《酒泉子·枕转簟凉》 同首（相似度 0.97），留五代专书"
+    },
+    {
+      "original": "牛峤《更漏子》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-4-juan.json 牛峤《更漏子·春夜阑》 同首（相似度 0.98），留五代专书"
+    },
+    {
+      "original": "牛峤《杂曲歌辞》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-3-juan.json 牛峤《柳枝·吴王宫里色偏深》 同首（相似度 0.96），留五代专书"
+    },
+    {
+      "original": "李煜《菩萨蛮》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/nantang/poetrys.json 李煜《菩萨蛮·铜簧韵脆锵寒竹》 同首（相似度 0.93），留五代专书"
+    },
+    {
+      "original": "孙光宪《风流子》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-8-juan.json 孙光宪《风流子·茅舍槿篱溪曲》 同首（相似度 0.94），留五代专书"
+    },
+    {
+      "original": "魏承班《木兰花令》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-9-juan.json 魏承班《木兰花·小芙蓉》 同首（相似度 0.98），留五代专书"
+    },
+    {
+      "original": "顾夐《诉衷情》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-7-juan.json 顾敻《诉衷情·永夜抛人何处去》 同首（相似度 0.95），留五代专书"
+    },
+    {
+      "original": "顾夐《酒泉子》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-7-juan.json 顾敻《酒泉子·水碧风清》 同首（相似度 0.98），留五代专书"
+    },
+    {
+      "original": "顾夐《浣溪沙》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-7-juan.json 顾敻《浣溪沙·春色迷人恨正赊》 同首（相似度 0.98），留五代专书"
+    },
+    {
+      "original": "顾夐《玉楼春》",
+      "corrected": "删除",
+      "note": "与 五代十国/词/五代诗词/huajianji/huajianji-6-juan.json 顾敻《玉楼春·柳映玉楼春日晚》 同首（相似度 0.98），留五代专书"
     }
   ],
+  "note": "2026-02-14 重复清理：删 19 条与花间集/南唐重出的五代词，逐条见 docs/宋词五代词去重.tsv。",
   "date": "2026-11-03",
   "reviewer": "CodeBuddy",
   "status": "fixed"
