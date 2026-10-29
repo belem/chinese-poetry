@@ -583,4 +583,7 @@ yuanqu_cover_open	元/元曲/yuanqu.json	11458	湘妃怨·和卢疏斋西湖	元
 yuanqu_cover_open	元/元曲/yuanqu.json	11494	人月圆·春日次韵	元/元曲/yuanqu.json#5991	前缀重合但不构成重出（长句 154 字 / 短句 48 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	11535	塞鸿秋·浔阳即景	元/元曲/yuanqu.json#9755	前缀重合但不构成重出（长句 90 字 / 短句 45 字，同作者），两条都留
 kongzi_subset_open	汇编/课本选目/寓言故事.json	10	揠苗助长	汇编/课本选目/寓言故事.json#31	同文异题/异作者，两条都留，待人工判
-kongzi_subset_open	汇编/课本选目/蒙学经典.json	5	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
+kongzi_subset_open	汇编/课本选目/蒙学经典.json	4	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
+tang_residual	唐/诗/全唐诗/poet.tang.1000.json	9	横吹曲辞 紫骝马	唐/诗/全唐诗/poet.tang.37000.json#249	銙/胯、却/著（着）皆通用，《樂府詩集》两种刻本各作一读；两条同题同作者，留一条
+small_scope	当/ci.dang.json	49	乙丑秋日书怀		同首重出，删后一条
+small_scope	汇编/课本选目/蒙学经典.json	2	千字文		与 汇编/蒙学/baijiaxing.json 重出的那条已删，这里只剩校验

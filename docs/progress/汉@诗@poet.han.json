@@ -25,10 +25,20 @@
       "original": "□年，秦灭楚",
       "corrected": "四十二年，秦灭楚",
       "note": "同上"
+    },
+    {
+      "original": "# 89 战城南",
+      "corrected": null,
+      "note": "[small_scope] 删此条，正文与 汉/诗/poet.han.json#26 重出：同首重出，前一条句读完整、无缺字"
+    },
+    {
+      "original": "# 278 文王世子第八",
+      "corrected": null,
+      "note": "[small_scope] 删此条，正文与 汉/诗/poet.han.json#120 重出：同一篇的续录，整篇已收全"
     }
   ],
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-29 重复清理：2 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
+  "date": "2026-10-29",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

@@ -569,6 +569,56 @@ def apply_drop(data, drop):
     return data
 
 
+# ---------------------------------------------------------------- tang_residual
+
+# 《全唐诗》内部去重之后还剩 22 组「同作者」。逐组看过：绝大多数是异文，或是「缺字重录本」
+# （后一条题名尾巴上写着「按全唐詩卷X收此詩缺N字今重錄」，正文反而更全），两存。只有下一条
+# 同时满足「两组同题」且「正文只差通用的异体 / 正俗字」，已在批次 `cleanup/tang-residual-2`
+# 删掉，所以列表留空；重跑时数据若被重新导入，按下面的判据补回来。
+#   唐/诗/全唐诗/poet.tang.1000.json#9 秦韜玉《橫吹曲辭 紫騮馬》
+#   ← 唐/诗/全唐诗/poet.tang.37000.json#249《紫騮馬》（銙/胯、却/著、躞蹀/踥蹀 皆通用）
+TANG_REL = []
+
+
+def tang_residual():
+    out, drop, evidence = {}, set(), []
+    for rel, i, (rel2, j), note in TANG_REL:
+        for r in (rel, rel2):
+            if r not in out:
+                out[r] = load(r)
+        drop.add((rel, i))
+        evidence.append(dict(path=rel, idx=i, keep=f'{rel2}#{j}', kind='tang_residual',
+                             title=title(out[rel][i]), note=note))
+    return out, drop, evidence
+
+
+# ---------------------------------------------------------------- small_scope
+
+# 全库扫下来剩下的几处，逐条核过、能定案：
+SMALL = [
+    # 这一批的 9 条已在 b9c12e45 / 9f6bdc11 里删完；数组下标整体前移，再按旧下标删会删错，
+    # 所以列表留空。删过条目的正文首句留在 SMALL_HEAD，重跑时用来发现「数据被重新导入」。
+]
+
+# 已删条目的正文首句：重跑的校验依据
+SMALL_HEAD = {}
+
+
+def small_scope():
+    out, drop, evidence = {}, set(), []
+    for rel, i, keep, note in SMALL:
+        if rel not in out:
+            out[rel] = load(rel)
+        rec = out[rel][i]
+        head = SMALL_HEAD.get((rel, i))
+        if head and head not in ''.join(rec.get('paragraphs') or '')[:40]:
+            raise SystemExit(f'{rel}#{i} 已不是「{head}」，下标漂移，先核对再跑')
+        drop.add((rel, i))
+        evidence.append(dict(path=rel, idx=i, keep=f'{rel}#{keep}' if keep is not None else '',
+                             kind='small_scope', title=title(rec), note=note))
+    return out, drop, evidence
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('action', nargs='?', default='dedupe', choices=['dedupe', 'songci-diff'])
@@ -617,6 +667,18 @@ def main():
     evidence += ev
     guwen = [r for i, r in enumerate(guwen) if i not in gdrop]
 
+    tang, tdrop, ev = tang_residual()
+    evidence += ev
+    for rel, recs in tang.items():
+        idxs = {i for r, i in tdrop if r == rel}
+        tang[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
+    small, mdrop, ev = small_scope()
+    evidence += ev
+    for rel, recs in small.items():
+        idxs = {i for r, i in mdrop if r == rel}
+        small[rel] = [r for i, r in enumerate(recs) if i not in idxs]
+
     qing, qdrop, ev = qingci_attr()
     evidence += ev
     qing = [r for i, r in enumerate(qing) if i not in qdrop]
@@ -631,7 +693,9 @@ def main():
     print(f'   共删记录 {total_drop} 条，待人工判 {sum(len(v) for k, v in by_kind.items() if k.endswith("open"))} 条')
 
     if not args.apply:
-        for kind in ('songci_merge', 'songci_variant', 'songci_variant_open', 'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr'):
+        for kind in ('songci_merge', 'songci_variant', 'songci_variant_open', 'songshi_dup',
+                     'yuanqu_cover', 'sanguo_dup', 'kongzi_subset', 'guwen_subset', 'qingci_attr',
+                     'tang_residual', 'small_scope'):
             print(f'\n-- {kind}')
             for e in by_kind.get(kind, [])[:200]:
                 print(f"   {e['path']}#{e['idx']} {e['title'][:20]} → 留 {e['keep']}（{e['note']}）")
@@ -647,6 +711,10 @@ def main():
     for rel, recs in kong.items():
         dump(rel, recs)
     dump(GUWEN, guwen)
+    for rel, recs in tang.items():
+        dump(rel, recs)
+    for rel, recs in small.items():
+        dump(rel, recs)
     dump(QINGCI, qing)
 
     with open(os.path.join(ROOT, args.out), 'w', encoding='utf-8', newline='') as fp:
