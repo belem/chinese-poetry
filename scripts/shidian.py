@@ -391,9 +391,34 @@ def recompute_stats(progress=None):
 
 
 def token_from_edit(orig, prop):
-    """orig 含 □，prop 是审查人改写后的同一处上下文：返回替换 □ 的文本（□ 被删则返回空串）。"""
-    a = orig.index('□')
-    return prop[a:len(prop) - (len(orig) - a - 1)]
+    """审查人手填的 replacement（orig 是含 □ 的原句）→ 替换 □ 的文本（□ 被删则返回空串）。
+
+    审查人两种写法：把 □ 处补上字，或直接粘一整句正确的文字（后者常与 orig 不等长，因为 orig
+    是从句中被截断的）。两者都按「两端不变、中间是缺的字」解：在 prop 上找一处 n 字长的窗口，
+    使窗口左边是 orig □ 之前那一段的结尾、窗口右边是 orig □ 之后那一段的开头。左端可能被补字
+    打断（「娇云轻□鬓」→「娇嚲云轻鬓」），所以两侧都允许只对上后缀 / 前缀。
+    """
+    a, b = orig.index('□'), orig.rindex('□') + 1
+    left, right, box = orig[:a], orig[b:], b - a
+    # □ 处该放几个字：两侧对称地砍到同一句时，差多少补多少；粘来的句子被截断时，按标注的缺字长度
+    n = len(prop) - (len(orig) - 2 * box) if len(prop) < len(orig) else len(prop) - (len(orig) - box)
+    n = min(max(n, box), len(prop))
+    # 左右两侧加起来对得最多的窗口胜出；打平时取靠左的（粘来的句子常被截断，右文短）
+    best = (-1, 0, 0)
+    for start in range(0, len(prop) - n + 1):
+        end = start + n
+        lk = 0
+        while lk < min(len(left), start) and left[-1 - lk] == prop[start - 1 - lk]:
+            lk += 1
+        rk = 0
+        while rk < min(len(right), len(prop) - end) and right[rk] == prop[end + rk]:
+            rk += 1
+        if (lk and lk == min(len(left), start)) or (rk and rk == min(len(right), len(prop) - end)):
+            if lk + rk > best[0] or (lk + rk == best[0] and start < best[1]):
+                best = (lk + rk, start, end)
+    if best[0] > 0:
+        return prop[best[1]:best[2]]
+    return prop[:n]                             # 两端都对不上（粘的句子被截断）：按标注的缺字长度取
 
 
 def cmd_apply(args):
