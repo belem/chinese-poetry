@@ -20,10 +20,25 @@
       "original": "柔无力，依依怨和□。",
       "corrected": "柔无力，依依怨和困。",
       "note": "[missing_char] □ → 困; 识典古籍 (3 books, e.g. , 《全芳備祖前集》全芳備祖後集卷十七)"
+    },
+    {
+      "original": "未散娇云轻□鬓，欲融轻雪乍凝",
+      "corrected": "未散娇云轻嚲鬓，欲融轻雪乍凝",
+      "note": "[missing_char] □ → 嚲; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞“瑞龍吟”); decided by reviewer"
+    },
+    {
+      "original": "拟倩东□。",
+      "corrected": "拟倩东君。",
+      "note": "[missing_char] □ → 君; 识典古籍 (4 books, e.g. , 《宋金元人詞》東山寓聲樂府); decided by reviewer"
+    },
+    {
+      "original": "化作尊前如梦云。",
+      "corrected": "化作尊前入梦云。",
+      "note": "[typo] 贺铸《减字木兰花》：《全芳備祖》四库本、蓝格抄本、《御定佩文齋廣群芳譜》、《佩文齋廣群芳譜》并作「化作尊前入夢雲」；「如」「入」形近而讹"
     }
   ],
   "note": "其中 6 处经古籍证实原样，未改；8 处字数异常证据不足，未改，留待复核",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }
