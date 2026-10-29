@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.58000.json",
+  "fixes": [
+    {
+      "original": "方泽《武昌阻风》",
+      "corrected": "删除",
+      "note": "与《全唐诗》方泽《武昌阻风》 同一首（正文全同），删后收的那份"
+    }
+  ],
+  "note": "2026-02-14 重复清理：删 1 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。",
   "date": "2026-10-04",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
