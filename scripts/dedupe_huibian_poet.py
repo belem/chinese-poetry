@@ -50,8 +50,9 @@ POET = {
     '宋': '宋/诗/poet.song.json',
     '清': '清/诗/poet.qing.json',
     '晋': '晋/诗/poet.jin.json',
-    '南北朝': '南北朝/诗/poet.nanbeichuan.json',
+    '南北朝': '南北朝/诗/poet.nanbeichao.json',
     '明': '明/诗/poet.ming.json',
+    '明词': '明/词/ci.ming.json',
 }
 OUT = 'docs/汇编与诗去重.tsv'
 
