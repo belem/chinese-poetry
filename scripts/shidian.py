@@ -100,13 +100,35 @@ def load(rel):
 
 
 RESULT_MARKER = '生成语料表格并进行分析'   # 结果页正文的起点；search.mjs 只保存此后的部分
+# 《詞譜》《詞律》等把韵谱记号排进正文：「句」「韻」「叶」「讀」「豆」标断句与协韵，不是词里的字。
+# 检索片段里它们紧贴在缺字/待校字的位置上，被当成候选字推出来（京镗《绛都春》曾被推「句」、
+# 「葉」曾被推「韻」）。这类证据一律当作没有证据。整段韵谱（「雙調一百八字前段十句四仄韻……」）
+# 与逐词标记是两回事：后者要整段剔掉，否则谱里罗列的「韻」字会凑成一条假证据。
+# 韵谱里的记号字，另加「一两」这类数字（「換頭一句兩韻」）；单字一个即算标记，「一句」「兩韻」成词的不动
+NOTATION = {'句', '韻', '韵', '叶', '葉', '讀', '读', '豆', '兩', '两'}
+# 整段韵谱：「雙調一百八字前段十句四仄韻後段十一句五仄韻」，直到正文前的「葉」才收口。
+# 整段不剥，谱里罗列的「韻」会凑出假候选；断在谱中间也无妨，宁可少认几处，不能把正文当谱砍掉
+NOTATION_RUN = re.compile(r'(?:雙調|前段|後段|上段|下段|上闋|下闋|[0-9一二三四五六七八九十百]+字)'
+                          r'[^，。；！？《》\s]{0,60}')
+BOOKLIKE_OCR = set('口四')           # 《無絃琴譜》《彊村叢書》里缺字框的常见 OCR 结果
+
+
+def strip_notation(text):
+    """剥掉韵谱标记，返回只剩正文的文字（词内的「句/韻/叶」也一并去掉）。
+
+    《御定詞譜》一页的片段长这样：
+        雙調一百八字前段十句四仄韻後段十一句五仄韻葉欲知方寸句，共有幾許清愁句。芭蕉不展丁香結叶
+    整段谱不剥掉，谱里罗列的「韻」就会凑出一条假候选。行文里的「一句」「兩韻」成词，不动。
+    """
+    text = NOTATION_RUN.sub('', text)
+    return re.sub(r'[句韻韵叶葉讀豆兩两]', '', text)
 
 
 def snippets(text):
     """识典古籍结果页 → [(原样片段, 简体规整片段, 书名, 出处)]，片段只保留汉字。"""
     body = text.split(RESULT_MARKER, 1)[-1]
     for m in re.finditer(r'([^《》]{6,600}?)\s*《([^》]{1,40})》([^《]{0,80})', body):
-        raw = ''.join(c for c in m.group(1) if HAN.match(c))
+        raw = ''.join(c for c in strip_notation(m.group(1)) if HAN.match(c))
         norm = T2S.convert(raw)
         if len(norm) != len(raw):          # 简转后长度变化则不做位置映射
             norm = raw
@@ -117,7 +139,7 @@ def snippets(text):
         line = line.strip()
         if '《' in line or not line or RESULT_MARKER in line:
             continue
-        raw = ''.join(c for c in line if HAN.match(c))
+        raw = ''.join(c for c in strip_notation(line) if HAN.match(c))
         norm = T2S.convert(raw)
         if len(norm) != len(raw):
             norm = raw
@@ -280,8 +302,11 @@ def analyze_token(it, res):
             if not best:
                 continue
             cand = best[0]
-            if gap and BOXLIKE & set(cand):
+            # 韵谱的「句」「韻」「叶」与 OCR 成「口」「四」的缺字框：都不是补字
+            if gap and set(cand) & (BOXLIKE | BOOKLIKE_OCR):
                 lacuna.add(book)
+                continue
+            if set(cand) & NOTATION:
                 continue
             votes[cand] += 1
             books[cand].add(book)
@@ -325,7 +350,7 @@ def analyze_line(it, res):
                 as_is.add(book)
             for m in re.finditer(re.escape(P) + f'([\\u3400-\\u9fff\\U00020000-\\U0003ffff]{{{main}}})' + re.escape(N), norm):
                 t = m.group(1)
-                if t != s and one_edit(s, t):
+                if t != s and one_edit(s, t) and not set(t) & NOTATION:
                     cand[t].add(book)
                     raw_form.setdefault(t, raw[m.start(1):m.end(1)])
     ranked = sorted(cand.items(), key=lambda kv: -len(kv[1]))
