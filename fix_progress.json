@@ -5,8 +5,8 @@
     "total_files": 887,
     "reviewed": 894,
     "clean": 347,
-    "fixed": 113,
-    "needs_review": 230,
+    "fixed": 114,
+    "needs_review": 229,
     "out_of_scope": 204,
     "in_scope_files": 690
   },
@@ -667,9 +667,9 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.0.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "fixed"
     },
     "宋/宋词/ci.song.1000.json": {
       "date": "2026-11-02",
@@ -687,8 +687,8 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.12000.json": {
-      "date": "2026-11-02",
-      "reviewer": "codebuddy",
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "needs_review"
     },
     "宋/宋词/ci.song.13000.json": {
@@ -702,8 +702,8 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.15000.json": {
-      "date": "2026-11-02",
-      "reviewer": "codebuddy",
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "fixed"
     },
     "宋/宋词/ci.song.16000.json": {
@@ -787,8 +787,8 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.9000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "fixed"
     },
     "宋/小说/容斋随笔/rongzhaishuibi.json": {

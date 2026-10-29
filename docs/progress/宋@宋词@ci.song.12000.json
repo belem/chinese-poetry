@@ -20,10 +20,25 @@
       "original": "归梦绕家山",
       "corrected": null,
       "note": "宋词归属异说那一轮核出：《中興以來絶妙詞選》《宋丞相崔清獻公全錄》《全蜀藝文志》并作「到家山」（未命中，未改）"
+    },
+    {
+      "original": "□□沈腰春瘦，却成宋",
+      "corrected": "漸覺沈腰春瘦，却成宋",
+      "note": "[missing_char] □□ → 漸覺; 识典古籍 (2 books, e.g. , 《花草稡編》卷四)"
+    },
+    {
+      "original": "枝上青禽□诉。",
+      "corrected": "枝上青禽俗诉。",
+      "note": "[missing_char] □ → 俗; 识典古籍 (2 books, e.g. , 《全芳備祖前集》全芳備祖前集卷一)"
+    },
+    {
+      "original": "只□沈醉谁扶我。",
+      "corrected": "只愁沈醉谁扶我。",
+      "note": "[missing_char] □ → 愁; 识典古籍 (2 books, e.g. , 《坦菴詞》坦菴詞“萬年歡”)"
     }
   ],
   "note": "其中 2 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核；其中 2 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
+  "date": "2026-10-29",
+  "reviewer": "CodeBuddy (AI)",
   "status": "needs_review"
 }
