@@ -1,34 +1,49 @@
 {
- "path": "宋/宋词/ci.song.5000.json",
- "fixes": [
-  {
-   "original": "一望平林，□□花相映",
-   "corrected": "一望平林，淡蕩花相映",
-   "note": "[missing_char] □□ → 淡蕩; 识典古籍 (2 books, e.g. , 《初寮詞》初寮詞“又”)"
-  },
-  {
-   "original": "□落阶无影。",
-   "corrected": "影落阶无影。",
-   "note": "[missing_char] □ → 影; 识典古籍 (2 books, e.g. , 《石林詞》正文)"
-  },
-  {
-   "original": "白纻红裙香□□，折花闹调客。",
-   "corrected": "白纻红裙香遠襲，折花闹调客。",
-   "note": "[missing_char] □□ → 遠襲; 识典古籍 (2 books, e.g. , 《樂府雅詞》樂府雅詞卷下“點絳唇陳去非”)"
-  },
-  {
-   "original": "入破□箫逐。",
-   "corrected": "入破瓊箫逐。",
-   "note": "[missing_char] □ → 瓊; 识典古籍 (2 books, e.g. , 《樂府雅詞》樂府雅詞卷下“點絳唇陳去非”)"
-  },
-  {
-   "original": "病来应怕酒，□眼常醒，老去羞春",
-   "corrected": "病来应怕酒，兩眼常醒，老去羞春",
-   "note": "[missing_char] □ → 兩; 识典古籍 (2 books, e.g. , 《御定詞譜》御定詞譜卷二十)"
-  }
- ],
- "note": "2026-10 由宋词对勘管线逐句对过（docs/宋词对勘.md），本批起改用识典古籍核 □ 缺字：accept 各处均 ≥2 种古籍一致（如「白纻红裙香遠襲」见《樂府雅詞》四庫本与四部丛刊本，「入破瓊箫逐」见《赤城詞》、《彊村叢書》）。仍未逐首复核，余下的 □ 待下一批。",
- "date": "2026-10-29",
- "reviewer": "CodeBuddy (AI)",
- "status": "fixed"
+  "path": "宋/宋词/ci.song.5000.json",
+  "fixes": [
+    {
+      "original": "一望平林，□□花相映",
+      "corrected": "一望平林，淡蕩花相映",
+      "note": "[missing_char] □□ → 淡蕩; 识典古籍 (2 books, e.g. , 《初寮詞》初寮詞“又”)"
+    },
+    {
+      "original": "□落阶无影。",
+      "corrected": "影落阶无影。",
+      "note": "[missing_char] □ → 影; 识典古籍 (2 books, e.g. , 《石林詞》正文)"
+    },
+    {
+      "original": "白纻红裙香□□，折花闹调客。",
+      "corrected": "白纻红裙香遠襲，折花闹调客。",
+      "note": "[missing_char] □□ → 遠襲; 识典古籍 (2 books, e.g. , 《樂府雅詞》樂府雅詞卷下“點絳唇陳去非”)"
+    },
+    {
+      "original": "入破□箫逐。",
+      "corrected": "入破瓊箫逐。",
+      "note": "[missing_char] □ → 瓊; 识典古籍 (2 books, e.g. , 《樂府雅詞》樂府雅詞卷下“點絳唇陳去非”)"
+    },
+    {
+      "original": "病来应怕酒，□眼常醒，老去羞春",
+      "corrected": "病来应怕酒，兩眼常醒，老去羞春",
+      "note": "[missing_char] □ → 兩; 识典古籍 (2 books, e.g. , 《御定詞譜》御定詞譜卷二十)"
+    },
+    {
+      "original": "影落阶无影",
+      "corrected": "影落欹阶无影",
+      "note": "[ci_pattern] 影落阶无影 → 影落欹阶无影; 识典古籍 (2 books, e.g. , 石林詞)"
+    },
+    {
+      "original": "你不知人是不知人",
+      "corrected": "你不知人是不知人",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 樵歌); no change"
+    },
+    {
+      "original": "影落阶无影。",
+      "corrected": "影落欹阶无影。",
+      "note": "[ci_pattern] 《清平樂》常体六字句，此处脱「欹」：道光合刻本、《石林詞》道光刻本作「鏡影落欹階」。四庫本、汲古閣本断作「素練不收寒玉，鏡影落堦無影」，是断句差异而非缺字，两者并存"
+    }
+  ],
+  "note": "2026-10 由宋词对勘管线逐句对过（docs/宋词对勘.md），本批起改用识典古籍核 □ 缺字：accept 各处均 ≥2 种古籍一致（如「白纻红裙香遠襲」见《樂府雅詞》四庫本与四部丛刊本，「入破瓊箫逐」见《赤城詞》、《彊村叢書》）。仍未逐首复核，余下的 □ 待下一批。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

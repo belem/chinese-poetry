@@ -1,7 +1,24 @@
 {
   "path": "宋/宋词/ci.song.4000.json",
+  "fixes": [
+    {
+      "original": "云母屏风",
+      "corrected": "云母屏风",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 御定詞譜, 片玉詞); no change"
+    },
+    {
+      "original": "略下巫峰",
+      "corrected": "略下巫峰",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, [御選]歷代詩餘, 御選歷代詩餘); no change"
+    },
+    {
+      "original": "放下了日多萦系",
+      "corrected": "放下了日多萦系",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋名家詞, 東堂詞); no change"
+    }
+  ],
   "note": "其中 3 处经古籍证实原样，未改",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }

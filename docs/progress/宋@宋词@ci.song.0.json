@@ -1,29 +1,34 @@
 {
-  "path": "宋/宋词/ci.song.0.json",
-  "fixes": [
-    {
-      "original": "不惯被人抛掷",
-      "corrected": "不惯被人抛掷日",
-      "note": "[ci_pattern] 不惯被人抛掷 → 不惯被人抛掷日；《宋名家詞》本杜安世《壽域詞》作「不慣被人抛擲日」，與上句「玉容瘦與薄妝稱」協"
-    },
-    {
-      "original": "□见。",
-      "corrected": "乍见。",
-      "note": "[missing_char] □ → 乍; 识典古籍 (3 books, e.g. , 《[御選]歷代詩餘》[御選]歷代詩餘卷四十一)"
-    },
-    {
-      "original": "□算。",
-      "corrected": "重算。",
-      "note": "[missing_char] □ → 重; 识典古籍 (2 books, e.g. , 《安陸集》安陸集“詞”)"
-    },
-    {
-      "original": "斜日两竿留碧□。",
-      "corrected": "斜日两竿留碧草。",
-      "note": "[missing_char] □ → 草; 识典古籍 (2 books, e.g. , 《御選歷代詩餘》十拍子)"
-    }
-  ],
-  "note": "其中 4 处经古籍证实原样，未改；2 处字数异常证据不足，未改，留待复核",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
-  "status": "fixed"
+ "path": "宋/宋词/ci.song.0.json",
+ "fixes": [
+  {
+   "original": "不惯被人抛掷",
+   "corrected": "不惯被人抛掷日",
+   "note": "[ci_pattern] 不惯被人抛掷 → 不惯被人抛掷日；《宋名家詞》本杜安世《壽域詞》作「不慣被人抛擲日」，與上句「玉容瘦與薄妝稱」協"
+  },
+  {
+   "original": "□见。",
+   "corrected": "乍见。",
+   "note": "[missing_char] □ → 乍; 识典古籍 (3 books, e.g. , 《[御選]歷代詩餘》[御選]歷代詩餘卷四十一)"
+  },
+  {
+   "original": "□算。",
+   "corrected": "重算。",
+   "note": "[missing_char] □ → 重; 识典古籍 (2 books, e.g. , 《安陸集》安陸集“詞”)"
+  },
+  {
+   "original": "斜日两竿留碧□。",
+   "corrected": "斜日两竿留碧草。",
+   "note": "[missing_char] □ → 草; 识典古籍 (2 books, e.g. , 《御選歷代詩餘》十拍子)"
+  },
+  {
+   "original": "雨后斜阳。 / 细细风来细细香。",
+   "corrected": "雨后斜阳，细细风来细细香。",
+   "note": "[ci_pattern] 《南歌子》（题作《採桑子》）首两句被拆成两行，与《歐陽文忠公文集》《醉翁琴趣外篇》《花草稡編》等 8 种古籍的「雨後斜陽，細細風來細細香」合为一句"
+  }
+ ],
+ "note": "其中 4 处经古籍证实原样，未改；2 处字数异常证据不足，未改，留待复核",
+ "date": "2026-10-29",
+ "reviewer": "CodeBuddy (AI)",
+ "status": "fixed"
 }

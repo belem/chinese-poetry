@@ -15,10 +15,40 @@
       "original": "眉间已作伤春皱",
       "corrected": "眉尖已作伤春皱",
       "note": "宋词归属异说那一轮核出：《東坡詞》《東坡先生全集》《宋名家詞》《御選歷代詩餘》并作「眉尖」"
+    },
+    {
+      "original": "红笺寄与添烦恼",
+      "corrected": "红笺寄与添烦恼",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 能改齋漫錄); no change"
+    },
+    {
+      "original": "掩映竹篱茅舍",
+      "corrected": "掩映竹篱茅舍",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 彊村叢書, 臨川先生文集); no change"
+    },
+    {
+      "original": "龙舆忽掩三川",
+      "corrected": "龙舆忽掩三川",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 太史范公文集, 范太史集); no change"
+    },
+    {
+      "original": "于君去后少交亲",
+      "corrected": "于君去后少交亲",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 大小晏詞, 宋名家詞); no change"
+    },
+    {
+      "original": "留名千载不干身",
+      "corrected": "留名千载不干身",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 宋名家詞, 小山詞); no change"
+    },
+    {
+      "original": "不禁微雨",
+      "corrected": "不禁微雨",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 御選歷代詩餘, 花草稡編); no change"
     }
   ],
   "note": "其中 6 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
