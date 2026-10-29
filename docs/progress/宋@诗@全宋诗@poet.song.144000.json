@@ -2,12 +2,17 @@
   "path": "宋/诗/全宋诗/poet.song.144000.json",
   "fixes": [
     {
+      "original": "李远《咏壁鱼》",
+      "corrected": "删除",
+      "note": "与《全唐诗》李远《咏壁鱼》 同一首（正文全同），删后收的那份"
+    },
+    {
       "original": "4h6g5j",
       "corrected": "tags",
       "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
     }
   ],
-  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "note": "2026-02-14 重复清理：删 1 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "clean"
