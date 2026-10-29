@@ -732,9 +732,9 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.20000.json": {
-      "date": "2026-11-03",
+      "date": "2026-10-29",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.2019y.json": {
       "date": "2026-06-26",
@@ -4447,9 +4447,9 @@
       "status": "fixed"
     },
     "清/词/ci.qing.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "fixed"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy",
+      "status": "needs_review"
     },
     "清/诗/poet.qing.json": {
       "date": "2026-10-30",
