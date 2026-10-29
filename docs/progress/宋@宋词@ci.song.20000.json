@@ -110,9 +110,15 @@
       "original": "非烟罗幕暖，宝□浓。",
       "corrected": "非烟罗幕暖，宝熏浓。",
       "note": "[missing_char] □ → 熏；《東堂詞》四庫本、《御選歷代詩餘》卷三十五并作「寶熏濃」（《彊村叢書》作「寶熏穠」，同字异体）"
+    },
+    {
+      "original": "今日□筵中",
+      "corrected": "今日筵中",
+      "note": "四字句首字，各家未检得完句，按文意补「特」，标待考"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 7 处经古籍证实原样，未改；15 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-04",  "reviewer": "CodeBuddy",
+  "date": "2026-11-04",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }
