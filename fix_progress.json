@@ -5,8 +5,8 @@
     "total_files": 887,
     "reviewed": 888,
     "clean": 347,
-    "fixed": 107,
-    "needs_review": 230,
+    "fixed": 108,
+    "needs_review": 229,
     "out_of_scope": 204,
     "in_scope_files": 684
   },
@@ -3677,9 +3677,9 @@
       "status": "needs_review"
     },
     "明/小说/东周列国志/dongzhoulieguozhi.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-02",
       "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "明/小说/封神演义/fengshenyanqi.json": {
       "date": "2026-10-29",
