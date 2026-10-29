@@ -10,10 +10,90 @@
       "original": "春风侍女篝畔",
       "corrected": "春风侍女衣篝畔",
       "note": "[ci_pattern] 春风侍女篝畔 → 春风侍女衣篝畔；《本堂集》卷四十作「綺席春風自十分」；《夢窗稿》乙稿卷二作「春風侍女衣篝畔」"
+    },
+    {
+      "original": "强颜红紫同□，皎洁性难移。",
+      "corrected": "强颜红紫同時，皎洁性难移。",
+      "note": "[missing_char] □ → 時; 识典古籍 (2 books, e.g. , 《珊瑚木難》卷三)"
+    },
+    {
+      "original": "堪叹萍泛浪迹，□事无长寸。",
+      "corrected": "堪叹萍泛浪迹，是事无长寸。",
+      "note": "[missing_char] □ → 是; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞一卷)"
+    },
+    {
+      "original": "□可与群芳推首。",
+      "corrected": "正可与群芳推首。",
+      "note": "[missing_char] □ → 正; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞一卷)"
+    },
+    {
+      "original": "武陵溪上，□宋玉墙头，全胜姝",
+      "corrected": "武陵溪上，面宋玉墙头，全胜姝",
+      "note": "[missing_char] □ → 面; 识典古籍 (2 books, e.g. , 《和清真詞》正文)"
+    },
+    {
+      "original": "梅魂蕙魄，素馨□长，酴醿请避。",
+      "corrected": "梅魂蕙魄，素馨推长，酴醿请避。",
+      "note": "[missing_char] □ → 推; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞一卷)"
+    },
+    {
+      "original": "怕姮娥、不□蟾宫桂种，□高枝",
+      "corrected": "怕姮娥、不怕姮娥、不语蟾宫桂种，把高枝蟾宫桂种，□高枝",
+      "note": "[missing_char] □ → 怕姮娥、不语蟾宫桂种，把高枝; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞一卷); decided by reviewer"
+    },
+    {
+      "original": "、不□蟾宫桂种，□高枝比。",
+      "corrected": "、不把蟾宫桂种，□高枝比。",
+      "note": "[missing_char] □ → 把; 识典古籍 (2 books, e.g. , 《和清真詞》和清真詞一卷)"
+    },
+    {
+      "original": "旋□□、写入鸣弦柱。",
+      "corrected": "旋工試、写入鸣弦柱。",
+      "note": "[missing_char] □□ → 工試; 识典古籍 (2 books, e.g. , 《景定建康志》景定建康志卷二十二宋周應合撰“亭軒”)"
+    },
+    {
+      "original": "晴杨两岸，晚烟泼□。",
+      "corrected": "晴杨两岸，晚烟泼潑。",
+      "note": "[missing_char] □ → 潑; 识典古籍 (3 books, e.g. , 《彊村叢書》秋堂詩餘)"
+    },
+    {
+      "original": "吾菊坡兄，细观花□，元来一般。",
+      "corrected": "吾菊坡兄，细观花品，元来一般。",
+      "note": "[missing_char] □ → 品; 识典古籍 (2 books, e.g. , 《本堂集》本堂集卷三十九“詞”)"
+    },
+    {
+      "original": "一锅汤沸，无处清□。",
+      "corrected": "一锅汤沸，无处清淨。",
+      "note": "[missing_char] □ → 淨; 识典古籍 (2 books, e.g. , 《宋明十六家詞》卷)"
+    },
+    {
+      "original": "紫逻□锋，绿林扫影，夜",
+      "corrected": "紫逻韜锋，绿林扫影，夜",
+      "note": "[missing_char] □ → 韜; 识典古籍 (2 books, e.g. , 《本堂集》本堂集卷四十三“詞”)"
+    },
+    {
+      "original": "遥见□灼文奎，照天心处",
+      "corrected": "遥见昭灼文奎，照天心处",
+      "note": "[missing_char] □ → 昭; 识典古籍 (2 books, e.g. , 《稼村類稿》稼村類稿卷三十)"
+    },
+    {
+      "original": "碧鬓□斜花欲颤，轻盈莲",
+      "corrected": "碧鬓影斜花欲颤，轻盈莲",
+      "note": "[missing_char] □ → 影; 识典古籍 (2 books, e.g. , 《稼村類稿》稼村類稿卷三十)"
+    },
+    {
+      "original": "□□□眉仙体态。",
+      "corrected": "照坐十眉仙体态。",
+      "note": "[missing_char] □□□ → 照坐十; 识典古籍 (2 books, e.g. , 《稼村類稿》稼村類稿卷三十)"
+    },
+    {
+      "original": "，六鳌驾浪，幻境□西湖。",
+      "corrected": "，六鳌驾浪，幻境出西湖。",
+      "note": "[missing_char] □ → 出; 识典古籍 (2 books, e.g. , 《西湖志》西湖志卷之三)"
     }
   ],
   "note": "2 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-10-29",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
