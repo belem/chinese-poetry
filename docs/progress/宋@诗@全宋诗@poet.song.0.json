@@ -1470,10 +1470,365 @@
       "original": "卢郢《残丝曲》",
       "corrected": "删除",
       "note": "与《全唐诗》卢郢《残丝曲》 同一首（正文全同），删后收的那份"
+    },
+    {
+      "original": "4djghk 釋乾康《賦殘雪》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "4jld5k 釋乾康《詩一首》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "b24734 釋延壽《山居詩  其一》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "dli19e 釋延壽《山居詩  其四》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ejgl23 釋延壽《山居詩  其五》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "k88f98 釋延壽《山居詩  其六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "0gcef4 釋延壽《山居詩  其七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "43i00e 釋延壽《山居詩  其八》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "5gkb9i 釋延壽《山居詩  其九》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "k7j4ki 釋延壽《山居詩  其一○》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "5hc5cc 釋延壽《山居詩  其一三》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "j4l2i8 釋延壽《山居詩  其一五》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "fja6e3 釋延壽《山居詩  其一六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "45iddk 釋延壽《山居詩  其一七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "a7llc3 釋延壽《山居詩  其一八》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "a8kehg 釋延壽《山居詩  其一九》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "eeikdi 釋延壽《山居詩  其二二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "bdl4hg 釋延壽《山居詩  其二四》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "6da504 釋延壽《山居詩  其二六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "d4i70l 釋延壽《山居詩  其二七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "gf93j4 釋延壽《山居詩  其二九》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "7ih1cj 釋延壽《山居詩  其三○》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "e9lddi 釋延壽《山居詩  其三一》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ihd3e0 釋延壽《山居詩  其三二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "bi623i 釋延壽《山居詩  其三三》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "cgbla6 釋延壽《山居詩  其三六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "4238fh 釋延壽《山居詩  其三七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "41lgbb 釋延壽《山居詩  其四○》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "gk4kld 釋延壽《山居詩  其四一》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "b28jg0 釋延壽《山居詩  其四二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "8lj76h 釋延壽《山居詩  其四三》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "89645k 釋延壽《山居詩  其四六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "7e0i30 釋延壽《山居詩  其四七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "5l98bh 釋延壽《山居詩  其四八》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "f51lla 釋延壽《山居詩  其四九》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "h86ckk 釋延壽《山居詩  其五○》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "50eik5 釋延壽《山居詩  其五一》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ek0a34 釋延壽《山居詩  其五四》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "18b6hl 釋延壽《山居詩  其五五》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ecelfd 釋延壽《山居詩  其五六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "96a8cd 釋延壽《山居詩  其五七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "a0cb69 釋延壽《山居詩  其五八》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "h09f8c 釋延壽《山居詩  其五九》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "2ak943 釋延壽《山居詩  其六二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "j2358i 釋延壽《山居詩  其六三》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "4h408h 釋延壽《山居詩  其六四》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "62a0i9 釋延壽《山居詩  其六五》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "3639d3 釋延壽《山居詩  其六六》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "fc5fi8 釋延壽《山居詩  其六七》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "b6b93f 釋延壽《山居詩  其六八》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "675g62 釋延壽《偈一首》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "kg8094 釋延壽《金鷄峰》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ji2982 釋延壽《蛾眉峰》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "2l43c9 釋延壽《積翠峰》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "a9k69f 釋延壽《凌雲峰》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "5bif5c 釋延壽《偈一首》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "bi4fjd 釋延壽《舟中》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ack0i0 釋延壽《閒居》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "40c0al 釋延壽《野遊》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "e390k3 釋延壽《武肅王有旨石橋設齋會進一詩  其五》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "j04h8d 釋延壽《定慧相資歌》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "206d8i 釋玄應《偈》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "gl3dgk 釋清豁《過三嶺苧溪》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "9hf653 釋清豁《歸山吟寄友》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "123hgg 釋贊寧《寄題明月禪院二首  其二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "a58bk1 釋贊寧《夜吟》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "jjec5k 釋贊寧《居天柱山》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "ja6fi9 釋贊寧《秋日寄人》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "5111fd 釋贊寧《悟空塔》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "kh650i 釋可勳《偈》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
+    },
+    {
+      "original": "05434j 釋曉榮《答僧慧文  其二》",
+      "corrected": "删除",
+      "note": "[shi-prefix] 法名前加「釋」的同一人，《全唐詩》另有同一首，删《全宋詩》這條；见 docs/释字头去重.tsv"
     }
   ],
-  "note": "2026-02-14 重复清理：删 295 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。",
-  "date": "2026-10-04",
-  "reviewer": "claude-opus-5-5",
+  "note": "2026-02-14 重复清理：删 295 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。 2026-10-30 删 71 条「釋」字头同人异写的重出，逐条见 docs/释字头去重.tsv。",
+  "date": "2026-10-30",
+  "reviewer": "codebuddy",
   "status": "clean"
 }
