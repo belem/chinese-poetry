@@ -1,7 +1,34 @@
 {
   "path": "汇编/古文观止/卷二周文.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
+  "fixes": [
+    {
+      "original": "3k4ggb 《王孫滿對楚子》",
+      "corrected": "删除",
+      "note": "与《左传》单行本 先秦/文/zuozhuan.json#285h1a 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    },
+    {
+      "original": "e65hj5 《祁奚請免叔向》",
+      "corrected": "删除",
+      "note": "与《左传》单行本 先秦/文/zuozhuan.json#bi5ibj 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    },
+    {
+      "original": "dc580l 《子產卻楚逆女以兵》",
+      "corrected": "删除",
+      "note": "与《左传》单行本 先秦/文/zuozhuan.json#hajade 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    },
+    {
+      "original": "i37f8a 《子革對靈王》",
+      "corrected": "删除",
+      "note": "与《左传》单行本 先秦/文/zuozhuan.json#79bhb5 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    },
+    {
+      "original": "72ihj4 《吳許越成》",
+      "corrected": "删除",
+      "note": "与《左传》单行本 先秦/文/zuozhuan.json#k3fdcg 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-30 删 5 条《左传》篇目副本，逐条见 docs/左传古文观止去重.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "needs_review"
 }
