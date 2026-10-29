@@ -10,9 +10,10 @@
                    - 新批正文是旧批正文的前缀（或相等）→ 删新批那条（旧批更全）
                    - 断句不同而正文一字不差的 → 删新批那条（新批丢分句信息）
                    - 正文有出入 → 两条都留（异文），只记账
-  yuanqu_cover   元曲一条短句是另一条的开头（同一支曲的残句 / 只录了第一支）：
-                   - 同作者 → 删短句
-                   - 异作者 → 两条都留，短句挂 tags 互见（沿用《全唐诗》「一作某」的办法）
+  yuanqu_cover   元曲同一支曲被录了两遍：一条短、一条长，短的接在长的开头。
+                 长短两录都是同一支曲，只是长的多录了后面的曲子（套数与组曲）：
+                   - 同作者 → 删短的那条（留正文全的）
+                   - 异作者 → 两条都留（归属异说），只记账
   sanguo_dup     三国/诗/poet.sanguo.json 里简繁各录了一遍（曹植《白马篇》与《白馬篇》）：
                    - 同题同作者、正文 t2s 后相同 → 删没有 tags 的那条
   kongzi_subset  汇编/课本选目、汇编/古文观止 里「一条正文是另一条的真子集」的选段：
@@ -94,7 +95,17 @@ def title(rec):
 
 
 def author(rec):
-    return T2S.convert((rec.get('author') or '').strip())
+    """作者的正文用「作者表里的写法」比：元曲里 `王實甫／王德信`、`朱帘秀／珠帘秀`、
+    `真氏／真真` 是一人两种署名，写作不同但指的是同一个人。"""
+    a = T2S.convert((rec.get('author') or '').strip())
+    return {k: v[0] for k, v in ALIAS.items()}.get(a, a)
+
+
+ALIAS = {  # 别名 → (正名, 依据)
+    '王德信': ('王实甫', '《录鬼簿》王实甫名德信'),
+    '朱帘秀': ('珠帘秀', '《青楼集》作珠帘秀，朱/珠异写'),
+    '真真': ('真氏', '《南村辍耕录》作真氏'),
+}
 
 
 def same_poem(a, b, max_ratio=0.03, max_shift=0):
@@ -284,20 +295,23 @@ def songci_evidence(work=None):
 
 YUANQU = '元/元曲/yuanqu.json'
 
-
 def yuanqu_cover():
-    """一条正文是另一条正文的前缀 —— 但「前缀」本身不是证据。
+    """同一支曲被录了两遍：长短两录，短的接在长的开头。
 
-    2026-10 那版一见「短句是长句的开头」就删，误删了一大批完整作品：雅词与散曲同用
-    《折桂令》《人月圆》《一枝花》的起句（张可久《折桂令·九日》与姚燧《凭阑人》都从
-    「对青山」起），同题组曲的第一支单列一条（白朴《大德歌·春》之于《大德歌四首》）。
-    现在只有同时满足下面两条才删：
+    「前缀」本身不是证据。2026-10 那版一见「短句是长句的开头」就删，误删了一大批
+    完整作品：雅词与散曲同用《折桂令》《人月圆》《一枝花》的起句（张可久
+    《折桂令·九日》与姚燧《凭阑人》都从「对青山」起）。
 
-      1. 长句本身不止这一支曲：正文里出现套数标记 `【曲牌】`，或是一条标了「套数」的组曲；
-      2. 短句的题名也是同一支曲的题名（去掉标点后包含短句题名，或相反）。
+    现在只认「同一支曲、长短两录」，三条都要：
 
-    异作者一条都不动：同一支曲被元明人选进不同书里署了两个人的名，是归属异说，
-    与《全唐诗》一样两存，不再拿「一作某人」去挂长句。
+      1. 短的是长的开头，且短句每一句都按序在长句里（断句不同不算差别）；
+      2. 题名是同一个 —— 书题逐字相同，或长句的书题是「短句书题 + 另一支曲的书题」
+         串起来的（`湖上归` / `湖上晚归`、`庄家不识构阑` / `庄家不识勾栏`）；
+      3. 长句比短句长三倍以上时，题名放宽到第 2 条的后半 —— 同题组曲的一支另立一条
+         （《大德歌·春》之于《大德歌（四首）春》）正文差四倍，那是编法，不是重出。
+
+    同曲牌而题名不同的是两支曲（马致远《四块玉·恬退》与《四块玉·叹世》起句相同），
+    不在此列。同作者删短的、留长的；异作者两侧都留 —— 同一支曲署了两个人的名是归属异说。
     """
     data = load(YUANQU)
     bodies = [body(r) for r in data]
@@ -307,38 +321,154 @@ def yuanqu_cover():
             index.setdefault(b[:16], []).append(i)
     drop, evidence = set(), []
     for i, b in enumerate(bodies):
-        if len(b) < 20:
+        if len(b) < 16:
             continue
         for j in index.get(b[:16], []):
+            # 短句得是长句的一份录文：只是前 16 字撞上，而中间另有一支曲（《卖花声》四首，
+            # 短句录第一、四首），那就不是同一份录文，别人来核
             if i == j or len(bodies[j]) <= len(b) or not bodies[j].startswith(b):
                 continue
             rec, keep = data[i], data[j]
-            if author(rec) != author(keep) or not suite(data[j]) or not same_title(rec, keep):
+            if not same_title(rec, keep) and not (
+                    len(bodies[j]) > 3 * len(b) and same_title_pair(rec, keep, data)):
                 evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover_open',
                                      title=title(rec),
-                                     note=f'前缀重合但不构成重出（长句 {n_han(bodies[j])} 字 / 短句 {n_han(b)} 字，'
-                                          f'{"异作者" if author(rec) != author(keep) else "同作者"}），两条都留'))
+                                     note=f'同曲牌不同曲（{n_han(b)} 字 vs {n_han(bodies[j])} 字，'
+                                          f'题名《{title(rec)}》≠《{title(keep)}》），两条都留'))
+                continue
+            if not span(bodies[j], b):
+                continue
+            if author(rec) != author(keep):
+                evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover_open',
+                                     title=title(rec),
+                                     note=f'同一支曲两录、署名不同（{author(rec)}／{author(keep)}），'
+                                          f'归属异说两存（{n_han(b)} 字 vs {n_han(bodies[j])} 字）'))
                 continue
             drop.add(i)
-            evidence.append(dict(path=YUANQU, idx=i, keep=f'{YUANQU}#{j}', kind='yuanqu_cover',
-                                 title=title(rec),
-                                 note=f'同作者套数已含此支（{n_han(b)} 字 vs {n_han(bodies[j])} 字）'))
+            evidence.append(dict(path=YUANQU, id=rec.get('id'), idx=i, keep=f'{YUANQU}#{j}',
+                                 kind='yuanqu_cover', title=title(rec),
+                                 note=f'同一支曲两录，留正文更全的一条（{n_han(b)} 字 vs {n_han(bodies[j])} 字）'))
+            break
     return data, drop, evidence
 
 
+
 def suite(rec):
-    """套数（一支曲不止首句那一段）：正文里有【曲牌】，或题名标了「套数」。"""
+    """套数（不止一支曲）：正文里有【曲牌】，或题名标了「套数」。"""
     text = ''.join(rec.get('paragraphs') or [])
     return '【' in text or '套数' in title(rec)
 
 
+TUNE = {'黄钟', '正宫', '中吕', '南吕', '仙吕', '双调', '越调', '商调', '大石调', '般涉调',
+        '小石调', '商角调', '宫调', '黄钟宫', '黄钟调'}
+# 曲牌（只收本库题名里出现过的），长的在前，免得「一枝花」把「一枝花平康」「一枝花湖上归」截断
+TUNES = sorted({
+    '一枝花', '十二月过尧民歌', '十二月', '尧民歌', '一封书', '人月圆', '凭栏人', '塞鸿秋',
+    '大德歌', '天净沙', '寄生草', '小桃红', '山坡羊', '庆东原', '快活年', '折桂令', '挂玉钩',
+    '普天乐', '朝天子', '殿前欢', '水仙子', '沉醉东风', '清江引', '满庭芳', '湘妃怨',
+    '玄鹤鸣', '甘草子', '白头吟', '白鹤子', '耍孩儿', '解三酲', '青杏子', '醉扶归',
+    '醉高歌过摊破喜春来', '醉高歌带摊破喜春来', '醉高歌', '摊破喜春来', '阳春曲',
+    '雁儿落兼清江引', '雁儿落带青江引', '雁儿落', '青江引', '金络索挂梧桐', '金络索桂梧桐',
+    '金络索', '挂梧桐', '桂梧桐', '金字经', '阅金经', '端正好', '滚绣球', '脱布衫',
+    '红绣鞋', '红芍药', '石榴花', '落梅风', '寿阳春', '寿阳曲', '卖花声', '双雁儿',
+    '朝元歌', '鹦鹉曲', '黑漆弩', '江南烟雨', '蟾宫曲', '柳营曲', '四块玉', '梧叶儿',
+    '剔银灯', '驻马听', '步步娇', '得胜令', '水仙子', '寨儿令', '干荷叶', '风入松',
+    '离亭宴煞', '离亭宴', '催拍子', '青哥儿', '后庭花', '煞尾', '黄蔷薇', '菜根谈',
+}, key=len, reverse=True)
+TUNE_SUFFIX = ('过', '带', '兼')
+
+
+def tune_parts(rec):
+    """把题名拆成 (曲牌集, 书题)：先按书名号与间隔号切，再逐字切，认得的曲牌留下，其余算书题。
+
+    `南吕·一枝花·赠珠帘秀` → ({'南吕','一枝花'}, '赠珠帘秀')
+    `南吕・一枝花赠珠帘秀`   → ({'南吕','一枝花'}, '赠珠帘秀')   曲子挤在一段里也认得
+    `双调・大德歌（四首）春`  → ({'双调','大德歌'}, '春')
+    `中吕・普天乐咏世`        → ({'中吕','普天乐'}, '咏世')
+    认不出曲牌的段落都算书题。
+    """
+    t = title(rec).replace('・', '·')                 # U+30FB 与 U+00B7 两种间隔号
+    t = t.replace('《', '·').replace('》', '·')
+    t = re.sub(r'（[^）]*）|\([^)]*\)', '', t)
+    tunes, story = set(), []
+    for part in re.split(r'·+', t):
+        part = part.strip()
+        if not part:
+            continue
+        if part in TUNE:
+            tunes.add(part)
+            continue
+        for name in TUNES:                            # 曲牌 + 书题挤在一段
+            if name in part:
+                tunes.add(name)
+                part = part.replace(name, '', 1)
+                break
+        if part:
+            story.append(part)
+    return tunes, ''.join(story)
+
+
 def same_title(a, b):
-    """两支曲的题名是否同一题：去标点后一个包含另一个，且短的那个够长（≥4 字）。"""
-    ta, tb = title(a).replace('・', '·'), title(b).replace('・', '·')
+    """两录是不是同一支曲。
+
+    两录都认得出曲牌的，比书题 —— `一枝花赠朱帘秀` 与 `一枝花·赠珠帘秀` 同一题；
+    都没有书题时比曲牌，一方曲牌里含另一方（`醉高歌` 之于 `醉高歌过摊破喜春来`）也算。
+    曲牌不同就是两支曲：《四块玉·恬退》与《四块玉·叹世》起句相同，不是一首。
+    """
+    ta, sa = tune_parts(a)
+    tb, sb = tune_parts(b)
     if not ta or not tb:
+        return hanzi(title(a)) == hanzi(title(b))
+    if sa and sb:
+        return sa == sb
+    # 一方没写书题的（《鹦鹉曲》之于《正宫・鹦鹉曲》），比曲牌
+    return bool(ta & tb)
+
+
+def span(long, short):
+    """短句是不是长句的「一份录文」：短句的每一句都在长句里按序出现。
+
+    只是拿前 16 字找候选，长短两录的断句未必相同（短句把一支曲连写，长句一句一行），
+    所以按句切开逐句往后找，全部找到才算。比的是去标点的正文：`歌《金缕》` 与
+    `歌金缕` 是同一句。
+    """
+    l, pos = hanzi(long), 0
+    for clause in filter(None, re.split(r'[。？！]', short)):
+        k = l.find(hanzi(clause), pos)
+        if k < 0:
+            return False
+        pos = k + len(hanzi(clause))
+    return True
+
+
+def same_title_pair(a, b, data):
+    """书题有出入的两录也得能对上。
+
+    长句的书题是「短句书题 + 另一支曲的书题」串起来的（`湖上归` + `晚归`、
+    `庄家不识构阑` 与 `庄家不识勾栏` 只差两个字），另一半的书题在本库别处也作过书题。
+    《一枝花赠朱帘秀》的 `赠朱帘秀` 之于《一枝花·赠珠帘秀》的 `赠珠帘秀` 本来就该对上，
+    走的是 same_title 那条；连开头都对不上、或另半截查无实据的，两条都留。
+    只对长句比短句长得多（三倍以上）时启用：同题组曲的一支另立一条（《大德歌·春》之于
+    《大德歌四首 春》）题名一样、正文差四倍，那是编法，不是重出。
+    """
+    _, sa = tune_parts(a)
+    _, sb = tune_parts(b)
+    others = {tune_parts(x)[1] for x in data} - {sa, sb}
+    for k in range(1, len(sb)):                     # 断在哪儿不定，每个位置都试
+        if pairs(sa, sb[:k]) and any(pairs(sb[k:], o) for o in others):
+            return True
+    return False
+
+
+def pairs(x, y):
+    """两串的异文：同长的最多差两个字（`构阑`／`勾栏`）；不同长的，短的是长的开头、
+    差的那截不超过两个字（`湖上归` 之于 `湖上晚归`）。"""
+    if not x or not y:
         return False
-    short, long_ = sorted((ta, tb), key=len)
-    return len(short) >= 4 and short in long_
+    if len(x) == len(y):
+        return sum(p != q for p, q in zip(x, y)) <= 2
+    short, long_ = sorted((x, y), key=len)
+    return len(long_) - len(short) <= 2 and sum(p != q for p, q in zip(short, long_)) <= 2
 
 
 def n_han(s):
@@ -817,9 +947,10 @@ def main():
     for e in evidence:
         if e['kind'].endswith('open'):
             continue
+        # 下标会随删记录前移，记 id 而不是行号 —— 记录留着，重建数据后还认得出是哪一条
         fixes_by_file.setdefault(e['path'], []).append(dict(
-            original=f"# {e['idx']} {e['title'][:24]}", corrected=None,
-            note=f"[{e['kind']}] 删此条，正文与 {e['keep']} 重出：{e['note']}"))
+            original=f"{e.get('id') or '#' + str(e['idx'])} {e['title'][:24]}", corrected='删除',
+            note=f"[{e['kind']}] 正文与 {e['keep']} 重出：{e['note']}"))
     for rel, fixes in fixes_by_file.items():
         rec = pg.merge(rel, dict(fixes=fixes, date=today, reviewer=REVIEWER))
         rec['note'] = ((rec.get('note') or '').rstrip() +

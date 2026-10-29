@@ -111,6 +111,24 @@ def domain_of(rel):
     return head
 
 
+SEQ = re.compile(r'\s*其[一二三四五六七八九十百○零]+$')
+
+
+def base_title(t):
+    """组诗的题名基名：去掉结尾的「 其一」「 其二三」，`小園四首 其一` → `小園四首`。"""
+    return SEQ.sub('', t).strip()
+
+
+def same_group(a, b):
+    """是不是「同题多首」的组诗：题名全同、或只差结尾的「其 N」。
+
+    《全宋诗》把组诗拆成一条一首（`緣識 其一`、`緣識 其二`…），两种录文的组诗序号
+    未必对得齐，取前 16 字判重会把它们当重复报出来。这类只在同作者、题名对得上时豁免，
+    异作者同题的（毕士安／毕仲游《楊照承議蘆雁枕屏》）照旧报。
+    """
+    return a == b or base_title(a) == base_title(b)
+
+
 def check_dup(prefix):
     groups = collections.defaultdict(list)
     for rel, idx, rec, body in iter_records():
@@ -119,7 +137,7 @@ def check_dup(prefix):
         groups[body[:prefix]].append((rel, idx, author_of(rec), title_of(rec),
                                       domain_of(rel)))
     rows = []
-    cross_book = 0
+    cross_book = group_shits = 0
     for body, items in groups.items():
         if len(items) < 2:
             continue
@@ -132,10 +150,16 @@ def check_dup(prefix):
             kind = '同作者'
         else:
             kind = '异作者·同题' if len({i[3] for i in items}) == 1 else '异作者·异题'
+        group = 0
         for item in items[1:]:
+            if kind == '同作者' and same_group(items[0][3], item[3]):
+                group += 1
+                continue
             rows.append((body, kind, items[0][:4], item[:4]))
+        group_shits += group
     stats = collections.Counter(r[1] for r in rows)
     stats['跨书互见'] = cross_book
+    stats['同题多首（组诗）'] = group_shits
     return rows, stats
 
 
@@ -176,6 +200,9 @@ def main():
         for k in ('同作者', '异作者·同题', '异作者·异题'):
             print(f'   {k}: {stats.get(k, 0)}')
         print(f'   （另有跨书互见 {stats.get("跨书互见", 0)} 条：同一首被两部书收录，不算重复，不计入上面三项）')
+        if stats.get('同题多首（组诗）'):
+            print(f'   （另有同题多首 {stats["同题多首（组诗）"]} 条：同作者组诗拆条，题材名只差「其 N」，'
+                  f'不算重复，不计入上面三项）')
         per_file = collections.Counter()
         for body, kind, keep, drop in rows:
             per_file[drop[0]] += 1

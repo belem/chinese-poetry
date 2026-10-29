@@ -1,6 +1,23 @@
 {
   "path": "宋/宋词/ci.song.11000.json",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "祗谒陵园，长安□远，中兴可冀。",
+      "corrected": "祗谒陵园，长安不远，中兴可冀。",
+      "note": "[missing_char] □ → 不; 识典古籍 (2 books, e.g. , 《客亭類稿》客亭類稿卷十四)"
+    },
+    {
+      "original": "比□桃源溪上路，风景",
+      "corrected": "比著桃源溪上路，风景",
+      "note": "[missing_char] □ → 著; 识典古籍 (4 books, e.g. , 《[御選]歷代詩餘》[御選]歷代詩餘卷四十六)"
+    },
+    {
+      "original": "□梁畔，一枝香袅。",
+      "corrected": "畫梁畔，一枝香袅。",
+      "note": "[missing_char] □ → 畫; 识典古籍 (2 books, e.g. , 《御定詞譜》御定詞譜卷九)"
+    }
+  ],
+  "date": "2026-10-29",
+  "reviewer": "CodeBuddy (AI)",
+  "status": "fixed"
 }
