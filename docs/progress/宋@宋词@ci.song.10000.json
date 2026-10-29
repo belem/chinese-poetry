@@ -25,10 +25,15 @@
       "original": "醉眼定知非妙赏，□词端为□□留。",
       "corrected": "醉眼定知非妙赏，夸词端为□□留。",
       "note": "[missing_char] □ → 夸; 识典古籍 (2 books, e.g. , 《合刻兩張先生集》張于湖集卷三)"
+    },
+    {
+      "original": "玉人双鞚华□。",
+      "corrected": "玉人双鞚华鑣。",
+      "note": "[missing_char] □ → 鑣; 识典古籍 (3 books, e.g. , 《于湖集》于湖集卷三十四“樂府”); decided by reviewer"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
