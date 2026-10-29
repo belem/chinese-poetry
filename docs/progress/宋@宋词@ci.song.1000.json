@@ -45,6 +45,11 @@
       "original": "不禁微雨",
       "corrected": "不禁微雨",
       "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 御選歷代詩餘, 花草稡編); no change"
+    },
+    {
+      "original": "雪里，几枝初绽，□冰姿仙格。",
+      "corrected": "雪里，几枝初绽，出冰姿仙格。",
+      "note": "[missing_char] □ → 出; 识典古籍 (2 books, e.g. , 《梅苑》梅苑卷三“喜遷鶯”); decided by reviewer"
     }
   ],
   "note": "其中 6 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",

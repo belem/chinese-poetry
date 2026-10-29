@@ -15,10 +15,55 @@
       "original": "放下了日多萦系",
       "corrected": "放下了日多萦系",
       "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋名家詞, 東堂詞); no change"
+    },
+    {
+      "original": "愁倚□帘栊。",
+      "corrected": "愁倚透帘栊。",
+      "note": "[missing_char] 賀鑄《菩薩蠻》：《賀方回詞》卷一作「愁倚透簾櫳」，同卷另一首此处亦作「□」"
+    },
+    {
+      "original": "水眄难禁频领□，歌云犹许小流连",
+      "corrected": "水眄难禁频领棹，歌云犹许小流连",
+      "note": "[missing_char] 賀鑄《浣溪沙》：《賀方回詞》卷一作「水眄難禁頻領棹」，与下句「歌雲猶許小流連」对"
+    },
+    {
+      "original": "不记下楼时，醉□月侵书幌。",
+      "corrected": "不记下楼时，醉解月侵书幌。",
+      "note": "[missing_char] 賀鑄《憶仙姿》：《賀方回詞》卷一作「不記下樓時，醉解月侵書幌」"
+    },
+    {
+      "original": "淡净衣裳妆□薄。",
+      "corrected": "淡净衣裳妆得薄。",
+      "note": "[missing_char] 賀鑄《鳳棲梧》：《東山寓聲樂府》《賀方回詞》并作「淡淨衣裳妝得薄」"
+    },
+    {
+      "original": "泪□镂檀香枕，醉眠摇",
+      "corrected": "泪曉镂檀香枕，醉眠摇",
+      "note": "[missing_char] 賀鑄《清平樂》：《賀方回詞》卷一作「征鴻淚曉，鏤檀香枕」"
+    },
+    {
+      "original": "□出尊前一段愁。",
+      "corrected": "花出尊前一段愁。",
+      "note": "[missing_char] 賀鑄《南鄉子》：《賀方回詞》卷二作「回頭花出尊前一段愁」"
+    },
+    {
+      "original": "向百花头上、探春□。",
+      "corrected": "向百花头上、探春寒。",
+      "note": "[missing_char] 賀鑄《南歌子》：《賀方回詞》卷二作「先向百花頭上探春寒」（上句已有「不怕雪霜寒」）"
+    },
+    {
+      "original": "采芳贻向□边。",
+      "corrected": "采芳贻向誰边。",
+      "note": "[missing_char] 晁補之《清平樂》：《晁无咎詞》卷二作「采芳貽向誰邊」"
+    },
+    {
+      "original": "当□敛双蛾。",
+      "corrected": "当座敛双蛾。",
+      "note": "[missing_char] 晁補之《菩薩蠻》：《晁无咎詞》卷六作「當座斂雙蛾」"
     }
   ],
   "note": "其中 3 处经古籍证实原样，未改",
   "date": "2026-11-03",
   "reviewer": "CodeBuddy",
-  "status": "needs_review"
+  "status": "fixed"
 }
