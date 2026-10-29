@@ -5,8 +5,8 @@
     "total_files": 887,
     "reviewed": 888,
     "clean": 347,
-    "fixed": 108,
-    "needs_review": 229,
+    "fixed": 107,
+    "needs_review": 230,
     "out_of_scope": 204,
     "in_scope_files": 684
   },
@@ -3702,9 +3702,9 @@
       "status": "fixed"
     },
     "明/诗/poet.ming.json": {
-      "date": "2026-10-30",
-      "reviewer": "CodeBuddy",
-      "status": "fixed"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "明/诗/古诗源·明诗.json": {
       "date": "2026-10-27",
@@ -3812,8 +3812,8 @@
       "status": "needs_review"
     },
     "汇编/古文观止/古文观止.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "needs_review"
     },
     "汇编/古文观止/古文观止·补.json": {

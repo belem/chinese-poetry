@@ -1,7 +1,7 @@
 {
-  "path": "明/小说/三言二拍/jingshitongyan.json",
-  "note": "2026-10 由识典古籍按版本整本抓取入库，只做了机械清洗（重复句读、半角标点、行首游离标点），未逐字对勘",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
-  "status": "needs_review"
+ "path": "明/小说/三言二拍/jingshitongyan.json",
+ "note": "2026-11 清 26 处「日/曰」形近字与 ASCII 残渣：言语动词位（問日／對日／奏日／謂…日／其一日／詞日／「覺袂言1：」）统一作「曰」，「名日燕子機集」→「名曰」，「詩日」→「詩曰」，「稟乞題日」→「題目」；正文其余 OCR 讹字（「女口」、「其人頂翠冠珠珥」段的散字）未逐句对勘。",
+ "date": "2026-10-29",
+ "reviewer": "CodeBuddy (AI)",
+ "status": "needs_review"
 }

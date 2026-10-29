@@ -1,7 +1,7 @@
 {
-  "path": "明/小说/封神演义/fengshenyanqi.json",
-  "note": "2026-10 由识典古籍按版本整本抓取入库，只做了机械清洗（重复句读、半角标点、行首游离标点），未逐字对勘",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
-  "status": "needs_review"
+ "path": "明/小说/封神演义/fengshenyanqi.json",
+ "note": "2026-11 第 97 回女娲一段「望1娘生栽」→「望娘娘生栽」（同句前文「不是娘頗出乎反平了」亦当作「娘娘」，待与康熙四雪草堂本对勘一并改）；全书其余 OCR 讹字未逐句对勘。",
+ "date": "2026-10-29",
+ "reviewer": "CodeBuddy (AI)",
+ "status": "needs_review"
 }
