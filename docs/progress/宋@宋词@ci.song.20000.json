@@ -60,10 +60,15 @@
       "original": "消息南枝大",
       "corrected": null,
       "note": "[ci_pattern] needs_review: 无名氏《西江月》「消息南枝大」：检索未命中，仍待考"
+    },
+    {
+      "original": "间牧童、遥指孤村道",
+      "corrected": "问牧童、遥指孤村道",
+      "note": "宋词归属异说那一轮核出：《增修箋注妙選草堂詩餘》《古今圖書集成·文學典》《詞海評林》并作「問」"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 7 处经古籍证实原样，未改；15 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "reviewer": "codebuddy",
   "status": "needs_review"
 }
