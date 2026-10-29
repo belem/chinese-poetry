@@ -119,11 +119,13 @@ def check_dup(prefix):
         groups[body[:prefix]].append((rel, idx, author_of(rec), title_of(rec),
                                       domain_of(rel)))
     rows = []
+    cross_book = 0
     for body, items in groups.items():
         if len(items) < 2:
             continue
         domains = {i[4] for i in items}
         if len(domains) != 1:       # 跨书收录同一首，是编书方式，不算重复
+            cross_book += len(items) - 1
             continue
         authors = {i[2] for i in items if i[2]}
         if len(authors) <= 1:
@@ -133,6 +135,7 @@ def check_dup(prefix):
         for item in items[1:]:
             rows.append((body, kind, items[0][:4], item[:4]))
     stats = collections.Counter(r[1] for r in rows)
+    stats['跨书互见'] = cross_book
     return rows, stats
 
 
@@ -172,6 +175,7 @@ def main():
         print(f'== dup_body: {len(rows)} 条多余记录（同一部书内，正文前 {args.prefix} 字相同）')
         for k in ('同作者', '异作者·同题', '异作者·异题'):
             print(f'   {k}: {stats.get(k, 0)}')
+        print(f'   （另有跨书互见 {stats.get("跨书互见", 0)} 条：同一首被两部书收录，不算重复，不计入上面三项）')
         per_file = collections.Counter()
         for body, kind, keep, drop in rows:
             per_file[drop[0]] += 1
