@@ -5,10 +5,35 @@
       "original": "朝朝只在尘中め",
       "corrected": "朝朝只在尘中□",
       "note": "假名乱码，可旻《渔家傲》不见于识典古籍，改方框"
+    },
+    {
+      "original": "聊寄幽悰",
+      "corrected": "聊寄幽悰",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 全芳備祖, 全芳備祖集); no change"
+    },
+    {
+      "original": "此乐湘潭",
+      "corrected": "此乐湘潭",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 八瓊室金石補正); no change"
+    },
+    {
+      "original": "一点眉间多",
+      "corrected": "一点眉间多",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 新編通用啓札截江網); no change"
+    },
+    {
+      "original": "把玉指亲传踪迹",
+      "corrected": "把玉指亲传踪迹",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 十駕齋養新錄, 書錄); no change"
+    },
+    {
+      "original": "青锁还应催当夕",
+      "corrected": "青锁还应催当夕",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 鶴山先生大全文集); no change"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 5 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

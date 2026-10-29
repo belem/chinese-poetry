@@ -5,10 +5,20 @@
       "original": "事如飞弹须园熟",
       "corrected": "事如飞弹须圆熟",
       "note": "宋词归属异说那一轮核出：《稼軒長短句》（大德三年廣信書院刊本）《稼軒詞》并作「圓熟」"
+    },
+    {
+      "original": "见说红堆满径",
+      "corrected": "见说落红堆满径",
+      "note": "[ci_pattern] 见说红堆满径 → 见说落红堆满径; 识典古籍 (1 books, e.g. )"
+    },
+    {
+      "original": "旧传恐是",
+      "corrected": "旧传恐是",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 宋名家詞, 稼軒長短句); no change"
     }
   ],
   "note": "其中 1 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

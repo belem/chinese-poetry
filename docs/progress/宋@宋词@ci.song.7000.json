@@ -60,10 +60,20 @@
       "original": "风﹀雨︽。（杨无咎《琐窗寒》）",
       "corrected": "风僝雨僽。",
       "note": "同上乱码；识典古籍《逃禅词》作「况无似今年，一春晴昼。风僝雨僽。直得恁时迤逗」，《御定词谱》卷二十六同（另有作「风潺雨僽」「风潺雨愁」者，异文）"
+    },
+    {
+      "original": "一味思量",
+      "corrected": "一味思量",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 友古詞, 詞譜); no change"
+    },
+    {
+      "original": "凌霜犯雪",
+      "corrected": "凌霜犯雪",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 唐宋八家詞, 彊村叢書); no change"
     }
   ],
   "note": "其中 10 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核；其中 10 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

@@ -20,10 +20,15 @@
       "original": "要百柁倾□，万花流玉。",
       "corrected": "要百柁倾珠，万花流玉。",
       "note": "[missing_char] □ → 珠; 识典古籍 (3 books, e.g. , 《[御選]歷代詩餘》[御選]歷代詩餘卷九十七)"
+    },
+    {
+      "original": "长是醉乡落魄",
+      "corrected": "长是醉乡落魄",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 澹軒集); no change"
     }
   ],
   "note": "其中 1 处经古籍证实原样，未改",
-  "date": "2026-10-29",
-  "reviewer": "CodeBuddy (AI)",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }

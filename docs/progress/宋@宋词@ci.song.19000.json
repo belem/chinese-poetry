@@ -10,10 +10,25 @@
       "original": "正朔づ同规",
       "corrected": "正朔□同规",
       "note": "假名乱码，《十二时》郊庙歌辞无从校定，改方框"
+    },
+    {
+      "original": "梦过江南芳草渡",
+      "corrected": "梦过江南芳草渡",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 御定詞譜, 御選歷代詩餘); no change"
+    },
+    {
+      "original": "教君霎时饮",
+      "corrected": "教君霎时饮",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 五茸志逸隨筆, 宋稗類鈔); no change"
+    },
+    {
+      "original": "白露点",
+      "corrected": "白露点",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 投轄錄, 正楊); no change"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 3 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

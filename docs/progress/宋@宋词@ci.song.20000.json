@@ -65,10 +65,45 @@
       "original": "间牧童、遥指孤村道",
       "corrected": "问牧童、遥指孤村道",
       "note": "宋词归属异说那一轮核出：《增修箋注妙選草堂詩餘》《古今圖書集成·文學典》《詞海評林》并作「問」"
+    },
+    {
+      "original": "重午日才过",
+      "corrected": "重午日才过",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 新編事文類聚翰墨全書); no change"
+    },
+    {
+      "original": "英声早著",
+      "corrected": "英声早著",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 新定九宮大成南北詞宮譜, 花草稡編); no change"
+    },
+    {
+      "original": "龟龄难老",
+      "corrected": "龟龄难老",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 御定詞譜, 新定九宮大成南北詞宮譜); no change"
+    },
+    {
+      "original": "为官为已",
+      "corrected": "为官为已",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 古今説海, 詞苑叢談); no change"
+    },
+    {
+      "original": "何须经理",
+      "corrected": "何须经理",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 历代小史, 堯山堂外紀); no change"
+    },
+    {
+      "original": "尔汝今朝",
+      "corrected": "尔汝今朝",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 永樂大典); no change"
+    },
+    {
+      "original": "只今惟有",
+      "corrected": "只今惟有",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 麟原文集); no change"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 7 处经古籍证实原样，未改；15 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
