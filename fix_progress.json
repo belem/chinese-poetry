@@ -367,8 +367,8 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.0.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.1000.json": {
@@ -412,8 +412,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.17000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.18000.json": {
@@ -447,8 +447,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.23000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.24000.json": {
@@ -517,8 +517,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.36000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.37000.json": {
@@ -557,8 +557,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.43000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.44000.json": {
@@ -602,17 +602,17 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.51000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "唐/诗/全唐诗/poet.tang.52000.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.53000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -627,7 +627,7 @@
       "status": "needs_review"
     },
     "唐/诗/全唐诗/poet.tang.56000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -657,8 +657,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.9000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/唐诗补录.json": {
@@ -2472,7 +2472,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.116000.json": {
-      "date": "2026-11-04",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "clean"
     },
@@ -2627,8 +2627,8 @@
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.144000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.145000.json": {
@@ -2817,8 +2817,8 @@
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.179000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.18000.json": {
@@ -3057,8 +3057,8 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.221000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.222000.json": {
@@ -3262,13 +3262,13 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.28000.json": {
-      "date": "2026-11-04",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.29000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.3000.json": {
@@ -3582,7 +3582,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.86000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -3622,7 +3622,7 @@
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.93000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
