@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.118000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "alklee 對月聯句",
+      "corrected": "author=王十朋/劉鎮",
+      "note": "[lianju] 《梅溪先生文集》卷二題「對月同方叔聯句」，句下署「方叔」（劉方叔）；劉鎮名下同正文一條為拆條重複，删"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

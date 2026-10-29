@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.27000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "j9fd0l 舟中夜飲憶和弟聯句",
+      "corrected": "author=劉敞/劉攽",
+      "note": "[lianju] 劉敞、劉攽兄弟同賦，兩讀正文一字不差，取劉敞本"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

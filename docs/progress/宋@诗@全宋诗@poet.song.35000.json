@@ -1,6 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.35000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "8ccgh0 劉攽《舟中夜飲憶和弟聯句》",
+      "corrected": "删除",
+      "note": "[lianju] 联句拆条，与 j9fd0l 劉敞《舟中夜飲憶和弟聯句》 同一首，并作一条多人联句；劉敞、劉攽兄弟同賦，兩讀正文一字不差，取劉敞本"
+    }
+  ],
+  "note": "2026-11-04 联句并条：删 1 条拆条记录，逐条见 docs/联句合并.tsv。",
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

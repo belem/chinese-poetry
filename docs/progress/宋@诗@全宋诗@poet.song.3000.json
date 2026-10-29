@@ -5,10 +5,15 @@
       "original": "照久塵逈",
       "corrected": "照久塵襟逈",
       "note": "[shi_line_length] 照久塵逈 → 照久塵襟逈；识典古籍《《小畜集》卷五》"
+    },
+    {
+      "original": "k7f0j4 鄭州聯句",
+      "corrected": "author=王禹偁/張秉",
+      "note": "[lianju] 《宋詩紀事》卷四張秉名下「鄭州聯句」句下署「秉」「王禹偁」，王禹偁《小畜集》亦載；兩讀正文一字不差，取篇題有主名的王禹偁本"
     }
   ],
   "note": "2026-11-01 按`shidian.py`字数异常对勘改 1 处（见 fixes）",
-  "date": "2026-11-01",
+  "date": "2026-11-04",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

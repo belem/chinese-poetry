@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.45000.json",
-  "date": "2026-10-04",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "23e51j 夜坐與邁聯句",
+      "corrected": "author=蘇軾/蘇邁",
+      "note": "[lianju] 《施注蘇詩》卷四十題「夜坐與邁聯句」，蘇軾、蘇邁父子同賦；兩讀正文一字不差，取蘇軾本（《全宋詩》蘇邁名下題「夜坐聯句」為拆條）"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

@@ -1,6 +1,23 @@
 {
   "path": "宋/诗/全宋诗/poet.song.41000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "11bfel 雪後遊琅邪山聯句",
+      "corrected": "author=韋驤/刁繹",
+      "note": "[lianju] 《錢塘集》所載韋驤、刁繹同賦；兩讀正文 t2s 後一字不差（巖／岩、幹／榦 為異體），取韋驤本"
+    },
+    {
+      "original": "6li8e7 滁上閒日陰晴聯句",
+      "corrected": "author=韋驤/刁繹",
+      "note": "[lianju] 《錢塘集》卷五作「夕翳還籠井落疏」「繁雲閒日蔽居諸」與韋驤本合；刁繹本題「間日」、「慘舒」為形近訛字，删"
+    },
+    {
+      "original": "cj04i6 雨後城上種蜀葵效轆轤體聯句",
+      "corrected": "author=韋驤/刁繹",
+      "note": "[lianju] 《錢塘集》所載韋驤、刁繹同賦，兩讀正文 t2s 後一字不差，取韋驤本"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

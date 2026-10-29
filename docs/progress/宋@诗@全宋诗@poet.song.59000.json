@@ -1,6 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.59000.json",
-  "date": "2026-10-04",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "a2ll1g 閒燕堂聯句",
+      "corrected": "author=王欽臣/秦觀",
+      "note": "[lianju] 《能改齋漫錄》卷十一「王仲至與秦少游謁恭敏李公，飯于閒燕堂，即席聯句」，王欽臣（仲至）、秦觀（少游）同賦；秦觀本「更看朝雲暮雨人」「老醜紅妝」與《能改齋漫錄》合，王欽臣本「更著」「老愧」為形近訛字，删"
+    }
+  ],
+  "date": "2026-11-04",
+  "reviewer": "codebuddy",
   "status": "clean"
 }
