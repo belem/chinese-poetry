@@ -4,9 +4,9 @@
   "stats": {
     "total_files": 887,
     "reviewed": 888,
-    "clean": 347,
-    "fixed": 107,
-    "needs_review": 230,
+    "clean": 346,
+    "fixed": 110,
+    "needs_review": 228,
     "out_of_scope": 204,
     "in_scope_files": 684
   },
@@ -682,9 +682,9 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.11000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "fixed"
     },
     "宋/宋词/ci.song.12000.json": {
       "date": "2026-11-02",
@@ -727,9 +727,9 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.2000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "fixed"
     },
     "宋/宋词/ci.song.20000.json": {
       "date": "2026-11-02",
@@ -762,13 +762,13 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.5000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "fixed"
     },
     "宋/宋词/ci.song.6000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-10-29",
+      "reviewer": "CodeBuddy (AI)",
       "status": "fixed"
     },
     "宋/宋词/ci.song.7000.json": {
