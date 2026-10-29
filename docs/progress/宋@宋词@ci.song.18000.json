@@ -40,10 +40,50 @@
       "original": "休休未是早行时",
       "corrected": "休休未是早行时",
       "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 勿軒集, 新編事文類聚翰墨全書); no change"
+    },
+    {
+      "original": "□一别汉南，遗恨多",
+      "corrected": "只一别汉南，遗恨多",
+      "note": "[missing_char] □ → 只; 识典古籍 (2 books, e.g. , 《聽秋聲館詞話》卷十三)"
+    },
+    {
+      "original": "与渔童收管，相与□红尘。",
+      "corrected": "与渔童收管，相与醉红尘。",
+      "note": "[missing_char] □ → 醉; 识典古籍 (1 books, e.g. )"
+    },
+    {
+      "original": "年深夜语，倾倒书□，窗烛心悬小红豆",
+      "corrected": "年深夜语，倾倒书窗，窗烛心悬小红豆",
+      "note": "[missing_char] □ → 窗; 识典古籍 (2 books, e.g. , 《詞綜》詞綜卷十九)"
+    },
+    {
+      "original": "古今□，人易老，莫闲双",
+      "corrected": "古今來，人易老，莫闲双",
+      "note": "[missing_char] □ → 來; 识典古籍 (2 books, e.g. , 《竹山詞》竹山詞“賀新郎”)"
+    },
+    {
+      "original": "待唤起清魂□，说与凄凉，定应",
+      "corrected": "待唤起清魂起，说与凄凉，定应",
+      "note": "[missing_char] □ → 起; 识典古籍 (2 books, e.g. , 《梓聞漫拾》卷下)"
+    },
+    {
+      "original": "高样髻，长思红袖□分路。",
+      "corrected": "高样髻，长思红袖行分路。",
+      "note": "[missing_char] □ → 行; 识典古籍 (2 books, e.g. , 《養吾齋集》養吾齋集卷七“五言絶句”)"
+    },
+    {
+      "original": "杜鹃声转□□。",
+      "corrected": "杜鹃声转上路。",
+      "note": "[missing_char] □□ → 上路; 识典古籍 (1 books, e.g. )"
+    },
+    {
+      "original": "新□绪。",
+      "corrected": "新情绪。",
+      "note": "[missing_char] □ → 情; 识典古籍 (2 books, e.g. , 《養吾齋集》養吾齋集卷七“五言絶句”)"
     }
   ],
   "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核；其中 5 处经古籍证实原样，未改；5 处字数异常证据不足，未改，留待复核；2026-11-01 本批把 b192ad8 改的「也□归舟」回改为原样「也，归舟」：该句在《無絃琴譜》卷一（清抄本）、《彊村叢書》本并作「蓴鱸不夢，也歸舟，家住滄洲」，「也」下本无字，缺字记号是误还原；另 2 处《摸鱼儿》字数异常证据不足，未改，留待复核",
-  "date": "2026-11-03",
+  "date": "2026-10-29",
   "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
