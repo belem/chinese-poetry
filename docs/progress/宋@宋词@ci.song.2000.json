@@ -35,6 +35,41 @@
       "original": "化作尊前如梦云。",
       "corrected": "化作尊前入梦云。",
       "note": "[typo] 贺铸《减字木兰花》：《全芳備祖》四库本、蓝格抄本、《御定佩文齋廣群芳譜》、《佩文齋廣群芳譜》并作「化作尊前入夢雲」；「如」「入」形近而讹"
+    },
+    {
+      "original": "卷地江流",
+      "corrected": "卷地江流",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 安陸縣誌, 武林梵志); no change"
+    },
+    {
+      "original": "十二琼楼",
+      "corrected": "十二琼楼",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 安陸縣誌, 武林梵志); no change"
+    },
+    {
+      "original": "掷了碧油幢",
+      "corrected": "掷了碧油幢",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 雪山集); no change"
+    },
+    {
+      "original": "寿觞边偶得龟千岁",
+      "corrected": "寿觞边偶得龟千岁",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋元八家詞, 演山集); no change"
+    },
+    {
+      "original": "须信道消忧除是酒",
+      "corrected": "须信道消忧除是酒",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 宋元十家詞); no change"
+    },
+    {
+      "original": "遥认埙篪相应",
+      "corrected": "遥认埙篪相应",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 典雅詞十種); no change"
+    },
+    {
+      "original": "夹路传呼杳杳",
+      "corrected": "夹路传呼杳杳",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 典雅詞十種); no change"
     }
   ],
   "note": "其中 6 处经古籍证实原样，未改；8 处字数异常证据不足，未改，留待复核",

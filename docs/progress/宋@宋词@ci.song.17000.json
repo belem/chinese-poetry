@@ -10,10 +10,85 @@
       "original": "新亭坠泪",
       "corrected": "新亭堕泪",
       "note": "宋词归属异说那一轮核出：《錢塘遺事》《古今圖書集成·文學典》《堯山堂外紀》并作「墮淚」"
+    },
+    {
+      "original": "此样襟怀",
+      "corrected": "此样襟怀",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 古今圖書集成·文學典, 御定詞譜); no change"
+    },
+    {
+      "original": "此老平生",
+      "corrected": "此老平生",
+      "note": "[ci_pattern] attested as-is in 6 books on 识典古籍 (, 御定詞譜, 西湖遊覽志); no change"
+    },
+    {
+      "original": "新腔浑胜俗",
+      "corrected": "新腔浑胜俗",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 彊村叢書); no change"
+    },
+    {
+      "original": "便携酒访新亭",
+      "corrected": "便携酒访新亭",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 宋三大臣彙志, 宋丞相文山先生全集); no change"
+    },
+    {
+      "original": "那处春多",
+      "corrected": "那处春多",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 彊村叢書, 御定詞譜); no change"
+    },
+    {
+      "original": "一片笙歌",
+      "corrected": "一片笙歌",
+      "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 御定詞譜, 御選歷代詩餘); no change"
+    },
+    {
+      "original": "老大看天一笑",
+      "corrected": "老大看天一笑",
+      "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 須溪集); no change"
+    },
+    {
+      "original": "闻说语言都好",
+      "corrected": "闻说语言都好",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋明十六家詞, 須溪集); no change"
+    },
+    {
+      "original": "久雨石鲸未没",
+      "corrected": "久雨石鲸未没",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋明十六家詞, 須溪集); no change"
+    },
+    {
+      "original": "三千里外",
+      "corrected": "三千里外",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋明十六家詞, 須溪集); no change"
+    },
+    {
+      "original": "成仙未晚",
+      "corrected": "成仙未晚",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 宋明十六家詞, 須溪集); no change"
+    },
+    {
+      "original": "那当著押",
+      "corrected": "那当著押",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 西湖遊覽志, 詞苑叢談); no change"
+    },
+    {
+      "original": "陈坚伯大",
+      "corrected": "陈坚伯大",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 西湖遊覽志, 詞苑叢談); no change"
+    },
+    {
+      "original": "庭宇正清和",
+      "corrected": "庭宇正清和",
+      "note": "[ci_pattern] attested as-is in 3 books on 识典古籍 (, 彊村叢書, 頻州漁笛譜); no change"
+    },
+    {
+      "original": "尘暗合欢罗",
+      "corrected": "尘暗合欢罗",
+      "note": "[ci_pattern] attested as-is in 4 books on 识典古籍 (, 弁陽老人詞, 彊村叢書); no change"
     }
   ],
   "note": "其中 15 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
