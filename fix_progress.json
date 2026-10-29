@@ -3,12 +3,12 @@
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
     "total_files": 887,
-    "reviewed": 888,
-    "clean": 346,
-    "fixed": 111,
+    "reviewed": 890,
+    "clean": 347,
+    "fixed": 112,
     "needs_review": 227,
     "out_of_scope": 204,
-    "in_scope_files": 684
+    "in_scope_files": 686
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -750,6 +750,11 @@
       "date": "2026-11-02",
       "reviewer": "codebuddy",
       "status": "needs_review"
+    },
+    "宋/宋词/ci.song.23000.json": {
+      "date": "2026-11-02",
+      "reviewer": "CodeBuddy",
+      "status": "clean"
     },
     "宋/宋词/ci.song.3000.json": {
       "date": "2026-11-02",
@@ -3240,6 +3245,11 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review"
+    },
+    "宋/诗/全宋诗/poet.song.256000.json": {
+      "date": "2026-11-02",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.26000.json": {
       "date": "2026-11-01",
