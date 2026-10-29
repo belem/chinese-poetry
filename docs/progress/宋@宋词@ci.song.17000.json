@@ -5,10 +5,15 @@
       "original": "休说树犹日如此",
       "corrected": null,
       "note": "[ci_pattern] needs_review: 刘辰翁《金缕曲》「休说树犹日如此」：四条检索词均未命中本词（疑「日」为「已」之误，但仅凭文意，未改）"
+    },
+    {
+      "original": "新亭坠泪",
+      "corrected": "新亭堕泪",
+      "note": "宋词归属异说那一轮核出：《錢塘遺事》《古今圖書集成·文學典》《堯山堂外紀》并作「墮淚」"
     }
   ],
   "note": "其中 15 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "reviewer": "codebuddy",
   "status": "needs_review"
 }
