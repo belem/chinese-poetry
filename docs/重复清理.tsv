@@ -26,13 +26,7 @@ yuanqu_cover_open	元/元曲/yuanqu.json	11458	湘妃怨·和卢疏斋西湖	元
 yuanqu_cover_open	元/元曲/yuanqu.json	11494	人月圆·春日次韵	元/元曲/yuanqu.json#5991	前缀重合但不构成重出（长句 154 字 / 短句 48 字，同作者），两条都留
 yuanqu_cover_open	元/元曲/yuanqu.json	11535	塞鸿秋·浔阳即景	元/元曲/yuanqu.json#9755	前缀重合但不构成重出（长句 90 字 / 短句 45 字，同作者），两条都留
 kongzi_subset_open	汇编/课本选目/寓言故事.json	10	揠苗助长	汇编/课本选目/寓言故事.json#31	同文异题/异作者，两条都留，待人工判
-kongzi_subset_open	汇编/课本选目/蒙学经典.json	5	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
-small_scope	当/ci.dang.json	50	乙丑秋日书怀		同首重出，删后一条
-small_scope	汉/诗/poet.han.json	89	战城南	汉/诗/poet.han.json#26	同首重出，前一条句读完整、无缺字
-small_scope	汉/诗/poet.han.json	278	文王世子第八	汉/诗/poet.han.json#120	同一篇的续录，整篇已收全
-small_scope	汇编/课本选目/蒙学经典.json	6	冠必正	汇编/课本选目/蒙学经典.json#7	选段，长条已收全
-small_scope	汇编/课本选目/蒙学经典.json	3	百家姓		与 汇编/蒙学/baijiaxing.json 重出
-small_scope	汇编/古文观止/古文观止·补.json	9	召公谏厉王弭谤		与 卷三周文《召公諫厲王止謗》同篇
-small_scope	汇编/古文观止/古文观止·补.json	17	杂说四・马说		与 卷七六朝唐文《雜說·馬說》同篇
-small_scope	汇编/古文观止/古文观止·补.json	18	送董邵南序		与 卷八唐文《送董邵南遊河北序》同篇
-small_scope	汇编/古文观止/古文观止·补.json	41	五代史宦者传论		与 卷十宋文《五代史宦官傳序》同篇
+kongzi_subset_open	汇编/课本选目/蒙学经典.json	4	人之初	汇编/课本选目/蒙学经典.json#0	同文异题/异作者，两条都留，待人工判
+tang_residual	唐/诗/全唐诗/poet.tang.1000.json	9	横吹曲辞 紫骝马	唐/诗/全唐诗/poet.tang.37000.json#249	銙/胯、却/著（着）皆通用，《樂府詩集》两种刻本各作一读；两条同题同作者，留一条
+small_scope	当/ci.dang.json	49	乙丑秋日书怀		同首重出，删后一条
+small_scope	汇编/课本选目/蒙学经典.json	2	千字文		与 汇编/蒙学/baijiaxing.json 重出的那条已删，这里只剩校验

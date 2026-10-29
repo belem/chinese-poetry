@@ -10,9 +10,14 @@
       "original": "# 3 百家姓",
       "corrected": null,
       "note": "[small_scope] 删此条，正文与  重出：与 汇编/蒙学/baijiaxing.json 重出"
+    },
+    {
+      "original": "# 2 千字文",
+      "corrected": null,
+      "note": "[small_scope] 删此条，正文与  重出：与 汇编/蒙学/baijiaxing.json 重出的那条已删，这里只剩校验"
     }
   ],
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-29 重复清理：2 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-29 重复清理：2 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。 2026-10-29 重复清理：1 条记录涉及同正文重出（删重复 / 挂 tags 互见），逐条见 docs/重复清理.tsv。",
   "date": "2026-10-29",
   "reviewer": "codebuddy",
   "status": "needs_review"
