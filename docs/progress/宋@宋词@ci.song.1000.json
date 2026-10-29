@@ -1,7 +1,24 @@
 {
   "path": "宋/宋词/ci.song.1000.json",
+  "fixes": [
+    {
+      "original": "□□□雨绝风尘，小桥频",
+      "corrected": "䕶花微雨绝风尘，小桥频",
+      "note": "[missing_char] □□□ → 䕶花微; 识典古籍 (2 books, e.g. , 《南陽集》南陽集卷三十“太原縣君墓銘并序”)"
+    },
+    {
+      "original": "□□新年□入手。",
+      "corrected": "初□新年□入手。",
+      "note": "[missing_char] □ → 初; 识典古籍 (2 books, e.g. , 《南陽集》南陽集卷三十“太原縣君墓銘并序”)"
+    },
+    {
+      "original": "眉间已作伤春皱",
+      "corrected": "眉尖已作伤春皱",
+      "note": "宋词归属异说那一轮核出：《東坡詞》《東坡先生全集》《宋名家詞》《御選歷代詩餘》并作「眉尖」"
+    }
+  ],
   "note": "其中 6 处经古籍证实原样，未改；1 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "reviewer": "codebuddy",
   "status": "needs_review"
 }
