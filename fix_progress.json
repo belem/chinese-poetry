@@ -5,8 +5,8 @@
     "total_files": 888,
     "reviewed": 894,
     "clean": 344,
-    "fixed": 123,
-    "needs_review": 223,
+    "fixed": 122,
+    "needs_review": 224,
     "out_of_scope": 204,
     "in_scope_files": 690
   },
@@ -757,9 +757,9 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.3000.json": {
-      "date": "2026-11-04",
+      "date": "2026-10-30",
       "reviewer": "CodeBuddy",
-      "status": "fixed"
+      "status": "needs_review"
     },
     "宋/宋词/ci.song.4000.json": {
       "date": "2026-11-03",
