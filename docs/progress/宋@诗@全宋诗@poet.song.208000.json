@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.208000.json",
+  "fixes": [
+    {
+      "original": "#68 黄春伯《絕句》 黄春伯《絕句》",
+      "corrected": "删除",
+      "note": "与 宋/诗/全宋诗/poet.song.206000.json#852 黄春伯《絕句》 同人同题、正文逐字相同，删卷号靠后的一条"
+    }
+  ],
+  "note": "2026-11-01 重复清理：删 1 条全同重出的副本，逐条见 docs/全宋诗全同重出.tsv。",
   "date": "2026-10-04",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
