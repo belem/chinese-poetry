@@ -91,6 +91,12 @@ def corpus():
     return data, recs
 
 
+def author_of(rec):
+    """去「（唐）」这类朝代前缀与「…其一」这类序次后缀，再简繁归一。"""
+    return han(re.sub(r'[（(][^)）]{1,3}[)）]', '', re.sub(r'\s*\S*[一二三四五六七八九十百○]+首?$', '',
+                                                       (rec.get('author') or '').strip())))
+
+
 def groups_of(recs):
     g = {}
     for rel, i, rec, b in recs:
@@ -120,13 +126,19 @@ def main():
     for items in sorted(grps, key=lambda g: (g[0][2].get('author') or '')):
         ci = [x for x in items if x[0].startswith(BOOK_CI + '/')]
         shi = [x for x in items if x[0].startswith(BOOK_SHI + '/')]
-        ca = {x[2].get('author') for x in ci}
-        sa = {x[2].get('author') for x in shi}
+        ca = {author_of(x[2]) for x in ci}
+        sa = {author_of(x[2]) for x in shi}
         if ca != sa:
             stat['异作者'] = stat.get('异作者', 0) + 1
             rows.append(dict(kind='keep', keep=desc(ci[0]), drop=desc(shi[0]), why='作者不同，归属异说，两存'))
             continue
         c, s = ci[0], shi[0]
+        if len(s[3]) <= len(c[3]) * 0.75:
+            # 诗那一份只有词的一半长：多半是组诗里的一首对上词里的另一首，不是同一首
+            stat['诗是词的节段（不算重复）'] = stat.get('诗是词的节段（不算重复）', 0) + 1
+            rows.append(dict(kind='review', keep=desc(c), drop=desc(s),
+                             why=f'长度 {len(c[3])} / {len(s[3])} 字，不是同一首'))
+            continue
         ratio = difflib.SequenceMatcher(None, c[3], s[3]).ratio()
         if ratio < MIN_RATIO:
             stat['正文有出入'] = stat.get('正文有出入', 0) + 1
