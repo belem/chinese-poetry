@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.76000.json",
+  "fixes": [
+    {
+      "original": "#502 釋德洪《和人春日三首  其二》 釋德洪《和人春日三首  其二》",
+      "corrected": "删除",
+      "note": "同一人两卷各收一次，正文逐字相同；保留 poet.song.76000.json#553 釋德洪《湘山偶書》"
+    }
+  ],
+  "note": "2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-10-06",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
