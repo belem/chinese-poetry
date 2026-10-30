@@ -1,5 +1,28 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.5000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.5000.json#83 沈佺期《侍宴安樂公主新宅應制》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《侍宴》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）沈佺期《侍宴》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.5000.json#394 李適之《罷相作》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《罷相作》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）李適之《罷相作》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.5000.json#472 賀知章《題袁氏別業》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《題袁氏別業》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）賀知章《題袁氏別業》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.5000.json#680 孫逖《同洛陽李少府觀永樂公主入蕃》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《觀永樂公主入番》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）孫逖《觀永樂公主入番》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 4 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-07",
   "reviewer": "claude-opus-5-5",
   "status": "clean"

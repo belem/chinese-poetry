@@ -4,9 +4,9 @@
   "stats": {
     "total_files": 888,
     "reviewed": 894,
-    "clean": 345,
+    "clean": 344,
     "fixed": 123,
-    "needs_review": 222,
+    "needs_review": 223,
     "out_of_scope": 204,
     "in_scope_files": 690
   },
@@ -782,7 +782,7 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.8000.json": {
-      "date": "2026-11-04",
+      "date": "2026-10-30",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
@@ -3117,9 +3117,9 @@
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.232000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
-      "status": "clean"
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
+      "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.233000.json": {
       "date": "2026-10-04",
@@ -3357,7 +3357,7 @@
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.45000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "clean"
     },
