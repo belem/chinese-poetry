@@ -357,7 +357,7 @@
       "status": "fixed"
     },
     "唐/词/ci.tang.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -597,8 +597,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.50000.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy",
+      "date": "2026-10-30",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.51000.json": {
@@ -617,12 +617,12 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.54000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.55000.json": {
-      "date": "2026-11-01",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -632,7 +632,7 @@
       "status": "needs_review"
     },
     "唐/诗/全唐诗/poet.tang.57000.json": {
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -782,7 +782,7 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.8000.json": {
-      "date": "2026-11-04",
+      "date": "2026-10-30",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },

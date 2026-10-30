@@ -43,7 +43,8 @@ HAN = re.compile(r'[㐀-鿿\U00020000-\U0003ffff]')
 PUNCT = set('，。、；：？！“”‘’「」『』《》（）·・ 　,.;:?!…')
 # 繁体数据：目录已按朝代分层，改用路径前缀判断（poet.*/ci.* 及各总集都是繁体）
 TRAD_DIRS = ('唐/诗/全唐诗', '先秦/四书五经', '先秦/论语', '汇编/蒙学', '先秦', '五代十国', '宋', '元', '清')
-BOXLIKE = set('口囗丶〇')            # 原书缺字方框常被 OCR 成这些字
+BOXLIKE = set('口囗丶〇')         # 原书缺字方框常被 OCR 成这些字
+DROP_BOX = '⟦删框⟧'              # review.tsv 里表示「此处是断句，□ 整个删掉」
 TOKEN_CHECKS = {'kana_bopomofo', 'bare_pua', 'missing_char'}
 LINE_CHECKS = {'shi_line_length', 'ci_pattern'}
 
@@ -416,20 +417,27 @@ def recompute_stats(progress=None):
 
 
 def token_from_edit(orig, prop):
-    """审查人手填的 replacement（orig 是含 □ 的原句）→ 替换 □ 的文本（□ 被删则返回空串）。
+    """审查人手填的 replacement → 替换 □ 的文本（□ 整个删掉则返回空串）。
 
-    审查人两种写法：把 □ 处补上字，或直接粘一整句正确的文字（后者常与 orig 不等长，因为 orig
-    是从句中被截断的）。两者都按「两端不变、中间是缺的字」解：在 prop 上找一处 n 字长的窗口，
-    使窗口左边是 orig □ 之前那一段的结尾、窗口右边是 orig □ 之后那一段的开头。左端可能被补字
-    打断（「娇云轻□鬓」→「娇嚲云轻鬓」），所以两侧都允许只对上后缀 / 前缀。
+    orig 是 review.tsv 的 original 列：该 □ 所在的一段（通常整行），含 □。审查人三种写法：
+      · 只填该处的字（orig「过□添炉鼎」填「添加」）；
+      · 粘一整句（orig「过□添炉鼎」填「过添加添炉鼎」）；
+      · 删框：只写记号（⟦删框⟧），或整行粘贴时在 □ 处不留字。
+    一律按「两侧夹逼」解：在 prop 里找一处窗口，左边接 orig 中 □ 前那段的尾、右边接 □ 后那段的头，
+    窗口内容即替换 □ 的字。只对上一侧、另一侧一个字也对不上时，说明窗口落在 orig 自带的文字上
+    （orig「过□添炉鼎」填「添」，那「添」是原句固有的），不算替换 □。
+
+    删框的整行粘贴只能靠长度判：原句少一字后，字符依次相同时最短的那一行不许再当证据，
+    所以调用方要给出整行时用 strip_box 明确删掉 □（见 cmd_apply）。
     """
     a, b = orig.index('□'), orig.rindex('□') + 1
     left, right, box = orig[:a], orig[b:], b - a
-    # □ 处该放几个字：两侧对称地砍到同一句时，差多少补多少；粘来的句子被截断时，按标注的缺字长度
-    n = len(prop) - (len(orig) - 2 * box) if len(prop) < len(orig) else len(prop) - (len(orig) - box)
-    n = min(max(n, box), len(prop))
-    # 左右两侧加起来对得最多的窗口胜出；打平时取靠左的（粘来的句子常被截断，右文短）
-    best = (-1, 0, 0)
+    if prop.strip() == DROP_BOX:        # 只给了记号：删掉这个 □
+        return ''
+    # □ 处该放几个字：整句粘贴时，比「原句去掉 □ 后」多出来的即补的字；只填该处时取其长度
+    n = len(prop) - (len(orig) - box) if len(prop) >= len(orig) else min(box, len(prop))
+    n = min(max(n, 0), len(prop))
+    best = (-1, 0, 0)                   # (两侧对上字数, start, end)；打平取靠左
     for start in range(0, len(prop) - n + 1):
         end = start + n
         lk = 0
@@ -441,9 +449,11 @@ def token_from_edit(orig, prop):
         if (lk and lk == min(len(left), start)) or (rk and rk == min(len(right), len(prop) - end)):
             if lk + rk > best[0] or (lk + rk == best[0] and start < best[1]):
                 best = (lk + rk, start, end)
-    if best[0] > 0:
+    lk = min(len(left), best[1])
+    rk = min(len(right), len(prop) - best[2])
+    if best[0] > 0 and (lk > 0 or rk > 0):
         return prop[best[1]:best[2]]
-    return prop[:n]                             # 两端都对不上（粘的句子被截断）：按标注的缺字长度取
+    return prop[:n]                     # 两端都对不上（粘的句子被截断）：按标注的缺字长度取
 
 
 def cmd_apply(args):
