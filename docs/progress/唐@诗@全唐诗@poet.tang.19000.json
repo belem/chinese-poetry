@@ -1,5 +1,18 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.19000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.19000.json#418 劉禹錫《元和十一年自朗州召至京戲贈看花諸君子》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《玄都觀桃花》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）劉禹錫《玄都觀桃花》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.19000.json#419 劉禹錫《再遊玄都觀》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《再遊玄都觀》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）劉禹錫《再遊玄都觀》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 2 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-06",
   "reviewer": "claude-opus-5-5",
   "status": "clean"

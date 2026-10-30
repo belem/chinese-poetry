@@ -1,5 +1,18 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.6000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.6000.json#117 王維《積雨輞川莊作》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《積雨輞川莊作》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）王維《積雨輞川莊作》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.6000.json#256 丘爲《左掖梨花》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《左掖梨花》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）丘爲《左掖梨花》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 2 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-06",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
