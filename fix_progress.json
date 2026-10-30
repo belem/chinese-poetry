@@ -5,8 +5,8 @@
     "total_files": 888,
     "reviewed": 895,
     "clean": 343,
-    "fixed": 124,
-    "needs_review": 224,
+    "fixed": 125,
+    "needs_review": 223,
     "out_of_scope": 204,
     "in_scope_files": 691
   },
@@ -3682,9 +3682,9 @@
       "status": "needs_review"
     },
     "明/小说/三言二拍/jingshitongyan.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-06",
       "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "明/小说/三言二拍/yushimingyan.json": {
       "date": "2026-10-29",
