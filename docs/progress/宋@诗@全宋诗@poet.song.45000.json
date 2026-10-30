@@ -5,8 +5,14 @@
       "original": "23e51j 夜坐與邁聯句",
       "corrected": "author=蘇軾/蘇邁",
       "note": "[lianju] 《施注蘇詩》卷四十題「夜坐與邁聯句」，蘇軾、蘇邁父子同賦；兩讀正文一字不差，取蘇軾本（《全宋詩》蘇邁名下題「夜坐聯句」為拆條）"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.45000.json#337 蘇軾《海棠》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《海棠》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蘇軾《海棠》，见 docs/千家诗去重.tsv"
     }
   ],
+  "note": "2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-11-04",
   "reviewer": "codebuddy",
   "status": "clean"

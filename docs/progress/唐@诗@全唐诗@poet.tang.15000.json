@@ -1,6 +1,13 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.15000.json",
-  "note": "1 处字数异常证据不足，未改，留待复核",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.15000.json#711 司空曙《留盧秦卿》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《別盧秦卿》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）司空曙《別盧秦卿》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "1 处字数异常证据不足，未改，留待复核 2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "needs_review"

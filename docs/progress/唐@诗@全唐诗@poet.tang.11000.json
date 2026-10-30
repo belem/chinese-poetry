@@ -1,5 +1,38 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.11000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#33 杜甫《陪諸貴公子丈八溝攜妓納涼晚際遇雨二首 一》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《攜妓納涼晚際遇雨》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#《攜妓納涼晚際遇雨》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#78 杜甫《奉和賈至舍人早朝大明宮》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《和賈舍人早朝》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜甫《和賈舍人早朝》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#81 杜甫《春宿左省》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《春宿左省》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜甫《春宿左省》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#290 杜甫《絕句漫興九首 七》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《漫興》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜甫《漫興》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#506 杜甫《禹廟》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《禹廟》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜甫《禹廟》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.11000.json#623 杜甫《秋興八首 一》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《秋興八首》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#《秋興八首》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 6 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-07",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
