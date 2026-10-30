@@ -5,9 +5,25 @@
       "original": "7kd6gc 白菖蒲聯句",
       "corrected": "author=宋高宗/釋智嵩",
       "note": "[lianju] 《永樂大典》卷八百二十二引：宋高宗留題「惟不識泥土，堆根抱玉泉」，令寺僧智嵩聯句云「雖離巖谷伴，也則翠千年」；各本並收全篇，釋智嵩名下同正文一條為拆條重複（欽定本題「菖」、底本題「葛」是異體），删"
+    },
+    {
+      "original": "0j2a25",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "704la0",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "lk3l64",
+      "corrected": "tags",
+      "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
     }
   ],
-  "date": "2026-11-04",
+  "note": "2026-10-30 与《全唐诗》归属异说 3 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "clean"
 }
