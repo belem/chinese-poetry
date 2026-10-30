@@ -5,9 +5,15 @@
       "original": "秋風鞭馬衫藍",
       "corrected": "秋風鞭馬衫挼藍",
       "note": "[shi_line_length] 秋風鞭馬衫藍 → 秋風鞭馬衫挼藍; 识典古籍 (2 books, e.g. , 栟櫚集)"
+    },
+    {
+      "original": "420550 鄧肅《瑞鷓鴣》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
     }
   ],
-  "date": "2026-10-31",
+  "note": "2026-10-30 删 1 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

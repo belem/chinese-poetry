@@ -1,6 +1,29 @@
 {
   "path": "宋/诗/全宋诗/poet.song.130000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "ie0d20 陸游《燈下讀玄真子漁歌因懷山陰故隱追擬五首  其一》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "e4cc64 陸游《燈下讀玄真子漁歌因懷山陰故隱追擬五首  其二》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "0e1ili 陸游《燈下讀玄真子漁歌因懷山陰故隱追擬五首  其四》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "lk26d5 陸游《燈下讀玄真子漁歌因懷山陰故隱追擬五首  其五》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    }
+  ],
+  "note": "2026-10-30 删 4 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

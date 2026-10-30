@@ -1,6 +1,19 @@
 {
   "path": "宋/诗/全宋诗/poet.song.182000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "0ff49a 戴復古《漁父詞四首  其一》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "61gidd 戴復古《漁父詞四首  其二》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    }
+  ],
+  "note": "2026-10-30 删 2 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

@@ -1,6 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.203000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
+  "fixes": [
+    {
+      "original": "j4l87b 許棐《三臺春曲  其二》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    }
+  ],
+  "note": "2026-10-30 删 1 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
+  "reviewer": "codebuddy",
   "status": "clean"
 }

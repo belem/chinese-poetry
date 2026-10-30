@@ -1,6 +1,23 @@
 {
   "path": "汇编/古文观止/卷三周文.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
+  "fixes": [
+    {
+      "original": "gui#汇编/古文观止/卷三周文.json 左丘明《申胥諫許越成》",
+      "corrected": "删除",
+      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/guoyu.json 左丘明《申胥谏许越成》，见 docs/先秦文古文观止去重.tsv"
+    },
+    {
+      "original": "gui#汇编/古文观止/卷三周文.json 佚名《公子重耳對秦客》",
+      "corrected": "删除",
+      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/liji.json 无名氏《檀弓·公子重耳对秦客》，见 docs/先秦文古文观止去重.tsv"
+    },
+    {
+      "original": "gui#汇编/古文观止/卷三周文.json 佚名《晉獻公殺世子申生》",
+      "corrected": "删除",
+      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/liji.json 无名氏《檀弓·晋献公杀世子申生》，见 docs/先秦文古文观止去重.tsv"
+    }
+  ],
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-30 重复清理：删 3 条与 `先秦/文/` 单行本同篇的摘录，逐条见 docs/先秦文古文观止去重.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"
