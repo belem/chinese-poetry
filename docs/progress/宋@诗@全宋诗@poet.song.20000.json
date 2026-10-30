@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.20000.json",
+  "fixes": [
+    {
+      "original": "#19 范鎮《遊昭覺寺》 范鎮《遊昭覺寺》",
+      "corrected": "删除",
+      "note": "一字之差，古籍只证了前一条那一读；删重复的一条，讹字另行记 needs_review；保留 poet.song.20000.json#79 范鎮《寓大邑遊仙寺》（房/旁）"
+    }
+  ],
+  "note": "2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-06-26",
   "reviewer": "claude-sonnet-4-6",
   "status": "clean"

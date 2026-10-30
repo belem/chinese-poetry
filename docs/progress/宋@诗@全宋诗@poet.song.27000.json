@@ -5,8 +5,14 @@
       "original": "j9fd0l 舟中夜飲憶和弟聯句",
       "corrected": "author=劉敞/劉攽",
       "note": "[lianju] 劉敞、劉攽兄弟同賦，兩讀正文一字不差，取劉敞本"
+    },
+    {
+      "original": "#123 劉敞《曲水臺竹間默坐》 劉敞《曲水臺竹間默坐》",
+      "corrected": "删除",
+      "note": "同一人两卷各收一次，正文逐字相同；保留 poet.song.27000.json#378 劉敞《曲水臺》"
     }
   ],
+  "note": "2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-11-04",
   "reviewer": "codebuddy",
   "status": "clean"
