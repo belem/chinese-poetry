@@ -1,7 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.241000.json",
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
-  "date": "2026-10-28",
+  "fixes": [
+    {
+      "original": "4ghhgi 葉李《放還遇賈似道》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    }
+  ],
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char 2026-10-30 删 1 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

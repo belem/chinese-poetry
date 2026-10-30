@@ -5,9 +5,14 @@
       "original": "b49eh5",
       "corrected": "tags",
       "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.9000.json#95 韋應物《秋夜寄丘二十二員外》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《秋夜寄丘員外》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）韋應物《秋夜寄丘員外》，见 docs/千家诗去重.tsv"
     }
   ],
-  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。 2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "clean"

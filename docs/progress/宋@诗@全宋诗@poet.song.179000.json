@@ -5,9 +5,14 @@
       "original": "585696",
       "corrected": "tags",
       "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "0lgdc4 虞剛簡《送子就試帖》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
     }
   ],
-  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。 2026-10-30 删 1 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "clean"
