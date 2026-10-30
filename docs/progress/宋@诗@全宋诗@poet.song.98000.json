@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.98000.json",
+  "fixes": [
+    {
+      "original": "#613 釋道行《偈十首  其七》 釋道行《偈十首  其七》",
+      "corrected": "删除",
+      "note": "同一人两卷各收一次，正文逐字相同；保留 poet.song.98000.json#650 釋道行《頌古十七首  其一五》"
+    }
+  ],
+  "note": "2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-10-06",
   "reviewer": "claude-opus-5-5",
   "status": "clean"

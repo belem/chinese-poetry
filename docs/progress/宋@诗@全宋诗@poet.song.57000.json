@@ -5,9 +5,14 @@
       "original": "字頌",
       "corrected": "睡字頌",
       "note": "PUA U+E012 → 睡；黄庭堅《豫章黄先生文集》卷十五題作「字頌」，PUA 是题中窜入"
+    },
+    {
+      "original": "#314 黄庭堅《明叔惠示二頌  其二》 黄庭堅《明叔惠示二頌  其二》",
+      "corrected": "删除",
+      "note": "一字之差，两读皆见于识典古籍：异体，删重复的一条；保留 poet.song.58000.json#2 黄庭堅《明叔惠示二頌云見七佛偈似有警覺乃是向道之端發於此故以二頌爲報  其二》（如/俱）"
     }
   ],
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char 2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"

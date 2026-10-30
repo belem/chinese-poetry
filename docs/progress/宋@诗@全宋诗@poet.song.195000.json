@@ -5,9 +5,14 @@
       "original": "送鄉先生林磻黄石講會",
       "corrected": "送鄉先生林漁磻黄石講會",
       "note": "PUA U+E85A → 漁；《臞軒集》卷十四四庫本作「林漁磻」，清抄本作「林獻磻」"
+    },
+    {
+      "original": "#127 釋慧開《偈頌八十七首  其六六》 釋慧開《偈頌八十七首  其六六》",
+      "corrected": "删除",
+      "note": "同一人两卷各收一次，正文逐字相同；保留 poet.song.195000.json#155 釋慧開《三十二應贊》"
     }
   ],
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 2 处经古籍证实原样，未改",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char；其中 2 处经古籍证实原样，未改 2026-11-01 重复清理：删 1 条散卷重出，逐条见 docs/全宋诗散卷重出.tsv。",
   "date": "2026-11-01",
   "reviewer": "codebuddy",
   "status": "fixed"
