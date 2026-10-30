@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.91000.json",
+  "fixes": [
+    {
+      "original": "宋/诗/全宋诗/poet.song.91000.json#433 朱淑真《清晝》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《即景》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）朱淑貞《即景》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-04",
   "reviewer": "claude-opus-5-5",
   "status": "clean"

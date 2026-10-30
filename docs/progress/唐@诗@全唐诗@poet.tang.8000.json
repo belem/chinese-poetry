@@ -1,5 +1,13 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.8000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.8000.json#176 李白《秋浦歌十七首 十五》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《秋浦歌》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）李白《秋浦歌》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-07",
   "reviewer": "claude-opus-5-5",
   "status": "clean"
