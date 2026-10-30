@@ -1,5 +1,13 @@
 {
   "path": "宋/诗/全宋诗/poet.song.74000.json",
+  "fixes": [
+    {
+      "original": "#195 釋本才《偈二首  其二》 釋本才《偈二首  其二》",
+      "corrected": "删除",
+      "note": "与 宋/诗/全宋诗/poet.song.74000.json#191 釋本才《偈二首  其二》 同人同题、正文逐字相同，删卷号靠后的一条"
+    }
+  ],
+  "note": "2026-11-01 重复清理：删 1 条全同重出的副本，逐条见 docs/全宋诗全同重出.tsv。",
   "date": "2026-06-26",
   "reviewer": "claude-sonnet-4-6",
   "status": "clean"

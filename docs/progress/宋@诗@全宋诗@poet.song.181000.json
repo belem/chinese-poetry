@@ -5,9 +5,14 @@
       "original": "困噇眠",
       "corrected": "困則噇眠",
       "note": "PUA U+E000 → 則；「飢來噇飯，困則打眠」禅门常语，数据集脱「則」字"
+    },
+    {
+      "original": "#241 釋居簡《柏堂》 釋居簡《柏堂》",
+      "corrected": "删除",
+      "note": "与 宋/诗/全宋诗/poet.song.180000.json#143 釋居簡《柏堂》 同人同题、正文逐字相同，删卷号靠后的一条"
     }
   ],
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
+  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char 2026-11-01 重复清理：删 1 条全同重出的副本，逐条见 docs/全宋诗全同重出.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "fixed"
