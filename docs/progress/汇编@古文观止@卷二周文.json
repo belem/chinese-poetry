@@ -25,9 +25,19 @@
       "original": "72ihj4 《吳許越成》",
       "corrected": "删除",
       "note": "与《左传》单行本 先秦/文/zuozhuan.json#k3fdcg 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
+    },
+    {
+      "original": "gui#汇编/古文观止/卷二周文.json 左丘明《季札觀周樂》",
+      "corrected": "删除",
+      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/zuozhuan.json 左丘明《季札观周乐》，见 docs/先秦文古文观止去重.tsv"
+    },
+    {
+      "original": "gui#汇编/古文观止/卷二周文.json 左丘明《鄭子家告趙宣子》",
+      "corrected": "删除",
+      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/zuozhuan.json 左丘明《郑子家告赵宣子》，见 docs/先秦文古文观止去重.tsv"
     }
   ],
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-30 删 5 条《左传》篇目副本，逐条见 docs/左传古文观止去重.tsv。",
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-30 删 5 条《左传》篇目副本，逐条见 docs/左传古文观止去重.tsv。 2026-10-30 重复清理：删 2 条与 `先秦/文/` 单行本同篇的摘录，逐条见 docs/先秦文古文观止去重.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "needs_review"
