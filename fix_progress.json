@@ -4,8 +4,8 @@
   "stats": {
     "total_files": 888,
     "reviewed": 895,
-    "clean": 344,
-    "fixed": 123,
+    "clean": 343,
+    "fixed": 124,
     "needs_review": 224,
     "out_of_scope": 204,
     "in_scope_files": 691
@@ -3122,9 +3122,9 @@
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.233000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-10-30",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.234000.json": {
       "date": "2026-06-26",
