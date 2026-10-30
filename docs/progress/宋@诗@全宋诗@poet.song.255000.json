@@ -5,9 +5,124 @@
       "original": "徐铉《春分日》",
       "corrected": "删除",
       "note": "与《全唐诗》徐铉《春分日》 同一首（正文全同），删后收的那份"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#83 洪咨夔《直玉堂作》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《真玉堂作》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）洪諮夔《真玉堂作》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#34 张栻《立春偶成》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《立春偶成》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）張栻《立春偶成》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#69 高翥《清明日对酒》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《清明》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）高菊卿《清明》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#213 苏轼《赠刘景文》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《冬景》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蘇軾《冬景》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#76 苏轼《花影》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《花影》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蘇軾《花影》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#6 王安石《元日》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《元日》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）王安石《元日》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#10 苏轼《饮湖上初晴后雨（其二）》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《飲湖上初晴後雨》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蘇軾《飲湖上初晴後雨》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#20 程颢《春日偶成》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《春日偶成》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）程顥《春日偶成》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#23 卢钺《雪梅（其一）》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《雪梅》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#《雪梅》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#28 程颢《郊行即事》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《郊行即事》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）程顥《郊行即事》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#47 刘翰《立秋》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《立秋》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）劉翰《立秋》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#81 周必大《入直召对选德殿赐茶而退》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《入直召對選德殿賜茶而退》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）周必大《入直召對選德殿賜茶而退》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#123 曹豳《春暮》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《春暮》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）曹豳《春暮》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#128 程颢《游月陂》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《遊月陂》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）程顥《遊月陂》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#141 蔡襄《上元应制》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《上元應制》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蔡襄《上元應制》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#151 刘克庄《莺梭》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《鶯梭》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）劉克莊《鶯梭》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#158 戴复古《初夏游张园》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《夏日》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）戴敏《夏日》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#195 王淇《暮春游小园》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《春暮遊小園》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）王淇《春暮遊小園》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#198 白玉蟾《早春》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《早春》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）白玉蟾《早春》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#202 朱淑真《惜春/落花》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《落花》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）朱淑貞《落花》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#219 王令《送春》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《送春》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）王令《送春》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#233 苏轼《上元侍宴》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《上元侍宴》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）蘇軾《上元侍宴》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋/诗/全宋诗/poet.song.255000.json#236 刘克庄《冬景》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《冬景》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（宋）劉克莊《冬景》，见 docs/千家诗去重.tsv"
     }
   ],
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘 2026-02-14 重复清理：删 1 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。",
+  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘。2026-10-31 复检：全库乱码类（西里尔/希腊、假名注音、制表符、U+FFFD、裸私用区字、半角标点）已为 0；正文未逐字对勘 2026-02-14 重复清理：删 1 条与《全唐诗》重出的记录，逐条见 docs/唐宋跨书互见.tsv。 2026-10-30 重复清理：删 23 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-28",
   "reviewer": "codebuddy",
   "status": "needs_review"

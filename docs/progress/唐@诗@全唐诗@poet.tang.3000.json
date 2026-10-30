@@ -1,5 +1,23 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.3000.json",
+  "fixes": [
+    {
+      "original": "唐/诗/全唐诗/poet.tang.3000.json#205 楊炯《夜送趙縱》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《夜送趙縱》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）楊炯《夜送趙縱》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.3000.json#264 宋之問《扈從登封途中作》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《扈從登封途中作》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）宋之問《扈從登封途中作》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.3000.json#756 杜審言《蓬萊三殿侍宴奉敕詠終南山應制》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《蓬萊三殿侍宴奉敕詠終南山》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜審言《蓬萊三殿侍宴奉敕詠終南山》，见 docs/千家诗去重.tsv"
+    }
+  ],
+  "note": "2026-10-30 重复清理：删 3 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-07",
   "reviewer": "claude-opus-5-5",
   "status": "clean"

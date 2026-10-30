@@ -5,9 +5,14 @@
       "original": "9k81jl",
       "corrected": "tags",
       "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "唐/诗/全唐诗/poet.tang.17000.json#793 楊巨源《城東早春》",
+      "corrected": "删除",
+      "note": "[qianjiashi] 与选本《城東早春》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）楊巨源《城東早春》，见 docs/千家诗去重.tsv"
     }
   ],
-  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
+  "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。 2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
   "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "clean"
