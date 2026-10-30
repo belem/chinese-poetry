@@ -5,9 +5,25 @@
       "original": "民相資護關塞",
       "corrected": "民相資護關塞固",
       "note": "[shi_line_length] 民相資護關塞 → 民相資護關塞固; 识典古籍 (2 books, e.g. , 鶴山集)"
+    },
+    {
+      "original": "egc602 薛師石《漁父詞  其三》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "83j73d 薛師石《漁父詞  其五》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
+    },
+    {
+      "original": "cil7bl 薛師石《漁父詞  其六》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
     }
   ],
-  "date": "2026-10-31",
+  "note": "2026-10-30 删 3 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

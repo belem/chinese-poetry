@@ -10,10 +10,15 @@
       "original": "祥雲瑞鶴然至",
       "corrected": "祥雲瑞鶴欻然至",
       "note": "[shi_line_length] 祥雲瑞鶴然至 → 祥雲瑞鶴欻然至；识典古籍 2 种（如《吳都文粹續集》）"
+    },
+    {
+      "original": "cd89f8 孫銳《漁父詞和玄真子》",
+      "corrected": "删除",
+      "note": "[songci-shici] 一阕词同时收在《全宋词》与《全宋诗》，删诗那一份"
     }
   ],
-  "note": "2026-11-01 按`shidian.py`字数异常对勘改 2 处（见 fixes）",
-  "date": "2026-11-01",
+  "note": "2026-11-01 按`shidian.py`字数异常对勘改 2 处（见 fixes） 2026-10-30 删 1 条与《全宋词》重出的诗，逐条见 docs/宋词全宋诗去重.tsv。",
+  "date": "2026-10-30",
   "reviewer": "codebuddy",
   "status": "fixed"
 }
