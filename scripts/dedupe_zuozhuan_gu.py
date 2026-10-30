@@ -57,15 +57,34 @@ import progress as pg  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T2S = OpenCC('t2s')
 HAN = re.compile(r'[^\u4e00-\u9fff]')
-BOOK = '先秦/文/zuozhuan.json'
 GU_DIR = '汇编/古文观止'
-GU_FILES = ['古文观止·补.json', '卷一周文.json', '卷二周文.json']
 TOC = '汇编/古文观止/古文观止·选目.json'
-OUT = 'docs/左传古文观止去重.tsv'
+# 通用异体与音同形近字：归一之后仍差这一些，不算出入（沿用 `汇编与诗去重` 的口径）
+GENERAL_VARIANTS = {
+    '椁': '惇', '馀': '余', '蓺': '艺', '偫': '待', '太': '大', '烝': '蒸',
+    '句': '勾', '棰': '箠', '禘': '鐕', '仪': '议',
+    # 只有《左传》卷用到的那几处（`寘/置` 等）不放进来：那些是两读都传世的异文，要两存
+}
+# 一批一本书：单行本（整部书）、要扫的选本卷次、明细表
+#
+# 后两批（左传补收、国语）是 2026-10-30 第二轮：上一轮只核了题名对得上的，
+# 漏了两样 ——《古文观止》有重出篇目（《郑伯克段于鄢》卷一、卷三各一条、《子鱼论战》卷一本、补编一本），
+# `--soft` 之外只取「t2s 归一后一字不差」，于是《祭公谏征犬戎》这类只差一个通用字的没被收进来。
+BOOKS = [
+    dict(book='先秦/文/zuozhuan.json', name='左传', toc=True, out='docs/左传古文观止去重.tsv',
+         files=['古文观止·补.json', '卷一周文.json', '卷二周文.json', '卷三周文.json'], soft=True),
+    dict(book='先秦/文/guoyu.json', name='国语', toc=True, out='docs/国语古文观止去重.tsv',
+         files=['卷三周文.json'], soft=False),
+]
 
 
 def han(s):
     return HAN.sub('', T2S.convert(s or ''))
+
+
+def canon(text):
+    """归一之后再把上面那批通用字抹平，好让「一字之差」与「改字」分开。"""
+    return ''.join(GENERAL_VARIANTS.get(c, c) for c in text)
 
 
 def body(rec, han_only=False):
@@ -93,92 +112,103 @@ def dump(rel, data):
         fp.write(out)
 
 
+def one(book, args, toc, done):
+    """跑一本书：返回 (rows, left)，未 apply 时不落盘。"""
+    base = load(book['book'])
+    idx = {}
+    for rec in base:
+        idx.setdefault(han(rec.get('title')), []).append(rec)
+
+    rows, left, drops, files = [], [], {}, {}
+    for name in book['files']:
+        rel = f"{GU_DIR}/{name}"
+        files[rel] = load(rel)
+        for i, rec in enumerate(files[rel]):
+            if (rel, i) in done:
+                continue
+            cands = idx.get(han(rec.get('title')), [])
+            if not cands:
+                continue
+            best = max(cands, key=lambda c: difflib.SequenceMatcher(None, body(c), body(rec)).ratio())
+            item = dict(keep=best, drop=rec, rel=rel, index=i,
+                        ratio=difflib.SequenceMatcher(None, body(best), body(rec)).ratio())
+            ok = (canon(body(best, True)) == canon(body(rec, True)) if book['soft']
+                  else body(best, True) == body(rec, True))
+            if ok and len(body(best)) >= len(body(rec)):
+                drops.setdefault(rel, set()).add(i)
+                rows.append(item)
+            else:
+                left.append(item)
+
+    print(f"== 《{book['name']}》：同名 {len(rows) + len(left)} 组，删 {len(rows)}、两存 {len(left)}")
+    for r in rows:
+        print(f"   删 {r['rel'].split('/')[-1]}#{r['index']} 《{r['drop'].get('title')}》"
+              f" ← 留 {book['book']} {r['keep'].get('id')} 《{r['keep'].get('title')}》  {r['ratio']:.3f}")
+    for r in left:
+        print(f"   存 {r['rel'].split('/')[-1]}#{r['index']} 《{r['drop'].get('title')}》"
+              f" 与单行本 ratio={r['ratio']:.3f}，两存")
+    done.update((r['rel'], r['index']) for r in rows)
+    if not args.apply:
+        return rows, left
+
+    if book['toc'] and rows:
+        have = {(t['卷次'], t['篇目']) for t in toc}
+        for r in rows:
+            key = (r['rel'].split('/')[-1], r['drop'].get('title'))
+            if key in have:
+                continue
+            toc.append({'卷次': key[0], '篇目': key[1], '作者': r['drop'].get('author'),
+                        '书': book['name'], '记录': f"{book['book']}#{r['keep'].get('id')}"})
+            have.add(key)
+
+    for rel in sorted(drops):
+        dump(rel, [rec for i, rec in enumerate(files[rel]) if i not in drops[rel]])
+        done.update((rel, i) for i in drops[rel])
+
+    with open(os.path.join(ROOT, book['out']), 'w', encoding='utf-8', newline='') as fp:
+        w = csv.writer(fp, delimiter='\t', lineterminator='\n')
+        w.writerow(['保留', '重复', '相似度', '正文前16字', '处理'])
+        for r in rows + left:
+            soft = book['soft'] and canon(body(r['keep'], True)) == canon(body(r['drop'], True))
+            w.writerow([f"{book['book']}#{r['keep'].get('id')} {r['keep'].get('author')}《{r['keep'].get('title')}》",
+                        f"{r['rel']}#{r['index']} {r['drop'].get('author')}《{r['drop'].get('title')}》",
+                        f"{r['ratio']:.3f}", body(r['keep'])[:16],
+                        '删选本摘录，留单行本' if r in rows
+                        else ('两存：一字之差' if soft else '两存：正文有出入')])
+    print(f"明细写入 {book['out']}")
+
+    for rel in sorted(drops):
+        recs = [r for r in rows if r['rel'] == rel]
+        rec = pg.merge(rel, dict(fixes=[dict(
+            original=f"{r['drop'].get('id')} 《{r['drop'].get('title')}》", corrected='删除',
+            note=f"与《{book['name']}》单行本 {book['book']}#{r['keep'].get('id')} 正文相同，留单行本；"
+                 f"逐条见 {book['out']}") for r in recs], date=args.date, reviewer=args.reviewer))
+        rec['note'] = ((rec.get('note') or '').rstrip() +
+                       f" {args.date} 删 {len(recs)} 条《{book['name']}》篇目副本，逐条见 {book['out']}。").strip()
+        pg.write_record(rel, pg.ordered(rec))
+    return rows, left
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--date', default=date.today().isoformat())
     ap.add_argument('--reviewer', default='codebuddy')
-    ap.add_argument('--out', default=OUT)
+    ap.add_argument('--book', action='append', help='只跑某本书（子串匹配书名），默认全跑')
     args = ap.parse_args()
 
-    zuo = load(BOOK)
-    idx = {}
-    for rec in zuo:
-        idx.setdefault(han(rec.get('title')), []).append(rec)
-
-    rows, drops, left = [], {}, []
-    for name in GU_FILES:
-        rel = f'{GU_DIR}/{name}'
-        for i, rec in enumerate(load(rel)):
-            cands = idx.get(han(rec.get('title')), [])
-            if not cands:
-                continue
-            best = max(cands, key=lambda c: difflib.SequenceMatcher(None, body(c), body(rec)).ratio())
-            ratio = difflib.SequenceMatcher(None, body(best), body(rec)).ratio()
-            if body(best, True) == body(rec, True):
-                drops.setdefault(rel, set()).add(i)
-                rows.append(dict(keep=best, drop=rec, rel=rel, index=i, ratio=ratio))
-            else:
-                left.append(dict(keep=best, drop=rec, rel=rel, index=i, ratio=ratio))
-
-    print(f'== 同名 {len(rows) + len(left)} 组：删 {len(rows)}、两存 {len(left)}')
-    for r in rows:
-        print(f"   删 {r['rel'].split('/')[-1]}#{r['index']} 《{r['drop'].get('title')}》"
-              f" ← 留 {BOOK} {r['keep'].get('id')} 《{r['keep'].get('title')}》  {r['ratio']:.3f}")
-    for r in left:
-        print(f"   存 {r['rel'].split('/')[-1]}#{r['index']} 《{r['drop'].get('title')}》"
-              f" 与单行本 ratio={r['ratio']:.3f}，两存待对勘")
-
-    if not args.apply:
-        print('\n（预演，未改动文件；加 --apply 落盘）')
-        return
-
-    # 删选本那份，并把这些篇目的目次写进 古文观止·选目.json
     toc_path = os.path.join(ROOT, TOC)
     toc = json.load(open(toc_path, encoding='utf-8')) if os.path.exists(toc_path) else []
-    have = {(t['卷次'], t['篇目']) for t in toc}
-    for r in rows:
-        key = (r['rel'].split('/')[-1], r['drop'].get('title'))
-        if key in have:
+    done = set()        # 前面几批已经删掉的记录，后面的书目不必再判
+    for book in BOOKS:
+        if args.book and not any(b in book['name'] for b in args.book):
             continue
-        toc.append({'卷次': r['rel'].split('/')[-1], '篇目': r['drop'].get('title'),
-                    '作者': r['drop'].get('author'), '书': '左传',
-                    '记录': f"{BOOK}#{r['keep'].get('id')}"})
-        have.add(key)
-    if toc:
+        one(book, args, toc, done)
+    if args.apply:
         dump(TOC, toc)
-
-    for rel in sorted(drops):
-        data = load(rel)
-        data = [rec for i, rec in enumerate(data) if i not in drops[rel]]
-        dump(rel, data)
-
-    with open(os.path.join(ROOT, args.out), 'w', encoding='utf-8', newline='') as fp:
-        w = csv.writer(fp, delimiter='\t', lineterminator='\n')
-        w.writerow(['保留', '重复', '相似度', '正文前16字', '处理'])
-        for r in rows:
-            w.writerow([f"{BOOK}#{r['keep'].get('id')} {r['keep'].get('author')}《{r['keep'].get('title')}》",
-                        f"{r['rel']}#{r['index']} {r['drop'].get('author')}《{r['drop'].get('title')}》",
-                        f"{r['ratio']:.3f}", body(r['keep'])[:16], '删选本摘录，留《左传》单行本'])
-        for r in left:
-            w.writerow([f"{BOOK}#{r['keep'].get('id')} {r['keep'].get('author')}《{r['keep'].get('title')}》",
-                        f"{r['rel']}#{r['index']} {r['drop'].get('author')}《{r['drop'].get('title')}》",
-                        f"{r['ratio']:.3f}", body(r['keep'])[:16], '两存：正文有出入，待对勘'])
-    print(f'明细写入 {args.out}')
-
-    for rel in sorted(drops):
-        dropped = [rec for i, rec in enumerate(load(rel) if False else [])]  # noqa: E741
-    for rel in sorted(drops):
-        recs = [r for r in rows if r['rel'] == rel]
-        rec = pg.merge(rel, dict(fixes=[dict(
-            original=f"{r['drop'].get('id')} 《{r['drop'].get('title')}》", corrected='删除',
-            note=f'与《左传》单行本 {BOOK}#{r["keep"].get("id")} 正文逐字相同，留单行本；目次见 {TOC}')
-            for r in recs], date=args.date, reviewer=args.reviewer))
-        rec['note'] = ((rec.get('note') or '').rstrip() +
-                       f' {args.date} 删 {len(recs)} 条《左传》篇目副本，逐条见 {args.out}。').strip()
-        pg.write_record(rel, pg.ordered(rec))
-    pg.write_index()
-    print(f'进度记录 {len(drops)} 个文件')
+        pg.write_index()
+    if not args.apply:
+        print('\n（预演，未改动文件；加 --apply 落盘）')
 
 
 if __name__ == '__main__':
