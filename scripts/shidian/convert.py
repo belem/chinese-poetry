@@ -254,7 +254,10 @@ class Shuihu(Book):
 
 
 class Sanguo(Book):
-    """《三國志通俗演義》嘉靖本：一页一回，回目在页面小标题（H3）里，正文不带回次。"""
+    """《三國志通俗演義》嘉靖本：一页一回，回目在页面小标题（H3）里，正文不带回次。
+
+    2026-11 起《三国演义》正本改用 120 回通行本 `reference/三國演義.txt`（见 `import_sanguo_reference.py`），
+    这里只留作嘉靖本的抓取口径，不再出正本。"""
     author = '罗贯中'
     round_rx = None
     vol_rx = re.compile(r'^三國志通俗演義卷第?[〇零一二三四五六七八九十百]+[，。]?$')

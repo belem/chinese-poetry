@@ -72,7 +72,7 @@
       "note": "[ci_pattern] attested as-is in 2 books on 识典古籍 (, 典雅詞十種); no change"
     }
   ],
-  "note": "其中 6 处经古籍证实原样，未改；8 处字数异常证据不足，未改，留待复核",
+  "note": "其中 6 处经古籍证实原样，未改；8 处字数异常证据不足，未改，留待复核。《宋词三百首》篇目统一成「词牌·正文首句」（2 首）：选本里只写词牌分不清是哪一首，同一首还有两个副本各写一种，故一律改。只改 `title`，`rhythmic` 与正文一字未动；首句取本记录正文前 12 字、按该记录自己的简繁写法，底本（识典古籍朱祖谋集解本）只用来核对是同一首。逐条映射与口径见 scripts/anthology/retitle_songci300.py 与 docs/选本对齐.md",
   "date": "2026-11-03",
   "reviewer": "CodeBuddy",
   "status": "fixed"
