@@ -1,0 +1,7 @@
+{
+  "path": "汇编/蒙学/liwengduiyun.json",
+  "note": "新收：全書照 repo 内 reference/笠翁對韻.txt 重出，三十韻、一韻三段，底本一句一段；原誤收在 清/诗/poet.qing.json 的 30 條同日刪除。機械掃描（西里爾/希臘、假名/注音、制表符、U+FFFD、裸 PUA、零寬）無命中",
+  "date": "2026-11-11",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
+}
