@@ -5,9 +5,60 @@
       "original": "投我以木李，报之以琼九",
       "corrected": "投我以木李，报之以琼玖",
       "note": "形近字：玖→九。haitangshishe 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitangshishe重跑.md）"
+    },
+    {
+      "original": "為絺為綌",
+      "corrected": "为絺为绤",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "我马虺隤",
+      "corrected": "我马虺𬯎",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "不可休息",
+      "corrected": "不可休思",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "宴尔新婚",
+      "corrected": "宴尔新昏",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "肃肃免罝",
+      "corrected": "肃肃兔罝",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "穀/谷 混并",
+      "corrected": "底本 17 处穀、4 处谷各归其字",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "於 一律作于",
+      "corrected": "底本 42 处作於、其余作于",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "旂",
+      "corrected": "底本作旂 11 处，旧库误作旗",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "肆/四 混并",
+      "corrected": "底本 13 处作肆、其余作四",
+      "note": "依据 reference/詩經.txt；逐字对照见 docs/诗经勘正.tsv"
+    },
+    {
+      "original": "投我以木李，报之以琼九",
+      "corrected": "投我以木李，报之以琼玖",
+      "note": "形近字：玖→九。haitangshishe 语料作「琼玖」；库内《全宋词》有「千林琼玖」「木李旧先琼玖」可证。2026-10 整体重跑时发现（docs/haitangshishe重跑.md）"
     }
   ],
-  "date": "2026-10-28",
+  "note": "依 reference/詩經.txt（底本 310 篇）整本重校：补 5 篇笙诗存目（南陔、华黍、由庚、崇丘、由仪），篇题与分章照底本，正文逐字核对。182 篇有改动、128 篇一字未动；分类与逐字对照见 docs/诗经勘正.md、docs/诗经勘正.tsv。全库复核无《诗经》副本，本次不删任何记录。",
+  "date": "2026-11-01",
   "reviewer": "CodeBuddy",
   "status": "fixed"
 }
