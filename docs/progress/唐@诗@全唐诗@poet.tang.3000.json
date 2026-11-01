@@ -15,10 +15,40 @@
       "original": "唐/诗/全唐诗/poet.tang.3000.json#756 杜審言《蓬萊三殿侍宴奉敕詠終南山應制》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《蓬萊三殿侍宴奉敕詠終南山》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）杜審言《蓬萊三殿侍宴奉敕詠終南山》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋之問《渡漢江》/宋之問",
+      "corrected": "李頻",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "嶺外音書斷",
+      "corrected": "嶺外音書絕",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "宋之問《新年作》/宋之問",
+      "corrected": "劉長卿",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "杜少府之任蜀州",
+      "corrected": "送杜少府之任蜀川",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "天涯若比隣",
+      "corrected": "天涯若比鄰",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "無爲在岐路",
+      "corrected": "無爲在歧路",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 重复清理：删 3 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

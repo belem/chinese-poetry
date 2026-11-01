@@ -1,6 +1,13 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.30000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "何門致此身",
+      "corrected": "何年致此身",
+      "note": "按 reference/唐詩三百首.txt 校"
+    }
+  ],
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

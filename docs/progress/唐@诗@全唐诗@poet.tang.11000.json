@@ -30,10 +30,40 @@
       "original": "唐/诗/全唐诗/poet.tang.11000.json#623 杜甫《秋興八首 一》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《秋興八首》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#《秋興八首》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "官因老病休",
+      "corrected": "官應老病休",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "人事依依漫寂寥",
+      "corrected": "人事音書漫寂寥",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "北極朝廷終不改",
+      "corrected": "北極朝庭終不改",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "歧王宅裏尋常見",
+      "corrected": "岐王宅裏尋常見",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "（補錄）杜甫《春宿左省》",
+      "corrected": "新增記錄",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "戍鼓斷人行，秋邊一雁聲",
+      "corrected": "戍鼓斷人行，邊秋一雁聲",
+      "note": "按 reference/唐詩三百首.txt 校；识典古籍《杜工部集》《古今圖書集成》等均作「邊秋」"
     }
   ],
   "note": "2026-10-30 重复清理：删 6 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

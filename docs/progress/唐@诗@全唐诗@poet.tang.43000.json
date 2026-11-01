@@ -80,10 +80,20 @@
       "original": "kgea3h",
       "corrected": "tags",
       "note": "[tangsong] 與《全唐詩》归属异说，另存一份并互挂 tags「一作某《某题》」；见 docs/全唐诗全宋诗异作者.tsv"
+    },
+    {
+      "original": "早是有家歸未得",
+      "corrected": "等是有家歸未得",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "（補錄）金昌緒《春怨》",
+      "corrected": "新增記錄",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 与《全唐诗》归属异说 16 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。",
-  "date": "2026-10-30",
-  "reviewer": "codebuddy",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
