@@ -7,7 +7,8 @@
       "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
     }
   ],
-  "date": "2026-06-27",
-  "reviewer": "claude-sonnet-4-6",
+  "note": "正文整體換成 repo 内 reference/聲律啟蒙.txt：一卷十五韻、一韻三段，底本一句一段（舊記錄一韻一段）。底本異文照錄不改，如「夾岸曉煙楊柳綠」「阮籍舊能爲眼白」。機械掃描無命中",
+  "date": "2026-11-11",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }
