@@ -360,10 +360,570 @@
       "original": "彻曙闻长欢",
       "corrected": "彻曙闻长叹",
       "note": "[collate] 宋词逐句对勘：识典古籍 2 种古籍作「彻曙闻长叹」，本库读法在检索到的古籍中无一见 —— 《宋名家詞》《彊村叢書》作「徹曙聞長歎」"
+    },
+    {
+      "original": "北行见杏花",
+      "corrected": "宴山亭·北行见杏花",
+      "note": "第 1 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "锁离愁",
+      "corrected": "凤箫吟·锁离愁连绵无际来时陌上初",
+      "note": "第 24 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "元夕",
+      "corrected": "生查子·去年元夜时花市灯如昼月上",
+      "note": "第 26 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "蝶恋花/鹊踏枝·庭院深深深几许□杨柳堆烟",
+      "note": "第 30 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "金陵怀古",
+      "corrected": "桂枝香·登临送目正故国晚秋天气初",
+      "note": "第 53 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "水调歌头·明月几时有把酒问青天不知",
+      "corrected": "水调歌头·丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。",
+      "note": "第 74 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "水龙吟·似花还似非花也无人惜从教",
+      "corrected": "水龙吟·次韵章质夫杨花词",
+      "note": "第 75 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "永遇乐·明月如霜好风如水清景无限",
+      "corrected": "永遇乐·彭城夜宿燕子楼，梦盼盼，因作此词。",
+      "note": "第 77 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "卜算子·缺月挂疏桐漏断人初静谁见",
+      "corrected": "卜算子·黄州定惠院寓居作",
+      "note": "第 79 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "青玉案·三年枕上吴中路遣黄犬随君",
+      "corrected": "青玉案·送伯固归吴中",
+      "note": "第 80 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "夜归临皋",
+      "corrected": "临江仙·夜饮东坡醒复醉归来仿佛三",
+      "note": "第 81 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "定风波·莫听穿林打叶声何妨吟啸且",
+      "corrected": "定风波·三月三日沙湖道中遇雨，雨具先去，同行皆狼狈，余不觉。已而天晴，故作此。",
+      "note": "第 82 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "江城子·十年生死两茫茫不思量自难",
+      "corrected": "江城子·乙卯正月二十日夜记梦",
+      "note": "第 83 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "夏景",
+      "corrected": "贺新郎·乳燕飞华屋悄无人桐阴转午",
+      "note": "第 85 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "座中有眉山隐客史应之和前韵即席答之",
+      "corrected": "鹧鸪天·黄菊枝头生晓寒人生莫放酒",
+      "note": "第 87 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "清平乐·春风依旧着意隋堤柳搓得鹅",
+      "note": "第 100 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "次韵林圣予惜春",
+      "corrected": "水龙吟·次韵林圣予惜春",
+      "note": "第 102 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "忆少年·无穷官柳无情画舸无根行客",
+      "corrected": "忆少年·别历下",
+      "note": "第 104 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "泗州中秋作",
+      "corrected": "洞仙歌·泗州中秋作",
+      "note": "第 105 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "富阳僧舍作别语赠妓琼芳",
+      "corrected": "惜分飞·富阳僧舍作别语赠妓琼芳",
+      "note": "第 109 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "柳",
+      "corrected": "兰陵王·柳阴直烟里丝丝弄碧隋堤上",
+      "note": "第 118 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "六丑·正单衣试酒怅客里光阴虚掷",
+      "corrected": "六丑·蔷薇谢后作",
+      "note": "第 120 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "满庭芳·风老莺雏雨肥梅子午阴嘉树",
+      "corrected": "满庭芳·夏日溧水无想山作",
+      "note": "第 122 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "花犯·粉墙低照眼依然旧风味露痕",
+      "corrected": "花犯·咏梅",
+      "note": "第 124 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "上元",
+      "corrected": "解语花·上元",
+      "note": "第 126 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "早行",
+      "corrected": "蝶恋花·月皎惊乌栖不定更漏将残轣",
+      "note": "第 128 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "离恨",
+      "corrected": "尉迟杯·隋堤路渐日晚密霭生深树阴",
+      "note": "第 133 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "西河·佳丽地南朝盛事谁记□山围",
+      "corrected": "西河·金陵怀古",
+      "note": "第 134 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "浪淘沙慢·晓阴重霜凋岸草雾隐城堞南",
+      "note": "第 136 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "薄幸·淡妆多态更的的频回眄睐便",
+      "note": "第 142 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "天门谣·牛渚天门险限南北七雄豪占",
+      "corrected": "天门谣·登采石蛾眉亭",
+      "note": "第 147 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "兰陵王·卷珠箔朝雨轻阴乍阁阑干外",
+      "note": "第 152 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "虞美人·落花已作风前舞又送黄昏雨",
+      "corrected": "虞美人·雨后同干誉、才卿置酒来禽花下作",
+      "note": "第 154 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "喜迁莺·晓光催角听宿鸟未惊邻鸡先",
+      "corrected": "喜迁莺·晓行",
+      "note": "第 156 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "高阳台·频听银签重然绛蜡年华衮衮",
+      "corrected": "高阳台·除夜",
+      "note": "第 157 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "夜登小阁，忆洛中旧游",
+      "corrected": "临江仙·夜登小阁忆洛中旧游",
+      "note": "第 160 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "三台·见梨花初带夜月海棠半含朝",
+      "corrected": "三台·清明应制",
+      "note": "第 167 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "梅",
+      "corrected": "蓦山溪·洗妆真态不作铅华御竹外一",
+      "note": "第 170 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "烛影摇红·霭霭春空画楼森耸凌云渚紫",
+      "corrected": "烛影摇红·题安陆浮云楼",
+      "note": "第 172 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "老薄幸·青楼春晚昼寂寂梳匀又懒怎",
+      "corrected": "薄幸·青楼春晚昼寂寂梳匀又懒怎",
+      "note": "第 173 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "吕滨",
+      "corrected": "吕渭老",
+      "note": "第 173 首；库内署名错（断行／别号），authors/ 未动"
+    },
+    {
+      "original": "老薄幸",
+      "corrected": "薄幸",
+      "note": "第 173 首；「吕滨老／薄幸」断错行，词牌被切掉半截"
+    },
+    {
+      "original": "鲁逸仲",
+      "corrected": "孔夷",
+      "note": "第 175 首；库内署名错（断行／别号），authors/ 未动"
+    },
+    {
+      "original": "（无）",
+      "corrected": "满江红写怀·怒发冲冠凭栏处潇潇雨歇抬",
+      "note": "第 176 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "烛影摇红·双阙中天凤楼十二春寒浅去",
+      "corrected": "烛影摇红·上元有怀",
+      "note": "第 177 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "过洞庭",
+      "corrected": "念奴娇·洞庭青草近中秋更无一点风",
+      "note": "第 180 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "卜算子·驿外断桥边寂寞开无主已是",
+      "corrected": "卜算子·咏梅",
+      "note": "第 187 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "春恨",
+      "corrected": "水龙吟·闹花深处楼台画帘半卷东风",
+      "note": "第 189 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "梅",
+      "corrected": "霜天晓角·晚晴风歇一夜春威折脉脉花",
+      "note": "第 192 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "贺新郎·凤尾龙香拨自开元霓裳曲罢",
+      "corrected": "贺新郎·赋琵琶",
+      "note": "第 196 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "书东流村壁",
+      "corrected": "念奴娇·书东流村壁",
+      "note": "第 197 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "立春日",
+      "corrected": "汉宫春·春已归来看美人头上袅袅春",
+      "note": "第 198 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "登建康赏心亭",
+      "corrected": "水龙吟·登建康赏心亭",
+      "note": "第 199 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "摸鱼儿·更能消几番风雨悤悤春又归",
+      "corrected": "摸鱼儿·淳熙己亥，自湖北漕移湖南，同官王正之置酒小山亭，为赋",
+      "note": "第 200 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "永遇乐·千古江山英雄无觅孙仲谋处",
+      "corrected": "永遇乐·京口北固亭怀古",
+      "note": "第 201 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "木兰花慢·老来情味减对别酒怯流年况",
+      "corrected": "木兰花慢·滁州送范倅",
+      "note": "第 202 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "青玉案·东风夜放花千树更吹落星如",
+      "corrected": "青玉案·元夕",
+      "note": "第 204 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "鹧鸪天·枕簟溪堂冷欲秋断云依水晚",
+      "corrected": "鹧鸪天·鹅湖归病起作",
+      "note": "第 205 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "书江西造口壁",
+      "corrected": "菩萨蛮·书江西造口壁",
+      "note": "第 206 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "丁未冬过吴松作",
+      "corrected": "点绛唇·丁未冬，过吴松作。",
+      "note": "第 207 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "鹧鸪天·肥水东流无尽期当初不合种",
+      "corrected": "鹧鸪天·元夕有所梦",
+      "note": "第 208 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "踏莎行·燕燕轻盈莺莺娇软分明又向",
+      "corrected": "踏莎行·自沔东来，丁未元日至金陵，江上感梦而作。",
+      "note": "第 209 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "湘中送胡德华",
+      "corrected": "八归·湘中送胡德华",
+      "note": "第 213 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "木兰花·春风只在园西畔荠菜花繁胡",
+      "note": "第 226 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "满庭芳·月洗高梧露漙幽草宝钗楼外",
+      "corrected": "满庭芳·促织儿",
+      "note": "第 228 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "宴山亭·幽梦初回重阴未开晓色吹成",
+      "note": "第 229 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "绮罗香·做冷欺花将烟困柳千里偷催",
+      "corrected": "绮罗香·咏春雨",
+      "note": "第 230 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "双双燕·过春社了度帘幕中闲去年尘",
+      "corrected": "双双燕·咏燕",
+      "note": "第 231 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "春雪",
+      "corrected": "东风第一枝·春雪",
+      "note": "第 232 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "生查子·繁灯夺霁华戏鼓侵明发物色",
+      "corrected": "生查子·元夕戏陈敬叟",
+      "note": "第 239 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "端午",
+      "corrected": "贺新郎·端午",
+      "note": "第 240 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "贺新郎·湛湛长空黑更那堪斜风细雨",
+      "corrected": "贺新郎·九日",
+      "note": "第 241 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "木兰花·年年跃马长安市客舍似家家",
+      "corrected": "木兰花·戏林推",
+      "note": "第 242 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "题南剑州妓馆",
+      "corrected": "南乡子·题南剑州妓馆",
+      "note": "第 245 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "瑞鹤仙·湿云粘雁影望征路愁迷离绪",
+      "note": "第 246 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "西湖清明",
+      "corrected": "渡江云·西湖清明",
+      "note": "第 248 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "重九",
+      "corrected": "霜叶飞·重九",
+      "note": "第 250 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "连理海棠",
+      "corrected": "宴清都·连理海棠",
+      "note": "第 251 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "花犯·小娉婷清铅素靥蜂黄暗偷晕",
+      "corrected": "花犯·郭希道送水仙索赋",
+      "note": "第 253 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "点绛唇·卷尽愁云素娥临夜新梳洗暗",
+      "corrected": "点绛唇·试灯夜初晴",
+      "note": "第 256 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "除夜立春",
+      "corrected": "祝英台近·除夜立春",
+      "note": "第 257 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "祝英台近·釆幽香巡古苑竹冷翠微路鬬",
+      "corrected": "祝英台近·春日客龟溪游废园",
+      "note": "第 258 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "澡兰香·盘丝系腕巧篆垂簪玉隐绀纱",
+      "corrected": "澡兰香·淮安重午",
+      "note": "第 259 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "春晚感怀",
+      "corrected": "莺啼序·春晚感怀",
+      "note": "第 261 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "丰乐楼分韵得如字",
+      "corrected": "高阳台·丰乐楼分韵得如字",
+      "note": "第 264 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "三姝媚·湖山经醉惯渍春衫啼痕酒痕",
+      "corrected": "三姝媚·过都城旧居有感",
+      "note": "第 265 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "八声甘州·渺空烟四远是何年青天坠长",
+      "corrected": "八声甘州·陪庾幕诸公游灵岩",
+      "note": "第 266 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "鹧鸪天·池上红衣伴倚阑栖鸦常带夕",
+      "corrected": "鹧鸪天·化度寺作",
+      "note": "第 269 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "贺新郎·乔木生云气访中兴英雄陈迹",
+      "corrected": "贺新郎·陪履斋先生沧浪看梅",
+      "note": "第 271 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "九日",
+      "corrected": "大有·九日",
+      "note": "第 274 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "兰陵王·送春去春去人闲无路秋千外",
+      "corrected": "兰陵王·丙子送春",
+      "note": "第 277 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "摸鱼儿·怎知他春归何处□相逢且尽",
+      "corrected": "摸鱼儿·酒边留同年徐云屋",
+      "note": "第 280 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "送陈君衡被召",
+      "corrected": "高阳台·照野旌旗朝天车马平沙万里",
+      "note": "第 281 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "瑶华·送陈君衡被召",
+      "note": "第 282 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "玉京秋·烟水阔高林弄残照晚蜩凄切",
+      "corrected": "玉京秋·长安独客，又见西风，素月、丹枫，凄然其为秋也，因调夹钟羽一解。",
+      "note": "第 283 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "花犯·楚江湄湘娥再见无言洒清泪",
+      "corrected": "花犯·水仙花",
+      "note": "第 285 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "乡城见月",
+      "corrected": "瑞鹤仙·乡城见月",
+      "note": "第 286 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "元夕",
+      "corrected": "女冠子·元夕",
+      "note": "第 288 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "久客山阴，一再逢春，回忆西杭，渺然愁思",
+      "corrected": "渡江云·久客山阴，王菊存问予近作，书以寄之。",
+      "note": "第 291 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "咏荷叶",
+      "corrected": "绿意/疏影·咏荷叶",
+      "note": "第 294 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "龙涎香",
+      "corrected": "天香·龙涎香",
+      "note": "第 296 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "眉妩·渐新痕悬柳淡彩穿花依约破",
+      "corrected": "眉妩·新月",
+      "note": "第 297 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "齐天乐·一襟余恨宫魂断年年翠阴庭",
+      "corrected": "齐天乐·蝉",
+      "note": "第 298 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "重过中庵故园",
+      "corrected": "长亭怨慢·重过中庵故园",
+      "note": "第 299 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "高阳台·残雪庭阴轻寒帘影霏霏玉管",
+      "corrected": "高阳台·和周草窗寄越中诸友韵",
+      "note": "第 300 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "法曲献仙音·层绿峨峨纤琼皎皎倒压波痕",
+      "corrected": "法曲献仙音·聚景亭梅次草窗韵",
+      "note": "第 301 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "疏影·江空不渡恨蘼芜杜若零落无",
+      "corrected": "疏影·寻梅不见",
+      "note": "第 302 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "六丑·似东风老大那复有当时风气",
+      "corrected": "六丑·杨花",
+      "note": "第 303 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "（无）",
+      "corrected": "凤凰台上忆吹箫·香冷金猊被翻红浪起来慵自",
+      "note": "第 306 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "髻子伤春慵更梳",
+      "corrected": "浣溪沙·髻子伤春慵更梳晚风庭院落",
+      "note": "第 312 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "ci.song.22000.json 共 64 条",
+      "corrected": "补挂「宋词三百首」tag",
+      "note": "底本目次里有这一首、库里同文记录没挂 tag 的，补齐；只加标记，正文不动。"
+    },
+    {
+      "original": "宋/宋词/ci.song.22000.json 末尾",
+      "corrected": "补录 11 首",
+      "note": "底本有、库内无同文：歐陽修《青玉案》、秦觀《滿庭芳》、周邦彥《瑞鶴仙》、周邦彥《應天長》、周邦彥《夜遊宮》、范成大《眼兒媚·萍鄉道中乍晴，臥》、吳文英《夜合花·白鶴江入京，泊葑》、張炎《高陽臺·西湖春感》、張炎《八聲甘州》、張炎《解連環·孤雁》、張炎《月下笛》"
     }
   ],
   "note": "2026-02-14 重复清理：删 19 条与花间集/南唐重出的五代词，逐条见 docs/宋词五代词去重.tsv；另含 develop 侧 2026-02-14 重复清理：删 5 条正文逐字相同的重出记录（柳永《蝶恋花》《雨霖铃》、晏殊《清平乐》、王沂孙《法曲献仙音》、秦观《行香子》），逐条见 docs/宋词全同重出.tsv。《宋词三百首》篇目统一成「词牌·正文首句」（245 首）：选本里只写词牌分不清是哪一首，同一首还有两个副本各写一种，故一律改。只改 `title`，`rhythmic` 与正文一字未动；首句取本记录正文前 12 字、按该记录自己的简繁写法，底本（识典古籍朱祖谋集解本）只用来核对是同一首。逐条映射与口径见 scripts/anthology/retitle_songci300.py 与 docs/选本对齐.md",
-  "date": "2026-10-30",
-  "reviewer": "CodeBuddy (Claude)",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }

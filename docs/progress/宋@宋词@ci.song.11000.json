@@ -20,9 +20,20 @@
       "original": "园归去又残红，便□地、飞觞尚得。",
       "corrected": "园归去又残红，便席地、飞觞尚得。",
       "note": "[missing_char] □ → 席; 识典古籍 (1 books, e.g. ); decided by reviewer"
+    },
+    {
+      "original": "（无）",
+      "corrected": "破阵子·为陈同甫赋壮语以寄",
+      "note": "第 195 首；底本 reference/宋詞三百首"
+    },
+    {
+      "original": "ci.song.11000.json 共 1 条",
+      "corrected": "补挂「宋词三百首」tag",
+      "note": "底本目次里有这一首、库里同文记录没挂 tag 的，补齐；只加标记，正文不动。"
     }
   ],
-  "date": "2026-11-02",
-  "reviewer": "codebuddy",
+  "note": "《宋词三百首》篇目按底本统一为「词牌·小题」，无小题的作「词牌·正文首句」：1 条。正文未动。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }
