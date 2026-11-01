@@ -20,10 +20,30 @@
       "original": "唐/诗/全唐诗/poet.tang.5000.json#680 孫逖《同洛陽李少府觀永樂公主入蕃》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《觀永樂公主入番》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）孫逖《觀永樂公主入番》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "斜陽照墟落",
+      "corrected": "斜光照墟落",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "朝仍越溪女",
+      "corrected": "朝為越溪女",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "邀人傅香粉",
+      "corrected": "邀人傅脂粉",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "晚年唯好靜",
+      "corrected": "晚年惟好靜",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 重复清理：删 4 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

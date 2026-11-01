@@ -1,6 +1,39 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.7000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "劉長卿《賦得》/劉長卿",
+      "corrected": "皇甫冉《春思》",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "秦中感秋寄遠上人",
+      "corrected": "秦中寄遠上人",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "自夏口至鸚鵡洲夕望岳陽寄源中丞",
+      "corrected": "自夏口至鸚鵡洲夕望岳陽寄元中丞",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "早寒江上有懷",
+      "corrected": "早寒有懷",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "我家襄水上",
+      "corrected": "我家襄水曲",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "（補錄）韋應物《秋夜寄邱員外》",
+      "corrected": "新增記錄",
+      "note": "按 reference/唐詩三百首.txt 校"
+    }
+  ],
+  "note": "《秋夜寄邱員外》全唐诗未收，按选本补录，「空山松子落」从底本与《韋蘇州集》（俗本作「山空」）；《賦得》一首选本作皇甫冉《春思》，作者并改。",
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

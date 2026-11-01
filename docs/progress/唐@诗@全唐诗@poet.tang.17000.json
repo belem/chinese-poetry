@@ -10,10 +10,15 @@
       "original": "唐/诗/全唐诗/poet.tang.17000.json#793 楊巨源《城東早春》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《城東早春》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）楊巨源《城東早春》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "《八月十五夜贈張功曹》末三句（原缺）",
+      "corrected": "一年明月今宵多／人生由命非由他／有酒不飲奈明何",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 与《全唐诗》归属异说 1 组，两条并存、互挂 tags，逐条见 docs/全唐诗全宋诗异作者.tsv。 2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-30",
-  "reviewer": "codebuddy",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

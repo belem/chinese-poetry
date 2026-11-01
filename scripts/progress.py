@@ -229,7 +229,7 @@ def cmd_record(args):
     if args.note:
         entry['note'] = args.note
     if args.fix:
-        entry['fixes'] = [dict(original=a, corrected=b, note=args.note or '')
+        entry['fixes'] = [dict(original=a, corrected=b, note=args.fix_note or '')
                           for a, b in (x.split('=>', 1) for x in args.fix)]
     rec = merge(args.path, entry)
     index = write_index()
@@ -287,6 +287,7 @@ def main():
     r.add_argument('--note', help='说明；needs_review 必须写清存疑点')
     r.add_argument('--fix', action='append', metavar='原文=>改后',
                    help='逐条修正记录，可重复；配合 --status fixed')
+    r.add_argument('--fix-note', help='逐条修正共用的依据说明（写进 fixes[].note，不覆盖 --note）')
     sub.add_parser('index', help='重算索引与 stats')
     sub.add_parser('check', help='索引与记录一致性检查')
     args = ap.parse_args()

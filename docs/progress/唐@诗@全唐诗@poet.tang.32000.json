@@ -5,10 +5,20 @@
       "original": "唐/诗/全唐诗/poet.tang.32000.json#60 賈島《三月晦日贈劉評事》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《三月晦日送春》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）賈島《三月晦日送春》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "宋之問《渡漢江》/宋之問",
+      "corrected": "李頻",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "利洲南渡",
+      "corrected": "利州南渡",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

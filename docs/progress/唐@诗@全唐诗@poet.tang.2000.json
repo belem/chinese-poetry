@@ -1,6 +1,39 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.2000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "雜曲歌辭 金縷衣 / 不詳",
+      "corrected": "杜秋娘",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    },
+    {
+      "original": "感遇十二首 一",
+      "corrected": "感遇四首 二",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    },
+    {
+      "original": "感遇十二首 二",
+      "corrected": "感遇四首 三",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    },
+    {
+      "original": "感遇十二首 四",
+      "corrected": "感遇四首 一",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    },
+    {
+      "original": "感遇十二首 七",
+      "corrected": "感遇四首 四",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    },
+    {
+      "original": "運命唯所遇",
+      "corrected": "運命惟所遇",
+      "note": "按 reference/唐詩三百首.txt 校，底本为《唐詩三百首注疏》（识典古籍 XYXTSSBSZS）"
+    }
+  ],
+  "note": "选本卷一《感遇》四首的次第是 孤鸿/兰叶/幽林/江南，与《全唐诗》十二首的 四/一/二/七 不同，故目次统一改「感遇四首 其N」；《金缕衣》乐府题下《全唐诗》署「不詳」，选本署杜秋娘（《唐诗三百首注疏》同）。",
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

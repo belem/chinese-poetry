@@ -5,10 +5,35 @@
       "original": "唐/诗/全唐诗/poet.tang.14000.json#712 朱宿《宿慧山寺 二》",
       "corrected": "删除",
       "note": "[qianjiashi] 与选本《題竹林寺》逐字相同，删总集里没挂 tag 的副本；保留 宋/诗/千家诗/qianjiashi.json#（唐）朱放《題竹林寺》，见 docs/千家诗去重.tsv"
+    },
+    {
+      "original": "三湘衰鬢逢秋色",
+      "corrected": "三湘愁鬢逢秋色",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "和張僕射塞下曲 一",
+      "corrected": "塞下曲四首 一",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "和張僕射塞下曲 二",
+      "corrected": "塞下曲四首 二",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "和張僕射塞下曲 三",
+      "corrected": "塞下曲四首 三",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "和張僕射塞下曲 四",
+      "corrected": "塞下曲四首 四",
+      "note": "按 reference/唐詩三百首.txt 校"
     }
   ],
   "note": "2026-10-30 重复清理：删 1 条与《千家诗》逐字相同的副本，逐条见 docs/千家诗去重.tsv。",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

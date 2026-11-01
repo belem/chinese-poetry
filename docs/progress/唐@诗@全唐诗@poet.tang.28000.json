@@ -1,6 +1,23 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.28000.json",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "落魄江南載酒行",
+      "corrected": "落魄江湖載酒行",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "楚腰腸斷掌中輕",
+      "corrected": "楚腰纖細掌中輕",
+      "note": "按 reference/唐詩三百首.txt 校"
+    },
+    {
+      "original": "紅燭秋光冷畫屏",
+      "corrected": "銀燭秋光冷畫屏",
+      "note": "按 reference/唐詩三百首.txt 校"
+    }
+  ],
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
