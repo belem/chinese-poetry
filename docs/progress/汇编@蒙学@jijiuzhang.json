@@ -1,0 +1,7 @@
+{
+  "path": "汇编/蒙学/jijiuzhang.json",
+  "note": "2026-11 依 repo 内 reference/急就章.txt 整本重新生成（issue #207）：31 个分卷/章、292 句、2394 字；正文照底本逐行成段，行末夹注另收 variants；底本已逐字复核（韵语字数、对句、夹注异文、繁体字形），讹字见 fixes，未与别的刻本对勘",
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
+}
