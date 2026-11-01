@@ -575,7 +575,7 @@
             "id": 88,
             "path": "明/小说/三国演义/sanguoyanyi.json",
             "tag": "paragraphs",
-            "comments": "明罗贯中《三国志通俗演义》（嘉靖壬午本，識典古籍 CADAL02111749）：120 则，分卷不标回次，按目録顺序编号。正文取章节页 HTML 里的段落（不走 OCR）；卷内各则靠页面小标题切分，无小标题的页并入上一则"
+            "comments": "明罗贯中《三国演义》：120 回通行本，底本 reference/三國演義.txt，由 scripts/import_sanguo_reference.py 生成。题名「第N回　回目」（回目上下句之间留全角空格），分回、正文均照底本，未逐字对勘"
         },
         "shuihu-zhuan": {
             "name": "水浒传",
