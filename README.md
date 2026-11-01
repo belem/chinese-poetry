@@ -31,7 +31,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 元/    元曲/yuanqu.json  诗/poet.yuan.json
 明/    诗/  词/  小说/（三国演义 水浒传 西游记 陶庵梦忆）
 清/    诗/  词/  幽梦影/  小说/（红楼梦 聊斋志异 浮生六记 笑林广记）
-汇编/  古文观止/ 课本选目/ 乐府诗集/ 昭明文选/ 蒙学/（十二种启蒙书，九部按 reference/ 重建）
+汇编/  古文观止/ 课本选目/ 乐府诗集/ 昭明文选/ 蒙学/（十四种启蒙书，2026-11 起按 reference/ 重出）
 ```
 
 - **一部书一个目录**：《全唐诗》是康熙年间编的一部书，不是「唐代的诗」，书不拆。
@@ -66,7 +66,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 
 **重写**：`先秦/文/sanshiliuji.json`《三十六计》2026-11 依 repo 内 `reference/三十六計.txt` 整本重写，总说＋36 计共 37 条，每条先本计原文、再【按语】；原文一字未动，仅统一标点。生成脚本 `scripts/import_sanshiliuji.py`。
 
-`汇编/蒙学/` 的九部（百家姓、三字经、千字文、弟子规、五字鉴、急就章、李氏蒙求、幼学琼林、增广贤文）2026-11 同样依 `reference/*.txt` 整本重新生成，一行一句成段，底本行末夹注另收 `variants`。原先的 `sanzijing-new` / `sanzijing-traditional` 两份合为一份，`唐/诗/全唐诗/` 里那份《蒙求》删去。生成脚本 `scripts/import_mengxue.py`，体例与勘误见 [`汇编/蒙学/README.md`](汇编/蒙学/README.md)。
+`汇编/蒙学/` 2026-11 同样依 `reference/*.txt` 整本重新生成（声律启蒙、笠翁对韵、龙文鞭影一支出自 `auto/mengxue-sanzhong`；百家姓、三字经、千字文、弟子规、五字鉴、急就章、李氏蒙求、幼学琼林、增广贤文九部出自 `scripts/import_mengxue.py`），一行一句成段，底本行末夹注另收 `variants`。原先的 `sanzijing-new` / `sanzijing-traditional` 两份合为一份，`唐/诗/全唐诗/` 里那份《蒙求》删去。体例与勘误见 [`汇编/蒙学/README.md`](汇编/蒙学/README.md)。
 
 **校勘**：以[识典古籍](https://www.shidianguji.com)刻本为主要依据，辅以搜韵、古文岛、汉典，修正形近音近错字、繁简转换错误、西里尔/希腊字母与假名乱码、`□` 缺字与漏衍字。《全唐诗》内部重出删除 1274 条，814 条归属异说按「一作某」两存。
 

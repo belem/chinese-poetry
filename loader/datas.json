@@ -724,6 +724,7 @@
             "tag": "paragraphs",
             "comments": "明馮夢龍編，十三卷 539 則；底本見 repo 内 reference/笑府.txt（卷一古艷部 … 卷十三閏語部，篇下正文一段到底）。題名作「笑府·卷N·篇名」，按底本十三卷編次，一則一條；卷首小引（墨憨子曰：……集X部。）與《笑府序》底本無標題，掛在卷一第一條的 prologue，不另立條目；卷首編撰者行與篇末〔全文完〕未收。〈餘姚先生〉一篇底本以獨立的「又」字起第二說，照錄爲段"
         },
+
         "mengxue-baijiaxing": {
             "name": "蒙学/百家姓",
             "id": 110,
@@ -786,6 +787,27 @@
             "path": "汇编/蒙学/zengguangxianwen.json",
             "tag": "paragraphs",
             "comments": "佚名，清周希陶重訂；底本 reference/增廣賢文.txt，分《增廣賢文》《補遺增廣》兩卷"
+        },
+        "liweng-duiyun": {
+            "name": "笠翁對韻",
+            "id": 11,
+            "path": "汇编/蒙学/liwengduiyun.json",
+            "tag": "paragraphs",
+            "comments": "清李漁（號笠翁）編的聲韻啟蒙書，按平水韻三十韻分編。2026-11 依 repo 內 reference/笠翁對韻.txt 重出；原誤收在 清/诗/poet.qing.json 的 30 條已刪，一件作品只留一份正文"
+        },
+        "shenglv-qimeng": {
+            "name": "聲律啟蒙",
+            "id": 16,
+            "path": "汇编/蒙学/shenglvqimeng.json",
+            "tag": "paragraphs",
+            "comments": "清車萬育編的聲韻啟蒙書，卷上、卷下各十五韻。2026-11 依 repo 內 reference/聲律啟蒙.txt 重出，原先秦/蒙学/ 遷來的舊正文（分句、異文均不同）已整體替換"
+        },
+        "longwen-bianying": {
+            "name": "龍文鞭影",
+            "id": 22,
+            "path": "汇编/蒙学/longwenbianying.json",
+            "tag": "paragraphs",
+            "comments": "明蕭良有編、楊臣錚等增訂的蒙學故事書，四字一句，按平水韻分四卷。2026-11 依 repo 內 reference/龍文鞭影.txt 新收，庫內此前無此書"
         }
     }
 }
