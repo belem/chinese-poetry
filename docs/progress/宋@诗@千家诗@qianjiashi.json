@@ -5,9 +5,59 @@
       "original": "content",
       "corrected": "paragraphs",
       "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+    },
+    {
+      "original": "春眠",
+      "corrected": "春曉",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "登鸛雀樓",
+      "corrected": "登鸛鶴樓",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "伊州歌",
+      "corrected": "春怨",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "打球圖",
+      "corrected": "打毬圖",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "與史朗中飲聽黃鶴樓上吹笛",
+      "corrected": "題北榭碑",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "中秋月（杜牧）",
+      "corrected": "中秋（李樸）",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "江村",
+      "corrected": "清江",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "左遷至藍關示侄孫湘",
+      "corrected": "自詠",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": "山中寡婦",
+      "corrected": "時世行",
+      "note": "篇题/作者按底本归位或改正"
+    },
+    {
+      "original": null,
+      "corrected": null,
+      "note": "整本按 reference/千家詩.txt 重建：分卷、篇题、署名、正文、夹注逐首照底本，224 首（五绝39/五律45/七绝94/七律46）。旧稿题作者串位的（秋興八首/晚春/絕句漫興/西湖三首/中秋一组）随重建归位；删去底本未收的《送天師》（朱權）、《送毛伯溫》（明世宗）。底本自身两处漏了题/作者分隔符、署名夹空格、夹注半角标点，已在 reference 内修正排版（不动正文）。见 docs/千家诗勘正.md"
     }
   ],
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
+  "date": "2026-11-11",
+  "reviewer": "CodeBuddy",
   "status": "fixed"
 }
