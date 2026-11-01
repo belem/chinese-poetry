@@ -702,6 +702,13 @@
             "path": "明/小说/小窗幽记/xiaochuangyouji.json",
             "tag": "paragraphs",
             "comments": "明陸紹珩撰（即《醉古堂劍掃》），十二卷；底本日本江戶寫本（識典古籍 NAJDA3080112）。底本目録殘缺，只能按卷成條"
+        },
+        "shishuo-xinyu": {
+            "name": "南北朝/世说新语",
+            "id": 107,
+            "path": "南北朝/小说/世说新语/shishuoxinyu.json",
+            "tag": "paragraphs",
+            "comments": "南朝宋劉義慶撰，梁劉孝標注本正文；底本見 repo 内 reference/世說新語.txt（三十六門，門下逐條編號）。題名作「世說新語·德行第一·1」，一門若干條，不併成一門一條；序跋（世說新語序目、刻世說新語序、跋）未收。原 南北朝/诗/poet.nanbeichao.json 缺「方正第五」一門、各門條數亦有闕，現整本替換"
         }
     }
 }
