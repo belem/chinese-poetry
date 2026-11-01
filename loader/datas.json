@@ -400,7 +400,7 @@
             "id": 63,
             "path": "先秦/文/sanshiliuji.json",
             "tag": "paragraphs",
-            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+            "comments": "2026-11 依 repo 内 reference/三十六計.txt 整本重写：总说＋36 计共 37 条，每条两段（本计原文、【按语】）；底本繁体，门名计名一仍底本（勝戰計·瞞天過海），见 docs/三十六计重建.md。原先只有 36 条计的原文、无总说、无按语，已整体替换"
         },
         "wen-shanhaijing": {
             "name": "山海经",
