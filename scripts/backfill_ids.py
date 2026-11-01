@@ -22,6 +22,7 @@ uuid 是 36 字符，6 字符是它的 1/6：32.3 万个 id 换掉，正文不�
 """
 import argparse
 import collections
+import copy
 import hashlib
 import json
 import os
@@ -73,9 +74,17 @@ def work_key(rec):
     return f"{rec.get('author') or ''}|{title}|{''.join(body)}|{line_hash(body)}"
 
 
-def assign(keys):
-    """keys: 每条的 key（重出的篇目已按出现次序拆开）。返回 {key: id}。"""
-    taken = set()
+def assign(keys, taken=()):
+    """keys: 每条的 key（重出的篇目已按出现次序拆开）。返回 {key: id}。
+
+    taken 是已经发出去的 id：主键按字典序算号，与库里现存记录的顺序无关，
+    所以同一个 key 每次重跑都该拿到同一个号。但两条不同的 key 可能哈希到同一个
+    短码（不同书的「题名+正文」同时撞上的概率不大，可数据里确实有），
+    这时后来的那条要在发号阶段就盐到另一个号——若只靠写盘时「已是短 id 就不动」
+    兜底，先落盘的那批各自最优、互不相让，全库就会留下撞码。所以把库里现有的
+    全部 id 当作已占用传进来，发号一次收敛，重跑幂等。
+    """
+    taken = set(taken)
     out = {}
     for key in sorted(set(keys)):
         for salt in range(1, 16):
@@ -105,16 +114,37 @@ def shape(line):
     return 'value'
 
 
-def dump(rel, arr):
+def dump(rel, arr, old_arr=None):
     """写回时保留原文件的行尾空格（上游不少文件每行末尾带一个空格）。
 
     只看「新写出的这一行对应得上旧行」的情况做不到（行数变了），
     改用整体判断：旧文件多数行带尾空格，新文件就按同一格式补。
     这样 diff 里只有 id 的新增与替换，不会因为重新排版整片变色。
+
+    old_arr 给了且记录数与顺序都没变时，直接按旧文本逐行换掉 id 对应的那一行：
+    行型统计只是估计，碰到「某一型尾空格占少数」的文件（如宋词里只有
+    "tags" 块末行不带空格）就会整片翻白，比不上照抄原文可靠。
     """
     path = os.path.join(ROOT, rel)
     with open(path, encoding='utf-8') as fp:
         before = fp.read().split('\n')
+    if old_arr is not None and len(old_arr) == len(arr):
+        olds = [r.get('id') for r in old_arr if isinstance(r, dict)]
+        news = [r.get('id') for r in arr if isinstance(r, dict)]
+        changes = {o: n for o, n in zip(olds, news) if o != n}
+        if not changes:
+            return
+        idline = re.compile(r'^(\s*"id": ")([^"]*)(",?\s*)$')
+        hit = 0
+        for i, line in enumerate(before):
+            m = idline.match(line)
+            if m and m.group(2) in changes:
+                before[i] = m.group(1) + changes[m.group(2)] + m.group(3)
+                hit += 1
+        if hit == len(changes):
+            with open(path, 'w', encoding='utf-8') as fp:
+                fp.write('\n'.join(before))
+        return
     # 每种行型在旧文件里带不带尾空格，逐型统计后照抄：上游的尾空格只加在
     # 「带逗号的值行」「], 」「},」上，"[" 与 "{" 不带
     style = collections.defaultdict(collections.Counter)
@@ -137,7 +167,7 @@ def main():
     ap.add_argument('--out', help='迁移明细 TSV 路径（可选，35 万行约 17 MB）')
     args = ap.parse_args()
 
-    data, records = {}, []
+    data, orig, records = {}, {}, []
     for rel in iter_files():
         with open(os.path.join(ROOT, rel), encoding='utf-8') as fp:
             try:
@@ -147,6 +177,7 @@ def main():
         if not isinstance(arr, list):
             continue
         data[rel] = arr
+        orig[rel] = copy.deepcopy(arr)
         for idx, rec in enumerate(arr):
             if isinstance(rec, dict) and is_poem(rec):
                 records.append((rel, idx, rec))
@@ -156,15 +187,27 @@ def main():
     count = collections.Counter(raw)
     keys = [k if count[k] == 1 else f'{k}|#{j}' for j, k in enumerate(raw)]
     assert len(set(keys)) == len(keys)
-    id_of = assign(keys)
+    # 库里现存的短 id 全部先占位，见 assign 的说明
+    taken = {rec['id'] for _, _, rec in records
+             if isinstance(rec.get('id'), str) and rec['id'] and not UUID.match(rec['id'])}
+    id_of = assign(keys, taken)
 
     added = converted = kept = 0
     rows = []
+    used = set()
     for (rel, idx, rec), key in zip(records, keys):
         old = rec.get('id')
         new = id_of[key]
         if isinstance(old, str) and old and not UUID.match(old):
-            continue                          # 已经是短 id：不动，重跑结果与上次一致
+            # 已是短 id 但撞了号（早年分批生成留下的）：留一个，另一个按新号改掉
+            if old in used:
+                rec['id'] = new
+                if args.apply and args.out:
+                    rows.append([rel, idx, old, new])
+            else:
+                used.add(old)
+            kept += 1
+            continue
         if old:
             converted += 1
         else:
@@ -186,7 +229,7 @@ def main():
     for rel, arr in data.items():
         if not any(isinstance(r, dict) and 'id' in r for r in arr):
             continue
-        dump(rel, arr)
+        dump(rel, arr, orig.get(rel))
     if args.out:
         out = os.path.join(ROOT, args.out)
         os.makedirs(os.path.dirname(out), exist_ok=True)

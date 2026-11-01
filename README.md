@@ -80,7 +80,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 | `scripts/collate.py` | 整部合集逐句与古籍对勘，每日分批运行 |
 | `scripts/twin_collate.py` | 选本 ↔ 总集互校，一字之差以古籍判定 |
 | `scripts/shidian.py` | 识典古籍批量检索取证，生成审核表，确认后写回 |
-| `scripts/backfill_ids.py` | 补 `id`、旧 uuid 换短 id |
+| `scripts/backfill_ids.py` | 补 `id`、旧 uuid 换短 id；发号时避开库里现存 id，重跑幂等，见 [docs/id去重.md](docs/id去重.md) |
 | `scripts/split_dynasty.py` | 按作者朝代拆分语料 |
 | `scripts/shidian/` | 识典古籍整书抓取：目录串链、章节取段落、落成记录 |
 
