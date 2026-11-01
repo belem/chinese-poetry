@@ -810,11 +810,11 @@
             "comments": "明蕭良有編、楊臣錚等增訂的蒙學故事書，四字一句，按平水韻分四卷。2026-11 依 repo 內 reference/龍文鞭影.txt 新收，庫內此前無此書"
         },
         "sanguo-zhi": {
-            "name": "晋/三国志",
+            "name": "史书/三国志",
             "id": 119,
-            "path": "晋/小说/三国志/sanguozhi.json",
+            "path": "史书/三国志/sanguozhi.json",
             "tag": "paragraphs",
-            "comments": "晉陳壽撰、南朝宋裴松之注，六十五卷；底本見 repo 内 reference/二十四史/三国志1.txt（卷一—卷三十三，魏書、蜀書前三卷）與 三国志2.txt（卷三十四—卷六十五，蜀書後三卷、吳書），由 scripts/import_sanguozhi_reference.py 生成。題名作「三國志卷N　X書N　篇名第N」，一卷一條，正文與裴注同為段落、段內一字不動；本文與裴注只靠「〔N〕」標記分別，故不拆字段。作者朝代依 authors/authors.json 記「晋」（入晉後撰此書）"
+            "comments": "晉陳壽撰、南朝宋裴松之注，六十五卷；底本見 repo 内 reference/二十四史/三国志1.txt（卷一—卷三十三，魏書、蜀書前三卷）與 三国志2.txt（卷三十四—卷六十五，蜀書後三卷、吳書），由 scripts/import_sanguozhi_reference.py 生成。題名作「三國志卷N　X書N　篇名第N」，一卷一條，正文與裴注同為段落、段內一字不動；本文與裴注只靠「〔N〕」標記分別，故不拆字段。作者朝代依 authors/authors.json 記「晋」（入晉後撰此書）。陳壽是史家，此書是史部正史，不與小說同列，故另立頂層史書/，見 docs/三国志重建.md"
         }
     }
 }

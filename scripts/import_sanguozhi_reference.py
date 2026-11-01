@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""`reference/二十四史/三国志{1,2}.txt` → `晋/小说/三国志/sanguozhi.json`。
+"""`reference/二十四史/三国志{1,2}.txt` → `史书/三国志/sanguozhi.json`。
 
 底本是〔晉〕陳壽撰、〔南朝宋〕裴松之注的六十五卷本，繁体点校，正文与裴注同为段落、
 段前两个全角空格缩进、段落之间空一行。
@@ -36,7 +36,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRCS = ('reference/二十四史/三国志1.txt', 'reference/二十四史/三国志2.txt')
-OUT = '晋/小说/三国志/sanguozhi.json'
+OUT = '史书/三国志/sanguozhi.json'
 AUTHOR = '陈寿'
 DYNASTY = '晋'
 END_MARK = '〔全文完〕'

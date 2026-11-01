@@ -361,6 +361,11 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
+    "史书/三国志/sanguozhi.json": {
+      "date": "2026-11-01",
+      "reviewer": "CodeBuddy",
+      "status": "needs_review"
+    },
     "唐/词/ci.tang.json": {
       "date": "2026-10-30",
       "reviewer": "codebuddy",
@@ -3745,11 +3750,6 @@
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "fixed"
-    },
-    "晋/小说/三国志/sanguozhi.json": {
-      "date": "2026-11-01",
-      "reviewer": "CodeBuddy",
-      "status": "needs_review"
     },
     "晋/小说/搜神记/soushenji.json": {
       "date": "2026-10-29",
