@@ -47,11 +47,38 @@ def _value_span(body, key):
     if j < 0:
         return None
     k = j + len(head)
-    if body[k] == '"':
-        end = k + 1
-        while body[end] != '"' or body[end - 1] == '\\':
+    if body[k] == '"':                       # 字符串：数到配对的引号（转义的引号不算）
+        end, esc = k + 1, False
+        while end < len(body):
+            if esc:
+                esc = False
+            elif body[end] == '\\':
+                esc = True
+            elif body[end] == '"':
+                return k, end + 1
             end += 1
-        return k, end + 1
+        raise SystemExit('字符串引号不配对')
+    if body[k] == '[':                       # 数组：数括号到配平，字符串里的 [ ] 不算
+        depth, end, in_str, esc = 0, k, False, False
+        while end < len(body):
+            c = body[end]
+            if in_str:
+                if esc:
+                    esc = False
+                elif c == '\\':
+                    esc = True
+                elif c == '"':
+                    in_str = False
+            elif c == '"':
+                in_str = True
+            elif c == '[':
+                depth += 1
+            elif c == ']':
+                depth -= 1
+                if depth == 0:
+                    return k, end + 1
+            end += 1
+        raise SystemExit('数组括号不配平')
     end = k
     while body[end] not in ',\n}':
         end += 1
