@@ -58,6 +58,9 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
 只保留 `诗经/shijing.json`、`楚辞/chuci.json` 的全文版本。
+判据是「**逐字相重**」：总集进库不是删选本的理由，选本有它自己的用场（`汇编/课本选目/` 是给小读者的小古文集子，
+《世说新语》整本进库后，其中署劉義慶的那 10 篇仍旧保留——数篇是改写本，与整本字面不同，见
+[docs/名著增补.md](docs/名著增补.md)）。
 
 - 路径改了，正文没改：提交 PR 时不要顺手格式化被移动的文件。
 - `loader/datas.json` 是数据读取入口，dataset 的 key 不变，只改 `path`；新增目录要在那里注册。
