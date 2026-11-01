@@ -242,8 +242,8 @@
       "status": "fixed"
     },
     "先秦/文/sanshiliuji.json": {
-      "date": "2026-10-28",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-01",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "先秦/文/shangjunshu.json": {
