@@ -5,8 +5,8 @@
     "total_files": 896,
     "reviewed": 903,
     "clean": 315,
-    "fixed": 146,
-    "needs_review": 238,
+    "fixed": 151,
+    "needs_review": 233,
     "out_of_scope": 204,
     "in_scope_files": 699
   },
@@ -677,13 +677,13 @@
       "status": "clean"
     },
     "宋/宋词/ci.song.0.json": {
-      "date": "2026-10-30",
-      "reviewer": "CodeBuddy (Claude)",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "宋/宋词/ci.song.1000.json": {
-      "date": "2026-11-02",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.10000.json": {
@@ -692,14 +692,14 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.11000.json": {
-      "date": "2026-11-02",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.12000.json": {
       "date": "2026-11-03",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.13000.json": {
       "date": "2026-11-03",
@@ -727,9 +727,9 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.18000.json": {
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.19000.json": {
       "date": "2026-11-04",
@@ -742,9 +742,9 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.20000.json": {
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.2019y.json": {
       "date": "2026-06-26",
@@ -757,19 +757,19 @@
       "status": "needs_review"
     },
     "宋/宋词/ci.song.22000.json": {
-      "date": "2026-10-30",
-      "reviewer": "CodeBuddy (Claude)",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.23000.json": {
-      "date": "2026-11-02",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.3000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/宋词/ci.song.4000.json": {
       "date": "2026-11-03",
