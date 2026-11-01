@@ -1,6 +1,14 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.48000.json",
-  "date": "2026-10-07",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "李瀚《蒙求》",
+      "corrected": "删除",
+      "note": "与 汇编/蒙学/lishimengqiu.json（底本 reference/李氏蒙求.txt）同一部书，正文逐句相同；按「一件作品只留一份正文」删掉唐诗里这份，留汇编/蒙学 有底本、有夹注异文的那一份"
+    }
+  ],
+  "note": "2026-11 删去李瀚《蒙求》一条（298 句）：该书改由 汇编/蒙学/lishimengqiu.json 收录，底本 reference/李氏蒙求.txt。",
+  "date": "2026-11-01",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
 }

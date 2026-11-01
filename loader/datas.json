@@ -723,6 +723,69 @@
             "path": "明/小说/笑府/xiaofu.json",
             "tag": "paragraphs",
             "comments": "明馮夢龍編，十三卷 539 則；底本見 repo 内 reference/笑府.txt（卷一古艷部 … 卷十三閏語部，篇下正文一段到底）。題名作「笑府·卷N·篇名」，按底本十三卷編次，一則一條；卷首小引（墨憨子曰：……集X部。）與《笑府序》底本無標題，掛在卷一第一條的 prologue，不另立條目；卷首編撰者行與篇末〔全文完〕未收。〈餘姚先生〉一篇底本以獨立的「又」字起第二說，照錄爲段"
+        },
+        "mengxue-baijiaxing": {
+            "name": "蒙学/百家姓",
+            "id": 110,
+            "path": "汇编/蒙学/baijiaxing.json",
+            "tag": "paragraphs",
+            "comments": "北宋佚名編，四言韻語，收單姓復姓 504 個；底本 reference/百家姓.txt，末句「百家姓終」照錄"
+        },
+        "mengxue-sanzijing": {
+            "name": "蒙学/三字經",
+            "id": 111,
+            "path": "汇编/蒙学/sanzijing.json",
+            "tag": "paragraphs",
+            "comments": "宋王應麟撰；底本 reference/三字經.txt（118 句，含「革命興，廢帝制」以下民國一段，與舊錄的清代本不同），一行一句"
+        },
+        "mengxue-qianziwen": {
+            "name": "蒙学/千字文",
+            "id": 112,
+            "path": "汇编/蒙学/qianziwen.json",
+            "tag": "paragraphs",
+            "comments": "梁周興嗣次韻；底本 reference/千字文.txt，四字一句一行，底本行末夾注的異文收在 variants，不進正文"
+        },
+        "mengxue-dizigui": {
+            "name": "蒙学/弟子規",
+            "id": 113,
+            "path": "汇编/蒙学/dizigui.json",
+            "tag": "paragraphs",
+            "comments": "清李毓秀撰；底本 reference/弟子規.txt，按總敘、入則孝、出則弟、謹、信、汎愛眾、親仁、餘力學文八章分卷"
+        },
+        "mengxue-wuzijian": {
+            "name": "蒙学/五字鑒",
+            "id": 114,
+            "path": "汇编/蒙学/wuzijian.json",
+            "tag": "paragraphs",
+            "comments": "明李廷機撰，五言韻語通史，三皇紀至明紀 31 章；底本 reference/五字鑒.txt"
+        },
+        "mengxue-jijiuzhang": {
+            "name": "蒙学/急就章",
+            "id": 115,
+            "path": "汇编/蒙学/jijiuzhang.json",
+            "tag": "paragraphs",
+            "comments": "漢史游撰；底本 reference/急就章.txt，按底本 32 章分卷，末章為七言頌辭，與前三十一章的四言名物不同體；底本夾注的異文收在 variants"
+        },
+        "mengxue-lishimengqiu": {
+            "name": "蒙学/李氏蒙求",
+            "id": 116,
+            "path": "汇编/蒙学/lishimengqiu.json",
+            "tag": "paragraphs",
+            "comments": "唐李瀚撰，四言韻語，每句一典；底本 reference/李氏蒙求.txt。原另有一份在 唐/诗/全唐诗/poet.tang.48000.json（題「蒙求」），2026-11 刪去，一件作品只留一份正文"
+        },
+        "mengxue-youxueqionglin": {
+            "name": "蒙学/幼學瓊林",
+            "id": 117,
+            "path": "汇编/蒙学/youxueqionglin.json",
+            "tag": "paragraphs",
+            "comments": "明程登吉撰，清鄒聖脈增補；底本 reference/幼學瓊林.txt，三十三章，每行一段對句"
+        },
+        "mengxue-zengguangxianwen": {
+            "name": "蒙学/增廣賢文",
+            "id": 118,
+            "path": "汇编/蒙学/zengguangxianwen.json",
+            "tag": "paragraphs",
+            "comments": "佚名，清周希陶重訂；底本 reference/增廣賢文.txt，分《增廣賢文》《補遺增廣》兩卷"
         }
     }
 }
