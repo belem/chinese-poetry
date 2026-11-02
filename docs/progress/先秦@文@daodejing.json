@@ -1,7 +1,24 @@
 {
   "path": "先秦/文/daodejing.json",
-  "note": "由 先秦/诗/poet.xianqin.json 按书名拆出（此前与「诗」混放在一个文件里），2026-10 只做归位与去重，正文未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "fixed"
+  "fixes": [
+    {
+      "original": "简体、章次错乱（第 71 章在第 2 条、第 40 章在末条、第 39 章脱漏）、标题写「道德经（第一章）」",
+      "corrected": "繁体 81 章，第 1—81 章齐全，标题「道德經（第N章）」",
+      "note": "依底本 reference/道德經.txt 整本重出；可复现：python3 scripts/import_sishu_reference.py --check"
+    },
+    {
+      "original": "含「德」，比于赤子 / 觀其眇",
+      "corrected": "含德之厚，比于赤子 / 觀其妙",
+      "note": "旧文件半简半繁且「妙」误作「眇」；底本作「妙」"
+    },
+    {
+      "original": "底本夹注「(一作…)」混在正文里",
+      "corrected": "移到该条 note 字段（16 处）",
+      "note": "校记不是正文；例：道德經（第三十七章）note 记「一作『夫亦將無欲』；一作『天下將自定』，非」"
+    }
+  ],
+  "note": "2026-11-02 依 repo 内 reference/道德經.txt 重出 81 章 218 段（此前 2026-10 只做归位与去重，正文未对勘）。底本自身未与他本（王弼注本、河上公本）对勘，异文俗字照录。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
 }

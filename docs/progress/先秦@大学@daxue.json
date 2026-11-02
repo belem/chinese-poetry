@@ -1,7 +1,19 @@
 {
   "path": "先秦/大学/daxue.json",
-  "note": "由 先秦/四书五经/ 按书拆出；单章 dict 改为列表，正文未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "claude-opus-5-5",
+  "fixes": [
+    {
+      "original": "闲→閑、掩→揜、茍→苟、个→介、实→寔、灾→菑、并→並",
+      "corrected": "统一按底本写法",
+      "note": "reference/大學.txt 用正字；例外一处：旧文件「苟日新」底本作「苟」，未改（旧文件原误作「茍」）"
+    },
+    {
+      "original": "单章 dict 改为列表",
+      "corrected": "同上，正文本轮已逐字对勘底本",
+      "note": "2026-10-28 只做格式归位，2026-11-02 才真正对正文"
+    }
+  ],
+  "note": "2026-11-02 依 repo 内 reference/大學.txt 整本重出（16 段），可复现：python3 scripts/import_sishu_reference.py --check。底本无朱熹补传与「右经一章」标识，照底本不另加结构。底本自身未与他本对勘。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
