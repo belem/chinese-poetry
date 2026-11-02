@@ -7,7 +7,7 @@
       "note": "底本叠逗号，据文义改作一个；逐字对照 reference/二十四史/史記1.txt 第 2849 行，全篇唯一一处叠标点"
     }
   ],
-  "note": "依 repo 内 reference/二十四史/史記1.txt（卷一—卷六十四）、史記2.txt（卷六十五—卷一百三十）整本生成，由 scripts/import_shiji_reference.py 产出：130 卷、4714 段、60.97 万字，题名「史記卷N　篇名第N」，一卷一条。底本只有白文，无三家注。卷十三—卷二十二十表在底本里只有篇题、没有表格正文，照录为空 paragraphs，不臆造。唯一的正文改动是卷三十一 吳太伯世家「為騶伐魯，，至與魯盟乃去」的叠逗号，见 fixes。scripts/import_shiji_reference.py --check 输出「一致」，scripts/check_structure.py 对该文件零报告。繁体点校文本尚未与百衲本、中华书局点校本逐字对勘，故记 needs_review。",
+  "note": "依 repo 内 reference/二十四史/史記1.txt（卷一—卷六十四）、史記2.txt（卷六十五—卷一百三十）整本生成，由 scripts/import_shiji_reference.py 产出：130 卷、4714 段、60.97 万字，题名「史記卷N　篇名第N」，一卷一条。底本只有白文，无三家注。卷十三—卷二十二十表在底本里只有篇题、没有表格正文，照录为空 paragraphs，不臆造。唯一的正文改动是卷三十一 吳太伯世家「為騶伐魯，，至與魯盟乃去」的叠逗号，见 fixes。scripts/import_shiji_reference.py --check 输出「一致」，scripts/check_structure.py 对该文件零报告。繁体点校文本尚未与百衲本、中华书局点校本逐字对勘，故记 needs_review。 2026-11-03 标题体检（issue #258）：130 个题名的全角空格 U+3000 改半角，文字未动；正文未对勘。",
   "date": "2026-11-09",
   "reviewer": "CodeBuddy",
   "status": "needs_review"
