@@ -1,0 +1,14 @@
+{
+  "path": "清/小说/初刻拍案惊奇/chukepaiangjiqi.json",
+  "fixes": [
+    {
+      "original": "又送酒??内房中去",
+      "corrected": "又送酒铺内房中去",
+      "note": "底本 reference/初刻拍案惊奇.txt 卷十八的录入残渣，`??` 是认不出的字，按文意读作「铺」（铺设床铺）"
+    }
+  ],
+  "note": "2026-11 按 issue #239 依 repo 内 reference/初刻拍案惊奇.txt（简体排印本，40 卷，逐段带句读）整本生成，落 清/小说/初刻拍案惊奇/。40 卷齐全，1672 段 39.4 万字，题名「第N卷　篇名」，底本简介挂第一卷 prologue。标点只删重出的那一处（「箱笼一空，，」）；认不出的残渣照录不猜：卷二十五「银XX斜背解鸣」的 XX 疑当作「釭」待核（check_structure 的 ascii_residue 仍报 1 处），卷四一处缺字按全库口径包成 {}（check_structure 的 bare_pua 因它不报，字未补）。正文尚未与尚友堂刻本等版本逐句对勘，故记 needs_review",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy (AI)",
+  "status": "needs_review"
+}
