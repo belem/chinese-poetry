@@ -5,8 +5,8 @@
     "total_files": 896,
     "reviewed": 903,
     "clean": 315,
-    "fixed": 150,
-    "needs_review": 234,
+    "fixed": 149,
+    "needs_review": 235,
     "out_of_scope": 204,
     "in_scope_files": 699
   },
@@ -3717,9 +3717,9 @@
       "status": "fixed"
     },
     "明/小说/水浒传/shuihuzhuan.json": {
-      "date": "2026-11-02",
-      "reviewer": "CodeBuddy",
-      "status": "fixed"
+      "date": "2026-11-08",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "明/小说/笑府/xiaofu.json": {
       "date": "2026-11-08",
