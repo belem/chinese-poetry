@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 902,
-    "reviewed": 909,
+    "total_files": 903,
+    "reviewed": 910,
     "clean": 315,
     "fixed": 138,
-    "needs_review": 252,
+    "needs_review": 253,
     "out_of_scope": 204,
-    "in_scope_files": 705
+    "in_scope_files": 706
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -132,7 +132,7 @@
       "status": "needs_review"
     },
     "元/元曲/yuanqu.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
@@ -327,8 +327,8 @@
       "status": "fixed"
     },
     "先秦/楚辞/chuci.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "先秦/论语/lunyu.json": {
@@ -382,13 +382,13 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.0.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.1000.json": {
-      "date": "2026-10-29",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.10000.json": {
@@ -402,13 +402,13 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.12000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.13000.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.14000.json": {
@@ -442,7 +442,7 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.2000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
@@ -452,13 +452,13 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.21000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.22000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.23000.json": {
@@ -472,8 +472,8 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.25000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.26000.json": {
@@ -497,7 +497,7 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.3000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
@@ -517,8 +517,8 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.33000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.34000.json": {
@@ -612,8 +612,8 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.50000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.51000.json": {
@@ -767,7 +767,7 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.23000.json": {
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
@@ -2387,873 +2387,873 @@
       "status": "out_of_scope"
     },
     "宋/诗/全宋诗/poet.song.0.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.1000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.10000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.100000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.101000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.102000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.103000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.104000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.105000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.106000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.107000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.108000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.109000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.11000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.110000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.111000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.112000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.113000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.114000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.115000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.116000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.117000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.118000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.119000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.12000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.120000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.121000.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.122000.json": {
-      "date": "2026-11-08",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.123000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.124000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.125000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.126000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.127000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.128000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.129000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.13000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.130000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.131000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.132000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.133000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.134000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.135000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.136000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.137000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.138000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.139000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.14000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.140000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.141000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.142000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.143000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.144000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.145000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.146000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.147000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.148000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.149000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.15000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.150000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.151000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.152000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.153000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.154000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.155000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.156000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.157000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.158000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.159000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.16000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.160000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.161000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.162000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.163000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.164000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.165000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.166000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.167000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.168000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.169000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.17000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.170000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.171000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.172000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.173000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.174000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.175000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.176000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.177000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.178000.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.179000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.18000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.180000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.181000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.182000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.183000.json": {
-      "date": "2026-11-08",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.184000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.185000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.186000.json": {
-      "date": "2026-11-08",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.187000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.188000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.189000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.19000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.190000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.191000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.192000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.193000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.194000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.195000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.196000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.197000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.198000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.199000.json": {
-      "date": "2026-11-06",
-      "reviewer": "CodeBuddy (AI)",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.2000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.20000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.200000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.201000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.202000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.203000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.204000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.205000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.206000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.207000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.208000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.209000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.21000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.210000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.211000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.212000.json": {
-      "date": "2026-11-08",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.213000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.214000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.215000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.216000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.217000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.218000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.219000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.22000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.220000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.221000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.222000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.223000.json": {
-      "date": "2026-11-08",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.224000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.225000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.226000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.227000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.228000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.229000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.23000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.230000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.231000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.232000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.233000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.234000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.235000.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.236000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.237000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.238000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.239000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.24000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.240000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.241000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.242000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.243000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.244000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.245000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.246000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.247000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.248000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.249000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.25000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.250000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.251000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.252000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.253000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.254000.json": {
-      "date": "2026-10-31",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.255000.json": {
@@ -3267,408 +3267,408 @@
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.26000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.27000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.28000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.29000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.3000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.30000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.31000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.32000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.33000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.34000.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.35000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.36000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.37000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.38000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.39000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.4000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.40000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.41000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.42000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.43000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.44000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.45000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.46000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.47000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.48000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.49000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.5000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.50000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.51000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.52000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.53000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.54000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.55000.json": {
-      "date": "2026-11-07",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.56000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.57000.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.58000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.59000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.6000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.60000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.61000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.62000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.63000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.64000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.65000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.66000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.67000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.68000.json": {
-      "date": "2026-10-05",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.69000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.7000.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.70000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.71000.json": {
-      "date": "2026-11-04",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.72000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.73000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.74000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.75000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.76000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.77000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.78000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.79000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.8000.json": {
-      "date": "2026-10-03",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.80000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.81000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.82000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.83000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.84000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.85000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.86000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.87000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.88000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.89000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.9000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.90000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.91000.json": {
-      "date": "2026-10-04",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.92000.json": {
-      "date": "2026-11-07",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.93000.json": {
-      "date": "2026-10-30",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.94000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.95000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.96000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/全宋诗/poet.song.97000.json": {
-      "date": "2026-06-26",
-      "reviewer": "claude-sonnet-4-6",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.98000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.99000.json": {
-      "date": "2026-11-01",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "宋/诗/千家诗/qianjiashi.json": {
@@ -3687,7 +3687,7 @@
       "status": "fixed"
     },
     "明/小说/三国演义/sanguoyanyi.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
@@ -3727,7 +3727,7 @@
       "status": "needs_review"
     },
     "明/小说/笑府/xiaofu.json": {
-      "date": "2026-11-08",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
@@ -3795,6 +3795,11 @@
       "date": "2026-10-27",
       "reviewer": "codebuddy",
       "status": "fixed"
+    },
+    "汇编/伊索寓言/yisuoyuyan.json": {
+      "date": "2026-11-03",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
     },
     "汇编/古文观止/卷一周文.json": {
       "date": "2026-11-09",
@@ -4482,7 +4487,7 @@
       "status": "needs_review"
     },
     "清/小说/笑林广记/xiaolinguangji.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
@@ -4522,7 +4527,7 @@
       "status": "fixed"
     },
     "清/词/ci.qing.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-03",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
