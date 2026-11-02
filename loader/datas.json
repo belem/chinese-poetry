@@ -312,13 +312,6 @@
             "tag": "paragraphs",
             "comments": "由 历代/ 按作者朝代拆出，正文来自 haitangshishe，尚未逐字对勘"
         },
-        "wen-zuozhuan": {
-            "name": "左传",
-            "id": 51,
-            "path": "先秦/文/zuozhuan.json",
-            "tag": "paragraphs",
-            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
-        },
         "wen-guoyu": {
             "name": "国语",
             "id": 52,
@@ -822,6 +815,13 @@
             "path": "史书/史记/shiji.json",
             "tag": "paragraphs",
             "comments": "漢司馬遷撰，一百三十卷；底本見 repo 內 reference/二十四史/史記1.txt（卷一—卷六十四）與 史記2.txt（卷六十五—卷一百三十），由 scripts/import_shiji_reference.py 生成。題名作「史記卷N　篇名第N」，一卷一條，段內一字不動；底本只有白文，無三家注，故不拆 note 字段。卷十三—卷二十二這十卷「表」在底本裡只有篇題、沒有表格正文，照錄為空 paragraphs，不臆造。作者朝代依 authors/authors.json 記「汉」。與《三國志》同一口徑：史部正史進頂層史書/，見 docs/史记重建.md"
+        },
+        "zuozhuan": {
+            "name": "史书/春秋左氏传",
+            "id": 121,
+            "path": "史书/春秋左氏传/zuozhuan.json",
+            "tag": "paragraphs",
+            "comments": "周左丘明撰，十二公二百五十五年；底本見 repo 內 reference/二十四史/春秋左氏传.txt（简体排印本，经、传逐段带句读），由 scripts/import_zuozhuan_reference.py 生成。题名作「左傳·隐公·隐公元年」，一年一条，段内一字不动；经文那一段以「【经】」起头，其余为传文。底本本身有九处毛病：桓四、庄二、庄五、庄十五、庄十七、哀十九、哀廿二七年经传整段失落（只余抓取残渣，照录为□□□□□□ 占位），庄十九、昭十六、昭十九、昭廿行末被切断（用□□补在断处）。原 先秦/文/zuozhuan.json（278 条、按选本篇目排的散录）2026-11 整份删除（issue #215），与《史记》《三国志》同一口径进顶层史书/，见 docs/春秋左氏传重建.md"
         }
     }
 }
