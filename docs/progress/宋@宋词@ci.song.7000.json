@@ -70,10 +70,20 @@
       "original": "凌霜犯雪",
       "corrected": "凌霜犯雪",
       "note": "[ci_pattern] attested as-is in 5 books on 识典古籍 (, 唐宋八家詞, 彊村叢書); no change"
+    },
+    {
+      "original": "试□。",
+      "corrected": "试向。",
+      "note": "蔡伸《定風波》：「試向」——识典古籍两书三次同；另李彌遜《蓦山溪》「似却月、一枝横暮」见下条。"
+    },
+    {
+      "original": "似却□、一枝横暮",
+      "corrected": "似却月、一枝横暮",
+      "note": "《筠谿樂府》《筠谿集》两本皆作「似却月、一枝横暮」；监本作「似却那」为一字异文，不取。"
     }
   ],
   "note": "其中 10 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核；其中 10 处经古籍证实原样，未改；3 处字数异常证据不足，未改，留待复核",
-  "date": "2026-11-03",
-  "reviewer": "CodeBuddy",
+  "date": "2026-11-08",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }

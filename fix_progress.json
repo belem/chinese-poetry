@@ -5,8 +5,8 @@
     "total_files": 896,
     "reviewed": 903,
     "clean": 315,
-    "fixed": 148,
-    "needs_review": 236,
+    "fixed": 151,
+    "needs_review": 233,
     "out_of_scope": 204,
     "in_scope_files": 699
   },
@@ -627,7 +627,7 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.54000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -772,8 +772,8 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.4000.json": {
-      "date": "2026-11-03",
-      "reviewer": "CodeBuddy",
+      "date": "2026-11-08",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.5000.json": {
@@ -787,8 +787,8 @@
       "status": "fixed"
     },
     "宋/宋词/ci.song.7000.json": {
-      "date": "2026-11-03",
-      "reviewer": "CodeBuddy",
+      "date": "2026-11-08",
+      "reviewer": "codebuddy",
       "status": "fixed"
     },
     "宋/宋词/ci.song.8000.json": {
@@ -2517,7 +2517,7 @@
       "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.122000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -2852,7 +2852,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.183000.json": {
-      "date": "2026-11-01",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -2867,9 +2867,9 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.186000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "宋/诗/全宋诗/poet.song.187000.json": {
       "date": "2026-11-01",
@@ -3017,7 +3017,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.212000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -3077,7 +3077,7 @@
       "status": "clean"
     },
     "宋/诗/全宋诗/poet.song.223000.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
@@ -3707,14 +3707,14 @@
       "status": "needs_review"
     },
     "明/小说/封神演义/fengshenyanqi.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
+      "date": "2026-11-08",
+      "reviewer": "codebuddy",
+      "status": "fixed"
     },
     "明/小说/小窗幽记/xiaochuangyouji.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
+      "date": "2026-11-08",
+      "reviewer": "codebuddy",
+      "status": "fixed"
     },
     "明/小说/水浒传/shuihuzhuan.json": {
       "date": "2026-11-02",
@@ -4442,7 +4442,7 @@
       "status": "needs_review"
     },
     "汉/诗/poet.han.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-08",
       "reviewer": "codebuddy",
       "status": "fixed"
     },
