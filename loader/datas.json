@@ -667,14 +667,14 @@
             "id": 102,
             "path": "明/小说/三言二拍/yushimingyan.json",
             "tag": "paragraphs",
-            "comments": "明馮夢龍編，四十卷；底本明刊本（識典古籍 NA11063）。該電子本卷 11、12 整卷壓頁未切"
+            "comments": "明馮夢龍編，四十卷；2026-11 依 repo 内 reference/喻世明言.txt 整本重出，由 scripts/import_sanyan_reference.py 生成。底本電子本卷 29–39 只有篇題（連排的目録），正文待補"
         },
         "jingshi-tongyan": {
             "name": "明/警世通言",
             "id": 103,
             "path": "明/小说/三言二拍/jingshitongyan.json",
             "tag": "paragraphs",
-            "comments": "明馮夢龍輯，四十卷；底本天啟四年刻本（識典古籍 CADAL02111600）。卷 39 底本頁面錯亂，卷 40 現存兩份（卷 39 與卷 40 各一條）"
+            "comments": "明馮夢龍輯，四十卷齐；2026-11 依 repo 内 reference/警世通言.txt 整本重出，由 scripts/import_sanyan_reference.py 生成。原識典古籍天啓四年刻本（CADAL02111600）電子本只有 23 卷，2026-11 整份删除"
         },
         "erke-paian": {
             "name": "清/二刻拍案惊奇",
@@ -836,6 +836,13 @@
             "path": "清/小说/初刻拍案惊奇/chukepaiangjiqi.json",
             "tag": "paragraphs",
             "comments": "明凌濛初撰，四十卷；底本见 repo 内 reference/初刻拍案惊奇.txt（简体排印本，逐段带句读），由 scripts/import_chuke_paian.py 生成。题名作「第N卷　篇名」，一卷一篇，篇内一段一行。底本简介挂第一卷的 prologue。底本自身的录入残渣只改了认得出的（「又送酒??内房中去」→「酒铺」，重出的逗号删到该有一个），卷二十五「银XX斜背解鸣」的 XX 未改、待核，卷四一处缺字加 {}、字未补。作者朝代依 authors/authors.json 记「明」（凌濛初生于万历八年）；按「一部书一个目录」落 清/小说/ 是本 issue 的指定，与《二刻拍案惊奇》挂在 明/小说/三言二拍/ 不在一处，见 docs/名著增补.md"
+        },
+        "xingshi-hengyan": {
+            "name": "明/醒世恒言",
+            "id": 124,
+            "path": "明/小说/三言二拍/xingshihengyan.json",
+            "tag": "paragraphs",
+            "comments": "明馮夢龍纂輯，四十卷齐；2026-11 依 repo 内 reference/醒世恒言.txt 整本重建（库内原无此书），由 scripts/import_sanyan_reference.py 生成。卷首《叙》（天启丁卯陇西可一居士题）挂在第一卷的 prologue。暂用 id 124：《说岳全传》2026-11 先一步占了 122，《醒世恒言》改取末号，三言三本的 id 本身不受影响"
         }
     }
 }

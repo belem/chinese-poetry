@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 899,
-    "reviewed": 906,
+    "total_files": 900,
+    "reviewed": 907,
     "clean": 315,
-    "fixed": 138,
-    "needs_review": 249,
+    "fixed": 137,
+    "needs_review": 251,
     "out_of_scope": 204,
-    "in_scope_files": 702
+    "in_scope_files": 703
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -3692,12 +3692,17 @@
       "status": "needs_review"
     },
     "明/小说/三言二拍/jingshitongyan.json": {
-      "date": "2026-11-06",
+      "date": "2026-11-08",
       "reviewer": "CodeBuddy (AI)",
-      "status": "fixed"
+      "status": "needs_review"
+    },
+    "明/小说/三言二拍/xingshihengyan.json": {
+      "date": "2026-11-08",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "明/小说/三言二拍/yushimingyan.json": {
-      "date": "2026-10-29",
+      "date": "2026-11-02",
       "reviewer": "CodeBuddy (AI)",
       "status": "needs_review"
     },
