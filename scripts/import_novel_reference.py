@@ -160,6 +160,8 @@ BOOKS = {
         author='施耐庵', dynasty='明',
         head=re.compile(r'^第([〇零一二三四五六七八九十百]+)回[\s　]*(\S.*)$'),
         skip_head=False,
+        # 第62回「被赃6官污吏」，OCR 把「一」认成了「6」
+        fix=(('赃6官污吏', '赃一官污吏'),),
     ),
     'honglou': dict(
         key='honglou',
