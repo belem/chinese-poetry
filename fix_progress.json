@@ -5,8 +5,8 @@
     "total_files": 901,
     "reviewed": 908,
     "clean": 315,
-    "fixed": 137,
-    "needs_review": 252,
+    "fixed": 138,
+    "needs_review": 251,
     "out_of_scope": 204,
     "in_scope_files": 704
   },
@@ -262,9 +262,9 @@
       "status": "needs_review"
     },
     "先秦/文/shanhaijing.json": {
-      "date": "2026-10-28",
-      "reviewer": "claude-opus-5-5",
-      "status": "needs_review"
+      "date": "2026-11-08",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "先秦/文/sishierzhangjing.json": {
       "date": "2026-10-28",
@@ -277,8 +277,8 @@
       "status": "fixed"
     },
     "先秦/文/sunzibingfa.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-08",
+      "reviewer": "CodeBuddy",
       "status": "fixed"
     },
     "先秦/文/weimojiejing.json": {
