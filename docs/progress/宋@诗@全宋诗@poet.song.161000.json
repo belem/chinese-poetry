@@ -1,6 +1,7 @@
 {
   "path": "宋/诗/全宋诗/poet.song.161000.json",
-  "date": "2026-10-05",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "clean",
+  "note": "2026-11-03 标题体检（issue #258）：题名里三个以上连续半角空格改为两个（底本两空格分栏），只换空格字符。"
 }
