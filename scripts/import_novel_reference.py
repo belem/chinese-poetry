@@ -128,7 +128,7 @@ BOOKS = {
         # 换行处「。」「，」叠用（「充鹤粮；，民有饥冻」「由，，皆因」「左右，，缚」），
         # 引号外多一个逗号（「必不能返！”，捶胸」「天下才也。，”孝公曰」），
         # 书名号外的逗号（「此乃，干将，、，莫邪，之结末也」→「此乃‘干将’、‘莫邪’之结末也」）
-        fix=(('”，。', '”。'), ('；，', '；'), ('，，', '，'),
+        fix=(('”，。', '”。'), ('；，', '；'), ('，，', '，'), ('？。', '？'), ('！。', '！'),
              ('。，', '。'), ('，。', '，'), ('此乃，', '此乃‘'), ('，、，', '‘、‘'),
              ('‘莫邪，之', '‘莫邪’之'), ('‘干将‘', '‘干将’')),
     ),
@@ -147,7 +147,7 @@ BOOKS = {
         # 第44回诗末「更难禁。。」，底本点了两个句号
         # 私有区码位是底本的缺字：e4cc→堂、e4b8→袅、e406→喤、e56d→纵、e3fe→𤜯。
         # 底本没有用 {} 标出，加 {} 与全库口径一致（AGENTS.md 2b），字不补
-        fix=(('。。', '。'), ('\ue4cc', '{堂}'), ('\ue4b8', '{袅}'),
+        fix=(('。。', '。'), ('！。', '！'), ('？。', '？'), ('\ue4cc', '{堂}'), ('\ue4b8', '{袅}'),
              ('\ue406', '{喤}'), ('\ue56d', '{纵}'), ('\ue3fe', '{𤜯}'),
              ('\ue404', '{咼}'), ('\ue349', '{㺄}'), ('\ue3ab', '{𣏌}'),
              ('\ue1e2', '{犴}'), ('\ue4b4', '{邘}'), ('\ue407', '{凫}'),
@@ -160,6 +160,8 @@ BOOKS = {
         author='施耐庵', dynasty='明',
         head=re.compile(r'^第([〇零一二三四五六七八九十百]+)回[\s　]*(\S.*)$'),
         skip_head=False,
+        # 第62回「被赃6官污吏」，OCR 把「一」认成了「6」
+        fix=(('赃6官污吏', '赃一官污吏'),),
     ),
     'honglou': dict(
         key='honglou',
@@ -192,6 +194,8 @@ def parse(book):
     plate_head = None
     for raw in open(os.path.join(ROOT, book['src']), encoding='utf-8'):
         raw = raw.rstrip('\n')
+        if book.get('plate') and book['plate'].match(raw.replace('\u3000', ' ').strip()):
+            continue                                   # 回目行之前的「封神演义 / 明·许仲琳」版头
         # 红楼梦的回目行顶格、正文段前两个全角缩进，判断在去缩进之前
         m = book['head'].match(raw) if raw[:2] != '第' else \
             book['head'].match(raw.replace('\u3000', ' ').strip())
@@ -203,8 +207,6 @@ def parse(book):
                 in_body = True
             continue
         if m:
-            if book.get('plate') and book['plate'].match(line):
-                continue                               # 回目之前重复的那遍版头行
             head = re.sub(r'\s+', '\u3000', m.group(2).strip())
             if head == plate_head:
                 continue                               # 回目之后重复的那遍版头行
