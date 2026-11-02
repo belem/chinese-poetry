@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+import fs from 'node:fs';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ locale:'zh-CN', userAgent:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'});
+const page = await ctx.newPage();
+const cap=[];
+page.on('response', async r=>{ const u=r.url(); if(/ancientlib|byteimg|zijieapi/.test(u) && !/page\/\d|\.webp/.test(u)){ try{ const t=await r.text(); if(/[\u4e00-\u9fa5]/.test(t) && t.length>200) cap.push({u:u.split('?')[0], len:t.length, head:t.slice(0,100)}); }catch(e){} } });
+await page.goto('https://www.shidianguji.com/zh/book/SDZJ0641/chapter/1kf9lwwlsqyaj', { waitUntil:'domcontentloaded', timeout:60000 });
+await page.waitForTimeout(5000);
+const btn = await page.$('span:has-text("译文")');
+const before = cap.length;
+if (btn) { await btn.click(); console.log('clicked 译文'); } else console.log('no btn');
+await page.waitForTimeout(5000);
+console.log('NEW:'); console.log(cap.slice(before).map(c=>`${c.u} ${c.len} ${c.head}`).join('\n'));
+const txt = await page.evaluate(()=>document.body.innerText);
+console.log('TEXT:', txt.slice(0,900));
+await browser.close();

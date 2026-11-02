@@ -1,44 +1,7 @@
 {
   "path": "汇编/古文观止/卷二周文.json",
-  "fixes": [
-    {
-      "original": "3k4ggb 《王孫滿對楚子》",
-      "corrected": "删除",
-      "note": "与《左传》单行本 先秦/文/zuozhuan.json#285h1a 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
-    },
-    {
-      "original": "e65hj5 《祁奚請免叔向》",
-      "corrected": "删除",
-      "note": "与《左传》单行本 先秦/文/zuozhuan.json#bi5ibj 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
-    },
-    {
-      "original": "dc580l 《子產卻楚逆女以兵》",
-      "corrected": "删除",
-      "note": "与《左传》单行本 先秦/文/zuozhuan.json#hajade 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
-    },
-    {
-      "original": "i37f8a 《子革對靈王》",
-      "corrected": "删除",
-      "note": "与《左传》单行本 先秦/文/zuozhuan.json#79bhb5 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
-    },
-    {
-      "original": "72ihj4 《吳許越成》",
-      "corrected": "删除",
-      "note": "与《左传》单行本 先秦/文/zuozhuan.json#k3fdcg 正文逐字相同，留单行本；目次见 汇编/古文观止/古文观止·选目.json"
-    },
-    {
-      "original": "gui#汇编/古文观止/卷二周文.json 左丘明《季札觀周樂》",
-      "corrected": "删除",
-      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/zuozhuan.json 左丘明《季札观周乐》，见 docs/先秦文古文观止去重.tsv"
-    },
-    {
-      "original": "gui#汇编/古文观止/卷二周文.json 左丘明《鄭子家告趙宣子》",
-      "corrected": "删除",
-      "note": "[xianqin-wen] 单行本与选本同篇，归一后一字不差；留整部书，删选本摘录；保留 book#先秦/文/zuozhuan.json 左丘明《郑子家告赵宣子》，见 docs/先秦文古文观止去重.tsv"
-    }
-  ],
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘 2026-10-30 删 5 条《左传》篇目副本，逐条见 docs/左传古文观止去重.tsv。 2026-10-30 重复清理：删 2 条与 `先秦/文/` 单行本同篇的摘录，逐条见 docs/先秦文古文观止去重.tsv。",
-  "date": "2026-10-30",
+  "note": "2026-11 依識典古籍 SDZJ0641（光緒二十八年善成堂重校刊本）整本重出：正文、夹注、白话译文均取自底本，逐段一一对应。底本讹字逐条核过，改回旧版或通行本，明细见 docs/古文观止勘正.tsv；过程见 docs/古文观止重建.md。",
+  "date": "2026-11-02",
   "reviewer": "codebuddy",
   "status": "needs_review"
 }
