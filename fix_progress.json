@@ -5,8 +5,8 @@
     "total_files": 896,
     "reviewed": 903,
     "clean": 315,
-    "fixed": 151,
-    "needs_review": 233,
+    "fixed": 150,
+    "needs_review": 234,
     "out_of_scope": 204,
     "in_scope_files": 699
   },
@@ -3708,8 +3708,8 @@
     },
     "明/小说/封神演义/fengshenyanqi.json": {
       "date": "2026-11-08",
-      "reviewer": "codebuddy",
-      "status": "fixed"
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
     },
     "明/小说/小窗幽记/xiaochuangyouji.json": {
       "date": "2026-11-08",
