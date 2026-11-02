@@ -677,11 +677,11 @@
             "comments": "明馮夢龍輯，四十卷；底本天啟四年刻本（識典古籍 CADAL02111600）。卷 39 底本頁面錯亂，卷 40 現存兩份（卷 39 與卷 40 各一條）"
         },
         "erke-paian": {
-            "name": "明/二刻拍案惊奇",
+            "name": "清/二刻拍案惊奇",
             "id": 104,
-            "path": "明/小说/三言二拍/erkipaianjingqi.json",
+            "path": "清/小说/二刻拍案惊奇/erkipaianjingqi.json",
             "tag": "paragraphs",
-            "comments": "明凌濛初撰，四十卷；底本崇禎五年尚友堂刻本（識典古籍 CADAL02111669）。該電子本缺卷 7、13–27、29"
+            "comments": "明凌濛初撰，四十卷全；2026-11 依 repo 内 reference/二刻拍案惊奇.txt 整本重出，见 scripts/import_erke_reference.py。旧文件在 明/小说/三言二拍/，只 23 卷，已删"
         },
         "rongzhai-suibi": {
             "name": "宋/容斋随笔",
