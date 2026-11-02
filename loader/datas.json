@@ -667,7 +667,7 @@
             "id": 101,
             "path": "明/小说/东周列国志/dongzhoulieguozhi.json",
             "tag": "paragraphs",
-            "comments": "清蔡元放評本，一百零八回；底本咸豐四年書成山房刻本（識典古籍 NGJ89241199901106719312）。底本按定長折行、回末附評語"
+            "comments": "明冯梦龙《东周列国志》：108 回齐，正文取 reference/东周列国志.txt（简体排印本，逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍两个版本拼合的旧文件 2026-11 整份删除（issue #200），见 docs/名著增补.md"
         },
         "yushi-mingyan": {
             "name": "明/喻世明言",
