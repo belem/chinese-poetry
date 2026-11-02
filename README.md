@@ -66,6 +66,12 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 
 **重写**：`先秦/文/sanshiliuji.json`《三十六计》2026-11 依 repo 内 `reference/三十六計.txt` 整本重写，总说＋36 计共 37 条，每条先本计原文、再【按语】；原文一字未动，仅统一标点。生成脚本 `scripts/import_sanshiliuji.py`。
 
+**重写**：四书与《道德经》2026-11 依 repo 内的 `reference/{論語,孟子,中庸,大學,道德經}.txt` 整本重出，
+五部此前都是从别处抓来的副本（《论语》是简体版，《孟子》掺了 `poet.xianqin.json` 补录的异文段，
+《道德经》简体且章次错乱）。重出后《论语》20 篇 504 段、《孟子》14 篇 723 段、《中庸》38 段、《大学》16 段、
+《道德经》81 章 218 段，正文一字不动跟着底本走，底本夹注移入 `note`。
+生成脚本 `scripts/import_sishu_reference.py`，体例与勘误见 [`docs/四书重出.md`](docs/四书重出.md)。
+
 `汇编/蒙学/` 2026-11 同样依 `reference/*.txt` 整本重新生成（声律启蒙、笠翁对韵、龙文鞭影一支出自 `auto/mengxue-sanzhong`；百家姓、三字经、千字文、弟子规、五字鉴、急就章、李氏蒙求、幼学琼林、增广贤文九部出自 `scripts/import_mengxue.py`），一行一句成段，底本行末夹注另收 `variants`。原先的 `sanzijing-new` / `sanzijing-traditional` 两份合为一份，`唐/诗/全唐诗/` 里那份《蒙求》删去。体例与勘误见 [`汇编/蒙学/README.md`](汇编/蒙学/README.md)。
 
 **校勘**：以[识典古籍](https://www.shidianguji.com)刻本为主要依据，辅以搜韵、古文岛、汉典，修正形近音近错字、繁简转换错误、西里尔/希腊字母与假名乱码、`□` 缺字与漏衍字。《全唐诗》内部重出删除 1274 条，814 条归属异说按「一作某」两存。

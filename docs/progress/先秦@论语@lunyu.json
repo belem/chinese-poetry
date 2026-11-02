@@ -1,7 +1,29 @@
 {
   "path": "先秦/论语/lunyu.json",
-  "note": "□ 缺字按「疑问/语气词 + □ + 汉字」还原为标点；批量修复，其余 □ 待核",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "fixed"
+  "fixes": [
+    {
+      "original": "□ 缺字（「疑问/语气词 + □ + 汉字」处）",
+      "corrected": "按标点还原",
+      "note": "2026-10 批量处理的那批行内校语与方框，随本轮整本重出一并消失"
+    },
+    {
+      "original": "简体正文（533 段）",
+      "corrected": "繁体 504 段，篇名带次序（學而篇第一）",
+      "note": "依底本 reference/論語.txt 整本重出；可复现：python3 scripts/import_sishu_reference.py --check"
+    },
+    {
+      "original": "poet.xianqin.json 补录的 21 段（异文与整段重出，如「學而時習之」出现两次）",
+      "corrected": "删除，只留底本一读",
+      "note": "底本完整；补录的目的是「正文对不上但有书可归」，不是异文保存"
+    },
+    {
+      "original": "未若貧而樂道，富而好禮者也",
+      "corrected": "未若貧而樂，富而好禮者也",
+      "note": "旧文件同章并列两种读法；底本作「貧而樂」"
+    }
+  ],
+  "note": "2026-11-02 依 repo 内 reference/論語.txt 整本重出（20 篇 504 段）。分章照底本，「子曰」与「曰」分段的就分成两条，故 504 段多于通行本 492 章。底本自身未与他本（何晏《集解》、朱熹《集注》）对勘，异体俗字照录。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
 }
