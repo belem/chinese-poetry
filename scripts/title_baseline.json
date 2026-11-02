@@ -1,4 +1,5 @@
 {
-  "multi_space": 97361,
-  "unmatched_punct": 16
+  "multi_space": 97312,
+  "trailing_punct": 1203,
+  "unmatched_punct": 7
 }
