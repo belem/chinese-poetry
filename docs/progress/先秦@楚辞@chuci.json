@@ -5,9 +5,20 @@
       "original": "content",
       "corrected": "paragraphs",
       "note": "data 换键名，正文一字未改；正文段落字段统一为上游契约的 paragraphs，loader/datas.json 的 tag 同步"
+    },
+    {
+      "original": "大招 author 景差",
+      "corrected": "屈原",
+      "note": "《大招》王逸《章句》题屈原作，底本目录同；「庄忌」是《史记》避讳改字，底本作「严忌」"
+    },
+    {
+      "original": "哀时命 author 庄忌",
+      "corrected": "严忌",
+      "note": "《大招》王逸《章句》题屈原作，底本目录同；「庄忌」是《史记》避讳改字，底本作「严忌」"
     }
   ],
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
+  "note": "《楚辞》整部逐篇复核第一批：篇次、作者、缺篇。按《楚辞补注》目录核过，底本 66 篇（含王逸《九思》）齐全，次序与底本一致；末附《越人歌》非《楚辞》篇目，仍留 section=附。正文与标点另批处理，逐条记在后续记录里。",
+  "date": "2026-11-03",
+  "reviewer": "codebuddy",
   "status": "fixed"
 }
