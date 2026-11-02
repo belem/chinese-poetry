@@ -597,7 +597,7 @@
             "id": 92,
             "path": "清/小说/聊斋志异/liaozhaizhiyi.json",
             "tag": "paragraphs",
-            "comments": "青柯亭本（乾隆三十一年刊，識典古籍 XYXLZZY）；底本一页一篇，篇名取页面小标题，卷号由卷首「聊齋誌異卷之N」推。此本电子本只到卷一卷五卷九卷十共 27 篇，全书未齐，见 docs/名著增补.md"
+            "comments": "清蒲松齡撰，四百九十篇；底本 reference/聊斋志异.txt（简体排印本，每篇一段到底、不分卷），由 scripts/import_liaozhai_reference.py 生成，题名只作篇名（底本无卷次）。2026-11 依 issue #244 整份重做：原識典古籍青柯亭本（XYXLZZY，27 篇，该电子本整卷压页）已整份删除。整理者《前言》、网站目录行、编者附记不入正文；私用区缺字包 {} 不补，《小翠》一节坏字照录。见 docs/名著增补.md"
         },
         "fushengliuji": {
             "name": "清/浮生六记",
@@ -667,14 +667,14 @@
             "id": 102,
             "path": "明/小说/三言二拍/yushimingyan.json",
             "tag": "paragraphs",
-            "comments": "明馮夢龍編，四十卷；底本明刊本（識典古籍 NA11063）。該電子本卷 11、12 整卷壓頁未切"
+            "comments": "明馮夢龍編，四十卷；2026-11 依 repo 内 reference/喻世明言.txt 整本重出，由 scripts/import_sanyan_reference.py 生成。底本電子本卷 29–39 只有篇題（連排的目録），正文待補"
         },
         "jingshi-tongyan": {
             "name": "明/警世通言",
             "id": 103,
             "path": "明/小说/三言二拍/jingshitongyan.json",
             "tag": "paragraphs",
-            "comments": "明馮夢龍輯，四十卷；底本天啟四年刻本（識典古籍 CADAL02111600）。卷 39 底本頁面錯亂，卷 40 現存兩份（卷 39 與卷 40 各一條）"
+            "comments": "明馮夢龍輯，四十卷齐；2026-11 依 repo 内 reference/警世通言.txt 整本重出，由 scripts/import_sanyan_reference.py 生成。原識典古籍天啓四年刻本（CADAL02111600）電子本只有 23 卷，2026-11 整份删除"
         },
         "erke-paian": {
             "name": "清/二刻拍案惊奇",
@@ -839,10 +839,17 @@
         },
         "gelin-tonghua": {
             "name": "汇编/格林童话",
-            "id": 124,
+            "id": 125,
             "path": "汇编/格林童话/gelintonghua.json",
             "tag": "paragraphs",
             "comments": "德格林兄弟（雅各布·格林、威廉·格林）编，汉译本；底本 reference/格林童话.txt（简体排印本，篇名前后各一空行，正文按定宽折行），由 scripts/import_tonghua_reference.py 生成。186 篇，题名即底本篇名（「格林童话 灰姑娘」的衍文已删作「灰姑娘」）。作者不是中国人、也没有朝代可挂，按「跨代又无主时段的书」落 汇编/，不挂 明/小说/ 或 清/小说/。正文只改标点与两类「一」的衍文（一毛一→毛、过了一一夜→一夜），字不动；一篇一记录，篇前辅文挂首篇 prologue。底本原把「弗雷德里克和凯瑟琳」整篇排了两遍，已删重复的那一遍。见 docs/格林童话与安徒生童话.md"
+        },
+        "xingshi-hengyan": {
+            "name": "明/醒世恒言",
+            "id": 124,
+            "path": "明/小说/三言二拍/xingshihengyan.json",
+            "tag": "paragraphs",
+            "comments": "明馮夢龍纂輯，四十卷齐；2026-11 依 repo 内 reference/醒世恒言.txt 整本重建（库内原无此书），由 scripts/import_sanyan_reference.py 生成。卷首《叙》（天启丁卯陇西可一居士题）挂在第一卷的 prologue。暂用 id 124：《说岳全传》2026-11 先一步占了 122，《醒世恒言》改取末号，三言三本的 id 本身不受影响"
         }
     }
 }
