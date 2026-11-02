@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ locale:'zh-CN', userAgent:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'});
+const page = await ctx.newPage();
+await page.goto('https://www.shidianguji.com/zh/book/SDZJ0641', { waitUntil:'domcontentloaded', timeout:60000 });
+await page.waitForTimeout(6000);
+console.log('URL', page.url());
+const txt = await page.evaluate(()=>document.body.innerText);
+console.log(txt.slice(0,1500));
+const html = await page.content();
+console.log('has chapterId:', html.includes('chapterId'));
+const chs=[...html.matchAll(/"chapterId":"([a-z0-9]+)"/g)].slice(0,10).map(m=>m[1]);
+console.log(chs);
+await browser.close();

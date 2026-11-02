@@ -1,7 +1,7 @@
 {
- "path": "汇编/古文观止/古文观止.json",
- "note": "2026-11 首条记录的 paragraphs 是三条关于《古文观止》本身的百科式介绍（成书年、篇数、镌版年），不是选集中的文章，与 prologue 重复；已清空 paragraphs，保留 prologue 的分卷说明。选文正文在各卷文件里，本文件只是书目条目。",
- "date": "2026-10-29",
- "reviewer": "CodeBuddy (AI)",
- "status": "needs_review"
+  "path": "汇编/古文观止/古文观止.json",
+  "note": "书名条目，prologue 改写为底本与篇数说明",
+  "date": "2026-11-02",
+  "reviewer": "codebuddy",
+  "status": "clean"
 }

@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import { chromium } from 'playwright';
+const [url, out] = process.argv.slice(2);
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ locale:'zh-CN', userAgent:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'});
+const page = await ctx.newPage();
+await page.goto(url, { waitUntil:'domcontentloaded', timeout:60000 });
+await page.waitForTimeout(6000);
+fs.writeFileSync(out, await page.content());
+console.log('saved', out, (await page.content()).length);
+await browser.close();
