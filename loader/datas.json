@@ -815,6 +815,13 @@
             "path": "史书/三国志/sanguozhi.json",
             "tag": "paragraphs",
             "comments": "晉陳壽撰、南朝宋裴松之注，六十五卷；底本見 repo 内 reference/二十四史/三国志1.txt（卷一—卷三十三，魏書、蜀書前三卷）與 三国志2.txt（卷三十四—卷六十五，蜀書後三卷、吳書），由 scripts/import_sanguozhi_reference.py 生成。題名作「三國志卷N　X書N　篇名第N」，一卷一條，正文與裴注同為段落、段內一字不動；本文與裴注只靠「〔N〕」標記分別，故不拆字段。作者朝代依 authors/authors.json 記「晋」（入晉後撰此書）。陳壽是史家，此書是史部正史，不與小說同列，故另立頂層史書/，見 docs/三国志重建.md"
+        },
+        "shiji": {
+            "name": "史书/史记",
+            "id": 120,
+            "path": "史书/史记/shiji.json",
+            "tag": "paragraphs",
+            "comments": "漢司馬遷撰，一百三十卷；底本見 repo 內 reference/二十四史/史記1.txt（卷一—卷六十四）與 史記2.txt（卷六十五—卷一百三十），由 scripts/import_shiji_reference.py 生成。題名作「史記卷N　篇名第N」，一卷一條，段內一字不動；底本只有白文，無三家注，故不拆 note 字段。卷十三—卷二十二這十卷「表」在底本裡只有篇題、沒有表格正文，照錄為空 paragraphs，不臆造。作者朝代依 authors/authors.json 記「汉」。與《三國志》同一口徑：史部正史進頂層史書/，見 docs/史记重建.md"
         }
     }
 }
