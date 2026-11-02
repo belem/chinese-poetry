@@ -5,10 +5,20 @@
       "original": "和單君範古意六首 ",
       "corrected": "和單君範古意六首",
       "note": "删去题末窜入的 PUA U+E85A；《本堂集》卷二十五"
+    },
+    {
+      "original": "瘦□悽惻",
+      "corrected": "瘦來悽惻",
+      "note": "《本堂集》卷二十一（陳著，四庫全書本）：「瘦來悽惻來東野，妙墨淋漓恍右軍」。"
+    },
+    {
+      "original": "一則萬條□",
+      "corrected": "一則萬條貫",
+      "note": "《本堂集》卷二十六陳著《敬賦虛齋孫君容膝》：「一則萬條貫，靜者動蓍龜」。"
     }
   ],
   "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
-  "date": "2026-10-28",
+  "date": "2026-11-08",
   "reviewer": "codebuddy",
   "status": "fixed"
 }

@@ -583,7 +583,7 @@
             "id": 89,
             "path": "明/小说/水浒传/shuihuzhuan.json",
             "tag": "paragraphs",
-            "comments": "明施耐庵《水浒传》（容與堂本，識典古籍 NGJ89241199901879587548）：100 回。这部在识典只有扫描件 OCR，没有可直接用的排印本；回次与回目按容與堂本回目表校正，正文仍是 OCR，尚待对勘"
+            "comments": "明施耐庵《水浒传》：120 回齐，正文取 reference/水浒传.txt（简体排印本，逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍容與堂本（NGJ89241199901879587548，100 回，扫描件 OCR）的旧文件 2026-11 整份删除（issue #200）；回数随之由 100 回变为底本的 120 回，见 docs/名著增补.md"
         },
         "xiyou-ji": {
             "name": "西游记",
@@ -597,7 +597,7 @@
             "id": 91,
             "path": "清/小说/红楼梦/hongloumeng.json",
             "tag": "paragraphs",
-            "comments": "清曹雪芹《红楼梦》（《脂硯齋重評石頭記》庚辰本，識典古籍 7428573169323081747）：79 回，正文取章节页 HTML 里的段落（不走 OCR）。庚辰本十七、十八回未分回，作一条"
+            "comments": "清曹雪芹《红楼梦》：120 回齐，正文取 reference/红楼梦.txt（简体排印本，一段一行、逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍庚辰本（7428573169323081747，79 回，十七、十八回未分回）的旧文件 2026-11 整份删除（issue #200），回数随之由 79 回变为 120 回，见 docs/名著增补.md"
         },
         "liaozhaizhiyi": {
             "name": "清/聊斋志异",
@@ -660,14 +660,14 @@
             "id": 100,
             "path": "明/小说/封神演义/fengshenyanqi.json",
             "tag": "paragraphs",
-            "comments": "明許仲琳撰，一百回；底本康熙四雪草堂刻後印本（識典古籍 HY1546）。該電子本缺回 11–88"
+            "comments": "明许仲琳《封神演义》：100 回齐，正文取 reference/封神演义.txt（简体排印本，逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍康熙四雪草堂本（HY1546，缺回 11–88）的旧文件 2026-11 整份删除（issue #200），见 docs/名著增补.md"
         },
         "dongzhou-lieguo": {
             "name": "明/东周列国志",
             "id": 101,
             "path": "明/小说/东周列国志/dongzhoulieguozhi.json",
             "tag": "paragraphs",
-            "comments": "清蔡元放評本，一百零八回；底本咸豐四年書成山房刻本（識典古籍 NGJ89241199901106719312）。底本按定長折行、回末附評語"
+            "comments": "明冯梦龙《东周列国志》：108 回齐，正文取 reference/东周列国志.txt（简体排印本，逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍两个版本拼合的旧文件 2026-11 整份删除（issue #200），见 docs/名著增补.md"
         },
         "yushi-mingyan": {
             "name": "明/喻世明言",
@@ -815,6 +815,13 @@
             "path": "史书/三国志/sanguozhi.json",
             "tag": "paragraphs",
             "comments": "晉陳壽撰、南朝宋裴松之注，六十五卷；底本見 repo 内 reference/二十四史/三国志1.txt（卷一—卷三十三，魏書、蜀書前三卷）與 三国志2.txt（卷三十四—卷六十五，蜀書後三卷、吳書），由 scripts/import_sanguozhi_reference.py 生成。題名作「三國志卷N　X書N　篇名第N」，一卷一條，正文與裴注同為段落、段內一字不動；本文與裴注只靠「〔N〕」標記分別，故不拆字段。作者朝代依 authors/authors.json 記「晋」（入晉後撰此書）。陳壽是史家，此書是史部正史，不與小說同列，故另立頂層史書/，見 docs/三国志重建.md"
+        },
+        "shiji": {
+            "name": "史书/史记",
+            "id": 120,
+            "path": "史书/史记/shiji.json",
+            "tag": "paragraphs",
+            "comments": "漢司馬遷撰，一百三十卷；底本見 repo 內 reference/二十四史/史記1.txt（卷一—卷六十四）與 史記2.txt（卷六十五—卷一百三十），由 scripts/import_shiji_reference.py 生成。題名作「史記卷N　篇名第N」，一卷一條，段內一字不動；底本只有白文，無三家注，故不拆 note 字段。卷十三—卷二十二這十卷「表」在底本裡只有篇題、沒有表格正文，照錄為空 paragraphs，不臆造。作者朝代依 authors/authors.json 記「汉」。與《三國志》同一口徑：史部正史進頂層史書/，見 docs/史记重建.md"
         }
     }
 }
