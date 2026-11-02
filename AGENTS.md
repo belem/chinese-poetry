@@ -81,6 +81,10 @@ Community task: systematically review all JSON poetry files and fix typos and ga
   重跑 `scripts/haitangshishe/import.py` 或 `scripts/dedupe_tang.py` 都不会再写回去。
   自查：`python3 scripts/haitangshishe/import.py --check-sources`；「一作某人《某题》」这类互见挂 `tags`，见 `docs/唐诗内部去重.md`。
 - `scripts/check_structure.py` 判体裁看文件名前缀（`poet.*` 诗、`ci.*` 词），不看顶层目录名；`poet.*` 里混着文，句长类检查会报噪音。
+- **题名与作者名里的空格只留一个半角**（issue #258，`docs/标题勘误.md` 批次 6、7）。`scripts/check_title.py`
+  查 `title` / `chapter` / `rhythmic` / `author` 四个字段，范围含 `rank/` 与 `宋/诗/全宋诗/error/`；
+  要改就 `python3 scripts/fix_spaces.py --apply`（先不加 `--apply` 看清单），它只动这四类字段的字面，
+  不重排文件。唯一的例外是合署作者的 `光\t威\t裒`，记在 `KEEP` 里。正文、`prologue`、`desc` 里的空格不归这条。
 - **审查进度一文件一条**：正文在 `docs/progress/<路径>.json`（路径里的 `/` 写作 `@`），
   `fix_progress.json` 只是索引（`stats` + 逐文件的 `date/reviewer/status`），由
   `python3 scripts/progress.py index` 重算。别手改索引，`scripts/progress.py check` 会报不一致（CI 里也跑）。
