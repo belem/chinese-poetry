@@ -36,6 +36,13 @@
 | `sishierzhangjing.json` `jingangjing.json` `fahuajing.json` `dizangjing.json` `yuanjuejing.json` `weimojiejing.json` | 佛经六种 |
 | `songyu.json` `qinwen.json` `gushi.json` `shangtang.json` | 零篇（宋玉、李斯《谏逐客书》、荆轲《易水歌》、商汤《盘铭》） |
 
+## 孙子兵法
+
+`sunzibingfa.json` 13 篇，`title` 作 `孙子兵法·始计篇` 这样带书名的形式（2026-11 由 `始计篇` 补书名前缀）。
+这 13 条是从 `poet.xianqin.json` 拆出来的，题名原来只有篇名，脱离了目录就认不出是哪部书；
+同目录的《三十六计》（`三十六计·勝戰計·瞞天過海`）、《山海经》（`山经·东山经`）、
+《道德经》（`道德經（第一章）`）早已如此。正文一字未动。
+
 ## 尚书与周易
 
 `shangshu.json`、`zhouyi.json` 2026-11 依 repo 内 [`reference/尚书.txt`](../../reference/尚书.txt)、
