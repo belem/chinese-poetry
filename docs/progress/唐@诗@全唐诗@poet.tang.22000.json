@@ -2,5 +2,6 @@
   "path": "唐/诗/全唐诗/poet.tang.22000.json",
   "date": "2026-10-06",
   "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "status": "clean",
+  "note": "2026-11-03 标题体检（issue #258）：49 个题名的全角空格 U+3000 改半角，文字未动；正文未对勘。"
 }
