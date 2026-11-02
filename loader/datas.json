@@ -50,7 +50,7 @@
             "id": 4,
             "path": "先秦/孟子/mengzi.json",
             "tag": "paragraphs",
-            "comments": "原 先秦/四书五经/mengzi.json；四书五经/ 目录按书拆开，其余三书见 daxue、zhongyong，论语见 lunyu"
+            "comments": "原 先秦/四书五经/mengzi.json；四书五经/ 目录按书拆开，其余三书见 daxue、zhongyong，论语见 lunyu。2026-11 依 reference/孟子.txt 整本重出（14 篇 723 章），旧文件 784 段的异文段与重复段未保留"
         },
         "songci": {
             "name": "宋词",
@@ -96,7 +96,8 @@
             "name": "先秦/论语",
             "id": 12,
             "path": "先秦/论语/lunyu.json",
-            "tag": "paragraphs"
+            "tag": "paragraphs",
+            "comments": "2026-11 依 reference/論語.txt 整本重出（20 篇 504 章），旧文件为简体，21 段异文与重复段未保留"
         },
         "shijing": {
             "name": "诗经",
@@ -477,7 +478,7 @@
             "id": 74,
             "path": "先秦/文/daodejing.json",
             "tag": "paragraphs",
-            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里。2026-11 依 reference/道德經.txt 重出 81 章：改繁体、恢复顺序，底本夹注移入 note"
         },
         "wen-huangdineijing": {
             "name": "黄帝内经",
@@ -561,14 +562,14 @@
             "id": 86,
             "path": "先秦/大学/daxue.json",
             "tag": "paragraphs",
-            "comments": "原 先秦/四书五经/daxue.json，单章 dict 改为列表以适配 loader"
+            "comments": "原 先秦/四书五经/daxue.json，单章 dict 改为列表以适配 loader。2026-11 依 reference/大學.txt 重出（16 段）"
         },
         "zhongyong": {
             "name": "先秦/中庸",
             "id": 87,
             "path": "先秦/中庸/zhongyong.json",
             "tag": "paragraphs",
-            "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader"
+            "comments": "原 先秦/四书五经/zhongyong.json，单章 dict 改为列表以适配 loader。2026-11 依 reference/中庸.txt 重出（38 段）"
         },
         "sanguo-yanyi": {
             "name": "三国演义",
@@ -724,7 +725,6 @@
             "tag": "paragraphs",
             "comments": "明馮夢龍編，十三卷 539 則；底本見 repo 内 reference/笑府.txt（卷一古艷部 … 卷十三閏語部，篇下正文一段到底）。題名作「笑府·卷N·篇名」，按底本十三卷編次，一則一條；卷首小引（墨憨子曰：……集X部。）與《笑府序》底本無標題，掛在卷一第一條的 prologue，不另立條目；卷首編撰者行與篇末〔全文完〕未收。〈餘姚先生〉一篇底本以獨立的「又」字起第二說，照錄爲段"
         },
-
         "mengxue-baijiaxing": {
             "name": "蒙学/百家姓",
             "id": 110,
