@@ -27,7 +27,7 @@
 | `yanzichunqiu.json` | 晏子春秋 |
 | `zhouli.json` | 周礼 |
 | `yizhoushu.json` | 逸周书 |
-| `shangshu.json` | 今文尚书 |
+| `shangshu.json` | 尚书 |
 | `gongyangzhuan.json` `guliangzhuan.json` `chunqiuguliangzhuan.json` | 公羊传、穀梁传 |
 | `liji.json` | 礼记 |
 | `zhouyi.json` | 周易 |
@@ -35,6 +35,19 @@
 | `huangdineijing.json` | 黄帝内经 |
 | `sishierzhangjing.json` `jingangjing.json` `fahuajing.json` `dizangjing.json` `yuanjuejing.json` `weimojiejing.json` | 佛经六种 |
 | `songyu.json` `qinwen.json` `gushi.json` `shangtang.json` | 零篇（宋玉、李斯《谏逐客书》、荆轲《易水歌》、商汤《盘铭》） |
+
+## 尚书与周易
+
+`shangshu.json`、`zhouyi.json` 2026-11 依 repo 内 [`reference/尚书.txt`](../../reference/尚书.txt)、
+[`reference/周易.txt`](../../reference/周易.txt) 整本重出：
+
+| 文件 | 条数 | 题名 | 备注 |
+| --- | --- | --- | --- |
+| `shangshu.json` | 79 | `尚書·虞书·尧典`（虞书 6、夏书 6、商书 17、周书 50） | 底本含今古文五十八篇；19 条亡篇只有书序、没有正文，照录书序并注明 |
+| `zhouyi.json` | 64 | `周易·乾卦` | 只收经文六十四卦；底本没有十翼，不收《系辞》等 |
+
+原文一字未改：只拼回底本折行的两段，并按 ERRATA 改正 26 处（尚书）与 11 处（周易）定案的
+讹字与缺字，逐条依据见 [`docs/尚书周易重建.md`](../../docs/尚书周易重建.md)。
 
 ## 道德经
 
