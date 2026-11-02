@@ -1,7 +1,7 @@
 {
   "path": "先秦/大学/daxue.json",
-  "note": "由 先秦/四书五经/ 按书拆出；单章 dict 改为列表，正文未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "claude-opus-5-5",
+  "note": "2026-11 依 repo 内 reference/大學.txt 整本重出（issue #207）：16 段、2206 字。正文与旧稿逐段相同，只把后起通行字形还原为底本用字（闲→閑、掩→揜、苟→茍、个→介、实→寔、灾→菑、并→並、雕→彫），另修「一个臣→一介臣」一处。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }

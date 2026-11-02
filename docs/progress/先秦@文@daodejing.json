@@ -1,7 +1,7 @@
 {
   "path": "先秦/文/daodejing.json",
-  "note": "由 先秦/诗/poet.xianqin.json 按书名拆出（此前与「诗」混放在一个文件里），2026-10 只做归位与去重，正文未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "fixed"
+  "note": "2026-11 依 repo 内 reference/道德經.txt 整本重出（issue #207）：81 章 218 段、6633 字。旧稿简体、章次错位（71 章排在第 2 条、40 章在末条、39 章脱漏）、9 处 □ 缺字（实为问号处），本次全部按底本重排；第一章的句读夹注收进 note。未与王弼本、河上公本对勘。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
 }

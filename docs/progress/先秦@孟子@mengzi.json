@@ -1,19 +1,7 @@
 {
   "path": "先秦/孟子/mengzi.json",
-  "fixes": [
-    {
-      "original": "見且猶1不得亟…1. 猶 : 或作「由」。《孟子正義》作「由」。",
-      "corrected": "見且猶不得亟，而況得而臣之乎？",
-      "note": "正文窜入脚注标号与校语"
-    },
-    {
-      "original": "于橐于囊[□]",
-      "corrected": "于橐于囊于囊",
-      "note": "衍文标记；《诗·大雅·公刘》「于橐于囊，思辑用光」"
-    }
-  ],
-  "note": "□ 按「疑问/语气词 + □ + 汉字」及「□+（…作「X」）」等可判定体例还原；其余 □ 仍待考，见 scripts/check_structure.py missing_char",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "fixed"
+  "note": "2026-11 依 repo 内 reference/孟子.txt 整本重出（issue #207）：14 篇 723 段、44751 字。正文照底本逐行成段，只做字形归一；旧稿 61 段「书·卷·篇·节」补录的异文段未收。底本 4 处破折号在正文里写作「——」（底本原是两个 U+2500，会被 box_drawing 误报）。未与赵岐注本、朱熹《集注》对勘。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
 }

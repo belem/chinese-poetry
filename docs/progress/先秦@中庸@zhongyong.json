@@ -1,7 +1,7 @@
 {
   "path": "先秦/中庸/zhongyong.json",
-  "note": "由 先秦/四书五经/ 按书拆出；单章 dict 改为列表，正文未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "claude-opus-5-5",
+  "note": "2026-11 依 repo 内 reference/中庸.txt 整本重出（issue #207）：38 段、4457 字。旧稿正文本来就逐段同底本，重出后一字不差；只补 author/title/dynasty 三个字段，底本第一段把两段并写成一段，故 39→38 段。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
