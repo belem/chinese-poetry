@@ -1,7 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.188000.json",
-  "note": "其中 1 处经古籍证实原样，未改",
-  "date": "2026-11-01",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "note": "其中 1 处经古籍证实原样，未改 2026-11-03 标题体检（issue #258）：配对符号与连续空格清理，逐条见 fixes。正文未对勘。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review",
+  "fixes": [
+    {
+      "original": "花村）  其一",
+      "corrected": "花村  其一",
+      "note": "[标题体检 issue #258] 孤立右括号删去，同组「其二」同改"
+    }
+  ]
 }
