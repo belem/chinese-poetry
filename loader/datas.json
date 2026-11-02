@@ -597,7 +597,7 @@
             "id": 92,
             "path": "清/小说/聊斋志异/liaozhaizhiyi.json",
             "tag": "paragraphs",
-            "comments": "青柯亭本（乾隆三十一年刊，識典古籍 XYXLZZY）；底本一页一篇，篇名取页面小标题，卷号由卷首「聊齋誌異卷之N」推。此本电子本只到卷一卷五卷九卷十共 27 篇，全书未齐，见 docs/名著增补.md"
+            "comments": "清蒲松齡撰，四百九十篇；底本 reference/聊斋志异.txt（简体排印本，每篇一段到底、不分卷），由 scripts/import_liaozhai_reference.py 生成，题名只作篇名（底本无卷次）。2026-11 依 issue #244 整份重做：原識典古籍青柯亭本（XYXLZZY，27 篇，该电子本整卷压页）已整份删除。整理者《前言》、网站目录行、编者附记不入正文；私用区缺字包 {} 不补，《小翠》一节坏字照录。见 docs/名著增补.md"
         },
         "fushengliuji": {
             "name": "清/浮生六记",
