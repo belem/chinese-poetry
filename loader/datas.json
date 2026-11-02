@@ -829,6 +829,13 @@
             "path": "清/小说/说岳全传/shuoyuequanzhuan.json",
             "tag": "paragraphs",
             "comments": "清錢彩編次、金豐增訂，八十回；底本 reference/说岳全传.txt（简体排印本，逐段带句读），由 scripts/import_shuoyue_reference.py 生成，题名「第N回　回目」。底本缺第五二回（回次由 51 跳到 53），该回只立回目、正文待补；底本用「一」当专名号（一江一山、一精一忠、欧一陽一从善），断到下一行的一并接回再删，见 docs/名著增补.md"
+        },
+        "chuke-paian": {
+            "name": "清/初刻拍案惊奇",
+            "id": 123,
+            "path": "清/小说/初刻拍案惊奇/chukepaiangjiqi.json",
+            "tag": "paragraphs",
+            "comments": "明凌濛初撰，四十卷；底本见 repo 内 reference/初刻拍案惊奇.txt（简体排印本，逐段带句读），由 scripts/import_chuke_paian.py 生成。题名作「第N卷　篇名」，一卷一篇，篇内一段一行。底本简介挂第一卷的 prologue。底本自身的录入残渣只改了认得出的（「又送酒??内房中去」→「酒铺」，重出的逗号删到该有一个），卷二十五「银XX斜背解鸣」的 XX 未改、待核，卷四一处缺字加 {}、字未补。作者朝代依 authors/authors.json 记「明」（凌濛初生于万历八年）；按「一部书一个目录」落 清/小说/ 是本 issue 的指定，与《二刻拍案惊奇》挂在 明/小说/三言二拍/ 不在一处，见 docs/名著增补.md"
         }
     }
 }
