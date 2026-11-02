@@ -1,7 +1,179 @@
 {
   "path": "汇编/古文观止/卷一周文.json",
-  "note": "2026-11 依識典古籍 SDZJ0641（光緒二十八年善成堂重校刊本）整本重出：正文、夹注、白话译文均取自底本，逐段一一对应。底本讹字逐条核过，改回旧版或通行本，明细见 docs/古文观止勘正.tsv；过程见 docs/古文观止重建.md。",
+  "fixes": [
+    {
+      "original": "d66698 《鄭伯克段于鄢》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#47gj1l，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "1d9fd2 《周鄭交質》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#j288hg，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "c028c5 《石碏諫寵州吁》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#j288hg，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "d6dd93 《臧僖伯諫觀魚》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#7k3kaa，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "dbc181 《鄭莊公戒飭守臣》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#ic8llk，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "d67424 《臧哀伯諫納郜鼎》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#i3545e，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "cbb9e8 《季梁諫追楚師》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#b192j0，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "70fcaa 《曹劌論戰》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#kk75k1，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "589491 《齊桓公伐楚盟屈完》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#c9111g，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "bf17a5 《宮之奇諫假道》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#balbgb，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "f0609c 《齊桓下拜受胙》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#6i33b7，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "2e3ec5 《陰飴甥對秦伯》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#gf2fi6，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "2cb28a 《子魚論戰》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#djb7e8，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "e3d7f3 《寺人披見文公》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#3hc0e8，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "a01db7 《介之推不言祿》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#3hc0e8，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "834bba 《展喜犒師》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#e5l1g4，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "6c1400 《燭之武退秦師》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#i34bf0，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "b652d1 《蹇叔哭師》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#14b6l2，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "61c044 《鄭子家告趙宣子》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#i5ab93，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "f50e5a 《王孫滿對楚子》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#l8e0jb，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "564aea 《齊國佐不辱命》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#h5gjd1，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "c0b94c 《楚歸晉知罃》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#glk029，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "0b8257 《呂相絕秦》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#b6c51h，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "5ba509 《駒支不屈于晉》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#6d18da，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "edab27 《祁奚請免叔向》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#79k4ki，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "1ea912 《子產告范宣子輕幣》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#igdcg6，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "effe86 《晏子不死君難》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#2h1jfg，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "76cff2 《季札觀周樂》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#fdce32，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "671193 《子產壞晉館垣》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#k6g39a，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "0a345c 《子產論尹何爲邑》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#k6g39a，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "ac769d 《子產卻楚逆女以兵》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#fb3df9，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "a2752e 《子革對靈王》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#9c4g4f，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "9d7c3c 《子產論政寬猛》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#glc9bi，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    },
+    {
+      "original": "be09e4 《吳許越成》",
+      "corrected": "删除",
+      "note": "正文逐句出《左傳》史书/春秋左氏传/zuozhuan.json#1i66g1，按「一件作品只留一份正文」删选本摘录；目次仍在 古文观止·选目.json。逐条见 docs/左传古文观止去重.tsv"
+    }
+  ],
+  "note": "2026-11 依識典古籍 SDZJ0641（光緒二十八年善成堂重校刊本）整本重出：正文、夹注、白话译文均取自底本，逐段一一对应。底本讹字逐条核过，改回旧版或通行本，明细见 docs/古文观止勘正.tsv；过程见 docs/古文观止重建.md。 2026-11-02 删 34 条《左傳》篇目副本（《左傳》按底本整本重出，选本摘录不再保留），逐条见 docs/左传古文观止去重.tsv。",
   "date": "2026-11-02",
-  "reviewer": "codebuddy",
+  "reviewer": "CodeBuddy",
   "status": "needs_review"
 }

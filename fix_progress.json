@@ -5,8 +5,8 @@
     "total_files": 893,
     "reviewed": 900,
     "clean": 317,
-    "fixed": 139,
-    "needs_review": 240,
+    "fixed": 138,
+    "needs_review": 241,
     "out_of_scope": 204,
     "in_scope_files": 696
   },
@@ -326,11 +326,6 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
-    "先秦/文/zuozhuan.json": {
-      "date": "2026-10-31",
-      "reviewer": "CodeBuddy",
-      "status": "fixed"
-    },
     "先秦/楚辞/chuci.json": {
       "date": "2026-10-06",
       "reviewer": "claude-opus-5-5",
@@ -368,6 +363,11 @@
     },
     "史书/史记/shiji.json": {
       "date": "2026-11-09",
+      "reviewer": "CodeBuddy",
+      "status": "needs_review"
+    },
+    "史书/春秋左氏传/zuozhuan.json": {
+      "date": "2026-11-02",
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
@@ -3803,7 +3803,7 @@
     },
     "汇编/古文观止/卷一周文.json": {
       "date": "2026-11-02",
-      "reviewer": "codebuddy",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "汇编/古文观止/卷七明文.json": {
