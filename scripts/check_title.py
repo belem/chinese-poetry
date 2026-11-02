@@ -2,10 +2,10 @@
 """标题格式体检：只查 title / chapter / rhythmic 三个字段，只报告，不修改任何数据。
 
 检查项：
-  fw_space        全角空格、制表符等非半角空格（U+3000、U+00A0、U+2000–200A、U+202F、U+205F、\\t），
-                  标题一律只用半角空格
+  fw_space        全角空格、制表符等非半角空格（U+3000、U+00A0、U+2000–200A、U+202F、U+205F、\\t）：
+                  标题只用半角空格，逐字符计数
   lead_trail      标题首尾的空格
-  multi_space     汉字之间的连续多个半角空格（详见下方 TWO_SPACE 说明）
+  multi_space     连续多个半角空格（详见下方 MULTI_SPACE 说明）
   cyrillic_greek  西里尔 / 希腊字母乱码
   kana_bopomofo   日文假名 / 注音符号乱码
   box_drawing     制表符号与 U+FFFD 替换符
@@ -14,12 +14,12 @@
   unmatched_punct 配对符号不成对（书名号、引号、括号、方头括号……），或引号方向乱了
   trailing_punct  题名末尾带句读（句号、逗号、顿号、分号、冒号、问号、叹号）
 
-两处口径说明：
+口径：
 
-- 半角空格的用途在库里不统一：章回小说、史书用「第1回　标题　标题」，
-  《全唐诗》等沿用底本的「题  其一」分栏，元曲标题里还夹着正文（「幺・垂杨渡口……
-  则愿休吹动。」）。所以连续的半角空格**只在汉字之间**报（multi_space），
-  题名与序号之间的不算错；真正要改的整批只有 13 个字面写着 \\t 的文件和一处多空格。
+- **标题里的空格一律是一个半角空格**（issue #258）。全角空格、制表符、不间断空格等
+  「非半角空格」都算错（fw_space），连续两个以上的半角空格也算错（multi_space），
+  不论原来是两个（底本「题  其一」的分栏）还是更多。查出来就改，不留基线：
+  这条规矩与「照录底本」无关 —— 空格不是字，分栏改用别的记号再说。
 - 「成对」的判断不逐条要求左右数量相等：元曲的题名常把曲牌部分截断
   （「·仙吕)【点绛唇」），统计上很难分清是底本残缺还是抄漏。只报明显方向错乱的
   （如「”灵隐寺」、只有一半的「“」），以及可以逐条确认的孤立右括号／右书名号。
@@ -46,8 +46,8 @@ from check_structure import iter_files, is_data_file, changed_data_files  # noqa
 FIELDS = ('title', 'chapter', 'rhythmic')
 FW_SPACE = re.compile('[\u3000\u00a0\u2000-\u200a\u202f\u205f\t]')
 LEAD_TRAIL = re.compile(r'^\s|\s$')
-# 两个空格是底本的分栏（「题  其一」），三个以上才是手误
-TWO_SPACE = re.compile(r'(?<=[\u3400-\u9fff])  +(?=[\u3400-\u9fff])')
+# 标题只管一个半角空格：两个以上连着就是错，不论夹在哪两个字之间
+MULTI_SPACE = re.compile(r' {2,}')
 CYRILLIC_GREEK = re.compile(r'[Ѐ-ӿͰ-Ͽ]')
 KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31bf\ufe3d-\ufe44]')
 BOX_DRAWING = re.compile(r'[\u2500-\u257f\ufffd]')
@@ -86,7 +86,7 @@ def scan_text(text):
         yield 'fw_space', ''.join(sorted({f'U+{ord(c):04X}' for c in FW_SPACE.findall(text)}))
     if LEAD_TRAIL.search(text):
         yield 'lead_trail', text.strip()[:20]
-    for m in TWO_SPACE.finditer(text):
+    for m in MULTI_SPACE.finditer(text):
         yield 'multi_space', m.group()
     for kind, tok in char_checks(text):
         yield kind, tok
