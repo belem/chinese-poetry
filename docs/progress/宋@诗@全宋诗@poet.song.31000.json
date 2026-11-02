@@ -1,6 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.31000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
-  "status": "clean"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "clean",
+  "fixes": [
+    {
+      "original": "契丹帳）",
+      "corrected": "契丹帳",
+      "note": "[标题体检 issue #258] 孤立右括号删去；同组「契丹馬」无括号"
+    }
+  ],
+  "note": "2026-11-03 标题体检（issue #258）：配对符号与连续空格清理，逐条见 fixes。正文未对勘。"
 }

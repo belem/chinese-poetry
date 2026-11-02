@@ -12,6 +12,7 @@
   bare_pua        {...} 之外的私用区字符
   zero_width      零宽字符
   unmatched_punct 配对符号不成对（书名号、引号、括号、方头括号……），或引号方向乱了
+  trailing_punct  题名末尾带句读（句号、逗号、顿号、分号、冒号、问号、叹号）
 
 两处口径说明：
 
@@ -52,6 +53,10 @@ KANA_BOPOMOFO = re.compile(r'[\u3040-\u30fa\u30fc-\u30ff\u3100-\u312f\u31a0-\u31
 BOX_DRAWING = re.compile(r'[\u2500-\u257f\ufffd]')
 PUA = re.compile(r'[\ue000-\uf8ff]')
 ZERO_WIDTH = re.compile('[\u200b-\u200f\u2060\ufeff]')
+# 题名是篇名，不是句子：末尾不该有句读。元曲的 title 夹着正文（「幺・早是……丹青。」），
+# 那一类不算，见 TRAILING_PUNCT_SKIP。
+TRAILING_PUNCT = re.compile(r'[。，、；：？！]$')
+BODY_IN_TITLE = '・'          # 题名里带「・」的是元曲（曲牌 + 正文片段），末尾句读是正文的
 PLACEHOLDER = re.compile(r'\{[^}]*\}')          # {疒} 等生僻字占位，不计私用区
 HANZI = re.compile(r'[\u3400-\u9fff]')
 
@@ -87,6 +92,8 @@ def scan_text(text):
         yield kind, tok
     for kind, tok in punct_checks(text):
         yield kind, tok
+    if TRAILING_PUNCT.search(text) and BODY_IN_TITLE not in text:
+        yield 'trailing_punct', text[-1]
 
 
 def iter_titles(rel):
@@ -100,14 +107,6 @@ def iter_titles(rel):
             text = it.get(field)
             if isinstance(text, str) and text:
                 yield idx, it, field, text
-
-
-def counts_for(rel):
-    n = collections.Counter()
-    for _idx, _it, _field, text in iter_titles(rel):
-        for kind, _tok in scan_text(text):
-            n[kind] += 1
-    return n
 
 
 def main():
