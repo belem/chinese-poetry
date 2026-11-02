@@ -660,7 +660,7 @@
             "id": 100,
             "path": "明/小说/封神演义/fengshenyanqi.json",
             "tag": "paragraphs",
-            "comments": "明許仲琳撰，一百回；底本康熙四雪草堂刻後印本（識典古籍 HY1546）。該電子本缺回 11–88"
+            "comments": "明许仲琳《封神演义》：100 回齐，正文取 reference/封神演义.txt（简体排印本，逐段带句读），由 scripts/import_novel_reference.py 生成。题名「第N回　回目」。原识典古籍康熙四雪草堂本（HY1546，缺回 11–88）的旧文件 2026-11 整份删除（issue #200），见 docs/名著增补.md"
         },
         "dongzhou-lieguo": {
             "name": "明/东周列国志",
