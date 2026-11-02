@@ -17,7 +17,8 @@
       "note": "[lianju] 《錢塘集》所載韋驤、刁繹同賦，兩讀正文 t2s 後一字不差，取韋驤本"
     }
   ],
-  "date": "2026-11-04",
-  "reviewer": "codebuddy",
-  "status": "clean"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "clean",
+  "note": "2026-11-03 标题体检（issue #258）：题名里三个以上连续半角空格改为两个（底本两空格分栏），只换空格字符。"
 }

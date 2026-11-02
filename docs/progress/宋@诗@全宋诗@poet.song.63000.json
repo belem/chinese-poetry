@@ -17,7 +17,8 @@
       "note": "[lianju] 《鷄肋集》卷十四載全篇，張耒名下同篇逐字相同；兩讀一字不差，取晁補之本"
     }
   ],
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
-  "status": "clean"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "clean",
+  "note": "2026-11-03 标题体检（issue #258）：题名里三个以上连续半角空格改为两个（底本两空格分栏），只换空格字符。"
 }
