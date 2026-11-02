@@ -432,11 +432,11 @@
             "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
         },
         "wen-shangshu": {
-            "name": "今文尚书",
+            "name": "尚书",
             "id": 68,
             "path": "先秦/文/shangshu.json",
             "tag": "paragraphs",
-            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里。2026-11 依 reference/尚书.txt 整本重出：79 条（虞书 6 篇、夏书 6 篇、商书 17 篇、周书 50 篇），题名「尚書·虞书·尧典」，原文一字未改，只拼回折行、按 ERRATA 改了 26 处定案讹字与缺字；19 条亡篇只有书序、无正文，照录并注明。见 docs/尚书周易重建.md"
         },
         "wen-gongyangzhuan": {
             "name": "公羊传",
@@ -471,7 +471,7 @@
             "id": 73,
             "path": "先秦/文/zhouyi.json",
             "tag": "paragraphs",
-            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里"
+            "comments": "由 先秦/诗/poet.xianqin.json 拆出，原按书名混收在「诗」里。2026-11 依 reference/周易.txt 整本重出：64 卦一卦一条，题名「周易·乾卦」，只收经文、不含十翼（底本无）；改正 11 处缺字与残迹。见 docs/尚书周易重建.md"
         },
         "wen-daodejing": {
             "name": "道德经",

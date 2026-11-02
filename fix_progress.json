@@ -252,8 +252,8 @@
       "status": "fixed"
     },
     "先秦/文/shangshu.json": {
-      "date": "2026-10-28",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-02",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "先秦/文/shangtang.json": {
@@ -317,8 +317,8 @@
       "status": "needs_review"
     },
     "先秦/文/zhouyi.json": {
-      "date": "2026-10-28",
-      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-02",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "先秦/文/zhuangzi.json": {
