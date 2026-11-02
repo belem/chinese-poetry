@@ -47,6 +47,7 @@
     python3 scripts/import_sanyan_reference.py --check        # 只比对，不写
 """
 import argparse
+import json
 import os
 import re
 import sys
@@ -282,18 +283,18 @@ def main():
     ap.add_argument('--check', action='store_true', help='只比对现有文件，不写')
     args = ap.parse_args()
     rc = 0
+    # 本批三本一起发号：先让开三本旧文件占的 id，再按 BOOKS 的固定顺序逐本发，
+    # 这样三本之间、与全库都不会撞码（只让开一本的 id 是不行的，见 docs/三言重建.md）
     taken = existing_ids()
-    if not args.check:
-        for b in BOOKS.values():
-            dst = os.path.join(ROOT, b['out'])
-            if os.path.exists(dst):
-                import json
-                for r in json.load(open(dst, encoding='utf-8')):
-                    taken.discard(r.get('id'))
+    for b in BOOKS.values():
+        dst = os.path.join(ROOT, b['out'])
+        if os.path.exists(dst):
+            for r in json.load(open(dst, encoding='utf-8')):
+                taken.discard(r.get('id'))
     for key in (args.books or list(BOOKS)):
         book = BOOKS[key]
         recs, stats = build(book, parse(book), taken)
-        text = __import__('json').dumps(recs, ensure_ascii=False, indent=2) + '\n'
+        text = json.dumps(recs, ensure_ascii=False, indent=2) + '\n'
         dst = os.path.join(ROOT, book['out'])
         chars = sum(len(p) for r in recs for p in r['paragraphs'])
         print(f'{book["out"]}: {len(recs)} 卷，'
