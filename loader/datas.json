@@ -618,7 +618,7 @@
             "id": 95,
             "path": "清/小说/儒林外史/rulinwaishi.json",
             "tag": "paragraphs",
-            "comments": "清吳敬梓撰，五十六回齐；底本 reference/儒林外史.txt（简体排印本，逐段带句读），由 scripts/import_novel_chapter.py 生成，题名「第N回　回目」。原識典古籍嘉慶八年臥閑草堂刻本（CADAL02111881，只有 23 回、回末夹評語）的旧文件 2026-11 整份删除（issue #200），见 docs/通俗小说重建.md"
+            "comments": "清吳敬梓撰，五十六回齐；底本 reference/儒林外史.txt（简体排印本，逐段带句读），由 scripts/import_rulin_waishi.py 生成，题名「第N回　回目」。2026-11 依 issue #244 整份重做：底本不动，标点按读法重校（说话人后缺的冒号、引语收尾接叙述缺的句号、叠标点、制表符破折号），底本自身的拼音残渣逐处改正，缺字 □ 照录。原識典古籍臥閑草堂刻本（CADAL02111881，23 回）2026-11 已整份删除（issue #200），见 docs/名著增补.md"
         },
         "jinghuayuan": {
             "name": "清/镜花缘",
@@ -676,19 +676,12 @@
             "tag": "paragraphs",
             "comments": "明馮夢龍輯，四十卷齐；2026-11 依 repo 内 reference/警世通言.txt 整本重出，由 scripts/import_sanyan_reference.py 生成。原識典古籍天啓四年刻本（CADAL02111600）電子本只有 23 卷，2026-11 整份删除"
         },
-        "xingshi-hengyan": {
-            "name": "明/醒世恒言",
-            "id": 122,
-            "path": "明/小说/三言二拍/xingshihengyan.json",
-            "tag": "paragraphs",
-            "comments": "明馮夢龍纂輯，四十卷齐；2026-11 依 repo 内 reference/醒世恒言.txt 整本重建（库内原无此书），由 scripts/import_sanyan_reference.py 生成。卷首《叙》（天启丁卯陇西可一居士题）挂在第一卷的 prologue"
-        },
         "erke-paian": {
-            "name": "明/二刻拍案惊奇",
+            "name": "清/二刻拍案惊奇",
             "id": 104,
-            "path": "明/小说/三言二拍/erkipaianjingqi.json",
+            "path": "清/小说/二刻拍案惊奇/erkipaianjingqi.json",
             "tag": "paragraphs",
-            "comments": "明凌濛初撰，四十卷；底本崇禎五年尚友堂刻本（識典古籍 CADAL02111669）。該電子本缺卷 7、13–27、29"
+            "comments": "明凌濛初撰，四十卷全；2026-11 依 repo 内 reference/二刻拍案惊奇.txt 整本重出，见 scripts/import_erke_reference.py。旧文件在 明/小说/三言二拍/，只 23 卷，已删"
         },
         "rongzhai-suibi": {
             "name": "宋/容斋随笔",
@@ -829,6 +822,27 @@
             "path": "史书/春秋左氏传/zuozhuan.json",
             "tag": "paragraphs",
             "comments": "周左丘明撰，十二公二百五十五年；底本見 repo 內 reference/二十四史/春秋左氏传.txt（简体排印本，经、传逐段带句读），由 scripts/import_zuozhuan_reference.py 生成。题名作「左傳·隐公·隐公元年」，一年一条，段内一字不动；经文那一段以「【经】」起头，其余为传文。底本本身有九处毛病：桓四、庄二、庄五、庄十五、庄十七、哀十九、哀廿二七年经传整段失落（只余抓取残渣，照录为□□□□□□ 占位），庄十九、昭十六、昭十九、昭廿行末被切断（用□□补在断处）。原 先秦/文/zuozhuan.json（278 条、按选本篇目排的散录）2026-11 整份删除（issue #215），与《史记》《三国志》同一口径进顶层史书/，见 docs/春秋左氏传重建.md"
+        },
+        "shuoyue-quanzhuan": {
+            "name": "清/说岳全传",
+            "id": 122,
+            "path": "清/小说/说岳全传/shuoyuequanzhuan.json",
+            "tag": "paragraphs",
+            "comments": "清錢彩編次、金豐增訂，八十回；底本 reference/说岳全传.txt（简体排印本，逐段带句读），由 scripts/import_shuoyue_reference.py 生成，题名「第N回　回目」。底本缺第五二回（回次由 51 跳到 53），该回只立回目、正文待补；底本用「一」当专名号（一江一山、一精一忠、欧一陽一从善），断到下一行的一并接回再删，见 docs/名著增补.md"
+        },
+        "chuke-paian": {
+            "name": "清/初刻拍案惊奇",
+            "id": 123,
+            "path": "清/小说/初刻拍案惊奇/chukepaiangjiqi.json",
+            "tag": "paragraphs",
+            "comments": "明凌濛初撰，四十卷；底本见 repo 内 reference/初刻拍案惊奇.txt（简体排印本，逐段带句读），由 scripts/import_chuke_paian.py 生成。题名作「第N卷　篇名」，一卷一篇，篇内一段一行。底本简介挂第一卷的 prologue。底本自身的录入残渣只改了认得出的（「又送酒??内房中去」→「酒铺」，重出的逗号删到该有一个），卷二十五「银XX斜背解鸣」的 XX 未改、待核，卷四一处缺字加 {}、字未补。作者朝代依 authors/authors.json 记「明」（凌濛初生于万历八年）；按「一部书一个目录」落 清/小说/ 是本 issue 的指定，与《二刻拍案惊奇》挂在 明/小说/三言二拍/ 不在一处，见 docs/名著增补.md"
+        },
+        "xingshi-hengyan": {
+            "name": "明/醒世恒言",
+            "id": 124,
+            "path": "明/小说/三言二拍/xingshihengyan.json",
+            "tag": "paragraphs",
+            "comments": "明馮夢龍纂輯，四十卷齐；2026-11 依 repo 内 reference/醒世恒言.txt 整本重建（库内原无此书），由 scripts/import_sanyan_reference.py 生成。卷首《叙》（天启丁卯陇西可一居士题）挂在第一卷的 prologue。暂用 id 124：《说岳全传》2026-11 先一步占了 122，《醒世恒言》改取末号，三言三本的 id 本身不受影响"
         }
     }
 }

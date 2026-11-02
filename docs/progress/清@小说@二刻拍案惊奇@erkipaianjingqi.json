@@ -1,0 +1,7 @@
+{
+  "path": "清/小说/二刻拍案惊奇/erkipaianjingqi.json",
+  "note": "2026-11 依 repo 内 reference/二刻拍案惊奇.txt 整本重出（issue #239）：四十卷齐，脚本 scripts/import_erke_reference.py。做过的：标点规整（半角括号、半角句读、重复点号）、底本「原/元」讹字按词还原 24 条、底本用〓与私用区码位标出的缺字一律记 □、两处以 {缺} 记。没做的：尚未与尚友堂刻本逐句对勘，99 处 □ 待另一个本子补。",
+  "date": "2026-11-02",
+  "reviewer": "CodeBuddy (AI)",
+  "status": "needs_review"
+}
