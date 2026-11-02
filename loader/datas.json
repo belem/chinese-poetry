@@ -618,7 +618,7 @@
             "id": 95,
             "path": "清/小说/儒林外史/rulinwaishi.json",
             "tag": "paragraphs",
-            "comments": "清吳敬梓撰，五十六回；底本嘉慶八年臥閑草堂刻本（識典古籍 CADAL02111881），回末閒齋老人評語未收"
+            "comments": "清吳敬梓撰，五十六回齐；底本 reference/儒林外史.txt（简体排印本，逐段带句读），由 scripts/import_novel_chapter.py 生成，题名「第N回　回目」。原識典古籍嘉慶八年臥閑草堂刻本（CADAL02111881，只有 23 回、回末夹評語）的旧文件 2026-11 整份删除（issue #200），见 docs/通俗小说重建.md"
         },
         "jinghuayuan": {
             "name": "清/镜花缘",
