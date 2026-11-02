@@ -3691,11 +3691,6 @@
       "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
-    "明/小说/三言二拍/erkipaianjingqi.json": {
-      "date": "2026-10-29",
-      "reviewer": "CodeBuddy (AI)",
-      "status": "needs_review"
-    },
     "明/小说/三言二拍/jingshitongyan.json": {
       "date": "2026-11-06",
       "reviewer": "CodeBuddy (AI)",
@@ -4451,8 +4446,13 @@
       "reviewer": "codebuddy",
       "status": "fixed"
     },
-    "清/小说/儒林外史/rulinwaishi.json": {
+    "清/小说/二刻拍案惊奇/erkipaianjingqi.json": {
       "date": "2026-11-02",
+      "reviewer": "CodeBuddy (AI)",
+      "status": "needs_review"
+    },
+    "清/小说/儒林外史/rulinwaishi.json": {
+      "date": "2026-11-09",
       "reviewer": "CodeBuddy (AI)",
       "status": "needs_review"
     },
