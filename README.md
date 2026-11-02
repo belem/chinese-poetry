@@ -70,7 +70,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 五部此前都是从别处抓来的副本（《论语》是简体版，《孟子》掺了 `poet.xianqin.json` 补录的异文段，
 《道德经》简体且章次错乱）。重出后《论语》20 篇 504 段、《孟子》14 篇 723 段、《中庸》38 段、《大学》16 段、
 《道德经》81 章 218 段，正文一字不动跟着底本走，底本夹注移入 `note`。
-生成脚本 `scripts/import_sishu_reference.py`，体例与勘误见 [`docs/四书重出.md`](docs/四书重出.md)。
+生成脚本 `scripts/import_sishu_reference.py`，体例与勘误见 [`docs/四书校对.md`](docs/四书校对.md)。
 
 `汇编/蒙学/` 2026-11 同样依 `reference/*.txt` 整本重新生成（声律启蒙、笠翁对韵、龙文鞭影一支出自 `auto/mengxue-sanzhong`；百家姓、三字经、千字文、弟子规、五字鉴、急就章、李氏蒙求、幼学琼林、增广贤文九部出自 `scripts/import_mengxue.py`），一行一句成段，底本行末夹注另收 `variants`。原先的 `sanzijing-new` / `sanzijing-traditional` 两份合为一份，`唐/诗/全唐诗/` 里那份《蒙求》删去。体例与勘误见 [`汇编/蒙学/README.md`](汇编/蒙学/README.md)。
 
