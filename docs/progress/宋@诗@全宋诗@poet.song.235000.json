@@ -7,7 +7,8 @@
       "note": "[shi_line_length] 琤餘韻逐飛鞚 → 琤肰餘韻逐飛鞚; 识典古籍 (2 books, e.g. , 青溪富山先生遺稿)"
     }
   ],
-  "date": "2026-10-31",
-  "reviewer": "codebuddy",
-  "status": "fixed"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed",
+  "note": "2026-11-03 标题体检（issue #258）：题名里三个以上连续半角空格改为两个（底本两空格分栏），只换空格字符。"
 }

@@ -1,6 +1,14 @@
 {
   "path": "宋/诗/全宋诗/poet.song.14000.json",
-  "date": "2026-06-26",
-  "reviewer": "claude-sonnet-4-6",
-  "status": "clean"
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "clean",
+  "fixes": [
+    {
+      "original": "送張景純知邵武軍）",
+      "corrected": "送張景純知邵武軍",
+      "note": "[标题体检 issue #258] 题末孤立的右括号，无对应左括号，删去"
+    }
+  ],
+  "note": "2026-11-03 标题体检（issue #258）：配对符号与连续空格清理，逐条见 fixes。正文未对勘。"
 }
