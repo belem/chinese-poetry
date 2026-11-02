@@ -625,7 +625,7 @@
             "id": 96,
             "path": "清/小说/镜花缘/jinghuayuan.json",
             "tag": "paragraphs",
-            "comments": "清李汝珍撰，一百回；底本道光十二年刻本（識典古籍 CADAL02111901）。該電子本卷二第六回以後多頁整頁壓成一頁，缺回 6、12–88，見 docs/名著增補.md"
+            "comments": "清李汝珍撰，一百回齐；底本 reference/镜花缘.txt（简体排印本，逐段带句读），由 scripts/import_jinghuayuan_reference.py 生成，题名「第N回　回目」。2026-11 依 issue #244 整份重做：原道光十二年刻本（識典古籍 CADAL02111901，仅 22 回，缺回 6、12–88）已整份删除。缺字与乱码字符包 {} 不补，第 26 回翼民国一节乱码照录，见 docs/名著增补.md"
         },
         "yuewei-caotang": {
             "name": "清/阅微草堂笔记",
