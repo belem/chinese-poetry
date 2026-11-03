@@ -19,7 +19,8 @@ import argparse, collections, json, os, re, sys, unicodedata
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 # 选本目录（已按朝代分层，写全路径）
 NEW_BOOKS = ['汇编/乐府诗集', '汉/古诗源', '唐/唐诗三百首',
-             '汇编/昭明文选', '先秦/古文观止', '先秦/课外经典']
+             '汇编/昭明文选', '先秦/古文观止', '先秦/课外经典',
+             '汇编/古文选段']  # 末一项即原 汇编/课本选目/，2026-11 issue #285 改名
 SKIP_DIRS = {'loader', 'strains', 'images', 'rank', 'error', 'scripts', 'docs', '.git', '.github', '.cnb'}
 MIN_LEN = 8
 PUNCT = re.compile(r'[\s\W_]+', re.U)
