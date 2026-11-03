@@ -1,0 +1,7 @@
+{
+  "path": "史书/战国策/zhanguoce.json",
+  "note": "2026-11-03 依 reference/二十四史/战国策.txt 整本重出：33 卷 501 章 1275 段 14.91 万字，由 scripts/import_zhanguoce_reference.py 生成；底本自身的毛病（5 处卷题排进上一章行尾、1 处下一章 ○ 排在行尾、3 处叠句号、2 段他书按语、8 字头 14 处 <…> 写法）逐条记在 docs/战国策重建.md。章头切分 497/501 走「题干首字重出」，其余 4 条写死在脚本里；尚未逐章对勘识典古籍，故记 needs_review。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "needs_review"
+}
