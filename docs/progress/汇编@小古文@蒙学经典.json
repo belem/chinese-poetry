@@ -1,10 +1,10 @@
 {
-  "path": "汇编/古文选段/蒙学经典.json",
+  "path": "汇编/小古文/蒙学经典.json",
   "fixes": [
     {
       "original": "# 6 冠必正",
       "corrected": null,
-      "note": "[small_scope] 删此条，正文与 汇编/古文选段/蒙学经典.json#7 重出：选段，长条已收全"
+      "note": "[small_scope] 删此条，正文与 汇编/小古文/蒙学经典.json#7 重出：选段，长条已收全"
     },
     {
       "original": "# 3 百家姓",

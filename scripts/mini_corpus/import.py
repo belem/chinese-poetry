@@ -33,7 +33,7 @@ BOOKS = {
     'poems-tangshi.js': ('唐/唐诗三百首', False),
     'poems-zhaoming.js': ('汇编/昭明文选', True),
     'poems-guwen.js': ('先秦/古文观止', True),
-    'poems-classic.js': ('先秦/课外经典', True),  # 2026-11 改名前的 汇编/古文选段
+    'poems-classic.js': ('先秦/课外经典', True),  # 2026-11 改名前的 汇编/小古文
 }
 TEXT_DIRS = ('唐/诗/全唐诗', '宋/诗/全宋诗', '宋/宋词', '元/元曲')
 

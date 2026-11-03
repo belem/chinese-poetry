@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""`先秦/文/` 的子史单行本与 `汇编/古文观止` `汇编/古文选段` 的同篇：删选本摘录。
+"""`先秦/文/` 的子史单行本与 `汇编/古文观止` `汇编/小古文` 的同篇：删选本摘录。
 
 《古文观止》的周文、战国文各卷，本来就是从《左传》《国语》《公羊传》《穀梁传》《礼记》
-《战国策》《庄子》这些书里摘出来的；古文选段也一样。同一篇在单行本与选本各有一份正文，
+《战国策》《庄子》这些书里摘出来的；小古文也一样。同一篇在单行本与选本各有一份正文，
 勘误时两边都要改，改漏就漂。
 
 与 [`汇编与诗去重`](汇编与诗去重.md) 相反、与 [`左传古文观止去重`](左传古文观止去重.md) 同一个口径：
@@ -43,7 +43,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T2S = OpenCC('t2s')
 HAN = re.compile(r'[^\u4e00-\u9fff]')
 WEN = '先秦/文'
-GUI = ('汇编/古文观止', '汇编/古文选段')
+GUI = ('汇编/古文观止', '汇编/小古文')
 OUT = 'docs/先秦文古文观止去重.tsv'
 PREFIX = 16
 REVIEWER = 'codebuddy'
@@ -208,7 +208,7 @@ def main():
             rows.append(dict(kind='删除', key=key, keep=desc(b), drop=desc(g),
                              note='单行本与选本同篇，归一后一字不差；留整部书，删选本摘录'))
 
-    print('== 先秦/文 与 汇编/古文观止、古文选段：')
+    print('== 先秦/文 与 汇编/古文观止、小古文：')
     for k, v in sorted(stat.items(), key=lambda kv: -kv[1]):
         print(f'   {k:<18} {v}')
     print(f'   拟删 {sum(len(v) for v in drop.values())} 条，涉及 {len(drop)} 个文件')
