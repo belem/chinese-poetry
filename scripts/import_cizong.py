@@ -49,6 +49,7 @@ ALPHABET = '0123456789abcdefghijklmnopqrstuv'
 CN = '〇一二三四五六七八九十百'
 
 PUNCT = set('，。？！、；：,?!.;:')
+PAREN = '（）()'
 SENT = re.compile(r'[，。？！；：！？]')
 
 
@@ -293,15 +294,22 @@ class Parser:
         return cn2int(s)
 
     def is_section_label(self, s):
-        """卷首的「唐词六十八首」「宋词六十二首」「五代十国词七十二首」这类分卷小标题。
+        """卷首的分卷小标题：「宋词六十首」「（六十九首）宋词」「（词五十七）宋词」。
 
-        只认「…词＋数目＋首」这一种：光看「以词结尾」会把末一首词的正文第一句
+        只认「…词…首」这一种：光看「以词结尾」会把末一首词的正文第一句
         （`一庭红扑簌` 后面的卷尾、`夜行船余英溪` 之类）也吃掉。
+
+        底本卷首的记数前后三种写法，数目不全（卷三十二、三十三只写「宋词」「金元词」，
+        卷三十四写「（词五十七）宋词」掉了「首」字），照底本原样跳过，不补。
         """
-        s = s.strip()
+        s = s.strip().replace('（', '').replace('）', '').replace('(', '').replace(')', '')
         if not s or len(s) > 16 or SENT.search(s):
             return False
-        return bool(re.search(r'词[〇一二三四五六七八九十百\d]+首$', s))
+        if re.search(r'词[〇一二三四五六七八九十百\d]+首', s) and not SENT.search(s):
+            return True                                          # 「宋词六十首」「（词五十四首）宋金元词」
+        if re.fullmatch(r'[\u4e00-\u9fff]{1,6}词', s):          # 「宋词」「金元词」
+            return True
+        return bool(re.fullmatch(r'词[〇一二三四五六七八九十百\d]+', s))   # 「(词五十七)」
 
     def head_override(self, head):
         """标题行的单行修正：底本把词牌抄断的（`烛影摇红王仲` → 补「甫」）。"""
@@ -324,7 +332,10 @@ class Parser:
             if not seg:
                 continue
             start = seg[0]
+            # 分卷小标题后面常常还跟着空行（卷三十四隔了三个），照跳不误
             while start < end and self.is_section_label(self.lines[start]):
+                start += 1
+            while start < end and not self.lines[start].strip():
                 start += 1
             i, vol = start, self.volnum(self.lines[v])
             while i < end:
@@ -803,6 +814,7 @@ def clean_paras(lines):
         ln = re.sub(r'([，。？！；：])\1+', r'\1', ln)
         # 同位置的两种句读叠在一起（`笑言相答？。`、`夜香里，？华峰？。`）：留疑问号
         ln = re.sub(r'？。|。？', '？', ln)
+        ln = re.sub(r'，？|？，', '？', ln)
         ln = re.sub(r'([！？。])[，、；：]', r'\1', ln)
         ln = re.sub(r'([，。？！；：])、', r'\1', ln)
         ln = re.sub(r'、([，。？！；：])', r'\1', ln)
@@ -834,11 +846,36 @@ def volume_files(recs):
     return vols
 
 
+def _keep_bodies(out, rel):
+    """重出：底本正文与写盘的一致时，沿用写盘那一条的 paragraphs / pointer / id。"""
+    path = os.path.join(ROOT, rel)
+    if not os.path.exists(path):
+        return out
+    old = {r['source_line']: r for r in json.load(open(path, encoding='utf-8'))}
+    merged = []
+    for r in out:
+        o = old.get(r['source_line'])
+        if o and o.get('paragraphs') == r.get('paragraphs'):
+            r = OrderedDict(r)
+            for k in ('pointer', 'paragraphs'):
+                if k in o:
+                    r[k] = o[k]
+                else:
+                    r.pop(k, None)
+            r['id'] = o.get('id', r['id'])
+            r.move_to_end('id') if hasattr(r, 'move_to_end') else None
+        merged.append(r)
+    return merged
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true', help='写盘；否则只预演')
     ap.add_argument('--batch', type=int, default=0,
                     help='只写前 N×50 首（0 为整本）；批次之外的卷留到后面的 PR')
+    ap.add_argument('--vols', default='',
+                    help='只重出这几卷（逗号分隔的卷号，如 34；空为全部）。'
+                         '改了解析规则又要保住别卷的 pointer 时用')
     ap.add_argument('--date', default=date.today().isoformat())
     args = ap.parse_args()
 
@@ -857,10 +894,13 @@ def main():
     dyn_all.update({t2s(k): v for k, v in dyn.items()})
     dyn_all.update({s2t(k): v for k, v in dyn.items()})
 
+    only = {int(x) for x in args.vols.split(',') if x.strip()}
     limit = args.batch * 50 if args.batch else None
     taken = set()
     plan, used = [], 0
     for vol, items in volume_files(recs).items():
+        if only and vol not in only:
+            continue
         out = []
         for r in items:
             if limit is not None and used >= limit:
@@ -914,10 +954,13 @@ def main():
             errs.append((r['line'], r['head'], '作者名照作者表改', f"{r['author_raw']} → {r['author']}"))
         if r.get('tune_raw'):
             errs.append((r['line'], r['head'], '词牌照通行名改', f"{r['tune_raw']} → {r['tune']}"))
+    # 拆不干净的标题行：`cizong_heads.py` 已按底本自身取证的，这里只记「已定案」；
+    # 它列在 docs/词综标题.tsv 里逐条有依据，不再重复进这张表
     for w in warns:
         errs.append((w['line'], w['head'], '标题行未完全拆开',
-                     '词牌或作者需人工核（见 docs/词综重建.md 末节）'))
-    print(f'  勘误与待核 {len(errs)} 条')
+                     '作者名被切半，已定案见 docs/词综标题.tsv；正文未动'))
+    print(f'  勘误与待核 {len(errs)} 条（其中标题行未完全拆开 {len(warns)} 条，'
+          f'定案依据见 docs/词综标题.tsv）')
 
     if not args.apply:
         return
@@ -925,6 +968,11 @@ def main():
     os.makedirs(os.path.join(ROOT, OUT), exist_ok=True)
     for vol, out in plan:
         rel = f'{OUT}/卷{int2cn(vol)}.json'
+        # 重出单卷时底本正文没变的条目不重写正文与 id（只动作者、标题这些真改了的字段），
+        # 免得把 `cizong_pointers.py` 留的 pointer 冲掉
+        # 底本正文没变的条目，沿用写盘那一条的 paragraphs / pointer / id
+        # （pointer 是 `cizong_pointers.py` 的成果，重出一遍不该冲掉）
+        out = _keep_bodies(out, rel)
         with open(os.path.join(ROOT, rel), 'w', encoding='utf-8') as fp:
             fp.write(json.dumps(out, ensure_ascii=False, indent=2))
             fp.write('\n')
@@ -935,8 +983,8 @@ def main():
             'reviewer': REVIEWER,
             'status': 'needs_review',
         })
-    # 目次：按卷排，只存每卷的篇目与作者（正文在 卷N.json）
-    if limit is None:
+    # 目次：按卷排，只存每卷的篇目与作者（正文在 卷N.json）。`--vols` 只重出少数几卷时不重排目次
+    if limit is None and not only:
         toc = []
         for vol, out in plan:
             toc.append({
