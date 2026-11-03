@@ -4,8 +4,8 @@
   "stats": {
     "total_files": 1000,
     "reviewed": 1007,
-    "clean": 314,
-    "fixed": 144,
+    "clean": 313,
+    "fixed": 145,
     "needs_review": 345,
     "out_of_scope": 204,
     "in_scope_files": 803
@@ -67,9 +67,9 @@
       "status": "clean"
     },
     "五代十国/词/五代诗词/huajianji/huajianji-1-juan.json": {
-      "date": "2026-10-07",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy / claude-opus-5-5（2026-10-07 全篇）",
+      "status": "fixed"
     },
     "五代十国/词/五代诗词/huajianji/huajianji-2-juan.json": {
       "date": "2026-10-07",
