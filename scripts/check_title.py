@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""标题格式体检：只查 title / chapter / rhythmic 三个字段，只报告，不修改任何数据。
+"""标题格式体检：只查 title / chapter / rhythmic / author 四个字段，只报告，不修改任何数据。
+
+作者名与题名同一口径 —— 题头就是「作者《题名》」，两者都只留一个半角空格。
 
 检查项：
   fw_space        全角空格、制表符等非半角空格（U+3000、U+00A0、U+2000–200A、U+202F、U+205F、\\t）：
-                  标题只用半角空格，逐字符计数
-  lead_trail      标题首尾的空格
+                  标题与作者名只用半角空格，逐字符计数
+  lead_trail      标题与作者名首尾的空格
   multi_space     连续多个半角空格（详见下方 MULTI_SPACE 说明）
   cyrillic_greek  西里尔 / 希腊字母乱码
   kana_bopomofo   日文假名 / 注音符号乱码
@@ -20,6 +22,10 @@
   「非半角空格」都算错（fw_space），连续两个以上的半角空格也算错（multi_space），
   不论原来是两个（底本「题  其一」的分栏）还是更多。查出来就改，不留基线：
   这条规矩与「照录底本」无关 —— 空格不是字，分栏改用别的记号再说。
+- **作者名同口径**（`author`）。例外的只有合署作者的制表符（`光\\t威\\t裒` 是三个人），
+  那一处 `scripts/fix_spaces.py` 的 KEEP 里单独记着。
+- **`rank/` 与 `error/` 也查**：前者是排行榜数据，题名、作者名与对应诗作是同一份；
+  后者虽不在 `loader` 里，同一份错字同样该改。
 - 「成对」的判断不逐条要求左右数量相等：元曲的题名常把曲牌部分截断
   （「·仙吕)【点绛唇」），统计上很难分清是底本残缺还是抄漏。只报明显方向错乱的
   （如「”灵隐寺」、只有一半的「“」），以及可以逐条确认的孤立右括号／右书名号。
@@ -41,9 +47,11 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from check_structure import iter_files, is_data_file, changed_data_files  # noqa: E402
+from check_structure import iter_files  # noqa: E402
 
-FIELDS = ('title', 'chapter', 'rhythmic')
+ERROR_DIR = os.path.join('宋', '诗', '全宋诗', 'error')   # 不发布，但题名、作者名与诗作同一份
+
+FIELDS = ('title', 'chapter', 'rhythmic', 'author')
 FW_SPACE = re.compile('[\u3000\u00a0\u2000-\u200a\u202f\u205f\t]')
 LEAD_TRAIL = re.compile(r'^\s|\s$')
 # 标题只管一个半角空格：两个以上连着就是错，不论夹在哪两个字之间
@@ -96,6 +104,39 @@ def scan_text(text):
         yield 'trailing_punct', text[-1]
 
 
+RANK_DIR = 'rank'           # 排行榜数据：题名、作者名与诗作同一份，也要查
+
+
+def title_files(ref=None):
+    """要查的文件：数据目录（口径同 check_structure）加 rank/，再加 宋/诗/全宋诗/error/。
+
+    check_structure 的 iter_files() 把 rank/ 与 error/ 都跳过了，那两处正好有同一份题名与
+    作者名 —— 2026-11 之前这批空格一直没被任何检查覆盖过。
+    """
+    if ref:
+        return changed_title_files(ref)
+    files = list(iter_files())
+    for dirpath, dirs, filenames in os.walk(os.path.join(ROOT, RANK_DIR)):
+        dirs.sort()
+        for f in sorted(filenames):
+            if f.endswith('.json'):
+                files.append(os.path.relpath(os.path.join(dirpath, f), ROOT))
+    for dirpath, _, filenames in os.walk(os.path.join(ROOT, ERROR_DIR)):
+        for f in sorted(filenames):
+            if f.endswith('.json'):
+                files.append(os.path.relpath(os.path.join(dirpath, f), ROOT))
+    return sorted(files)
+
+
+def changed_title_files(ref):
+    """相对 git ref 有改动的、上述范围内的文件。"""
+    import subprocess
+    out = subprocess.run(['git', '-C', ROOT, '-c', 'core.quotepath=false', 'diff', '--name-only',
+                          '--diff-filter=d', ref, '--'], check=True, stdout=subprocess.PIPE, text=True).stdout
+    keep = set(title_files())
+    return sorted(os.path.normpath(x) for x in out.splitlines() if os.path.normpath(x) in keep)
+
+
 def iter_titles(rel):
     with open(os.path.join(ROOT, rel), encoding='utf-8') as fp:
         data = json.load(fp)
@@ -119,13 +160,13 @@ def main():
     ap.add_argument('--files-from-diff', metavar='REF', help='只查相对 REF 改动的数据文件')
     args = ap.parse_args()
 
-    files = changed_data_files(args.files_from_diff) if args.files_from_diff else None
+    files = changed_title_files(args.files_from_diff) if args.files_from_diff else None
     if files is not None and not files:
         print('本次改动不涉及数据文件，无需比较')
         return 0
 
     findings = []
-    for rel in files if files is not None else iter_files():
+    for rel in files if files is not None else title_files():
         try:
             titles = list(iter_titles(rel))
         except (json.JSONDecodeError, UnicodeDecodeError) as e:

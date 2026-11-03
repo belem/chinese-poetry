@@ -1,6 +1,14 @@
 {
   "path": "唐/诗/全唐诗/poet.tang.47000.json",
-  "date": "2026-10-06",
-  "reviewer": "claude-opus-5-5",
-  "status": "clean"
+  "fixes": [
+    {
+      "original": "芙蓉古丈夫　毛女",
+      "corrected": "芙蓉古丈夫 毛女",
+      "note": "作者名的全角空格 U+3000 改半角"
+    }
+  ],
+  "note": "issue #258 批次 7：只改 author 字段里的空格一个字符，正文、题名未动",
+  "date": "2026-11-03",
+  "reviewer": "codebuddy",
+  "status": "fixed"
 }

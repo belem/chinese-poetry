@@ -4,9 +4,9 @@
   "stats": {
     "total_files": 903,
     "reviewed": 910,
-    "clean": 315,
-    "fixed": 142,
-    "needs_review": 249,
+    "clean": 314,
+    "fixed": 145,
+    "needs_review": 247,
     "out_of_scope": 204,
     "in_scope_files": 706
   },
@@ -592,9 +592,9 @@
       "status": "clean"
     },
     "唐/诗/全唐诗/poet.tang.47000.json": {
-      "date": "2026-10-06",
-      "reviewer": "claude-opus-5-5",
-      "status": "clean"
+      "date": "2026-11-03",
+      "reviewer": "codebuddy",
+      "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.48000.json": {
       "date": "2026-11-01",
@@ -637,14 +637,14 @@
       "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.55000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.56000.json": {
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "reviewer": "codebuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "唐/诗/全唐诗/poet.tang.57000.json": {
       "date": "2026-10-30",
