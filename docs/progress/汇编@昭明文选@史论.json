@@ -1,7 +1,54 @@
 {
   "path": "汇编/昭明文选/史论.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "fixes": [
+    {
+      "original": "萧机之称",
+      "corrected": "萧杌之称",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "飾玩少華",
+      "corrected": "飾玩華少",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "遂忘濁蠹",
+      "corrected": "遂忘蠹",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "翼扶王",
+      "corrected": "翼扶王室",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "鬻繒屠狗",
+      "corrected": "鬻繒盜狗",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "以志功次",
+      "corrected": "以志功臣次",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "以情緯，以文被質",
+      "corrected": "以情緯文，以文被質",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "敷祍論心",
+      "corrected": "敷衽論心",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "搆于床第",
+      "corrected": "構于床笫",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    }
+  ],
+  "note": "卷四十九至五十（史論上、史論下）九篇依六臣注本 SBCK300 重出：去注文、按底本自然段重排（晉紀總論 7 段、後漢書皇后紀論 4 段、二十八將傳論 4 段、宦者傳論 5 段、逸民傳論 2 段、謝靈運傳論 5 段、恩倖傳論 4 段），句读照底本。旧库是一句一段的爬来白文。卷四十九六臣本与底本大体逐字相合，异体字已归一，只留真讹。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

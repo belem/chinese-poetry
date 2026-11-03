@@ -1,7 +1,24 @@
 {
   "path": "汇编/昭明文选/史述赞.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "fixes": [
+    {
+      "original": "閫閫恣趙",
+      "corrected": "閫闈恣趙",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "錕隸",
+      "corrected": "餓隸",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "呉克忠信",
+      "corrected": "吳克忠信",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    }
+  ],
+  "note": "卷五十（史述贊）二篇依六臣注本 SBCK300 重出：史述贊三首（述高紀第一、述成紀第十、述韓英彭盧吳傳第四，各一首一段）、後漢書光武紀贊。旧库是一句一段的爬来白文（27/12 段）。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }

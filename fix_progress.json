@@ -5,8 +5,8 @@
     "total_files": 1052,
     "reviewed": 1057,
     "clean": 313,
-    "fixed": 148,
-    "needs_review": 392,
+    "fixed": 151,
+    "needs_review": 389,
     "out_of_scope": 204,
     "in_scope_files": 853
   },
@@ -4427,14 +4427,14 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/史论.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/史述赞.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/吊文.json": {
       "date": "2026-10-28",
@@ -4507,9 +4507,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/符命.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/笺.json": {
       "date": "2026-10-28",
