@@ -5,8 +5,8 @@
     "total_files": 903,
     "reviewed": 910,
     "clean": 315,
-    "fixed": 139,
-    "needs_review": 252,
+    "fixed": 142,
+    "needs_review": 249,
     "out_of_scope": 204,
     "in_scope_files": 706
   },
@@ -4002,9 +4002,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/行状.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2025-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/表.json": {
       "date": "2026-10-28",
@@ -4197,9 +4197,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/赋·京都中.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2025-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/赋·哀伤.json": {
       "date": "2026-10-28",
@@ -4227,9 +4227,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/赋·情.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2025-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/赋·江海.json": {
       "date": "2026-10-28",

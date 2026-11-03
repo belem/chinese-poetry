@@ -1,7 +1,14 @@
 {
   "path": "汇编/昭明文选/行状.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "fixes": [
+    {
+      "original": "祖太祖高皇帝　父世祖武皇帝",
+      "corrected": "祖太祖高皇帝 / 父世祖武皇帝（拆两段）",
+      "note": "分段"
+    }
+  ],
+  "note": "底本《齊竟陵文宣王行狀》篇首「祖太祖髙皇帝」「父世祖武皇帝」是两行，原文件用全角空格连成一段；拆回两段。正文未逐字对勘。",
+  "date": "2025-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
