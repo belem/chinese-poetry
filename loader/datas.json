@@ -830,6 +830,13 @@
             "tag": "paragraphs",
             "comments": "清錢彩編次、金豐增訂，八十回；底本 reference/说岳全传.txt（简体排印本，逐段带句读），由 scripts/import_shuoyue_reference.py 生成，题名「第N回　回目」。底本缺第五二回（回次由 51 跳到 53），该回只立回目、正文待补；底本用「一」当专名号（一江一山、一精一忠、欧一陽一从善），断到下一行的一并接回再删，见 docs/名著增补.md"
         },
+        "suitang-yanyi": {
+            "name": "清/隋唐演义",
+            "id": 127,
+            "path": "清/小说/隋唐演义/suitangyanyi.json",
+            "tag": "paragraphs",
+            "comments": "清褚人获《隋唐演义》：一百回齐，底本 repo 内 reference/隋唐演义1.txt（起第01回）、隋唐演义2.txt（起第50回）两份简体排印本，由 scripts/import_suitang_reference.py 生成。题名「第N回　回目」。底本一行不是一段（长段按定宽折行），现按句末标点把折行接回自然段、诗词曲一行一段；标点按底本读法规整（道，引文→道：“、后引号前的逗号删去、半角标点改全角、着重号 ** 删掉）。底本缺字记号 囗 → □，字不补；拼音残渣（老ZJ、yx、DQ、DD 等）逐处改，依据见 docs/隋唐演义重建.md。未与别的刻本逐句对勘"
+        },
         "chuke-paian": {
             "name": "清/初刻拍案惊奇",
             "id": 123,

@@ -1,0 +1,7 @@
+{
+  "path": "清/小说/隋唐演义/suitangyanyi.json",
+  "note": "按 reference/隋唐演义1.txt、隋唐演义2.txt 整本重出：折行按句末标点接回自然段、诗词曲一行一段、标点按读法重校（引号成对、道，引文→道：“、叠标点与半角标点规整、着重号删掉），底本缺字 囗→□ 不补，拼音残渣逐处改。未与别的刻本逐句对勘。见 docs/隋唐演义重建.md",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy (deepseek-v3.2)",
+  "status": "needs_review"
+}
