@@ -84,7 +84,55 @@ def is_author(s):
     return 0 < len(s) <= 8 and not PUNCT.search(s) and not HEAD_PUNCT.match(s) and '曰' not in s
 
 
-def is_note(s):
+def split_inline_note(s):
+    """注与正文粘在同一段时（「樂府解題曰：“……”出西門，步念之。…」）在注的收尾引号处切开。
+
+    只在段首是「書名/篇名曰：」且注文自带的引号能配平时切；配不平就把整段当注，
+    不硬切 —— 宁可注多收一句，也不把正文切坏。
+    """
+    s = s.strip()
+    if not re.match(r'^[^，。：；]{2,10}(曰|云)[：:]', s):
+        return s, None
+    depth = 0
+    for i, ch in enumerate(s):
+        if ch in '“「':
+            depth += 1
+        elif ch in '”」':
+            depth -= 1
+            if depth == 0:
+                tail = s[i + 1:]
+                # 切口之后要像正文：不是「按…」「又…」「故…」这类续注，也不是以句读起头
+                if tail and not re.match(r'^[，。；：、]', tail) and \
+                        not re.match(r'^(按|又|故|則|蓋|葢|然|而|其)', tail):
+                    return s[:i + 1], tail
+                return s, None
+    return s, None
+
+
+DUP_PUNCT = re.compile(r'([，。、；：])\1+')
+
+
+def tidy(t):
+    """底本在行内断点处会留下重复标点（「形傞傞，，聲號呶」），生成时并作一个。"""
+    t = DUP_PUNCT.sub(r'\1', t)
+    return t.strip()
+
+
+def is_note(s, title=None):
+    """题下注：`一曰…`、`某書（志/傳/録）曰：…`、`樂府解題曰…`，
+    以及以篇题起头的解说（「紀遼東，隋煬帝所作也。通典曰：…」）。"""
+    s = s.strip()
+    if s.startswith('一曰'):
+        return True
+    if re.match(r'^[^，。：；]{2,10}(曰|云)[：:]', s):
+        return True
+    if title and len(title) >= 2 and s.startswith(title) and re.match(r'^' + re.escape(title) + r'[，、]', s):
+        # 「篇题，……也。某書曰：…」：题名后紧跟解释，且句中带「曰：」
+        return '曰：' in s[:120] or '所作也' in s[:60] or '之所作也' in s[:60]
+    return False
+
+
+def is_note_old(s):
     """题下注：`一曰…`、`某書（志/傳/録）曰：…`、`樂府解題曰…`。
 
     注在底本里就是正文前的一段散文，篇幅常比正文还长；它们不是作品正文，收进 notes。
@@ -153,21 +201,47 @@ def build_volume(vol, nodes):
     """
     recs = []
 
-    def poem(title, sub, lines, kid, inher=None):
+    def poem(title, sub, lines, kid, inher=None, group_authors=()):
         lines = [x for x in lines if x.strip()]
         notes = []
+        # 分首题名尾巴上粘着作者（「天符頌明帝」，其下没有作者行）：按同组已出现的作者拆
+        t0 = re.sub(r'\s+', '', title)
+        for a in group_authors:
+            if a and len(a) >= 2 and t0.endswith(a) and len(t0) > len(a) + 1:
+                title = t0[:-len(a)]
+                inher = a
+                break
+        # 小类总注被拼到首条时，注与正文可能同在一行：先在段内置前处切开
+        if lines:
+            head, rest = split_inline_note(lines[0])
+            if rest:
+                notes.append(head)
+                lines[0] = rest
+        # 小类总注（如「南齊書樂志曰：…」）可能挡在作者行前面：先剥注，再认作者
+        while lines and is_note(lines[0], title):
+            head, rest = split_inline_note(lines[0])
+            notes.append(head)
+            if rest:
+                lines[0] = rest
+                break
+            lines.pop(0)
         if lines and is_author(lines[0]) and not re.match(r'^[一二三四五六七八九十百]+首$', lines[0]):
             author = lines.pop(0).strip()
         else:
             author = inher
-        while lines and is_note(lines[0]):
-            notes.append(lines.pop(0))
+        while lines and is_note(lines[0], title):
+            head, rest = split_inline_note(lines[0])
+            notes.append(head)
+            if rest:
+                lines[0] = rest
+            else:
+                lines.pop(0)
         t = re.sub(r'\s+', '', title)
         m = re.search(r'([一二三四五六七八九十百]+)首$', t)
         if m:
             t = t[:m.start()]
         return {'sub': sub, 'rawtitle': t, 'author': author, 'notes': notes,
-                'paras': lines, 'kid': kid}
+                'paras': [tidy(x) for x in lines], 'kid': kid}
 
     # 先按「小类」分段
     blocks = []          # [(cls, sub, [nodes])]；sub 为 None 表示类目散文块
@@ -184,7 +258,17 @@ def build_volume(vol, nodes):
                 blocks[i][2].append(n)
                 break
 
+    prev_sub = None
     for cls, sub, group in blocks:
+        if sub is not None:
+            m = re.search(r'([一二三四五六七八九十百]+)首$', sub)
+            if m:
+                sub = sub[:m.start()]
+            # 「### 同前」也是篇题层级：还原成上一个母题，仍各自成条
+            if sub.startswith('同前'):
+                sub = (prev_sub or '') + sub[2:]
+            else:
+                prev_sub = sub
         if sub is None:
             body = [x for n in group for x in n['lines'] if x.strip()]
             if body:
@@ -193,10 +277,12 @@ def build_volume(vol, nodes):
             continue
         children = [n for n in group if n['title'] is not None]
         if not children:
+            # 小类本身就是篇名：正文里同样按「作者 → 题下注 → 正文」拆
             body = [x for n in group for x in n['lines'] if x.strip()]
-            if body:
-                recs.append({'cls': cls, 'sub': None, 'title': sub, 'author': None,
-                             'notes': [], 'paras': body})
+            r = poem(sub, None, body, False)
+            if r['paras']:
+                recs.append({'cls': cls, 'sub': None, 'title': r['rawtitle'],
+                             'author': r['author'], 'notes': r['notes'], 'paras': r['paras']})
             continue
         # 小类下、第一个篇题之前的文字：作为小类总注，挂到第一条
         head = group[0]
@@ -207,11 +293,16 @@ def build_volume(vol, nodes):
         if pre and is_author(pre[0]):
             last_author = pre.pop(0).strip()
         seen_titles = []
+        group_authors = []
+        first = True
         for idx, n in enumerate(children):
-            lines = (pre if idx == 0 else []) + n['lines']
-            r = poem(n['title'], sub, lines, n['kid'], last_author)
+            lines = (pre + n['lines']) if first else n['lines']
+            first = False
+            r = poem(n['title'], sub, lines, n['kid'], last_author, group_authors)
             seen_titles.append(r)
             # 母题（#### ）下直接跟着分首（##### ）时，作者写在母题下面，向下继承
+            if r['author'] and r['author'] not in group_authors:
+                group_authors.append(r['author'])
             if not n['kid'] and r['author']:
                 last_author = r['author']
             elif n['kid']:
@@ -221,6 +312,16 @@ def build_volume(vol, nodes):
                     r['author'] = last_author
             # 底本把作者粘在篇题尾巴上（「晉正德大豫舞歌荀勖」，其下直接是分首，没有作者行）：
             # 这种题里带分首的，从题尾拆出作者
+            if r['author'] is None:
+                # 分首题名尾巴上粘作者（「天符頌明帝」，其下没有作者行）：同组分首的作者就是它
+                for prev in reversed(seen_titles):
+                    a = (prev.get('author') or '').strip()
+                    if a and len(a) >= 2 and r['rawtitle'].endswith(a) and \
+                            len(r['rawtitle']) > len(a) + 1:
+                        r['rawtitle'] = r['rawtitle'][:-len(a)]
+                        r['author'] = a
+                        last_author = a
+                        break
             if r['author'] is None:
                 titles = {x.get('rawtitle') or '' for x in seen_titles if x.get('rawtitle')}
                 for cut in range(len(r['rawtitle']) - 2, 1, -1):
