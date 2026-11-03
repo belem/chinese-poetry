@@ -1,7 +1,59 @@
 {
   "path": "汇编/昭明文选/符命.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "fixes": [
+    {
+      "original": "梁甫",
+      "corrected": "梁父",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "儲社",
+      "corrected": "儲祉",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "契三神",
+      "corrected": "挈三神",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "刬滅古文",
+      "corrected": "剗滅古文",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "自勤公業",
+      "corrected": "自勒功業",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "帝作穆穆",
+      "corrected": "旁作穆穆",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "方斯薎矣",
+      "corrected": "方斯蔑矣",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "彛倫斁",
+      "corrected": "彝倫斁",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "鬼區匿亡回",
+      "corrected": "鬼區慝亡回",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    },
+    {
+      "original": "屯用篤誨",
+      "corrected": "屯朋篤誨",
+      "note": "依 reference/昭明文選4.txt 底本对勘"
+    }
+  ],
+  "note": "卷四十八（符命）三篇依六臣注本 SBCK300 重出：去注文、按底本自然段重排（封禪文 10 段、劇秦美新 7 段、典引 9 段），句读照底本。旧库是一句一段的爬来白文（84/117/93 段）。",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
