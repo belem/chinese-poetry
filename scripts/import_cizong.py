@@ -115,6 +115,24 @@ EXTRA_TUNES = '''
 一剪梅 苏幕遮 天香 兰陵王 暗香 疏影 齐天乐 湘月 探春慢 雨霖铃 二郎神 醉蓬莱 千秋岁引
 '''
 
+# 底本卷里标题行抄断、把姓名拆成两半的，逐条列在这里（明细见 docs/词综勘误.tsv）
+TUNE_EXTRA = ('烛影摇红',)            # 词牌表里没有、底本抄断的调名
+HEAD_FIX = {'烛影摇红王仲': '烛影摇红王仲甫'}   # 抄断的标题行 → 补全（只补词牌，人名不动）
+NAME_SPLIT = {'韩亻屋': '韩偓', '王丽真女郎': '王丽真', '员外柳氏': '柳氏'}   # 拆字 / 把身份当名字
+
+# 「词牌＋小题＋作者」抄成一串、只能逐条拆的几行
+SUB_AUTHOR = {
+    '杨柳枝答韩员外柳氏': ('杨柳枝', '答韩员外', '柳氏'),
+    '字字双·王丽真女郎': ('字字双', '', '王丽真'),
+}
+
+# 底本抄的是字号、作者表里没有的人：只在拆标题行时当作者认，不写进作者表、也不改正文
+# （秦觏：底本把「黄金缕」一首署在秦觏名下，见 docs/词综勘误.tsv）
+NAME_EXTRA = {'苏小小', '秦觏', '潘元质', '田不伐', '刘镇'}
+
+# 作者位截短时，留在作者后面的那一截只是没有实义的字（`苏小小词` 的「词」）
+NAME_MID = re.compile(r'^[词曲序引令慢近歌行吟]{0,2}$')
+
 # 底本误字 / 异体，只在认词牌时归一，写盘仍照底本字形（勘误表单独记）
 TUNE_ALIAS = {'忆秦蛾': '忆秦娥', '菩萨鬘': '菩萨蛮', '番女怨': '蕃女怨', '锁窗寒': '琐窗寒',
               '威氏': '戚氏', '竹马儿': '竹马子', '归国谣': '归国遥', '荔支香近': '荔枝香近',
@@ -244,7 +262,7 @@ class Parser:
 
     # ---------------- 词牌表
     def _load_tunes(self, root):
-        tunes = set(EXTRA_TUNES.split())
+        tunes = set(EXTRA_TUNES.split()) | set(TUNE_EXTRA)
         for dirpath, dirs, files in os.walk(root):
             dirs[:] = [d for d in dirs if d not in {'reference', 'scripts', 'docs', 'loader', 'rank',
                                                     'strains', 'images', '.git', '.github', '.cnb'}]
@@ -275,8 +293,27 @@ class Parser:
         return cn2int(s)
 
     def is_section_label(self, s):
+        """卷首的「唐词六十八首」「宋词六十二首」「五代十国词七十二首」这类分卷小标题。
+
+        只认「…词＋数目＋首」这一种：光看「以词结尾」会把末一首词的正文第一句
+        （`一庭红扑簌` 后面的卷尾、`夜行船余英溪` 之类）也吃掉。
+        """
         s = s.strip()
-        return bool(s) and len(s) <= 16 and not SENT.search(s) and re.search(r'词$', s)
+        if not s or len(s) > 16 or SENT.search(s):
+            return False
+        return bool(re.search(r'词[〇一二三四五六七八九十百\d]+首$', s))
+
+    def head_override(self, head):
+        """标题行的单行修正：底本把词牌抄断的（`烛影摇红王仲` → 补「甫」）。"""
+        for raw, fixed in HEAD_FIX.items():
+            if head.startswith(raw):
+                return fixed + head[len(raw):]
+        return head
+
+    def split_subauth(self, head):
+        """`词牌＋小题＋作者` 抄成一串、只能逐条拆的几行（见 SUB_AUTHOR）。"""
+        got = SUB_AUTHOR.get(head)
+        return ('tune',) + got if got else None
 
     # ---------------- 切块：空行分段，首行是标题行
     def blocks(self):
@@ -335,6 +372,14 @@ class Parser:
     def _split_once(self, h):
         if h.startswith(('又', '前题')):
             return None          # 承上条，由 build 处理
+        got = self.split_subauth(h)
+        if got:
+            return got
+        # 一行里排了两首（`黄金缕足司马才仲梦中苏小小词秦觏`）：拆出前一首，
+        # 后半首由 build 另记一条（见 split_multi / split_pending）
+        multi = self.split_multi(h)
+        if multi:
+            return multi
         # 整行就是一个词牌（底本漏抄作者）：词牌先认，作者留给 build 承上
         if h in self.tunes:
             return 'tune', TUNE_ALIAS_REV.get(h, h), '', None
@@ -365,6 +410,69 @@ class Parser:
         if tuned and len(tuned[0]) == len(h):
             return 'tune', tuned[0], '', None
         return None
+
+    def tune_at(self, seg, pre=''):
+        """`词牌 ＋（题注）＋ 作者` → (词牌, 作者)。`pre` 是前一首的词牌（后一首同调时用）。"""
+        cands = [pre] if pre else [t for t in self.tunes if seg.startswith(t)]
+        for t in sorted(cands, key=len, reverse=True):
+            if not t:
+                continue
+            if pre:
+                rest = seg                                  # 后一首同调，只剩作者名
+            elif seg.startswith(t):
+                rest = seg[len(t):]
+            else:
+                continue
+            best = None
+            for j in range(0, len(rest)):
+                tail = rest[j:]
+                if not re.fullmatch(r'[\u4e00-\u9fff]+', tail) or SENT.search(rest[:j]):
+                    continue
+                for k in range(min(len(tail), 6), 1, -1):
+                    if self._is_name(tail[:k]) and NAME_MID.match(tail[k:]):
+                        if not best or k >= best[0]:
+                            best = (k, tail[:k])
+                        break
+            if best:
+                return t, best[1]
+        return None
+
+    def _is_name(self, s):
+        """拆标题行时的「像人名」：作者表、底本字号表里有的才算（宁缺毋滥）。"""
+        return bool(s) and (s in self.vocab or s in NAME_EXTRA or s in NAME_SPLIT
+                            or s in AUTHOR_FIX or s in AUTHOR_FIX.values())
+
+    def split_multi(self, h):
+        """一行里排了两首 → 拆出前一首 `词牌+题注+作者`。
+
+        后一首那一截要「只剩一个作者名」（`…苏小小词秦觏` 的「秦觏」）；只切到半截残文
+        （`…苏小小词` 的「词」）是断句，不算。前一首取最长的那一截。
+        """
+        cut = None
+        for i in range(len(h) - 2, 0, -1):     # 后半截至少两个字（一个作者名）
+            front = self.tune_at(h[:i])
+            if not front:
+                continue
+            back = self.tune_at(h[i:], front[0])
+            if not back:
+                continue
+            if NAME_MID.match(h[i:len(h) - len(back[1])]) and (cut is None or i > cut[0]):
+                cut = (i, front[0], front[1])
+        if not cut:
+            return None
+        i, tune, author = cut
+        return 'multi', tune, h[len(tune):i - len(author)].strip(), author
+
+    def split_pending(self, h, tune, author):
+        """一行两首的后半首：从上一首作者之后接着切，词牌同前。"""
+        at = h.rfind(author)
+        if at < 0:
+            return None
+        seg = h[at + len(author):].strip()
+        got = self.tune_at(seg, tune)
+        if not got:
+            return None
+        return got[0], seg[len(got[0]):len(seg) - len(got[1])].strip(), got[1]
 
     def tune_of_text(self, s):
         """一段文字 → (词牌, 小题)。`词牌·小题`、`词牌小题`、整段就是词牌，都认。"""
@@ -473,8 +581,16 @@ class Parser:
         for b in self.blocks():
             kind, tune, sub, author = self.split_head(b['head'], prev)
             h = b['head']
-            # 「小楼连苑梅杨樵云」这类：词牌表里只有「小楼连苑」时，多出来的那一字是小字
-            if kind == 'tune' and sub and len(sub) == 1 and author and len(author) >= 2:
+            fixed = self.head_override(h)
+            if fixed != h:
+                b['head_raw'] = h
+                h = b['head'] = fixed
+                kind, tune, sub, author = self.split_head(h, prev)
+            # 「小楼连苑梅杨樵云」这类：词牌表里只有「小楼连苑」时，多出来的那一字是小字。
+            # 分栏体那个单字是正经小题（`霜天晓角·梅  林逋`），不删
+            split_form = re.search(r'[ \u3000]{2,}', b['head'])
+            if kind == 'tune' and sub and len(sub) == 1 and author and len(author) >= 2 \
+                    and not (split_form and b['head'][:split_form.start()].endswith(sub)):
                 b['sub_extra'] = sub
                 sub = ''
             if h.startswith(('又', '前题')):
@@ -486,7 +602,18 @@ class Parser:
             if kind == 'unknown':
                 # `又`、`又某题`（同调再作）、`前题`（同小题再作）承上
                 if h.startswith('又'):
-                    tune, sub = prev['tune'], h[1:].strip()
+                    tune = prev['tune']
+                    tail = h[1:]
+                    if author and tail.endswith(author):
+                        tail = tail[:-len(author)].strip()
+                    else:
+                        tail = tail.strip()
+                        for name in sorted(self.vocab, key=len, reverse=True):
+                            if tail.endswith(name) and len(tail) > len(name):
+                                tail = tail[:-len(name)].strip()
+                                break
+                    # `又桑贺铸` 的「桑」是「又（咏）桑」的残文，单字不当小题
+                    sub = '' if len(tail) <= 1 else tail
                     author = author or prev['author']
                 elif h.startswith('前题') and prev['tune']:
                     tune, sub = prev['tune'], prev['sub'] or h[2:].strip()
@@ -502,6 +629,10 @@ class Parser:
                         author = prev['author']
                 else:
                     problems.append(b)
+            if sub == '前题':
+                sub = prev['sub']        # 分栏体把「前题」当小题抄进了左栏
+            if sub and author and sub.endswith(author) and len(sub) > len(author):
+                sub = sub[:-len(author)].strip()      # `又莺莺毛滂`：作者挂在小题尾巴上
             if author is None:
                 author = prev['author']
             if not tune:
@@ -534,6 +665,9 @@ class Parser:
                     author = author[::-1]
                 elif author in ('颜完', '完颜'):
                     author = '完颜'      # 金人复姓，作者表未收，照底本正字写
+            if author and author in NAME_SPLIT:
+                b['author_raw'] = author
+                author = NAME_SPLIT[author]
             # 底本把作者名抄错的（晁補之→晃补之、陳與義→陈凝之）：按作者表归一，勘误另记
             if author and author in AUTHOR_FIX:
                 b['author_raw'] = author
@@ -557,6 +691,17 @@ class Parser:
                 problems.append(b)
             prev = {'tune': tune, 'sub': sub, 'author': author}
             recs.append(b)
+            # 一行两首：后半首另记一条，正文同上一首（底本把它们排在一行里）
+            if kind == 'multi':
+                more = self.split_pending(h, tune, author)
+                if more:
+                    t2, s2, a2 = more
+                    b2 = dict(b, tune=t2, sub=s2, author=a2, kind='multi2')
+                    if t2 in TUNE_ALIAS and TUNE_ALIAS[t2] != t2:
+                        b2['tune_raw'] = t2
+                        b2['tune'] = TUNE_ALIAS[t2]
+                    recs.append(b2)
+                    prev = {'tune': b2['tune'], 'sub': s2, 'author': a2}
         return recs, problems, warns
 
     def is_author(self, s):
@@ -729,8 +874,11 @@ def main():
             item['dynasty'] = dyn_all.get(item['author'], '')
             item['title'] = title
             item['rhythmic'] = r['tune']
-            if r.get('sub') and not is_prose_note(r['sub']):
-                item['subtitle'] = r['sub']
+            sub = r.get('sub') or ''
+            if sub == '前题':
+                sub = ''                              # 承上的记号，不是小题
+            if sub and not is_prose_note(sub) and title.split('·', 1)[-1] == sub:
+                item['subtitle'] = sub                # 标题里的小题才写（首句式的不写）
             item['paragraphs'] = paras
             if notes:
                 item['notes'] = notes
@@ -758,7 +906,11 @@ def main():
     # 勘误与承上有疑的逐条明细：底本行号 + 标题行 + 处理办法
     errs = []
     for r in recs:
-        if r.get('author_raw'):
+        if r.get('head_raw'):
+            errs.append((r['line'], r['head_raw'], '标题行照底本补全', f"{r['head_raw']} → {r['head']}"))
+        if r.get('sub_extra'):
+            errs.append((r['line'], r['head'], '小题单字残文', f"{r['sub_extra']} → 删"))
+        if r.get('author_raw') and r['author_raw'] != r['author']:
             errs.append((r['line'], r['head'], '作者名照作者表改', f"{r['author_raw']} → {r['author']}"))
         if r.get('tune_raw'):
             errs.append((r['line'], r['head'], '词牌照通行名改', f"{r['tune_raw']} → {r['tune']}"))
