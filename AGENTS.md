@@ -31,7 +31,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 明/{诗/{poet.ming.json,古诗源·明诗.json},词/ci.ming.json}
 清/{诗/{poet.qing.json,古诗源·清诗.json,纳兰诗/},词/ci.qing.json（含纳兰词，tags 标记）,幽梦影/}
 近现/现代诗.json　当/{poet.dang.json,ci.dang.json}
-汇编/{古文观止/（古文观止.json、12 卷、古文观止·补.json）,古文选段/（原 先秦/课外经典/，2026-11 由 课本选目/ 改名）,
+汇编/{古文观止/（古文观止.json、12 卷、古文观止·补.json）,小古文/（原 先秦/课外经典/，2026-11 由 课本选目/ 改名）,
       乐府诗集/,昭明文选/,蒙学/（三字经…增广贤文 14 种）}
 明/小说/{三国演义/,水浒传/,西游记/}　清/小说/红楼梦/　南北朝/小说/世说新语/　晋/小说/搜神记/
 史书/{史记,三国志,春秋左氏传,战国策}/
@@ -44,7 +44,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 - **哪个朝代归哪个目录**：作者朝代（`authors/authors.json` 的 `dynasty`）说话。春秋战国、秦、商、上古 → `先秦`；
   辽、金 → `宋`；1912—1949 年出生的作者 → `近现`；1949 年以后 → `当`。`晋` 不再细分东西晋，`南北朝` 不分南北。
-- 跨代、又没有单一主时段的书放 `汇编/`：《古文观止》（周文至明文）、古文选段（原 `先秦/课外经典/`，
+- 跨代、又没有单一主时段的书放 `汇编/`：《古文观止》（周文至明文）、小古文（原 `先秦/课外经典/`，
   按主题编的短篇古文，不是一个集子名）、《乐府诗集》《昭明文选》（2026-10 由 `先秦/诗文总集/` 移入，
   不再套一层 `诗文总集/`，与其余书一样直挂 `汇编/`）、
   蒙学一组书（2026-10 由 `先秦/蒙学/` 移入，成于汉至清，没有一部是先秦的；2026-11 起十一部
@@ -73,7 +73,7 @@ Community task: systematically review all JSON poetry files and fix typos and ga
 
 一件作品只留一份正文：选本与总集逐字相重的，删选本那一份；《古诗源》摘句的《诗经》《楚辞》篇目已删，
 只保留 `诗经/shijing.json`、`楚辞/chuci.json` 的全文版本。
-判据是「**逐字相重**」：总集进库不是删选本的理由，选本有它自己的用场（`汇编/古文选段/` 是给小读者的小古文集子，
+判据是「**逐字相重**」：总集进库不是删选本的理由，选本有它自己的用场（`汇编/小古文/` 是给小读者的小古文集子，
 《世说新语》整本进库后，其中署劉義慶的那 10 篇仍旧保留——数篇是改写本，与整本字面不同，见
 [docs/名著增补.md](docs/名著增补.md)）。
 
@@ -264,7 +264,7 @@ Per-file review cannot scale to rare poems you do not recognize. These tools fix
 | `scripts/merge_anthologies.py` | Merge Tang anthologies into 全唐诗/poet.tang.* (tags + `prologue`) and drop poet.tang copies of 花间集/南唐 词; dry-run by default, `--apply` writes `docs/唐诗去重.tsv`. Already applied — rerun only if those files are re-imported. |
 | `scripts/shidian.py` + `scripts/shidian/search.mjs` | Evidence pipeline: `build` → search 识典古籍 → `analyze` → review `review.tsv` → `apply`. |
 | `scripts/split_dynasty.py` | Split `历代/` into the per-dynasty directories by author dynasty and genre (dry-run by default; `--apply` writes and emits `docs/历代拆分.tsv`). Already applied — `历代/` no longer exists |
-| `scripts/dedupe_duplicates.py` | 按 docs/重复清理.md 的口径自动清掉能定案的重复：宋词两批数据合并、元曲残句、三国简繁两次转录、古文选段与《古文观止·补》的选段。只删能自动定案的，异文与归属异说一律两存 |
+| `scripts/dedupe_duplicates.py` | 按 docs/重复清理.md 的口径自动清掉能定案的重复：宋词两批数据合并、元曲残句、三国简繁两次转录、小古文与《古文观止·补》的选段。只删能自动定案的，异文与归属异说一律两存 |
 | `scripts/dedupe_songci_attr.py` | 宋词归属异说与别名归并：先按 `ALIAS` 把同一人的两种署名并人，再让作者不同、正文相同的两组两存互挂 `tags`；正文有出入的先按 `SOURCE_FIX` 改讹字。见 `docs/宋词归属异说.md` |
 | `scripts/merge_lianju.py` | 《全宋诗》联句拆条并成一条多人联句：`author` 写「A/B/C」，`title` 取篇题最全的一读，正文一字不动、不写句下署名，`notes` 记缘起。逐组依据在 `GROUPS`，明细写 `docs/联句合并.tsv`。见 `docs/联句合并.md` |
 | `scripts/check_anthology.py` | Align 选本 目次 (`anthologies/*.json`) with the records carrying that anthology's tag; reports 混入 / 漏收 / 重覆 into `docs/选本对齐.tsv`. See `docs/选本对齐.md`. |
