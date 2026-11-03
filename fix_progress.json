@@ -5,8 +5,8 @@
     "total_files": 1052,
     "reviewed": 1057,
     "clean": 313,
-    "fixed": 146,
-    "needs_review": 394,
+    "fixed": 148,
+    "needs_review": 392,
     "out_of_scope": 204,
     "in_scope_files": 853
   },
@@ -4822,9 +4822,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/赞.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/辞.json": {
       "date": "2026-11-03",
@@ -4842,9 +4842,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/颂.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/骚.json": {
       "date": "2026-10-27",
