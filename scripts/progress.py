@@ -111,6 +111,8 @@ def merge(rel, entry):
     """
     rec = load().get(rel) or {'status': 'clean'}
     rec = json.loads(json.dumps(rec))            # 缓存里的对象不就地改
+    if not rec.get('path'):
+        rec['path'] = rel                         # 新记录也要自带 path，否则索引认不出
     new_fixes = entry.get('fixes') or []
     if new_fixes or rec.get('fixes'):
         fixes = rec.setdefault('fixes', [])
@@ -132,6 +134,12 @@ def merge(rel, entry):
                 rec[k] = v
         elif k in FIELDS and v is not None:
             rec[k] = v
+    # 本次登记的元数据总覆盖上一次：重审后日期/审查人才不会停在旧值
+    if entry.get('note'):
+        rec['note'] = entry['note']
+    for k in FIELDS:
+        if entry.get(k) is not None:
+            rec[k] = entry[k]
     rec.setdefault('status', 'clean')
     if 'fixes' in rec and not rec['fixes']:
         del rec['fixes']

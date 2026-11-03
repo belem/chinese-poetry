@@ -57,11 +57,40 @@ for (const q of todo) {
     const at = text.indexOf(marker);
     if (at >= 0) text = text.slice(at).slice(0, 12000);
     else if (/找到 0 条|共找到 0/.test(text)) text = marker + '\n(0 results)';
+
+  // 结构化抓取：结果条目的跳转链接 + 书名信息（供正文对勘用）
+  let links = [];
+  try {
+    links = await page.evaluate(() => {
+      const out = [];
+      const seen = new Set();
+      for (const a of document.querySelectorAll('a[href*="/book/"]')) {
+        const href = a.getAttribute('href');
+        if (!href || seen.has(href)) continue;
+        seen.add(href);
+        const quote = (a.innerText || '').trim();
+        // 书名/版本信息在链接后面的兄弟节点里
+        let info = '';
+        let el = a.closest('div, li, section, article');
+        for (let i = 0; i < 4 && el; i++, el = el.parentElement) {
+          const t = el.innerText || '';
+          const m = t.match(/《[^》]{1,20}》[^\n]{0,160}/);
+          if (m) { info = m[0].trim(); break; }
+        }
+        if (!info) {
+          const parts = (a.parentElement?.innerText || '').split('\n').filter(Boolean);
+          info = parts.slice(-3).join(' | ');
+        }
+        out.push({ href, quote, info });
+      }
+      return out.slice(0, 24);
+    });
+  } catch (e) { /* 忽略 */ }
     else err = 'no result list rendered';   // 限流、验证码或加载过慢：留待重试
   } catch (e) {
     err = String(e).slice(0, 200);
   }
-  fs.appendFileSync(out, JSON.stringify({ q, text, err }) + '\n');
+  fs.appendFileSync(out, JSON.stringify({ q, text, err, links }) + '\n');
   if (++n % 20 === 0) console.log(`${n}/${todo.length}`);
   await new Promise(r => setTimeout(r, delay + Math.random() * 1500));
 }
