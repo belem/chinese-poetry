@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 1051,
-    "reviewed": 1056,
+    "total_files": 1052,
+    "reviewed": 1057,
     "clean": 313,
-    "fixed": 143,
-    "needs_review": 396,
+    "fixed": 146,
+    "needs_review": 394,
     "out_of_scope": 204,
-    "in_scope_files": 852
+    "in_scope_files": 853
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -4462,13 +4462,13 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/对问.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/序.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/弹事.json": {
@@ -4552,9 +4552,9 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/设论.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/诏.json": {
       "date": "2026-10-28",
@@ -4825,6 +4825,11 @@
       "date": "2026-10-28",
       "reviewer": "codebuddy",
       "status": "needs_review"
+    },
+    "汇编/昭明文选/辞.json": {
+      "date": "2026-11-03",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/连珠·论五.json": {
       "date": "2026-10-28",
