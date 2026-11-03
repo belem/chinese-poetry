@@ -1,7 +1,7 @@
 {
   "path": "汇编/昭明文选/对问.json",
-  "note": "随目录重构迁入本路径，只做了搬移/拆分，未逐字对勘",
-  "date": "2026-10-28",
-  "reviewer": "codebuddy",
-  "status": "needs_review"
+  "note": "依六臣注本卷四十五重出《對楚王問》：去李善注，按原書分段；底本\"原大王寬其罪\"、\"其曲彌高其和彌寡\"照录，不据通行本改",
+  "date": "2026-11-03",
+  "reviewer": "CodeBuddy",
+  "status": "fixed"
 }
