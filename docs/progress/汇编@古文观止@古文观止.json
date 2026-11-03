@@ -1,7 +1,7 @@
 {
   "path": "汇编/古文观止/古文观止.json",
-  "note": "书名条目，prologue 改写为底本与篇数说明",
-  "date": "2026-11-09",
+  "note": "2026-11 issue #289 依 repo 内 reference/古文观止.txt 整本重出：篇目、作者、引号已按底本与通行本立稳；逐篇对勘（搜韵 / 识典古籍）未做。",
+  "date": "2026-11-03",
   "reviewer": "CodeBuddy",
   "status": "needs_review"
 }
