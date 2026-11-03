@@ -5,8 +5,8 @@
     "total_files": 1000,
     "reviewed": 1007,
     "clean": 314,
-    "fixed": 143,
-    "needs_review": 346,
+    "fixed": 144,
+    "needs_review": 345,
     "out_of_scope": 204,
     "in_scope_files": 803
   },
@@ -4204,7 +4204,7 @@
     "汇编/乐府诗集/卷十五.json": {
       "date": "2026-11-03",
       "reviewer": "CodeBuddy",
-      "status": "needs_review"
+      "status": "fixed"
     },
     "汇编/乐府诗集/卷十八.json": {
       "date": "2026-11-03",

@@ -211,12 +211,15 @@ def build_volume(vol, nodes):
                 title = t0[:-len(a)]
                 inher = a
                 break
-        # 小类总注被拼到首条时，注与正文可能同在一行：先在段内置前处切开
+        # 小类总注被拼到首条时，注与正文可能同在一行：先在段内置前处切开。
+        # 注文自带的引号配不平（「漢書禮樂志曰：“…呼韓邪單于。」」）时整段归注
         if lines:
             head, rest = split_inline_note(lines[0])
             if rest:
                 notes.append(head)
                 lines[0] = rest
+            elif is_note(lines[0], title):
+                notes.append(lines.pop(0))
         # 小类总注（如「南齊書樂志曰：…」）可能挡在作者行前面：先剥注，再认作者
         while lines and is_note(lines[0], title):
             head, rest = split_inline_note(lines[0])
