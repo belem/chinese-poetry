@@ -1,5 +1,11 @@
 {
-  "ci_pattern": 334,
-  "missing_char": 5876,
+  "ascii_residue": 1217,
+  "bare_pua": 1,
+  "box_drawing": 19,
+  "ci_pattern": 333,
+  "dup_punct": 1,
+  "half_width_punct": 11,
+  "kana_bopomofo": 12,
+  "missing_char": 5528,
   "shi_line_length": 151
 }
