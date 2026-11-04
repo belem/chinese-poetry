@@ -25,6 +25,7 @@
   python3 scripts/check_structure.py                 # 打印汇总
   python3 scripts/check_structure.py --out r.jsonl   # 同时输出逐条明细（JSON Lines）
   python3 scripts/check_structure.py --only ci_pattern --show 20
+  python3 scripts/check_structure.py --count-only --baseline scripts/check_baseline.json  # 只数数、不打明细
 """
 import argparse
 import collections
@@ -84,10 +85,12 @@ def is_data_file(rel):
 def changed_data_files(ref):
     """相对 git ref 有增删改的数据文件（不含本次新加的、从未提交过的）。"""
     def git(*args):
+        # 逐条精确切分（-z）：中文路径一旦被转义加引号（core.quotepath 的默认行为），
+        # --files-from-diff 一个文件都认不出来，改动过的文件全被跳过，检查就变成空跑
         return subprocess.run(['git', '-C', ROOT, '-c', 'core.quotepath=false', *args], check=True,
-                              stdout=subprocess.PIPE, text=True).stdout.splitlines()
-    out = git('diff', '--name-only', '--diff-filter=d', ref, '--')   # d：删掉的文件不查
-    present = {os.path.normpath(x) for x in git('ls-files')}
+                              stdout=subprocess.PIPE, text=True).stdout.split('\0')[:-1]
+    out = git('diff', '--name-only', '-z', '--diff-filter=d', ref, '--')   # d：删掉的文件不查
+    present = {os.path.normpath(x) for x in git('ls-files', '-z')}
     files = []
     for rel in out:
         rel = os.path.normpath(rel)
@@ -99,7 +102,7 @@ def changed_data_files(ref):
 def count_all():
     """全库各类问题的数量（不保留明细，省内存）。"""
     counts = collections.Counter()
-    files = changed_data_files(args.files_from_diff) if args.files_from_diff else None
+    files = changed_data_files(resolve_ref(args.files_from_diff)) if args.files_from_diff else None
     if files is not None and not files:
         print('本次改动不涉及数据文件，无需比较')
         return 0
@@ -272,6 +275,8 @@ def main():
     ap.add_argument('--allow-fewer', action='store_true',
                     help='保留参数，已无作用：数量低于基线不再报错（旧口径见 docs/质检基线.md）')
     ap.add_argument('--write-baseline', help='把当前各类数量写为基线')
+    ap.add_argument('--count-only', action='store_true',
+                    help='不打逐条明细，只数各类数量并做基线比较（缺失字符每行都算一处，明细动辄几十万行）')
     args = ap.parse_args()
 
     findings = []
@@ -280,7 +285,7 @@ def main():
         findings.append({'check': kind, 'file': rel, 'index': idx, 'poem': label(it),
                          'text': text, 'token': token, 'detail': detail})
 
-    files = changed_data_files(args.files_from_diff) if args.files_from_diff else None
+    files = changed_data_files(resolve_ref(args.files_from_diff)) if args.files_from_diff else None
     if files is not None and not files:
         print('本次改动不涉及数据文件，无需比较')
         return 0
@@ -299,6 +304,8 @@ def main():
             elif name.startswith(SHI_PREFIX):
                 check_shi(rel, idx, it, lines, report)
     check_ci(ci_poems, report)
+    if files is not None:
+        print(f'只查改动文件：{len(files)} 个' + (f'，其中 {", ".join(files[:3])}…' if len(files) > 3 else ''))
 
     if args.out:
         with open(args.out, 'w', encoding='utf-8') as fp:
@@ -310,6 +317,9 @@ def main():
         by_kind[f['check']].append(f)
     for kind, items in sorted(by_kind.items(), key=lambda kv: -len(kv[1])):
         if args.only and kind != args.only:
+            continue
+        if args.count_only or args.show <= 0:
+            print(f'== {kind}: {len(items)} 处，涉及 {len({f[f"file"] for f in items})} 个文件')
             continue
         nfiles = len({f['file'] for f in items})
         print(f'\n== {kind}: {len(items)} 处，涉及 {nfiles} 个文件')
@@ -342,13 +352,11 @@ def main():
         with open(args.baseline, encoding='utf-8') as fp:
             base = json.load(fp)
     if base is not None:
-        if files is None:
-            worse = {k: (base.get(k, 0), counts.get(k, 0))
-                     for k in set(base) | set(counts) if counts.get(k, 0) > base.get(k, 0)}
-        else:
-            # 只判改动文件：基线里没有的检查项说明改动范围内本无此类问题
-            worse = {k: (base.get(k, 0), n) for k, n in counts.items() if n > base.get(k, 0)}
-        better = {k: (base.get(k, 0), counts.get(k, 0)) for k in base if counts.get(k, 0) < base[k]}
+        worse = {k: (base.get(k, 0), counts.get(k, 0))
+                 for k in set(base) | set(counts) if counts.get(k, 0) > base.get(k, 0)}
+        # 少报只在全库比时提：只查改动文件时，其它文件的同类问题本来就不在 counts 里
+        better = ({k: (base.get(k, 0), counts.get(k, 0)) for k in base if counts.get(k, 0) < base.get(k, 0)}
+                  if files is None else {})
         if better:
             print('\n本次改动使这些检查项数量下降（不必改基线，' +
                   'scripts/check_structure.py --write-baseline 重算即可）：'
@@ -361,11 +369,23 @@ def main():
     return 0
 
 
+def resolve_ref(ref):
+    """把 PR 号 / 分支名 / 提交号解析成全哈希。
+
+    合并请求的 head 与 base 常常不是祖先关系（两个分支各自往前跑），拿 merge-base 当基线
+    会把两边都在改的文件当成「本 PR 新增」。这里只在 git 认得这个 ref 时补全，别的原样返回。
+    """
+    r = subprocess.run(['git', '-C', ROOT, 'rev-parse', '--verify', '--quiet', f'{ref}^{{commit}}'],
+                       stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+    return r.stdout.strip() or ref
+
+
 def baseline_at(ref):
     """取 git ref 上的 check_baseline.json。基线不再要求手写回、也就不再是合并热点：
 
     只在「没改动任何数据文件」的提交（专职重算基线）里放进去，其余情况一律从 ref 现取。
     """
+    ref = resolve_ref(ref)
     for path in ('scripts/check_baseline.json', 'check_baseline.json'):
         r = subprocess.run(['git', '-C', ROOT, 'show', f'{ref}:{path}'],
                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
