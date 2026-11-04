@@ -56,7 +56,7 @@ fork 链：[chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（
 - `paragraphs` 是全库唯一的正文键；词、曲另用 `rhythmic`。
 - `id` 为 6 字符短标识，由「作者 + 题名 + 正文」哈希得来，搬目录、重分片都不变号。
 - 可选字段：`tags`（选本归属、题材）、`sources`（这条正文还见于哪部书）、`prologue`（赏析）。
-- 读数据用 `loader/datas.json`，124 个 dataset 的 key 沿用上游。
+- 读数据用 `loader/datas.json`，125 个 dataset 的 key 沿用上游。
 
 ## 本 fork 增补的内容
 
