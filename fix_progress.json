@@ -2,13 +2,13 @@
   "version": "2.0",
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
-    "total_files": 1052,
-    "reviewed": 1057,
+    "total_files": 1053,
+    "reviewed": 1058,
     "clean": 313,
-    "fixed": 151,
-    "needs_review": 389,
+    "fixed": 149,
+    "needs_review": 392,
     "out_of_scope": 204,
-    "in_scope_files": 853
+    "in_scope_files": 854
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -4437,7 +4437,7 @@
       "status": "fixed"
     },
     "汇编/昭明文选/吊文.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -4447,7 +4447,7 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/哀.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -4497,12 +4497,12 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/碑文.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/祭文.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -4517,14 +4517,14 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/箴.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/行状.json": {
-      "date": "2025-11-03",
-      "reviewer": "CodeBuddy",
-      "status": "fixed"
+      "date": "2026-11-04",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
     },
     "汇编/昭明文选/表.json": {
       "date": "2026-10-28",
@@ -4532,22 +4532,27 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/论·论一.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/论·论三.json": {
-      "date": "2025-11-03",
-      "reviewer": "CodeBuddy",
-      "status": "fixed"
+      "date": "2026-11-04",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
     },
     "汇编/昭明文选/论·论二.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
+      "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "汇编/昭明文选/论·论五.json": {
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/论·论四.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -4562,7 +4567,7 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/诔.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
@@ -4831,13 +4836,13 @@
       "reviewer": "CodeBuddy",
       "status": "fixed"
     },
-    "汇编/昭明文选/连珠·论五.json": {
-      "date": "2026-10-28",
+    "汇编/昭明文选/连珠.json": {
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
     "汇编/昭明文选/铭.json": {
-      "date": "2026-10-28",
+      "date": "2026-11-04",
       "reviewer": "codebuddy",
       "status": "needs_review"
     },
