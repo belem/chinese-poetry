@@ -12,8 +12,26 @@
 """
 import os, re, sys
 
-REF = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..',
-                   'reference', '昭明文選4.txt')
+_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'reference')
+
+# 底本按卷拆成四册（简体排印李善注本，一行一面）：
+#   1.txt 卷 1~16、2.txt 卷 17~27、3.txt 卷 28~43、4.txt 卷 44~60。
+# 卷四三与卷四四是跨册界限，按卷号选册，不要写死一份。
+REF_SPLIT = [(44, '昭明文選4.txt'), (28, '昭明文選3.txt'),
+             (17, '昭明文選2.txt'), (0, '昭明文選1.txt')]
+
+
+def ref_path(v=None):
+    """卷号 → 底本文件。不给卷号时退回卷四四那册（默认手册）。"""
+    if v is None:
+        return os.path.join(_ROOT, '昭明文選4.txt')
+    for lo, name in REF_SPLIT:
+        if v >= lo:
+            return os.path.join(_ROOT, name)
+    return os.path.join(_ROOT, '昭明文選1.txt')
+
+
+REF = ref_path()
 
 VOLS = [
     (406, '卷五一 论一', 51), (459, '卷五二 论二', 52), (503, '卷五三 论三', 53),
@@ -104,8 +122,14 @@ class NoteStart(object):
         return None
 
 
-def lines():
-    return open(REF, encoding='utf-8', errors='replace').read().split('\n')
+_CACHE = {}
+
+
+def lines(v=None):
+    path = ref_path(v)
+    if path not in _CACHE:
+        _CACHE[path] = open(path, encoding='utf-8', errors='replace').read().split('\n')
+    return _CACHE[path]
 
 
 def strip_note(s, cut=True):
@@ -128,7 +152,7 @@ NUM = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '�
 def _cn2int(s):
     """卷号（逐字读）：四四 → 44，五十一 → 51，六十 → 60，十八 → 18。"""
     nums = [NUM[c] for c in s if c in NUM]
-    if not nums:
+    if not nums and '十' not in s:
         raise ValueError(s)
     t = 0
     if '十' in s:
@@ -144,18 +168,31 @@ def _cn2int(s):
 VOL_HDR = re.compile(r'^卷([一二三四五六七八九十]+)\s*(.*)$')
 
 
-def _blocks():
-    """全文按「卷」切开：[(卷号, [行...])]，卷头行本身不进内容。"""
-    out, cur = [], None
-    for s in lines():
+def _blocks(path=None):
+    """底本按「卷」切开：[(卷号, [行...])]，卷头行本身不进内容。
+
+    底本分四册，卷号跨册不连续，所以一次把四册都切了合成一张表。
+    卷一那册（`昭明文選1.txt`）开头是全书总目录（`卷一 京都上`…`卷六十 行状 吊文 祭文`），
+    目录行与正文卷头长得一模一样。判据：**目录在前、正文在后**，所以每个卷号取
+    该册里最后一处卷头作正文起点，前面那些同名卷头全是目录。（四册都是这个次序。）
+    """
+    raw = (open(path, encoding='utf-8', errors='replace').read().split('\n')
+           if path else lines())
+    start = {}
+    for i, s in enumerate(raw):
         t = s.strip()
         m = VOL_HDR.match(t) if t else None
-        if m and len(t) < 20:
-            cur = _cn2int(m.group(1))
-            out.append((cur, []))
+        if m and len(t) < 40:
+            start[_cn2int(m.group(1))] = i        # 后者覆盖前者 → 留下最后一个
+    order = sorted(start.items(), key=lambda kv: kv[1])
+    out = []
+    for k, (v, i) in enumerate(order):
+        end = order[k + 1][1] if k + 1 < len(order) else len(raw)
+        body = raw[i + 1:end]
+        if not [x for x in body if x.strip()]:
+            # 总目录那种「卷六十 行状 吊文 祭文」之后册尾再无正文，是目录残行
             continue
-        if cur is not None:
-            out[-1][1].append(s)
+        out.append((v, body))
     return out
 
 
@@ -165,7 +202,13 @@ BLOCKS = None
 def volume_lines(v):
     global BLOCKS
     if BLOCKS is None:
-        BLOCKS = dict(_blocks())
+        # 各册卷号有重号（1.txt 到卷十六却含「卷十七」那一行、2.txt 也从卷十七起），
+        # 所以按卷号「取最长的那一份」，而不是后写覆盖。
+        BLOCKS = {}
+        for _, name in REF_SPLIT:
+            for vol, ls in _blocks(path=os.path.join(_ROOT, name)):
+                if len(ls) > len(BLOCKS.get(vol, [])):
+                    BLOCKS[vol] = ls
     if v not in BLOCKS:
         raise KeyError(v)
     return BLOCKS[v]
