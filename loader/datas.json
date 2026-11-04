@@ -888,6 +888,13 @@
             ],
             "tag": "paragraphs",
             "comments": "清朱彝尊编、汪森补遗的词选，正编 30 卷 + 补遗 6 卷，收唐五代宋金元人词 2246 首；跨代选本，2026-11 依 repo 内底本 reference/词综.txt 整本录入，一卷一档（卷N.json），篇目次序照底本。词综.json 是目次，不是语料"
+        },
+        "tang-supplement": {
+            "name": "唐诗/补录文",
+            "id": 129,
+            "path": "唐/诗/poet.tang.json",
+            "tag": "paragraphs",
+            "comments": "唐文补录，汇编选本去重后剩 78 条，正文未改，见 docs/汇编与诗去重.md"
         }
     }
 }
