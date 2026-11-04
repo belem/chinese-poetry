@@ -5,8 +5,8 @@
     "total_files": 1054,
     "reviewed": 1059,
     "clean": 313,
-    "fixed": 158,
-    "needs_review": 384,
+    "fixed": 163,
+    "needs_review": 379,
     "out_of_scope": 204,
     "in_scope_files": 855
   },
@@ -4417,14 +4417,14 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/令.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-04",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/册.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-04",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/史论.json": {
       "date": "2026-11-03",
@@ -4477,14 +4477,14 @@
       "status": "needs_review"
     },
     "汇编/昭明文选/教.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-04",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/文.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-04",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/昭明文选.json": {
       "date": "2026-10-28",
@@ -4562,9 +4562,9 @@
       "status": "fixed"
     },
     "汇编/昭明文选/诏.json": {
-      "date": "2026-10-28",
-      "reviewer": "codebuddy",
-      "status": "needs_review"
+      "date": "2026-11-04",
+      "reviewer": "CodeBuddy",
+      "status": "fixed"
     },
     "汇编/昭明文选/诔.json": {
       "date": "2026-11-04",
