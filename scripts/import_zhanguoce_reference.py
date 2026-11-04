@@ -71,6 +71,8 @@ SPLIT_TEXT = {
 PUA = {'\ue1e2': '{犴}', '\ue844': '{最}', '\ue859': '{鰌}'}
 FIXES = (
     ('。。', '。'),          # 卷九、卷十、卷十九三处叠句号
+    ('会“', '会'),          # 卷二十八 韩三《东孟之会》：底本章头 `○东孟之会“东孟之会，` 引号
+    ('赵足“', '赵足'),      # 卷三十 燕二《奉阳君千朱讙与赵足》：同上，切题时把引号带进了章题
 )
 HEAD_MARK = chr(0x25CB)   # 底本每章题前的 `○`
 MAX_TITLE = 15              # 题干最长 15 字（`燕王喜使栗腹以百金为赵孝成王寿` 恰 15）
@@ -180,7 +182,8 @@ def build(chapters):
     assert len(order) == TOTAL_JUAN, f'卷数 {len(order)}'
     taken, out = set(), []
     for ch in chapters:
-        title = f"{BOOK}·{ch['juan']}·{ch['head']}"
+        # 章题与正文同一支笔：`<吾午>` 这类记法在题里也要写成 `{吾午}`
+        title = clean(f"{BOOK}·{ch['juan']}·{ch['head']}")
         rec = {'author': AUTHOR, 'title': title, 'dynasty': DYNASTY,
                'paragraphs': ch['paras']}
         rec['id'] = make_id(AUTHOR, title, rec['paragraphs'], taken)

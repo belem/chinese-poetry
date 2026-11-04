@@ -3,12 +3,12 @@
   "description": "审查进度索引。每个文件的记录正文在 docs/progress/<路径>.json（路径里的 / 写作 @），两边的 date / reviewer / status 必须一致，由 scripts/progress.py index 重算。审查流程见 AGENTS.md「Step 1」。",
   "stats": {
     "total_files": 1054,
-    "reviewed": 1059,
+    "reviewed": 1060,
     "clean": 313,
     "fixed": 163,
-    "needs_review": 379,
+    "needs_review": 380,
     "out_of_scope": 204,
-    "in_scope_files": 855
+    "in_scope_files": 856
   },
   "reviewed": {
     "_已删除的文件：结构重构": {
@@ -29,6 +29,11 @@
     "_新增选本": {
       "date": "2026-10-27",
       "reviewer": "codebuddy",
+      "status": "needs_review"
+    },
+    "_标题勘误：选本与史书": {
+      "date": "2026-11-05",
+      "reviewer": "CodeBuddy",
       "status": "needs_review"
     },
     "_目录重构：按朝代分层": {
